@@ -38,6 +38,8 @@ int main() {
     GooeyRadioButton_Add(&win,10,10,10,onRadioBtnClicked);
     GooeyRadioButton_Add(&win,10,30,10,onRadioBtnClicked);
     GooeyRadioButton_Add(&win,10,50,10,onRadioBtnClicked);
+    const char* st[3] = { "main", "let", "vim"}; 
+    GooeyDropdown_Add(&win, 90,300, 50,50,st,3,NULL); 
     // GooeyCheckbox_Add(&win, 0, 0, OnCheck);
 
     selected_textbox = GooeyTextBox_Add(&win, OnTextChanged); 

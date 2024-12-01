@@ -74,6 +74,7 @@ typedef struct
   int selected_index;
   const char **options;
   int num_options;
+  bool isOpened; 
   void (*callback)(int selected_index);
 } GooeyDropdown;
 
@@ -383,7 +384,6 @@ void GooeyWindow_Redraw(GooeyWindow *win)
   for (int i = 0; i < win->dropdown_count; ++i)
   {
     GooeyDropdown *dropdown = &win->dropdowns[i];
-
     XSetForeground(win->display, win->gc, COLOR_GRAY);
     XFillRectangle(win->display, win->window, win->gc, dropdown->x, dropdown->y,
                    dropdown->width, dropdown->height);
@@ -392,6 +392,25 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     XDrawString(win->display, win->window, win->gc, dropdown->x + 5,
                 dropdown->y + 20, dropdown->options[dropdown->selected_index],
                 strlen(dropdown->options[dropdown->selected_index]));
+
+    if (dropdown->isOpened){ 
+      printf("drowing the dropdown menu ...\n ");
+    int y = dropdown->y + dropdown->height ; 
+    int x = dropdown->x ; 
+      for ( int j =0 ; j < dropdown->num_options  ; j++ ){
+        XSetForeground(win->display, win->gc, COLOR_GRAY);
+        XFillRectangle(win->display, win->window, win->gc, x , y,
+                       dropdown->width, dropdown->height);
+        XSetForeground(win->display, win->gc, COLOR_BLACK);
+        XDrawString(win->display, win->window, win->gc, x + 5,
+                    y + 20, dropdown->options[j],
+                    strlen(dropdown->options[j]));
+        y += dropdown->height  ;    
+
+    }
+   }else { 
+    printf("clearing drop menu ... \n ");
+   }
   }
 
   XFlush(win->display);
@@ -550,6 +569,7 @@ void GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width, int height,
   dropdown->options = options;
   dropdown->num_options = num_options;
   dropdown->selected_index = 0;
+  dropdown->isOpened = false; 
   dropdown->callback = callback;
 }
 
@@ -561,6 +581,8 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
     if (x >= dropdown->x && x <= dropdown->x + dropdown->width &&
         y >= dropdown->y && y <= dropdown->y + dropdown->height)
     {
+      dropdown->isOpened = !dropdown->isOpened; 
+      printf("change clkecd, %d \n", dropdown->isOpened);
       dropdown->selected_index =
           (dropdown->selected_index + 1) % dropdown->num_options;
       if (dropdown->callback)
