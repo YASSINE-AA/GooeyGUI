@@ -35,11 +35,7 @@ int main() {
     GooeyButton_Add(&win, "Click me", 50, 50, 100, 30, OnButtonClick);
     GooeyLabel_Add(&win, "enter text:", 50, 180);
 
-    GooeyRadioButton_Add(&win,10,10,10,onRadioBtnClicked);
-    GooeyRadioButton_Add(&win,10,30,10,onRadioBtnClicked);
-    GooeyRadioButton_Add(&win,10,50,10,onRadioBtnClicked);
-    // GooeyCheckbox_Add(&win, 0, 0, OnCheck);
-
+    GooeySlider_Add(&win, 50, 100, 300, 100, 1000, true, NULL);
     selected_textbox = GooeyTextBox_Add(&win, OnTextChanged); 
 
     GooeyWindow_Run(&win); 

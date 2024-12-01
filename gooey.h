@@ -12,6 +12,9 @@
 
 #define MAX_WIDGETS 100
 #define CHECKBOX_SIZE 20
+#define RADIO_BUTTON_RADIUS 10
+#define SLIDER_WIDTH 100;
+#define SLIDER_HEIGHT 5;
 
 #define COLOR_WHITE 0xFFFFFF
 #define COLOR_BLACK 0x000000
@@ -48,7 +51,7 @@ typedef struct
 {
   int x, y, width, height;
   bool checked;
-  char *label;
+  char label[256];
   void (*callback)(bool checked);
 } GooeyCheckbox;
 
@@ -56,6 +59,7 @@ typedef struct
 {
   int x, y, radius;
   bool selected;
+  char label[256];
   void (*callback)(bool selected);
 } GooeyRadioButton;
 
@@ -65,6 +69,7 @@ typedef struct
   int value;
   int min_value;
   int max_value;
+  bool show_hints;
   void (*callback)(int value);
 } GooeySlider;
 
@@ -119,13 +124,14 @@ void GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
 void GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
                        void (*callback)(bool checked));
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y);
-void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, int radius,
+
+void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, char *label,
                           void (*callback)(bool selected));
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y);
-void GooeySlider_Add(GooeyWindow *win, int x, int y, int width, int height,
-                     int min_value, int max_value,
+void GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
+                     int min_value, int max_value, bool show_hints,
                      void (*callback)(int value));
-void GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
+bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
 void GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width, int height,
                        const char **options, int num_options,
                        void (*callback)(int selected_index));
@@ -197,6 +203,7 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button)
               button->label, strlen(button->label));
   XSetForeground(win->display, win->gc, COLOR_BLACK);
 }
+
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
   for (int i = 0; i < win->textboxes_count; i++)
@@ -206,13 +213,14 @@ bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
         y >= textbox->y && y <= textbox->y + textbox->height)
     {
       textbox->focused = true;
+      return true;
     }
     else
     {
       textbox->focused = false;
+      return false;
     }
   }
-  return true;
 }
 void GooeyTextbox_Draw(GooeyWindow *win, int index)
 {
@@ -341,28 +349,33 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     }
   }
 
-  // for (int i = 0; i < win->radio_button_count; ++i)
+  for (int i = 0; i < win->radio_button_count; ++i)
+  {
+    GooeyRadioButton *radio_button = &win->radio_buttons[i];
 
-    for (int i = 0; i < win->radio_button_count; ++i)
+    XSetForeground(win->display, win->gc, COLOR_BLACK);
+
+    XDrawString(win->display, win->window, win->gc, radio_button->x + 17, radio_button->y + 4, radio_button->label, strlen(radio_button->label));
+
+    XDrawArc(win->display, win->window, win->gc,
+             radio_button->x - radio_button->radius,
+             radio_button->y - radio_button->radius, 2 * radio_button->radius,
+             2 * radio_button->radius, 0, 360 * 64);
+
+    if (radio_button->selected)
     {
-      GooeyRadioButton *radio_button = &win->radio_buttons[i];
-      XSetForeground(win->display, win->gc, COLOR_BLACK);
-      XDrawArc(win->display, win->window, win->gc,
-               radio_button->x - radio_button->radius,
-               radio_button->y - radio_button->radius, 2 * radio_button->radius,
-               2 * radio_button->radius, 0, 360 * 64);
-      if (radio_button->selected)
-      {
+      XSetForeground(win->display, win->gc, COLOR_BLUE);
 
-        XFillArc(win->display, win->window, win->gc,
-                 radio_button->x - radio_button->radius / 2,
-                 radio_button->y - radio_button->radius / 2,
-                 radio_button->radius, radio_button->radius, 0, 360 * 64);
-      } else {
-              XSetForeground(win->display, win->gc, COLOR_WHITE);
-
-      }
+      XFillArc(win->display, win->window, win->gc,
+               radio_button->x - radio_button->radius / 2,
+               radio_button->y - radio_button->radius / 2,
+               radio_button->radius, radio_button->radius, 0, 360 * 64);
     }
+    else
+    {
+      XSetForeground(win->display, win->gc, COLOR_WHITE);
+    }
+  }
 
   for (int i = 0; i < win->slider_count; ++i)
   {
@@ -375,9 +388,31 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     int thumb_x = slider->x + (slider->value - slider->min_value) *
                                   slider->width /
                                   (slider->max_value - slider->min_value);
+    XSetForeground(win->display, win->gc, COLOR_BLUE);
 
-    XFillArc(win->display, win->window, win->gc, thumb_x - 5, slider->y - 5, 10,
-             slider->height + 10, 0, 360 * 64);
+    XFillRectangle(win->display, win->window, win->gc, thumb_x - 5, slider->y - 5, 10,
+                   slider->height + 10);
+
+    if (slider->show_hints)
+    {
+      // additional hints activated by user
+      char min_value[20];
+      char max_value[20];
+      char value[20];
+      sprintf(min_value, "%d", slider->min_value);
+      sprintf(max_value, "%d", slider->max_value);
+      sprintf(value, "%d", slider->value);
+      int min_value_width = XTextWidth(win->font, min_value, strlen(min_value));
+      int max_value_width = XTextWidth(win->font, max_value, strlen(max_value));
+      int value_width = XTextWidth(win->font, value, strlen(value));
+
+      XDrawString(win->display, win->window, win->gc, slider->x - min_value_width - 5, slider->y + 5, min_value, strlen(min_value));
+      XDrawString(win->display, win->window, win->gc, slider->x + slider->width + 5, slider->y + 5, max_value, strlen(max_value));
+      if(slider->value != 0) XDrawString(win->display, win->window, win->gc, thumb_x - 5, slider->y + 25, value, strlen(value));
+
+    }
+            XSetForeground(win->display, win->gc, COLOR_BLACK);
+
   }
 
   for (int i = 0; i < win->dropdown_count; ++i)
@@ -444,7 +479,14 @@ void GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
   checkbox->y = y;
   checkbox->width = CHECKBOX_SIZE;
   checkbox->height = CHECKBOX_SIZE;
-  checkbox->label = label;
+  if (label)
+  {
+    strcpy(checkbox->label, label);
+  }
+  else
+  {
+    sprintf(checkbox->label, "Checkbox %d", win->checkbox_count);
+  }
   checkbox->checked = false;
   checkbox->callback = callback;
 }
@@ -466,21 +508,28 @@ bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y)
   return false;
 }
 
-void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, int radius,
+void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, char *label,
                           void (*callback)(bool selected))
 {
   GooeyRadioButton *radio_button =
       &win->radio_buttons[win->radio_button_count++];
   radio_button->x = x;
   radio_button->y = y;
-  radio_button->radius = radius;
+  if (label)
+    strcpy(radio_button->label, label);
+  else
+  {
+    sprintf(radio_button->label, "Radio button %d", win->radio_button_count);
+  }
+
+  radio_button->radius = RADIO_BUTTON_RADIUS;
   radio_button->selected = false;
   radio_button->callback = callback;
 }
 
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
 {
-  int state = false ; 
+  int state = false;
   for (int i = 0; i < win->radio_button_count; ++i)
   {
     GooeyRadioButton *radio_button = &win->radio_buttons[i];
@@ -491,41 +540,43 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
       radio_button->selected = !radio_button->selected;
       if (radio_button->callback)
         radio_button->callback(radio_button->selected);
-      state =true; 
+      state = true;
       // return true;
-    }else { 
-        if ( radio_button->selected){ 
-              radio_button->selected = !radio_button->selected ; 
-              // XSetForeground(win->display, win->gc, COLOR_WHITE);
-        }
+    }
+    else
+    {
+      if (radio_button->selected)
+      {
+        radio_button->selected = !radio_button->selected;
+        // XSetForeground(win->display, win->gc, COLOR_WHITE);
+      }
     }
   }
   return state;
 }
 
-
-void GooeySlider_Add(GooeyWindow *win, int x, int y, int width, int height,
-                     int min_value, int max_value,
+void GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
+                     int min_value, int max_value, bool show_hints,
                      void (*callback)(int value))
 {
   GooeySlider *slider = &win->sliders[win->slider_count++];
   slider->x = x;
   slider->y = y;
   slider->width = width;
-  slider->height = height;
+  slider->height = SLIDER_HEIGHT;
   slider->min_value = min_value;
   slider->max_value = max_value;
   slider->value = min_value;
+  slider->show_hints = show_hints;
   slider->callback = callback;
 }
-
-void GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
+bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
 {
   for (int i = 0; i < win->slider_count; ++i)
   {
     GooeySlider *slider = &win->sliders[i];
     if (y >= slider->y && y <= slider->y + slider->height &&
-        x <= slider->x + slider->width)
+        x >= slider->x && x <= slider->x + slider->width)
     {
       slider->value =
           slider->min_value +
@@ -533,9 +584,10 @@ void GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
               slider->width;
       if (slider->callback)
         slider->callback(slider->value);
-      return;
+      return true;
     }
   }
+  return false;
 }
 
 void GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width, int height,
@@ -623,9 +675,8 @@ void GooeyWindow_Run(GooeyWindow *win)
       {
         GooeyWindow_Redraw(win);
       }
-      else
+      else if (GooeySlider_HandleDrag(win, x, y))
       {
-        GooeySlider_HandleDrag(win, x, y);
         GooeyWindow_Redraw(win);
       }
     }
