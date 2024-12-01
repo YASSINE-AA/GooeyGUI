@@ -334,7 +334,7 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     }
   }
 
-  for (int i = 0; i < win->radio_button_count; ++i)
+  // for (int i = 0; i < win->radio_button_count; ++i)
 
     for (int i = 0; i < win->radio_button_count; ++i)
     {
@@ -467,6 +467,7 @@ void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, int radius,
 
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
 {
+  int state = false ; 
   for (int i = 0; i < win->radio_button_count; ++i)
   {
     GooeyRadioButton *radio_button = &win->radio_buttons[i];
@@ -477,11 +478,18 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
       radio_button->selected = !radio_button->selected;
       if (radio_button->callback)
         radio_button->callback(radio_button->selected);
-      return true;
+      state =true; 
+      // return true;
+    }else { 
+        if ( radio_button->selected){ 
+              radio_button->selected = !radio_button->selected ; 
+              // XSetForeground(win->display, win->gc, COLOR_WHITE);
+        }
     }
   }
-  return false;
+  return state;
 }
+
 
 void GooeySlider_Add(GooeyWindow *win, int x, int y, int width, int height,
                       int min_value, int max_value,
