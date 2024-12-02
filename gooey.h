@@ -87,7 +87,7 @@ typedef struct
 typedef struct
 {
   GooeyWidget core;
-  const char *text;
+  char text[256];
 } GooeyLabel;
 
 typedef struct
@@ -210,8 +210,13 @@ GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
 void GooeyTextbox_Draw(GooeyWindow *win, int index);
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y);
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event);
+const char *GooeyTextbox_getText(GooeyTextbox *textbox);
+void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text);
+
 void GooeyWindow_Redraw(GooeyWindow *win);
 GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
+void GooeyLabel_setText(GooeyLabel *label, const char *text);
+
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
                                  void (*callback)(bool checked));
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y);
@@ -228,6 +233,7 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
                                  int num_options,
                                  void (*callback)(int selected_index));
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y);
+
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
 {
   GooeyWindow win;
@@ -303,6 +309,27 @@ GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
   return textbox;
 }
 
+const char *GooeyTextbox_getText(GooeyTextbox *textbox)
+{
+  if (!textbox)
+  {
+    fprintf(stderr, "Widget<Textbox> cannot be null.");
+    return NULL;
+  }
+
+  return (const char *)textbox->text;
+}
+
+void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text)
+{
+  if (!textbox)
+  {
+    fprintf(stderr, "Widget<Textbox> cannot be null.");
+    return;
+  }
+  strcpy(textbox->text, text);
+}
+
 void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button)
 {
 
@@ -332,9 +359,9 @@ bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
     else
     {
       textbox->focused = false;
-      return false;
     }
   }
+  return false;
 }
 void GooeyTextbox_Draw(GooeyWindow *win, int index)
 {
@@ -608,8 +635,7 @@ void GooeyLayout_Build(GooeyLayout *layout)
   int current_x = layout->x;
   int current_y = layout->y;
 
-  float max_widget_width = layout->layout_type == LAYOUT_HORIZONTAL ? layout->width/layout->widget_count : layout->width;
-
+  float max_widget_width = layout->layout_type == LAYOUT_HORIZONTAL ? layout->width / layout->widget_count : layout->width;
 
   switch (layout->layout_type)
   {
@@ -807,7 +833,7 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y)
   GooeyLabel *label = &win->labels[win->label_count++];
   label->core.x = x;
   label->core.y = y;
-  label->text = text;
+  strcpy(label->text, text);
 
   int direction, ascent, descent;
   XCharStruct overall;
@@ -818,6 +844,17 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y)
   label->core.height = ascent + descent;
 
   return label;
+}
+
+void GooeyLabel_setText(GooeyLabel *label, const char *text)
+{
+  if (!label)
+  {
+    fprintf(stderr, "Widget<Label> cannot be NULL.\n");
+    return;
+  }
+
+  strcpy(label->text, text);
 }
 
 GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
@@ -846,10 +883,12 @@ bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
         y >= button->core.y && y <= button->core.y + button->core.height)
     {
       // printf("inside btn\n"); 
-      button->clicked = true;
+      button->clicked = !button->clicked;
       if (button->callback)
+      {
         button->callback();
-      // button->clicked = false ;
+      }
+
       return true;
     }
     else
@@ -858,7 +897,6 @@ bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
       button->clicked = false;
     }
   }
-      return false;
 }
 
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
