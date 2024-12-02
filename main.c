@@ -22,19 +22,26 @@ void onSliderChange(int value)
     printf("Slider value changed: %d\n", value);
 }
 
-void onDropdownChange(int selectedIndex)
+void onTest2()
 {
-    printf("Dropdown selected index: %d\n", selectedIndex);
+    printf("test2\n");
 }
 
-void onTextChange(char *text)
+void onTest1()
 {
-    printf("Text changed: %s\n", text);
+    printf("test1\n");
 }
 
 int main()
 {
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
+
+    GooeyMenu_Set(&win);
+    GooeyMenuChild *child = GooeyMenu_AddChild(&win, "File");
+    GooeyMenuChild_AddElement(child, "test1", onTest1);
+
+ GooeyMenuChild *child_ = GooeyMenu_AddChild(&win, "Edit");
+    GooeyMenuChild_AddElement(child_, "test2", onTest2);
 
 
     GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 200, 200);
