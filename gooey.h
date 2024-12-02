@@ -410,7 +410,7 @@ void GooeyMenu_Draw(GooeyWindow *win)
 
       if (child->is_open && child->menu_elements_count > 0)
       {
-        int submenu_x = x_offset;
+        int submenu_x = x_offset - 10;
         int submenu_y = 20;
         int submenu_width = 150;
         int submenu_height = 25 * child->menu_elements_count;
@@ -462,7 +462,7 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
 
     if (child->is_open)
     {
-      int submenu_x = x_offset;
+      int submenu_x = x_offset - 10;
       int submenu_y = 20;
       int submenu_width = 150;
 
