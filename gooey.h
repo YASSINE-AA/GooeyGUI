@@ -23,7 +23,8 @@
 #define COLOR_GRAY 0xCCCCCC
 #define COLOR_HOVER 0xAAAAAA
 
-typedef struct {
+typedef struct
+{
   int x, y;
   int width, height;
   int border_width;
@@ -47,16 +48,35 @@ typedef struct {
   Screen *screen;
 } GooeyWindowAttr;
 
-typedef struct {
+typedef enum
+{
+  WIDGET_LABEL,
+  WIDGET_SLIDER,
+  WIDGET_RADIOBUTTON,
+  WIDGET_CHECKBOX,
+  WIDGET_BUTTON,
+  WIDGET_TEXTBOX,
+  WIDGET_DROPDOWN
+} WIDGET_TYPE;
+
+typedef struct
+{
+  WIDGET_TYPE type;
   int x, y, width, height;
+} GooeyWidget;
+
+typedef struct
+{
+  GooeyWidget core;
   const char *label;
   void (*callback)();
   bool clicked;
   bool hover;
 } GooeyButton;
 
-typedef struct {
-  int x, y, width, height;
+typedef struct
+{
+  GooeyWidget core;
   char text[256];
   bool focused;
   int cursor_pos;
@@ -64,27 +84,32 @@ typedef struct {
   void (*callback)(char *text);
 } GooeyTextbox;
 
-typedef struct {
-  int x, y;
+typedef struct
+{
+  GooeyWidget core;
   const char *text;
 } GooeyLabel;
 
-typedef struct {
-  int x, y, width, height;
+typedef struct
+{
+  GooeyWidget core;
   bool checked;
   char label[256];
   void (*callback)(bool checked);
 } GooeyCheckbox;
 
-typedef struct {
-  int x, y, radius;
+typedef struct
+{
+  GooeyWidget core;
+  int radius;
   bool selected;
   char label[256];
   void (*callback)(bool selected);
 } GooeyRadioButton;
 
-typedef struct {
-  int x, y, width, height;
+typedef struct
+{
+  GooeyWidget core;
   int value;
   int min_value;
   int max_value;
@@ -92,15 +117,17 @@ typedef struct {
   void (*callback)(int value);
 } GooeySlider;
 
-typedef struct {
-  int x, y, width, height;
+typedef struct
+{
+  GooeyWidget core;
   int selected_index;
   const char **options;
   int num_options;
   void (*callback)(int selected_index);
 } GooeyDropdown;
 
-typedef struct {
+typedef struct
+{
   char *title;
   char *menu_elements[MAX_MENU_CHILDREN];
   void (*callbacks[MAX_MENU_CHILDREN])();
@@ -108,12 +135,33 @@ typedef struct {
   bool is_open;
 } GooeyMenuChild;
 
-typedef struct {
+typedef struct
+{
   GooeyMenuChild children[MAX_MENU_CHILDREN];
   int children_count;
 } GooeyMenu;
 
-typedef struct {
+typedef enum
+{
+  LAYOUT_HORIZONTAL,
+  LAYOUT_VERTICAL,
+  LAYOUT_GRID,
+} GooeyLayoutType;
+
+typedef struct
+{
+  GooeyLayoutType layout_type;
+  int x, y, width, height;
+  int padding;
+  int margin;
+  int rows;
+  int cols;
+  void *widgets[MAX_WIDGETS];
+  int widget_count;
+} GooeyLayout;
+
+typedef struct
+{
   Display *display;
   Window window;
   GC gc;
@@ -126,6 +174,7 @@ typedef struct {
   GooeySlider sliders[MAX_WIDGETS];
   GooeyDropdown dropdowns[MAX_WIDGETS];
   GooeyTextbox textboxes[MAX_WIDGETS];
+  GooeyLayout layouts[MAX_WIDGETS];
   GooeyMenu *menu;
 
   int button_count;
@@ -135,6 +184,7 @@ typedef struct {
   int slider_count;
   int dropdown_count;
   int textboxes_count;
+  int layout_count;
 
   XFontStruct *font;
 } GooeyWindow;
@@ -143,52 +193,53 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height);
 void GooeyWindow_Run(GooeyWindow *win);
 GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win);
 
+GooeyLayout *GooeyLayout_Create(GooeyWindow *win, GooeyLayoutType layout_type,
+                                int x, int y, int width, int height);
+void GooeyLayout_AddChild(GooeyLayout *layout, void *widget);
+void GooeyLayout_Build(GooeyLayout *layout);
+
 GooeyMenu *GooeyMenu_Set(GooeyWindow *win);
 void GooeyMenu_Draw(GooeyWindow *win);
 GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title);
 void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y);
-
-void GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
-                     int width, int height, void (*callback)());
+GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
+                             int width, int height, void (*callback)());
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y);
-
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, void (*onTextChanged)(char *text));
 void GooeyTextbox_Draw(GooeyWindow *win, int index);
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y);
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event);
-
 void GooeyWindow_Redraw(GooeyWindow *win);
-
-void GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
-
-void GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
-                       void (*callback)(bool checked));
+GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
+GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
+                                 void (*callback)(bool checked));
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y);
-
-void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, char *label,
-                          void (*callback)(bool selected));
+GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
+                                       char *label,
+                                       void (*callback)(bool selected));
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y);
-
-void GooeySlider_Add(GooeyWindow *win, int x, int y, int width, int min_value,
-                     int max_value, bool show_hints,
-                     void (*callback)(int value));
+GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
+                             int min_value, int max_value, bool show_hints,
+                             void (*callback)(int value));
 bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
-
-void GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width, int height,
-                       const char **options, int num_options,
-                       void (*callback)(int selected_index));
+GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
+                                 int height, const char **options,
+                                 int num_options,
+                                 void (*callback)(int selected_index));
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y);
-
-GooeyWindow GooeyWindow_Create(const char *title, int width, int height) {
+GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
+{
   GooeyWindow win;
   win.display = XOpenDisplay(NULL);
-  if (!win.display) {
+  if (!win.display)
+  {
     fprintf(stderr, "Unable to open X display\n");
     exit(1);
   }
   win.font = XLoadQueryFont(win.display, "fixed");
-  if (!win.font) {
+  if (!win.font)
+  {
     fprintf(stderr, "Failed to load system font\n");
     exit(1);
   }
@@ -215,11 +266,13 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height) {
   win.slider_count = 0;
   win.dropdown_count = 0;
   win.textboxes_count = 0;
+  win.layout_count = 0;
 
   return win;
 }
 
-GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win) {
+GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win)
+{
   XWindowAttributes window_attr;
   XGetWindowAttributes(win->display, win->window, &window_attr);
   GooeyWindowAttr gooey_attr;
@@ -233,70 +286,80 @@ GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win) {
 }
 
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
-                               int height, void (*onTextChanged)(char *text)) {
-  GooeyTextbox new_textbox = (GooeyTextbox){.x = x,
-                                            .y = y,
-                                            .width = width,
-                                            .height = height,
-                                            .focused = false,
-                                            .callback = onTextChanged};
-  new_textbox.scroll_offset = 0;
-  new_textbox.text[0] = '\0';
-  win->textboxes[win->textboxes_count] = new_textbox;
-  win->textboxes_count++;
+                               int height, void (*onTextChanged)(char *text))
+{
 
-  return &win->textboxes[win->textboxes_count - 1];
+  GooeyTextbox *textbox = &win->textboxes[win->textboxes_count++];
+  textbox->core.type = WIDGET_TEXTBOX;
+  textbox->core.x = x;
+  textbox->core.y = y;
+  textbox->core.width = width;
+  textbox->core.height = height;
+  textbox->focused = false;
+  textbox->callback = onTextChanged;
+  textbox->scroll_offset = 0;
+  textbox->text[0] = '\0';
+
+  return textbox;
 }
 
-void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button) {
+void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button)
+{
 
   XSetForeground(win->display, win->gc,
                  button->clicked ? COLOR_BLUE : COLOR_GRAY);
 
-  XFillRectangle(win->display, win->window, win->gc, button->x, button->y,
-                 button->width, button->height);
+  XFillRectangle(win->display, win->window, win->gc, button->core.x,
+                 button->core.y, button->core.width, button->core.height);
   XSetForeground(win->display, win->gc,
                  button->clicked ? COLOR_WHITE : COLOR_BLACK);
-  XDrawString(win->display, win->window, win->gc, button->x + 5, button->y + 20,
-              button->label, strlen(button->label));
+  XDrawString(win->display, win->window, win->gc, button->core.x + 5,
+              button->core.y + 20, button->label, strlen(button->label));
   XSetForeground(win->display, win->gc, COLOR_BLACK);
 }
 
-bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->textboxes_count; i++) {
+bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->textboxes_count; i++)
+  {
     GooeyTextbox *textbox = &win->textboxes[i];
-    if (x >= textbox->x && x <= textbox->x + textbox->width &&
-        y >= textbox->y && y <= textbox->y + textbox->height) {
+    if (x >= textbox->core.x && x <= textbox->core.x + textbox->core.width &&
+        y >= textbox->core.y && y <= textbox->core.y + textbox->core.height)
+    {
       textbox->focused = true;
       return true;
-    } else {
+    }
+    else
+    {
       textbox->focused = false;
       return false;
     }
   }
 }
-void GooeyTextbox_Draw(GooeyWindow *win, int index) {
+void GooeyTextbox_Draw(GooeyWindow *win, int index)
+{
   GooeyTextbox *textbox = &win->textboxes[index];
 
   XSetForeground(win->display, win->gc, COLOR_WHITE);
-  XFillRectangle(win->display, win->window, win->gc, textbox->x, textbox->y,
-                 textbox->width, textbox->height);
+  XFillRectangle(win->display, win->window, win->gc, textbox->core.x, textbox->core.y,
+                 textbox->core.width, textbox->core.height);
 
   XSetForeground(win->display, win->gc,
                  textbox->focused ? COLOR_BLUE : COLOR_BLACK);
-  XDrawRectangle(win->display, win->window, win->gc, textbox->x, textbox->y,
-                 textbox->width, textbox->height);
+  XDrawRectangle(win->display, win->window, win->gc, textbox->core.x, textbox->core.y,
+                 textbox->core.width, textbox->core.height);
 
   XSetForeground(win->display, win->gc, COLOR_BLACK);
-  int text_x = textbox->x + 5;
-  int text_y = textbox->y + (textbox->height / 2) + 5;
+  int text_x = textbox->core.x + 5;
+  int text_y = textbox->core.y + (textbox->core.height / 2) + 5;
 
-  int max_text_width = textbox->width - 10;
+  int max_text_width = textbox->core.width - 10;
   size_t len = strlen(textbox->text);
   size_t start_index = textbox->scroll_offset;
 
   while (start_index < len && XTextWidth(win->font, textbox->text + start_index,
-                                         len - start_index) > max_text_width) {
+                                         len - start_index) > max_text_width)
+  {
     start_index++;
   }
 
@@ -307,56 +370,72 @@ void GooeyTextbox_Draw(GooeyWindow *win, int index) {
   XDrawString(win->display, win->window, win->gc, text_x, text_y, display_text,
               strlen(display_text));
 
-  if (textbox->focused) {
+  if (textbox->focused)
+  {
     int cursor_x =
         text_x + XTextWidth(win->font, display_text, strlen(display_text));
-    XDrawLine(win->display, win->window, win->gc, cursor_x, textbox->y + 5,
-              cursor_x, textbox->y + textbox->height - 5);
+    XDrawLine(win->display, win->window, win->gc, cursor_x, textbox->core.y + 5,
+              cursor_x, textbox->core.y + textbox->core.height - 5);
   }
 }
-void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event) {
+void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event)
+{
   char buf[32];
   KeySym key;
   XLookupString(key_event, buf, sizeof(buf), &key, NULL);
 
-  for (int i = 0; i < win->textboxes_count; i++) {
+  for (int i = 0; i < win->textboxes_count; i++)
+  {
     GooeyTextbox *textbox = &win->textboxes[i];
     if (!textbox->focused)
       continue;
 
     size_t len = strlen(textbox->text);
 
-    if (key == XK_BackSpace) {
+    if (key == XK_BackSpace)
+    {
 
-      if (len > 0) {
+      if (len > 0)
+      {
         textbox->text[len - 1] = '\0';
-        if (textbox->scroll_offset > 0) {
+        if (textbox->scroll_offset > 0)
+        {
 
           textbox->scroll_offset--;
         }
-        textbox->callback(textbox->text);
+
+        if (textbox->callback)
+          textbox->callback(textbox->text);
       }
-    } else if (key == XK_Return || key == XK_Linefeed) {
+    }
+    else if (key == XK_Return || key == XK_Linefeed)
+    {
 
       textbox->focused = false;
-    } else if (isprint(buf[0]) && len < sizeof(textbox->text) - 1) {
+    }
+    else if (isprint(buf[0]) && len < sizeof(textbox->text) - 1)
+    {
 
       strncat(textbox->text, buf, 1);
 
-      textbox->callback(textbox->text);
+      if (textbox->callback)
+        textbox->callback(textbox->text);
 
       int text_width = XTextWidth(win->font, textbox->text, len + 1);
-      int max_text_width = textbox->width - 10;
+      int max_text_width = textbox->core.width - 10;
 
-      if (text_width > max_text_width) {
+      if (text_width > max_text_width)
+      {
         textbox->scroll_offset++;
       }
     }
   }
 }
-GooeyMenu *GooeyMenu_Set(GooeyWindow *win) {
+GooeyMenu *GooeyMenu_Set(GooeyWindow *win)
+{
   GooeyMenu *menu = malloc(sizeof(GooeyMenu));
-  if (!menu) {
+  if (!menu)
+  {
     perror("Failed to allocate memory for GooeyMenu");
     return NULL;
   }
@@ -366,8 +445,10 @@ GooeyMenu *GooeyMenu_Set(GooeyWindow *win) {
 
   return win->menu;
 }
-void GooeyMenu_Draw(GooeyWindow *win) {
-  if (win->menu) {
+void GooeyMenu_Draw(GooeyWindow *win)
+{
+  if (win->menu)
+  {
     GooeyWindowAttr attr = GooeyWindow_GetAttr(win);
 
     XSetForeground(win->display, win->gc, COLOR_GRAY);
@@ -376,7 +457,8 @@ void GooeyMenu_Draw(GooeyWindow *win) {
     XSetForeground(win->display, win->gc, COLOR_BLACK);
 
     int x_offset = 10;
-    for (int i = 0; i < win->menu->children_count; i++) {
+    for (int i = 0; i < win->menu->children_count; i++)
+    {
       GooeyMenuChild *child = &win->menu->children[i];
 
       int text_width =
@@ -384,7 +466,8 @@ void GooeyMenu_Draw(GooeyWindow *win) {
       XDrawString(win->display, win->window, win->gc, x_offset, 15,
                   child->title, strlen(child->title));
 
-      if (child->is_open && child->menu_elements_count > 0) {
+      if (child->is_open && child->menu_elements_count > 0)
+      {
         int submenu_x = x_offset - 10;
         int submenu_y = 20;
         int submenu_width = 150;
@@ -395,13 +478,15 @@ void GooeyMenu_Draw(GooeyWindow *win) {
                        submenu_width, submenu_height);
 
         XSetForeground(win->display, win->gc, COLOR_BLACK);
-        for (int j = 0; j < child->menu_elements_count; j++) {
+        for (int j = 0; j < child->menu_elements_count; j++)
+        {
           int element_y = submenu_y + (j * 25);
           XDrawString(win->display, win->window, win->gc, submenu_x + 5,
                       element_y + 18, child->menu_elements[j],
                       strlen(child->menu_elements[j]));
 
-          if (j < child->menu_elements_count - 1) {
+          if (j < child->menu_elements_count - 1)
+          {
             XDrawLine(win->display, win->window, win->gc, submenu_x,
                       element_y + 25 - 1, submenu_x + submenu_width,
                       element_y + 25 - 1);
@@ -414,16 +499,19 @@ void GooeyMenu_Draw(GooeyWindow *win) {
   }
 }
 
-void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y) {
+void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
+{
   if (!win->menu)
     return;
 
   int x_offset = 10;
-  for (int i = 0; i < win->menu->children_count; i++) {
+  for (int i = 0; i < win->menu->children_count; i++)
+  {
     GooeyMenuChild *child = &win->menu->children[i];
     int text_width = XTextWidth(win->font, child->title, strlen(child->title));
 
-    if (y <= 20 && x >= x_offset && x <= x_offset + text_width) {
+    if (y <= 20 && x >= x_offset && x <= x_offset + text_width)
+    {
 
       for (int k = 0; k < win->menu->children_count; k++)
         win->menu->children[k].is_open = 0;
@@ -433,15 +521,18 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y) {
       return;
     }
 
-    if (child->is_open) {
+    if (child->is_open)
+    {
       int submenu_x = x_offset - 10;
       int submenu_y = 20;
       int submenu_width = 150;
 
-      for (int j = 0; j < child->menu_elements_count; j++) {
+      for (int j = 0; j < child->menu_elements_count; j++)
+      {
         int element_y = submenu_y + (j * 25);
         if (x >= submenu_x && x <= submenu_x + submenu_width &&
-            y >= element_y && y <= element_y + 25) {
+            y >= element_y && y <= element_y + 25)
+        {
 
           if (child->callbacks[j])
             child->callbacks[j]();
@@ -458,9 +549,107 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y) {
     x_offset += text_width + 20;
   }
 }
+GooeyLayout *GooeyLayout_Create(GooeyWindow *win, GooeyLayoutType layout_type,
+                                int x, int y, int width, int height)
+{
+  if (!win || win->layout_count >= MAX_WIDGETS)
+  {
+    fprintf(stderr,
+            "Window not initialized or unable to add more layouts (full).\n");
+    return NULL;
+  }
+  GooeyLayout *layout = &win->layouts[win->layout_count++];
 
-GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title) {
-  if (!win->menu || win->menu->children_count >= MAX_MENU_CHILDREN) {
+  layout->x = x;
+  layout->y = y;
+  layout->width = width;
+  layout->height = height;
+  layout->layout_type = layout_type;
+  layout->widget_count = 0;
+
+  return layout;
+}
+void GooeyLayout_AddChild(GooeyLayout *layout, void *widget)
+{
+  if (!layout)
+  {
+    fprintf(stderr, "Error: Invalid layout pointer.\n");
+    return;
+  }
+
+  if (!widget)
+  {
+    fprintf(stderr, "Error: Invalid widget pointer.\n");
+    return;
+  }
+
+  if (layout->widget_count >= MAX_WIDGETS)
+  {
+    fprintf(stderr, "Error: Maximum widgets reached for the layout.\n");
+    return;
+  }
+  layout->widgets[layout->widget_count++] = widget;
+}
+void GooeyLayout_Build(GooeyLayout *layout)
+{
+  if (!layout)
+  {
+    fprintf(stderr, "Error: Invalid layout pointer.\n");
+    return;
+  }
+
+  if (layout->widget_count == 0)
+  {
+    fprintf(stderr, "Error: Layout has no widgets to arrange.\n");
+    return;
+  }
+
+  int spacing = 30;
+  int current_x = layout->x;
+  int current_y = layout->y;
+
+  float max_widget_width = layout->layout_type == LAYOUT_HORIZONTAL ? layout->width/layout->widget_count : layout->width;
+
+
+  switch (layout->layout_type)
+  {
+  case LAYOUT_VERTICAL:
+    for (int i = 0; i < layout->widget_count; i++)
+    {
+      GooeyWidget *widget = layout->widgets[i];
+      widget->width = max_widget_width;
+      widget->x = layout->x + (layout->width - widget->width) / 2;
+      widget->y = current_y;
+      current_y += widget->height + spacing;
+    }
+    break;
+
+  case LAYOUT_HORIZONTAL:
+    for (int i = 0; i < layout->widget_count; i++)
+    {
+      GooeyWidget *widget = layout->widgets[i];
+      widget->width = max_widget_width;
+      widget->x = current_x;
+      widget->y = layout->y + (layout->height - widget->height) / 2;
+      current_x += widget->width + spacing;
+    }
+    break;
+
+  case LAYOUT_GRID:
+  {
+    break;
+  }
+
+  default:
+    fprintf(stderr, "Error: Unsupported layout type.\n");
+    break;
+  }
+}
+
+GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title)
+{
+  if (!win->menu || win->menu->children_count >= MAX_MENU_CHILDREN)
+  {
     fprintf(stderr, "Unable to add child: Menu is full or not initialized.\n");
     return NULL;
   }
@@ -473,90 +662,102 @@ GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title) {
 }
 
 void GooeyMenuChild_AddElement(GooeyMenuChild *child, char *title,
-                               void (*callback)()) {
+                               void (*callback)())
+{
   child->menu_elements[child->menu_elements_count] = title;
   child->callbacks[child->menu_elements_count] = callback;
   child->menu_elements_count++;
 }
 
-void GooeyWindow_Redraw(GooeyWindow *win) {
+void GooeyWindow_Redraw(GooeyWindow *win)
+{
   XClearWindow(win->display, win->window);
 
-  for (int i = 0; i < win->textboxes_count; ++i) {
+  for (int i = 0; i < win->textboxes_count; ++i)
+  {
     GooeyTextbox_Draw(win, i);
   }
 
-  for (int i = 0; i < win->button_count; ++i) {
+  for (int i = 0; i < win->button_count; ++i)
+  {
     GooeyButton_Draw(win, &win->buttons[i]);
   }
-
-  for (int i = 0; i < win->label_count; ++i) {
+  for (int i = 0; i < win->label_count; ++i)
+  {
     GooeyLabel *label = &win->labels[i];
-    XDrawString(win->display, win->window, win->gc, label->x, label->y,
-                label->text, strlen(label->text));
+    XDrawString(win->display, win->window, win->gc, label->core.x,
+                label->core.y, label->text, strlen(label->text));
   }
-
-  for (int i = 0; i < win->checkbox_count; ++i) {
+  for (int i = 0; i < win->checkbox_count; ++i)
+  {
     GooeyCheckbox *checkbox = &win->checkboxes[i];
 
     XSetForeground(win->display, win->gc, COLOR_BLACK);
 
     XDrawString(win->display, win->window, win->gc,
-                checkbox->x + CHECKBOX_SIZE + 10, checkbox->y + 14,
+                checkbox->core.x + CHECKBOX_SIZE + 10, checkbox->core.y + 14,
                 checkbox->label, strlen(checkbox->label));
 
-    XDrawRectangle(win->display, win->window, win->gc, checkbox->x, checkbox->y,
-                   checkbox->width, checkbox->height);
-    if (checkbox->checked) {
+    XDrawRectangle(win->display, win->window, win->gc, checkbox->core.x,
+                   checkbox->core.y, checkbox->core.width,
+                   checkbox->core.height);
+    if (checkbox->checked)
+    {
       XSetForeground(win->display, win->gc, COLOR_BLUE);
-      XFillRectangle(win->display, win->window, win->gc, checkbox->x + 5,
-                     checkbox->y + 5, checkbox->width - 10,
-                     checkbox->height - 10);
+      XFillRectangle(win->display, win->window, win->gc, checkbox->core.x + 5,
+                     checkbox->core.y + 5, checkbox->core.width - 10,
+                     checkbox->core.height - 10);
     }
   }
 
-  for (int i = 0; i < win->radio_button_count; ++i) {
+  for (int i = 0; i < win->radio_button_count; ++i)
+  {
     GooeyRadioButton *radio_button = &win->radio_buttons[i];
 
     XSetForeground(win->display, win->gc, COLOR_BLACK);
 
-    XDrawString(win->display, win->window, win->gc, radio_button->x + 17,
-                radio_button->y + 4, radio_button->label,
+    XDrawString(win->display, win->window, win->gc, radio_button->core.x + 17,
+                radio_button->core.y + 4, radio_button->label,
                 strlen(radio_button->label));
 
     XDrawArc(win->display, win->window, win->gc,
-             radio_button->x - radio_button->radius,
-             radio_button->y - radio_button->radius, 2 * radio_button->radius,
-             2 * radio_button->radius, 0, 360 * 64);
+             radio_button->core.x - radio_button->radius,
+             radio_button->core.y - radio_button->radius,
+             2 * radio_button->radius, 2 * radio_button->radius, 0, 360 * 64);
 
-    if (radio_button->selected) {
+    if (radio_button->selected)
+    {
       XSetForeground(win->display, win->gc, COLOR_BLUE);
 
       XFillArc(win->display, win->window, win->gc,
-               radio_button->x - radio_button->radius / 2,
-               radio_button->y - radio_button->radius / 2, radio_button->radius,
-               radio_button->radius, 0, 360 * 64);
-    } else {
+               radio_button->core.x - radio_button->radius / 2,
+               radio_button->core.y - radio_button->radius / 2,
+               radio_button->radius, radio_button->radius, 0, 360 * 64);
+    }
+    else
+    {
       XSetForeground(win->display, win->gc, COLOR_WHITE);
     }
   }
 
-  for (int i = 0; i < win->slider_count; ++i) {
+  for (int i = 0; i < win->slider_count; ++i)
+  {
     GooeySlider *slider = &win->sliders[i];
 
     XSetForeground(win->display, win->gc, COLOR_GRAY);
-    XFillRectangle(win->display, win->window, win->gc, slider->x, slider->y,
-                   slider->width, slider->height);
+    XFillRectangle(win->display, win->window, win->gc, slider->core.x,
+                   slider->core.y, slider->core.width, slider->core.height);
 
-    int thumb_x = slider->x + (slider->value - slider->min_value) *
-                                  slider->width /
-                                  (slider->max_value - slider->min_value);
+    int thumb_x = slider->core.x + (slider->value - slider->min_value) *
+                                       slider->core.width /
+                                       (slider->max_value - slider->min_value);
     XSetForeground(win->display, win->gc, COLOR_BLUE);
 
     XFillRectangle(win->display, win->window, win->gc, thumb_x - 5,
-                   slider->y - 5, 10, slider->height + 10);
+                   slider->core.y - 5, 10, slider->core.height + 10);
 
-    if (slider->show_hints) {
+    if (slider->show_hints)
+    {
 
       char min_value[20];
       char max_value[20];
@@ -569,28 +770,31 @@ void GooeyWindow_Redraw(GooeyWindow *win) {
       int value_width = XTextWidth(win->font, value, strlen(value));
 
       XDrawString(win->display, win->window, win->gc,
-                  slider->x - min_value_width - 5, slider->y + 5, min_value,
-                  strlen(min_value));
+                  slider->core.x - min_value_width - 5, slider->core.y + 5,
+                  min_value, strlen(min_value));
       XDrawString(win->display, win->window, win->gc,
-                  slider->x + slider->width + 5, slider->y + 5, max_value,
-                  strlen(max_value));
+                  slider->core.x + slider->core.width + 5, slider->core.y + 5,
+                  max_value, strlen(max_value));
       if (slider->value != 0)
         XDrawString(win->display, win->window, win->gc, thumb_x - 5,
-                    slider->y + 25, value, strlen(value));
+                    slider->core.y + 25, value, strlen(value));
     }
     XSetForeground(win->display, win->gc, COLOR_BLACK);
   }
 
-  for (int i = 0; i < win->dropdown_count; ++i) {
+  for (int i = 0; i < win->dropdown_count; ++i)
+  {
     GooeyDropdown *dropdown = &win->dropdowns[i];
 
     XSetForeground(win->display, win->gc, COLOR_GRAY);
-    XFillRectangle(win->display, win->window, win->gc, dropdown->x, dropdown->y,
-                   dropdown->width, dropdown->height);
+    XFillRectangle(win->display, win->window, win->gc, dropdown->core.x,
+                   dropdown->core.y, dropdown->core.width,
+                   dropdown->core.height);
 
     XSetForeground(win->display, win->gc, COLOR_BLACK);
-    XDrawString(win->display, win->window, win->gc, dropdown->x + 5,
-                dropdown->y + 20, dropdown->options[dropdown->selected_index],
+    XDrawString(win->display, win->window, win->gc, dropdown->core.x + 5,
+                dropdown->core.y + 20,
+                dropdown->options[dropdown->selected_index],
                 strlen(dropdown->options[dropdown->selected_index]));
   }
   GooeyMenu_Draw(win);
@@ -598,63 +802,91 @@ void GooeyWindow_Redraw(GooeyWindow *win) {
   XFlush(win->display);
 }
 
-void GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y) {
+GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y)
+{
   GooeyLabel *label = &win->labels[win->label_count++];
-  label->x = x;
-  label->y = y;
+  label->core.x = x;
+  label->core.y = y;
   label->text = text;
+
+  int direction, ascent, descent;
+  XCharStruct overall;
+  XTextExtents(win->font, text, strlen(text), &direction, &ascent, &descent,
+               &overall);
+
+  label->core.width = overall.rbearing - overall.lbearing;
+  label->core.height = ascent + descent;
+
+  return label;
 }
 
-void GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
-                     int width, int height, void (*callback)()) {
+GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
+                             int width, int height, void (*callback)())
+{
   GooeyButton *button = &win->buttons[win->button_count++];
-  button->x = x;
-  button->y = y;
-  button->width = width;
-  button->height = height;
+  button->core.type = WIDGET_BUTTON,
+  button->core.x = x;
+  button->core.y = y;
+  button->core.width = width;
+  button->core.height = height;
   button->label = label;
   button->callback = callback;
   button->hover = false;
   button->clicked = false;
+  return button;
 }
 
-bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->button_count; ++i) {
+bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->button_count; ++i)
+  {
     GooeyButton *button = &win->buttons[i];
-    if (x >= button->x && x <= button->x + button->width && y >= button->y &&
-        y <= button->y + button->height) {
+    if (x >= button->core.x && x <= button->core.x + button->core.width &&
+        y >= button->core.y && y <= button->core.y + button->core.height)
+    {
       button->clicked = true;
       if (button->callback)
         button->callback();
       return true;
-    } else {
+    }
+    else
+    {
       button->clicked = false;
       return false;
     }
   }
 }
 
-void GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
-                       void (*callback)(bool checked)) {
+GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
+                                 void (*callback)(bool checked))
+{
   GooeyCheckbox *checkbox = &win->checkboxes[win->checkbox_count++];
-  checkbox->x = x;
-  checkbox->y = y;
-  checkbox->width = CHECKBOX_SIZE;
-  checkbox->height = CHECKBOX_SIZE;
-  if (label) {
+  checkbox->core.type = WIDGET_CHECKBOX, checkbox->core.x = x;
+  checkbox->core.y = y;
+  checkbox->core.width = CHECKBOX_SIZE;
+  checkbox->core.height = CHECKBOX_SIZE;
+  if (label)
+  {
     strcpy(checkbox->label, label);
-  } else {
+  }
+  else
+  {
     sprintf(checkbox->label, "Checkbox %d", win->checkbox_count);
   }
   checkbox->checked = false;
   checkbox->callback = callback;
+  return checkbox;
 }
 
-bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->checkbox_count; ++i) {
+bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->checkbox_count; ++i)
+  {
     GooeyCheckbox *checkbox = &win->checkboxes[i];
-    if (x >= checkbox->x && x <= checkbox->x + checkbox->width &&
-        y >= checkbox->y && y <= checkbox->y + checkbox->height) {
+    if (x >= checkbox->core.x && x <= checkbox->core.x + checkbox->core.width &&
+        y >= checkbox->core.y &&
+        y <= checkbox->core.y + checkbox->core.height)
+    {
       checkbox->checked = !checkbox->checked;
       if (checkbox->callback)
         checkbox->callback(checkbox->checked);
@@ -664,36 +896,48 @@ bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y) {
   return false;
 }
 
-void GooeyRadioButton_Add(GooeyWindow *win, int x, int y, char *label,
-                          void (*callback)(bool selected)) {
+GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
+                                       char *label,
+                                       void (*callback)(bool selected))
+{
   GooeyRadioButton *radio_button =
       &win->radio_buttons[win->radio_button_count++];
-  radio_button->x = x;
-  radio_button->y = y;
+
+  radio_button->core.type = WIDGET_RADIOBUTTON;
+  radio_button->core.x = x;
+  radio_button->core.y = y;
   if (label)
     strcpy(radio_button->label, label);
-  else {
+  else
+  {
     sprintf(radio_button->label, "Radio button %d", win->radio_button_count);
   }
 
   radio_button->radius = RADIO_BUTTON_RADIUS;
   radio_button->selected = false;
   radio_button->callback = callback;
+  return radio_button;
 }
 
-bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y) {
+bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
+{
   int state = false;
-  for (int i = 0; i < win->radio_button_count; ++i) {
+  for (int i = 0; i < win->radio_button_count; ++i)
+  {
     GooeyRadioButton *radio_button = &win->radio_buttons[i];
-    int dx = x - radio_button->x;
-    int dy = y - radio_button->y;
-    if (dx * dx + dy * dy <= radio_button->radius * radio_button->radius) {
+    int dx = x - radio_button->core.x;
+    int dy = y - radio_button->core.y;
+    if (dx * dx + dy * dy <= radio_button->radius * radio_button->radius)
+    {
       radio_button->selected = !radio_button->selected;
       if (radio_button->callback)
         radio_button->callback(radio_button->selected);
       state = true;
-    } else {
-      if (radio_button->selected) {
+    }
+    else
+    {
+      if (radio_button->selected)
+      {
         radio_button->selected = !radio_button->selected;
       }
     }
@@ -701,29 +945,35 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y) {
   return state;
 }
 
-void GooeySlider_Add(GooeyWindow *win, int x, int y, int width, int min_value,
-                     int max_value, bool show_hints,
-                     void (*callback)(int value)) {
+GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
+                             int min_value, int max_value, bool show_hints,
+                             void (*callback)(int value))
+{
   GooeySlider *slider = &win->sliders[win->slider_count++];
-  slider->x = x;
-  slider->y = y;
-  slider->width = width;
-  slider->height = SLIDER_HEIGHT;
+  slider->core.type = WIDGET_SLIDER;
+  slider->core.x = x;
+  slider->core.y = y;
+  slider->core.width = width;
+  slider->core.height = SLIDER_HEIGHT;
   slider->min_value = min_value;
   slider->max_value = max_value;
   slider->value = min_value;
   slider->show_hints = show_hints;
   slider->callback = callback;
+  return slider;
 }
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->slider_count; ++i) {
+bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->slider_count; ++i)
+  {
     GooeySlider *slider = &win->sliders[i];
-    if (y >= slider->y && y <= slider->y + slider->height && x >= slider->x &&
-        x <= slider->x + slider->width) {
+    if (y >= slider->core.y && y <= slider->core.y + slider->core.height &&
+        x >= slider->core.x && x <= slider->core.x + slider->core.width)
+    {
       slider->value =
           slider->min_value +
-          ((x - slider->x) * (slider->max_value - slider->min_value)) /
-              slider->width;
+          ((x - slider->core.x) * (slider->max_value - slider->min_value)) /
+              slider->core.width;
       if (slider->callback)
         slider->callback(slider->value);
       return true;
@@ -732,25 +982,33 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y) {
   return false;
 }
 
-void GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width, int height,
-                       const char **options, int num_options,
-                       void (*callback)(int selected_index)) {
+GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
+                                 int height, const char **options,
+                                 int num_options,
+                                 void (*callback)(int selected_index))
+{
   GooeyDropdown *dropdown = &win->dropdowns[win->dropdown_count++];
-  dropdown->x = x;
-  dropdown->y = y;
-  dropdown->width = width;
-  dropdown->height = height;
+  dropdown->core.type = WIDGET_DROPDOWN;
+  dropdown->core.x = x;
+  dropdown->core.y = y;
+  dropdown->core.width = width;
+  dropdown->core.height = height;
   dropdown->options = options;
   dropdown->num_options = num_options;
   dropdown->selected_index = 0;
   dropdown->callback = callback;
+  return dropdown;
 }
 
-bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->dropdown_count; ++i) {
+bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->dropdown_count; ++i)
+  {
     GooeyDropdown *dropdown = &win->dropdowns[i];
-    if (x >= dropdown->x && x <= dropdown->x + dropdown->width &&
-        y >= dropdown->y && y <= dropdown->y + dropdown->height) {
+    if (x >= dropdown->core.x && x <= dropdown->core.x + dropdown->core.width &&
+        y >= dropdown->core.y &&
+        y <= dropdown->core.y + dropdown->core.height)
+    {
       dropdown->selected_index =
           (dropdown->selected_index + 1) % dropdown->num_options;
       if (dropdown->callback)
@@ -761,50 +1019,75 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y) {
   return false;
 }
 
-void GooeyWindow_HandleMouseMotion(GooeyWindow *win, int x, int y) {
-  for (int i = 0; i < win->button_count; ++i) {
+void GooeyWindow_HandleMouseMotion(GooeyWindow *win, int x, int y)
+{
+  for (int i = 0; i < win->button_count; ++i)
+  {
     GooeyButton *button = &win->buttons[i];
-    if (x >= button->x && x <= button->x + button->width && y >= button->y &&
-        y <= button->y + button->height) {
+    if (x >= button->core.x && x <= button->core.x + button->core.width &&
+        y >= button->core.y && y <= button->core.y + button->core.height)
+    {
       button->hover = true;
-    } else {
+    }
+    else
+    {
       button->hover = false;
     }
   }
   GooeyWindow_Redraw(win);
 }
 
-void GooeyWindow_Run(GooeyWindow *win) {
+void GooeyWindow_Run(GooeyWindow *win)
+{
   XEvent event;
-  while (1) {
+  while (1)
+  {
     XNextEvent(win->display, &event);
-    if (event.type == Expose) {
+    if (event.type == Expose)
+    {
       GooeyWindow_Redraw(win);
-    } else if (event.type == ButtonPress) {
+    }
+    else if (event.type == ButtonPress)
+    {
       int x = event.xbutton.x;
       int y = event.xbutton.y;
-
-      if (GooeyButton_HandleClick(win, x, y)) {
-        GooeyWindow_Redraw(win);
-      } else if (GooeyCheckbox_HandleClick(win, x, y)) {
-        GooeyWindow_Redraw(win);
-      } else if (GooeyRadioButton_HandleClick(win, x, y)) {
-        GooeyWindow_Redraw(win);
-      } else if (GooeyDropdown_HandleClick(win, x, y)) {
-        GooeyWindow_Redraw(win);
-      } else if (GooeyTextbox_HandleClick(win, x, y)) {
-        GooeyWindow_Redraw(win);
-      } else if (GooeySlider_HandleDrag(win, x, y)) {
+      GooeyMenu_HandleClick(win, x, y);
+      if (GooeyButton_HandleClick(win, x, y))
+      {
         GooeyWindow_Redraw(win);
       }
-      GooeyMenu_HandleClick(win, x, y);
-
-    } else if (event.type == MotionNotify) {
+      else if (GooeyCheckbox_HandleClick(win, x, y))
+      {
+        GooeyWindow_Redraw(win);
+      }
+      else if (GooeyRadioButton_HandleClick(win, x, y))
+      {
+        GooeyWindow_Redraw(win);
+      }
+      else if (GooeyDropdown_HandleClick(win, x, y))
+      {
+        GooeyWindow_Redraw(win);
+      }
+      else if (GooeyTextbox_HandleClick(win, x, y))
+      {
+        GooeyWindow_Redraw(win);
+      }
+      else if (GooeySlider_HandleDrag(win, x, y))
+      {
+        GooeyWindow_Redraw(win);
+      }
+    }
+    else if (event.type == MotionNotify)
+    {
       GooeyWindow_HandleMouseMotion(win, event.xmotion.x, event.xmotion.y);
-    } else if (event.type == KeyPress) {
+    }
+    else if (event.type == KeyPress)
+    {
       GooeyTextbox_HandleKeyPress(win, &event.xkey);
       GooeyWindow_Redraw(win);
-    } else if (event.xclient.data.l[0] == win->wm_delete_window) {
+    }
+    else if (event.xclient.data.l[0] == win->wm_delete_window)
+    {
       break;
     }
   }
@@ -812,7 +1095,8 @@ void GooeyWindow_Run(GooeyWindow *win) {
   XCloseDisplay(win->display);
 }
 
-void GooeyWindow_Cleanup(GooeyWindow *win) {
+void GooeyWindow_Cleanup(GooeyWindow *win)
+{
   XFreeFont(win->display, win->font);
 }
 
