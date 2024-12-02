@@ -1,10 +1,11 @@
 #include "gooey.h"
 #include <stdio.h>
 
-// Callback functions
+GooeyTextbox *textbox = NULL;
+
 void onButtonClick()
 {
-    printf("Button clicked!\n");
+    printf("Button clicked! \n");
 }
 
 void onCheckboxToggle(bool checked)
@@ -40,18 +41,20 @@ int main()
     GooeyMenuChild *child = GooeyMenu_AddChild(&win, "File");
     GooeyMenuChild_AddElement(child, "test1", onTest1);
 
- GooeyMenuChild *child_ = GooeyMenu_AddChild(&win, "Edit");
+    GooeyMenuChild *child_ = GooeyMenu_AddChild(&win, "Edit");
     GooeyMenuChild_AddElement(child_, "test2", onTest2);
-
 
     GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 200, 200);
     GooeyWindowAttr attr = GooeyWindow_GetAttr(&win);
-    
+
     GooeyLayout_AddChild(layout, GooeySlider_Add(&win, 0, 0, 200,
                                                  0, 100, true, NULL));
     GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick));
     GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, NULL));
-    GooeyLayout_AddChild(layout, GooeyLabel_Add(&win, "Click Me", 50, 50));
+    GooeyLabel *label =  GooeyLabel_Add(&win, "Click Me", 50, 50);
+    GooeyLayout_AddChild(layout,label);
+    textbox = GooeyTextBox_Add(&win, 0, 0, 60, 20, NULL);
+    GooeyLayout_AddChild(layout, textbox);
 
     GooeyLayout_Build(layout);
 
