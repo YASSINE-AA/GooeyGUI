@@ -68,7 +68,7 @@ typedef struct
 typedef struct
 {
   GooeyWidget core;
-  const char *label;
+  char label[256];
   void (*callback)();
   bool clicked;
   bool hover;
@@ -110,11 +110,11 @@ typedef struct
 typedef struct
 {
   GooeyWidget core;
-  int value;
-  int min_value;
-  int max_value;
+  long value;
+  long min_value;
+  long max_value;
   bool show_hints;
-  void (*callback)(int value);
+  void (*callback)(long value);
 } GooeySlider;
 
 typedef struct
@@ -205,6 +205,8 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y);
 GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
                              int width, int height, void (*callback)());
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y);
+void GooeyButton_setText(GooeyButton *button, const char *text);
+
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, void (*onTextChanged)(char *text));
 void GooeyTextbox_Draw(GooeyWindow *win, int index);
@@ -224,10 +226,14 @@ GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
                                        char *label,
                                        void (*callback)(bool selected));
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y);
+
 GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
-                             int min_value, int max_value, bool show_hints,
-                             void (*callback)(int value));
+                             long min_value, long max_value, bool show_hints,
+                             void (*callback)(long value));
 bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
+long GooeySlider_getValue(GooeySlider *slider);
+void GooeySlider_setValue(GooeySlider *slider, long value);
+
 GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
                                  int height, const char **options,
                                  int num_options,
@@ -788,9 +794,9 @@ void GooeyWindow_Redraw(GooeyWindow *win)
       char min_value[20];
       char max_value[20];
       char value[20];
-      sprintf(min_value, "%d", slider->min_value);
-      sprintf(max_value, "%d", slider->max_value);
-      sprintf(value, "%d", slider->value);
+      sprintf(min_value, "%ld", slider->min_value);
+      sprintf(max_value, "%ld", slider->max_value);
+      sprintf(value, "%ld", slider->value);
       int min_value_width = XTextWidth(win->font, min_value, strlen(min_value));
       int max_value_width = XTextWidth(win->font, max_value, strlen(max_value));
       int value_width = XTextWidth(win->font, value, strlen(value));
@@ -866,35 +872,49 @@ GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
   button->core.y = y;
   button->core.width = width;
   button->core.height = height;
-  button->label = label;
+  strcpy(button->label, label);
   button->callback = callback;
   button->hover = false;
   button->clicked = false;
   return button;
 }
-
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
 {
+  bool clicked_any_button = false;
+
   for (int i = 0; i < win->button_count; ++i)
   {
     GooeyButton *button = &win->buttons[i];
-    if (x >= button->core.x && x <= button->core.x + button->core.width &&
-        y >= button->core.y && y <= button->core.y + button->core.height)
+    bool is_within_bounds = (x >= button->core.x && x <= button->core.x + button->core.width) &&
+                            (y >= button->core.y && y <= button->core.y + button->core.height);
+
+    if (is_within_bounds)
     {
       button->clicked = !button->clicked;
+      clicked_any_button = true;
       if (button->callback)
       {
         button->callback();
       }
-
-      return true;
     }
     else
     {
       button->clicked = false;
     }
   }
-  return false;
+
+  return clicked_any_button;
+}
+
+void GooeyButton_setText(GooeyButton *button, const char *text)
+{
+  if (!button)
+  {
+    fprintf(stderr, "Widget<Button> Cannot be null \n");
+    return;
+  }
+
+  strcpy(button->label, text);
 }
 
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
@@ -986,9 +1006,21 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
 }
 
 GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
-                             int min_value, int max_value, bool show_hints,
-                             void (*callback)(int value))
+                             long min_value, long max_value, bool show_hints,
+                             void (*callback)(long value))
 {
+  if (!win)
+  {
+    fprintf(stderr, "Window cannot be NULL. \n");
+    return NULL;
+  }
+
+  if (max_value <= min_value)
+  {
+    fprintf(stderr, "max_value should be greater than min_value. \n");
+    return NULL;
+  }
+
   GooeySlider *slider = &win->sliders[win->slider_count++];
   slider->core.type = WIDGET_SLIDER;
   slider->core.x = x;
@@ -1020,6 +1052,28 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
     }
   }
   return false;
+}
+
+long GooeySlider_getValue(GooeySlider *slider)
+{
+  if (!slider)
+  {
+    fprintf(stderr, "Widget<Slider> cannot be NULL. \n");
+    return -1;
+  }
+
+  return slider->value;
+}
+
+void GooeySlider_setValue(GooeySlider *slider, long value)
+{
+  if (!slider)
+  {
+    fprintf(stderr, "Widget<Slider> cannot be NULL. \n");
+    return;
+  }
+
+  slider->value = value;
 }
 
 GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,

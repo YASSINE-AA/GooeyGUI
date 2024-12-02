@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 GooeyTextbox *textbox = NULL;
+GooeySlider *slider = NULL;
 
 void onButtonClick()
 {
@@ -25,7 +26,7 @@ void onSliderChange(int value)
 
 void onTest2()
 {
-    printf("test2\n");
+    printf("%ld\n", GooeySlider_getValue(slider));
 }
 
 void onTest1()
@@ -46,9 +47,8 @@ int main()
 
     GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 200, 200);
     GooeyWindowAttr attr = GooeyWindow_GetAttr(&win);
-
-    GooeyLayout_AddChild(layout, GooeySlider_Add(&win, 0, 0, 200,
-                                                 0, 100, true, NULL));
+    slider =GooeySlider_Add(&win, 0, 0, 200,0, 100, true, NULL);
+    GooeyLayout_AddChild(layout, slider);
     GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick));
     GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, NULL));
     GooeyLabel *label =  GooeyLabel_Add(&win, "Click Me", 50, 50);
