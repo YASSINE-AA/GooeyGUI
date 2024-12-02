@@ -1,68 +1,65 @@
 #include "gooey.h"
 #include <stdio.h>
 
-GooeyTextbox *selected_textbox = NULL;
-
-void OnButtonClick()
-{
-    if (selected_textbox && selected_textbox->text)
-    {
-        printf("%s\n", selected_textbox->text);
-    }
-    else
-    {
-        printf("texbox empty.\n");
-    }
+// Callback functions
+void onButtonClick() {
+    printf("Button clicked!\n");
 }
 
-void OnTextChanged(char *text)
-{
-
-    printf("Text changed %s.\n ", text);
-}
-void onRadioBtnClicked(bool selected)
-{
-    printf("Radio btn clikec");
+void onCheckboxToggle(bool checked) {
+    printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
 }
 
-void OnCheck(bool state)
-{
-    if (state)
-    {
-        printf("checked!\n");
-    }
-    else
-    {
-        printf("unchecked!\n");
-    }
+void onRadioButtonSelect(bool selected) {
+    printf("Radio button selected: %s\n", selected ? "Yes" : "No");
 }
 
+void onSliderChange(int value) {
+    printf("Slider value changed: %d\n", value);
+}
 
-int main()
-{
+void onDropdownChange(int selectedIndex) {
+    printf("Dropdown selected index: %d\n", selectedIndex);
+}
 
-    GooeyWindow win = GooeyWindow_Create("Gooey example", 500, 500);
+void onTextChange(char *text) {
+    printf("Text changed: %s\n", text);
+}
 
-    GooeyMenu_Set(&win);
-   
-    GooeyMenuChild *file_menu = GooeyMenu_AddChild(&win, "File");
-    GooeyMenuChild_AddElement(file_menu, "New", NULL);
-    GooeyMenuChild_AddElement(file_menu, "Open", NULL);
-    GooeyMenuChild_AddElement(file_menu, "Save", NULL);
+int main() {
+    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
 
-    GooeyMenuChild *edit_menu = GooeyMenu_AddChild(&win, "Edit");
-    GooeyMenuChild_AddElement(edit_menu, "Copy", NULL);
-    GooeyMenuChild_AddElement(edit_menu, "Paste", NULL);
+    GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
 
-    GooeyMenuChild *help_menu = GooeyMenu_AddChild(&win, "Help");
-    GooeyMenuChild_AddElement(help_menu, "About", NULL);
+    GooeyLabel_Add(&win, "This is a label", 200, 60);
 
-    GooeyButton_Add(&win, "Click me", 50, 50, 100, 30, OnButtonClick);
-    GooeyLabel_Add(&win, "enter text:", 50, 180);
+    GooeyCheckbox_Add(&win, 50, 120, "Enable Option 1", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 160, "Enable Option 2", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 200, "Enable Option 3", onCheckboxToggle);
 
-    GooeySlider_Add(&win, 50, 100, 300, 100, 1000, false, NULL);
-    selected_textbox = GooeyTextBox_Add(&win, OnTextChanged);
+    GooeyRadioButton_Add(&win, 200, 120, "Option A", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 160, "Option B", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 200, "Option C", onRadioButtonSelect);
+
+    GooeySlider_Add(&win, 50, 250, 200, 0, 100, true, onSliderChange);
+
+    const char *options[] = {"Option 1", "Option 2", "Option 3"};
+    GooeyDropdown_Add(&win, 50, 350, 150, 30, options, 3, onDropdownChange);
+
+    GooeyTextBox_Add(&win, 50, 300, 200, 25, onTextChange);
+
+    GooeyMenu *menu = GooeyMenu_Set(&win);
+    GooeyMenuChild *fileMenu = GooeyMenu_AddChild(&win, "File");
+    GooeyMenuChild_AddElement(fileMenu, "Open", NULL);
+    GooeyMenuChild_AddElement(fileMenu, "Save", NULL);
+
+    GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Edit");
+    GooeyMenuChild_AddElement(editMenu, "Copy", NULL);
+    GooeyMenuChild_AddElement(editMenu, "Paste", NULL);
 
     GooeyWindow_Run(&win);
+
+    GooeyWindow_Cleanup(&win);
+
     return 0;
 }

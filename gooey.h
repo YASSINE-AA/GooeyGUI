@@ -163,7 +163,7 @@ void GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
                      int width, int height, void (*callback)());
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y);
 
-GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, void (*onTextChanged)(char *text));
+GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width, int height,  void (*onTextChanged)(char *text));
 void GooeyTextbox_Draw(GooeyWindow *win, int index);
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y);
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event);
@@ -246,10 +246,10 @@ GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win)
   return gooey_attr;
 }
 
-GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, void (*onTextChanged)(char *text))
+GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width, int height,  void (*onTextChanged)(char *text))
 {
   GooeyTextbox new_textbox = (GooeyTextbox){
-      .x = 50, .y = 200, .width = 200, .height = 30, .focused = false, .callback = onTextChanged};
+      .x = x, .y = y, .width = width, .height = height, .focused = false, .callback = onTextChanged};
   new_textbox.scroll_offset = 0;
   new_textbox.text[0] = '\0';
   win->textboxes[win->textboxes_count] = new_textbox;
