@@ -7,6 +7,21 @@ void onButtonClick()
     printf("Button clicked!\n");
 }
 
+void onButtonClick2()
+{
+    printf("Button clicked2!\n");
+}
+void onButtonClick3()
+{
+    printf("Button clicked3!\n");
+}
+void onButtonClick4 ()
+{
+    printf("Button clicked4!\n");
+}
+
+
+
 void onCheckboxToggle(bool checked)
 {
     printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
@@ -37,16 +52,16 @@ int main()
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
 
 
-    GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 200, 200);
     GooeyWindowAttr attr = GooeyWindow_GetAttr(&win);
-    
-    GooeyLayout_AddChild(layout, GooeySlider_Add(&win, 0, 0, 200,
-                                                 0, 100, true, NULL));
-    GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick));
-    GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, NULL));
-    GooeyLayout_AddChild(layout, GooeyLabel_Add(&win, "Click Me", 50, 50));
 
-    GooeyLayout_Build(layout);
+
+
+    GooeySlider_Add(&win, 20, 200, 200, 0, 100, true, NULL);
+    GooeyButton_Add(&win, "Click Me1", 50, 50, 80, 20, onButtonClick);
+    GooeyButton_Add(&win, "Click Me2", 50, 80, 80, 20, onButtonClick2);
+    GooeyButton_Add(&win, "Click Me3", 50, 110, 80, 20, onButtonClick3);
+    GooeyButton_Add(&win, "Click Me4", 50, 140, 80, 20, onButtonClick4);
+
 
     GooeyWindow_Run(&win);
 
@@ -54,3 +69,4 @@ int main()
 
     return 0;
 }
+

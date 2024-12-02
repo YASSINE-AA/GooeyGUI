@@ -838,23 +838,27 @@ GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
 
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
 {
-  for (int i = 0; i < win->button_count; ++i)
+  for (int i = 0; i < win->button_count; i++)
   {
     GooeyButton *button = &win->buttons[i];
+    printf("%s\n",button->label);
     if (x >= button->core.x && x <= button->core.x + button->core.width &&
         y >= button->core.y && y <= button->core.y + button->core.height)
     {
+      // printf("inside btn\n"); 
       button->clicked = true;
       if (button->callback)
         button->callback();
+      // button->clicked = false ;
       return true;
     }
     else
     {
+      // printf("outside btn\n");
       button->clicked = false;
-      return false;
     }
   }
+      return false;
 }
 
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
