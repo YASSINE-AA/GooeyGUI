@@ -1,0 +1,995 @@
+\doxysection{gooey.\+h File Reference}
+\hypertarget{gooey_8h}{}\label{gooey_8h}\index{gooey.h@{gooey.h}}
+{\ttfamily \#include $<$X11/\+X.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xutil.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGooeyWindowAttr}{Gooey\+Window\+Attr}}
+\item 
+struct \mbox{\hyperlink{structGooeyWidget}{Gooey\+Widget}}
+\item 
+struct \mbox{\hyperlink{structGooeyButton}{Gooey\+Button}}
+\item 
+struct \mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}}
+\item 
+struct \mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}}
+\item 
+struct \mbox{\hyperlink{structGooeyCheckbox}{Gooey\+Checkbox}}
+\item 
+struct \mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}}
+\item 
+struct \mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}}
+\item 
+struct \mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}}
+\item 
+struct \mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}}
+\item 
+struct \mbox{\hyperlink{structGooeyMenu}{Gooey\+Menu}}
+\item 
+struct \mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}}
+\item 
+struct \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gooey_8h_af55f83e86f270705ef7be6ab663bf5a6}{MAX\+\_\+\+WIDGETS}}~100
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a0108dc85929fb4e5563ce5d187cc5b49}{CHECKBOX\+\_\+\+SIZE}}~20
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9}{RADIO\+\_\+\+BUTTON\+\_\+\+RADIUS}}~10
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a391a0cbb1db22916ea80f4c336d87f33}{SLIDER\+\_\+\+WIDTH}}~100
+\item 
+\#define \mbox{\hyperlink{gooey_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802}{SLIDER\+\_\+\+HEIGHT}}~5
+\item 
+\#define \mbox{\hyperlink{gooey_8h_ab716b9dc601e22c2a7ba326f9253cf95}{MAX\+\_\+\+MENU\+\_\+\+CHILDREN}}~10
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a9b44987ffdc2af19b635206b94334b69}{COLOR\+\_\+\+WHITE}}~0x\+FFFFFF
+\item 
+\#define \mbox{\hyperlink{gooey_8h_aba2a7fe77a7501e5844370eec0185207}{COLOR\+\_\+\+BLACK}}~0x000000
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a23c70d699a5a775bc2e1ebeb8603f630}{COLOR\+\_\+\+BLUE}}~0x2196\+F3
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a3aaf3b0287d26dfb6ecb3b1c46e950c8}{COLOR\+\_\+\+GRAY}}~0x\+CCCCCC
+\item 
+\#define \mbox{\hyperlink{gooey_8h_aec7cb4858b86230ab09922fa3e19da62}{COLOR\+\_\+\+HOVER}}~0x\+AAAAAA
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e}{WIDGET\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061}{WIDGET\+\_\+\+LABEL}}
+, \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7}{WIDGET\+\_\+\+SLIDER}}
+, \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc}{WIDGET\+\_\+\+RADIOBUTTON}}
+, \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632}{WIDGET\+\_\+\+CHECKBOX}}
+, \newline
+\mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c}{WIDGET\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c}{WIDGET\+\_\+\+TEXTBOX}}
+, \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975}{WIDGET\+\_\+\+DROPDOWN}}
+ \}
+\item 
+enum \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}} \{ \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38}{LAYOUT\+\_\+\+HORIZONTAL}}
+, \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd}{LAYOUT\+\_\+\+VERTICAL}}
+, \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3}{LAYOUT\+\_\+\+GRID}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{gooey_8h_a5bb530110f0f6dcde2f3f3cd7c179efc}{Gooey\+Window\+\_\+\+Create}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Creates a new Gooey window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a646a3a0f8d98b971ab6d8af4f822ac31}{Gooey\+Window\+\_\+\+Run}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Runs the Gooey window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyWindowAttr}{Gooey\+Window\+Attr}} \mbox{\hyperlink{gooey_8h_a95d040fc9674398c95ace8a818ed7318}{Gooey\+Window\+\_\+\+Get\+Attr}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Retrieves the attributes of the specified Gooey window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_ab5af4df4ef87544dea82a3aeaaa391ce}{Gooey\+Layout\+\_\+\+Create}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}} layout\+\_\+type, int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Creates a layout for the specified window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a19fb3cdea95724dc67b48440c0239604}{Gooey\+Layout\+\_\+\+Add\+Child}} (\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*}layout, void \texorpdfstring{$\ast$}{*}widget)
+\begin{DoxyCompactList}\small\item\em Adds a child widget to a layout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_aec826acf24f712fbde2031fe4fab0bb9}{Gooey\+Layout\+\_\+\+Build}} (\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Builds the layout, arranging all child widgets according to the layout type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyMenu}{Gooey\+Menu}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_abaa0a8fc4c8b4b4304e401ffaece7e65}{Gooey\+Menu\+\_\+\+Set}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Sets the menu for the Gooey window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_af687b31ad3bd659dd2804dbda0d017b8}{Gooey\+Menu\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draws the menu for the window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a0b6434d579642d4e70bd5f29ea52c2ec}{Gooey\+Menu\+\_\+\+Add\+Child}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, char \texorpdfstring{$\ast$}{*}title)
+\begin{DoxyCompactList}\small\item\em Adds a child menu item to the window\textquotesingle{}s menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_ab9b7cccbb25edd99a7f4b3ef105c5572}{Gooey\+Menu\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles menu item click events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a6ef2ab71a12568095efab0973c7b687c}{Gooey\+Button\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, const char \texorpdfstring{$\ast$}{*}label, int x, int y, int width, int height, void(\texorpdfstring{$\ast$}{*}callback)())
+\begin{DoxyCompactList}\small\item\em Adds a button to the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_a8082493cdb86f9bd3d80be0fd8d8de2f}{Gooey\+Button\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles button click events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a4326d8e25d1672d05bb67d55a214a2a4}{Gooey\+Button\+\_\+set\+Text}} (\mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*}button, const char \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Sets the text of the button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a2ded793d8d01ba6b66b187cd4a2c0825}{Gooey\+Text\+Box\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, int width, int height, void(\texorpdfstring{$\ast$}{*}on\+Text\+Changed)(char \texorpdfstring{$\ast$}{*}text))
+\begin{DoxyCompactList}\small\item\em Adds a textbox to the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a24b5bc450dab5274924a91ec791b83f6}{Gooey\+Textbox\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int index)
+\begin{DoxyCompactList}\small\item\em Draws the textbox on the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_a244c53f31079de3b2398120756b908a8}{Gooey\+Textbox\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles textbox click events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a053ef35a8eccf7fde4064355283225fb}{Gooey\+Textbox\+\_\+\+Handle\+Key\+Press}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, XKey\+Event \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles key press events for the textbox. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_af95a42f059ca3662763f449ae666930f}{Gooey\+Textbox\+\_\+get\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a4c468121abadceb7f66e0381872f2c53}{textbox}})
+\begin{DoxyCompactList}\small\item\em Gets the text of the textbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_aa4e81eec9ad34c94609c475f3a19eb34}{Gooey\+Textbox\+\_\+set\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a4c468121abadceb7f66e0381872f2c53}{textbox}}, const char \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Sets the text of the textbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_ae5030980075ccfceb3e805c5b6f5ff8a}{Gooey\+Window\+\_\+\+Redraw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Redraws the window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_ad9de78f8bb35856982a623a85f4c5105}{Gooey\+Label\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, const char \texorpdfstring{$\ast$}{*}text, int x, int y)
+\begin{DoxyCompactList}\small\item\em Adds a label to the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319}{Gooey\+Label\+\_\+set\+Text}} (\mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}} \texorpdfstring{$\ast$}{*}label, const char \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Sets the text of the label. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyCheckbox}{Gooey\+Checkbox}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a4bb807a94ca251447a265d773e0c81bc}{Gooey\+Checkbox\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, char \texorpdfstring{$\ast$}{*}label, void(\texorpdfstring{$\ast$}{*}callback)(bool checked))
+\begin{DoxyCompactList}\small\item\em Adds a checkbox to the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_ab5d76b9b2e053b8d9c43aef50ac55693}{Gooey\+Checkbox\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles checkbox click events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a9f44c3306cd6a0c93028f9eef6c70970}{Gooey\+Radio\+Button\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, char \texorpdfstring{$\ast$}{*}label, void(\texorpdfstring{$\ast$}{*}callback)(bool selected))
+\begin{DoxyCompactList}\small\item\em Adds a radio button to the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96}{Gooey\+Radio\+Button\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles radio button click events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a6d20f57fb42f874e6a7a281bdfa1ed20}{Gooey\+Slider\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, int width, long min\+\_\+value, long max\+\_\+value, bool show\+\_\+hints, void(\texorpdfstring{$\ast$}{*}callback)(long value))
+\begin{DoxyCompactList}\small\item\em Adds a slider to the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_a59390d9f8d7866f07676776c7cd86b43}{Gooey\+Slider\+\_\+\+Handle\+Drag}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles slider drag events. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{gooey_8h_a0c2beea09ecd3d246b572414d42ca124}{Gooey\+Slider\+\_\+get\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a3b95c98ef1c30896dc7e7454efa56383}{slider}})
+\begin{DoxyCompactList}\small\item\em Gets the current value of the slider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_ab1b0c02cedabf1251d3ad0ba4b586e69}{Gooey\+Slider\+\_\+set\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a3b95c98ef1c30896dc7e7454efa56383}{slider}}, long value)
+\begin{DoxyCompactList}\small\item\em Sets the value of the slider. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_ac88c3eb373206811e02e639af630674e}{Gooey\+Dropdown\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, int width, int height, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}options, int num\+\_\+options, void(\texorpdfstring{$\ast$}{*}callback)(int selected\+\_\+index))
+\begin{DoxyCompactList}\small\item\em Adds a dropdown menu to the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gooey_8h_ac25f887efd42f10ccc2fa5de639567a4}{Gooey\+Dropdown\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles dropdown menu click events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_af8ec19da718567aa7bc267dfb4e8ad2f}{Gooey\+Button\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*}button)
+\item 
+void \mbox{\hyperlink{gooey_8h_a9e5d95abccd358771562c49b6521d6e4}{Gooey\+Menu\+Child\+\_\+\+Add\+Element}} (\mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}} \texorpdfstring{$\ast$}{*}child, char \texorpdfstring{$\ast$}{*}title, void(\texorpdfstring{$\ast$}{*}callback)())
+\item 
+void \mbox{\hyperlink{gooey_8h_af96b9c3c6d79d3107251ebb49a0048f0}{Gooey\+Window\+\_\+\+Handle\+Mouse\+Motion}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\item 
+void \mbox{\hyperlink{gooey_8h_a83e8b293bf59a1b632f6fcfa7e29fbff}{Gooey\+Window\+\_\+\+Cleanup}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gooey_8h_a0108dc85929fb4e5563ce5d187cc5b49}\index{gooey.h@{gooey.h}!CHECKBOX\_SIZE@{CHECKBOX\_SIZE}}
+\index{CHECKBOX\_SIZE@{CHECKBOX\_SIZE}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{CHECKBOX\_SIZE}{CHECKBOX\_SIZE}}
+{\footnotesize\ttfamily \label{gooey_8h_a0108dc85929fb4e5563ce5d187cc5b49} 
+\#define CHECKBOX\+\_\+\+SIZE~20}
+
+\Hypertarget{gooey_8h_aba2a7fe77a7501e5844370eec0185207}\index{gooey.h@{gooey.h}!COLOR\_BLACK@{COLOR\_BLACK}}
+\index{COLOR\_BLACK@{COLOR\_BLACK}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_BLACK}{COLOR\_BLACK}}
+{\footnotesize\ttfamily \label{gooey_8h_aba2a7fe77a7501e5844370eec0185207} 
+\#define COLOR\+\_\+\+BLACK~0x000000}
+
+\Hypertarget{gooey_8h_a23c70d699a5a775bc2e1ebeb8603f630}\index{gooey.h@{gooey.h}!COLOR\_BLUE@{COLOR\_BLUE}}
+\index{COLOR\_BLUE@{COLOR\_BLUE}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_BLUE}{COLOR\_BLUE}}
+{\footnotesize\ttfamily \label{gooey_8h_a23c70d699a5a775bc2e1ebeb8603f630} 
+\#define COLOR\+\_\+\+BLUE~0x2196\+F3}
+
+\Hypertarget{gooey_8h_a3aaf3b0287d26dfb6ecb3b1c46e950c8}\index{gooey.h@{gooey.h}!COLOR\_GRAY@{COLOR\_GRAY}}
+\index{COLOR\_GRAY@{COLOR\_GRAY}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_GRAY}{COLOR\_GRAY}}
+{\footnotesize\ttfamily \label{gooey_8h_a3aaf3b0287d26dfb6ecb3b1c46e950c8} 
+\#define COLOR\+\_\+\+GRAY~0x\+CCCCCC}
+
+\Hypertarget{gooey_8h_aec7cb4858b86230ab09922fa3e19da62}\index{gooey.h@{gooey.h}!COLOR\_HOVER@{COLOR\_HOVER}}
+\index{COLOR\_HOVER@{COLOR\_HOVER}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_HOVER}{COLOR\_HOVER}}
+{\footnotesize\ttfamily \label{gooey_8h_aec7cb4858b86230ab09922fa3e19da62} 
+\#define COLOR\+\_\+\+HOVER~0x\+AAAAAA}
+
+\Hypertarget{gooey_8h_a9b44987ffdc2af19b635206b94334b69}\index{gooey.h@{gooey.h}!COLOR\_WHITE@{COLOR\_WHITE}}
+\index{COLOR\_WHITE@{COLOR\_WHITE}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_WHITE}{COLOR\_WHITE}}
+{\footnotesize\ttfamily \label{gooey_8h_a9b44987ffdc2af19b635206b94334b69} 
+\#define COLOR\+\_\+\+WHITE~0x\+FFFFFF}
+
+\Hypertarget{gooey_8h_ab716b9dc601e22c2a7ba326f9253cf95}\index{gooey.h@{gooey.h}!MAX\_MENU\_CHILDREN@{MAX\_MENU\_CHILDREN}}
+\index{MAX\_MENU\_CHILDREN@{MAX\_MENU\_CHILDREN}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MENU\_CHILDREN}{MAX\_MENU\_CHILDREN}}
+{\footnotesize\ttfamily \label{gooey_8h_ab716b9dc601e22c2a7ba326f9253cf95} 
+\#define MAX\+\_\+\+MENU\+\_\+\+CHILDREN~10}
+
+\Hypertarget{gooey_8h_af55f83e86f270705ef7be6ab663bf5a6}\index{gooey.h@{gooey.h}!MAX\_WIDGETS@{MAX\_WIDGETS}}
+\index{MAX\_WIDGETS@{MAX\_WIDGETS}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIDGETS}{MAX\_WIDGETS}}
+{\footnotesize\ttfamily \label{gooey_8h_af55f83e86f270705ef7be6ab663bf5a6} 
+\#define MAX\+\_\+\+WIDGETS~100}
+
+\Hypertarget{gooey_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9}\index{gooey.h@{gooey.h}!RADIO\_BUTTON\_RADIUS@{RADIO\_BUTTON\_RADIUS}}
+\index{RADIO\_BUTTON\_RADIUS@{RADIO\_BUTTON\_RADIUS}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{RADIO\_BUTTON\_RADIUS}{RADIO\_BUTTON\_RADIUS}}
+{\footnotesize\ttfamily \label{gooey_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9} 
+\#define RADIO\+\_\+\+BUTTON\+\_\+\+RADIUS~10}
+
+\Hypertarget{gooey_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802}\index{gooey.h@{gooey.h}!SLIDER\_HEIGHT@{SLIDER\_HEIGHT}}
+\index{SLIDER\_HEIGHT@{SLIDER\_HEIGHT}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_HEIGHT}{SLIDER\_HEIGHT}}
+{\footnotesize\ttfamily \label{gooey_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802} 
+\#define SLIDER\+\_\+\+HEIGHT~5}
+
+\Hypertarget{gooey_8h_a391a0cbb1db22916ea80f4c336d87f33}\index{gooey.h@{gooey.h}!SLIDER\_WIDTH@{SLIDER\_WIDTH}}
+\index{SLIDER\_WIDTH@{SLIDER\_WIDTH}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_WIDTH}{SLIDER\_WIDTH}}
+{\footnotesize\ttfamily \label{gooey_8h_a391a0cbb1db22916ea80f4c336d87f33} 
+\#define SLIDER\+\_\+\+WIDTH~100}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb}\index{gooey.h@{gooey.h}!GooeyLayoutType@{GooeyLayoutType}}
+\index{GooeyLayoutType@{GooeyLayoutType}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLayoutType}{GooeyLayoutType}}
+{\footnotesize\ttfamily \label{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb} 
+enum \mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_HORIZONTAL@{LAYOUT\_HORIZONTAL}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!LAYOUT\_HORIZONTAL@{LAYOUT\_HORIZONTAL}}}\Hypertarget{gooey_8h_a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38}\label{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb} 
+LAYOUT\+\_\+\+HORIZONTAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_VERTICAL@{LAYOUT\_VERTICAL}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!LAYOUT\_VERTICAL@{LAYOUT\_VERTICAL}}}\Hypertarget{gooey_8h_a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd}\label{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb} 
+LAYOUT\+\_\+\+VERTICAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_GRID@{LAYOUT\_GRID}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!LAYOUT\_GRID@{LAYOUT\_GRID}}}\Hypertarget{gooey_8h_a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3}\label{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb} 
+LAYOUT\+\_\+\+GRID&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e}\index{gooey.h@{gooey.h}!WIDGET\_TYPE@{WIDGET\_TYPE}}
+\index{WIDGET\_TYPE@{WIDGET\_TYPE}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{WIDGET\_TYPE}{WIDGET\_TYPE}}
+{\footnotesize\ttfamily \label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+enum \mbox{\hyperlink{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e}{WIDGET\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_LABEL@{WIDGET\_LABEL}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_LABEL@{WIDGET\_LABEL}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+LABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_SLIDER@{WIDGET\_SLIDER}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_SLIDER@{WIDGET\_SLIDER}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+SLIDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_RADIOBUTTON@{WIDGET\_RADIOBUTTON}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_RADIOBUTTON@{WIDGET\_RADIOBUTTON}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+RADIOBUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_CHECKBOX@{WIDGET\_CHECKBOX}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_CHECKBOX@{WIDGET\_CHECKBOX}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+CHECKBOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_BUTTON@{WIDGET\_BUTTON}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_BUTTON@{WIDGET\_BUTTON}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_TEXTBOX@{WIDGET\_TEXTBOX}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_TEXTBOX@{WIDGET\_TEXTBOX}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+TEXTBOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_DROPDOWN@{WIDGET\_DROPDOWN}!gooey.h@{gooey.h}}\index{gooey.h@{gooey.h}!WIDGET\_DROPDOWN@{WIDGET\_DROPDOWN}}}\Hypertarget{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975}\label{gooey_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+WIDGET\+\_\+\+DROPDOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gooey_8h_a6ef2ab71a12568095efab0973c7b687c}\index{gooey.h@{gooey.h}!GooeyButton\_Add@{GooeyButton\_Add}}
+\index{GooeyButton\_Add@{GooeyButton\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyButton\_Add()}{GooeyButton\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_a6ef2ab71a12568095efab0973c7b687c} 
+\mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*} Gooey\+Button\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)()}\end{DoxyParamCaption})}
+
+
+
+Adds a button to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the button to. \\
+\hline
+{\em label} & The label to display on the button. \\
+\hline
+{\em x} & The x-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the button. \\
+\hline
+{\em height} & The height of the button. \\
+\hline
+{\em callback} & The callback function to call when the button is clicked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyButton}{Gooey\+Button} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_af8ec19da718567aa7bc267dfb4e8ad2f}\index{gooey.h@{gooey.h}!GooeyButton\_Draw@{GooeyButton\_Draw}}
+\index{GooeyButton\_Draw@{GooeyButton\_Draw}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyButton\_Draw()}{GooeyButton\_Draw()}}
+{\footnotesize\ttfamily \label{gooey_8h_af8ec19da718567aa7bc267dfb4e8ad2f} 
+void Gooey\+Button\+\_\+\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gooey_8h_a8082493cdb86f9bd3d80be0fd8d8de2f}\index{gooey.h@{gooey.h}!GooeyButton\_HandleClick@{GooeyButton\_HandleClick}}
+\index{GooeyButton\_HandleClick@{GooeyButton\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyButton\_HandleClick()}{GooeyButton\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_a8082493cdb86f9bd3d80be0fd8d8de2f} 
+bool Gooey\+Button\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles button click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the button. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button was clicked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a4326d8e25d1672d05bb67d55a214a2a4}\index{gooey.h@{gooey.h}!GooeyButton\_setText@{GooeyButton\_setText}}
+\index{GooeyButton\_setText@{GooeyButton\_setText}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyButton\_setText()}{GooeyButton\_setText()}}
+{\footnotesize\ttfamily \label{gooey_8h_a4326d8e25d1672d05bb67d55a214a2a4} 
+void Gooey\+Button\+\_\+set\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*}}]{button}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets the text of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button to set the text for. \\
+\hline
+{\em text} & The new text to display on the button. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_a4bb807a94ca251447a265d773e0c81bc}\index{gooey.h@{gooey.h}!GooeyCheckbox\_Add@{GooeyCheckbox\_Add}}
+\index{GooeyCheckbox\_Add@{GooeyCheckbox\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyCheckbox\_Add()}{GooeyCheckbox\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_a4bb807a94ca251447a265d773e0c81bc} 
+\mbox{\hyperlink{structGooeyCheckbox}{Gooey\+Checkbox}} \texorpdfstring{$\ast$}{*} Gooey\+Checkbox\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(bool checked)}\end{DoxyParamCaption})}
+
+
+
+Adds a checkbox to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the checkbox to. \\
+\hline
+{\em x} & The x-\/coordinate of the checkbox\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the checkbox\textquotesingle{}s position. \\
+\hline
+{\em label} & The label for the checkbox. \\
+\hline
+{\em callback} & The callback function to call when the checkbox is clicked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyCheckbox}{Gooey\+Checkbox} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ab5d76b9b2e053b8d9c43aef50ac55693}\index{gooey.h@{gooey.h}!GooeyCheckbox\_HandleClick@{GooeyCheckbox\_HandleClick}}
+\index{GooeyCheckbox\_HandleClick@{GooeyCheckbox\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyCheckbox\_HandleClick()}{GooeyCheckbox\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_ab5d76b9b2e053b8d9c43aef50ac55693} 
+bool Gooey\+Checkbox\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles checkbox click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the checkbox. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the checkbox was clicked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ac88c3eb373206811e02e639af630674e}\index{gooey.h@{gooey.h}!GooeyDropdown\_Add@{GooeyDropdown\_Add}}
+\index{GooeyDropdown\_Add@{GooeyDropdown\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyDropdown\_Add()}{GooeyDropdown\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_ac88c3eb373206811e02e639af630674e} 
+\mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}} \texorpdfstring{$\ast$}{*} Gooey\+Dropdown\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{options}{, }\item[{int}]{num\+\_\+options}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(int selected\+\_\+index)}\end{DoxyParamCaption})}
+
+
+
+Adds a dropdown menu to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the dropdown menu to. \\
+\hline
+{\em x} & The x-\/coordinate of the dropdown\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the dropdown\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the dropdown menu. \\
+\hline
+{\em height} & The height of the dropdown menu. \\
+\hline
+{\em options} & The list of options for the dropdown menu. \\
+\hline
+{\em num\+\_\+options} & The number of options. \\
+\hline
+{\em callback} & The callback function to call when an option is selected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyDropdown}{Gooey\+Dropdown} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ac25f887efd42f10ccc2fa5de639567a4}\index{gooey.h@{gooey.h}!GooeyDropdown\_HandleClick@{GooeyDropdown\_HandleClick}}
+\index{GooeyDropdown\_HandleClick@{GooeyDropdown\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyDropdown\_HandleClick()}{GooeyDropdown\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_ac25f887efd42f10ccc2fa5de639567a4} 
+bool Gooey\+Dropdown\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles dropdown menu click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the dropdown menu. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the dropdown menu was clicked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ad9de78f8bb35856982a623a85f4c5105}\index{gooey.h@{gooey.h}!GooeyLabel\_Add@{GooeyLabel\_Add}}
+\index{GooeyLabel\_Add@{GooeyLabel\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLabel\_Add()}{GooeyLabel\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_ad9de78f8bb35856982a623a85f4c5105} 
+\mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}} \texorpdfstring{$\ast$}{*} Gooey\+Label\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Adds a label to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the label to. \\
+\hline
+{\em text} & The text to display on the label. \\
+\hline
+{\em x} & The x-\/coordinate of the label\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the label\textquotesingle{}s position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyLabel}{Gooey\+Label} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319}\index{gooey.h@{gooey.h}!GooeyLabel\_setText@{GooeyLabel\_setText}}
+\index{GooeyLabel\_setText@{GooeyLabel\_setText}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLabel\_setText()}{GooeyLabel\_setText()}}
+{\footnotesize\ttfamily \label{gooey_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319} 
+void Gooey\+Label\+\_\+set\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}} \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets the text of the label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label to set the text for. \\
+\hline
+{\em text} & The new text to display on the label. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_a19fb3cdea95724dc67b48440c0239604}\index{gooey.h@{gooey.h}!GooeyLayout\_AddChild@{GooeyLayout\_AddChild}}
+\index{GooeyLayout\_AddChild@{GooeyLayout\_AddChild}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLayout\_AddChild()}{GooeyLayout\_AddChild()}}
+{\footnotesize\ttfamily \label{gooey_8h_a19fb3cdea95724dc67b48440c0239604} 
+void Gooey\+Layout\+\_\+\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*}}]{layout}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{widget}{}\end{DoxyParamCaption})}
+
+
+
+Adds a child widget to a layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layout} & The layout to which the widget will be added. \\
+\hline
+{\em widget} & The widget to add to the layout. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_aec826acf24f712fbde2031fe4fab0bb9}\index{gooey.h@{gooey.h}!GooeyLayout\_Build@{GooeyLayout\_Build}}
+\index{GooeyLayout\_Build@{GooeyLayout\_Build}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLayout\_Build()}{GooeyLayout\_Build()}}
+{\footnotesize\ttfamily \label{gooey_8h_aec826acf24f712fbde2031fe4fab0bb9} 
+void Gooey\+Layout\+\_\+\+Build (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*}}]{layout}{}\end{DoxyParamCaption})}
+
+
+
+Builds the layout, arranging all child widgets according to the layout type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layout} & The layout to build. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_ab5af4df4ef87544dea82a3aeaaa391ce}\index{gooey.h@{gooey.h}!GooeyLayout\_Create@{GooeyLayout\_Create}}
+\index{GooeyLayout\_Create@{GooeyLayout\_Create}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLayout\_Create()}{GooeyLayout\_Create()}}
+{\footnotesize\ttfamily \label{gooey_8h_ab5af4df4ef87544dea82a3aeaaa391ce} 
+\mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}} \texorpdfstring{$\ast$}{*} Gooey\+Layout\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{gooey_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}}}]{layout\+\_\+type}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Creates a layout for the specified window. 
+
+Initializes a new layout with a specified layout type, position, and size within the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to attach the layout to. \\
+\hline
+{\em layout\+\_\+type} & The type of layout (e.\+g., grid, box). \\
+\hline
+{\em x} & The x-\/coordinate of the layout\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the layout\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the layout. \\
+\hline
+{\em height} & The height of the layout. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyLayout}{Gooey\+Layout} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a0b6434d579642d4e70bd5f29ea52c2ec}\index{gooey.h@{gooey.h}!GooeyMenu\_AddChild@{GooeyMenu\_AddChild}}
+\index{GooeyMenu\_AddChild@{GooeyMenu\_AddChild}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyMenu\_AddChild()}{GooeyMenu\_AddChild()}}
+{\footnotesize\ttfamily \label{gooey_8h_a0b6434d579642d4e70bd5f29ea52c2ec} 
+\mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}} \texorpdfstring{$\ast$}{*} Gooey\+Menu\+\_\+\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Adds a child menu item to the window\textquotesingle{}s menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the menu item to. \\
+\hline
+{\em title} & The title of the menu item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyMenuChild}{Gooey\+Menu\+Child} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_af687b31ad3bd659dd2804dbda0d017b8}\index{gooey.h@{gooey.h}!GooeyMenu\_Draw@{GooeyMenu\_Draw}}
+\index{GooeyMenu\_Draw@{GooeyMenu\_Draw}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyMenu\_Draw()}{GooeyMenu\_Draw()}}
+{\footnotesize\ttfamily \label{gooey_8h_af687b31ad3bd659dd2804dbda0d017b8} 
+void Gooey\+Menu\+\_\+\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Draws the menu for the window. 
+
+Renders the menu on the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to draw the menu for. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_ab9b7cccbb25edd99a7f4b3ef105c5572}\index{gooey.h@{gooey.h}!GooeyMenu\_HandleClick@{GooeyMenu\_HandleClick}}
+\index{GooeyMenu\_HandleClick@{GooeyMenu\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyMenu\_HandleClick()}{GooeyMenu\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_ab9b7cccbb25edd99a7f4b3ef105c5572} 
+void Gooey\+Menu\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles menu item click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the menu. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_abaa0a8fc4c8b4b4304e401ffaece7e65}\index{gooey.h@{gooey.h}!GooeyMenu\_Set@{GooeyMenu\_Set}}
+\index{GooeyMenu\_Set@{GooeyMenu\_Set}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyMenu\_Set()}{GooeyMenu\_Set()}}
+{\footnotesize\ttfamily \label{gooey_8h_abaa0a8fc4c8b4b4304e401ffaece7e65} 
+\mbox{\hyperlink{structGooeyMenu}{Gooey\+Menu}} \texorpdfstring{$\ast$}{*} Gooey\+Menu\+\_\+\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Sets the menu for the Gooey window. 
+
+Initializes and sets the menu for the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to set the menu for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyMenu}{Gooey\+Menu} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a9e5d95abccd358771562c49b6521d6e4}\index{gooey.h@{gooey.h}!GooeyMenuChild\_AddElement@{GooeyMenuChild\_AddElement}}
+\index{GooeyMenuChild\_AddElement@{GooeyMenuChild\_AddElement}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyMenuChild\_AddElement()}{GooeyMenuChild\_AddElement()}}
+{\footnotesize\ttfamily \label{gooey_8h_a9e5d95abccd358771562c49b6521d6e4} 
+void Gooey\+Menu\+Child\+\_\+\+Add\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}} \texorpdfstring{$\ast$}{*}}]{child}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)()}\end{DoxyParamCaption})}
+
+\Hypertarget{gooey_8h_a9f44c3306cd6a0c93028f9eef6c70970}\index{gooey.h@{gooey.h}!GooeyRadioButton\_Add@{GooeyRadioButton\_Add}}
+\index{GooeyRadioButton\_Add@{GooeyRadioButton\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButton\_Add()}{GooeyRadioButton\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_a9f44c3306cd6a0c93028f9eef6c70970} 
+\mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}} \texorpdfstring{$\ast$}{*} Gooey\+Radio\+Button\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(bool selected)}\end{DoxyParamCaption})}
+
+
+
+Adds a radio button to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the radio button to. \\
+\hline
+{\em x} & The x-\/coordinate of the radio button\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the radio button\textquotesingle{}s position. \\
+\hline
+{\em label} & The label for the radio button. \\
+\hline
+{\em callback} & The callback function to call when the radio button is clicked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyRadioButton}{Gooey\+Radio\+Button} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96}\index{gooey.h@{gooey.h}!GooeyRadioButton\_HandleClick@{GooeyRadioButton\_HandleClick}}
+\index{GooeyRadioButton\_HandleClick@{GooeyRadioButton\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButton\_HandleClick()}{GooeyRadioButton\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96} 
+bool Gooey\+Radio\+Button\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles radio button click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the radio button. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the radio button was clicked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a6d20f57fb42f874e6a7a281bdfa1ed20}\index{gooey.h@{gooey.h}!GooeySlider\_Add@{GooeySlider\_Add}}
+\index{GooeySlider\_Add@{GooeySlider\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeySlider\_Add()}{GooeySlider\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_a6d20f57fb42f874e6a7a281bdfa1ed20} 
+\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*} Gooey\+Slider\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{long}]{min\+\_\+value}{, }\item[{long}]{max\+\_\+value}{, }\item[{bool}]{show\+\_\+hints}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(long value)}\end{DoxyParamCaption})}
+
+
+
+Adds a slider to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the slider to. \\
+\hline
+{\em x} & The x-\/coordinate of the slider\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the slider\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the slider. \\
+\hline
+{\em min\+\_\+value} & The minimum value of the slider. \\
+\hline
+{\em max\+\_\+value} & The maximum value of the slider. \\
+\hline
+{\em show\+\_\+hints} & Whether to show hints for the slider. \\
+\hline
+{\em callback} & The callback function to call when the slider value changes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeySlider}{Gooey\+Slider} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a0c2beea09ecd3d246b572414d42ca124}\index{gooey.h@{gooey.h}!GooeySlider\_getValue@{GooeySlider\_getValue}}
+\index{GooeySlider\_getValue@{GooeySlider\_getValue}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeySlider\_getValue()}{GooeySlider\_getValue()}}
+{\footnotesize\ttfamily \label{gooey_8h_a0c2beea09ecd3d246b572414d42ca124} 
+long Gooey\+Slider\+\_\+get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}}]{slider}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current value of the slider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slider} & The slider to get the value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current value of the slider. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a59390d9f8d7866f07676776c7cd86b43}\index{gooey.h@{gooey.h}!GooeySlider\_HandleDrag@{GooeySlider\_HandleDrag}}
+\index{GooeySlider\_HandleDrag@{GooeySlider\_HandleDrag}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeySlider\_HandleDrag()}{GooeySlider\_HandleDrag()}}
+{\footnotesize\ttfamily \label{gooey_8h_a59390d9f8d7866f07676776c7cd86b43} 
+bool Gooey\+Slider\+\_\+\+Handle\+Drag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles slider drag events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the slider. \\
+\hline
+{\em x} & The x-\/coordinate of the drag event. \\
+\hline
+{\em y} & The y-\/coordinate of the drag event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the slider was dragged, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ab1b0c02cedabf1251d3ad0ba4b586e69}\index{gooey.h@{gooey.h}!GooeySlider\_setValue@{GooeySlider\_setValue}}
+\index{GooeySlider\_setValue@{GooeySlider\_setValue}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeySlider\_setValue()}{GooeySlider\_setValue()}}
+{\footnotesize\ttfamily \label{gooey_8h_ab1b0c02cedabf1251d3ad0ba4b586e69} 
+void Gooey\+Slider\+\_\+set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}}]{slider}{, }\item[{long}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the value of the slider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slider} & The slider to set the value for. \\
+\hline
+{\em value} & The new value for the slider. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_a2ded793d8d01ba6b66b187cd4a2c0825}\index{gooey.h@{gooey.h}!GooeyTextBox\_Add@{GooeyTextBox\_Add}}
+\index{GooeyTextBox\_Add@{GooeyTextBox\_Add}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextBox\_Add()}{GooeyTextBox\_Add()}}
+{\footnotesize\ttfamily \label{gooey_8h_a2ded793d8d01ba6b66b187cd4a2c0825} 
+\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*} Gooey\+Text\+Box\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{on\+Text\+Changed~}{)(char \texorpdfstring{$\ast$}{*}text)}\end{DoxyParamCaption})}
+
+
+
+Adds a textbox to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to add the textbox to. \\
+\hline
+{\em x} & The x-\/coordinate of the textbox\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the textbox\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the textbox. \\
+\hline
+{\em height} & The height of the textbox. \\
+\hline
+{\em on\+Text\+Changed} & The callback function to call when the text changes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyTextbox}{Gooey\+Textbox} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a24b5bc450dab5274924a91ec791b83f6}\index{gooey.h@{gooey.h}!GooeyTextbox\_Draw@{GooeyTextbox\_Draw}}
+\index{GooeyTextbox\_Draw@{GooeyTextbox\_Draw}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextbox\_Draw()}{GooeyTextbox\_Draw()}}
+{\footnotesize\ttfamily \label{gooey_8h_a24b5bc450dab5274924a91ec791b83f6} 
+void Gooey\+Textbox\+\_\+\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Draws the textbox on the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to draw the textbox on. \\
+\hline
+{\em index} & The index of the textbox to draw. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_af95a42f059ca3662763f449ae666930f}\index{gooey.h@{gooey.h}!GooeyTextbox\_getText@{GooeyTextbox\_getText}}
+\index{GooeyTextbox\_getText@{GooeyTextbox\_getText}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextbox\_getText()}{GooeyTextbox\_getText()}}
+{\footnotesize\ttfamily \label{gooey_8h_af95a42f059ca3662763f449ae666930f} 
+const char \texorpdfstring{$\ast$}{*} Gooey\+Textbox\+\_\+get\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}}]{textbox}{}\end{DoxyParamCaption})}
+
+
+
+Gets the text of the textbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em textbox} & The textbox to retrieve text from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current text of the textbox. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a244c53f31079de3b2398120756b908a8}\index{gooey.h@{gooey.h}!GooeyTextbox\_HandleClick@{GooeyTextbox\_HandleClick}}
+\index{GooeyTextbox\_HandleClick@{GooeyTextbox\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextbox\_HandleClick()}{GooeyTextbox\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_a244c53f31079de3b2398120756b908a8} 
+bool Gooey\+Textbox\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles textbox click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the textbox. \\
+\hline
+{\em x} & The x-\/coordinate of the click event. \\
+\hline
+{\em y} & The y-\/coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the textbox was clicked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a053ef35a8eccf7fde4064355283225fb}\index{gooey.h@{gooey.h}!GooeyTextbox\_HandleKeyPress@{GooeyTextbox\_HandleKeyPress}}
+\index{GooeyTextbox\_HandleKeyPress@{GooeyTextbox\_HandleKeyPress}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextbox\_HandleKeyPress()}{GooeyTextbox\_HandleKeyPress()}}
+{\footnotesize\ttfamily \label{gooey_8h_a053ef35a8eccf7fde4064355283225fb} 
+void Gooey\+Textbox\+\_\+\+Handle\+Key\+Press (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{XKey\+Event \texorpdfstring{$\ast$}{*}}]{key\+\_\+event}{}\end{DoxyParamCaption})}
+
+
+
+Handles key press events for the textbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the textbox. \\
+\hline
+{\em key\+\_\+event} & The key event to handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_aa4e81eec9ad34c94609c475f3a19eb34}\index{gooey.h@{gooey.h}!GooeyTextbox\_setText@{GooeyTextbox\_setText}}
+\index{GooeyTextbox\_setText@{GooeyTextbox\_setText}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyTextbox\_setText()}{GooeyTextbox\_setText()}}
+{\footnotesize\ttfamily \label{gooey_8h_aa4e81eec9ad34c94609c475f3a19eb34} 
+void Gooey\+Textbox\+\_\+set\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}}]{textbox}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets the text of the textbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em textbox} & The textbox to set the text for. \\
+\hline
+{\em text} & The new text to set in the textbox. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_a83e8b293bf59a1b632f6fcfa7e29fbff}\index{gooey.h@{gooey.h}!GooeyWindow\_Cleanup@{GooeyWindow\_Cleanup}}
+\index{GooeyWindow\_Cleanup@{GooeyWindow\_Cleanup}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_Cleanup()}{GooeyWindow\_Cleanup()}}
+{\footnotesize\ttfamily \label{gooey_8h_a83e8b293bf59a1b632f6fcfa7e29fbff} 
+void Gooey\+Window\+\_\+\+Cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gooey_8h_a5bb530110f0f6dcde2f3f3cd7c179efc}\index{gooey.h@{gooey.h}!GooeyWindow\_Create@{GooeyWindow\_Create}}
+\index{GooeyWindow\_Create@{GooeyWindow\_Create}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_Create()}{GooeyWindow\_Create()}}
+{\footnotesize\ttfamily \label{gooey_8h_a5bb530110f0f6dcde2f3f3cd7c179efc} 
+\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} Gooey\+Window\+\_\+\+Create (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new Gooey window. 
+
+This function initializes a new window with the given title, width, and height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the window. \\
+\hline
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{structGooeyWindow}{Gooey\+Window} object. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a95d040fc9674398c95ace8a818ed7318}\index{gooey.h@{gooey.h}!GooeyWindow\_GetAttr@{GooeyWindow\_GetAttr}}
+\index{GooeyWindow\_GetAttr@{GooeyWindow\_GetAttr}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_GetAttr()}{GooeyWindow\_GetAttr()}}
+{\footnotesize\ttfamily \label{gooey_8h_a95d040fc9674398c95ace8a818ed7318} 
+\mbox{\hyperlink{structGooeyWindowAttr}{Gooey\+Window\+Attr}} Gooey\+Window\+\_\+\+Get\+Attr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the attributes of the specified Gooey window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to retrieve attributes from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The attributes of the Gooey window. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_af96b9c3c6d79d3107251ebb49a0048f0}\index{gooey.h@{gooey.h}!GooeyWindow\_HandleMouseMotion@{GooeyWindow\_HandleMouseMotion}}
+\index{GooeyWindow\_HandleMouseMotion@{GooeyWindow\_HandleMouseMotion}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_HandleMouseMotion()}{GooeyWindow\_HandleMouseMotion()}}
+{\footnotesize\ttfamily \label{gooey_8h_af96b9c3c6d79d3107251ebb49a0048f0} 
+void Gooey\+Window\+\_\+\+Handle\+Mouse\+Motion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gooey_8h_ae5030980075ccfceb3e805c5b6f5ff8a}\index{gooey.h@{gooey.h}!GooeyWindow\_Redraw@{GooeyWindow\_Redraw}}
+\index{GooeyWindow\_Redraw@{GooeyWindow\_Redraw}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_Redraw()}{GooeyWindow\_Redraw()}}
+{\footnotesize\ttfamily \label{gooey_8h_ae5030980075ccfceb3e805c5b6f5ff8a} 
+void Gooey\+Window\+\_\+\+Redraw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Redraws the window. 
+
+Forces the window to be redrawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to redraw. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gooey_8h_a646a3a0f8d98b971ab6d8af4f822ac31}\index{gooey.h@{gooey.h}!GooeyWindow\_Run@{GooeyWindow\_Run}}
+\index{GooeyWindow\_Run@{GooeyWindow\_Run}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_Run()}{GooeyWindow\_Run()}}
+{\footnotesize\ttfamily \label{gooey_8h_a646a3a0f8d98b971ab6d8af4f822ac31} 
+void Gooey\+Window\+\_\+\+Run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Runs the Gooey window. 
+
+This function enters the main event loop and begins processing user input and window events for the provided Gooey window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window to run. \\
+\hline
+\end{DoxyParams}

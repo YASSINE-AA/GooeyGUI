@@ -16,6 +16,7 @@
 #define SLIDER_WIDTH 100
 #define SLIDER_HEIGHT 5
 #define MAX_MENU_CHILDREN 10
+#define MAX_RADIO_BUTTONS 10
 
 #define COLOR_WHITE 0xFFFFFF
 #define COLOR_BLACK 0x000000
@@ -98,14 +99,19 @@ typedef struct
   void (*callback)(bool checked);
 } GooeyCheckbox;
 
-typedef struct
-{
-  GooeyWidget core;
-  int radius;
-  bool selected;
-  char label[256];
-  void (*callback)(bool selected);
+
+typedef struct {
+    GooeyWidget core;
+    bool selected;
+    char label[256];
+    int radius;
+    void (*callback)(bool selected);
 } GooeyRadioButton;
+
+typedef struct {
+    GooeyRadioButton buttons[MAX_RADIO_BUTTONS];
+    int button_count;
+} GooeyRadioButtonGroup;
 
 typedef struct
 {
@@ -173,6 +179,7 @@ typedef struct
   GooeyRadioButton radio_buttons[MAX_WIDGETS];
   GooeySlider sliders[MAX_WIDGETS];
   GooeyDropdown dropdowns[MAX_WIDGETS];
+  GooeyRadioButtonGroup radio_button_groups[MAX_WIDGETS];
   GooeyTextbox textboxes[MAX_WIDGETS];
   GooeyLayout layouts[MAX_WIDGETS];
   GooeyMenu *menu;
@@ -185,60 +192,350 @@ typedef struct
   int dropdown_count;
   int textboxes_count;
   int layout_count;
+  int radio_button_group_count;
 
   XFontStruct *font;
 } GooeyWindow;
-
+/**
+ * @brief Creates a new Gooey window.
+ * 
+ * This function initializes a new window with the given title, width, and height.
+ * 
+ * @param title The title of the window.
+ * @param width The width of the window.
+ * @param height The height of the window.
+ * @return A new GooeyWindow object.
+ */
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height);
+
+/**
+ * @brief Runs the Gooey window.
+ * 
+ * This function enters the main event loop and begins processing user input
+ * and window events for the provided Gooey window.
+ * 
+ * @param win The window to run.
+ */
 void GooeyWindow_Run(GooeyWindow *win);
+
+/**
+ * @brief Retrieves the attributes of the specified Gooey window.
+ * 
+ * @param win The window to retrieve attributes from.
+ * @return The attributes of the Gooey window.
+ */
 GooeyWindowAttr GooeyWindow_GetAttr(GooeyWindow *win);
 
+/**
+ * @brief Creates a layout for the specified window.
+ * 
+ * Initializes a new layout with a specified layout type, position, and size
+ * within the window.
+ * 
+ * @param win The window to attach the layout to.
+ * @param layout_type The type of layout (e.g., grid, box).
+ * @param x The x-coordinate of the layout's position.
+ * @param y The y-coordinate of the layout's position.
+ * @param width The width of the layout.
+ * @param height The height of the layout.
+ * @return A new GooeyLayout object.
+ */
 GooeyLayout *GooeyLayout_Create(GooeyWindow *win, GooeyLayoutType layout_type,
                                 int x, int y, int width, int height);
+
+/**
+ * @brief Adds a child widget to a layout.
+ * 
+ * @param layout The layout to which the widget will be added.
+ * @param widget The widget to add to the layout.
+ */
 void GooeyLayout_AddChild(GooeyLayout *layout, void *widget);
+
+/**
+ * @brief Builds the layout, arranging all child widgets according to the layout type.
+ * 
+ * @param layout The layout to build.
+ */
 void GooeyLayout_Build(GooeyLayout *layout);
 
+/**
+ * @brief Sets the menu for the Gooey window.
+ * 
+ * Initializes and sets the menu for the given window.
+ * 
+ * @param win The window to set the menu for.
+ * @return A new GooeyMenu object.
+ */
 GooeyMenu *GooeyMenu_Set(GooeyWindow *win);
+
+/**
+ * @brief Draws the menu for the window.
+ * 
+ * Renders the menu on the window.
+ * 
+ * @param win The window to draw the menu for.
+ */
 void GooeyMenu_Draw(GooeyWindow *win);
+
+/**
+ * @brief Adds a child menu item to the window's menu.
+ * 
+ * @param win The window to add the menu item to.
+ * @param title The title of the menu item.
+ * @return A new GooeyMenuChild object.
+ */
 GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title);
+
+/**
+ * @brief Handles menu item click events.
+ * 
+ * @param win The window containing the menu.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ */
 void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y);
+
+/**
+ * @brief Adds a button to the window.
+ * 
+ * @param win The window to add the button to.
+ * @param label The label to display on the button.
+ * @param x The x-coordinate of the button's position.
+ * @param y The y-coordinate of the button's position.
+ * @param width The width of the button.
+ * @param height The height of the button.
+ * @param callback The callback function to call when the button is clicked.
+ * @return A new GooeyButton object.
+ */
 GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
                              int width, int height, void (*callback)());
+
+/**
+ * @brief Handles button click events.
+ * 
+ * @param win The window containing the button.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the button was clicked, false otherwise.
+ */
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y);
+
+/**
+ * @brief Sets the text of the button.
+ * 
+ * @param button The button to set the text for.
+ * @param text The new text to display on the button.
+ */
 void GooeyButton_setText(GooeyButton *button, const char *text);
 
+/**
+ * @brief Adds a textbox to the window.
+ * 
+ * @param win The window to add the textbox to.
+ * @param x The x-coordinate of the textbox's position.
+ * @param y The y-coordinate of the textbox's position.
+ * @param width The width of the textbox.
+ * @param height The height of the textbox.
+ * @param onTextChanged The callback function to call when the text changes.
+ * @return A new GooeyTextbox object.
+ */
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, void (*onTextChanged)(char *text));
+
+/**
+ * @brief Draws the textbox on the window.
+ * 
+ * @param win The window to draw the textbox on.
+ * @param index The index of the textbox to draw.
+ */
 void GooeyTextbox_Draw(GooeyWindow *win, int index);
+
+/**
+ * @brief Handles textbox click events.
+ * 
+ * @param win The window containing the textbox.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the textbox was clicked, false otherwise.
+ */
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y);
+
+/**
+ * @brief Handles key press events for the textbox.
+ * 
+ * @param win The window containing the textbox.
+ * @param key_event The key event to handle.
+ */
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, XKeyEvent *key_event);
+
+/**
+ * @brief Gets the text of the textbox.
+ * 
+ * @param textbox The textbox to retrieve text from.
+ * @return The current text of the textbox.
+ */
 const char *GooeyTextbox_getText(GooeyTextbox *textbox);
+
+/**
+ * @brief Sets the text of the textbox.
+ * 
+ * @param textbox The textbox to set the text for.
+ * @param text The new text to set in the textbox.
+ */
 void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text);
 
+/**
+ * @brief Redraws the window.
+ * 
+ * Forces the window to be redrawn.
+ * 
+ * @param win The window to redraw.
+ */
 void GooeyWindow_Redraw(GooeyWindow *win);
+
+/**
+ * @brief Adds a label to the window.
+ * 
+ * @param win The window to add the label to.
+ * @param text The text to display on the label.
+ * @param x The x-coordinate of the label's position.
+ * @param y The y-coordinate of the label's position.
+ * @return A new GooeyLabel object.
+ */
 GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
+
+/**
+ * @brief Sets the text of the label.
+ * 
+ * @param label The label to set the text for.
+ * @param text The new text to display on the label.
+ */
 void GooeyLabel_setText(GooeyLabel *label, const char *text);
 
+/**
+ * @brief Adds a checkbox to the window.
+ * 
+ * @param win The window to add the checkbox to.
+ * @param x The x-coordinate of the checkbox's position.
+ * @param y The y-coordinate of the checkbox's position.
+ * @param label The label for the checkbox.
+ * @param callback The callback function to call when the checkbox is clicked.
+ * @return A new GooeyCheckbox object.
+ */
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
                                  void (*callback)(bool checked));
+
+/**
+ * @brief Handles checkbox click events.
+ * 
+ * @param win The window containing the checkbox.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the checkbox was clicked, false otherwise.
+ */
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y);
+
+/**
+ * @brief Adds a radio button to the window.
+ * 
+ * @param win The window to add the radio button to.
+ * @param x The x-coordinate of the radio button's position.
+ * @param y The y-coordinate of the radio button's position.
+ * @param label The label for the radio button.
+ * @param callback The callback function to call when the radio button is clicked.
+ * @return A new GooeyRadioButton object.
+ */
 GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
                                        char *label,
                                        void (*callback)(bool selected));
+
+/**
+ * @brief Handles radio button click events.
+ * 
+ * @param win The window containing the radio button.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the radio button was clicked, false otherwise.
+ */
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y);
 
+/**
+ * @brief Adds a slider to the window.
+ * 
+ * @param win The window to add the slider to.
+ * @param x The x-coordinate of the slider's position.
+ * @param y The y-coordinate of the slider's position.
+ * @param width The width of the slider.
+ * @param min_value The minimum value of the slider.
+ * @param max_value The maximum value of the slider.
+ * @param show_hints Whether to show hints for the slider.
+ * @param callback The callback function to call when the slider value changes.
+ * @return A new GooeySlider object.
+ */
 GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
                              long min_value, long max_value, bool show_hints,
                              void (*callback)(long value));
+
+/**
+ * @brief Handles slider drag events.
+ * 
+ * @param win The window containing the slider.
+ * @param x The x-coordinate of the drag event.
+ * @param y The y-coordinate of the drag event.
+ * @return True if the slider was dragged, false otherwise.
+ */
 bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
+
+/**
+ * @brief Gets the current value of the slider.
+ * 
+ * @param slider The slider to get the value from.
+ * @return The current value of the slider.
+ */
 long GooeySlider_getValue(GooeySlider *slider);
+
+/**
+ * @brief Sets the value of the slider.
+ * 
+ * @param slider The slider to set the value for.
+ * @param value The new value for the slider.
+ */
 void GooeySlider_setValue(GooeySlider *slider, long value);
 
+/**
+ * @brief Adds a dropdown menu to the window.
+ * 
+ * @param win The window to add the dropdown menu to.
+ * @param x The x-coordinate of the dropdown's position.
+ * @param y The y-coordinate of the dropdown's position.
+ * @param width The width of the dropdown menu.
+ * @param height The height of the dropdown menu.
+ * @param options The list of options for the dropdown menu.
+ * @param num_options The number of options.
+ * @param callback The callback function to call when an option is selected.
+ * @return A new GooeyDropdown object.
+ */
 GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
                                  int height, const char **options,
                                  int num_options,
                                  void (*callback)(int selected_index));
+
+/**
+ * @brief Handles dropdown menu click events.
+ * 
+ * @param win The window containing the dropdown menu.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the dropdown menu was clicked, false otherwise.
+ */
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y);
+
+GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win);
+void GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
+void GooeyRadioButtonGroup_Draw(GooeyWindow *win);
+bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y);
+
+
 
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
 {
@@ -275,6 +572,7 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
   win.label_count = 0;
   win.checkbox_count = 0;
   win.radio_button_count = 0;
+  win.radio_button_group_count = 0;
   win.slider_count = 0;
   win.dropdown_count = 0;
   win.textboxes_count = 0;
@@ -700,6 +998,97 @@ void GooeyMenuChild_AddElement(GooeyMenuChild *child, char *title,
   child->callbacks[child->menu_elements_count] = callback;
   child->menu_elements_count++;
 }
+GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win)
+{
+    if (win->radio_button_group_count >= MAX_WIDGETS)
+    {
+        fprintf(stderr, "Cannot create more radio button groups. Maximum limit reached.\n");
+        return NULL;
+    }
+    GooeyRadioButtonGroup *group = &win->radio_button_groups[win->radio_button_group_count++];
+    group->button_count = 0;
+    return group;
+}
+
+void GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool))
+{
+    if (group->button_count >= MAX_RADIO_BUTTONS)
+    {
+        fprintf(stderr, "Cannot add more radio buttons to the group. Maximum limit reached.\n");
+        return;
+    }
+    GooeyRadioButton *button = &group->buttons[group->button_count++];
+    button->core.x = x;
+    button->core.y = y;
+    button->selected = false;
+    strncpy(button->label, label, sizeof(button->label) - 1);
+    button->callback = callback;
+}
+void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
+{
+    for (int i = 0; i < win->radio_button_group_count; ++i)
+    {
+        GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
+        for (int j = 0; j < group->button_count; ++j)
+        {
+            GooeyRadioButton *button = &group->buttons[j];
+            int button_center_x = button->core.x + RADIO_BUTTON_RADIUS; 
+            int button_center_y = button->core.y + RADIO_BUTTON_RADIUS;
+
+            XSetForeground(win->display, win->gc, COLOR_BLACK);
+            int label_width = XTextWidth(win->font, button->label, strlen(button->label));
+            int label_x = button->core.x + RADIO_BUTTON_RADIUS * 2 + 10;  
+            int label_y = button->core.y + RADIO_BUTTON_RADIUS + 5;  
+            XDrawString(win->display, win->window, win->gc, label_x, label_y, button->label, strlen(button->label));
+
+            XSetForeground(win->display, win->gc, COLOR_GRAY);
+            XFillArc(win->display, win->window, win->gc, button->core.x, button->core.y, RADIO_BUTTON_RADIUS * 2, RADIO_BUTTON_RADIUS * 2, 0, 360 * 64);
+
+            if (button->selected)
+            {
+                XSetForeground(win->display, win->gc, COLOR_BLUE); 
+                XFillArc(win->display, win->window, win->gc, button->core.x + 5, button->core.y + 5, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+            }
+            else
+            {
+                XSetForeground(win->display, win->gc, COLOR_WHITE);  
+                XDrawArc(win->display, win->window, win->gc, button->core.x + 5, button->core.y + 5, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+            }
+        }
+    }
+
+}
+
+bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y)
+{
+    for (int i = 0; i < win->radio_button_group_count; ++i)
+    {
+        GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
+        for (int j = 0; j < group->button_count; ++j)
+        {
+            GooeyRadioButton *button = &group->buttons[j];
+            int dx = x - (button->core.x + RADIO_BUTTON_RADIUS); 
+            int dy = y - (button->core.y + RADIO_BUTTON_RADIUS);
+
+            if (dx * dx + dy * dy <= (RADIO_BUTTON_RADIUS + 10) * (RADIO_BUTTON_RADIUS + 10))  
+            {
+                for (int k = 0; k < group->button_count; ++k)
+                {
+                    group->buttons[k].selected = false;
+                }
+
+                button->selected = true;
+
+                if (button->callback)
+                {
+                    button->callback(true);
+                }
+                return true;  
+            }
+        }
+    }
+    return false;
+}
 
 void GooeyWindow_Redraw(GooeyWindow *win)
 {
@@ -721,56 +1110,31 @@ void GooeyWindow_Redraw(GooeyWindow *win)
                 label->core.y, label->text, strlen(label->text));
   }
   for (int i = 0; i < win->checkbox_count; ++i)
-  {
+{
     GooeyCheckbox *checkbox = &win->checkboxes[i];
 
     XSetForeground(win->display, win->gc, COLOR_BLACK);
+    int label_width = XTextWidth(win->font, checkbox->label, strlen(checkbox->label));
+    int label_x = checkbox->core.x + CHECKBOX_SIZE + 10;  
+    int label_y = checkbox->core.y + (CHECKBOX_SIZE / 2) + 5;  
+    XDrawString(win->display, win->window, win->gc, label_x, label_y, checkbox->label, strlen(checkbox->label));
 
-    XDrawString(win->display, win->window, win->gc,
-                checkbox->core.x + CHECKBOX_SIZE + 10, checkbox->core.y + 14,
-                checkbox->label, strlen(checkbox->label));
+    XSetForeground(win->display, win->gc, COLOR_BLACK);  
+    XDrawRectangle(win->display, win->window, win->gc, checkbox->core.x, checkbox->core.y,
+                   checkbox->core.width, checkbox->core.height);
+    XSetForeground(win->display, win->gc, COLOR_WHITE);  
+    XFillRectangle(win->display, win->window, win->gc, checkbox->core.x + 1, checkbox->core.y + 1,
+                   checkbox->core.width - 2, checkbox->core.height - 2); 
 
-    XDrawRectangle(win->display, win->window, win->gc, checkbox->core.x,
-                   checkbox->core.y, checkbox->core.width,
-                   checkbox->core.height);
     if (checkbox->checked)
     {
-      XSetForeground(win->display, win->gc, COLOR_BLUE);
-      XFillRectangle(win->display, win->window, win->gc, checkbox->core.x + 5,
-                     checkbox->core.y + 5, checkbox->core.width - 10,
-                     checkbox->core.height - 10);
+        XSetForeground(win->display, win->gc, COLOR_BLUE);
+        XFillRectangle(win->display, win->window, win->gc, checkbox->core.x + 5, checkbox->core.y + 5,
+                       checkbox->core.width - 10, checkbox->core.height - 10); 
     }
-  }
+}
 
-  for (int i = 0; i < win->radio_button_count; ++i)
-  {
-    GooeyRadioButton *radio_button = &win->radio_buttons[i];
-
-    XSetForeground(win->display, win->gc, COLOR_BLACK);
-
-    XDrawString(win->display, win->window, win->gc, radio_button->core.x + 17,
-                radio_button->core.y + 4, radio_button->label,
-                strlen(radio_button->label));
-
-    XDrawArc(win->display, win->window, win->gc,
-             radio_button->core.x - radio_button->radius,
-             radio_button->core.y - radio_button->radius,
-             2 * radio_button->radius, 2 * radio_button->radius, 0, 360 * 64);
-
-    if (radio_button->selected)
-    {
-      XSetForeground(win->display, win->gc, COLOR_BLUE);
-
-      XFillArc(win->display, win->window, win->gc,
-               radio_button->core.x - radio_button->radius / 2,
-               radio_button->core.y - radio_button->radius / 2,
-               radio_button->radius, radio_button->radius, 0, 360 * 64);
-    }
-    else
-    {
-      XSetForeground(win->display, win->gc, COLOR_WHITE);
-    }
-  }
+  GooeyRadioButtonGroup_Draw(win);
 
   for (int i = 0; i < win->slider_count; ++i)
   {
@@ -1148,6 +1512,9 @@ void GooeyWindow_Run(GooeyWindow *win)
       GooeyMenu_HandleClick(win, x, y);
       if (GooeyButton_HandleClick(win, x, y))
       {
+        GooeyWindow_Redraw(win);
+      }
+      else if(GooeyRadioButtonGroup_HandleClick(win, x, y)) {
         GooeyWindow_Redraw(win);
       }
       else if (GooeyCheckbox_HandleClick(win, x, y))

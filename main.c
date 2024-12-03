@@ -1,66 +1,32 @@
 #include "gooey.h"
-#include <stdio.h>
 
-GooeyTextbox *textbox = NULL;
-GooeySlider *slider = NULL;
-
-void onButtonClick()
+void onRadioButtonSelected(bool selected)
 {
-    printf("Button clicked! \n");
-}
-
-void onCheckboxToggle(bool checked)
-{
-    printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
-}
-
-void onRadioButtonSelect(bool selected)
-{
-    printf("Radio button selected: %s\n", selected ? "Yes" : "No");
-}
-
-void onSliderChange(int value)
-{
-    printf("Slider value changed: %d\n", value);
-}
-
-void onTest2()
-{
-    printf("%ld\n", GooeySlider_getValue(slider));
-}
-
-void onTest1()
-{
-    printf("test1\n");
+    if (selected)
+    {
+        printf("Radio button selected\n");
+    }
 }
 
 int main()
 {
-    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
 
-    GooeyMenu_Set(&win);
-    GooeyMenuChild *child = GooeyMenu_AddChild(&win, "File");
-    GooeyMenuChild_AddElement(child, "test1", onTest1);
+    GooeyWindow win = GooeyWindow_Create("Radio Button Group Example", 400, 300);
 
-    GooeyMenuChild *child_ = GooeyMenu_AddChild(&win, "Edit");
-    GooeyMenuChild_AddElement(child_, "test2", onTest2);
+    GooeyRadioButtonGroup *group1 = GooeyRadioButtonGroup_Create(&win);
+    GooeyRadioButtonGroup *group2 = GooeyRadioButtonGroup_Create(&win);
 
-    GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 200, 200);
-    GooeyWindowAttr attr = GooeyWindow_GetAttr(&win);
-    slider =GooeySlider_Add(&win, 0, 0, 200,0, 100, true, NULL);
-    GooeyLayout_AddChild(layout, slider);
-    GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick));
-    GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, NULL));
-    GooeyLabel *label =  GooeyLabel_Add(&win, "Click Me", 50, 50);
-    GooeyLayout_AddChild(layout,label);
-    textbox = GooeyTextBox_Add(&win, 0, 0, 60, 20, NULL);
-    GooeyLayout_AddChild(layout, textbox);
+    GooeyRadioButtonGroup_AddChild(group1, 50, 50, "Option 1", onRadioButtonSelected);
+    GooeyRadioButtonGroup_AddChild(group1, 50, 100, "Option 2", onRadioButtonSelected);
+    GooeyRadioButtonGroup_AddChild(group1, 50, 150, "Option 3", onRadioButtonSelected);
 
-    GooeyLayout_Build(layout);
+    GooeyRadioButtonGroup_AddChild(group2, 200, 50, "Option A", onRadioButtonSelected);
+    GooeyRadioButtonGroup_AddChild(group2, 200, 100, "Option B", onRadioButtonSelected);
+
+    GooeyCheckbox_Add(&win, 20, 20, "hello", NULL);
 
     GooeyWindow_Run(&win);
 
     GooeyWindow_Cleanup(&win);
-
     return 0;
 }
