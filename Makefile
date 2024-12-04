@@ -3,7 +3,8 @@ C_BACKENDS := ./backends
 BUILD_DIR := ./build
 
 SRC_FILES :=  $(C_SRC)/main.c \
-			  $(C_BACKENDS)/x11_backend.c
+			  $(C_BACKENDS)/x11_backend.c \
+			  $(C_SRC)/tiny.c
 
 OBJS_gui := $(patsubst $(C_BACKENDS)/%.c, $(BUILD_DIR)/%.o, $(SRC_FILES))
 

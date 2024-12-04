@@ -17,6 +17,7 @@ typedef struct {
         } click; 
 
         struct {
+            unsigned int state;
             int keycode; 
         } key_press; 
 

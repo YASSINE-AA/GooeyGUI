@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#
 
 typedef struct
 {
@@ -18,7 +19,7 @@ typedef struct
 
 static GooeyBackendContext ctx = {0};
 
-bool GooeyBackend_Init()
+bool x11_init()
 {
     ctx.display = XOpenDisplay(NULL);
     if (!ctx.display)
@@ -37,7 +38,7 @@ bool GooeyBackend_Init()
     return true;
 }
 
-void GooeyBackend_Cleanup()
+void x11_cleanup()
 {
     if (ctx.font)
     {
@@ -50,7 +51,7 @@ void GooeyBackend_Cleanup()
 
     memset(&ctx, 0, sizeof(ctx));
 }
-GooeyWindow GooeyBackend_CreateWindow(const char *title, int width, int height)
+GooeyWindow x11_create_window(const char *title, int width, int height)
 {
     GooeyWindow window;
 
@@ -81,7 +82,7 @@ GooeyWindow GooeyBackend_CreateWindow(const char *title, int width, int height)
     return window;
 }
 
-void GooeyBackend_DestroyWindow()
+void x11_destroy_window()
 {
 
     if (ctx.window)
@@ -90,38 +91,79 @@ void GooeyBackend_DestroyWindow()
     }
 }
 
-void GooeyBackend_Render()
+void x11_render()
 {
     XFlush(ctx.display);
 }
 
-void GooeyBackend_Clear()
+void x11_clear()
 {
     XClearWindow(ctx.display, ctx.window);
 }
+char *x11_get_key_from_code(GooeyEvent *gooey_event)
+{
+    if (gooey_event->type != GOOEY_EVENT_KEY_PRESS)
+    {
+        return NULL;
+    }
 
-void GooeyBackend_SetForeground(unsigned long color)
+    int keycode = gooey_event->data.key_press.keycode;
+    unsigned int modifiers = gooey_event->data.key_press.state;
+
+    XKeyEvent key_event;
+    key_event.display = ctx.display;
+    key_event.window = DefaultRootWindow(ctx.display);
+    key_event.keycode = keycode;
+    key_event.state = modifiers;
+
+    char buf[32];
+    KeySym keysym;
+
+    int len = XLookupString(&key_event, buf, sizeof(buf), &keysym, NULL);
+
+    if (len > 0)
+    {
+
+        if (keysym == XK_BackSpace)
+        {
+            return "Backspace";
+        }
+        else if (keysym == XK_Return)
+        {
+            return "Return";
+        }
+        else
+        {
+            buf[len] = '\0';
+            return strdup(buf);
+        }
+    }
+
+    return NULL;
+}
+
+void x11_set_foreground(unsigned long color)
 {
 
     XSetForeground(ctx.display, ctx.gc,
                    color);
 }
 
-void GooeyBackend_DrawText(int x, int y, const char *text, unsigned long color)
+void x11_draw_text(int x, int y, const char *text, unsigned long color)
 {
 
     XSetForeground(ctx.display, ctx.gc, color);
     XDrawString(ctx.display, ctx.window, ctx.gc, x, y, text, strlen(text));
 }
 
-void GooeyBackend_FillRectangle(int x, int y, int width, int height, unsigned long color)
+void x11_fill_rectangle(int x, int y, int width, int height, unsigned long color)
 {
 
     XSetForeground(ctx.display, ctx.gc, color);
     XFillRectangle(ctx.display, ctx.window, ctx.gc, x, y, width, height);
 }
 
-void GooeyBackend_DrawRectangle(int x, int y, int width, int height, unsigned long color)
+void x11_draw_rectangle(int x, int y, int width, int height, unsigned long color)
 {
 
     XSetForeground(ctx.display, ctx.gc, color);
@@ -129,17 +171,17 @@ void GooeyBackend_DrawRectangle(int x, int y, int width, int height, unsigned lo
                    width, height);
 }
 
-int GooeyBackend_getHeight(GooeyWindow *window)
+int x11_get_window_height(GooeyWindow *window)
 {
     return window->height;
 }
 
-int GooeyBackend_getWidth(GooeyWindow *window)
+int x11_get_window_width(GooeyWindow *window)
 {
     return window->width;
 }
 
-void GooeyBackend_DrawLine(int x1, int y1, int x2, int y2, unsigned long color)
+void x11_draw_line(int x1, int y1, int x2, int y2, unsigned long color)
 {
     XSetForeground(ctx.display, ctx.gc, color);
     XDrawLine(ctx.display, ctx.window, ctx.gc, x1,
@@ -147,10 +189,17 @@ void GooeyBackend_DrawLine(int x1, int y1, int x2, int y2, unsigned long color)
               y2);
 }
 
-int GooeyBackend_GetTextWidth(const char *text, int length){
-    return XTextWidth(ctx.font, text, length);}
+int x11_get_text_width(const char *text, int length)
+{
+    return XTextWidth(ctx.font, text, length);
+}
 
-GooeyEvent GooeyBackend_HandleEvents()
+void x11_fill_arc(int x, int y, int width, int height, int angle1, int angle2)
+{
+    XFillArc(ctx.display, ctx.window, ctx.gc,x, y, width, height, angle1, angle2);
+}
+
+GooeyEvent x11_handle_events()
 {
     XEvent event;
     GooeyEvent gooey_event = {0};
@@ -197,3 +246,24 @@ GooeyEvent GooeyBackend_HandleEvents()
 
     return gooey_event;
 }
+
+GooeyBackend x11_backend = {
+    .CreateWindow = x11_create_window,
+    .HandleEvents = x11_handle_events,
+    .DestroyWindow = x11_destroy_window,
+    .Init = x11_init,
+    .Clear = x11_clear,
+    .Cleanup = x11_cleanup,
+    .Render = x11_render,
+    .SetForeground = x11_set_foreground,
+    .GetKeyFromCode = x11_get_key_from_code,
+    .DrawText = x11_draw_text,
+    .DrawRectangle = x11_draw_rectangle,
+    .FillRectangle = x11_fill_rectangle,
+    .FillArc=x11_fill_arc,
+    .GetHeight = x11_get_window_height,
+    .GetWidth = x11_get_window_width,
+    .DrawLine = x11_draw_line,
+    .GetTextWidth = x11_get_text_width
+    
+    };

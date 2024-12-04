@@ -3,6 +3,9 @@
     "files.associations": {
         "*.old": "cpp",
         "gooey_backend.h": "c",
-        "gooey_types.h": "c"
+        "gooey_types.h": "c",
+        "gooey_colors.h": "c",
+        "gooey_widgets.h": "c",
+        "tiny.h": "c"
     }
 }
