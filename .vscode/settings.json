@@ -1,0 +1,8 @@
+{
+    "docwriter.style": "Doxygen",
+    "files.associations": {
+        "*.old": "cpp",
+        "gooey_backend.h": "c",
+        "gooey_types.h": "c"
+    }
+}

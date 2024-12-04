@@ -25,6 +25,8 @@ struct \mbox{\hyperlink{structGooeyCheckbox}{Gooey\+Checkbox}}
 \item 
 struct \mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}}
 \item 
+struct \mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}}
+\item 
 struct \mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}}
 \item 
 struct \mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}}
@@ -51,6 +53,8 @@ struct \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}}
 \#define \mbox{\hyperlink{gooey_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802}{SLIDER\+\_\+\+HEIGHT}}~5
 \item 
 \#define \mbox{\hyperlink{gooey_8h_ab716b9dc601e22c2a7ba326f9253cf95}{MAX\+\_\+\+MENU\+\_\+\+CHILDREN}}~10
+\item 
+\#define \mbox{\hyperlink{gooey_8h_a565f40c6b84b36d87f177dc5dcd20e1e}{MAX\+\_\+\+RADIO\+\_\+\+BUTTONS}}~10
 \item 
 \#define \mbox{\hyperlink{gooey_8h_a9b44987ffdc2af19b635206b94334b69}{COLOR\+\_\+\+WHITE}}~0x\+FFFFFF
 \item 
@@ -118,9 +122,9 @@ bool \mbox{\hyperlink{gooey_8h_a244c53f31079de3b2398120756b908a8}{Gooey\+Textbox
 \begin{DoxyCompactList}\small\item\em Handles textbox click events. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gooey_8h_a053ef35a8eccf7fde4064355283225fb}{Gooey\+Textbox\+\_\+\+Handle\+Key\+Press}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, XKey\+Event \texorpdfstring{$\ast$}{*}key\+\_\+event)
 \begin{DoxyCompactList}\small\item\em Handles key press events for the textbox. \end{DoxyCompactList}\item 
-const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_af95a42f059ca3662763f449ae666930f}{Gooey\+Textbox\+\_\+get\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a4c468121abadceb7f66e0381872f2c53}{textbox}})
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_af95a42f059ca3662763f449ae666930f}{Gooey\+Textbox\+\_\+get\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}textbox)
 \begin{DoxyCompactList}\small\item\em Gets the text of the textbox. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gooey_8h_aa4e81eec9ad34c94609c475f3a19eb34}{Gooey\+Textbox\+\_\+set\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a4c468121abadceb7f66e0381872f2c53}{textbox}}, const char \texorpdfstring{$\ast$}{*}text)
+void \mbox{\hyperlink{gooey_8h_aa4e81eec9ad34c94609c475f3a19eb34}{Gooey\+Textbox\+\_\+set\+Text}} (\mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}} \texorpdfstring{$\ast$}{*}textbox, const char \texorpdfstring{$\ast$}{*}text)
 \begin{DoxyCompactList}\small\item\em Sets the text of the textbox. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gooey_8h_ae5030980075ccfceb3e805c5b6f5ff8a}{Gooey\+Window\+\_\+\+Redraw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
 \begin{DoxyCompactList}\small\item\em Redraws the window. \end{DoxyCompactList}\item 
@@ -133,21 +137,29 @@ void \mbox{\hyperlink{gooey_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319}{Gooey\+Label\+
 bool \mbox{\hyperlink{gooey_8h_ab5d76b9b2e053b8d9c43aef50ac55693}{Gooey\+Checkbox\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
 \begin{DoxyCompactList}\small\item\em Handles checkbox click events. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a9f44c3306cd6a0c93028f9eef6c70970}{Gooey\+Radio\+Button\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, char \texorpdfstring{$\ast$}{*}label, void(\texorpdfstring{$\ast$}{*}callback)(bool selected))
-\begin{DoxyCompactList}\small\item\em Adds a radio button to the window. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96}{Gooey\+Radio\+Button\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
-\begin{DoxyCompactList}\small\item\em Handles radio button click events. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_a6d20f57fb42f874e6a7a281bdfa1ed20}{Gooey\+Slider\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, int width, long min\+\_\+value, long max\+\_\+value, bool show\+\_\+hints, void(\texorpdfstring{$\ast$}{*}callback)(long value))
 \begin{DoxyCompactList}\small\item\em Adds a slider to the window. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{gooey_8h_a59390d9f8d7866f07676776c7cd86b43}{Gooey\+Slider\+\_\+\+Handle\+Drag}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
 \begin{DoxyCompactList}\small\item\em Handles slider drag events. \end{DoxyCompactList}\item 
-long \mbox{\hyperlink{gooey_8h_a0c2beea09ecd3d246b572414d42ca124}{Gooey\+Slider\+\_\+get\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a3b95c98ef1c30896dc7e7454efa56383}{slider}})
+long \mbox{\hyperlink{gooey_8h_a0c2beea09ecd3d246b572414d42ca124}{Gooey\+Slider\+\_\+get\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}slider)
 \begin{DoxyCompactList}\small\item\em Gets the current value of the slider. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gooey_8h_ab1b0c02cedabf1251d3ad0ba4b586e69}{Gooey\+Slider\+\_\+set\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a3b95c98ef1c30896dc7e7454efa56383}{slider}}, long value)
+void \mbox{\hyperlink{gooey_8h_ab1b0c02cedabf1251d3ad0ba4b586e69}{Gooey\+Slider\+\_\+set\+Value}} (\mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}} \texorpdfstring{$\ast$}{*}slider, long value)
 \begin{DoxyCompactList}\small\item\em Sets the value of the slider. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_ac88c3eb373206811e02e639af630674e}{Gooey\+Dropdown\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, int width, int height, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}options, int num\+\_\+options, void(\texorpdfstring{$\ast$}{*}callback)(int selected\+\_\+index))
 \begin{DoxyCompactList}\small\item\em Adds a dropdown menu to the window. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{gooey_8h_ac25f887efd42f10ccc2fa5de639567a4}{Gooey\+Dropdown\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
 \begin{DoxyCompactList}\small\item\em Handles dropdown menu click events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gooey_8h_ad9b1dfefb7db732a5eadc16d457054bb}{Gooey\+Radio\+Button\+Group\+\_\+\+Create}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Creates a radio button group widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_abed456a5ef9cf9a2ee88c16282a75d9a}{Gooey\+Radio\+Button\+Group\+\_\+\+Add\+Child}} (\mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}} \texorpdfstring{$\ast$}{*}group, int x, int y, const char \texorpdfstring{$\ast$}{*}label, void(\texorpdfstring{$\ast$}{*}callback)(bool))
+\begin{DoxyCompactList}\small\item\em Creates a radio button group widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gooey_8h_a6a66fac1dbaa35c3c28da9a382a6b4d3}{Gooey\+Radio\+Button\+Group\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\item 
+bool \mbox{\hyperlink{gooey_8h_ac191745c6fb64199f1a73582db1c2d82}{Gooey\+Radio\+Button\+Group\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handles Radio\+Button\+Group click events. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gooey_8h_af8ec19da718567aa7bc267dfb4e8ad2f}{Gooey\+Button\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{structGooeyButton}{Gooey\+Button}} \texorpdfstring{$\ast$}{*}button)
 \item 
 void \mbox{\hyperlink{gooey_8h_a9e5d95abccd358771562c49b6521d6e4}{Gooey\+Menu\+Child\+\_\+\+Add\+Element}} (\mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}} \texorpdfstring{$\ast$}{*}child, char \texorpdfstring{$\ast$}{*}title, void(\texorpdfstring{$\ast$}{*}callback)())
@@ -200,6 +212,12 @@ void \mbox{\hyperlink{gooey_8h_a83e8b293bf59a1b632f6fcfa7e29fbff}{Gooey\+Window\
 \doxysubsubsection{\texorpdfstring{MAX\_MENU\_CHILDREN}{MAX\_MENU\_CHILDREN}}
 {\footnotesize\ttfamily \label{gooey_8h_ab716b9dc601e22c2a7ba326f9253cf95} 
 \#define MAX\+\_\+\+MENU\+\_\+\+CHILDREN~10}
+
+\Hypertarget{gooey_8h_a565f40c6b84b36d87f177dc5dcd20e1e}\index{gooey.h@{gooey.h}!MAX\_RADIO\_BUTTONS@{MAX\_RADIO\_BUTTONS}}
+\index{MAX\_RADIO\_BUTTONS@{MAX\_RADIO\_BUTTONS}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_RADIO\_BUTTONS}{MAX\_RADIO\_BUTTONS}}
+{\footnotesize\ttfamily \label{gooey_8h_a565f40c6b84b36d87f177dc5dcd20e1e} 
+\#define MAX\+\_\+\+RADIO\+\_\+\+BUTTONS~10}
 
 \Hypertarget{gooey_8h_af55f83e86f270705ef7be6ab663bf5a6}\index{gooey.h@{gooey.h}!MAX\_WIDGETS@{MAX\_WIDGETS}}
 \index{MAX\_WIDGETS@{MAX\_WIDGETS}!gooey.h@{gooey.h}}
@@ -655,39 +673,75 @@ void Gooey\+Menu\+Child\+\_\+\+Add\+Element (\begin{DoxyParamCaption}\item[{\mbo
 {\footnotesize\ttfamily \label{gooey_8h_a9f44c3306cd6a0c93028f9eef6c70970} 
 \mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}} \texorpdfstring{$\ast$}{*} Gooey\+Radio\+Button\+\_\+\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(bool selected)}\end{DoxyParamCaption})}
 
-
-
-Adds a radio button to the window. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em win} & The window to add the radio button to. \\
-\hline
-{\em x} & The x-\/coordinate of the radio button\textquotesingle{}s position. \\
-\hline
-{\em y} & The y-\/coordinate of the radio button\textquotesingle{}s position. \\
-\hline
-{\em label} & The label for the radio button. \\
-\hline
-{\em callback} & The callback function to call when the radio button is clicked. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A new \doxylink{structGooeyRadioButton}{Gooey\+Radio\+Button} object. 
-\end{DoxyReturn}
 \Hypertarget{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96}\index{gooey.h@{gooey.h}!GooeyRadioButton\_HandleClick@{GooeyRadioButton\_HandleClick}}
 \index{GooeyRadioButton\_HandleClick@{GooeyRadioButton\_HandleClick}!gooey.h@{gooey.h}}
 \doxysubsubsection{\texorpdfstring{GooeyRadioButton\_HandleClick()}{GooeyRadioButton\_HandleClick()}}
 {\footnotesize\ttfamily \label{gooey_8h_aaf97de275a4a86c4f7d3dac11b4d5e96} 
 bool Gooey\+Radio\+Button\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
 
+\Hypertarget{gooey_8h_abed456a5ef9cf9a2ee88c16282a75d9a}\index{gooey.h@{gooey.h}!GooeyRadioButtonGroup\_AddChild@{GooeyRadioButtonGroup\_AddChild}}
+\index{GooeyRadioButtonGroup\_AddChild@{GooeyRadioButtonGroup\_AddChild}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButtonGroup\_AddChild()}{GooeyRadioButtonGroup\_AddChild()}}
+{\footnotesize\ttfamily \label{gooey_8h_abed456a5ef9cf9a2ee88c16282a75d9a} 
+void Gooey\+Radio\+Button\+Group\+\_\+\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}} \texorpdfstring{$\ast$}{*}}]{group}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{callback~}{)(bool)}\end{DoxyParamCaption})}
 
 
-Handles radio button click events. 
+
+Creates a radio button group widget. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em win} & The window containing the radio button. \\
+{\em win} & The window containing the radio button group. \\
+\hline
+{\em x} & The x-\/coordinate of the radio button. \\
+\hline
+{\em y} & The y-\/coordinate of the radio button. \\
+\hline
+{\em label} & The text (label) of the radio button. \\
+\hline
+{\em callback} & The callback for selecting that specific radio button, pass NULL if not needed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group} widget pointer. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_ad9b1dfefb7db732a5eadc16d457054bb}\index{gooey.h@{gooey.h}!GooeyRadioButtonGroup\_Create@{GooeyRadioButtonGroup\_Create}}
+\index{GooeyRadioButtonGroup\_Create@{GooeyRadioButtonGroup\_Create}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButtonGroup\_Create()}{GooeyRadioButtonGroup\_Create()}}
+{\footnotesize\ttfamily \label{gooey_8h_ad9b1dfefb7db732a5eadc16d457054bb} 
+\mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}} \texorpdfstring{$\ast$}{*} Gooey\+Radio\+Button\+Group\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Creates a radio button group widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the radio button group. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group} widget pointer. 
+\end{DoxyReturn}
+\Hypertarget{gooey_8h_a6a66fac1dbaa35c3c28da9a382a6b4d3}\index{gooey.h@{gooey.h}!GooeyRadioButtonGroup\_Draw@{GooeyRadioButtonGroup\_Draw}}
+\index{GooeyRadioButtonGroup\_Draw@{GooeyRadioButtonGroup\_Draw}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButtonGroup\_Draw()}{GooeyRadioButtonGroup\_Draw()}}
+{\footnotesize\ttfamily \label{gooey_8h_a6a66fac1dbaa35c3c28da9a382a6b4d3} 
+void Gooey\+Radio\+Button\+Group\+\_\+\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gooey_8h_ac191745c6fb64199f1a73582db1c2d82}\index{gooey.h@{gooey.h}!GooeyRadioButtonGroup\_HandleClick@{GooeyRadioButtonGroup\_HandleClick}}
+\index{GooeyRadioButtonGroup\_HandleClick@{GooeyRadioButtonGroup\_HandleClick}!gooey.h@{gooey.h}}
+\doxysubsubsection{\texorpdfstring{GooeyRadioButtonGroup\_HandleClick()}{GooeyRadioButtonGroup\_HandleClick()}}
+{\footnotesize\ttfamily \label{gooey_8h_ac191745c6fb64199f1a73582db1c2d82} 
+bool Gooey\+Radio\+Button\+Group\+\_\+\+Handle\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handles Radio\+Button\+Group click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The window containing the dropdown menu. \\
 \hline
 {\em x} & The x-\/coordinate of the click event. \\
 \hline
@@ -695,7 +749,7 @@ Handles radio button click events.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the radio button was clicked, false otherwise. 
+True if the dropdown menu was clicked, false otherwise. 
 \end{DoxyReturn}
 \Hypertarget{gooey_8h_a6d20f57fb42f874e6a7a281bdfa1ed20}\index{gooey.h@{gooey.h}!GooeySlider\_Add@{GooeySlider\_Add}}
 \index{GooeySlider\_Add@{GooeySlider\_Add}!gooey.h@{gooey.h}}

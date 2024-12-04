@@ -8,9 +8,10 @@ var searchData=
   ['gooeymenu_5',['GooeyMenu',['../structGooeyMenu.html',1,'']]],
   ['gooeymenuchild_6',['GooeyMenuChild',['../structGooeyMenuChild.html',1,'']]],
   ['gooeyradiobutton_7',['GooeyRadioButton',['../structGooeyRadioButton.html',1,'']]],
-  ['gooeyslider_8',['GooeySlider',['../structGooeySlider.html',1,'']]],
-  ['gooeytextbox_9',['GooeyTextbox',['../structGooeyTextbox.html',1,'']]],
-  ['gooeywidget_10',['GooeyWidget',['../structGooeyWidget.html',1,'']]],
-  ['gooeywindow_11',['GooeyWindow',['../structGooeyWindow.html',1,'']]],
-  ['gooeywindowattr_12',['GooeyWindowAttr',['../structGooeyWindowAttr.html',1,'']]]
+  ['gooeyradiobuttongroup_8',['GooeyRadioButtonGroup',['../structGooeyRadioButtonGroup.html',1,'']]],
+  ['gooeyslider_9',['GooeySlider',['../structGooeySlider.html',1,'']]],
+  ['gooeytextbox_10',['GooeyTextbox',['../structGooeyTextbox.html',1,'']]],
+  ['gooeywidget_11',['GooeyWidget',['../structGooeyWidget.html',1,'']]],
+  ['gooeywindow_12',['GooeyWindow',['../structGooeyWindow.html',1,'']]],
+  ['gooeywindowattr_13',['GooeyWindowAttr',['../structGooeyWindowAttr.html',1,'']]]
 ];

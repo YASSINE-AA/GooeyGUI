@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['text_0',['text',['../structGooeyTextbox.html#a357d3bc5d38ac382ff9650fa46d4a9f9',1,'GooeyTextbox::text'],['../structGooeyLabel.html#ac8692ea6c5bc5dcbc995deb7ef13edd6',1,'GooeyLabel::text']]],
-  ['textbox_1',['textbox',['../main_8c.html#a4c468121abadceb7f66e0381872f2c53',1,'main.c']]],
-  ['textboxes_2',['textboxes',['../structGooeyWindow.html#a7bc40f955193ae5bb3d4ebf20ad5aa65',1,'GooeyWindow']]],
-  ['textboxes_5fcount_3',['textboxes_count',['../structGooeyWindow.html#a20de37a4b7311dde0ee40d805f3aef99',1,'GooeyWindow']]],
-  ['title_4',['title',['../structGooeyMenuChild.html#a88220d2f902209f3fd8637d3816ae0d3',1,'GooeyMenuChild']]],
-  ['todo_5',['TODO',['../md_readme.html',1,'']]],
-  ['type_6',['type',['../structGooeyWidget.html#a5eecc6516adc214dee417d1b0c79b5d2',1,'GooeyWidget']]]
+  ['save_5funder_0',['save_under',['../structGooeyWindowAttr.html#aef2e57f50ebd47c04028ee7f50c2d0c4',1,'GooeyWindowAttr']]],
+  ['screen_1',['screen',['../structGooeyWindowAttr.html#ae865dd48996e74031fc38eb54ef05062',1,'GooeyWindowAttr']]],
+  ['scroll_5foffset_2',['scroll_offset',['../structGooeyTextbox.html#a9658eece4c2a866e534fc7a99aeb325d',1,'GooeyTextbox']]],
+  ['selected_3',['selected',['../structGooeyRadioButton.html#a724ac3c03b883e4066fc8e5c6cd158b4',1,'GooeyRadioButton']]],
+  ['selected_5findex_4',['selected_index',['../structGooeyDropdown.html#af9ad6b588191b012349a5066f3036da9',1,'GooeyDropdown']]],
+  ['show_5fhints_5',['show_hints',['../structGooeySlider.html#a4f6742e85a3b0f51a6d1a40d143835a0',1,'GooeySlider']]],
+  ['slider_5fcount_6',['slider_count',['../structGooeyWindow.html#af38fde6819f1bbc5807c06cf16680673',1,'GooeyWindow']]],
+  ['slider_5fheight_7',['SLIDER_HEIGHT',['../gooey_8h.html#ad2f6a49ee208e0e6e3e21ec6c0fad802',1,'gooey.h']]],
+  ['slider_5fwidth_8',['SLIDER_WIDTH',['../gooey_8h.html#a391a0cbb1db22916ea80f4c336d87f33',1,'gooey.h']]],
+  ['sliders_9',['sliders',['../structGooeyWindow.html#a49f6c7872dc2ff601f86565801cb6cb7',1,'GooeyWindow']]],
+  ['started_10',['Getting Started',['../index.html#autotoc_md2',1,'']]]
 ];

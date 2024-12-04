@@ -119,6 +119,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyRadioButton.html">GooeyRadioButton</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeySlider.html">GooeySlider</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyDropdown.html">GooeyDropdown</a></td></tr>
@@ -146,6 +148,8 @@ Macros</h2></td></tr>
 <tr class="separator:ad2f6a49ee208e0e6e3e21ec6c0fad802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab716b9dc601e22c2a7ba326f9253cf95" id="r_ab716b9dc601e22c2a7ba326f9253cf95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab716b9dc601e22c2a7ba326f9253cf95">MAX_MENU_CHILDREN</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:ab716b9dc601e22c2a7ba326f9253cf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565f40c6b84b36d87f177dc5dcd20e1e" id="r_a565f40c6b84b36d87f177dc5dcd20e1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565f40c6b84b36d87f177dc5dcd20e1e">MAX_RADIO_BUTTONS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a565f40c6b84b36d87f177dc5dcd20e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b44987ffdc2af19b635206b94334b69" id="r_a9b44987ffdc2af19b635206b94334b69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b44987ffdc2af19b635206b94334b69">COLOR_WHITE</a>&#160;&#160;&#160;0xFFFFFF</td></tr>
 <tr class="separator:a9b44987ffdc2af19b635206b94334b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2a7fe77a7501e5844370eec0185207" id="r_aba2a7fe77a7501e5844370eec0185207"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba2a7fe77a7501e5844370eec0185207">COLOR_BLACK</a>&#160;&#160;&#160;0x000000</td></tr>
@@ -230,10 +234,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a053ef35a8eccf7fde4064355283225fb" id="r_a053ef35a8eccf7fde4064355283225fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a053ef35a8eccf7fde4064355283225fb">GooeyTextbox_HandleKeyPress</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, XKeyEvent *key_event)</td></tr>
 <tr class="memdesc:a053ef35a8eccf7fde4064355283225fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles key press events for the textbox.  <br /></td></tr>
 <tr class="separator:a053ef35a8eccf7fde4064355283225fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af95a42f059ca3662763f449ae666930f" id="r_af95a42f059ca3662763f449ae666930f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af95a42f059ca3662763f449ae666930f">GooeyTextbox_getText</a> (<a class="el" href="structGooeyTextbox.html">GooeyTextbox</a> *<a class="el" href="main_8c.html#a4c468121abadceb7f66e0381872f2c53">textbox</a>)</td></tr>
+<tr class="memitem:af95a42f059ca3662763f449ae666930f" id="r_af95a42f059ca3662763f449ae666930f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af95a42f059ca3662763f449ae666930f">GooeyTextbox_getText</a> (<a class="el" href="structGooeyTextbox.html">GooeyTextbox</a> *textbox)</td></tr>
 <tr class="memdesc:af95a42f059ca3662763f449ae666930f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the text of the textbox.  <br /></td></tr>
 <tr class="separator:af95a42f059ca3662763f449ae666930f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e81eec9ad34c94609c475f3a19eb34" id="r_aa4e81eec9ad34c94609c475f3a19eb34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4e81eec9ad34c94609c475f3a19eb34">GooeyTextbox_setText</a> (<a class="el" href="structGooeyTextbox.html">GooeyTextbox</a> *<a class="el" href="main_8c.html#a4c468121abadceb7f66e0381872f2c53">textbox</a>, const char *text)</td></tr>
+<tr class="memitem:aa4e81eec9ad34c94609c475f3a19eb34" id="r_aa4e81eec9ad34c94609c475f3a19eb34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4e81eec9ad34c94609c475f3a19eb34">GooeyTextbox_setText</a> (<a class="el" href="structGooeyTextbox.html">GooeyTextbox</a> *textbox, const char *text)</td></tr>
 <tr class="memdesc:aa4e81eec9ad34c94609c475f3a19eb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text of the textbox.  <br /></td></tr>
 <tr class="separator:aa4e81eec9ad34c94609c475f3a19eb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5030980075ccfceb3e805c5b6f5ff8a" id="r_ae5030980075ccfceb3e805c5b6f5ff8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5030980075ccfceb3e805c5b6f5ff8a">GooeyWindow_Redraw</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win)</td></tr>
@@ -252,10 +256,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab5d76b9b2e053b8d9c43aef50ac55693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles checkbox click events.  <br /></td></tr>
 <tr class="separator:ab5d76b9b2e053b8d9c43aef50ac55693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f44c3306cd6a0c93028f9eef6c70970" id="r_a9f44c3306cd6a0c93028f9eef6c70970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyRadioButton.html">GooeyRadioButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f44c3306cd6a0c93028f9eef6c70970">GooeyRadioButton_Add</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y, char *label, void(*callback)(bool selected))</td></tr>
-<tr class="memdesc:a9f44c3306cd6a0c93028f9eef6c70970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a radio button to the window.  <br /></td></tr>
 <tr class="separator:a9f44c3306cd6a0c93028f9eef6c70970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf97de275a4a86c4f7d3dac11b4d5e96" id="r_aaf97de275a4a86c4f7d3dac11b4d5e96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf97de275a4a86c4f7d3dac11b4d5e96">GooeyRadioButton_HandleClick</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y)</td></tr>
-<tr class="memdesc:aaf97de275a4a86c4f7d3dac11b4d5e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles radio button click events.  <br /></td></tr>
 <tr class="separator:aaf97de275a4a86c4f7d3dac11b4d5e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d20f57fb42f874e6a7a281bdfa1ed20" id="r_a6d20f57fb42f874e6a7a281bdfa1ed20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeySlider.html">GooeySlider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d20f57fb42f874e6a7a281bdfa1ed20">GooeySlider_Add</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y, int width, long min_value, long max_value, bool show_hints, void(*callback)(long value))</td></tr>
 <tr class="memdesc:a6d20f57fb42f874e6a7a281bdfa1ed20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a slider to the window.  <br /></td></tr>
@@ -263,10 +265,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a59390d9f8d7866f07676776c7cd86b43" id="r_a59390d9f8d7866f07676776c7cd86b43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59390d9f8d7866f07676776c7cd86b43">GooeySlider_HandleDrag</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y)</td></tr>
 <tr class="memdesc:a59390d9f8d7866f07676776c7cd86b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles slider drag events.  <br /></td></tr>
 <tr class="separator:a59390d9f8d7866f07676776c7cd86b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c2beea09ecd3d246b572414d42ca124" id="r_a0c2beea09ecd3d246b572414d42ca124"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2beea09ecd3d246b572414d42ca124">GooeySlider_getValue</a> (<a class="el" href="structGooeySlider.html">GooeySlider</a> *<a class="el" href="main_8c.html#a3b95c98ef1c30896dc7e7454efa56383">slider</a>)</td></tr>
+<tr class="memitem:a0c2beea09ecd3d246b572414d42ca124" id="r_a0c2beea09ecd3d246b572414d42ca124"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2beea09ecd3d246b572414d42ca124">GooeySlider_getValue</a> (<a class="el" href="structGooeySlider.html">GooeySlider</a> *slider)</td></tr>
 <tr class="memdesc:a0c2beea09ecd3d246b572414d42ca124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current value of the slider.  <br /></td></tr>
 <tr class="separator:a0c2beea09ecd3d246b572414d42ca124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b0c02cedabf1251d3ad0ba4b586e69" id="r_ab1b0c02cedabf1251d3ad0ba4b586e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1b0c02cedabf1251d3ad0ba4b586e69">GooeySlider_setValue</a> (<a class="el" href="structGooeySlider.html">GooeySlider</a> *<a class="el" href="main_8c.html#a3b95c98ef1c30896dc7e7454efa56383">slider</a>, long value)</td></tr>
+<tr class="memitem:ab1b0c02cedabf1251d3ad0ba4b586e69" id="r_ab1b0c02cedabf1251d3ad0ba4b586e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1b0c02cedabf1251d3ad0ba4b586e69">GooeySlider_setValue</a> (<a class="el" href="structGooeySlider.html">GooeySlider</a> *slider, long value)</td></tr>
 <tr class="memdesc:ab1b0c02cedabf1251d3ad0ba4b586e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the slider.  <br /></td></tr>
 <tr class="separator:ab1b0c02cedabf1251d3ad0ba4b586e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88c3eb373206811e02e639af630674e" id="r_ac88c3eb373206811e02e639af630674e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyDropdown.html">GooeyDropdown</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac88c3eb373206811e02e639af630674e">GooeyDropdown_Add</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y, int width, int height, const char **options, int num_options, void(*callback)(int selected_index))</td></tr>
@@ -275,6 +277,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ac25f887efd42f10ccc2fa5de639567a4" id="r_ac25f887efd42f10ccc2fa5de639567a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac25f887efd42f10ccc2fa5de639567a4">GooeyDropdown_HandleClick</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y)</td></tr>
 <tr class="memdesc:ac25f887efd42f10ccc2fa5de639567a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles dropdown menu click events.  <br /></td></tr>
 <tr class="separator:ac25f887efd42f10ccc2fa5de639567a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b1dfefb7db732a5eadc16d457054bb" id="r_ad9b1dfefb7db732a5eadc16d457054bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9b1dfefb7db732a5eadc16d457054bb">GooeyRadioButtonGroup_Create</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win)</td></tr>
+<tr class="memdesc:ad9b1dfefb7db732a5eadc16d457054bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a radio button group widget.  <br /></td></tr>
+<tr class="separator:ad9b1dfefb7db732a5eadc16d457054bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed456a5ef9cf9a2ee88c16282a75d9a" id="r_abed456a5ef9cf9a2ee88c16282a75d9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abed456a5ef9cf9a2ee88c16282a75d9a">GooeyRadioButtonGroup_AddChild</a> (<a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> *group, int x, int y, const char *label, void(*callback)(bool))</td></tr>
+<tr class="memdesc:abed456a5ef9cf9a2ee88c16282a75d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a radio button group widget.  <br /></td></tr>
+<tr class="separator:abed456a5ef9cf9a2ee88c16282a75d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a66fac1dbaa35c3c28da9a382a6b4d3" id="r_a6a66fac1dbaa35c3c28da9a382a6b4d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a66fac1dbaa35c3c28da9a382a6b4d3">GooeyRadioButtonGroup_Draw</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win)</td></tr>
+<tr class="separator:a6a66fac1dbaa35c3c28da9a382a6b4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac191745c6fb64199f1a73582db1c2d82" id="r_ac191745c6fb64199f1a73582db1c2d82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac191745c6fb64199f1a73582db1c2d82">GooeyRadioButtonGroup_HandleClick</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, int x, int y)</td></tr>
+<tr class="memdesc:ac191745c6fb64199f1a73582db1c2d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles RadioButtonGroup click events.  <br /></td></tr>
+<tr class="separator:ac191745c6fb64199f1a73582db1c2d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ec19da718567aa7bc267dfb4e8ad2f" id="r_af8ec19da718567aa7bc267dfb4e8ad2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ec19da718567aa7bc267dfb4e8ad2f">GooeyButton_Draw</a> (<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *win, <a class="el" href="structGooeyButton.html">GooeyButton</a> *button)</td></tr>
 <tr class="separator:af8ec19da718567aa7bc267dfb4e8ad2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5d95abccd358771562c49b6521d6e4" id="r_a9e5d95abccd358771562c49b6521d6e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e5d95abccd358771562c49b6521d6e4">GooeyMenuChild_AddElement</a> (<a class="el" href="structGooeyMenuChild.html">GooeyMenuChild</a> *child, char *title, void(*callback)())</td></tr>
@@ -377,6 +390,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define MAX_MENU_CHILDREN&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a565f40c6b84b36d87f177dc5dcd20e1e" name="a565f40c6b84b36d87f177dc5dcd20e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565f40c6b84b36d87f177dc5dcd20e1e">&#9670;&#160;</a></span>MAX_RADIO_BUTTONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_RADIO_BUTTONS&#160;&#160;&#160;10</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1186,19 +1213,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a radio button to the window. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">win</td><td>The window to add the radio button to. </td></tr>
-    <tr><td class="paramname">x</td><td>The x-coordinate of the radio button's position. </td></tr>
-    <tr><td class="paramname">y</td><td>The y-coordinate of the radio button's position. </td></tr>
-    <tr><td class="paramname">label</td><td>The label for the radio button. </td></tr>
-    <tr><td class="paramname">callback</td><td>The callback function to call when the radio button is clicked. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structGooeyRadioButton.html">GooeyRadioButton</a> object. </dd></dl>
-
 </div>
 </div>
 <a id="aaf97de275a4a86c4f7d3dac11b4d5e96" name="aaf97de275a4a86c4f7d3dac11b4d5e96"></a>
@@ -1225,16 +1239,134 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Handles radio button click events. </p>
+</div>
+</div>
+<a id="abed456a5ef9cf9a2ee88c16282a75d9a" name="abed456a5ef9cf9a2ee88c16282a75d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed456a5ef9cf9a2ee88c16282a75d9a">&#9670;&#160;</a></span>GooeyRadioButtonGroup_AddChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GooeyRadioButtonGroup_AddChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>callback&#160;</em></span>)(bool)&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a radio button group widget. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">win</td><td>The window containing the radio button. </td></tr>
+    <tr><td class="paramname">win</td><td>The window containing the radio button group. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the radio button. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the radio button. </td></tr>
+    <tr><td class="paramname">label</td><td>The text (label) of the radio button. </td></tr>
+    <tr><td class="paramname">callback</td><td>The callback for selecting that specific radio button, pass NULL if not needed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> widget pointer. </dd></dl>
+
+</div>
+</div>
+<a id="ad9b1dfefb7db732a5eadc16d457054bb" name="ad9b1dfefb7db732a5eadc16d457054bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b1dfefb7db732a5eadc16d457054bb">&#9670;&#160;</a></span>GooeyRadioButtonGroup_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> * GooeyRadioButtonGroup_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGooeyWindow.html">GooeyWindow</a> *</td>          <td class="paramname"><span class="paramname"><em>win</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a radio button group widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>The window containing the radio button group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structGooeyRadioButtonGroup.html">GooeyRadioButtonGroup</a> widget pointer. </dd></dl>
+
+</div>
+</div>
+<a id="a6a66fac1dbaa35c3c28da9a382a6b4d3" name="a6a66fac1dbaa35c3c28da9a382a6b4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a66fac1dbaa35c3c28da9a382a6b4d3">&#9670;&#160;</a></span>GooeyRadioButtonGroup_Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GooeyRadioButtonGroup_Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGooeyWindow.html">GooeyWindow</a> *</td>          <td class="paramname"><span class="paramname"><em>win</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac191745c6fb64199f1a73582db1c2d82" name="ac191745c6fb64199f1a73582db1c2d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac191745c6fb64199f1a73582db1c2d82">&#9670;&#160;</a></span>GooeyRadioButtonGroup_HandleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GooeyRadioButtonGroup_HandleClick </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGooeyWindow.html">GooeyWindow</a> *</td>          <td class="paramname"><span class="paramname"><em>win</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles RadioButtonGroup click events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>The window containing the dropdown menu. </td></tr>
     <tr><td class="paramname">x</td><td>The x-coordinate of the click event. </td></tr>
     <tr><td class="paramname">y</td><td>The y-coordinate of the click event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the radio button was clicked, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the dropdown menu was clicked, false otherwise. </dd></dl>
 
 </div>
 </div>

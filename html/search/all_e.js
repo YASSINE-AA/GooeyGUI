@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['save_5funder_0',['save_under',['../structGooeyWindowAttr.html#aef2e57f50ebd47c04028ee7f50c2d0c4',1,'GooeyWindowAttr']]],
-  ['screen_1',['screen',['../structGooeyWindowAttr.html#ae865dd48996e74031fc38eb54ef05062',1,'GooeyWindowAttr']]],
-  ['scroll_5foffset_2',['scroll_offset',['../structGooeyTextbox.html#a9658eece4c2a866e534fc7a99aeb325d',1,'GooeyTextbox']]],
-  ['selected_3',['selected',['../structGooeyRadioButton.html#a724ac3c03b883e4066fc8e5c6cd158b4',1,'GooeyRadioButton']]],
-  ['selected_5findex_4',['selected_index',['../structGooeyDropdown.html#af9ad6b588191b012349a5066f3036da9',1,'GooeyDropdown']]],
-  ['show_5fhints_5',['show_hints',['../structGooeySlider.html#a4f6742e85a3b0f51a6d1a40d143835a0',1,'GooeySlider']]],
-  ['slider_6',['slider',['../main_8c.html#a3b95c98ef1c30896dc7e7454efa56383',1,'main.c']]],
-  ['slider_5fcount_7',['slider_count',['../structGooeyWindow.html#af38fde6819f1bbc5807c06cf16680673',1,'GooeyWindow']]],
-  ['slider_5fheight_8',['SLIDER_HEIGHT',['../gooey_8h.html#ad2f6a49ee208e0e6e3e21ec6c0fad802',1,'gooey.h']]],
-  ['slider_5fwidth_9',['SLIDER_WIDTH',['../gooey_8h.html#a391a0cbb1db22916ea80f4c336d87f33',1,'gooey.h']]],
-  ['sliders_10',['sliders',['../structGooeyWindow.html#a49f6c7872dc2ff601f86565801cb6cb7',1,'GooeyWindow']]]
+  ['radio_5fbutton_5fcount_0',['radio_button_count',['../structGooeyWindow.html#a6c94301d55bd879f0bce7cb3e40d5c02',1,'GooeyWindow']]],
+  ['radio_5fbutton_5fgroup_5fcount_1',['radio_button_group_count',['../structGooeyWindow.html#a768a9bd647f2b519817167d7f43e51f4',1,'GooeyWindow']]],
+  ['radio_5fbutton_5fgroups_2',['radio_button_groups',['../structGooeyWindow.html#a801b93a3d32a7f5a58767569ab0ac414',1,'GooeyWindow']]],
+  ['radio_5fbutton_5fradius_3',['RADIO_BUTTON_RADIUS',['../gooey_8h.html#a61b14d0e3ddc2b89e0322c7132f3d3c9',1,'gooey.h']]],
+  ['radio_5fbuttons_4',['radio_buttons',['../structGooeyWindow.html#a23013e613c8745f301b577ec90e6bc8d',1,'GooeyWindow']]],
+  ['radius_5',['radius',['../structGooeyRadioButton.html#a0c69a38c7f30e54e7e7d730caecbb6cb',1,'GooeyRadioButton']]],
+  ['readme_2emd_6',['readme.md',['../readme_8md.html',1,'']]],
+  ['root_7',['root',['../structGooeyWindowAttr.html#adf11051ea3852b8a3f1ffbfbb5d4c3a0',1,'GooeyWindowAttr']]],
+  ['rows_8',['rows',['../structGooeyLayout.html#abe7e6f05b107347913182716c2b02689',1,'GooeyLayout']]]
 ];

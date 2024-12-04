@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../structGooeyWindowAttr.html#a1e5a14cb67fea4e8225f5eb9a20c9b9c',1,'GooeyWindowAttr::x'],['../structGooeyWidget.html#aaab7dc2ce73fa6ca68aea779595f60fb',1,'GooeyWidget::x'],['../structGooeyLayout.html#a9247746b2a888ab4123b700bbc97d305',1,'GooeyLayout::x']]]
+  ['value_0',['value',['../structGooeySlider.html#a7f24c5a7bfffbd232736bc99d2fdd749',1,'GooeySlider']]],
+  ['visual_1',['visual',['../structGooeyWindowAttr.html#a7d8a12cd778cdee1609bdb34712d1c18',1,'GooeyWindowAttr']]]
 ];

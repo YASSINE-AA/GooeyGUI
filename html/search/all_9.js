@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
-  ['map_5finstalled_2',['map_installed',['../structGooeyWindowAttr.html#af111b100d27434dc1e5312991dd87181',1,'GooeyWindowAttr']]],
-  ['map_5fstate_3',['map_state',['../structGooeyWindowAttr.html#a17bd29093d022b0fb0d210973f0fe941',1,'GooeyWindowAttr']]],
-  ['margin_4',['margin',['../structGooeyLayout.html#af2ea5065cf408c7772bb682bcd774ecf',1,'GooeyLayout']]],
-  ['max_5fmenu_5fchildren_5',['MAX_MENU_CHILDREN',['../gooey_8h.html#ab716b9dc601e22c2a7ba326f9253cf95',1,'gooey.h']]],
-  ['max_5fvalue_6',['max_value',['../structGooeySlider.html#a1c270db4b0780e03e4ae9edcbc088df8',1,'GooeySlider']]],
-  ['max_5fwidgets_7',['MAX_WIDGETS',['../gooey_8h.html#af55f83e86f270705ef7be6ab663bf5a6',1,'gooey.h']]],
-  ['menu_8',['menu',['../structGooeyWindow.html#a9ec99e25b178648af83155584be9cf7d',1,'GooeyWindow']]],
-  ['menu_5felements_9',['menu_elements',['../structGooeyMenuChild.html#a36fec616243a66c1f4ed72b1b4ddb613',1,'GooeyMenuChild']]],
-  ['menu_5felements_5fcount_10',['menu_elements_count',['../structGooeyMenuChild.html#a01fa118faa33cded8a6ddfb6793939cb',1,'GooeyMenuChild']]],
-  ['min_5fvalue_11',['min_value',['../structGooeySlider.html#a22fcb5a4125431630726ad35ea39a66c',1,'GooeySlider']]]
+  ['label_0',['label',['../structGooeyButton.html#ab820758f3a0e1002f0adbc34076fc783',1,'GooeyButton::label'],['../structGooeyCheckbox.html#ae0e2670f4fdbd090426e1e8024ade169',1,'GooeyCheckbox::label'],['../structGooeyRadioButton.html#a6ce50064ea9dbb8803b60da6652228db',1,'GooeyRadioButton::label']]],
+  ['label_5fcount_1',['label_count',['../structGooeyWindow.html#a99b1d0e7ea6cc3302540d34605c68555',1,'GooeyWindow']]],
+  ['labels_2',['labels',['../structGooeyWindow.html#a83b75bf3f50e7e606b2d81ec578bf2b3',1,'GooeyWindow']]],
+  ['layout_5fcount_3',['layout_count',['../structGooeyWindow.html#ab87d7dc3e87abc06730bcc717b5cedcb',1,'GooeyWindow']]],
+  ['layout_5fgrid_4',['LAYOUT_GRID',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3',1,'gooey.h']]],
+  ['layout_5fhorizontal_5',['LAYOUT_HORIZONTAL',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38',1,'gooey.h']]],
+  ['layout_5ftype_6',['layout_type',['../structGooeyLayout.html#a4c28d0a1f26ba53503a1b58ca739682c',1,'GooeyLayout']]],
+  ['layout_5fvertical_7',['LAYOUT_VERTICAL',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd',1,'gooey.h']]],
+  ['layouts_8',['Layouts',['../index.html#autotoc_md9',1,'']]],
+  ['layouts_9',['layouts',['../structGooeyWindow.html#a361e4f7e2b59772653efa9beb609fa0d',1,'GooeyWindow']]],
+  ['library_10',['Gooey GUI Library',['../index.html',1,'']]],
+  ['license_11',['License',['../index.html#autotoc_md11',1,'']]]
 ];

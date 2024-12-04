@@ -1,32 +1,34 @@
-#include "gooey.h"
+#include "tiny.h"
+#include <stdio.h>
+#include <unistd.h>
 
-void onRadioButtonSelected(bool selected)
-{
-    if (selected)
-    {
-        printf("Radio button selected\n");
-    }
+void onButtonClick() {
+    printf("clicked \n");
+
 }
 
 int main()
 {
 
-    GooeyWindow win = GooeyWindow_Create("Radio Button Group Example", 400, 300);
+    Gooey_Init();
 
-    GooeyRadioButtonGroup *group1 = GooeyRadioButtonGroup_Create(&win);
-    GooeyRadioButtonGroup *group2 = GooeyRadioButtonGroup_Create(&win);
+    GooeyWindow win = GooeyWindow_Create("test", 400, 400);
+    
 
-    GooeyRadioButtonGroup_AddChild(group1, 50, 50, "Option 1", onRadioButtonSelected);
-    GooeyRadioButtonGroup_AddChild(group1, 50, 100, "Option 2", onRadioButtonSelected);
-    GooeyRadioButtonGroup_AddChild(group1, 50, 150, "Option 3", onRadioButtonSelected);
-
-    GooeyRadioButtonGroup_AddChild(group2, 200, 50, "Option A", onRadioButtonSelected);
-    GooeyRadioButtonGroup_AddChild(group2, 200, 100, "Option B", onRadioButtonSelected);
-
-    GooeyCheckbox_Add(&win, 20, 20, "hello", NULL);
-
+    GooeyMenu_Set(&win);
+    ;
+    GooeyMenuChild_AddElement(GooeyMenu_AddChild(&win, "test"), "hello", NULL);
+        GooeyMenuChild_AddElement(GooeyMenu_AddChild(&win, "test"), "hello", NULL);
+    GooeyMenuChild_AddElement(GooeyMenu_AddChild(&win, "test"), "hello", NULL);
+    GooeyMenuChild_AddElement(GooeyMenu_AddChild(&win, "test"), "hello", NULL);
+    GooeyMenuChild_AddElement(GooeyMenu_AddChild(&win, "test"), "hello", NULL);
+    GooeyTextBox_Add(&win, 30, 130, 200, 40, NULL);
+    GooeyButton_Add(&win, "test", 40, 40, 200, 30, onButtonClick);
+    
     GooeyWindow_Run(&win);
+    
 
-    GooeyWindow_Cleanup(&win);
+    GooeyWindow_Cleanup();
+    
     return 0;
 }

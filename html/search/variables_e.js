@@ -6,7 +6,6 @@ var searchData=
   ['selected_3',['selected',['../structGooeyRadioButton.html#a724ac3c03b883e4066fc8e5c6cd158b4',1,'GooeyRadioButton']]],
   ['selected_5findex_4',['selected_index',['../structGooeyDropdown.html#af9ad6b588191b012349a5066f3036da9',1,'GooeyDropdown']]],
   ['show_5fhints_5',['show_hints',['../structGooeySlider.html#a4f6742e85a3b0f51a6d1a40d143835a0',1,'GooeySlider']]],
-  ['slider_6',['slider',['../main_8c.html#a3b95c98ef1c30896dc7e7454efa56383',1,'main.c']]],
-  ['slider_5fcount_7',['slider_count',['../structGooeyWindow.html#af38fde6819f1bbc5807c06cf16680673',1,'GooeyWindow']]],
-  ['sliders_8',['sliders',['../structGooeyWindow.html#a49f6c7872dc2ff601f86565801cb6cb7',1,'GooeyWindow']]]
+  ['slider_5fcount_6',['slider_count',['../structGooeyWindow.html#af38fde6819f1bbc5807c06cf16680673',1,'GooeyWindow']]],
+  ['sliders_7',['sliders',['../structGooeyWindow.html#a49f6c7872dc2ff601f86565801cb6cb7',1,'GooeyWindow']]]
 ];

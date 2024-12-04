@@ -17,6 +17,7 @@ var searchData=
   ['color_5fwhite_14',['COLOR_WHITE',['../gooey_8h.html#a9b44987ffdc2af19b635206b94334b69',1,'gooey.h']]],
   ['colormap_15',['colormap',['../structGooeyWindowAttr.html#a908ff69d23ed41ef6d158eccd9043646',1,'GooeyWindowAttr']]],
   ['cols_16',['cols',['../structGooeyLayout.html#af9019079240391653b98b5316b3ddcd6',1,'GooeyLayout']]],
-  ['core_17',['core',['../structGooeyButton.html#a8f2ddd410569abb78b6428a28afbd3f2',1,'GooeyButton::core'],['../structGooeyTextbox.html#ae978f204876d6c1db617a01e1ebfb4fc',1,'GooeyTextbox::core'],['../structGooeyLabel.html#a5e71e4c69476d512ea628d38b2db9c36',1,'GooeyLabel::core'],['../structGooeyCheckbox.html#a468043f1f1d06850ee436b7f086edc9e',1,'GooeyCheckbox::core'],['../structGooeyRadioButton.html#a6cf92e2ae23969fec2c5a07e04e1788f',1,'GooeyRadioButton::core'],['../structGooeySlider.html#a83a928b73dcec2dc67dc3620bae7b2d6',1,'GooeySlider::core'],['../structGooeyDropdown.html#ad0cf1325ab207afc167f5b8db1b416e3',1,'GooeyDropdown::core']]],
-  ['cursor_5fpos_18',['cursor_pos',['../structGooeyTextbox.html#a02983881afbb1e34dd50cefb43a3eeed',1,'GooeyTextbox']]]
+  ['contributing_17',['Contributing',['../index.html#autotoc_md10',1,'']]],
+  ['core_18',['core',['../structGooeyButton.html#a8f2ddd410569abb78b6428a28afbd3f2',1,'GooeyButton::core'],['../structGooeyTextbox.html#ae978f204876d6c1db617a01e1ebfb4fc',1,'GooeyTextbox::core'],['../structGooeyLabel.html#a5e71e4c69476d512ea628d38b2db9c36',1,'GooeyLabel::core'],['../structGooeyCheckbox.html#a468043f1f1d06850ee436b7f086edc9e',1,'GooeyCheckbox::core'],['../structGooeyRadioButton.html#a6cf92e2ae23969fec2c5a07e04e1788f',1,'GooeyRadioButton::core'],['../structGooeySlider.html#a83a928b73dcec2dc67dc3620bae7b2d6',1,'GooeySlider::core'],['../structGooeyDropdown.html#ad0cf1325ab207afc167f5b8db1b416e3',1,'GooeyDropdown::core']]],
+  ['cursor_5fpos_19',['cursor_pos',['../structGooeyTextbox.html#a02983881afbb1e34dd50cefb43a3eeed',1,'GooeyTextbox']]]
 ];

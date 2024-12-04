@@ -1,0 +1,11 @@
+#ifndef GOOEY_COLORS_H
+#define GOOEY_COLORS_H
+
+
+#define COLOR_WHITE 0xFFFFFF
+#define COLOR_BLACK 0x000000
+#define COLOR_BLUE 0x2196F3
+#define COLOR_GRAY 0xCCCCCC
+#define COLOR_HOVER 0xAAAAAA
+
+#endif
