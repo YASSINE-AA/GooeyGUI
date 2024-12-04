@@ -360,7 +360,8 @@ void GooeyLayout_Build(GooeyLayout *layout)
         for (int i = 0; i < layout->widget_count; i++)
         {
             GooeyWidget *widget = layout->widgets[i];
-            widget->width = max_widget_width;
+            if (widget->type != WIDGET_CHECKBOX)
+                widget->width = max_widget_width;
             widget->x = layout->x + (layout->width - widget->width) / 2;
             widget->y = current_y;
             current_y += widget->height + spacing;
@@ -666,9 +667,13 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         }
     }
 }
-
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
+    for (int i = 0; i < win->widgets.textboxes_count; i++)
+    {
+        win->widgets.textboxes[i].focused = false;
+    }
+
     for (int i = 0; i < win->widgets.textboxes_count; i++)
     {
         GooeyTextbox *textbox = &win->widgets.textboxes[i];
@@ -676,15 +681,13 @@ bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
             y >= textbox->core.y && y <= textbox->core.y + textbox->core.height)
         {
             textbox->focused = true;
-            printf("Textbox %d focused\n", i); // Debugging output
             return true;
         }
-        else
-        {
-            textbox->focused = false;
-        }
     }
-    return false;
+
+
+
+    return false; 
 }
 
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
