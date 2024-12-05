@@ -635,7 +635,9 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         {
 
             win->widgets.textboxes[i].focused = false;
-        } else if(strcmp(buf, "Tab") == 0) {
+        }
+        else if (strcmp(buf, "Tab") == 0)
+        {
             // TODO IMPLEMENT TAB BEHAVIOR
         }
         else if (isprint(buf[0]) && len < sizeof(win->widgets.textboxes[i].text) - 1)
@@ -882,9 +884,13 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
     }
     return false;
 }
-void GooeyWindow_Cleanup()
+void GooeyWindow_Cleanup(GooeyWindow *win)
 {
-
+    if (win->menu)
+    {
+        free(win->menu);
+        win->menu = NULL;
+    }
     active_backend->DestroyWindow();
     active_backend->Cleanup();
 }

@@ -340,5 +340,5 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win);
  */
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y);
 
-void GooeyWindow_Cleanup();
+void GooeyWindow_Cleanup(GooeyWindow *win);
 #endif

@@ -52,7 +52,7 @@ int main()
 
     GooeyWindow_Run(&win);
 
-    GooeyWindow_Cleanup();
+    GooeyWindow_Cleanup(&win);
 
     return 0;
 }
