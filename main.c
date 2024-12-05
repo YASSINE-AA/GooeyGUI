@@ -34,8 +34,8 @@ int main()
 
     GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 40, 40, 300, 200);
     GooeyLayout_AddChild(layout, GooeyButton_Add(&win, "test", 40, 40, 200, 30, onButtonClick));
-    GooeyLayout_AddChild(layout, GooeyTextBox_Add(&win, 30, 130, 200, 40, onText));
-        GooeyLayout_AddChild(layout, GooeyTextBox_Add(&win, 30, 130, 200, 40, onText));
+    GooeyLayout_AddChild(layout, GooeyTextBox_Add(&win, 30, 130, 200, 40, "placeholder1", onText));
+        GooeyLayout_AddChild(layout, GooeyTextBox_Add(&win, 30, 130, 200, 40, "placeholder2", onText));
 
     GooeyLayout_AddChild(layout, GooeySlider_Add(&win, 30, 130, 200, 40, 100, true, onValue));
 

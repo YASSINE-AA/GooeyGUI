@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y_0',['y',['../structGooeyWindowAttr.html#a34359a7ffb52ef7660d9f53a90f73955',1,'GooeyWindowAttr::y'],['../structGooeyWidget.html#a7dc8b36747f195488db600c4b7c21f18',1,'GooeyWidget::y'],['../structGooeyLayout.html#a8d375bd7fb741c1f9a7449fd04274879',1,'GooeyLayout::y']]],
-  ['your_5fevent_5fmask_1',['your_event_mask',['../structGooeyWindowAttr.html#aac5a8d0b0c9f729752cb86d55f210aa4',1,'GooeyWindowAttr']]]
+  ['x_0',['x',['../structGooeyEvent.html#a8c7f48caad8411628137a6eafb5c88d0',1,'GooeyEvent::x'],['../structGooeyWidget.html#aaab7dc2ce73fa6ca68aea779595f60fb',1,'GooeyWidget::x'],['../structGooeyLayout.html#a9247746b2a888ab4123b700bbc97d305',1,'GooeyLayout::x']]],
+  ['x11_5fbackend_1',['x11_backend',['../tiny_8h.html#ad5ebe4718bda2af040934ee1a11c1423',1,'x11_backend:&#160;x11_backend.c'],['../x11__backend_8c.html#ad5ebe4718bda2af040934ee1a11c1423',1,'x11_backend:&#160;x11_backend.c']]]
 ];

@@ -146,7 +146,7 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button);
  * @return A new GooeyTextbox object.
  */
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
-                               int height, void (*onTextChanged)(char *text));
+                               int height, char* placeholder, void (*onTextChanged)(char *text));
 
 /**
  * @brief Draws the textbox on the window.

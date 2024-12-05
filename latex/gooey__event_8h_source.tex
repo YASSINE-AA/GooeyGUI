@@ -1,0 +1,37 @@
+\doxysection{gooey\+\_\+event.\+h}
+\hypertarget{gooey__event_8h_source}{}\label{gooey__event_8h_source}\index{backends/gooey\_event.h@{backends/gooey\_event.h}}
+\mbox{\hyperlink{gooey__event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GOOEY\_EVENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GOOEY\_EVENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7aa4c3fed00bbdafc15cad664fad5f5003b}{GOOEY\_EVENT\_CLICK}},}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7aaa096c79565697a1d689675294f342af6}{GOOEY\_EVENT\_KEY\_PRESS}},}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7aac27ffe1f0524265ff300c6d4677d2828}{GOOEY\_EVENT\_MOUSE\_MOVE}},}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7aa027a5130b1b3ff772b704b6bddaf8d0e}{GOOEY\_EVENT\_WINDOW\_CLOSE}},}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7aa0d26945352d2fd6d48e023e79b1eee8c}{GOOEY\_EVENT\_EXPOSE}}}
+\DoxyCodeLine{00010\ \}\ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7a}{GooeyEventType}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{gooey__event_8h_ad15ac2c03f55151d4c97bbd5b3a1ba7a}{GooeyEventType}}\ \mbox{\hyperlink{structGooeyEvent_a5f7e6e4463604da8053a9ca150b84429}{type}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyEvent_a8c7f48caad8411628137a6eafb5c88d0}{x}},\ y;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}\ click;\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyEvent_a3ecd7d10fae5d203887a6834d47629f4}{state}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyEvent_a259787c9b598c800b16326b7f8356cbb}{keycode}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}\ key\_press;\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}\ mouse\_move;\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \}\ data;}
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{structGooeyEvent}{GooeyEvent}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

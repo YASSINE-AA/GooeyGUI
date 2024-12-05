@@ -224,6 +224,7 @@ GooeyEvent x11_handle_events()
             return gooey_event;
         }
 
+     
         if (event.type == KeyPress)
         {
             gooey_event.type = GOOEY_EVENT_KEY_PRESS;

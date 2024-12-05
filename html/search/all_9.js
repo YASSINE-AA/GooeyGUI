@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['onbuttonclick_0',['onButtonClick',['../main_8c.html#acbcea893ddddb55e558115beb8f9a1b1',1,'main.c']]],
-  ['ontext_1',['onText',['../main_8c.html#acf38b3329ce2143f2d9fe1d84c34a893',1,'main.c']]],
-  ['onvalue_2',['onValue',['../main_8c.html#ac00d2b933558e43ccb6d2483ed8fad04',1,'main.c']]],
-  ['overview_3',['API Overview',['../index.html#autotoc_md6',1,'']]]
+  ['key_5fpress_0',['key_press',['../structGooeyEvent.html#a12cb25ab869f79e7389bc69af2f0b141',1,'GooeyEvent']]],
+  ['keycode_1',['keycode',['../structGooeyEvent.html#a259787c9b598c800b16326b7f8356cbb',1,'GooeyEvent']]]
 ];

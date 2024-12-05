@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['layout_5fgrid_0',['LAYOUT_GRID',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3',1,'gooey.h']]],
-  ['layout_5fhorizontal_1',['LAYOUT_HORIZONTAL',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38',1,'gooey.h']]],
-  ['layout_5fvertical_2',['LAYOUT_VERTICAL',['../gooey_8h.html#a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd',1,'gooey.h']]]
+  ['gooey_5fevent_5fclick_0',['GOOEY_EVENT_CLICK',['../gooey__event_8h.html#ad15ac2c03f55151d4c97bbd5b3a1ba7aa4c3fed00bbdafc15cad664fad5f5003b',1,'gooey_event.h']]],
+  ['gooey_5fevent_5fexpose_1',['GOOEY_EVENT_EXPOSE',['../gooey__event_8h.html#ad15ac2c03f55151d4c97bbd5b3a1ba7aa0d26945352d2fd6d48e023e79b1eee8c',1,'gooey_event.h']]],
+  ['gooey_5fevent_5fkey_5fpress_2',['GOOEY_EVENT_KEY_PRESS',['../gooey__event_8h.html#ad15ac2c03f55151d4c97bbd5b3a1ba7aaa096c79565697a1d689675294f342af6',1,'gooey_event.h']]],
+  ['gooey_5fevent_5fmouse_5fmove_3',['GOOEY_EVENT_MOUSE_MOVE',['../gooey__event_8h.html#ad15ac2c03f55151d4c97bbd5b3a1ba7aac27ffe1f0524265ff300c6d4677d2828',1,'gooey_event.h']]],
+  ['gooey_5fevent_5fwindow_5fclose_4',['GOOEY_EVENT_WINDOW_CLOSE',['../gooey__event_8h.html#ad15ac2c03f55151d4c97bbd5b3a1ba7aa027a5130b1b3ff772b704b6bddaf8d0e',1,'gooey_event.h']]]
 ];

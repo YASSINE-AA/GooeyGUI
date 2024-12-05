@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['depth_0',['depth',['../structGooeyWindowAttr.html#a9dcfd67039f8e03a6e9e5fbf3e0091b6',1,'GooeyWindowAttr']]],
-  ['display_1',['display',['../structGooeyWindow.html#afba3fed28f72f2f69aa01c4c9ea5e625',1,'GooeyWindow']]],
-  ['do_5fnot_5fpropagate_5fmask_2',['do_not_propagate_mask',['../structGooeyWindowAttr.html#a8844ffb77097e2a97025a013f8d4fdfa',1,'GooeyWindowAttr']]],
-  ['dropdown_5fcount_3',['dropdown_count',['../structGooeyWindow.html#a6e3de3900908c0bc3b3f5793d76b9959',1,'GooeyWindow']]],
-  ['dropdowns_4',['dropdowns',['../structGooeyWindow.html#af74cfb60d6aae6bf39d8f9d641146d79',1,'GooeyWindow']]]
+  ['data_0',['data',['../structGooeyEvent.html#ac24a965f2cd24ddc3f2a4948859a0155',1,'GooeyEvent']]],
+  ['destroywindow_1',['DestroyWindow',['../structGooeyBackend.html#a12afb375d37eeb3ca5e63c03441aff94',1,'GooeyBackend']]],
+  ['display_2',['display',['../structGooeyBackendContext.html#a64ebd70ecbc32d67b8ded4031cba0a15',1,'GooeyBackendContext']]],
+  ['drawline_3',['DrawLine',['../structGooeyBackend.html#aba1d0cfac03b3349f2f1da474ae53446',1,'GooeyBackend']]],
+  ['drawrectangle_4',['DrawRectangle',['../structGooeyBackend.html#ab9d29252b8bb53232278cf3923b699c5',1,'GooeyBackend']]],
+  ['drawtext_5',['DrawText',['../structGooeyBackend.html#a169986bf8c3ee87dd8aa310233babe43',1,'GooeyBackend']]],
+  ['dropdown_5fcount_6',['dropdown_count',['../structGooeyWindowExt.html#a95f52b044298feb57f5e96d724208c7a',1,'GooeyWindowExt']]],
+  ['dropdowns_7',['dropdowns',['../structGooeyWindowExt.html#a9acb5a3dd1faac3dca2b337fa2690f1f',1,'GooeyWindowExt']]]
 ];

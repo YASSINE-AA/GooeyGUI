@@ -41,6 +41,7 @@ typedef struct
 {
   GooeyWidget core;
   char text[256];
+  char placeholder[256];
   bool focused;
   int cursor_pos;
   int scroll_offset;

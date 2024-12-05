@@ -55,12 +55,12 @@ To integrate Gooey into your project\+:
 \DoxyCodeLine{\}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
-\DoxyCodeLine{\ \ \ \ GooeyWindow\ win\ =\ \mbox{\hyperlink{tiny_8c_a5bb530110f0f6dcde2f3f3cd7c179efc}{GooeyWindow\_Create}}(\textcolor{stringliteral}{"{}Gooey\ Example"{}},\ 800,\ 600);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ win\ =\ \mbox{\hyperlink{tiny_8c_a5bb530110f0f6dcde2f3f3cd7c179efc}{GooeyWindow\_Create}}(\textcolor{stringliteral}{"{}Gooey\ Example"{}},\ 800,\ 600);}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ GooeyButton\ *btn\ =\ \mbox{\hyperlink{tiny_8c_a6ef2ab71a12568095efab0973c7b687c}{GooeyButton\_Add}}(\&win,\ \textcolor{stringliteral}{"{}Click\ Me"{}},\ 50,\ 50,\ 100,\ 30,\ \mbox{\hyperlink{main_8c_acbcea893ddddb55e558115beb8f9a1b1}{onButtonClick}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structGooeyButton}{GooeyButton}}\ *btn\ =\ \mbox{\hyperlink{tiny_8c_a6ef2ab71a12568095efab0973c7b687c}{GooeyButton\_Add}}(\&win,\ \textcolor{stringliteral}{"{}Click\ Me"{}},\ 50,\ 50,\ 100,\ 30,\ \mbox{\hyperlink{main_8c_acbcea893ddddb55e558115beb8f9a1b1}{onButtonClick}});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{tiny_8c_a646a3a0f8d98b971ab6d8af4f822ac31}{GooeyWindow\_Run}}(\&win);}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{tiny_8c_a4c78dc36662d669d3ee08023cc05e1ea}{GooeyWindow\_Cleanup}}(\&win);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{tiny_8c_a83e8b293bf59a1b632f6fcfa7e29fbff}{GooeyWindow\_Cleanup}}(\&win);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{\}}
@@ -70,10 +70,10 @@ To integrate Gooey into your project\+:
 \hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Window Management}{Window Management}}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
-\item {\ttfamily Gooey\+Window \doxylink{tiny_8c_a5bb530110f0f6dcde2f3f3cd7c179efc}{Gooey\+Window\+\_\+\+Create(const char \texorpdfstring{$\ast$}{*}title, int width, int height)}}
+\item {\ttfamily \doxylink{structGooeyWindow}{Gooey\+Window} \doxylink{tiny_8c_a5bb530110f0f6dcde2f3f3cd7c179efc}{Gooey\+Window\+\_\+\+Create(const char \texorpdfstring{$\ast$}{*}title, int width, int height)}}
 \item {\ttfamily void \doxylink{tiny_8c_a646a3a0f8d98b971ab6d8af4f822ac31}{Gooey\+Window\+\_\+\+Run(\+Gooey\+Window \texorpdfstring{$\ast$}{*}win)}}
 \item {\ttfamily void \doxylink{tiny_8c_ae5030980075ccfceb3e805c5b6f5ff8a}{Gooey\+Window\+\_\+\+Redraw(\+Gooey\+Window \texorpdfstring{$\ast$}{*}win)}}
-\item {\ttfamily void Gooey\+Window\+\_\+\+Cleanup(\+Gooey\+Window \texorpdfstring{$\ast$}{*}win)}
+\item {\ttfamily void \doxylink{tiny_8c_a83e8b293bf59a1b632f6fcfa7e29fbff}{Gooey\+Window\+\_\+\+Cleanup(\+Gooey\+Window \texorpdfstring{$\ast$}{*}win)}}
 \end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Widgets}{Widgets}}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}

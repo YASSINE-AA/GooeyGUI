@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['widget_5fbutton_0',['WIDGET_BUTTON',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c',1,'gooey.h']]],
-  ['widget_5fcheckbox_1',['WIDGET_CHECKBOX',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632',1,'gooey.h']]],
-  ['widget_5fdropdown_2',['WIDGET_DROPDOWN',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975',1,'gooey.h']]],
-  ['widget_5flabel_3',['WIDGET_LABEL',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061',1,'gooey.h']]],
-  ['widget_5fradiobutton_4',['WIDGET_RADIOBUTTON',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc',1,'gooey.h']]],
-  ['widget_5fslider_5',['WIDGET_SLIDER',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7',1,'gooey.h']]],
-  ['widget_5ftextbox_6',['WIDGET_TEXTBOX',['../gooey_8h.html#a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c',1,'gooey.h']]]
+  ['layout_5fgrid_0',['LAYOUT_GRID',['../gooey__widgets_8h.html#a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3',1,'gooey_widgets.h']]],
+  ['layout_5fhorizontal_1',['LAYOUT_HORIZONTAL',['../gooey__widgets_8h.html#a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38',1,'gooey_widgets.h']]],
+  ['layout_5fvertical_2',['LAYOUT_VERTICAL',['../gooey__widgets_8h.html#a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd',1,'gooey_widgets.h']]]
 ];

@@ -527,7 +527,7 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
 }
 
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
-                               int height, void (*onTextChanged)(char *text))
+                               int height, char *placeholder, void (*onTextChanged)(char *text))
 {
     win->widgets.textboxes[win->widgets.textboxes_count].core.type = WIDGET_TEXTBOX;
     win->widgets.textboxes[win->widgets.textboxes_count].core.x = x;
@@ -538,6 +538,8 @@ GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
     win->widgets.textboxes[win->widgets.textboxes_count].callback = onTextChanged;
     win->widgets.textboxes[win->widgets.textboxes_count].scroll_offset = 0;
     win->widgets.textboxes[win->widgets.textboxes_count].text[0] = '\0';
+    strcpy(win->widgets.textboxes[win->widgets.textboxes_count].placeholder, placeholder);
+
     win->widgets.textboxes_count++;
     return &win->widgets.textboxes[win->widgets.textboxes_count - 1];
 }
@@ -596,6 +598,12 @@ void GooeyTextbox_Draw(GooeyWindow *win, int index)
         int cursor_x = text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
         active_backend->DrawLine(cursor_x, win->widgets.textboxes[index].core.y + 5,
                                  cursor_x, win->widgets.textboxes[index].core.y + win->widgets.textboxes[index].core.height - 5, COLOR_BLACK);
+    }
+    else
+    {
+
+        if (win->widgets.textboxes[index].placeholder && strlen(win->widgets.textboxes[index].text) == 0)
+            active_backend->DrawText(text_x, text_y, win->widgets.textboxes[index].placeholder, COLOR_DARK_GRAY);
     }
 }
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
@@ -886,10 +894,10 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
 }
 void GooeyWindow_Cleanup(GooeyWindow *win)
 {
-    if (win->menu)
+    if (win->widgets.menu)
     {
-        free(win->menu);
-        win->menu = NULL;
+        free(win->widgets.menu);
+        win->widgets.menu = NULL;
     }
     active_backend->DestroyWindow();
     active_backend->Cleanup();
