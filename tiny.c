@@ -529,19 +529,17 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, void (*onTextChanged)(char *text))
 {
-
-    GooeyTextbox *textbox = &win->widgets.textboxes[win->widgets.textboxes_count++];
-    textbox->core.type = WIDGET_TEXTBOX;
-    textbox->core.x = x;
-    textbox->core.y = y;
-    textbox->core.width = width;
-    textbox->core.height = height;
-    textbox->focused = false;
-    textbox->callback = onTextChanged;
-    textbox->scroll_offset = 0;
-    textbox->text[0] = '\0';
-
-    return textbox;
+    win->widgets.textboxes[win->widgets.textboxes_count].core.type = WIDGET_TEXTBOX;
+    win->widgets.textboxes[win->widgets.textboxes_count].core.x = x;
+    win->widgets.textboxes[win->widgets.textboxes_count].core.y = y;
+    win->widgets.textboxes[win->widgets.textboxes_count].core.width = width;
+    win->widgets.textboxes[win->widgets.textboxes_count].core.height = height;
+    win->widgets.textboxes[win->widgets.textboxes_count].focused = false;
+    win->widgets.textboxes[win->widgets.textboxes_count].callback = onTextChanged;
+    win->widgets.textboxes[win->widgets.textboxes_count].scroll_offset = 0;
+    win->widgets.textboxes[win->widgets.textboxes_count].text[0] = '\0';
+    win->widgets.textboxes_count++;
+    return &win->widgets.textboxes[win->widgets.textboxes_count - 1];
 }
 
 const char *GooeyTextbox_getText(GooeyTextbox *textbox)
@@ -564,48 +562,44 @@ void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text)
     }
     strcpy(textbox->text, text);
 }
-
 void GooeyTextbox_Draw(GooeyWindow *win, int index)
 {
-    GooeyTextbox *textbox = &win->widgets.textboxes[index];
 
-    active_backend->FillRectangle(textbox->core.x, textbox->core.y,
-                                  textbox->core.width, textbox->core.height, COLOR_WHITE);
+    active_backend->FillRectangle(win->widgets.textboxes[index].core.x, win->widgets.textboxes[index].core.y,
+                                  win->widgets.textboxes[index].core.width, win->widgets.textboxes[index].core.height, COLOR_WHITE);
 
-    active_backend->DrawRectangle(textbox->core.x, textbox->core.y,
-                                  textbox->core.width, textbox->core.height, textbox->focused ? COLOR_BLUE : COLOR_BLACK);
+    active_backend->DrawRectangle(win->widgets.textboxes[index].core.x, win->widgets.textboxes[index].core.y,
+                                  win->widgets.textboxes[index].core.width, win->widgets.textboxes[index].core.height,
+                                  win->widgets.textboxes[index].focused ? COLOR_BLUE : COLOR_BLACK);
 
-    active_backend->SetForeground(COLOR_BLACK);
-    int text_x = textbox->core.x + 5;
-    int text_y = textbox->core.y + (textbox->core.height / 2) + 5;
+    int text_x = win->widgets.textboxes[index].core.x + 5;
+    int text_y = win->widgets.textboxes[index].core.y + (win->widgets.textboxes[index].core.height / 2) + 5;
 
-    int max_text_width = textbox->core.width - 10;
-    size_t len = strlen(textbox->text);
-    size_t start_index = textbox->scroll_offset;
+    int max_text_width = win->widgets.textboxes[index].core.width - 10;
+    size_t len = strlen(win->widgets.textboxes[index].text);
+    size_t start_index = win->widgets.textboxes[index].scroll_offset;
 
-    while (start_index < len && active_backend->GetTextWidth(textbox->text + start_index, len - start_index) > max_text_width)
+    while (start_index < len &&
+           active_backend->GetTextWidth(win->widgets.textboxes[index].text + start_index, len - start_index) > max_text_width)
     {
         start_index++;
     }
 
     char display_text[256];
-    strncpy(display_text, textbox->text + start_index, sizeof(display_text) - 1);
+    strncpy(display_text, win->widgets.textboxes[index].text + start_index, sizeof(display_text) - 1);
     display_text[sizeof(display_text) - 1] = '\0';
 
-    active_backend->DrawText(text_x, text_y, display_text,
-                             COLOR_BLACK);
+    active_backend->DrawText(text_x, text_y, display_text, COLOR_BLACK);
 
-    if (textbox->focused)
+    if (win->widgets.textboxes[index].focused)
     {
-        int cursor_x =
-            text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
-        active_backend->DrawLine(cursor_x, textbox->core.y + 5,
-                                 cursor_x, textbox->core.y + textbox->core.height - 5, COLOR_BLACK);
+        int cursor_x = text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
+        active_backend->DrawLine(cursor_x, win->widgets.textboxes[index].core.y + 5,
+                                 cursor_x, win->widgets.textboxes[index].core.y + win->widgets.textboxes[index].core.height - 5, COLOR_BLACK);
     }
 }
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 {
-
     char *buf = active_backend->GetKeyFromCode(key_event);
     if (buf == NULL)
     {
@@ -614,80 +608,83 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 
     for (int i = 0; i < win->widgets.textboxes_count; i++)
     {
-        GooeyTextbox *textbox = &win->widgets.textboxes[i];
-        if (!textbox->focused)
+        if (!win->widgets.textboxes[i].focused)
             continue;
 
-        size_t len = strlen(textbox->text);
+        size_t len = strlen(win->widgets.textboxes[i].text);
 
         if (strcmp(buf, "Backspace") == 0)
         {
-            printf("backspace \n");
+
             if (len > 0)
             {
-                textbox->text[len - 1] = '\0';
+                win->widgets.textboxes[i].text[len - 1] = '\0';
 
-                if (textbox->scroll_offset > 0)
+                if (win->widgets.textboxes[i].scroll_offset > 0)
                 {
-                    textbox->scroll_offset--;
+                    win->widgets.textboxes[i].scroll_offset--;
                 }
 
-                if (textbox->callback)
-                    textbox->callback(textbox->text);
+                if (win->widgets.textboxes[i].callback)
+                {
+                    win->widgets.textboxes[i].callback(win->widgets.textboxes[i].text);
+                }
             }
         }
-
         else if (strcmp(buf, "Return") == 0)
         {
-            textbox->focused = false;
+
+            win->widgets.textboxes[i].focused = false;
+        } else if(strcmp(buf, "Tab") == 0) {
+            // TODO IMPLEMENT TAB BEHAVIOR
         }
-
-        else if (isprint(buf[0]) && len < sizeof(textbox->text) - 1)
+        else if (isprint(buf[0]) && len < sizeof(win->widgets.textboxes[i].text) - 1)
         {
-            strncat(textbox->text, buf, 1);
 
-            if (textbox->callback)
-                textbox->callback(textbox->text);
+            strncat(win->widgets.textboxes[i].text, buf, 1);
 
-            int text_width = active_backend->GetTextWidth(textbox->text, len + 1);
-            int max_text_width = textbox->core.width - 10;
+            if (win->widgets.textboxes[i].callback)
+            {
+                win->widgets.textboxes[i].callback(win->widgets.textboxes[i].text);
+            }
+
+            int text_width = active_backend->GetTextWidth(win->widgets.textboxes[i].text, len + 1);
+            int max_text_width = win->widgets.textboxes[i].core.width - 10;
 
             if (text_width > max_text_width)
             {
-                textbox->scroll_offset++;
+                win->widgets.textboxes[i].scroll_offset++;
             }
         }
     }
+    GooeyWindow_Redraw(win);
 
-    if (buf)
+    if (!(strcmp(buf, "Backspace") == 0 || strcmp(buf, "Return") == 0 || strcmp(buf, "Tab") == 0))
     {
-        if (!(strcmp(buf, "Backspace") == 0 || strcmp(buf, "Return") == 0))
-        {
-            free(buf);
-        }
+        free(buf);
     }
 }
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
-    for (int i = 0; i < win->widgets.textboxes_count; i++)
-    {
-        win->widgets.textboxes[i].focused = false;
-    }
 
     for (int i = 0; i < win->widgets.textboxes_count; i++)
     {
         GooeyTextbox *textbox = &win->widgets.textboxes[i];
-        if (x >= textbox->core.x && x <= textbox->core.x + textbox->core.width &&
-            y >= textbox->core.y && y <= textbox->core.y + textbox->core.height)
+        if (x >= win->widgets.textboxes[i].core.x &&
+            x <= win->widgets.textboxes[i].core.x + win->widgets.textboxes[i].core.width &&
+            y >= win->widgets.textboxes[i].core.y &&
+            y <= win->widgets.textboxes[i].core.y + win->widgets.textboxes[i].core.height)
         {
-            textbox->focused = true;
+            win->widgets.textboxes[i].focused = true;
+            for (int j = 0; j < win->widgets.textboxes_count; j++)
+            {
+                if (j != i)
+                    win->widgets.textboxes[j].focused = false;
+            }
             return true;
         }
     }
-
-
-
-    return false; 
+    return false;
 }
 
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,

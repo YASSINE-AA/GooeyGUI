@@ -1,10 +1,16 @@
 \doxysection{main.\+c File Reference}
 \hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
-{\ttfamily \#include "{}gooey.\+h"{}}\newline
+{\ttfamily \#include "{}tiny.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{main_8c_a802481f80c94384b8e596aea0915cafa}{on\+Radio\+Button\+Selected}} (bool selected)
+void \mbox{\hyperlink{main_8c_acbcea893ddddb55e558115beb8f9a1b1}{on\+Button\+Click}} ()
+\item 
+void \mbox{\hyperlink{main_8c_acf38b3329ce2143f2d9fe1d84c34a893}{on\+Text}} (char \texorpdfstring{$\ast$}{*}text)
+\item 
+void \mbox{\hyperlink{main_8c_ac00d2b933558e43ccb6d2483ed8fad04}{on\+Value}} (long value)
 \item 
 int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
@@ -17,9 +23,21 @@ int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 {\footnotesize\ttfamily \label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
 int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8c_a802481f80c94384b8e596aea0915cafa}\index{main.c@{main.c}!onRadioButtonSelected@{onRadioButtonSelected}}
-\index{onRadioButtonSelected@{onRadioButtonSelected}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{onRadioButtonSelected()}{onRadioButtonSelected()}}
-{\footnotesize\ttfamily \label{main_8c_a802481f80c94384b8e596aea0915cafa} 
-void on\+Radio\+Button\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+\Hypertarget{main_8c_acbcea893ddddb55e558115beb8f9a1b1}\index{main.c@{main.c}!onButtonClick@{onButtonClick}}
+\index{onButtonClick@{onButtonClick}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{onButtonClick()}{onButtonClick()}}
+{\footnotesize\ttfamily \label{main_8c_acbcea893ddddb55e558115beb8f9a1b1} 
+void on\+Button\+Click (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_acf38b3329ce2143f2d9fe1d84c34a893}\index{main.c@{main.c}!onText@{onText}}
+\index{onText@{onText}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{onText()}{onText()}}
+{\footnotesize\ttfamily \label{main_8c_acf38b3329ce2143f2d9fe1d84c34a893} 
+void on\+Text (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_ac00d2b933558e43ccb6d2483ed8fad04}\index{main.c@{main.c}!onValue@{onValue}}
+\index{onValue@{onValue}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{onValue()}{onValue()}}
+{\footnotesize\ttfamily \label{main_8c_ac00d2b933558e43ccb6d2483ed8fad04} 
+void on\+Value (\begin{DoxyParamCaption}\item[{long}]{value}{}\end{DoxyParamCaption})}
 

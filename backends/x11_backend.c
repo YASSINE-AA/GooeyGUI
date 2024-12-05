@@ -131,6 +131,8 @@ char *x11_get_key_from_code(GooeyEvent *gooey_event)
         else if (keysym == XK_Return)
         {
             return "Return";
+        } else if(keysym == XK_Tab) {
+            return "Tab";
         }
         else
         {

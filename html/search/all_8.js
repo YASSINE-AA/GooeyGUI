@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['implementation_0',['Implementation',['../md_readme.html#autotoc_md15',1,'']]],
-  ['installation_1',['Installation',['../index.html#autotoc_md4',1,'']]],
-  ['is_5fopen_2',['is_open',['../structGooeyMenuChild.html#a8abb16aa54fa014b1c1dac1e916daffc',1,'GooeyMenuChild']]]
+  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['management_2',['Window Management',['../index.html#autotoc_md7',1,'']]]
 ];

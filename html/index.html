@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gooey lightweight X11 GUI library: Gooey GUI Library</title>
+<title>My Project: Gooey GUI Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gooey lightweight X11 GUI library
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -130,45 +130,43 @@ Prerequisites</h2>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Installation</h2>
 <p>To integrate Gooey into your project:</p><ol type="1">
-<li>Include <code><a class="el" href="gooey_8h.html">gooey.h</a></code> in your project directory.</li>
+<li>Include <code>gooey.h</code> in your project directory.</li>
 <li>Add <code>#include "gooey.h"</code> to your source files.</li>
 <li>Link your project with the X11 libraries.</li>
 </ol>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Example Usage</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="gooey_8h.html">gooey.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;gooey.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> onButtonClick() {</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#acbcea893ddddb55e558115beb8f9a1b1">onButtonClick</a>() {</div>
 <div class="line">    printf(<span class="stringliteral">&quot;Button clicked!\n&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    <a class="code hl_struct" href="structGooeyWindow.html">GooeyWindow</a> win = <a class="code hl_function" href="gooey_8h.html#a5bb530110f0f6dcde2f3f3cd7c179efc">GooeyWindow_Create</a>(<span class="stringliteral">&quot;Gooey Example&quot;</span>, 800, 600);</div>
+<div class="line">    GooeyWindow win = <a class="code hl_function" href="tiny_8c.html#a5bb530110f0f6dcde2f3f3cd7c179efc">GooeyWindow_Create</a>(<span class="stringliteral">&quot;Gooey Example&quot;</span>, 800, 600);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_struct" href="structGooeyButton.html">GooeyButton</a> *btn = <a class="code hl_function" href="gooey_8h.html#a6ef2ab71a12568095efab0973c7b687c">GooeyButton_Add</a>(&amp;win, <span class="stringliteral">&quot;Click Me&quot;</span>, 50, 50, 100, 30, onButtonClick);</div>
+<div class="line">    GooeyButton *btn = <a class="code hl_function" href="tiny_8c.html#a6ef2ab71a12568095efab0973c7b687c">GooeyButton_Add</a>(&amp;win, <span class="stringliteral">&quot;Click Me&quot;</span>, 50, 50, 100, 30, <a class="code hl_function" href="main_8c.html#acbcea893ddddb55e558115beb8f9a1b1">onButtonClick</a>);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="gooey_8h.html#a646a3a0f8d98b971ab6d8af4f822ac31">GooeyWindow_Run</a>(&amp;win);</div>
-<div class="line">    <a class="code hl_function" href="gooey_8h.html#a83e8b293bf59a1b632f6fcfa7e29fbff">GooeyWindow_Cleanup</a>(&amp;win);</div>
+<div class="line">    <a class="code hl_function" href="tiny_8c.html#a646a3a0f8d98b971ab6d8af4f822ac31">GooeyWindow_Run</a>(&amp;win);</div>
+<div class="line">    <a class="code hl_function" href="tiny_8c.html#a4c78dc36662d669d3ee08023cc05e1ea">GooeyWindow_Cleanup</a>(&amp;win);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="agooey_8h_html"><div class="ttname"><a href="gooey_8h.html">gooey.h</a></div></div>
-<div class="ttc" id="agooey_8h_html_a5bb530110f0f6dcde2f3f3cd7c179efc"><div class="ttname"><a href="gooey_8h.html#a5bb530110f0f6dcde2f3f3cd7c179efc">GooeyWindow_Create</a></div><div class="ttdeci">GooeyWindow GooeyWindow_Create(const char *title, int width, int height)</div><div class="ttdoc">Creates a new Gooey window.</div><div class="ttdef"><b>Definition</b> gooey.h:546</div></div>
-<div class="ttc" id="agooey_8h_html_a646a3a0f8d98b971ab6d8af4f822ac31"><div class="ttname"><a href="gooey_8h.html#a646a3a0f8d98b971ab6d8af4f822ac31">GooeyWindow_Run</a></div><div class="ttdeci">void GooeyWindow_Run(GooeyWindow *win)</div><div class="ttdoc">Runs the Gooey window.</div><div class="ttdef"><b>Definition</b> gooey.h:1503</div></div>
-<div class="ttc" id="agooey_8h_html_a6ef2ab71a12568095efab0973c7b687c"><div class="ttname"><a href="gooey_8h.html#a6ef2ab71a12568095efab0973c7b687c">GooeyButton_Add</a></div><div class="ttdeci">GooeyButton * GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y, int width, int height, void(*callback)())</div><div class="ttdoc">Adds a button to the window.</div><div class="ttdef"><b>Definition</b> gooey.h:1235</div></div>
-<div class="ttc" id="agooey_8h_html_a83e8b293bf59a1b632f6fcfa7e29fbff"><div class="ttname"><a href="gooey_8h.html#a83e8b293bf59a1b632f6fcfa7e29fbff">GooeyWindow_Cleanup</a></div><div class="ttdeci">void GooeyWindow_Cleanup(GooeyWindow *win)</div><div class="ttdef"><b>Definition</b> gooey.h:1565</div></div>
-<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:11</div></div>
-<div class="ttc" id="astructGooeyButton_html"><div class="ttname"><a href="structGooeyButton.html">GooeyButton</a></div><div class="ttdef"><b>Definition</b> gooey.h:70</div></div>
-<div class="ttc" id="astructGooeyWindow_html"><div class="ttname"><a href="structGooeyWindow.html">GooeyWindow</a></div><div class="ttdef"><b>Definition</b> gooey.h:171</div></div>
+<div class="ttc" id="amain_8c_html_acbcea893ddddb55e558115beb8f9a1b1"><div class="ttname"><a href="main_8c.html#acbcea893ddddb55e558115beb8f9a1b1">onButtonClick</a></div><div class="ttdeci">void onButtonClick()</div><div class="ttdef"><b>Definition</b> main.c:5</div></div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:20</div></div>
+<div class="ttc" id="atiny_8c_html_a4c78dc36662d669d3ee08023cc05e1ea"><div class="ttname"><a href="tiny_8c.html#a4c78dc36662d669d3ee08023cc05e1ea">GooeyWindow_Cleanup</a></div><div class="ttdeci">void GooeyWindow_Cleanup()</div><div class="ttdef"><b>Definition</b> tiny.c:888</div></div>
+<div class="ttc" id="atiny_8c_html_a5bb530110f0f6dcde2f3f3cd7c179efc"><div class="ttname"><a href="tiny_8c.html#a5bb530110f0f6dcde2f3f3cd7c179efc">GooeyWindow_Create</a></div><div class="ttdeci">GooeyWindow GooeyWindow_Create(const char *title, int width, int height)</div><div class="ttdoc">Creates a new Gooey window.</div><div class="ttdef"><b>Definition</b> tiny.c:24</div></div>
+<div class="ttc" id="atiny_8c_html_a646a3a0f8d98b971ab6d8af4f822ac31"><div class="ttname"><a href="tiny_8c.html#a646a3a0f8d98b971ab6d8af4f822ac31">GooeyWindow_Run</a></div><div class="ttdeci">void GooeyWindow_Run(GooeyWindow *win)</div><div class="ttdoc">Runs the Gooey window.</div><div class="ttdef"><b>Definition</b> tiny.c:894</div></div>
+<div class="ttc" id="atiny_8c_html_a6ef2ab71a12568095efab0973c7b687c"><div class="ttname"><a href="tiny_8c.html#a6ef2ab71a12568095efab0973c7b687c">GooeyButton_Add</a></div><div class="ttdeci">GooeyButton * GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y, int width, int height, void(*callback)())</div><div class="ttdoc">Adds a button to the window.</div><div class="ttdef"><b>Definition</b> tiny.c:242</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 API Overview</h1>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Window Management</h2>
 <ul>
-<li><code><a class="el" href="structGooeyWindow.html">GooeyWindow</a> <a class="el" href="gooey_8h.html#a5bb530110f0f6dcde2f3f3cd7c179efc" title="Creates a new Gooey window.">GooeyWindow_Create(const char *title, int width, int height)</a></code></li>
-<li><code>void <a class="el" href="gooey_8h.html#a646a3a0f8d98b971ab6d8af4f822ac31" title="Runs the Gooey window.">GooeyWindow_Run(GooeyWindow *win)</a></code></li>
-<li><code>void <a class="el" href="gooey_8h.html#ae5030980075ccfceb3e805c5b6f5ff8a" title="Redraws the window.">GooeyWindow_Redraw(GooeyWindow *win)</a></code></li>
-<li><code>void <a class="el" href="gooey_8h.html#a83e8b293bf59a1b632f6fcfa7e29fbff">GooeyWindow_Cleanup(GooeyWindow *win)</a></code></li>
+<li><code>GooeyWindow <a class="el" href="tiny_8c.html#a5bb530110f0f6dcde2f3f3cd7c179efc" title="Creates a new Gooey window.">GooeyWindow_Create(const char *title, int width, int height)</a></code></li>
+<li><code>void <a class="el" href="tiny_8c.html#a646a3a0f8d98b971ab6d8af4f822ac31" title="Runs the Gooey window.">GooeyWindow_Run(GooeyWindow *win)</a></code></li>
+<li><code>void <a class="el" href="tiny_8c.html#ae5030980075ccfceb3e805c5b6f5ff8a">GooeyWindow_Redraw(GooeyWindow *win)</a></code></li>
+<li><code>void GooeyWindow_Cleanup(GooeyWindow *win)</code></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Widgets</h2>
