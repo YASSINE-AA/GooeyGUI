@@ -1,10 +1,5 @@
-#include "gooey_backend.h"
-#include "glad/glad.h"
-#include <GLFW/glfw3.h>
-#include "linmath.h"
-#include <stdio.h>
-#include <stdlib.h>
 
+#include "utils/glfw_utils.h"
 typedef struct {
     GooeyEvent *current_event;
     GLFWwindow *window;
@@ -12,61 +7,7 @@ typedef struct {
     GLuint vertex_array_object;
     GLuint vertex_buffer_object;
 } GooeyBackendContext;
-
-typedef struct Vertex {
-    vec2 pos;
-    vec3 col;
-} Vertex;
-
-static const char *rectangle_vertex_shader =
-    "#version 330 core\n"
-    "layout(location = 0) in vec2 pos;\n"
-    "layout(location = 1) in vec3 col;\n"
-    "out vec3 color;\n"
-    "void main() {\n"
-    "    gl_Position = vec4(pos, 0.0, 1.0);\n"
-    "    color = col;\n"
-    "}\n";
-
-static const char *rectangle_fragment_shader =
-    "#version 330 core\n"
-    "in vec3 color;\n"
-    "out vec4 fragment;\n"
-    "void main() {\n"
-    "    fragment = vec4(color, 1.0);\n"
-    "}\n";
-
 static GooeyBackendContext ctx = {0};
-
-void get_window_size(int *window_width, int *window_height)
-{
-    glfwGetFramebufferSize(ctx.window, window_width, window_height);
-}
-
-void convert_coords_to_ndc(float *ndc_x, float *ndc_y, int x, int y)
-{
-    int window_width, window_height;
-    get_window_size(&window_width, &window_height);
-
-    *ndc_x = (2.0f * x / window_width) - 1.0f;
-    *ndc_y = 1.0f - (2.0f * y / window_height);
-}
-
-void convert_dimension_to_ndc(float *ndc_w, float *ndc_h, int width, int height)
-{
-    int window_width, window_height;
-    get_window_size(&window_width, &window_height);
-
-    *ndc_w= (2.0f * width) / window_width;
-    *ndc_h= -(2.0f * height) / window_height;
-}
-
-void convert_hex_to_rgb(vec3 *rgb, unsigned int color_hex)
-{
-    (*rgb)[0] = ((color_hex >> 16) & 0xFF) / 255.0f;
-    (*rgb)[1] = ((color_hex >> 8) & 0xFF) / 255.0f;
-    (*rgb)[2] = ((color_hex) & 0xFF) / 255.0f;
-}
 
 void setup_shaders() {
     GLuint vertex_shader = glCreateShader(GL_VERTEX_SHADER);
@@ -100,17 +41,15 @@ void setup_shaders() {
     glEnableVertexAttribArray(col_attrib);
     glVertexAttribPointer(col_attrib, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)offsetof(Vertex, col));
 }
-void glfw_draw_rectangle(float x, float y, float width, float height, unsigned int color)
+void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)
 {
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
     vec3 color_rgb;
 
-    convert_coords_to_ndc(&ndc_x, &ndc_y, x, y);
-    convert_dimension_to_ndc(&ndc_width, &ndc_height, width, height);
+    convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
+    convert_dimension_to_ndc(ctx.window, &ndc_width, &ndc_height, width, height);
     convert_hex_to_rgb(&color_rgb, color);
-
-    printf("%f %f %f\n", color_rgb[0], color_rgb[1], color_rgb[2]);
 
     Vertex vertices[6];
 
@@ -133,6 +72,38 @@ void glfw_draw_rectangle(float x, float y, float width, float height, unsigned i
 
     glBindVertexArray(ctx.vertex_array_object);
     glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+
+
+
+void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
+{
+    float ndc_x1, ndc_y1;
+    float ndc_x2, ndc_y2;
+    vec3 color_rgb;
+
+    convert_coords_to_ndc(ctx.window, &ndc_x1, &ndc_y1, x1, y1);
+    convert_coords_to_ndc(ctx.window, &ndc_x2, &ndc_y2, x2, y2);
+
+    convert_hex_to_rgb(&color_rgb, color);
+
+    Vertex vertices[2];
+
+    for (int i = 0; i < 2; i++) {
+        vertices[i].col[0] = color_rgb[0];
+        vertices[i].col[1] = color_rgb[1];
+        vertices[i].col[2] = color_rgb[2];
+    }
+
+
+    vertices[0].pos[0] = ndc_x1;  vertices[0].pos[1] = ndc_y1;
+    vertices[1].pos[0] = ndc_x2;  vertices[1].pos[1] = ndc_y2;
+
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+    glBindVertexArray(ctx.vertex_array_object);
+    glDrawArrays(GL_LINES, 0, 2);
 }
 
 
@@ -232,11 +203,7 @@ void glfw_render() {
 
     glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, width, height);
-
-
-
-    glfw_draw_rectangle(20, 20, 200, 300, 0xFF0000);
-
+    glfw_draw_line(20, 20, 80, 40, 0xFF0000);
 
     glfwSwapBuffers(ctx.window);
 }
@@ -248,4 +215,6 @@ GooeyBackend glfw_backend = {
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,
+    .DrawRectangle = glfw_draw_rectangle,
+    .DrawLine =  glfw_draw_line
 };
