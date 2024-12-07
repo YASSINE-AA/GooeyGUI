@@ -315,5 +315,6 @@ GooeyBackend glfw_backend = {
     .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
     .DrawLine =  glfw_draw_line,
+    .SetForeground = glfw_set_foreground,
 
 };
