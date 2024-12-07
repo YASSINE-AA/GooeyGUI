@@ -6,6 +6,7 @@ typedef struct {
     GLuint program;
     GLuint vertex_array_object;
     GLuint vertex_buffer_object;
+    unsigned int selected_color;
 } GooeyBackendContext;
 static GooeyBackendContext ctx = {0};
 
@@ -74,7 +75,10 @@ void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int 
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-
+void glfw_set_foreground(unsigned int color)
+{
+    ctx.selected_color = color;
+}
 
 void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)
 {
@@ -139,9 +143,61 @@ void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
     glDrawArrays(GL_LINES, 0, 2);
 }
 
-void glfw_draw_text(int x, int y, const char *text, long unsigned int color)
-{
+void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2) {
+    const int segments = 100;
+    float ndc_x_center, ndc_y_center;
+    int window_width, window_height;
+    convert_coords_to_ndc(ctx.window, &ndc_x_center, &ndc_y_center, x_center, y_center);
 
+    get_window_size(ctx.window, &window_width, &window_height);
+
+    vec3 color_rgb;
+    convert_hex_to_rgb(&color_rgb, ctx.selected_color);
+
+    if (angle1 > angle2) {
+        float temp = angle1;
+        angle1 = angle2;
+        angle2 = temp;
+    }
+
+    angle1 = fmodf(angle1, 2.0f * M_PI);
+    angle2 = fmodf(angle2, 2.0f * M_PI);
+    if (angle2 < angle1) {
+        angle2 += 2.0f * M_PI;
+    }
+
+    int arc_segments = (int)((angle2 - angle1) / (2.0f * M_PI) * segments);
+    if (arc_segments < 2) arc_segments = 2;
+
+    Vertex vertices[arc_segments + 2];
+
+    vertices[0].pos[0] = ndc_x_center;
+    vertices[0].pos[1] = ndc_y_center;
+    vertices[0].col[0] = color_rgb[0];
+    vertices[0].col[1] = color_rgb[1];
+    vertices[0].col[2] = color_rgb[2];
+
+    for (int i = 0; i <= arc_segments; ++i) {
+        float t = (float)i / arc_segments;
+        float angle = angle1 + t * (angle2 - angle1);
+        float x = x_center + (width * cosf(angle));
+        float y = y_center + (height * sinf(angle));
+
+        float ndc_x, ndc_y;
+        convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
+
+        vertices[i + 1].pos[0] = ndc_x;
+        vertices[i + 1].pos[1] = ndc_y;
+        vertices[i + 1].col[0] = color_rgb[0];
+        vertices[i + 1].col[1] = color_rgb[1];
+        vertices[i + 1].col[2] = color_rgb[2];
+    }
+
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+    glBindVertexArray(ctx.vertex_array_object);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, arc_segments + 2);
 }
 
 
@@ -163,6 +219,7 @@ int glfw_init() {
     }
 
     ctx.current_event->type = -1;
+    ctx.selected_color = 0x000000;
 
     glfwSetErrorCallback(error_callback);
 
@@ -194,7 +251,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height) {
     gladLoadGL();
     glfwSwapInterval(1);
 
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
     setup_shaders();
 
@@ -242,7 +299,8 @@ void glfw_render() {
     glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, width, height);
     //glfw_draw_line(20, 20, 80, 40, 0xFF0000);
-    glfw_draw_rectangle(20, 20, 80, 40, 0xFF0000);
+    //glfw_draw_rectangle(20, 20, 80, 40, 0xFF0000);
+    //glfw_fill_arc(120, 120, 100, 50 ,20, 90);
     glfwSwapBuffers(ctx.window);
 }
 
@@ -253,7 +311,9 @@ GooeyBackend glfw_backend = {
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,
+    .FillArc = glfw_fill_arc,
     .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
-    .DrawLine =  glfw_draw_line
+    .DrawLine =  glfw_draw_line,
+
 };
