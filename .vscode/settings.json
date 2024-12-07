@@ -6,6 +6,7 @@
         "gooey_types.h": "c",
         "gooey_colors.h": "c",
         "gooey_widgets.h": "c",
-        "tiny.h": "c"
+        "tiny.h": "c",
+        "xdg-shell-client-protocol.h": "c"
     }
 }

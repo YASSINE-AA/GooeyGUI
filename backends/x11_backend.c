@@ -19,13 +19,13 @@ typedef struct
 
 static GooeyBackendContext ctx = {0};
 
-bool x11_init()
+int x11_init()
 {
     ctx.display = XOpenDisplay(NULL);
     if (!ctx.display)
     {
         fprintf(stderr, "Failed to open X display\n");
-        return false;
+        return -1;
     }
 
     ctx.font = XLoadQueryFont(ctx.display, "fixed");
@@ -33,9 +33,9 @@ bool x11_init()
     {
         fprintf(stderr, "Failed to load system font\n");
         XCloseDisplay(ctx.display);
-        return false;
+        return -1;
     }
-    return true;
+    return 0;
 }
 
 void x11_cleanup()

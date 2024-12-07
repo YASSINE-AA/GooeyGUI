@@ -5,6 +5,8 @@
 
 extern GooeyBackend *active_backend;
 extern GooeyBackend x11_backend;
+extern GooeyBackend wayland_backend;
+extern GooeyBackend glfw_backend;
 
 int Gooey_Init(GooeyBackends backend);
 

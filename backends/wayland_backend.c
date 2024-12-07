@@ -1,9 +1,12 @@
+#define _GNU_SOURCE
+
 #include "gooey_backend.h"
 
-#define _GNU_SOURCE
 #include <wayland-client.h>
 #include "xdg-shell-client-protocol.h"
 #include <sys/mman.h>
+#include <sys/types.h>
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
@@ -29,7 +32,7 @@ static GooeyBackendContext ctx = {0};
 
 int create_shm_file(size_t size)
 {
-    int fd = memfd_create("wayland-shm", MFD_CLOEXEC | MFD_ALLOW_SEALING);
+    int fd = memfd_create("wayland-shm", FD_CLOEXEC | MFD_ALLOW_SEALING);
     if (fd < 0)
     {
         perror("Failed to create SHM file");
@@ -42,7 +45,6 @@ int create_shm_file(size_t size)
         exit(1);
     }
     return fd;
-    GooeyBackendContext
 }
 
 struct wl_buffer *create_buffer(int width, int height, struct wl_shm *shm)
@@ -63,7 +65,7 @@ struct wl_buffer *create_buffer(int width, int height, struct wl_shm *shm)
     uint32_t *pixels = (uint32_t *)data;
     for (int i = 0; i < width * height; i++)
     {
-        pixels[i] = 0x000000;
+        pixels[i] = 0xFFFFFF;
     }
 
     struct wl_shm_pool *pool = wl_shm_create_pool(shm, fd, size);
@@ -87,16 +89,16 @@ void registry_handler(void *data, struct wl_registry *registry, uint32_t id,
 {
     if (strcmp(interface, "wl_compositor") == 0)
     {
-        compositor = wl_registry_bind(registry, id, &wl_compositor_interface, 1);
+        ctx.compositor = wl_registry_bind(registry, id, &wl_compositor_interface, 1);
     }
     else if (strcmp(interface, "wl_shm") == 0)
     {
-        shm = wl_registry_bind(registry, id, &wl_shm_interface, 1);
+        ctx.shm = wl_registry_bind(registry, id, &wl_shm_interface, 1);
     }
     else if (strcmp(interface, "xdg_wm_base") == 0)
     {
-        wm_base = wl_registry_bind(registry, id, &xdg_wm_base_interface, 1);
-        xdg_wm_base_add_listener(wm_base, &wm_base_listener, NULL);
+        ctx.wm_base = wl_registry_bind(registry, id, &xdg_wm_base_interface, 1);
+        xdg_wm_base_add_listener(ctx.wm_base, &wm_base_listener, NULL);
     }
 }
 
@@ -120,17 +122,47 @@ int wayland_init()
 
     struct wl_registry *registry = wl_display_get_registry(ctx.display);
     wl_registry_add_listener(registry, &registry_listener, NULL);
-    wl_display_roundtrip(ctx.display);
+
+    
+    if (wl_display_roundtrip(ctx.display) < 0)
+    {
+        fprintf(stderr, "Failed to initialize Wayland interfaces\n");
+        return -1;
+    }
+
+    return 0; 
 }
 
 GooeyWindow wayland_create_window()
 {
     ctx.surface = wl_compositor_create_surface(ctx.compositor);
+    if (!ctx.surface)
+    {
+        fprintf(stderr, "Failed to create Wayland surface\n");
+        exit(1);
+    }
+
     ctx.xdg_surface = xdg_wm_base_get_xdg_surface(ctx.wm_base, ctx.surface);
+    if (!ctx.xdg_surface)
+    {
+        fprintf(stderr, "Failed to create XDG surface\n");
+        exit(1);
+    }
     ctx.xdg_toplevel = xdg_surface_get_toplevel(ctx.xdg_surface);
+    if (!ctx.xdg_toplevel)
+    {
+        fprintf(stderr, "Failed to create XDG toplevel\n");
+        exit(1);
+    }
     xdg_toplevel_set_title(ctx.xdg_toplevel, "Hello Wayland");
+    xdg_toplevel_set_app_id(ctx.xdg_toplevel, "wayland-test-app");
     wl_surface_commit(ctx.surface);
     ctx.buffer = create_buffer(WIDTH, HEIGHT, ctx.shm);
+    if (!ctx.buffer)
+    {
+        fprintf(stderr, "Failed to create buffer\n");
+        exit(1);
+    }
     wl_surface_attach(ctx.surface, ctx.buffer, 0, 0);
     wl_surface_commit(ctx.surface);
 
@@ -140,11 +172,16 @@ GooeyWindow wayland_create_window()
 
 void wayland_run()
 {
-    while (wl_display_dispatch(ctx.display) != -1)
+    while (1)
     {
+        int ret = wl_display_dispatch(ctx.display);
+        if (ret == -1)
+        {
+            fprintf(stderr, "Wayland connection closed\n");
+            break;
+        }
     }
 }
-
 void wayland_cleanup()
 {
     wl_buffer_destroy(ctx.buffer);
@@ -156,5 +193,4 @@ GooeyBackend wayland_backend = {
     .Init = wayland_init,
     .CreateWindow = wayland_create_window,
     .Cleanup = wayland_cleanup,
-    .Render = wayland_run /* This is temp until opengl is implemented. */
-}
+    .Render = wayland_run};

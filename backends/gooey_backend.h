@@ -9,6 +9,7 @@
 #include "gooey_colors.h"
 #include "gooey_widgets.h"
 
+
 typedef enum GooeyBackends
 {
     X11,
@@ -29,7 +30,7 @@ typedef struct GooeyWindow
  */
 typedef struct GooeyBackend
 {
-    bool (*Init)();
+    int (*Init)();
     void (*Cleanup)();
     GooeyWindow (*CreateWindow)(const char *title, int width, int height);
     void (*DestroyWindow)(void);
@@ -47,5 +48,8 @@ typedef struct GooeyBackend
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color);
     int (*GetTextWidth)(const char *text, int length);
 } GooeyBackend;
+
+extern GooeyBackend wayland_backend;
+
 
 #endif

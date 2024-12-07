@@ -10,7 +10,6 @@ int Gooey_Init(GooeyBackends backend)
     case X11:
         active_backend = &x11_backend;
         break;
-
     default:
         break;
     }
@@ -910,7 +909,7 @@ void GooeyWindow_Run(GooeyWindow *win)
 
     while (running)
     {
-        event = active_backend->HandleEvents(win);
+        event = active_backend->HandleEvents();
 
         switch (event.type)
         {
