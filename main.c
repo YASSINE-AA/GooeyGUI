@@ -9,7 +9,7 @@ int main()
         return -1;
     }
 
-    GooeyWindow window = b.CreateWindow("Hi!!", 100, 100);
+    GooeyWindow window = b.CreateWindow("Hi!!", 1000, 1000);
     bool running = true;
     while (running)
     {

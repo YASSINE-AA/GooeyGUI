@@ -28,7 +28,7 @@ $(BUILD_DIR)/%.o: $(C_SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/gui: $(BUILD_DIR) $(OBJS_gui)
-	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm
+	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm 
 
 clrobj:
 	rm -f $(BUILD_DIR)/*.o
