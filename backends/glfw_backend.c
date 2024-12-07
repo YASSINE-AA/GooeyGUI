@@ -41,7 +41,7 @@ void setup_shaders() {
     glEnableVertexAttribArray(col_attrib);
     glVertexAttribPointer(col_attrib, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)offsetof(Vertex, col));
 }
-void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)
+void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int color)
 {
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
@@ -76,6 +76,39 @@ void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int 
 
 
 
+void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)
+{
+    float ndc_x, ndc_y;
+    float ndc_width, ndc_height;
+    vec3 color_rgb;
+
+    convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
+    convert_dimension_to_ndc(ctx.window, &ndc_width, &ndc_height, width, height);
+    convert_hex_to_rgb(&color_rgb, color);
+
+    Vertex vertices[4];
+
+    for (int i = 0; i < 4; i++) {
+        vertices[i].col[0] = color_rgb[0];
+        vertices[i].col[1] = color_rgb[1];
+        vertices[i].col[2] = color_rgb[2];
+    }
+
+    vertices[0].pos[0] = ndc_x;          vertices[0].pos[1] = ndc_y;
+    vertices[1].pos[0] = ndc_x + ndc_width;  vertices[1].pos[1] = ndc_y;
+    vertices[2].pos[0] = ndc_x + ndc_width;          vertices[2].pos[1] = ndc_y + ndc_height;
+
+    vertices[3].pos[0] = ndc_x;  vertices[3].pos[1] = ndc_y + ndc_height;
+
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+    glBindVertexArray(ctx.vertex_array_object);
+    glDrawArrays(GL_LINE_LOOP, 0, 4);
+}
+
+
+
 void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
 {
     float ndc_x1, ndc_y1;
@@ -104,6 +137,11 @@ void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
 
     glBindVertexArray(ctx.vertex_array_object);
     glDrawArrays(GL_LINES, 0, 2);
+}
+
+void glfw_draw_text(int x, int y, const char *text, long unsigned int color)
+{
+
 }
 
 
@@ -203,8 +241,8 @@ void glfw_render() {
 
     glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, width, height);
-    glfw_draw_line(20, 20, 80, 40, 0xFF0000);
-
+    //glfw_draw_line(20, 20, 80, 40, 0xFF0000);
+    glfw_draw_rectangle(20, 20, 80, 40, 0xFF0000);
     glfwSwapBuffers(ctx.window);
 }
 
@@ -215,6 +253,7 @@ GooeyBackend glfw_backend = {
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,
+    .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
     .DrawLine =  glfw_draw_line
 };
