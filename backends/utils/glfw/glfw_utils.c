@@ -31,3 +31,5 @@ void convert_hex_to_rgb(vec3 *rgb, unsigned int color_hex)
     (*rgb)[1] = ((color_hex >> 8) & 0xFF) / 255.0f;
     (*rgb)[2] = ((color_hex) & 0xFF) / 255.0f;
 }
+
+

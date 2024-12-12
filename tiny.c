@@ -10,6 +10,10 @@ int Gooey_Init(GooeyBackends backend)
     case X11:
         active_backend = &x11_backend;
         break;
+    
+    case GLFW:
+        active_backend = &glfw_backend;
+        break;
     default:
         break;
     }

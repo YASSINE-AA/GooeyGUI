@@ -1,49 +1,119 @@
 
-#include "utils/glfw_utils.h"
-typedef struct {
+#include "utils/glfw/glfw_utils.h"
+typedef struct
+{
     GooeyEvent *current_event;
     GLFWwindow *window;
-    GLuint program;
-    GLuint vertex_array_object;
-    GLuint vertex_buffer_object;
+    GLuint text_program;
+    GLuint shape_program;
+    GLuint text_vao;
+    GLuint text_vbo;
+    GLuint shape_vao;
+    GLuint shape_vbo;
+    mat4x4 projection;
+    Character characters[128];
+    char font_path[256];
     unsigned int selected_color;
 } GooeyBackendContext;
+;
+
 static GooeyBackendContext ctx = {0};
 
-void setup_shaders() {
-    GLuint vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertex_shader, 1, &rectangle_vertex_shader, NULL);
-    glCompileShader(vertex_shader);
+void check_shader_compile(GLuint shader)
+{
+    GLint success;
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        char infoLog[512];
+        glGetShaderInfoLog(shader, 512, NULL, infoLog);
+        fprintf(stderr, "ERROR: Shader compilation failed\n%s\n", infoLog);
+        exit(EXIT_FAILURE);
+    }
+}
 
-    GLuint fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragment_shader, 1, &rectangle_fragment_shader, NULL);
-    glCompileShader(fragment_shader);
+void check_shader_link(GLuint program)
+{
+    GLint success;
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
+    if (!success)
+    {
+        char infoLog[512];
+        glGetProgramInfoLog(program, 512, NULL, infoLog);
+        fprintf(stderr, "ERROR: Program linking failed\n%s\n", infoLog);
+        exit(EXIT_FAILURE);
+    }
+}
 
-    ctx.program = glCreateProgram();
-    glAttachShader(ctx.program, vertex_shader);
-    glAttachShader(ctx.program, fragment_shader);
-    glLinkProgram(ctx.program);
-    glUseProgram(ctx.program);
+void setup_shaders()
+{
 
-    glDeleteShader(vertex_shader);
-    glDeleteShader(fragment_shader);
+    GLuint text_vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(text_vertex_shader, 1, &text_vertex_shader_source, NULL);
+    glCompileShader(text_vertex_shader);
+    check_shader_compile(text_vertex_shader);
 
-    glGenVertexArrays(1, &ctx.vertex_array_object);
-    glBindVertexArray(ctx.vertex_array_object);
+    GLuint text_fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(text_fragment_shader, 1, &text_fragment_shader_source, NULL);
+    glCompileShader(text_fragment_shader);
+    check_shader_compile(text_fragment_shader);
 
-    glGenBuffers(1, &ctx.vertex_buffer_object);
-    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    ctx.text_program = glCreateProgram();
+    glAttachShader(ctx.text_program, text_vertex_shader);
+    glAttachShader(ctx.text_program, text_fragment_shader);
+    glLinkProgram(ctx.text_program);
+    check_shader_link(ctx.text_program);
 
-    GLint position_attrib = glGetAttribLocation(ctx.program, "pos");
+    glDeleteShader(text_vertex_shader);
+    glDeleteShader(text_fragment_shader);
+
+    glGenVertexArrays(1, &ctx.text_vao);
+    glGenBuffers(1, &ctx.text_vbo);
+
+    glBindVertexArray(ctx.text_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.text_vbo);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+    GLuint shape_vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(shape_vertex_shader, 1, &rectangle_vertex_shader, NULL);
+    glCompileShader(shape_vertex_shader);
+    check_shader_compile(shape_vertex_shader);
+
+    GLuint shape_fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(shape_fragment_shader, 1, &rectangle_fragment_shader, NULL);
+    glCompileShader(shape_fragment_shader);
+    check_shader_compile(shape_fragment_shader);
+
+    ctx.shape_program = glCreateProgram();
+    glAttachShader(ctx.shape_program, shape_vertex_shader);
+    glAttachShader(ctx.shape_program, shape_fragment_shader);
+    glLinkProgram(ctx.shape_program);
+    check_shader_link(ctx.shape_program);
+
+    glDeleteShader(shape_vertex_shader);
+    glDeleteShader(shape_fragment_shader);
+
+    glGenVertexArrays(1, &ctx.shape_vao);
+    glBindVertexArray(ctx.shape_vao);
+
+    glGenBuffers(1, &ctx.shape_vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
+
+    GLint position_attrib = glGetAttribLocation(ctx.shape_program, "pos");
     glEnableVertexAttribArray(position_attrib);
     glVertexAttribPointer(position_attrib, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)offsetof(Vertex, pos));
 
-    GLint col_attrib = glGetAttribLocation(ctx.program, "col");
+    GLint col_attrib = glGetAttribLocation(ctx.shape_program, "col");
     glEnableVertexAttribArray(col_attrib);
     glVertexAttribPointer(col_attrib, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)offsetof(Vertex, col));
 }
 void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int color)
 {
+
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
     vec3 color_rgb;
@@ -54,34 +124,43 @@ void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int 
 
     Vertex vertices[6];
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++)
+    {
         vertices[i].col[0] = color_rgb[0];
         vertices[i].col[1] = color_rgb[1];
         vertices[i].col[2] = color_rgb[2];
     }
 
-    vertices[0].pos[0] = ndc_x;          vertices[0].pos[1] = ndc_y;
-    vertices[1].pos[0] = ndc_x + ndc_width;  vertices[1].pos[1] = ndc_y;
-    vertices[2].pos[0] = ndc_x;          vertices[2].pos[1] = ndc_y + ndc_height;
+    vertices[0].pos[0] = ndc_x;
+    vertices[0].pos[1] = ndc_y;
+    vertices[1].pos[0] = ndc_x + ndc_width;
+    vertices[1].pos[1] = ndc_y;
+    vertices[2].pos[0] = ndc_x;
+    vertices[2].pos[1] = ndc_y + ndc_height;
 
-    vertices[3].pos[0] = ndc_x + ndc_width;  vertices[3].pos[1] = ndc_y;
-    vertices[4].pos[0] = ndc_x + ndc_width;  vertices[4].pos[1] = ndc_y + ndc_height;
-    vertices[5].pos[0] = ndc_x;          vertices[5].pos[1] = ndc_y + ndc_height;
+    vertices[3].pos[0] = ndc_x + ndc_width;
+    vertices[3].pos[1] = ndc_y;
+    vertices[4].pos[0] = ndc_x + ndc_width;
+    vertices[4].pos[1] = ndc_y + ndc_height;
+    vertices[5].pos[0] = ndc_x;
+    vertices[5].pos[1] = ndc_y + ndc_height;
 
-    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glUseProgram(ctx.shape_program);
+
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-    glBindVertexArray(ctx.vertex_array_object);
+    glBindVertexArray(ctx.shape_vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
-
-void glfw_set_foreground(unsigned int color)
+void glfw_set_foreground(long unsigned int color)
 {
     ctx.selected_color = color;
 }
 
 void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)
 {
+
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
     vec3 color_rgb;
@@ -92,29 +171,34 @@ void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int 
 
     Vertex vertices[4];
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++)
+    {
         vertices[i].col[0] = color_rgb[0];
         vertices[i].col[1] = color_rgb[1];
         vertices[i].col[2] = color_rgb[2];
     }
 
-    vertices[0].pos[0] = ndc_x;          vertices[0].pos[1] = ndc_y;
-    vertices[1].pos[0] = ndc_x + ndc_width;  vertices[1].pos[1] = ndc_y;
-    vertices[2].pos[0] = ndc_x + ndc_width;          vertices[2].pos[1] = ndc_y + ndc_height;
+    vertices[0].pos[0] = ndc_x;
+    vertices[0].pos[1] = ndc_y;
+    vertices[1].pos[0] = ndc_x + ndc_width;
+    vertices[1].pos[1] = ndc_y;
+    vertices[2].pos[0] = ndc_x + ndc_width;
+    vertices[2].pos[1] = ndc_y + ndc_height;
 
-    vertices[3].pos[0] = ndc_x;  vertices[3].pos[1] = ndc_y + ndc_height;
+    vertices[3].pos[0] = ndc_x;
+    vertices[3].pos[1] = ndc_y + ndc_height;
+    glUseProgram(ctx.shape_program);
 
-    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-    glBindVertexArray(ctx.vertex_array_object);
+    glBindVertexArray(ctx.shape_vao);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 }
 
-
-
 void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
 {
+
     float ndc_x1, ndc_y1;
     float ndc_x2, ndc_y2;
     vec3 color_rgb;
@@ -126,24 +210,29 @@ void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
 
     Vertex vertices[2];
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++)
+    {
         vertices[i].col[0] = color_rgb[0];
         vertices[i].col[1] = color_rgb[1];
         vertices[i].col[2] = color_rgb[2];
     }
 
+    vertices[0].pos[0] = ndc_x1;
+    vertices[0].pos[1] = ndc_y1;
+    vertices[1].pos[0] = ndc_x2;
+    vertices[1].pos[1] = ndc_y2;
+    glUseProgram(ctx.shape_program);
 
-    vertices[0].pos[0] = ndc_x1;  vertices[0].pos[1] = ndc_y1;
-    vertices[1].pos[0] = ndc_x2;  vertices[1].pos[1] = ndc_y2;
-
-    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-    glBindVertexArray(ctx.vertex_array_object);
+    glBindVertexArray(ctx.shape_vao);
     glDrawArrays(GL_LINES, 0, 2);
 }
 
-void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2) {
+void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2)
+{
+
     const int segments = 100;
     float ndc_x_center, ndc_y_center;
     int window_width, window_height;
@@ -154,7 +243,8 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
     vec3 color_rgb;
     convert_hex_to_rgb(&color_rgb, ctx.selected_color);
 
-    if (angle1 > angle2) {
+    if (angle1 > angle2)
+    {
         float temp = angle1;
         angle1 = angle2;
         angle2 = temp;
@@ -162,12 +252,14 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
 
     angle1 = fmodf(angle1, 2.0f * M_PI);
     angle2 = fmodf(angle2, 2.0f * M_PI);
-    if (angle2 < angle1) {
+    if (angle2 < angle1)
+    {
         angle2 += 2.0f * M_PI;
     }
 
     int arc_segments = (int)((angle2 - angle1) / (2.0f * M_PI) * segments);
-    if (arc_segments < 2) arc_segments = 2;
+    if (arc_segments < 2)
+        arc_segments = 2;
 
     Vertex vertices[arc_segments + 2];
 
@@ -177,7 +269,8 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
     vertices[0].col[1] = color_rgb[1];
     vertices[0].col[2] = color_rgb[2];
 
-    for (int i = 0; i <= arc_segments; ++i) {
+    for (int i = 0; i <= arc_segments; ++i)
+    {
         float t = (float)i / arc_segments;
         float angle = angle1 + t * (angle2 - angle1);
         float x = x_center + (width * cosf(angle));
@@ -192,28 +285,94 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
         vertices[i + 1].col[1] = color_rgb[1];
         vertices[i + 1].col[2] = color_rgb[2];
     }
+    glUseProgram(ctx.shape_program);
 
-    glBindBuffer(GL_ARRAY_BUFFER, ctx.vertex_buffer_object);
+    glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-    glBindVertexArray(ctx.vertex_array_object);
+    glBindVertexArray(ctx.shape_vao);
     glDrawArrays(GL_TRIANGLE_FAN, 0, arc_segments + 2);
 }
 
-
-
-static void error_callback(int error, const char *description) {
+static void error_callback(int error, const char *description)
+{
     fprintf(stderr, "Error: %s\n", description);
 }
 
-static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
+static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
+{
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
 }
 
-int glfw_init() {
+int glfw_init_ft()
+{
+
+    FT_Library ft;
+    if (FT_Init_FreeType(&ft))
+    {
+        fprintf(stderr, "Could not initialize FreeType library\n");
+        return -1;
+    }
+
+    FT_Face face;
+    if (FT_New_Face(ft, "./font.ttf", 0, &face))
+    {
+        fprintf(stderr, "Failed to load font: %s\n", "./font.ttf");
+        FT_Done_FreeType(ft);
+        return -1;
+    }
+
+    FT_Set_Pixel_Sizes(face, 0, 48);
+
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+    for (unsigned char c = 0; c < 128; c++)
+    {
+        if (FT_Load_Char(face, c, FT_LOAD_RENDER))
+        {
+            fprintf(stderr, "Failed to load Glyph for character: '%c'\n", c);
+            continue;
+        }
+
+        GLuint texture;
+        glGenTextures(1, &texture);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glTexImage2D(
+            GL_TEXTURE_2D,
+            0,
+            GL_RGBA,
+            face->glyph->bitmap.width,
+            face->glyph->bitmap.rows,
+            0,
+            GL_RED,
+            GL_UNSIGNED_BYTE,
+            face->glyph->bitmap.buffer);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        Character character = {
+            texture,
+            face->glyph->bitmap.width,
+            face->glyph->bitmap.rows,
+            face->glyph->bitmap_left,
+            face->glyph->bitmap_top,
+            (int)face->glyph->advance.x};
+        ctx.characters[c] = character;
+    }
+
+    FT_Done_Face(face);
+    FT_Done_FreeType(ft);
+    return 0;
+}
+
+int glfw_init()
+{
     ctx.current_event = malloc(sizeof(GooeyEvent));
-    if (!ctx.current_event) {
+    if (!ctx.current_event)
+    {
         fprintf(stderr, "Error: Failed to allocate memory for current_event\n");
         return -1;
     }
@@ -223,7 +382,8 @@ int glfw_init() {
 
     glfwSetErrorCallback(error_callback);
 
-    if (!glfwInit()) {
+    if (!glfwInit())
+    {
         free(ctx.current_event);
         return -1;
     }
@@ -231,13 +391,60 @@ int glfw_init() {
     return 0;
 }
 
-GooeyWindow glfw_create_window(const char *title, int width, int height) {
+void glfw_draw_text(int x, int y, const char *text, unsigned long color)
+{
+    vec3 color_rgb;
+    float ndc_x, ndc_y;
+    float scale = 0.45f;
+    convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
+    convert_hex_to_rgb(&color_rgb, color);
+    glUseProgram(ctx.text_program);
+    glUniform3f(glGetUniformLocation(ctx.text_program, "textColor"), color_rgb[0], color_rgb[1], color_rgb[2]);
+    glActiveTexture(GL_TEXTURE0);
+    glBindVertexArray(ctx.text_vao);
+
+    for (size_t i = 0; i < strlen(text); i++)
+    {
+        Character ch = ctx.characters[(unsigned char)text[i]];
+        if (ch.textureID == 0)
+            continue;
+
+        float xpos = x + ch.bearingX * scale;
+        float ypos = y - ch.bearingY * scale;
+     
+        float w = ch.width * scale;
+        float h = ch.height * scale;
+
+        float vertices[6][4] = {
+            {xpos, ypos + h, 0.0f, 0.0f},
+            {xpos, ypos, 0.0f, 1.0f},
+            {xpos + w, ypos, 1.0f, 1.0f},
+            {xpos, ypos + h, 0.0f, 0.0f},
+            {xpos + w, ypos, 1.0f, 1.0f},
+            {xpos + w, ypos + h, 1.0f, 0.0f}};
+
+        glBindTexture(GL_TEXTURE_2D, ch.textureID);
+
+        glBindBuffer(GL_ARRAY_BUFFER, ctx.text_vbo);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        x += (ch.advance >> 6) * scale;
+    }
+
+    glBindVertexArray(0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+GooeyWindow glfw_create_window(const char *title, int width, int height)
+{
+
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     ctx.window = glfwCreateWindow(width, height, title, NULL, NULL);
-    if (!ctx.window) {
+    if (!ctx.window)
+    {
         glfwTerminate();
         free(ctx.current_event);
         exit(EXIT_FAILURE);
@@ -248,18 +455,26 @@ GooeyWindow glfw_create_window(const char *title, int width, int height) {
     GooeyWindow window = {.width = width, .height = height};
 
     glfwMakeContextCurrent(ctx.window);
-    gladLoadGL();
+    if (gladLoadGL() == 0)
+        exit(EXIT_FAILURE);
+    glfw_init_ft();
     glfwSwapInterval(1);
 
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
-
+    mat4x4_ortho(ctx.projection, 0.0f, 800.0f, 600.0f, 0.0f, -1.0f, 1.0f);
+    glUseProgram(ctx.text_program);
+    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
+    glBindVertexArray(ctx.text_vao);
     return window;
 }
 
-GooeyEvent glfw_handle_events() {
-    if (!ctx.window) {
+GooeyEvent glfw_handle_events()
+{
+    if (!ctx.window)
+    {
         fprintf(stderr, "Error: HandleEvents called without a valid window\n");
         return (GooeyEvent){.type = -1};
     }
@@ -271,38 +486,47 @@ GooeyEvent glfw_handle_events() {
     return *(ctx.current_event);
 }
 
-void glfw_destroy_window() {
-    if (ctx.window) {
+void glfw_destroy_window()
+{
+    if (ctx.window)
+    {
         glfwDestroyWindow(ctx.window);
         ctx.window = NULL;
     }
 }
 
-void glfw_cleanup() {
-    if (ctx.current_event) {
+void glfw_clear()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void glfw_cleanup()
+{
+    if (ctx.current_event)
+    {
         free(ctx.current_event);
         ctx.current_event = NULL;
     }
 
     glfwTerminate();
 }
-
-void glfw_render() {
-    if (!ctx.window) {
+void glfw_render()
+{
+    if (!ctx.window)
+    {
         fprintf(stderr, "Error: Render called without a valid window\n");
         return;
     }
 
     int width, height;
     glfwGetFramebufferSize(ctx.window, &width, &height);
-
-    glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, width, height);
-    //glfw_draw_line(20, 20, 80, 40, 0xFF0000);
-    //glfw_draw_rectangle(20, 20, 80, 40, 0xFF0000);
-    //glfw_fill_arc(120, 120, 100, 50 ,20, 90);
     glfwSwapBuffers(ctx.window);
 }
+
+int glfw_get_text_width(const char *text, int length) { return 10; }
+
+char *glfw_get_key_from_code(GooeyEvent *gooey_event) { return "Return"; }
 
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
@@ -314,7 +538,9 @@ GooeyBackend glfw_backend = {
     .FillArc = glfw_fill_arc,
     .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
-    .DrawLine =  glfw_draw_line,
+    .DrawLine = glfw_draw_line,
     .SetForeground = glfw_set_foreground,
-
-};
+    .GetTextWidth = glfw_get_text_width,
+    .DrawText = glfw_draw_text,
+    .GetKeyFromCode = glfw_get_key_from_code,
+    .Clear = glfw_clear};

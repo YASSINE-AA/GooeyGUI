@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "tiny.h": "c",
+        "glfw_utils.h": "c"
+    }
+}

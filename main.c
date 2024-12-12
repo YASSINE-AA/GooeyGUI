@@ -1,26 +1,26 @@
 #include "tiny.h"
-#include <stdio.h>
 
 int main()
 {
-    GooeyBackend b = glfw_backend;
-    if (b.Init() != 0)
-    {
-        return -1;
-    }
 
-    GooeyWindow window = b.CreateWindow("Hi!!", 1000, 1000);
-    bool running = true;
-    while (running)
+    GooeyBackend b = glfw_backend;
+
+    printf("%d\n", b.Init());
+
+    b.CreateWindow("nice", 800, 600);
+
+    while (true)
     {
+        b.Clear();
+        b.DrawText(50, 50, "hellfgfggo", 0x000000);
+        b.DrawRectangle(50, 50, 200, 200, 0xFF0000);
         b.Render();
 
         GooeyEvent event = b.HandleEvents();
         if (event.type == GOOEY_EVENT_WINDOW_CLOSE)
-            running = false;
+            break;
     }
 
-    b.DestroyWindow();
     b.Cleanup();
 
     return 0;

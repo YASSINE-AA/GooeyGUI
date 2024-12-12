@@ -14,7 +14,8 @@ typedef enum GooeyBackends
 {
     X11,
     WIN32,
-    SDL
+    SDL,
+    GLFW
 } GooeyBackends;
 
 typedef struct GooeyWindow

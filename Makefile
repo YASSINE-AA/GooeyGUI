@@ -6,7 +6,7 @@ SRC_FILES := $(C_BACKENDS)/x11_backend.c \
              $(C_BACKENDS)/wayland_backend.c \
              $(C_BACKENDS)/glfw_backend.c \
              $(C_BACKENDS)/glad.c \
-             $(C_BACKENDS)/utils/glfw_utils.c \
+             $(C_BACKENDS)/utils/glfw/glfw_utils.c \
              $(C_BACKENDS)/xdg-shell-protocol.c \
              $(C_SRC)/tiny.c \
              $(C_SRC)/main.c
@@ -14,7 +14,7 @@ SRC_FILES := $(C_BACKENDS)/x11_backend.c \
 OBJS_gui := $(SRC_FILES:$(C_SRC)/%.c=$(BUILD_DIR)/%.o)
 
 CC := gcc
-CFLAGS ?= -I$(C_BACKENDS)
+CFLAGS ?= -I$(C_BACKENDS) -I/usr/local/include/freetype2
 
 all: $(BUILD_DIR)/gui
 
@@ -33,7 +33,7 @@ $(BUILD_DIR)/%.o: $(C_SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/gui: $(OBJS_gui)
-	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm
+	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lz `pkg-config --cflags --libs freetype2 glfw3`  -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm -g
 
 clrobj:
 	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/utils/*.o
