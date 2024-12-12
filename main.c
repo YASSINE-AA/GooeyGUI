@@ -1,27 +1,40 @@
 #include "tiny.h"
+#include <stdio.h>
 
-int main()
-{
+// Callback functions
+void onButtonClick() {
+    printf("Button clicked!\n");
+}
 
-    GooeyBackend b = glfw_backend;
+void onCheckboxToggle(bool checked) {
+    printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
+}
 
-    printf("%d\n", b.Init());
+void onRadioButtonSelect(bool selected) {
+    printf("Radio button selected: %s\n", selected ? "Yes" : "No");
+}
 
-    b.CreateWindow("nice", 800, 600);
+void onSliderChange(long int value) {
+    printf("Slider value changed: %ld\n", value);
+}
 
-    while (true)
-    {
-        b.Clear();
-        b.DrawText(50, 50, "hellfgfggo", 0x000000);
-        b.DrawRectangle(50, 50, 200, 200, 0xFF0000);
-        b.Render();
+void onDropdownChange(int selectedIndex) {
+    printf("Dropdown selected index: %d\n", selectedIndex);
+}
 
-        GooeyEvent event = b.HandleEvents();
-        if (event.type == GOOEY_EVENT_WINDOW_CLOSE)
-            break;
-    }
+void onTextChange(char *text) {
+    printf("Text changed: %s\n", text);
+}
 
-    b.Cleanup();
+int main() {
+    Gooey_Init(GLFW);
+    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
+
+    GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
+
+    GooeyWindow_Run(&win);
+
+    GooeyWindow_Cleanup(&win);
 
     return 0;
 }

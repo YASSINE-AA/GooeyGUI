@@ -914,7 +914,7 @@ void GooeyWindow_Run(GooeyWindow *win)
     while (running)
     {
         event = active_backend->HandleEvents();
-
+        
         switch (event.type)
         {
         case GOOEY_EVENT_EXPOSE:

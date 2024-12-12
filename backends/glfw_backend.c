@@ -305,6 +305,21 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
         ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
 }
 
+static void click_callback(GLFWwindow *window, int button, int action, int mods)
+{
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+    {
+        ctx.current_event->type = GOOEY_EVENT_CLICK;
+        printf("%d %d\n", ctx.current_event->data.click.x, ctx.current_event->data.click.y);
+    }
+}
+
+static void cursor_callback(GLFWwindow *window, double posX, double posY)
+{
+    ctx.current_event->data.click.x = posX;
+    ctx.current_event->data.click.y = posY;
+}
+
 int glfw_init_ft()
 {
 
@@ -411,7 +426,7 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color)
 
         float xpos = x + ch.bearingX * scale;
         float ypos = y - ch.bearingY * scale;
-     
+
         float w = ch.width * scale;
         float h = ch.height * scale;
 
@@ -451,6 +466,8 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     }
 
     glfwSetKeyCallback(ctx.window, key_callback);
+    glfwSetMouseButtonCallback(ctx.window, click_callback);
+    glfwSetCursorPosCallback(ctx.window, cursor_callback);
 
     GooeyWindow window = {.width = width, .height = height};
 

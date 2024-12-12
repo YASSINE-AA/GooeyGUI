@@ -10,8 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct
-{
+typedef struct {
     GLuint textureID;
     int width;
     int height;
@@ -20,8 +19,7 @@ typedef struct
     int advance;
 } Character;
 
-typedef struct Vertex
-{
+typedef struct Vertex {
     vec2 pos;
     vec3 col;
 } Vertex;
@@ -45,27 +43,27 @@ static const char *rectangle_fragment_shader =
     "}\n";
 
 static const char *text_vertex_shader_source = "#version 330 core\n"
-                                               "layout(location = 0) in vec4 vertex;\n"
-                                               "out vec2 TexCoords;\n"
-                                               "uniform mat4 projection;\n"
-                                               "void main() {\n"
-                                               "    gl_Position = projection * vec4(vertex.xy, 0.0, 1.0);\n"
-                                               "    TexCoords = vec2(vertex.z, 1.0-vertex.w);\n"
-                                               "}\n";
+                                 "layout(location = 0) in vec4 vertex;\n"
+                                 "out vec2 TexCoords;\n"
+                                 "uniform mat4 projection;\n"
+                                 "void main() {\n"
+                                 "    gl_Position = projection * vec4(vertex.xy, 0.0, 1.0);\n"
+                                 "    TexCoords = vec2(vertex.z, 1.0-vertex.w);\n"
+                                 "}\n";
 
 static const char *text_fragment_shader_source = "#version 330 core\n"
-                                                 "in vec2 TexCoords;\n"
-                                                 "out vec4 color;\n"
-                                                 "uniform sampler2D text;\n"
-                                                 "uniform vec3 textColor;\n"
-                                                 "void main() {\n"
-                                                 "    float alpha = texture(text, TexCoords).r;\n"
-                                                 "    color = vec4(textColor, alpha);\n"
-                                                 "}\n";
+                                   "in vec2 TexCoords;\n"
+                                   "out vec4 color;\n"
+                                   "uniform sampler2D text;\n"
+                                   "uniform vec3 textColor;\n"
+                                   "void main() {\n"
+                                   "    float alpha = texture(text, TexCoords).r;\n"
+                                   "    color = vec4(textColor, alpha);\n"
+                                   "}\n";
 
 void get_window_size(GLFWwindow *window, int *window_width, int *window_height);
 void convert_coords_to_ndc(GLFWwindow *window, float *ndc_x, float *ndc_y, int x, int y);
 void convert_dimension_to_ndc(GLFWwindow *window, float *ndc_w, float *ndc_h, int width, int height);
 void convert_hex_to_rgb(vec3 *rgb, unsigned int color_hex);
 
-#endif // GLFW_UTILS_H
+#endif //GLFW_UTILS_H
