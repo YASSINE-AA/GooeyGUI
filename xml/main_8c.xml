@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes refid="tiny_8h" local="yes">tiny.h</includes>
+    <includes local="no">stdio.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>backends/gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tiny.h</label>
+        <link refid="tiny_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="10">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="11">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="9">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8c_1abe7a86f267354d013686bbabdedac091" prot="public" static="no" mutable="no">
+        <type>GooeyTheme</type>
+        <definition>GooeyTheme theme</definition>
+        <argsstring></argsstring>
+        <name>theme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="37" column="12" bodyfile="main.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1acbcea893ddddb55e558115beb8f9a1b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>onButtonClick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="8" column="6" bodyfile="main.c" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1acf51b8c25de330d9bb67e1e1ac0d558e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onCheckboxToggle</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>onCheckboxToggle</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="13" column="6" bodyfile="main.c" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a2c1f3f1f96bf8a61b213c596d5101631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onRadioButtonSelect</definition>
+        <argsstring>(bool selected)</argsstring>
+        <name>onRadioButtonSelect</name>
+        <param>
+          <type>bool</type>
+          <declname>selected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="18" column="6" bodyfile="main.c" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a03ecd7b4685e1067388461ee93488181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onSliderChange</definition>
+        <argsstring>(long int value)</argsstring>
+        <name>onSliderChange</name>
+        <param>
+          <type>long int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="23" column="6" bodyfile="main.c" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a524171648a6054d194fa018d31472456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onDropdownChange</definition>
+        <argsstring>(int selectedIndex)</argsstring>
+        <name>onDropdownChange</name>
+        <param>
+          <type>int</type>
+          <declname>selectedIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="28" column="6" bodyfile="main.c" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a3f3a1b22965383b5ea1ef224b0a76f83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onTextChange</definition>
+        <argsstring>(char *text)</argsstring>
+        <name>onTextChange</name>
+        <param>
+          <type>char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="33" column="6" bodyfile="main.c" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a9a860a67120c929770b191a2f0cd637f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void activateDarkTheme</definition>
+        <argsstring>()</argsstring>
+        <name>activateDarkTheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="38" column="6" bodyfile="main.c" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a5a3486629b16db802d74c31268452d5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void activateLightTheme</definition>
+        <argsstring>()</argsstring>
+        <name>activateLightTheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="43" column="6" bodyfile="main.c" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="47" column="5" bodyfile="main.c" bodystart="47" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tiny_8h" kindref="compound">tiny.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Callback<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1acbcea893ddddb55e558115beb8f9a1b1" kindref="member">onButtonClick</ref>()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Button<sp/>clicked!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1acf51b8c25de330d9bb67e1e1ac0d558e" kindref="member">onCheckboxToggle</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Checkbox<sp/>toggled:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>checked<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Checked&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;Unchecked&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a2c1f3f1f96bf8a61b213c596d5101631" kindref="member">onRadioButtonSelect</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>selected)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Radio<sp/>button<sp/>selected:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>selected<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Yes&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a03ecd7b4685e1067388461ee93488181" kindref="member">onSliderChange</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Slider<sp/>value<sp/>changed:<sp/>%ld\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a524171648a6054d194fa018d31472456" kindref="member">onDropdownChange</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>selectedIndex)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Dropdown<sp/>selected<sp/>index:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>selectedIndex);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a3f3a1b22965383b5ea1ef224b0a76f83" kindref="member">onTextChange</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Text<sp/>changed:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>text);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">GooeyTheme<sp/><ref refid="main_8c_1abe7a86f267354d013686bbabdedac091" kindref="member">theme</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a9a860a67120c929770b191a2f0cd637f" kindref="member">activateDarkTheme</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a211590977db456409afc3bd19e030cc0" kindref="member">GooeyWindow_setTheme</ref>(</highlight><highlight class="stringliteral">&quot;dark.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a5a3486629b16db802d74c31268452d5a" kindref="member">activateLightTheme</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a211590977db456409afc3bd19e030cc0" kindref="member">GooeyWindow_setTheme</ref>(</highlight><highlight class="stringliteral">&quot;light.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1aa1b4ea3eac057048d12e7e077e24fbce" kindref="member">Gooey_Init</ref>(<ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" kindref="member">GLFW</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>win<sp/>=<sp/><ref refid="tiny_8c_1a5bb530110f0f6dcde2f3f3cd7c179efc" kindref="member">GooeyWindow_Create</ref>(</highlight><highlight class="stringliteral">&quot;Gooey<sp/>Showcase&quot;</highlight><highlight class="normal">,<sp/>400,<sp/>700);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a6ef2ab71a12568095efab0973c7b687c" kindref="member">GooeyButton_Add</ref>(&amp;win,<sp/></highlight><highlight class="stringliteral">&quot;Click<sp/>Me&quot;</highlight><highlight class="normal">,<sp/>50,<sp/>50,<sp/>80,<sp/>30,<sp/><ref refid="main_8c_1acbcea893ddddb55e558115beb8f9a1b1" kindref="member">onButtonClick</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ad9de78f8bb35856982a623a85f4c5105" kindref="member">GooeyLabel_Add</ref>(&amp;win,<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>is<sp/>a<sp/>label&quot;</highlight><highlight class="normal">,<sp/>200,<sp/>60);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a4bb807a94ca251447a265d773e0c81bc" kindref="member">GooeyCheckbox_Add</ref>(&amp;win,<sp/>50,<sp/>120,<sp/></highlight><highlight class="stringliteral">&quot;Enable<sp/>Option<sp/>1&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1acf51b8c25de330d9bb67e1e1ac0d558e" kindref="member">onCheckboxToggle</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a4bb807a94ca251447a265d773e0c81bc" kindref="member">GooeyCheckbox_Add</ref>(&amp;win,<sp/>50,<sp/>160,<sp/></highlight><highlight class="stringliteral">&quot;Enable<sp/>Option<sp/>2&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1acf51b8c25de330d9bb67e1e1ac0d558e" kindref="member">onCheckboxToggle</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a4bb807a94ca251447a265d773e0c81bc" kindref="member">GooeyCheckbox_Add</ref>(&amp;win,<sp/>50,<sp/>200,<sp/></highlight><highlight class="stringliteral">&quot;Enable<sp/>Option<sp/>3&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1acf51b8c25de330d9bb67e1e1ac0d558e" kindref="member">onCheckboxToggle</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9f44c3306cd6a0c93028f9eef6c70970" kindref="member">GooeyRadioButton_Add</ref>(&amp;win,<sp/>200,<sp/>120,<sp/></highlight><highlight class="stringliteral">&quot;Option<sp/>A&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a2c1f3f1f96bf8a61b213c596d5101631" kindref="member">onRadioButtonSelect</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9f44c3306cd6a0c93028f9eef6c70970" kindref="member">GooeyRadioButton_Add</ref>(&amp;win,<sp/>200,<sp/>160,<sp/></highlight><highlight class="stringliteral">&quot;Option<sp/>B&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a2c1f3f1f96bf8a61b213c596d5101631" kindref="member">onRadioButtonSelect</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9f44c3306cd6a0c93028f9eef6c70970" kindref="member">GooeyRadioButton_Add</ref>(&amp;win,<sp/>200,<sp/>200,<sp/></highlight><highlight class="stringliteral">&quot;Option<sp/>C&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a2c1f3f1f96bf8a61b213c596d5101631" kindref="member">onRadioButtonSelect</ref>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a6d20f57fb42f874e6a7a281bdfa1ed20" kindref="member">GooeySlider_Add</ref>(&amp;win,<sp/>50,<sp/>250,<sp/>200,<sp/>0,<sp/>100,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a03ecd7b4685e1067388461ee93488181" kindref="member">onSliderChange</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*options[]<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Option<sp/>1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Option<sp/>2&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Option<sp/>3&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ac88c3eb373206811e02e639af630674e" kindref="member">GooeyDropdown_Add</ref>(&amp;win,<sp/>50,<sp/>350,<sp/>150,<sp/>30,<sp/>options,<sp/>3,<sp/><ref refid="main_8c_1a524171648a6054d194fa018d31472456" kindref="member">onDropdownChange</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1af41d9e7acc597ffab55e6338ced8a4de" kindref="member">GooeyTextBox_Add</ref>(&amp;win,<sp/>50,<sp/>300,<sp/>200,<sp/>25,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a3f3a1b22965383b5ea1ef224b0a76f83" kindref="member">onTextChange</ref>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyMenu<sp/>*menu<sp/>=<sp/><ref refid="tiny_8c_1abaa0a8fc4c8b4b4304e401ffaece7e65" kindref="member">GooeyMenu_Set</ref>(&amp;win);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyMenuChild<sp/>*fileMenu<sp/>=<sp/><ref refid="tiny_8c_1a0b6434d579642d4e70bd5f29ea52c2ec" kindref="member">GooeyMenu_AddChild</ref>(&amp;win,<sp/></highlight><highlight class="stringliteral">&quot;File&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9e5d95abccd358771562c49b6521d6e4" kindref="member">GooeyMenuChild_AddElement</ref>(fileMenu,<sp/></highlight><highlight class="stringliteral">&quot;Open&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9e5d95abccd358771562c49b6521d6e4" kindref="member">GooeyMenuChild_AddElement</ref>(fileMenu,<sp/></highlight><highlight class="stringliteral">&quot;Save&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyMenuChild<sp/>*editMenu<sp/>=<sp/><ref refid="tiny_8c_1a0b6434d579642d4e70bd5f29ea52c2ec" kindref="member">GooeyMenu_AddChild</ref>(&amp;win,<sp/></highlight><highlight class="stringliteral">&quot;Settings&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9e5d95abccd358771562c49b6521d6e4" kindref="member">GooeyMenuChild_AddElement</ref>(editMenu,<sp/></highlight><highlight class="stringliteral">&quot;Dark<sp/>Theme&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a9a860a67120c929770b191a2f0cd637f" kindref="member">activateDarkTheme</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a9e5d95abccd358771562c49b6521d6e4" kindref="member">GooeyMenuChild_AddElement</ref>(editMenu,<sp/></highlight><highlight class="stringliteral">&quot;Light<sp/>Theme&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8c_1a5a3486629b16db802d74c31268452d5a" kindref="member">activateLightTheme</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyRadioButtonGroup<sp/>*rbg<sp/>=<sp/><ref refid="tiny_8c_1ad9b1dfefb7db732a5eadc16d457054bb" kindref="member">GooeyRadioButtonGroup_Create</ref>(&amp;win);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ad1a25ff91e6ab0bfba2614e81ba4da16" kindref="member">GooeyRadioButtonGroup_AddChild</ref>(rbg,<sp/>50,<sp/>440,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ad1a25ff91e6ab0bfba2614e81ba4da16" kindref="member">GooeyRadioButtonGroup_AddChild</ref>(rbg,<sp/>50,<sp/>470,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ad1a25ff91e6ab0bfba2614e81ba4da16" kindref="member">GooeyRadioButtonGroup_AddChild</ref>(rbg,<sp/>50,<sp/>500,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1ad1a25ff91e6ab0bfba2614e81ba4da16" kindref="member">GooeyRadioButtonGroup_AddChild</ref>(rbg,<sp/>50,<sp/>530,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a646a3a0f8d98b971ab6d8af4f822ac31" kindref="member">GooeyWindow_Run</ref>(&amp;win);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tiny_8c_1a83e8b293bf59a1b632f6fcfa7e29fbff" kindref="member">GooeyWindow_Cleanup</ref>(&amp;win);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="main.c"/>
+  </compounddef>
+</doxygen>

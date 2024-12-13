@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="wayland__backend_8c" kind="file" language="C++">
+    <compoundname>wayland_backend.c</compoundname>
+    <includes refid="gooey__backend_8h" local="yes">gooey_backend.h</includes>
+    <includes local="no">wayland-client.h</includes>
+    <includes local="yes">utils/xdg-shell-client-protocol.h</includes>
+    <includes local="no">sys/mman.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>backends/wayland_backend.c</label>
+        <link refid="wayland__backend_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>fcntl.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="13">
+        <label>sys/mman.h</label>
+      </node>
+      <node id="14">
+        <label>sys/types.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="9">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="10">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="8">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+      <node id="12">
+        <label>utils/xdg-shell-client-protocol.h</label>
+      </node>
+      <node id="11">
+        <label>wayland-client.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structGooeyBackendContext" prot="public">GooeyBackendContext</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="wayland__backend_8c_1a369266c24eacffb87046522897a570d5" prot="public" static="no">
+        <name>_GNU_SOURCE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="1" column="9" bodyfile="backends/wayland_backend.c" bodystart="1" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="wayland__backend_8c_1a9649ab8139c4c2ea5c93625b30d92a05" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int WIDTH</definition>
+        <argsstring></argsstring>
+        <name>WIDTH</name>
+        <initializer>= 800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="16" column="11" bodyfile="backends/wayland_backend.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="wayland__backend_8c_1af728b7647e0b8c49832983a31f9a2e9b" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int HEIGHT</definition>
+        <argsstring></argsstring>
+        <name>HEIGHT</name>
+        <initializer>= 600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="17" column="11" bodyfile="backends/wayland_backend.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="wayland__backend_8c_1a4e82150bc8b31b39e30d81cc2fc99084" prot="public" static="yes" mutable="no">
+        <type><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref></type>
+        <definition>GooeyBackendContext ctx</definition>
+        <argsstring></argsstring>
+        <name>ctx</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="31" column="28" bodyfile="backends/wayland_backend.c" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="variable" id="wayland__backend_8c_1a1de4f76bcc4ac63dbf78737f89c56d50" prot="public" static="yes" mutable="no">
+        <type>const struct xdg_wm_base_listener</type>
+        <definition>const struct xdg_wm_base_listener wm_base_listener</definition>
+        <argsstring></argsstring>
+        <name>wm_base_listener</name>
+        <initializer>= {
+    .ping = handle_wm_base_ping,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="83" column="40" bodyfile="backends/wayland_backend.c" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="variable" id="wayland__backend_8c_1a8998c87c94cd7d185e8f0cdafab4b1c4" prot="public" static="no" mutable="no">
+        <type>const struct wl_registry_listener</type>
+        <definition>const struct wl_registry_listener registry_listener</definition>
+        <argsstring></argsstring>
+        <name>registry_listener</name>
+        <initializer>= {
+    .global = <ref refid="wayland__backend_8c_1a0cf22d098225a7f803ec968f970be553" kindref="member">registry_handler</ref>,
+    .global_remove = <ref refid="wayland__backend_8c_1a2daf88c7e56e529d16cfdf082ae9cde9" kindref="member">registry_remove_handler</ref>,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="109" column="33" bodyfile="backends/wayland_backend.c" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="variable" id="wayland__backend_8c_1aa9457e7b63831785a8eff9c42858de2c" prot="public" static="no" mutable="no">
+        <type><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref></type>
+        <definition>GooeyBackend wayland_backend</definition>
+        <argsstring></argsstring>
+        <name>wayland_backend</name>
+        <initializer>= {
+    .Init = <ref refid="wayland__backend_8c_1a541b4610473f09d1a973398eff4ecc4c" kindref="member">wayland_init</ref>,
+    .CreateWindow = <ref refid="wayland__backend_8c_1a27e77c66ed21bde50e9ce38a3f2fb682" kindref="member">wayland_create_window</ref>,
+    .Cleanup = <ref refid="wayland__backend_8c_1a35bc34561d808d997bf5457bc733466a" kindref="member">wayland_cleanup</ref>,
+    .Render = <ref refid="wayland__backend_8c_1a47c1d1b4cbc74aefe578ab5c3f73b90f" kindref="member">wayland_run</ref>}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="192" column="14" bodyfile="backends/wayland_backend.c" bodystart="192" bodyend="196"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="wayland__backend_8c_1a5f92a1f18e72074a78ba1a12906d88b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int create_shm_file</definition>
+        <argsstring>(size_t size)</argsstring>
+        <name>create_shm_file</name>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="33" column="5" bodyfile="backends/wayland_backend.c" bodystart="33" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1ad738372d7644442ddc62cfd147a2065a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct wl_buffer *</type>
+        <definition>struct wl_buffer * create_buffer</definition>
+        <argsstring>(int width, int height, struct wl_shm *shm)</argsstring>
+        <name>create_buffer</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>struct wl_shm *</type>
+          <declname>shm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="50" column="16" bodyfile="backends/wayland_backend.c" bodystart="50" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1adaf3fe2858b6f2ce0a5816e3bee2ccfa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_wm_base_ping</definition>
+        <argsstring>(void *data, struct xdg_wm_base *xdg_wm_base, uint32_t serial)</argsstring>
+        <name>handle_wm_base_ping</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>struct xdg_wm_base *</type>
+          <declname>xdg_wm_base</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="79" column="13" bodyfile="backends/wayland_backend.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a0cf22d098225a7f803ec968f970be553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void registry_handler</definition>
+        <argsstring>(void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version)</argsstring>
+        <name>registry_handler</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>struct wl_registry *</type>
+          <declname>registry</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="87" column="6" bodyfile="backends/wayland_backend.c" bodystart="87" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a2daf88c7e56e529d16cfdf082ae9cde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void registry_remove_handler</definition>
+        <argsstring>(void *data, struct wl_registry *registry, uint32_t id)</argsstring>
+        <name>registry_remove_handler</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>struct wl_registry *</type>
+          <declname>registry</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="105" column="6" bodyfile="backends/wayland_backend.c" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a541b4610473f09d1a973398eff4ecc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wayland_init</definition>
+        <argsstring>()</argsstring>
+        <name>wayland_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="114" column="5" bodyfile="backends/wayland_backend.c" bodystart="114" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a27e77c66ed21bde50e9ce38a3f2fb682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref></type>
+        <definition>GooeyWindow wayland_create_window</definition>
+        <argsstring>()</argsstring>
+        <name>wayland_create_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="136" column="13" bodyfile="backends/wayland_backend.c" bodystart="136" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a47c1d1b4cbc74aefe578ab5c3f73b90f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wayland_run</definition>
+        <argsstring>()</argsstring>
+        <name>wayland_run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="173" column="6" bodyfile="backends/wayland_backend.c" bodystart="173" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland__backend_8c_1a35bc34561d808d997bf5457bc733466a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wayland_cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>wayland_cleanup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="185" column="6" bodyfile="backends/wayland_backend.c" bodystart="185" bodyend="190"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#define<sp/>_GNU_SOURCE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gooey__backend_8h" kindref="compound">gooey_backend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wayland-client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils/xdg-shell-client-protocol.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/mman.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a9649ab8139c4c2ea5c93625b30d92a05" kindref="member">WIDTH</ref><sp/>=<sp/>800;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1af728b7647e0b8c49832983a31f9a2e9b" kindref="member">HEIGHT</ref><sp/>=<sp/>600;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_surface<sp/>*surface;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_shm<sp/>*shm;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_buffer<sp/>*buffer;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xdg_wm_base<sp/>*wm_base;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xdg_surface<sp/>*xdg_surface;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xdg_toplevel<sp/>*xdg_toplevel;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_display<sp/>*display;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_compositor<sp/>*compositor;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref><sp/>ctx<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a5f92a1f18e72074a78ba1a12906d88b1" kindref="member">create_shm_file</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd<sp/>=<sp/>memfd_create(</highlight><highlight class="stringliteral">&quot;wayland-shm&quot;</highlight><highlight class="normal">,<sp/>FD_CLOEXEC<sp/>|<sp/>MFD_ALLOW_SEALING);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>SHM<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ftruncate(fd,<sp/>size)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>set<sp/>SHM<sp/>file<sp/>size&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(fd);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fd;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_buffer<sp/>*<ref refid="wayland__backend_8c_1ad738372d7644442ddc62cfd147a2065a" kindref="member">create_buffer</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>wl_shm<sp/>*shm)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stride<sp/>=<sp/>width<sp/>*<sp/>4;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>stride<sp/>*<sp/>height;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd<sp/>=<sp/><ref refid="wayland__backend_8c_1a5f92a1f18e72074a78ba1a12906d88b1" kindref="member">create_shm_file</ref>(size);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>mmap(NULL,<sp/>size,<sp/>PROT_READ<sp/>|<sp/>PROT_WRITE,<sp/>MAP_SHARED,<sp/>fd,<sp/>0);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>==<sp/>MAP_FAILED)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>mmap<sp/>SHM&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(fd);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*pixels<sp/>=<sp/>(uint32_t<sp/>*)data;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>width<sp/>*<sp/>height;<sp/>i++)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pixels[i]<sp/>=<sp/>0xFFFFFF;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_shm_pool<sp/>*pool<sp/>=<sp/>wl_shm_create_pool(shm,<sp/>fd,<sp/>size);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_buffer<sp/>*buffer<sp/>=<sp/>wl_shm_pool_create_buffer(pool,<sp/>0,<sp/>width,<sp/>height,<sp/>stride,<sp/>WL_SHM_FORMAT_ARGB8888);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_shm_pool_destroy(pool);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fd);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buffer;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handle_wm_base_ping(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xdg_wm_base<sp/>*xdg_wm_base,<sp/>uint32_t<sp/>serial)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>xdg_wm_base_pong(xdg_wm_base,<sp/>serial);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xdg_wm_base_listener<sp/>wm_base_listener<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>.ping<sp/>=<sp/>handle_wm_base_ping,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a0cf22d098225a7f803ec968f970be553" kindref="member">registry_handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>wl_registry<sp/>*registry,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*interface,<sp/>uint32_t<sp/>version)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(interface,<sp/></highlight><highlight class="stringliteral">&quot;wl_compositor&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a39f623a542778bcbbb87d04a6b439ffd" kindref="member">compositor</ref><sp/>=<sp/>wl_registry_bind(registry,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;wl_compositor_interface,<sp/>1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(interface,<sp/></highlight><highlight class="stringliteral">&quot;wl_shm&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a7ac8830f9154378e2c80fba20085adcd" kindref="member">shm</ref><sp/>=<sp/>wl_registry_bind(registry,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;wl_shm_interface,<sp/>1);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(interface,<sp/></highlight><highlight class="stringliteral">&quot;xdg_wm_base&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a92e249460a32b9734bf0ea2645f1726b" kindref="member">wm_base</ref><sp/>=<sp/>wl_registry_bind(registry,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;xdg_wm_base_interface,<sp/>1);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xdg_wm_base_add_listener(ctx.<ref refid="structGooeyBackendContext_1a92e249460a32b9734bf0ea2645f1726b" kindref="member">wm_base</ref>,<sp/>&amp;wm_base_listener,<sp/>NULL);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a2daf88c7e56e529d16cfdf082ae9cde9" kindref="member">registry_remove_handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>wl_registry<sp/>*registry,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_registry_listener<sp/><ref refid="wayland__backend_8c_1a8998c87c94cd7d185e8f0cdafab4b1c4" kindref="member">registry_listener</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>.global<sp/>=<sp/><ref refid="wayland__backend_8c_1a0cf22d098225a7f803ec968f970be553" kindref="member">registry_handler</ref>,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>.global_remove<sp/>=<sp/><ref refid="wayland__backend_8c_1a2daf88c7e56e529d16cfdf082ae9cde9" kindref="member">registry_remove_handler</ref>,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a541b4610473f09d1a973398eff4ecc4c" kindref="member">wayland_init</ref>()</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref><sp/>=<sp/>wl_display_connect(NULL);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>connect<sp/>to<sp/>Wayland<sp/>display\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_registry<sp/>*registry<sp/>=<sp/>wl_display_get_registry(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_registry_add_listener(registry,<sp/>&amp;<ref refid="wayland__backend_8c_1a8998c87c94cd7d185e8f0cdafab4b1c4" kindref="member">registry_listener</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(wl_display_roundtrip(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>Wayland<sp/>interfaces\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/><ref refid="wayland__backend_8c_1a27e77c66ed21bde50e9ce38a3f2fb682" kindref="member">wayland_create_window</ref>()</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref><sp/>=<sp/>wl_compositor_create_surface(ctx.<ref refid="structGooeyBackendContext_1a39f623a542778bcbbb87d04a6b439ffd" kindref="member">compositor</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>Wayland<sp/>surface\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a078edfa1901ed19e1a69a2948e70ff4c" kindref="member">xdg_surface</ref><sp/>=<sp/>xdg_wm_base_get_xdg_surface(ctx.<ref refid="structGooeyBackendContext_1a92e249460a32b9734bf0ea2645f1726b" kindref="member">wm_base</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1a078edfa1901ed19e1a69a2948e70ff4c" kindref="member">xdg_surface</ref>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>XDG<sp/>surface\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" kindref="member">xdg_toplevel</ref><sp/>=<sp/>xdg_surface_get_toplevel(ctx.<ref refid="structGooeyBackendContext_1a078edfa1901ed19e1a69a2948e70ff4c" kindref="member">xdg_surface</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" kindref="member">xdg_toplevel</ref>)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>XDG<sp/>toplevel\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>xdg_toplevel_set_title(ctx.<ref refid="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" kindref="member">xdg_toplevel</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Hello<sp/>Wayland&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>xdg_toplevel_set_app_id(ctx.<ref refid="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" kindref="member">xdg_toplevel</ref>,<sp/></highlight><highlight class="stringliteral">&quot;wayland-test-app&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_surface_commit(ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" kindref="member">buffer</ref><sp/>=<sp/><ref refid="wayland__backend_8c_1ad738372d7644442ddc62cfd147a2065a" kindref="member">create_buffer</ref>(<ref refid="wayland__backend_8c_1a9649ab8139c4c2ea5c93625b30d92a05" kindref="member">WIDTH</ref>,<sp/><ref refid="wayland__backend_8c_1af728b7647e0b8c49832983a31f9a2e9b" kindref="member">HEIGHT</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a7ac8830f9154378e2c80fba20085adcd" kindref="member">shm</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" kindref="member">buffer</ref>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>buffer\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_surface_attach(ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" kindref="member">buffer</ref>,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_surface_commit(ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>window<sp/>=<sp/>(<ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref>){.<ref refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" kindref="member">height</ref><sp/>=<sp/><ref refid="wayland__backend_8c_1af728b7647e0b8c49832983a31f9a2e9b" kindref="member">HEIGHT</ref>,<sp/>.width<sp/>=<sp/><ref refid="wayland__backend_8c_1a9649ab8139c4c2ea5c93625b30d92a05" kindref="member">WIDTH</ref>};</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>window;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a47c1d1b4cbc74aefe578ab5c3f73b90f" kindref="member">wayland_run</ref>()</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>wl_display_dispatch(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Wayland<sp/>connection<sp/>closed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="wayland__backend_8c_1a35bc34561d808d997bf5457bc733466a" kindref="member">wayland_cleanup</ref>()</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_buffer_destroy(ctx.<ref refid="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" kindref="member">buffer</ref>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_surface_destroy(ctx.<ref refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" kindref="member">surface</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_display_disconnect(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref><sp/><ref refid="wayland__backend_8c_1aa9457e7b63831785a8eff9c42858de2c" kindref="member">wayland_backend</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structGooeyBackend_1a219bfc1df0e971a5f2b8fb1d205157f8" kindref="member">Init</ref><sp/>=<sp/><ref refid="wayland__backend_8c_1a541b4610473f09d1a973398eff4ecc4c" kindref="member">wayland_init</ref>,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>.CreateWindow<sp/>=<sp/><ref refid="wayland__backend_8c_1a27e77c66ed21bde50e9ce38a3f2fb682" kindref="member">wayland_create_window</ref>,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>.Cleanup<sp/>=<sp/><ref refid="wayland__backend_8c_1a35bc34561d808d997bf5457bc733466a" kindref="member">wayland_cleanup</ref>,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>.Render<sp/>=<sp/><ref refid="wayland__backend_8c_1a47c1d1b4cbc74aefe578ab5c3f73b90f" kindref="member">wayland_run</ref>};</highlight></codeline>
+    </programlisting>
+    <location file="backends/wayland_backend.c"/>
+  </compounddef>
+</doxygen>

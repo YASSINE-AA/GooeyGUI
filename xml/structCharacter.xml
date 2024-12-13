@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structCharacter" kind="struct" language="C++" prot="public">
+    <compoundname>Character</compoundname>
+    <includes refid="glfw__utils_8h" local="no">glfw_utils.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structCharacter_1aebef720b0cb5a308a06778a7b933e5c8" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint Character::textureID</definition>
+        <argsstring></argsstring>
+        <name>textureID</name>
+        <qualifiedname>Character::textureID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="15" column="12" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCharacter_1aa945d94f4ee6ec02e5cf1fb753c94d8f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Character::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>Character::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="16" column="9" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCharacter_1a1f7e996c91a75a5e037bebcf0bf3ac06" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Character::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>Character::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="17" column="9" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCharacter_1aa7908738dc72abfb880ee4c68b5560a5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Character::bearingX</definition>
+        <argsstring></argsstring>
+        <name>bearingX</name>
+        <qualifiedname>Character::bearingX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="18" column="9" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCharacter_1aa8868963114c35c98c0679d5e0531645" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Character::bearingY</definition>
+        <argsstring></argsstring>
+        <name>bearingY</name>
+        <qualifiedname>Character::bearingY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="19" column="9" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCharacter_1ade68e61272c5cfcfd39680928516c4a7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Character::advance</definition>
+        <argsstring></argsstring>
+        <name>advance</name>
+        <qualifiedname>Character::advance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="20" column="9" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/utils/glfw/glfw_utils.h" line="14" column="1" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="14" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structCharacter_1ade68e61272c5cfcfd39680928516c4a7" prot="public" virt="non-virtual"><scope>Character</scope><name>advance</name></member>
+      <member refid="structCharacter_1aa7908738dc72abfb880ee4c68b5560a5" prot="public" virt="non-virtual"><scope>Character</scope><name>bearingX</name></member>
+      <member refid="structCharacter_1aa8868963114c35c98c0679d5e0531645" prot="public" virt="non-virtual"><scope>Character</scope><name>bearingY</name></member>
+      <member refid="structCharacter_1a1f7e996c91a75a5e037bebcf0bf3ac06" prot="public" virt="non-virtual"><scope>Character</scope><name>height</name></member>
+      <member refid="structCharacter_1aebef720b0cb5a308a06778a7b933e5c8" prot="public" virt="non-virtual"><scope>Character</scope><name>textureID</name></member>
+      <member refid="structCharacter_1aa945d94f4ee6ec02e5cf1fb753c94d8f" prot="public" virt="non-virtual"><scope>Character</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

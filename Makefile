@@ -36,6 +36,9 @@ $(BUILD_DIR)/%.o: $(C_SRC)/%.c
 $(BUILD_DIR)/gui: $(OBJS_gui)
 	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lz `pkg-config --cflags --libs freetype2 glfw3`  -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm -lcjson -g 
 
+docs:
+	doxygen DoxyFile
+	
 clrobj:
 	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/utils/*.o
 

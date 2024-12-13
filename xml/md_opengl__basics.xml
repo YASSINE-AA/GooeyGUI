@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md_opengl__basics" kind="page">
+    <compoundname>md_opengl__basics</compoundname>
+    <title>OpenGL Triangle Program</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_opengl__basics_1autotoc_md13"/> </para>
+<sect1 id="md_opengl__basics_1autotoc_md14">
+<title>1. Initialize OpenGL and Create a Window</title>
+<para><orderedlist>
+<listitem><para><bold>Set up a windowing library (e.g., GLFW/GLUT)</bold></para>
+</listitem><listitem><para><bold>Code snippet for window creation:</bold> <programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;GLFW/glfw3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>GLFW</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!glfwInit())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>GLFW&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>window</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">GLFWwindow*<sp/>window<sp/>=<sp/>glfwCreateWindow(800,<sp/>600,<sp/></highlight><highlight class="stringliteral">&quot;Triangle<sp/>Program&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!window)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>GLFW<sp/>window&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glfwTerminate();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">glfwMakeContextCurrent(window);</highlight></codeline>
+</programlisting></para>
+</listitem></orderedlist>
+</para>
+<para><bold>Debugging Tip:</bold> Check for errors after each GLFW call using: <programlisting filename=".cpp"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!glfwInit())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;GLFW<sp/>Initialization<sp/>Error!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md16">
+<title>2. Define Vertex Data</title>
+<para><itemizedlist>
+<listitem><para>Vertices of the triangle are in <bold>Normalized Device Coordinates (NDC)</bold>. <programlisting filename=".cpp"><codeline><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vertices[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.5f,<sp/>-0.5f,<sp/>0.0f,<sp/></highlight><highlight class="comment">//<sp/>Bottom-left</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.5f,<sp/>-0.5f,<sp/>0.0f,<sp/></highlight><highlight class="comment">//<sp/>Bottom-right</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/>0.5f,<sp/>0.0f<sp/><sp/></highlight><highlight class="comment">//<sp/>Top-center</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md18">
+<title>3. Generate and Bind Vertex Buffer Object (VBO)</title>
+<para><itemizedlist>
+<listitem><para>Store vertex data in GPU memory.</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>VBO;</highlight></codeline>
+<codeline><highlight class="normal">glGenBuffers(1,<sp/>&amp;VBO);</highlight></codeline>
+<codeline><highlight class="normal">glBindBuffer(GL_ARRAY_BUFFER,<sp/>VBO);</highlight></codeline>
+<codeline><highlight class="normal">glBufferData(GL_ARRAY_BUFFER,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(vertices),<sp/>vertices,<sp/>GL_STATIC_DRAW);</highlight></codeline>
+</programlisting></para>
+<para><bold>Notes:</bold><itemizedlist>
+<listitem><para><computeroutput>GL_STATIC_DRAW</computeroutput> is used because the data doesn’t change often.</para>
+</listitem><listitem><para>Use <computeroutput>glGetError()</computeroutput> after OpenGL calls to detect errors.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md20">
+<title>4. Create and Compile Shaders</title>
+<sect2 id="md_opengl__basics_1autotoc_md21">
+<title>Vertex Shader</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>vertexShaderSource<sp/>=<sp/>R</highlight><highlight class="stringliteral">&quot;(</highlight></codeline>
+<codeline><highlight class="stringliteral">#version<sp/>330<sp/>core</highlight></codeline>
+<codeline><highlight class="stringliteral">layout<sp/>(location<sp/>=<sp/>0)<sp/>in<sp/>vec3<sp/>aPos;</highlight></codeline>
+<codeline><highlight class="stringliteral">void<sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/>gl_Position<sp/>=<sp/>vec4(aPos,<sp/>1.0);</highlight></codeline>
+<codeline><highlight class="stringliteral">}</highlight></codeline>
+<codeline><highlight class="stringliteral">)&quot;;</highlight></codeline>
+<codeline><highlight class="stringliteral"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vertexShader<sp/>=<sp/>glCreateShader(GL_VERTEX_SHADER);</highlight></codeline>
+<codeline><highlight class="normal">glShaderSource(vertexShader,<sp/>1,<sp/>&amp;vertexShaderSource,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">glCompileShader(vertexShader);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>compilation<sp/>errors</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>success;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>infoLog[512];</highlight></codeline>
+<codeline><highlight class="normal">glGetShaderiv(vertexShader,<sp/>GL_COMPILE_STATUS,<sp/>&amp;success);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glGetShaderInfoLog(vertexShader,<sp/>512,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>infoLog);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR::SHADER::VERTEX::COMPILATION_FAILED\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>infoLog<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md_opengl__basics_1autotoc_md22">
+<title>Fragment Shader</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fragmentShaderSource<sp/>=<sp/>R</highlight><highlight class="stringliteral">&quot;(</highlight></codeline>
+<codeline><highlight class="stringliteral">#version<sp/>330<sp/>core</highlight></codeline>
+<codeline><highlight class="stringliteral">out<sp/>vec4<sp/>FragColor;</highlight></codeline>
+<codeline><highlight class="stringliteral">void<sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/>FragColor<sp/>=<sp/>vec4(1.0,<sp/>0.5,<sp/>0.2,<sp/>1.0);<sp/>//<sp/>Orange<sp/>color</highlight></codeline>
+<codeline><highlight class="stringliteral">}</highlight></codeline>
+<codeline><highlight class="stringliteral">)&quot;;</highlight></codeline>
+<codeline><highlight class="stringliteral"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragmentShader<sp/>=<sp/>glCreateShader(GL_FRAGMENT_SHADER);</highlight></codeline>
+<codeline><highlight class="normal">glShaderSource(fragmentShader,<sp/>1,<sp/>&amp;fragmentShaderSource,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">glCompileShader(fragmentShader);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>errors<sp/>as<sp/>above</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md24">
+<title>5. Link Shaders into a Shader Program</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>shaderProgram<sp/>=<sp/>glCreateProgram();</highlight></codeline>
+<codeline><highlight class="normal">glAttachShader(shaderProgram,<sp/>vertexShader);</highlight></codeline>
+<codeline><highlight class="normal">glAttachShader(shaderProgram,<sp/>fragmentShader);</highlight></codeline>
+<codeline><highlight class="normal">glLinkProgram(shaderProgram);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>linking<sp/>errors</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">glGetProgramiv(shaderProgram,<sp/>GL_LINK_STATUS,<sp/>&amp;success);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glGetProgramInfoLog(shaderProgram,<sp/>512,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>infoLog);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR::SHADER::PROGRAM::LINKING_FAILED\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>infoLog<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">glUseProgram(shaderProgram);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Delete<sp/>shaders<sp/>after<sp/>linking</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">glDeleteShader(vertexShader);</highlight></codeline>
+<codeline><highlight class="normal">glDeleteShader(fragmentShader);</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md26">
+<title>6. Create and Configure Vertex Array Object (VAO)</title>
+<para><itemizedlist>
+<listitem><para>VAOs store vertex attributes and buffer bindings.</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>VAO;</highlight></codeline>
+<codeline><highlight class="normal">glGenVertexArrays(1,<sp/>&amp;VAO);</highlight></codeline>
+<codeline><highlight class="normal">glBindVertexArray(VAO);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Bind<sp/>the<sp/>VBO<sp/>to<sp/>the<sp/>VAO</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">glBindBuffer(GL_ARRAY_BUFFER,<sp/>VBO);</highlight></codeline>
+<codeline><highlight class="normal">glVertexAttribPointer(0,<sp/>3,<sp/>GL_FLOAT,<sp/>GL_FALSE,<sp/>3<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)0);</highlight></codeline>
+<codeline><highlight class="normal">glEnableVertexAttribArray(0);</highlight></codeline>
+</programlisting></para>
+<para><bold>Note:</bold> Ensure the VAO is bound before configuring vertex attributes.</para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md28">
+<title>7. Render Loop</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!glfwWindowShouldClose(window))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glClearColor(0.2f,<sp/>0.3f,<sp/>0.3f,<sp/>1.0f);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glClear(GL_COLOR_BUFFER_BIT);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Draw<sp/>the<sp/>triangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glUseProgram(shaderProgram);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glBindVertexArray(VAO);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glDrawArrays(GL_TRIANGLES,<sp/>0,<sp/>3);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Swap<sp/>buffers<sp/>and<sp/>poll<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glfwSwapBuffers(window);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>glfwPollEvents();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md30">
+<title>8. Cleanup Resources</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">glDeleteVertexArrays(1,<sp/>&amp;VAO);</highlight></codeline>
+<codeline><highlight class="normal">glDeleteBuffers(1,<sp/>&amp;VBO);</highlight></codeline>
+<codeline><highlight class="normal">glDeleteProgram(shaderProgram);</highlight></codeline>
+<codeline><highlight class="normal">glfwTerminate();</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect1>
+<sect1 id="md_opengl__basics_1autotoc_md32">
+<title>9. Debugging Tools</title>
+<para><orderedlist>
+<listitem><para><bold>OpenGL Error Checking:</bold> <programlisting filename=".cpp"><codeline><highlight class="normal">GLenum<sp/>err;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((err<sp/>=<sp/>glGetError())<sp/>!=<sp/>GL_NO_ERROR)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;OpenGL<sp/>Error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>err<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+</listitem></orderedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="opengl_basics.md"/>
+  </compounddef>
+</doxygen>

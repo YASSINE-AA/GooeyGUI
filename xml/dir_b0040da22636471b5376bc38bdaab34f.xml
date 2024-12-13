@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_b0040da22636471b5376bc38bdaab34f" kind="dir">
+    <compoundname>backends/utils</compoundname>
+    <innerdir refid="dir_52e97556b4e632ff632666369c1112e5">backends/utils/glfw</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/utils/"/>
+  </compounddef>
+</doxygen>

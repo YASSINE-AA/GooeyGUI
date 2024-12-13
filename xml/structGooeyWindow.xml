@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structGooeyWindow" kind="struct" language="C++" prot="public">
+    <compoundname>GooeyWindow</compoundname>
+    <includes refid="gooey__backend_8h" local="no">gooey_backend.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structGooeyWindow_1ab38feef80909e5f01fb69949e203a84d" prot="public" static="no" mutable="no">
+        <type>GooeyWindowExt</type>
+        <definition>GooeyWindowExt GooeyWindow::widgets</definition>
+        <argsstring></argsstring>
+        <name>widgets</name>
+        <qualifiedname>GooeyWindow::widgets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="24" column="20" bodyfile="backends/gooey_backend.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GooeyWindow::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>GooeyWindow::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="25" column="9" bodyfile="backends/gooey_backend.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GooeyWindow::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>GooeyWindow::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="26" column="9" bodyfile="backends/gooey_backend.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/gooey_backend.h" line="22" column="1" bodyfile="backends/gooey_backend.h" bodystart="23" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" prot="public" virt="non-virtual"><scope>GooeyWindow</scope><name>height</name></member>
+      <member refid="structGooeyWindow_1ab38feef80909e5f01fb69949e203a84d" prot="public" virt="non-virtual"><scope>GooeyWindow</scope><name>widgets</name></member>
+      <member refid="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" prot="public" virt="non-virtual"><scope>GooeyWindow</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

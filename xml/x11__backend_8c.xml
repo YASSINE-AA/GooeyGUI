@@ -1,0 +1,795 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="x11__backend_8c" kind="file" language="C++">
+    <compoundname>x11_backend.c</compoundname>
+    <includes refid="gooey__backend_8h" local="yes">gooey_backend.h</includes>
+    <includes local="no">X11/X.h</includes>
+    <includes local="no">X11/Xlib.h</includes>
+    <includes local="no">X11/Xutil.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>backends/x11_backend.c</label>
+        <link refid="x11__backend_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>X11/X.h</label>
+      </node>
+      <node id="12">
+        <label>X11/Xlib.h</label>
+      </node>
+      <node id="13">
+        <label>X11/Xutil.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="9">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="10">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="8">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structGooeyBackendContext" prot="public">GooeyBackendContext</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="x11__backend_8c_1a4e82150bc8b31b39e30d81cc2fc99084" prot="public" static="yes" mutable="no">
+        <type><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref></type>
+        <definition>GooeyBackendContext ctx</definition>
+        <argsstring></argsstring>
+        <name>ctx</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="19" column="28" bodyfile="backends/x11_backend.c" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="variable" id="x11__backend_8c_1ad5ebe4718bda2af040934ee1a11c1423" prot="public" static="no" mutable="no">
+        <type><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref></type>
+        <definition>GooeyBackend x11_backend</definition>
+        <argsstring></argsstring>
+        <name>x11_backend</name>
+        <initializer>= {
+    .CreateWindow = <ref refid="x11__backend_8c_1a1ac4438bb782d01d7b8204aed59dd508" kindref="member">x11_create_window</ref>,
+    .HandleEvents = <ref refid="x11__backend_8c_1a2edba62cc8ab4b6ab2ca56a99fe7f2da" kindref="member">x11_handle_events</ref>,
+    .DestroyWindow = <ref refid="x11__backend_8c_1a06d8ee90f01f5d9e1b7d26f78081f3cd" kindref="member">x11_destroy_window</ref>,
+    .UpdateBackground = <ref refid="x11__backend_8c_1a37d1a69dd50b2746c6f9d223f853f807" kindref="member">x11_update_background</ref>,
+    .Init = <ref refid="x11__backend_8c_1aca801d079a8ba5a5e6aa711a0818dbb3" kindref="member">x11_init</ref>,
+    .Clear = <ref refid="x11__backend_8c_1a7dbbf4aea16b8e05e24a17e1851820a8" kindref="member">x11_clear</ref>,
+    .Cleanup = <ref refid="x11__backend_8c_1ace4d411910b1a3446378cd65b373f766" kindref="member">x11_cleanup</ref>,
+    .Render = <ref refid="x11__backend_8c_1a3870521186be35a8dc14b92bcdf7591f" kindref="member">x11_render</ref>,
+    .SetForeground = <ref refid="x11__backend_8c_1ae33a70881f77b94e03a73b5adbe770df" kindref="member">x11_set_foreground</ref>,
+    .GetKeyFromCode = <ref refid="x11__backend_8c_1a7c94089d8784e2932f27599500976555" kindref="member">x11_get_key_from_code</ref>,
+    .DrawText = <ref refid="x11__backend_8c_1a1023e8248370dec22870a4bcf7ea2c61" kindref="member">x11_draw_text</ref>,
+    .DrawRectangle = <ref refid="x11__backend_8c_1a22c818502e0c587b9fbb221b6d16f0e7" kindref="member">x11_draw_rectangle</ref>,
+    .FillRectangle = <ref refid="x11__backend_8c_1ab4db59400f85ca15ac39dab031b468ff" kindref="member">x11_fill_rectangle</ref>,
+    .FillArc = <ref refid="x11__backend_8c_1aeffa31d66afe054ef78f81167a2bcfde" kindref="member">x11_fill_arc</ref>,
+    .GetHeight = <ref refid="x11__backend_8c_1a193eb72cbc5f965f23285c692be83ee4" kindref="member">x11_get_window_height</ref>,
+    .GetWidth = <ref refid="x11__backend_8c_1a7251d81850877efbe3d9296531cbc09b" kindref="member">x11_get_window_width</ref>,
+    .DrawLine = <ref refid="x11__backend_8c_1a02c07e0820fcc0e328b824e8ed089c78" kindref="member">x11_draw_line</ref>,
+    .GetTextWidth = <ref refid="x11__backend_8c_1a99b679fad7eafeb84c56bb2d56b8a6ba" kindref="member">x11_get_text_width</ref>
+
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="259" column="14" bodyfile="backends/x11_backend.c" bodystart="259" bodyend="279"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="x11__backend_8c_1aca801d079a8ba5a5e6aa711a0818dbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int x11_init</definition>
+        <argsstring>()</argsstring>
+        <name>x11_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="21" column="5" bodyfile="backends/x11_backend.c" bodystart="21" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1ace4d411910b1a3446378cd65b373f766" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>x11_cleanup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="40" column="6" bodyfile="backends/x11_backend.c" bodystart="40" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a37d1a69dd50b2746c6f9d223f853f807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_update_background</definition>
+        <argsstring>()</argsstring>
+        <name>x11_update_background</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="54" column="6" bodyfile="backends/x11_backend.c" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a1ac4438bb782d01d7b8204aed59dd508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref></type>
+        <definition>GooeyWindow x11_create_window</definition>
+        <argsstring>(const char *title, int width, int height)</argsstring>
+        <name>x11_create_window</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="59" column="13" bodyfile="backends/x11_backend.c" bodystart="59" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a06d8ee90f01f5d9e1b7d26f78081f3cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_destroy_window</definition>
+        <argsstring>()</argsstring>
+        <name>x11_destroy_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="90" column="6" bodyfile="backends/x11_backend.c" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a3870521186be35a8dc14b92bcdf7591f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_render</definition>
+        <argsstring>()</argsstring>
+        <name>x11_render</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="99" column="6" bodyfile="backends/x11_backend.c" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a7dbbf4aea16b8e05e24a17e1851820a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_clear</definition>
+        <argsstring>()</argsstring>
+        <name>x11_clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="104" column="6" bodyfile="backends/x11_backend.c" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a7c94089d8784e2932f27599500976555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * x11_get_key_from_code</definition>
+        <argsstring>(GooeyEvent *gooey_event)</argsstring>
+        <name>x11_get_key_from_code</name>
+        <param>
+          <type>GooeyEvent *</type>
+          <declname>gooey_event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="108" column="6" bodyfile="backends/x11_backend.c" bodystart="108" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1ae33a70881f77b94e03a73b5adbe770df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_set_foreground</definition>
+        <argsstring>(unsigned long color)</argsstring>
+        <name>x11_set_foreground</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="154" column="6" bodyfile="backends/x11_backend.c" bodystart="154" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a1023e8248370dec22870a4bcf7ea2c61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_draw_text</definition>
+        <argsstring>(int x, int y, const char *text, unsigned long color)</argsstring>
+        <name>x11_draw_text</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="161" column="6" bodyfile="backends/x11_backend.c" bodystart="161" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1ab4db59400f85ca15ac39dab031b468ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_fill_rectangle</definition>
+        <argsstring>(int x, int y, int width, int height, unsigned long color)</argsstring>
+        <name>x11_fill_rectangle</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="168" column="6" bodyfile="backends/x11_backend.c" bodystart="168" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a22c818502e0c587b9fbb221b6d16f0e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_draw_rectangle</definition>
+        <argsstring>(int x, int y, int width, int height, unsigned long color)</argsstring>
+        <name>x11_draw_rectangle</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="175" column="6" bodyfile="backends/x11_backend.c" bodystart="175" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a193eb72cbc5f965f23285c692be83ee4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int x11_get_window_height</definition>
+        <argsstring>(GooeyWindow *window)</argsstring>
+        <name>x11_get_window_height</name>
+        <param>
+          <type><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="183" column="5" bodyfile="backends/x11_backend.c" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a7251d81850877efbe3d9296531cbc09b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int x11_get_window_width</definition>
+        <argsstring>(GooeyWindow *window)</argsstring>
+        <name>x11_get_window_width</name>
+        <param>
+          <type><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="188" column="5" bodyfile="backends/x11_backend.c" bodystart="188" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a02c07e0820fcc0e328b824e8ed089c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_draw_line</definition>
+        <argsstring>(int x1, int y1, int x2, int y2, unsigned long color)</argsstring>
+        <name>x11_draw_line</name>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="193" column="6" bodyfile="backends/x11_backend.c" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a99b679fad7eafeb84c56bb2d56b8a6ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float x11_get_text_width</definition>
+        <argsstring>(const char *text, int length)</argsstring>
+        <name>x11_get_text_width</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="201" column="7" bodyfile="backends/x11_backend.c" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1aeffa31d66afe054ef78f81167a2bcfde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void x11_fill_arc</definition>
+        <argsstring>(int x, int y, int width, int height, int angle1, int angle2)</argsstring>
+        <name>x11_fill_arc</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>angle1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>angle2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="206" column="6" bodyfile="backends/x11_backend.c" bodystart="206" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="x11__backend_8c_1a2edba62cc8ab4b6ab2ca56a99fe7f2da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GooeyEvent</type>
+        <definition>GooeyEvent x11_handle_events</definition>
+        <argsstring>()</argsstring>
+        <name>x11_handle_events</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="211" column="12" bodyfile="backends/x11_backend.c" bodystart="211" bodyend="257"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gooey__backend_8h" kindref="compound">gooey_backend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/X.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/Xlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/Xutil.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*display;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>Window<sp/>window;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>GC<sp/>gc;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Atom<sp/>wm_delete_window;<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>XFontStruct<sp/>*font;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<sp/><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structGooeyBackendContext" kindref="compound">GooeyBackendContext</ref><sp/>ctx<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1aca801d079a8ba5a5e6aa711a0818dbb3" kindref="member">x11_init</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref><sp/>=<sp/>XOpenDisplay(NULL);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>X<sp/>display\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" kindref="member">font</ref><sp/>=<sp/>XLoadQueryFont(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/></highlight><highlight class="stringliteral">&quot;fixed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ctx.<ref refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" kindref="member">font</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>load<sp/>system<sp/>font\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XCloseDisplay(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1ace4d411910b1a3446378cd65b373f766" kindref="member">x11_cleanup</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.<ref refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" kindref="member">font</ref>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XFreeFont(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" kindref="member">font</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XCloseDisplay(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;ctx,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ctx));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a37d1a69dd50b2746c6f9d223f853f807" kindref="member">x11_update_background</ref>()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetWindowBackground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/><ref refid="tiny_8c_1ab2fbd9843a01255ead2b2009a8a4c010" kindref="member">active_theme</ref>-&gt;base);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/><ref refid="x11__backend_8c_1a1ac4438bb782d01d7b8204aed59dd508" kindref="member">x11_create_window</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>window;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>window.<ref refid="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" kindref="member">width</ref><sp/>=<sp/>width;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>window.<ref refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" kindref="member">height</ref><sp/>=<sp/>height;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen<sp/>=<sp/>DefaultScreen(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref><sp/>=<sp/>XCreateSimpleWindow(</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RootWindow(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>screen),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10,<sp/>10,<sp/>width,<sp/>height,<sp/>1,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BlackPixel(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>screen),</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WhitePixel(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>screen));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetWindowBackground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/><ref refid="tiny_8c_1ab2fbd9843a01255ead2b2009a8a4c010" kindref="member">active_theme</ref>-&gt;base);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>XStoreName(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>title);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref><sp/>=<sp/>XCreateGC(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a765c27fa0d1302f6c3e7e444b208248b" kindref="member">wm_delete_window</ref><sp/>=<sp/>XInternAtom(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/></highlight><highlight class="stringliteral">&quot;WM_DELETE_WINDOW&quot;</highlight><highlight class="normal">,<sp/>False);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetWMProtocols(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>&amp;ctx.<ref refid="structGooeyBackendContext_1a765c27fa0d1302f6c3e7e444b208248b" kindref="member">wm_delete_window</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>XSelectInput(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExposureMask<sp/>|<sp/>ButtonPressMask<sp/>|<sp/>KeyPressMask<sp/>|<sp/>StructureNotifyMask);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>XMapWindow(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>window;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a06d8ee90f01f5d9e1b7d26f78081f3cd" kindref="member">x11_destroy_window</ref>()</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XDestroyWindow(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a3870521186be35a8dc14b92bcdf7591f" kindref="member">x11_render</ref>()</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>XFlush(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a7dbbf4aea16b8e05e24a17e1851820a8" kindref="member">x11_clear</ref>()</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>XClearWindow(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="x11__backend_8c_1a7c94089d8784e2932f27599500976555" kindref="member">x11_get_key_from_code</ref>(GooeyEvent<sp/>*gooey_event)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gooey_event-&gt;type<sp/>!=<sp/>GOOEY_EVENT_KEY_PRESS)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keycode<sp/>=<sp/>gooey_event-&gt;data.key_press.keycode;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>modifiers<sp/>=<sp/>gooey_event-&gt;data.key_press.state;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>XKeyEvent<sp/>key_event;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>key_event.display<sp/>=<sp/>ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>key_event.window<sp/>=<sp/>DefaultRootWindow(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>key_event.keycode<sp/>=<sp/>keycode;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>key_event.state<sp/>=<sp/>modifiers;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[32];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>KeySym<sp/>keysym;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>XLookupString(&amp;key_event,<sp/>buf,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buf),<sp/>&amp;keysym,<sp/>NULL);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(len<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keysym<sp/>==<sp/>XK_BackSpace)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Backspace&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keysym<sp/>==<sp/>XK_Return)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Return&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keysym<sp/>==<sp/>XK_Tab)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Tab&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf[len]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(buf);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1ae33a70881f77b94e03a73b5adbe770df" kindref="member">x11_set_foreground</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetForeground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a1023e8248370dec22870a4bcf7ea2c61" kindref="member">x11_draw_text</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetForeground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>color);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>XDrawString(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>x,<sp/>y,<sp/>text,<sp/>strlen(text));</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1ab4db59400f85ca15ac39dab031b468ff" kindref="member">x11_fill_rectangle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetForeground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>color);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>XFillRectangle(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>x,<sp/>y,<sp/>width,<sp/>height);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a22c818502e0c587b9fbb221b6d16f0e7" kindref="member">x11_draw_rectangle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetForeground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>color);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>XDrawRectangle(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>x,<sp/>y,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width,<sp/>height);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a193eb72cbc5f965f23285c692be83ee4" kindref="member">x11_get_window_height</ref>(<ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>window-&gt;<ref refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a7251d81850877efbe3d9296531cbc09b" kindref="member">x11_get_window_width</ref>(<ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>window-&gt;<ref refid="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a02c07e0820fcc0e328b824e8ed089c78" kindref="member">x11_draw_line</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x2,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y2,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>XSetForeground(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>color);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>XDrawLine(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>x1,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1,<sp/>x2,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1a99b679fad7eafeb84c56bb2d56b8a6ba" kindref="member">x11_get_text_width</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>XTextWidth(ctx.<ref refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" kindref="member">font</ref>,<sp/>text,<sp/>length);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="x11__backend_8c_1aeffa31d66afe054ef78f81167a2bcfde" kindref="member">x11_fill_arc</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>angle1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>angle2)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>XFillArc(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" kindref="member">window</ref>,<sp/>ctx.<ref refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" kindref="member">gc</ref>,<sp/>x,<sp/>y,<sp/>width,<sp/>height,<sp/>angle1,<sp/>angle2);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal">GooeyEvent<sp/><ref refid="x11__backend_8c_1a2edba62cc8ab4b6ab2ca56a99fe7f2da" kindref="member">x11_handle_events</ref>()</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>XEvent<sp/>event;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyEvent<sp/>gooey_event<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(XPending(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>)<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XNextEvent(ctx.<ref refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" kindref="member">display</ref>,<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>ClientMessage<sp/>&amp;&amp;<sp/>event.xclient.data.l[0]<sp/>==<sp/>ctx.<ref refid="structGooeyBackendContext_1a765c27fa0d1302f6c3e7e444b208248b" kindref="member">wm_delete_window</ref>)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.type<sp/>=<sp/>GOOEY_EVENT_WINDOW_CLOSE;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>ButtonPress)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.type<sp/>=<sp/>GOOEY_EVENT_CLICK;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.data.click.x<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.xbutton.x;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.data.click.y<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.xbutton.y;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>KeyPress)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.type<sp/>=<sp/>GOOEY_EVENT_KEY_PRESS;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.data.key_press.keycode<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.xkey.keycode;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>MotionNotify)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.type<sp/>=<sp/>GOOEY_EVENT_MOUSE_MOVE;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.data.mouse_move.x<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.xmotion.x;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.data.mouse_move.y<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.xmotion.y;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>Expose)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gooey_event.type<sp/>=<sp/>GOOEY_EVENT_EXPOSE;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gooey_event;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref><sp/><ref refid="x11__backend_8c_1ad5ebe4718bda2af040934ee1a11c1423" kindref="member">x11_backend</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structGooeyBackend_1a2fba8d6f5c15fb8e63e845173220640c" kindref="member">CreateWindow</ref><sp/>=<sp/><ref refid="x11__backend_8c_1a1ac4438bb782d01d7b8204aed59dd508" kindref="member">x11_create_window</ref>,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>.HandleEvents<sp/>=<sp/><ref refid="x11__backend_8c_1a2edba62cc8ab4b6ab2ca56a99fe7f2da" kindref="member">x11_handle_events</ref>,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>.DestroyWindow<sp/>=<sp/><ref refid="x11__backend_8c_1a06d8ee90f01f5d9e1b7d26f78081f3cd" kindref="member">x11_destroy_window</ref>,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>.UpdateBackground<sp/>=<sp/><ref refid="x11__backend_8c_1a37d1a69dd50b2746c6f9d223f853f807" kindref="member">x11_update_background</ref>,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>.Init<sp/>=<sp/><ref refid="x11__backend_8c_1aca801d079a8ba5a5e6aa711a0818dbb3" kindref="member">x11_init</ref>,</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>.Clear<sp/>=<sp/><ref refid="x11__backend_8c_1a7dbbf4aea16b8e05e24a17e1851820a8" kindref="member">x11_clear</ref>,</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>.Cleanup<sp/>=<sp/><ref refid="x11__backend_8c_1ace4d411910b1a3446378cd65b373f766" kindref="member">x11_cleanup</ref>,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>.Render<sp/>=<sp/><ref refid="x11__backend_8c_1a3870521186be35a8dc14b92bcdf7591f" kindref="member">x11_render</ref>,</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>.SetForeground<sp/>=<sp/><ref refid="x11__backend_8c_1ae33a70881f77b94e03a73b5adbe770df" kindref="member">x11_set_foreground</ref>,</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>.GetKeyFromCode<sp/>=<sp/><ref refid="x11__backend_8c_1a7c94089d8784e2932f27599500976555" kindref="member">x11_get_key_from_code</ref>,</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>.DrawText<sp/>=<sp/><ref refid="x11__backend_8c_1a1023e8248370dec22870a4bcf7ea2c61" kindref="member">x11_draw_text</ref>,</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>.DrawRectangle<sp/>=<sp/><ref refid="x11__backend_8c_1a22c818502e0c587b9fbb221b6d16f0e7" kindref="member">x11_draw_rectangle</ref>,</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>.FillRectangle<sp/>=<sp/><ref refid="x11__backend_8c_1ab4db59400f85ca15ac39dab031b468ff" kindref="member">x11_fill_rectangle</ref>,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>.FillArc<sp/>=<sp/><ref refid="x11__backend_8c_1aeffa31d66afe054ef78f81167a2bcfde" kindref="member">x11_fill_arc</ref>,</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>.GetHeight<sp/>=<sp/><ref refid="x11__backend_8c_1a193eb72cbc5f965f23285c692be83ee4" kindref="member">x11_get_window_height</ref>,</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>.GetWidth<sp/>=<sp/><ref refid="x11__backend_8c_1a7251d81850877efbe3d9296531cbc09b" kindref="member">x11_get_window_width</ref>,</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>.DrawLine<sp/>=<sp/><ref refid="x11__backend_8c_1a02c07e0820fcc0e328b824e8ed089c78" kindref="member">x11_draw_line</ref>,</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>.GetTextWidth<sp/>=<sp/><ref refid="x11__backend_8c_1a99b679fad7eafeb84c56bb2d56b8a6ba" kindref="member">x11_get_text_width</ref></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="backends/x11_backend.c"/>
+  </compounddef>
+</doxygen>

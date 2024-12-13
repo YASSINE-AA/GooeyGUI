@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gooey__backend_8h" kind="file" language="C++">
+    <compoundname>gooey_backend.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="yes">utils/themes/theme_parser.h</includes>
+    <includes local="yes">utils/gooey_event.h</includes>
+    <includes local="yes">utils/gooey_widgets.h</includes>
+    <includedby refid="glfw__utils_8h" local="yes">backends/utils/glfw/glfw_utils.h</includedby>
+    <includedby refid="wayland__backend_8c" local="yes">backends/wayland_backend.c</includedby>
+    <includedby refid="x11__backend_8c" local="yes">backends/x11_backend.c</includedby>
+    <includedby refid="tiny_8h" local="yes">tiny.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>backends/gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+      <node id="8">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="9">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="7">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>backends/glfw_backend.c</label>
+        <link refid="glfw__backend_8c"/>
+      </node>
+      <node id="1">
+        <label>backends/gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>backends/utils/glfw/glfw_utils.c</label>
+        <link refid="glfw__utils_8c"/>
+      </node>
+      <node id="2">
+        <label>backends/utils/glfw/glfw_utils.h</label>
+        <link refid="glfw__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>backends/wayland_backend.c</label>
+        <link refid="wayland__backend_8c"/>
+      </node>
+      <node id="6">
+        <label>backends/x11_backend.c</label>
+        <link refid="x11__backend_8c"/>
+      </node>
+      <node id="8">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="9">
+        <label>tiny.c</label>
+        <link refid="tiny_8c"/>
+      </node>
+      <node id="7">
+        <label>tiny.h</label>
+        <link refid="tiny_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structGooeyWindow" prot="public">GooeyWindow</innerclass>
+    <innerclass refid="structGooeyBackend" prot="public">GooeyBackend</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GooeyBackends</name>
+        <enumvalue id="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e" prot="public">
+          <name>X11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2" prot="public">
+          <name>WIN32</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1" prot="public">
+          <name>SDL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" prot="public">
+          <name>GLFW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="14" column="1" bodyfile="backends/gooey_backend.h" bodystart="15" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="gooey__backend_8h_1a40509e4cbc7a01fabad92ae05546a9ec" prot="public" static="no">
+        <type>enum <ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111" kindref="member">GooeyBackends</ref></type>
+        <definition>typedef enum GooeyBackends GooeyBackends</definition>
+        <argsstring></argsstring>
+        <name>GooeyBackends</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="20" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="gooey__backend_8h_1a3be9fff3d5022ef7a65aaad8dcc0a037" prot="public" static="no">
+        <type>struct <ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref></type>
+        <definition>typedef struct GooeyWindow GooeyWindow</definition>
+        <argsstring></argsstring>
+        <name>GooeyWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="27" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="gooey__backend_8h_1a1e2caf8226e4b525817b913e4a067223" prot="public" static="no">
+        <type>struct <ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref></type>
+        <definition>typedef struct GooeyBackend GooeyBackend</definition>
+        <argsstring></argsstring>
+        <name>GooeyBackend</name>
+        <briefdescription>
+<para>The <ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref> structure contains function pointers for backend-specific operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="53" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="gooey__backend_8h_1ab2fbd9843a01255ead2b2009a8a4c010" prot="public" static="no" extern="yes" mutable="no">
+        <type>GooeyTheme *</type>
+        <definition>GooeyTheme* active_theme</definition>
+        <argsstring></argsstring>
+        <name>active_theme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="12" column="19" bodyfile="tiny.c" bodystart="7" bodyend="-1" declfile="backends/gooey_backend.h" declline="12" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="variable" id="gooey__backend_8h_1aa9457e7b63831785a8eff9c42858de2c" prot="public" static="no" extern="yes" mutable="no">
+        <type><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref></type>
+        <definition>GooeyBackend wayland_backend</definition>
+        <argsstring></argsstring>
+        <name>wayland_backend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="55" column="21" bodyfile="backends/wayland_backend.c" bodystart="192" bodyend="196" declfile="backends/gooey_backend.h" declline="55" declcolumn="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GOOEY_BACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GOOEY_BACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils/themes/theme_parser.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils/gooey_event.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils/gooey_widgets.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>GooeyTheme<sp/>*<ref refid="gooey__backend_8h_1ab2fbd9843a01255ead2b2009a8a4c010" kindref="member">active_theme</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111" kindref="member">GooeyBackends</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e" kindref="member">X11</ref>,</highlight></codeline>
+<codeline lineno="17" refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2" kindref="member">WIN32</ref>,</highlight></codeline>
+<codeline lineno="18" refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1" kindref="member">SDL</ref>,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" kindref="member">GLFW</ref></highlight></codeline>
+<codeline lineno="20" refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" refkind="member"><highlight class="normal">}<sp/><ref refid="gooey__backend_8h_1ab380ab6c11d2817d8655816c79e01111" kindref="member">GooeyBackends</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structGooeyWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="structGooeyWindow_1ab38feef80909e5f01fb69949e203a84d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyWindowExt<sp/><ref refid="structGooeyWindow_1ab38feef80909e5f01fb69949e203a84d" kindref="member">widgets</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structGooeyWindow_1a96bb6cf5ebecbd243fccda3bc9475ded" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structGooeyWindow_1aeab61f0fa7b24708921d61af89626f2a" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="27" refid="gooey__backend_8h_1a3be9fff3d5022ef7a65aaad8dcc0a037" refkind="member"><highlight class="normal">}<sp/><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structGooeyBackend" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="structGooeyBackend_1a219bfc1df0e971a5f2b8fb1d205157f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*<ref refid="structGooeyBackend_1a219bfc1df0e971a5f2b8fb1d205157f8" kindref="member">Init</ref>)();</highlight></codeline>
+<codeline lineno="36" refid="structGooeyBackend_1ad7ef98a1a89c3f8b018869825db16820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1ad7ef98a1a89c3f8b018869825db16820" kindref="member">Cleanup</ref>)();</highlight></codeline>
+<codeline lineno="37" refid="structGooeyBackend_1a2fba8d6f5c15fb8e63e845173220640c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>(*<ref refid="structGooeyBackend_1a2fba8d6f5c15fb8e63e845173220640c" kindref="member">CreateWindow</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="38" refid="structGooeyBackend_1a12afb375d37eeb3ca5e63c03441aff94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a12afb375d37eeb3ca5e63c03441aff94" kindref="member">DestroyWindow</ref>)(void);</highlight></codeline>
+<codeline lineno="39" refid="structGooeyBackend_1ad2d8e81cec63d791024dec3bf0129af2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1ad2d8e81cec63d791024dec3bf0129af2" kindref="member">UpdateBackground</ref>)(void);</highlight></codeline>
+<codeline lineno="40" refid="structGooeyBackend_1a9f3e4497916358795450b0dce5276b2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a9f3e4497916358795450b0dce5276b2f" kindref="member">Clear</ref>)();</highlight></codeline>
+<codeline lineno="41" refid="structGooeyBackend_1a79b7a576d4880f138393a76276971ad1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a79b7a576d4880f138393a76276971ad1" kindref="member">Render</ref>)();</highlight></codeline>
+<codeline lineno="42" refid="structGooeyBackend_1a2727a7bd80e882644d062c08f3d8a5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a2727a7bd80e882644d062c08f3d8a5fc" kindref="member">SetForeground</ref>)(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="43" refid="structGooeyBackend_1a169986bf8c3ee87dd8aa310233babe43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a169986bf8c3ee87dd8aa310233babe43" kindref="member">DrawText</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="44" refid="structGooeyBackend_1af9b3bb9109d88bae7906f3b72da8fe43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1af9b3bb9109d88bae7906f3b72da8fe43" kindref="member">FillRectangle</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="45" refid="structGooeyBackend_1ab9d29252b8bb53232278cf3923b699c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1ab9d29252b8bb53232278cf3923b699c5" kindref="member">DrawRectangle</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="46" refid="structGooeyBackend_1a122c845bbe92e8ab0af5cdccba11e97b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1a122c845bbe92e8ab0af5cdccba11e97b" kindref="member">FillArc</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>angle1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>angle2);</highlight></codeline>
+<codeline lineno="47" refid="structGooeyBackend_1a571af75e48fda919db25b56e34fce839" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*(*GetKeyFromCode)(GooeyEvent<sp/>*gooey_event);</highlight></codeline>
+<codeline lineno="48" refid="structGooeyBackend_1ab9deaffbae6c768c854ea571d744679a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyEvent<sp/>(*<ref refid="structGooeyBackend_1ab9deaffbae6c768c854ea571d744679a" kindref="member">HandleEvents</ref>)();</highlight></codeline>
+<codeline lineno="49" refid="structGooeyBackend_1af04c84b02ae91b3e7fe01339c4c393a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*<ref refid="structGooeyBackend_1af04c84b02ae91b3e7fe01339c4c393a8" kindref="member">GetHeight</ref>)(<ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="50" refid="structGooeyBackend_1a4263f712f1b0b4ec4a1713c300559cb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*<ref refid="structGooeyBackend_1a4263f712f1b0b4ec4a1713c300559cb3" kindref="member">GetWidth</ref>)(<ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="51" refid="structGooeyBackend_1aba1d0cfac03b3349f2f1da474ae53446" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structGooeyBackend_1aba1d0cfac03b3349f2f1da474ae53446" kindref="member">DrawLine</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x2,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y2,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="52" refid="structGooeyBackend_1aa15823780a56d2118284e164045697de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>float<sp/>(*<ref refid="structGooeyBackend_1aa15823780a56d2118284e164045697de" kindref="member">GetTextWidth</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="53" refid="gooey__backend_8h_1a1e2caf8226e4b525817b913e4a067223" refkind="member"><highlight class="normal">}<sp/><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref><sp/><ref refid="gooey__backend_8h_1aa9457e7b63831785a8eff9c42858de2c" kindref="member">wayland_backend</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="backends/gooey_backend.h"/>
+  </compounddef>
+</doxygen>

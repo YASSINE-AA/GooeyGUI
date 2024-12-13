@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structVertex" kind="struct" language="C++" prot="public">
+    <compoundname>Vertex</compoundname>
+    <includes refid="glfw__utils_8h" local="no">glfw_utils.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVertex_1abb5a5cf5005ab937369bba05fb2f29a2" prot="public" static="no" mutable="no">
+        <type>vec2</type>
+        <definition>vec2 Vertex::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>Vertex::pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="24" column="10" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVertex_1a5b638095649d7861df43787ec9c02a69" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Vertex::col</definition>
+        <argsstring></argsstring>
+        <name>col</name>
+        <qualifiedname>Vertex::col</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="25" column="10" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/utils/glfw/glfw_utils.h" line="23" column="1" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="23" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structVertex_1a5b638095649d7861df43787ec9c02a69" prot="public" virt="non-virtual"><scope>Vertex</scope><name>col</name></member>
+      <member refid="structVertex_1abb5a5cf5005ab937369bba05fb2f29a2" prot="public" virt="non-virtual"><scope>Vertex</scope><name>pos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

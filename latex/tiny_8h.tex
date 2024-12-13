@@ -4,7 +4,9 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{tiny_8h_aa48eafef282c5bf4c706cd99899af8c1}{Gooey\+\_\+\+Init}} (\mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{Gooey\+Backends}} backend, Gooey\+Theme \texorpdfstring{$\ast$}{*}theme)
+int \mbox{\hyperlink{tiny_8h_aa1b4ea3eac057048d12e7e077e24fbce}{Gooey\+\_\+\+Init}} (\mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{Gooey\+Backends}} backend)
+\item 
+void \mbox{\hyperlink{tiny_8h_a211590977db456409afc3bd19e030cc0}{Gooey\+Window\+\_\+set\+Theme}} (const char \texorpdfstring{$\ast$}{*}font\+Path)
 \item 
 \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{tiny_8h_a5bb530110f0f6dcde2f3f3cd7c179efc}{Gooey\+Window\+\_\+\+Create}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
 \begin{DoxyCompactList}\small\item\em Creates a new Gooey window. \end{DoxyCompactList}\item 
@@ -50,6 +52,8 @@ Gooey\+Label \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tiny_8h_ad9de78f8bb3585
 \begin{DoxyCompactList}\small\item\em Adds a label to the window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{tiny_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319}{Gooey\+Label\+\_\+set\+Text}} (Gooey\+Label \texorpdfstring{$\ast$}{*}label, const char \texorpdfstring{$\ast$}{*}text)
 \begin{DoxyCompactList}\small\item\em Sets the text of the label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tiny_8h_a70637d9cb1889ded01c8c5e1c897e277}{Gooey\+Label\+\_\+\+Draw}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win)
+\item 
 Gooey\+Checkbox \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tiny_8h_a4bb807a94ca251447a265d773e0c81bc}{Gooey\+Checkbox\+\_\+\+Add}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y, char \texorpdfstring{$\ast$}{*}label, void(\texorpdfstring{$\ast$}{*}callback)(bool checked))
 \begin{DoxyCompactList}\small\item\em Adds a checkbox to the window. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{tiny_8h_ab5d76b9b2e053b8d9c43aef50ac55693}{Gooey\+Checkbox\+\_\+\+Handle\+Click}} (\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}win, int x, int y)
@@ -94,11 +98,11 @@ void \mbox{\hyperlink{tiny_8h_a83e8b293bf59a1b632f6fcfa7e29fbff}{Gooey\+Window\+
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{tiny_8h_aa48eafef282c5bf4c706cd99899af8c1}\label{tiny_8h_aa48eafef282c5bf4c706cd99899af8c1} 
+\Hypertarget{tiny_8h_aa1b4ea3eac057048d12e7e077e24fbce}\label{tiny_8h_aa1b4ea3eac057048d12e7e077e24fbce} 
 \index{tiny.h@{tiny.h}!Gooey\_Init@{Gooey\_Init}}
 \index{Gooey\_Init@{Gooey\_Init}!tiny.h@{tiny.h}}
 \doxysubsubsection{\texorpdfstring{Gooey\_Init()}{Gooey\_Init()}}
-{\footnotesize\ttfamily int Gooey\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{Gooey\+Backends}}}]{backend,  }\item[{Gooey\+Theme \texorpdfstring{$\ast$}{*}}]{theme }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int Gooey\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{Gooey\+Backends}}}]{backend }\end{DoxyParamCaption})}
 
 \Hypertarget{tiny_8h_a6ef2ab71a12568095efab0973c7b687c}\label{tiny_8h_a6ef2ab71a12568095efab0973c7b687c} 
 \index{tiny.h@{tiny.h}!GooeyButton\_Add@{GooeyButton\_Add}}
@@ -301,6 +305,12 @@ Adds a label to the window.
 \begin{DoxyReturn}{Returns}
 A new Gooey\+Label object. 
 \end{DoxyReturn}
+\Hypertarget{tiny_8h_a70637d9cb1889ded01c8c5e1c897e277}\label{tiny_8h_a70637d9cb1889ded01c8c5e1c897e277} 
+\index{tiny.h@{tiny.h}!GooeyLabel\_Draw@{GooeyLabel\_Draw}}
+\index{GooeyLabel\_Draw@{GooeyLabel\_Draw}!tiny.h@{tiny.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLabel\_Draw()}{GooeyLabel\_Draw()}}
+{\footnotesize\ttfamily void Gooey\+Label\+\_\+\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
 \Hypertarget{tiny_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319}\label{tiny_8h_a8b766c3ccc63a7a1d29c89d7bd5f0319} 
 \index{tiny.h@{tiny.h}!GooeyLabel\_setText@{GooeyLabel\_setText}}
 \index{GooeyLabel\_setText@{GooeyLabel\_setText}!tiny.h@{tiny.h}}
@@ -801,6 +811,12 @@ This function enters the main event loop and begins processing user input and wi
 {\em win} & The window to run. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{tiny_8h_a211590977db456409afc3bd19e030cc0}\label{tiny_8h_a211590977db456409afc3bd19e030cc0} 
+\index{tiny.h@{tiny.h}!GooeyWindow\_setTheme@{GooeyWindow\_setTheme}}
+\index{GooeyWindow\_setTheme@{GooeyWindow\_setTheme}!tiny.h@{tiny.h}}
+\doxysubsubsection{\texorpdfstring{GooeyWindow\_setTheme()}{GooeyWindow\_setTheme()}}
+{\footnotesize\ttfamily void Gooey\+Window\+\_\+set\+Theme (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{font\+Path }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Variable Documentation}

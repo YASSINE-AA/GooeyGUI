@@ -2,13 +2,39 @@
 #define TINY_H
 #include "backends/gooey_backend.h"
 
-
+/**
+ * @brief The currently active Gooey backend.
+ */
 extern GooeyBackend *active_backend;
+
+/**
+ * @brief The X11 backend for Gooey.
+ */
 extern GooeyBackend x11_backend;
+
+/**
+ * @brief The Wayland backend for Gooey.
+ */
 extern GooeyBackend wayland_backend;
+
+/**
+ * @brief The GLFW backend for Gooey.
+ */
 extern GooeyBackend glfw_backend;
 
+/**
+ * @brief Initializes the Gooey system with the specified backend.
+ *
+ * @param backend The backend to use (e.g., X11, Wayland, GLFW).
+ * @return 0 on success, non-zero on failure.
+ */
 int Gooey_Init(GooeyBackends backend);
+
+/**
+ * @brief Sets the theme for the Gooey window.
+ *
+ * @param fontPath The path to the font file to use for the window's theme.
+ */
 void GooeyWindow_setTheme(const char *fontPath);
 
 /**
@@ -135,6 +161,12 @@ GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title);
  */
 void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y);
 
+/**
+ * @brief Draws the button on the window.
+ *
+ * @param win The window to draw the button on.
+ * @param button The button to draw.
+ */
 void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button);
 
 /**
@@ -145,6 +177,7 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button);
  * @param y The y-coordinate of the textbox's position.
  * @param width The width of the textbox.
  * @param height The height of the textbox.
+ * @param placeholder The placeholder text for the textbox.
  * @param onTextChanged The callback function to call when the text changes.
  * @return A new GooeyTextbox object.
  */
@@ -176,6 +209,7 @@ bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y);
  * @param key_event The key event to handle.
  */
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *event);
+
 /**
  * @brief Gets the text of the textbox.
  *
@@ -192,6 +226,13 @@ const char *GooeyTextbox_getText(GooeyTextbox *textbox);
  */
 void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text);
 
+/**
+ * @brief Adds a menu item to a menu child.
+ *
+ * @param child The menu child to add the item to.
+ * @param title The title of the menu item.
+ * @param callback The callback function to call when the item is selected.
+ */
 void GooeyMenuChild_AddElement(GooeyMenuChild *child, char *title, void (*callback)());
 
 /**
@@ -213,9 +254,12 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
  */
 void GooeyLabel_setText(GooeyLabel *label, const char *text);
 
-
+/**
+ * @brief Draws the label on the window.
+ *
+ * @param win The window to draw the label on.
+ */
 void GooeyLabel_Draw(GooeyWindow *win);
-
 
 /**
  * @brief Adds a checkbox to the window.
@@ -240,10 +284,28 @@ GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
  */
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y);
 
+/**
+ * @brief Adds a radio button to the window.
+ *
+ * @param win The window to add the radio button to.
+ * @param x The x-coordinate of the radio button's position.
+ * @param y The y-coordinate of the radio button's position.
+ * @param label The label of the radio button.
+ * @param callback The callback function to call when the radio button is selected.
+ * @return A new GooeyRadioButton object.
+ */
 GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
                                        char *label,
                                        void (*callback)(bool selected));
 
+/**
+ * @brief Handles radio button click events.
+ *
+ * @param win The window containing the radio button.
+ * @param x The x-coordinate of the click event.
+ * @param y The y-coordinate of the click event.
+ * @return True if the radio button was clicked, false otherwise.
+ */
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y);
 
 /**
@@ -324,28 +386,41 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y);
  * @return GooeyRadioButtonGroup widget pointer.
  */
 GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win);
+
 /**
- * @brief Creates a radio button group widget.
+ * @brief Adds a radio button to a radio button group.
  *
- * @param win The window containing the radio button group.
+ * @param group The radio button group to add the button to.
  * @param x The x-coordinate of the radio button.
  * @param y The y-coordinate of the radio button.
- * @param label The text (label) of the radio button.
- * @param callback The callback for selecting that specific radio button, pass NULL if not needed.
- * @return GooeyRadioButtonGroup widget pointer.
+ * @param label The label for the radio button.
+ * @param callback The callback to execute when the radio button is selected.
+ * @return The GooeyRadioButton object.
  */
 GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
+
+/**
+ * @brief Draws the radio button group on the window.
+ *
+ * @param win The window to draw the radio button group on.
+ */
 void GooeyRadioButtonGroup_Draw(GooeyWindow *win);
 
 /**
- * @brief Handles RadioButtonGroup click events.
+ * @brief Handles radio button group click events.
  *
- * @param win The window containing the dropdown menu.
+ * @param win The window containing the radio button group.
  * @param x The x-coordinate of the click event.
  * @param y The y-coordinate of the click event.
- * @return True if the dropdown menu was clicked, false otherwise.
+ * @return True if the radio button group was clicked, false otherwise.
  */
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y);
 
+/**
+ * @brief Cleans up the resources associated with the Gooey window.
+ *
+ * @param win The window to clean up.
+ */
 void GooeyWindow_Cleanup(GooeyWindow *win);
+
 #endif

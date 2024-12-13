@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_dec21994cd756836ecefab773235960a" kind="dir">
+    <compoundname>backends</compoundname>
+    <innerdir refid="dir_b0040da22636471b5376bc38bdaab34f">backends/utils</innerdir>
+    <innerfile refid="glfw__backend_8c">glfw_backend.c</innerfile>
+    <innerfile refid="gooey__backend_8h">gooey_backend.h</innerfile>
+    <innerfile refid="wayland__backend_8c">wayland_backend.c</innerfile>
+    <innerfile refid="x11__backend_8c">x11_backend.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/"/>
+  </compounddef>
+</doxygen>

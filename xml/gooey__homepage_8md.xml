@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gooey__homepage_8md" kind="file" language="Markdown">
+    <compoundname>gooey_homepage.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Gooey<sp/>GUI<sp/>Library</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Gooey<sp/>is<sp/>a<sp/>lightweight<sp/>and<sp/>feature-rich<sp/>GUI<sp/>(Graphical<sp/>User<sp/>Interface)<sp/>library<sp/>designed<sp/>for<sp/>X11<sp/>environments.<sp/>It<sp/>provides<sp/>a<sp/>range<sp/>of<sp/>customizable<sp/>widgets<sp/>and<sp/>layouts<sp/>for<sp/>creating<sp/>responsive<sp/>and<sp/>modern<sp/>desktop<sp/>applications.<sp/>The<sp/>library<sp/>is<sp/>optimized<sp/>for<sp/>simplicity<sp/>and<sp/>offers<sp/>a<sp/>flexible<sp/>API<sp/>for<sp/>developers.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Wide<sp/>Range<sp/>of<sp/>Widgets**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Labels</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Buttons</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Checkboxes</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Radio<sp/>Buttons<sp/>(and<sp/>Groups)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sliders</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Dropdown<sp/>Menus</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Textboxes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Layouts**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Horizontal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Vertical</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Grid-based<sp/>layouts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Customization<sp/>Options**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Support<sp/>for<sp/>widget-specific<sp/>callbacks</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Styling<sp/>with<sp/>predefined<sp/>color<sp/>schemes</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Interactive<sp/>hover<sp/>and<sp/>click<sp/>states</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Event<sp/>Handling**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Mouse<sp/>clicks,<sp/>motion,<sp/>and<sp/>keypress<sp/>events</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Dynamic<sp/>updates<sp/>through<sp/>an<sp/>efficient<sp/>redraw<sp/>system</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ensure<sp/>your<sp/>development<sp/>environment<sp/>includes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**X11<sp/>Development<sp/>Libraries**:<sp/>Gooey<sp/>relies<sp/>on<sp/>X11<sp/>(`&lt;X11/X.h&gt;`,<sp/>`&lt;X11/Xlib.h&gt;`,<sp/>`&lt;X11/Xutil.h&gt;`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>integrate<sp/>Gooey<sp/>into<sp/>your<sp/>project:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Include<sp/>`gooey.h`<sp/>in<sp/>your<sp/>project<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Add<sp/>`#include<sp/>&quot;gooey.h&quot;`<sp/>to<sp/>your<sp/>source<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Link<sp/>your<sp/>project<sp/>with<sp/>the<sp/>X11<sp/>libraries.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Example<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;gooey.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>onButtonClick()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Button<sp/>clicked!\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyWindow<sp/>win<sp/>=<sp/>GooeyWindow_Create(&quot;Gooey<sp/>Example&quot;,<sp/>800,<sp/>600);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyButton<sp/>*btn<sp/>=<sp/>GooeyButton_Add(&amp;win,<sp/>&quot;Click<sp/>Me&quot;,<sp/>50,<sp/>50,<sp/>100,<sp/>30,<sp/>onButtonClick);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyWindow_Run(&amp;win);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GooeyWindow_Cleanup(&amp;win);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>API<sp/>Overview</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Window<sp/>Management</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`GooeyWindow<sp/>GooeyWindow_Create(const<sp/>char<sp/>*title,<sp/>int<sp/>width,<sp/>int<sp/>height)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`void<sp/>GooeyWindow_Run(GooeyWindow<sp/>*win)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`void<sp/>GooeyWindow_Redraw(GooeyWindow<sp/>*win)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`void<sp/>GooeyWindow_Cleanup(GooeyWindow<sp/>*win)`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Widgets</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Buttons**:<sp/>`GooeyButton_Add(...)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Checkboxes**:<sp/>`GooeyCheckbox_Add(...)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Radio<sp/>Buttons**:<sp/>`GooeyRadioButton_Add(...)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Sliders**:<sp/>`GooeySlider_Add(...)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Textboxes**:<sp/>`GooeyTextBox_Add(...)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Dropdown<sp/>Menus**:<sp/>`GooeyDropdown_Add(...)`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Layouts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Create<sp/>layouts<sp/>with<sp/>`GooeyLayout_Create(...)`<sp/>and<sp/>add<sp/>widgets<sp/>using<sp/>`GooeyLayout_AddChild(...)`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Contributions<sp/>are<sp/>welcome!<sp/>If<sp/>you<sp/>have<sp/>suggestions<sp/>or<sp/>encounter<sp/>issues,<sp/>feel<sp/>free<sp/>to<sp/>open<sp/>an<sp/>issue<sp/>or<sp/>submit<sp/>a<sp/>pull<sp/>request.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Gooey<sp/>is<sp/>released<sp/>under<sp/>the<sp/>MIT<sp/>License.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Start<sp/>building<sp/>interactive<sp/>and<sp/>modern<sp/>desktop<sp/>applications<sp/>with<sp/>Gooey<sp/>today!</highlight></codeline>
+    </programlisting>
+    <location file="gooey_homepage.md"/>
+  </compounddef>
+</doxygen>

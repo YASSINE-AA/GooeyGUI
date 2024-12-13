@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_52e97556b4e632ff632666369c1112e5" kind="dir">
+    <compoundname>backends/utils/glfw</compoundname>
+    <innerfile refid="glfw__utils_8c">glfw_utils.c</innerfile>
+    <innerfile refid="glfw__utils_8h">glfw_utils.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="backends/utils/glfw/"/>
+  </compounddef>
+</doxygen>

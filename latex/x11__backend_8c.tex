@@ -19,6 +19,8 @@ int \mbox{\hyperlink{x11__backend_8c_aca801d079a8ba5a5e6aa711a0818dbb3}{x11\+\_\
 \item 
 void \mbox{\hyperlink{x11__backend_8c_ace4d411910b1a3446378cd65b373f766}{x11\+\_\+cleanup}} ()
 \item 
+void \mbox{\hyperlink{x11__backend_8c_a37d1a69dd50b2746c6f9d223f853f807}{x11\+\_\+update\+\_\+background}} ()
+\item 
 \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{x11__backend_8c_a1ac4438bb782d01d7b8204aed59dd508}{x11\+\_\+create\+\_\+window}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
 \item 
 void \mbox{\hyperlink{x11__backend_8c_a06d8ee90f01f5d9e1b7d26f78081f3cd}{x11\+\_\+destroy\+\_\+window}} ()
@@ -159,6 +161,12 @@ Gooey\+Event \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}
 \doxysubsubsection{\texorpdfstring{x11\_set\_foreground()}{x11\_set\_foreground()}}
 {\footnotesize\ttfamily void x11\+\_\+set\+\_\+foreground (\begin{DoxyParamCaption}\item[{unsigned long}]{color }\end{DoxyParamCaption})}
 
+\Hypertarget{x11__backend_8c_a37d1a69dd50b2746c6f9d223f853f807}\label{x11__backend_8c_a37d1a69dd50b2746c6f9d223f853f807} 
+\index{x11\_backend.c@{x11\_backend.c}!x11\_update\_background@{x11\_update\_background}}
+\index{x11\_update\_background@{x11\_update\_background}!x11\_backend.c@{x11\_backend.c}}
+\doxysubsubsection{\texorpdfstring{x11\_update\_background()}{x11\_update\_background()}}
+{\footnotesize\ttfamily void x11\+\_\+update\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Variable Documentation}
@@ -174,6 +182,7 @@ Gooey\+Event \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}
 \DoxyCodeLine{\ \ \ \ .CreateWindow\ =\ \mbox{\hyperlink{x11__backend_8c_a1ac4438bb782d01d7b8204aed59dd508}{x11\_create\_window}},}
 \DoxyCodeLine{\ \ \ \ .HandleEvents\ =\ \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}{x11\_handle\_events}},}
 \DoxyCodeLine{\ \ \ \ .DestroyWindow\ =\ \mbox{\hyperlink{x11__backend_8c_a06d8ee90f01f5d9e1b7d26f78081f3cd}{x11\_destroy\_window}},}
+\DoxyCodeLine{\ \ \ \ .UpdateBackground\ =\ \mbox{\hyperlink{x11__backend_8c_a37d1a69dd50b2746c6f9d223f853f807}{x11\_update\_background}},}
 \DoxyCodeLine{\ \ \ \ .Init\ =\ \mbox{\hyperlink{x11__backend_8c_aca801d079a8ba5a5e6aa711a0818dbb3}{x11\_init}},}
 \DoxyCodeLine{\ \ \ \ .Clear\ =\ \mbox{\hyperlink{x11__backend_8c_a7dbbf4aea16b8e05e24a17e1851820a8}{x11\_clear}},}
 \DoxyCodeLine{\ \ \ \ .Cleanup\ =\ \mbox{\hyperlink{x11__backend_8c_ace4d411910b1a3446378cd65b373f766}{x11\_cleanup}},}
@@ -183,12 +192,12 @@ Gooey\+Event \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}
 \DoxyCodeLine{\ \ \ \ .DrawText\ =\ \mbox{\hyperlink{x11__backend_8c_a1023e8248370dec22870a4bcf7ea2c61}{x11\_draw\_text}},}
 \DoxyCodeLine{\ \ \ \ .DrawRectangle\ =\ \mbox{\hyperlink{x11__backend_8c_a22c818502e0c587b9fbb221b6d16f0e7}{x11\_draw\_rectangle}},}
 \DoxyCodeLine{\ \ \ \ .FillRectangle\ =\ \mbox{\hyperlink{x11__backend_8c_ab4db59400f85ca15ac39dab031b468ff}{x11\_fill\_rectangle}},}
-\DoxyCodeLine{\ \ \ \ .FillArc=\mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\_fill\_arc}},}
+\DoxyCodeLine{\ \ \ \ .FillArc\ =\ \mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\_fill\_arc}},}
 \DoxyCodeLine{\ \ \ \ .GetHeight\ =\ \mbox{\hyperlink{x11__backend_8c_a193eb72cbc5f965f23285c692be83ee4}{x11\_get\_window\_height}},}
 \DoxyCodeLine{\ \ \ \ .GetWidth\ =\ \mbox{\hyperlink{x11__backend_8c_a7251d81850877efbe3d9296531cbc09b}{x11\_get\_window\_width}},}
 \DoxyCodeLine{\ \ \ \ .DrawLine\ =\ \mbox{\hyperlink{x11__backend_8c_a02c07e0820fcc0e328b824e8ed089c78}{x11\_draw\_line}},}
 \DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{x11__backend_8c_a99b679fad7eafeb84c56bb2d56b8a6ba}{x11\_get\_text\_width}}}
-\DoxyCodeLine{\ \ \ \ }
-\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
 
 \end{DoxyCode}

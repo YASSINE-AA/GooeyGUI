@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structGooeyBackendContext" kind="struct" language="C++" prot="public">
+    <compoundname>GooeyBackendContext</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structGooeyBackendContext_1a76a21c109ff3cda8d04c7a45b536dd2b" prot="public" static="no" mutable="no">
+        <type>GooeyEvent *</type>
+        <definition>GooeyEvent* GooeyBackendContext::current_event</definition>
+        <argsstring></argsstring>
+        <name>current_event</name>
+        <qualifiedname>GooeyBackendContext::current_event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="4" column="16" bodyfile="backends/glfw_backend.c" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" prot="public" static="no" mutable="no">
+        <type>GLFWwindow *</type>
+        <definition>GLFWwindow* GooeyBackendContext::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <qualifiedname>GooeyBackendContext::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="5" column="16" bodyfile="backends/glfw_backend.c" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a4bd0df668ca931b24173943074340cdd" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::text_program</definition>
+        <argsstring></argsstring>
+        <name>text_program</name>
+        <qualifiedname>GooeyBackendContext::text_program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="6" column="12" bodyfile="backends/glfw_backend.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a67ce9eb0babbd1fa9736dc20c488195b" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::shape_program</definition>
+        <argsstring></argsstring>
+        <name>shape_program</name>
+        <qualifiedname>GooeyBackendContext::shape_program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="7" column="12" bodyfile="backends/glfw_backend.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1af3fa500d9a6e3144316be4d9099fb8c5" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::text_vao</definition>
+        <argsstring></argsstring>
+        <name>text_vao</name>
+        <qualifiedname>GooeyBackendContext::text_vao</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="8" column="12" bodyfile="backends/glfw_backend.c" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a5575ea2dfd6047cd7857801e9d2d972a" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::text_vbo</definition>
+        <argsstring></argsstring>
+        <name>text_vbo</name>
+        <qualifiedname>GooeyBackendContext::text_vbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="9" column="12" bodyfile="backends/glfw_backend.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a056b1bcff76cc69918617d136806b684" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::shape_vao</definition>
+        <argsstring></argsstring>
+        <name>shape_vao</name>
+        <qualifiedname>GooeyBackendContext::shape_vao</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="10" column="12" bodyfile="backends/glfw_backend.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a4e0ddeb9ffb13d6f10f0d744a79f224c" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint GooeyBackendContext::shape_vbo</definition>
+        <argsstring></argsstring>
+        <name>shape_vbo</name>
+        <qualifiedname>GooeyBackendContext::shape_vbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="11" column="12" bodyfile="backends/glfw_backend.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a40179db1930430a25d08df469714af77" prot="public" static="no" mutable="no">
+        <type>mat4x4</type>
+        <definition>mat4x4 GooeyBackendContext::projection</definition>
+        <argsstring></argsstring>
+        <name>projection</name>
+        <qualifiedname>GooeyBackendContext::projection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="12" column="12" bodyfile="backends/glfw_backend.c" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1aad47e13028a3a87e4d881d7e64d277b9" prot="public" static="no" mutable="no">
+        <type><ref refid="structCharacter" kindref="compound">Character</ref></type>
+        <definition>Character GooeyBackendContext::characters[128]</definition>
+        <argsstring>[128]</argsstring>
+        <name>characters</name>
+        <qualifiedname>GooeyBackendContext::characters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="13" column="15" bodyfile="backends/glfw_backend.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a6a4354f0af78f90616b1b1906a76dafd" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char GooeyBackendContext::font_path[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>font_path</name>
+        <qualifiedname>GooeyBackendContext::font_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="14" column="10" bodyfile="backends/glfw_backend.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1ad890be48675d35a27f5f7587eaa3b2a9" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int GooeyBackendContext::selected_color</definition>
+        <argsstring></argsstring>
+        <name>selected_color</name>
+        <qualifiedname>GooeyBackendContext::selected_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/glfw_backend.c" line="15" column="18" bodyfile="backends/glfw_backend.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" prot="public" static="no" mutable="no">
+        <type>struct wl_surface *</type>
+        <definition>struct wl_surface* GooeyBackendContext::surface</definition>
+        <argsstring></argsstring>
+        <name>surface</name>
+        <qualifiedname>GooeyBackendContext::surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="21" column="21" bodyfile="backends/wayland_backend.c" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a7ac8830f9154378e2c80fba20085adcd" prot="public" static="no" mutable="no">
+        <type>struct wl_shm *</type>
+        <definition>struct wl_shm* GooeyBackendContext::shm</definition>
+        <argsstring></argsstring>
+        <name>shm</name>
+        <qualifiedname>GooeyBackendContext::shm</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="22" column="17" bodyfile="backends/wayland_backend.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" prot="public" static="no" mutable="no">
+        <type>struct wl_buffer *</type>
+        <definition>struct wl_buffer* GooeyBackendContext::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <qualifiedname>GooeyBackendContext::buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="23" column="20" bodyfile="backends/wayland_backend.c" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a92e249460a32b9734bf0ea2645f1726b" prot="public" static="no" mutable="no">
+        <type>struct xdg_wm_base *</type>
+        <definition>struct xdg_wm_base* GooeyBackendContext::wm_base</definition>
+        <argsstring></argsstring>
+        <name>wm_base</name>
+        <qualifiedname>GooeyBackendContext::wm_base</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="24" column="22" bodyfile="backends/wayland_backend.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a078edfa1901ed19e1a69a2948e70ff4c" prot="public" static="no" mutable="no">
+        <type>struct xdg_surface *</type>
+        <definition>struct xdg_surface* GooeyBackendContext::xdg_surface</definition>
+        <argsstring></argsstring>
+        <name>xdg_surface</name>
+        <qualifiedname>GooeyBackendContext::xdg_surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="25" column="22" bodyfile="backends/wayland_backend.c" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" prot="public" static="no" mutable="no">
+        <type>struct xdg_toplevel *</type>
+        <definition>struct xdg_toplevel* GooeyBackendContext::xdg_toplevel</definition>
+        <argsstring></argsstring>
+        <name>xdg_toplevel</name>
+        <qualifiedname>GooeyBackendContext::xdg_toplevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="26" column="23" bodyfile="backends/wayland_backend.c" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" prot="public" static="no" mutable="no">
+        <type>struct wl_display *</type>
+        <definition>struct wl_display* GooeyBackendContext::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <qualifiedname>GooeyBackendContext::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="27" column="21" bodyfile="backends/wayland_backend.c" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a39f623a542778bcbbb87d04a6b439ffd" prot="public" static="no" mutable="no">
+        <type>struct wl_compositor *</type>
+        <definition>struct wl_compositor* GooeyBackendContext::compositor</definition>
+        <argsstring></argsstring>
+        <name>compositor</name>
+        <qualifiedname>GooeyBackendContext::compositor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/wayland_backend.c" line="28" column="24" bodyfile="backends/wayland_backend.c" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a64ebd70ecbc32d67b8ded4031cba0a15" prot="public" static="no" mutable="no">
+        <type>Display *</type>
+        <definition>Display* GooeyBackendContext::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <qualifiedname>GooeyBackendContext::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X11 display connection. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="12" column="13" bodyfile="backends/x11_backend.c" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a9c9f4ffa530ab20720e3d7e1486fb8bc" prot="public" static="no" mutable="no">
+        <type>Window</type>
+        <definition>Window GooeyBackendContext::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <qualifiedname>GooeyBackendContext::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X11 window identifier. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="13" column="12" bodyfile="backends/x11_backend.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" prot="public" static="no" mutable="no">
+        <type>GC</type>
+        <definition>GC GooeyBackendContext::gc</definition>
+        <argsstring></argsstring>
+        <name>gc</name>
+        <qualifiedname>GooeyBackendContext::gc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Graphics context for rendering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="14" column="8" bodyfile="backends/x11_backend.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1a765c27fa0d1302f6c3e7e444b208248b" prot="public" static="no" mutable="no">
+        <type>Atom</type>
+        <definition>Atom GooeyBackendContext::wm_delete_window</definition>
+        <argsstring></argsstring>
+        <name>wm_delete_window</name>
+        <qualifiedname>GooeyBackendContext::wm_delete_window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atom for handling window close events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="15" column="10" bodyfile="backends/x11_backend.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" prot="public" static="no" mutable="no">
+        <type>XFontStruct *</type>
+        <definition>XFontStruct* GooeyBackendContext::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <qualifiedname>GooeyBackendContext::font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X11 font structure for text rendering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/x11_backend.c" line="16" column="17" bodyfile="backends/x11_backend.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Character</label>
+        <link refid="structCharacter"/>
+      </node>
+      <node id="1">
+        <label>GooeyBackendContext</label>
+        <link refid="structGooeyBackendContext"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>characters</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="backends/glfw_backend.c" line="2" column="1" bodyfile="backends/glfw_backend.c" bodystart="3" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structGooeyBackendContext_1a64ba9dfedfe2ca320f7ee1cc5028958d" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>buffer</name></member>
+      <member refid="structGooeyBackendContext_1aad47e13028a3a87e4d881d7e64d277b9" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>characters</name></member>
+      <member refid="structGooeyBackendContext_1a39f623a542778bcbbb87d04a6b439ffd" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>compositor</name></member>
+      <member refid="structGooeyBackendContext_1a76a21c109ff3cda8d04c7a45b536dd2b" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>current_event</name></member>
+      <member refid="structGooeyBackendContext_1a916a3d2165876e985771e5a8b0e38c36" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>display</name></member>
+      <member refid="structGooeyBackendContext_1a64ebd70ecbc32d67b8ded4031cba0a15" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>display</name></member>
+      <member refid="structGooeyBackendContext_1ae11e04fc4c8483059eb0196b8b242e54" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>font</name></member>
+      <member refid="structGooeyBackendContext_1a6a4354f0af78f90616b1b1906a76dafd" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>font_path</name></member>
+      <member refid="structGooeyBackendContext_1a27ae80b859ad1333d72b7c2d310355f8" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>gc</name></member>
+      <member refid="structGooeyBackendContext_1a40179db1930430a25d08df469714af77" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>projection</name></member>
+      <member refid="structGooeyBackendContext_1ad890be48675d35a27f5f7587eaa3b2a9" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>selected_color</name></member>
+      <member refid="structGooeyBackendContext_1a67ce9eb0babbd1fa9736dc20c488195b" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>shape_program</name></member>
+      <member refid="structGooeyBackendContext_1a056b1bcff76cc69918617d136806b684" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>shape_vao</name></member>
+      <member refid="structGooeyBackendContext_1a4e0ddeb9ffb13d6f10f0d744a79f224c" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>shape_vbo</name></member>
+      <member refid="structGooeyBackendContext_1a7ac8830f9154378e2c80fba20085adcd" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>shm</name></member>
+      <member refid="structGooeyBackendContext_1ac15505df452b702bb246ec14a1afbc52" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>surface</name></member>
+      <member refid="structGooeyBackendContext_1a4bd0df668ca931b24173943074340cdd" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>text_program</name></member>
+      <member refid="structGooeyBackendContext_1af3fa500d9a6e3144316be4d9099fb8c5" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>text_vao</name></member>
+      <member refid="structGooeyBackendContext_1a5575ea2dfd6047cd7857801e9d2d972a" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>text_vbo</name></member>
+      <member refid="structGooeyBackendContext_1a3c63abc83f45a7005d9b7184dbf737b5" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>window</name></member>
+      <member refid="structGooeyBackendContext_1a9c9f4ffa530ab20720e3d7e1486fb8bc" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>window</name></member>
+      <member refid="structGooeyBackendContext_1a92e249460a32b9734bf0ea2645f1726b" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>wm_base</name></member>
+      <member refid="structGooeyBackendContext_1a765c27fa0d1302f6c3e7e444b208248b" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>wm_delete_window</name></member>
+      <member refid="structGooeyBackendContext_1a078edfa1901ed19e1a69a2948e70ff4c" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>xdg_surface</name></member>
+      <member refid="structGooeyBackendContext_1a8e53352fa17d5b1132a9ac63ab3e196b" prot="public" virt="non-virtual"><scope>GooeyBackendContext</scope><name>xdg_toplevel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="glfw__utils_8c" kind="file" language="C++">
+    <compoundname>glfw_utils.c</compoundname>
+    <includes refid="glfw__utils_8h" local="yes">glfw_utils.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>../glad/glad.h</label>
+      </node>
+      <node id="15">
+        <label>../linmath.h</label>
+      </node>
+      <node id="3">
+        <label>../../gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>backends/utils/glfw/glfw_utils.c</label>
+        <link refid="glfw__utils_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>glfw_utils.h</label>
+        <link refid="glfw__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="13">
+        <label>freetype2/ft2build.h</label>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="10">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="11">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="9">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="glfw__utils_8c_1a2215651979d912367ec13a51e1c4202d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_window_size</definition>
+        <argsstring>(GLFWwindow *window, int *window_width, int *window_height)</argsstring>
+        <name>get_window_size</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>window_width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>window_height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.c" line="6" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8c_1a3b7a43b2bac2bc38f84265d53c96b45c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_coords_to_ndc</definition>
+        <argsstring>(GLFWwindow *window, float *ndc_x, float *ndc_y, int x, int y)</argsstring>
+        <name>convert_coords_to_ndc</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_x</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.c" line="10" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="10" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8c_1aed0c0032266afcda853ab5f0f272ac53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_dimension_to_ndc</definition>
+        <argsstring>(GLFWwindow *window, float *ndc_w, float *ndc_h, int width, int height)</argsstring>
+        <name>convert_dimension_to_ndc</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_w</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.c" line="19" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="19" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8c_1af7dff0b6a435ddada85fe5fcaaf6054c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_hex_to_rgb</definition>
+        <argsstring>(vec3 *rgb, unsigned int color_hex)</argsstring>
+        <name>convert_hex_to_rgb</name>
+        <param>
+          <type>vec3 *</type>
+          <declname>rgb</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>color_hex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.c" line="28" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="28" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8c_1a726c6432bc5e87d62bbb566639dd90e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * LookupString</definition>
+        <argsstring>(int keycode)</argsstring>
+        <name>LookupString</name>
+        <param>
+          <type>int</type>
+          <declname>keycode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.c" line="37" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="37" bodyend="164"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>yassine-ahmed-ali<sp/>on<sp/>12/7/24.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glfw__utils_8h" kindref="compound">glfw_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8c_1a2215651979d912367ec13a51e1c4202d" kindref="member">get_window_size</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*window_width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*window_height)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>glfwGetFramebufferSize(window,<sp/>window_width,<sp/>window_height);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8c_1a3b7a43b2bac2bc38f84265d53c96b45c" kindref="member">convert_coords_to_ndc</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>window_width,<sp/>window_height;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glfw__utils_8c_1a2215651979d912367ec13a51e1c4202d" kindref="member">get_window_size</ref>(window,<sp/>&amp;window_width,<sp/>&amp;window_height);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>*ndc_x<sp/>=<sp/>(2.0f<sp/>*<sp/>x<sp/>/<sp/>window_width)<sp/>-<sp/>1.0f;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>*ndc_y<sp/>=<sp/>1.0f<sp/>-<sp/>(2.0f<sp/>*<sp/>y<sp/>/<sp/>window_height);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8c_1aed0c0032266afcda853ab5f0f272ac53" kindref="member">convert_dimension_to_ndc</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_w,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>window_width,<sp/>window_height;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glfw__utils_8c_1a2215651979d912367ec13a51e1c4202d" kindref="member">get_window_size</ref>(window,<sp/>&amp;window_width,<sp/>&amp;window_height);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>*ndc_w=<sp/>(2.0f<sp/>*<sp/>width)<sp/>/<sp/>window_width;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>*ndc_h=<sp/>-(2.0f<sp/>*<sp/>height)<sp/>/<sp/>window_height;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8c_1af7dff0b6a435ddada85fe5fcaaf6054c" kindref="member">convert_hex_to_rgb</ref>(vec3<sp/>*rgb,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>color_hex)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>(*rgb)[0]<sp/>=<sp/>((color_hex<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF)<sp/>/<sp/>255.0f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>(*rgb)[1]<sp/>=<sp/>((color_hex<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF)<sp/>/<sp/>255.0f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>(*rgb)[2]<sp/>=<sp/>((color_hex)<sp/>&amp;<sp/>0xFF)<sp/>/<sp/>255.0f;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glfw__utils_8c_1a726c6432bc5e87d62bbb566639dd90e5" kindref="member">LookupString</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keycode)<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(keycode)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>-1:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Unknown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>32:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Space&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>39:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Apostrophe&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>44:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Comma&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>45:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Minus&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>46:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Period&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>47:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Slash&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>48:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>49:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>50:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>51:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>52:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>53:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num5&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>54:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num6&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>55:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num7&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>56:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>57:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Num9&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>59:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Semicolon&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>61:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Equal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>65:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>66:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>67:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;c&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>68:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;d&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>69:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;e&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>70:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;f&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>71:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;g&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>72:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;h&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>73:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>74:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;j&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>75:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;k&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>76:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;l&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>77:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>78:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>79:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>80:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;p&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>81:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;q&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>82:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>83:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>84:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>85:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;u&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>86:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;v&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>87:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>88:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>89:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>90:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>91:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;LeftBracket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>92:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Backslash&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>93:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;RightBracket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>96:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;GraveAccent&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>161:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;World1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>162:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;World2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>256:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Escape&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>257:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Enter&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>258:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Tab&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>259:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Backspace&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>260:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Insert&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>261:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Delete&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>262:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Right&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>263:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Left&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>264:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Down&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>265:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Up&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>266:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;PageUp&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>267:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;PageDown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>268:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Home&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>269:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;End&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>280:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;CapsLock&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>281:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;ScrollLock&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>282:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;NumLock&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>283:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;PrintScreen&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>284:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Pause&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>290:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>291:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>292:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>293:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>294:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F5&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>295:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F6&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>296:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F7&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>297:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>298:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F9&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>299:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F10&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>300:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F11&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>301:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F12&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>302:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F13&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>303:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F14&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>304:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F15&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>305:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F16&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>306:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F17&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>307:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F18&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>308:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F19&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>309:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F20&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>310:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F21&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>311:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F22&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>312:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F23&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>313:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F24&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>314:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;F25&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>320:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>321:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>322:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>323:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>324:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>325:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad5&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>326:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad6&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>327:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad7&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>328:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>329:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Keypad9&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>330:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadDecimal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>331:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadDivide&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>332:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadMultiply&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>333:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadSubtract&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>334:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadAdd&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>335:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadEnter&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>336:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;KeypadEqual&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>340:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;LeftShift&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>341:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;LeftControl&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>342:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;LeftAlt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>343:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;LeftSuper&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>344:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;RightShift&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>345:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;RightControl&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>346:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;RightAlt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>347:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;RightSuper&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>348:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Menu&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(</highlight><highlight class="stringliteral">&quot;Unknown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="backends/utils/glfw/glfw_utils.c"/>
+  </compounddef>
+</doxygen>

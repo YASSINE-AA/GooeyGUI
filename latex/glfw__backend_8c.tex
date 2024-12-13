@@ -41,6 +41,8 @@ void \mbox{\hyperlink{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321}{glfw\+
 \item 
 void \mbox{\hyperlink{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}{glfw\+\_\+cleanup}} ()
 \item 
+void \mbox{\hyperlink{glfw__backend_8c_a4accf774f962735ae9519a9e79e6496d}{glfw\+\_\+update\+\_\+background}} ()
+\item 
 void \mbox{\hyperlink{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}{glfw\+\_\+render}} ()
 \item 
 float \mbox{\hyperlink{glfw__backend_8c_adcd4a2eb541c5b3ce4d9ecdc8a110297}{glfw\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
@@ -163,6 +165,12 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e
 \doxysubsubsection{\texorpdfstring{glfw\_set\_foreground()}{glfw\_set\_foreground()}}
 {\footnotesize\ttfamily void glfw\+\_\+set\+\_\+foreground (\begin{DoxyParamCaption}\item[{long unsigned int}]{color }\end{DoxyParamCaption})}
 
+\Hypertarget{glfw__backend_8c_a4accf774f962735ae9519a9e79e6496d}\label{glfw__backend_8c_a4accf774f962735ae9519a9e79e6496d} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_update\_background@{glfw\_update\_background}}
+\index{glfw\_update\_background@{glfw\_update\_background}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_update\_background()}{glfw\_update\_background()}}
+{\footnotesize\ttfamily void glfw\+\_\+update\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \Hypertarget{glfw__backend_8c_a76c6084335d944db2b604aaa048cbfb0}\label{glfw__backend_8c_a76c6084335d944db2b604aaa048cbfb0} 
 \index{glfw\_backend.c@{glfw\_backend.c}!setup\_shaders@{setup\_shaders}}
 \index{setup\_shaders@{setup\_shaders}!glfw\_backend.c@{glfw\_backend.c}}
@@ -184,6 +192,7 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e
 \DoxyCodeLine{\ \ \ \ .Init\ =\ \mbox{\hyperlink{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4}{glfw\_init}},}
 \DoxyCodeLine{\ \ \ \ .CreateWindow\ =\ \mbox{\hyperlink{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5}{glfw\_create\_window}},}
 \DoxyCodeLine{\ \ \ \ .DestroyWindow\ =\ \mbox{\hyperlink{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf}{glfw\_destroy\_window}},}
+\DoxyCodeLine{\ \ \ \ .UpdateBackground\ =\ \mbox{\hyperlink{glfw__backend_8c_a4accf774f962735ae9519a9e79e6496d}{glfw\_update\_background}},}
 \DoxyCodeLine{\ \ \ \ .Cleanup\ =\ \mbox{\hyperlink{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}{glfw\_cleanup}},}
 \DoxyCodeLine{\ \ \ \ .Render\ =\ \mbox{\hyperlink{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}{glfw\_render}},}
 \DoxyCodeLine{\ \ \ \ .HandleEvents\ =\ \mbox{\hyperlink{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}{glfw\_handle\_events}},}

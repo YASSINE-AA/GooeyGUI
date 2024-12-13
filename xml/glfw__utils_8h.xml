@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="glfw__utils_8h" kind="file" language="C++">
+    <compoundname>glfw_utils.h</compoundname>
+    <includes refid="gooey__backend_8h" local="yes">../../gooey_backend.h</includes>
+    <includes local="yes">../glad/glad.h</includes>
+    <includes local="no">freetype2/ft2build.h</includes>
+    <includes local="no">GLFW/glfw3.h</includes>
+    <includes local="yes">../linmath.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includedby refid="glfw__backend_8c" local="yes">backends/glfw_backend.c</includedby>
+    <includedby refid="glfw__utils_8c" local="yes">backends/utils/glfw/glfw_utils.c</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>../glad/glad.h</label>
+      </node>
+      <node id="14">
+        <label>../linmath.h</label>
+      </node>
+      <node id="2">
+        <label>../../gooey_backend.h</label>
+        <link refid="gooey__backend_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>backends/utils/glfw/glfw_utils.h</label>
+        <link refid="glfw__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="12">
+        <label>freetype2/ft2build.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="9">
+        <label>utils/gooey_event.h</label>
+      </node>
+      <node id="10">
+        <label>utils/gooey_widgets.h</label>
+      </node>
+      <node id="8">
+        <label>utils/themes/theme_parser.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>backends/glfw_backend.c</label>
+        <link refid="glfw__backend_8c"/>
+      </node>
+      <node id="3">
+        <label>backends/utils/glfw/glfw_utils.c</label>
+        <link refid="glfw__utils_8c"/>
+      </node>
+      <node id="1">
+        <label>backends/utils/glfw/glfw_utils.h</label>
+        <link refid="glfw__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structCharacter" prot="public">Character</innerclass>
+    <innerclass refid="structVertex" prot="public">Vertex</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="glfw__utils_8h_1a2e1662af5233d0fe6a6f061445d2ff25" prot="public" static="no">
+        <type>struct <ref refid="structVertex" kindref="compound">Vertex</ref></type>
+        <definition>typedef struct Vertex Vertex</definition>
+        <argsstring></argsstring>
+        <name>Vertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="26" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="glfw__utils_8h_1ad65396274457d335c6145b14edb5aa6c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* rectangle_vertex_shader</definition>
+        <argsstring></argsstring>
+        <name>rectangle_vertex_shader</name>
+        <initializer>=
+    &quot;#version 330 core\n&quot;
+    &quot;layout(location = 0) in vec2 pos;\n&quot;
+    &quot;layout(location = 1) in vec3 col;\n&quot;
+    &quot;out vec3 color;\n&quot;
+    &quot;void <ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>() {\n&quot;
+    &quot;    gl_Position = vec4(pos, 0.0, 1.0);\n&quot;
+    &quot;    color = col;\n&quot;
+    &quot;}\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="28" column="19" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="glfw__utils_8h_1a59c1c2b529b6e842091ed739f3ee2916" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* rectangle_fragment_shader</definition>
+        <argsstring></argsstring>
+        <name>rectangle_fragment_shader</name>
+        <initializer>=
+    &quot;#version 330 core\n&quot;
+    &quot;in vec3 color;\n&quot;
+    &quot;out vec4 fragment;\n&quot;
+    &quot;void <ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>() {\n&quot;
+    &quot;    fragment = vec4(color, 1.0);\n&quot;
+    &quot;}\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="38" column="19" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="glfw__utils_8h_1a6e57f8869ea29d1a7a8a1aa2b517741c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* text_vertex_shader_source</definition>
+        <argsstring></argsstring>
+        <name>text_vertex_shader_source</name>
+        <initializer>= &quot;#version 330 core\n&quot;
+                                 &quot;layout(location = 0) in vec4 vertex;\n&quot;
+                                 &quot;out vec2 TexCoords;\n&quot;
+                                 &quot;uniform mat4 projection;\n&quot;
+                                 &quot;void <ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>() {\n&quot;
+                                 &quot;    gl_Position = projection * vec4(vertex.xy, 0.0, 1.0);\n&quot;
+                                 &quot;    TexCoords = vec2(vertex.z, 1.0-vertex.w);\n&quot;
+                                 &quot;}\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="46" column="19" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="glfw__utils_8h_1a3dfa884b3b41aa2bc278cc1bdbec2f01" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* text_fragment_shader_source</definition>
+        <argsstring></argsstring>
+        <name>text_fragment_shader_source</name>
+        <initializer>= &quot;#version 330 core\n&quot;
+                                   &quot;in vec2 TexCoords;\n&quot;
+                                   &quot;out vec4 color;\n&quot;
+                                   &quot;uniform sampler2D text;\n&quot;
+                                   &quot;uniform vec3 textColor;\n&quot;
+                                   &quot;void <ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>() {\n&quot;
+                                   &quot;    float alpha = texture(text, TexCoords).r;\n&quot;
+                                   &quot;    color = vec4(textColor, alpha);\n&quot;
+                                   &quot;}\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="55" column="19" bodyfile="backends/utils/glfw/glfw_utils.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="glfw__utils_8h_1a2215651979d912367ec13a51e1c4202d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_window_size</definition>
+        <argsstring>(GLFWwindow *window, int *window_width, int *window_height)</argsstring>
+        <name>get_window_size</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>window_width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>window_height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="65" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="6" bodyend="9" declfile="backends/utils/glfw/glfw_utils.h" declline="65" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8h_1a3b7a43b2bac2bc38f84265d53c96b45c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_coords_to_ndc</definition>
+        <argsstring>(GLFWwindow *window, float *ndc_x, float *ndc_y, int x, int y)</argsstring>
+        <name>convert_coords_to_ndc</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_x</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="66" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="10" bodyend="17" declfile="backends/utils/glfw/glfw_utils.h" declline="66" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8h_1aed0c0032266afcda853ab5f0f272ac53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_dimension_to_ndc</definition>
+        <argsstring>(GLFWwindow *window, float *ndc_w, float *ndc_h, int width, int height)</argsstring>
+        <name>convert_dimension_to_ndc</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_w</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ndc_h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="67" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="19" bodyend="26" declfile="backends/utils/glfw/glfw_utils.h" declline="67" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8h_1af7dff0b6a435ddada85fe5fcaaf6054c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convert_hex_to_rgb</definition>
+        <argsstring>(vec3 *rgb, unsigned int color_hex)</argsstring>
+        <name>convert_hex_to_rgb</name>
+        <param>
+          <type>vec3 *</type>
+          <declname>rgb</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>color_hex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="68" column="6" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="28" bodyend="33" declfile="backends/utils/glfw/glfw_utils.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="glfw__utils_8h_1a726c6432bc5e87d62bbb566639dd90e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * LookupString</definition>
+        <argsstring>(int keycode)</argsstring>
+        <name>LookupString</name>
+        <param>
+          <type>int</type>
+          <declname>keycode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/utils/glfw/glfw_utils.h" line="69" column="7" bodyfile="backends/utils/glfw/glfw_utils.c" bodystart="37" bodyend="164" declfile="backends/utils/glfw/glfw_utils.h" declline="69" declcolumn="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GLFW_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GLFW_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../gooey_backend.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../glad/glad.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freetype2/ft2build.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_FREETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GLFW/glfw3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../linmath.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structCharacter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15" refid="structCharacter_1aebef720b0cb5a308a06778a7b933e5c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>GLuint<sp/><ref refid="structCharacter_1aebef720b0cb5a308a06778a7b933e5c8" kindref="member">textureID</ref>;</highlight></codeline>
+<codeline lineno="16" refid="structCharacter_1aa945d94f4ee6ec02e5cf1fb753c94d8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCharacter_1aa945d94f4ee6ec02e5cf1fb753c94d8f" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="17" refid="structCharacter_1a1f7e996c91a75a5e037bebcf0bf3ac06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCharacter_1a1f7e996c91a75a5e037bebcf0bf3ac06" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="18" refid="structCharacter_1aa7908738dc72abfb880ee4c68b5560a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCharacter_1aa7908738dc72abfb880ee4c68b5560a5" kindref="member">bearingX</ref>;</highlight></codeline>
+<codeline lineno="19" refid="structCharacter_1aa8868963114c35c98c0679d5e0531645" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCharacter_1aa8868963114c35c98c0679d5e0531645" kindref="member">bearingY</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structCharacter_1ade68e61272c5cfcfd39680928516c4a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCharacter_1ade68e61272c5cfcfd39680928516c4a7" kindref="member">advance</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}<sp/><ref refid="structCharacter" kindref="compound">Character</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structVertex" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structVertex" kindref="compound">Vertex</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="structVertex_1abb5a5cf5005ab937369bba05fb2f29a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec2<sp/><ref refid="structVertex_1abb5a5cf5005ab937369bba05fb2f29a2" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structVertex_1a5b638095649d7861df43787ec9c02a69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="structVertex_1a5b638095649d7861df43787ec9c02a69" kindref="member">col</ref>;</highlight></codeline>
+<codeline lineno="26" refid="glfw__utils_8h_1a2e1662af5233d0fe6a6f061445d2ff25" refkind="member"><highlight class="normal">}<sp/><ref refid="structVertex" kindref="compound">Vertex</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rectangle_vertex_shader<sp/>=</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;#version<sp/>330<sp/>core\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;layout(location<sp/>=<sp/>0)<sp/>in<sp/>vec2<sp/>pos;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;layout(location<sp/>=<sp/>1)<sp/>in<sp/>vec3<sp/>col;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;out<sp/>vec3<sp/>color;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;void<sp/>main()<sp/>{\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>gl_Position<sp/>=<sp/>vec4(pos,<sp/>0.0,<sp/>1.0);\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>color<sp/>=<sp/>col;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;}\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rectangle_fragment_shader<sp/>=</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;#version<sp/>330<sp/>core\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;in<sp/>vec3<sp/>color;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;out<sp/>vec4<sp/>fragment;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;void<sp/>main()<sp/>{\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>fragment<sp/>=<sp/>vec4(color,<sp/>1.0);\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;}\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text_vertex_shader_source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#version<sp/>330<sp/>core\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;layout(location<sp/>=<sp/>0)<sp/>in<sp/>vec4<sp/>vertex;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;out<sp/>vec2<sp/>TexCoords;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uniform<sp/>mat4<sp/>projection;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;void<sp/>main()<sp/>{\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>gl_Position<sp/>=<sp/>projection<sp/>*<sp/>vec4(vertex.xy,<sp/>0.0,<sp/>1.0);\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>TexCoords<sp/>=<sp/>vec2(vertex.z,<sp/>1.0-vertex.w);\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;}\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text_fragment_shader_source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#version<sp/>330<sp/>core\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;in<sp/>vec2<sp/>TexCoords;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;out<sp/>vec4<sp/>color;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uniform<sp/>sampler2D<sp/>text;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uniform<sp/>vec3<sp/>textColor;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;void<sp/>main()<sp/>{\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>float<sp/>alpha<sp/>=<sp/>texture(text,<sp/>TexCoords).r;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>color<sp/>=<sp/>vec4(textColor,<sp/>alpha);\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;}\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8h_1a2215651979d912367ec13a51e1c4202d" kindref="member">get_window_size</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*window_width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*window_height);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8h_1a3b7a43b2bac2bc38f84265d53c96b45c" kindref="member">convert_coords_to_ndc</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8h_1aed0c0032266afcda853ab5f0f272ac53" kindref="member">convert_dimension_to_ndc</ref>(GLFWwindow<sp/>*window,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_w,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ndc_h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="glfw__utils_8h_1af7dff0b6a435ddada85fe5fcaaf6054c" kindref="member">convert_hex_to_rgb</ref>(vec3<sp/>*rgb,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>color_hex);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glfw__utils_8h_1a726c6432bc5e87d62bbb566639dd90e5" kindref="member">LookupString</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keycode)<sp/>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GLFW_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="backends/utils/glfw/glfw_utils.h"/>
+  </compounddef>
+</doxygen>

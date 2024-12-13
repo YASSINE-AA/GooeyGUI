@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structGooeyBackend" kind="struct" language="C++" prot="public">
+    <compoundname>GooeyBackend</compoundname>
+    <includes refid="gooey__backend_8h" local="no">gooey_backend.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structGooeyBackend_1a219bfc1df0e971a5f2b8fb1d205157f8" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* GooeyBackend::Init) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>Init</name>
+        <qualifiedname>GooeyBackend::Init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="35" column="5" bodyfile="backends/gooey_backend.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1ad7ef98a1a89c3f8b018869825db16820" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::Cleanup) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>Cleanup</name>
+        <qualifiedname>GooeyBackend::Cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="36" column="5" bodyfile="backends/gooey_backend.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a2fba8d6f5c15fb8e63e845173220640c" prot="public" static="no" mutable="no">
+        <type><ref refid="structGooeyWindow" kindref="compound">GooeyWindow</ref>(*</type>
+        <definition>GooeyWindow(* GooeyBackend::CreateWindow) (const char *title, int width, int height)</definition>
+        <argsstring>)(const char *title, int width, int height)</argsstring>
+        <name>CreateWindow</name>
+        <qualifiedname>GooeyBackend::CreateWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="37" column="5" bodyfile="backends/gooey_backend.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a12afb375d37eeb3ca5e63c03441aff94" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::DestroyWindow) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>DestroyWindow</name>
+        <qualifiedname>GooeyBackend::DestroyWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="38" column="5" bodyfile="backends/gooey_backend.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1ad2d8e81cec63d791024dec3bf0129af2" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::UpdateBackground) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>UpdateBackground</name>
+        <qualifiedname>GooeyBackend::UpdateBackground</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="39" column="5" bodyfile="backends/gooey_backend.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a9f3e4497916358795450b0dce5276b2f" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::Clear) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>GooeyBackend::Clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="40" column="5" bodyfile="backends/gooey_backend.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a79b7a576d4880f138393a76276971ad1" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::Render) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>Render</name>
+        <qualifiedname>GooeyBackend::Render</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="41" column="5" bodyfile="backends/gooey_backend.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a2727a7bd80e882644d062c08f3d8a5fc" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::SetForeground) (unsigned long color)</definition>
+        <argsstring>)(unsigned long color)</argsstring>
+        <name>SetForeground</name>
+        <qualifiedname>GooeyBackend::SetForeground</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="42" column="5" bodyfile="backends/gooey_backend.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a169986bf8c3ee87dd8aa310233babe43" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::DrawText) (int x, int y, const char *text, unsigned long color)</definition>
+        <argsstring>)(int x, int y, const char *text, unsigned long color)</argsstring>
+        <name>DrawText</name>
+        <qualifiedname>GooeyBackend::DrawText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="43" column="5" bodyfile="backends/gooey_backend.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1af9b3bb9109d88bae7906f3b72da8fe43" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::FillRectangle) (int x, int y, int width, int height, unsigned long color)</definition>
+        <argsstring>)(int x, int y, int width, int height, unsigned long color)</argsstring>
+        <name>FillRectangle</name>
+        <qualifiedname>GooeyBackend::FillRectangle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="44" column="5" bodyfile="backends/gooey_backend.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1ab9d29252b8bb53232278cf3923b699c5" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::DrawRectangle) (int x, int y, int width, int height, unsigned long color)</definition>
+        <argsstring>)(int x, int y, int width, int height, unsigned long color)</argsstring>
+        <name>DrawRectangle</name>
+        <qualifiedname>GooeyBackend::DrawRectangle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="45" column="5" bodyfile="backends/gooey_backend.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a122c845bbe92e8ab0af5cdccba11e97b" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::FillArc) (int x, int y, int width, int height, int angle1, int angle2)</definition>
+        <argsstring>)(int x, int y, int width, int height, int angle1, int angle2)</argsstring>
+        <name>FillArc</name>
+        <qualifiedname>GooeyBackend::FillArc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="46" column="5" bodyfile="backends/gooey_backend.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a571af75e48fda919db25b56e34fce839" prot="public" static="no" mutable="no">
+        <type>char *(*</type>
+        <definition>char *(* GooeyBackend::GetKeyFromCode) (GooeyEvent *gooey_event)</definition>
+        <argsstring>)(GooeyEvent *gooey_event)</argsstring>
+        <name>GetKeyFromCode</name>
+        <qualifiedname>GooeyBackend::GetKeyFromCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="47" column="5" bodyfile="backends/gooey_backend.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1ab9deaffbae6c768c854ea571d744679a" prot="public" static="no" mutable="no">
+        <type>GooeyEvent(*</type>
+        <definition>GooeyEvent(* GooeyBackend::HandleEvents) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>HandleEvents</name>
+        <qualifiedname>GooeyBackend::HandleEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="48" column="5" bodyfile="backends/gooey_backend.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1af04c84b02ae91b3e7fe01339c4c393a8" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* GooeyBackend::GetHeight) (GooeyWindow *window)</definition>
+        <argsstring>)(GooeyWindow *window)</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>GooeyBackend::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="49" column="5" bodyfile="backends/gooey_backend.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1a4263f712f1b0b4ec4a1713c300559cb3" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* GooeyBackend::GetWidth) (GooeyWindow *window)</definition>
+        <argsstring>)(GooeyWindow *window)</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>GooeyBackend::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="50" column="5" bodyfile="backends/gooey_backend.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1aba1d0cfac03b3349f2f1da474ae53446" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* GooeyBackend::DrawLine) (int x1, int y1, int x2, int y2, unsigned long color)</definition>
+        <argsstring>)(int x1, int y1, int x2, int y2, unsigned long color)</argsstring>
+        <name>DrawLine</name>
+        <qualifiedname>GooeyBackend::DrawLine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="51" column="5" bodyfile="backends/gooey_backend.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGooeyBackend_1aa15823780a56d2118284e164045697de" prot="public" static="no" mutable="no">
+        <type>float(*</type>
+        <definition>float(* GooeyBackend::GetTextWidth) (const char *text, int length)</definition>
+        <argsstring>)(const char *text, int length)</argsstring>
+        <name>GetTextWidth</name>
+        <qualifiedname>GooeyBackend::GetTextWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="backends/gooey_backend.h" line="52" column="5" bodyfile="backends/gooey_backend.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="structGooeyBackend" kindref="compound">GooeyBackend</ref> structure contains function pointers for backend-specific operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>GooeyBackend</label>
+        <link refid="structGooeyBackend"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>CreateWindow</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GooeyWindow</label>
+        <link refid="structGooeyWindow"/>
+      </node>
+    </collaborationgraph>
+    <location file="backends/gooey_backend.h" line="33" column="1" bodyfile="backends/gooey_backend.h" bodystart="34" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structGooeyBackend_1ad7ef98a1a89c3f8b018869825db16820" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>Cleanup</name></member>
+      <member refid="structGooeyBackend_1a9f3e4497916358795450b0dce5276b2f" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>Clear</name></member>
+      <member refid="structGooeyBackend_1a2fba8d6f5c15fb8e63e845173220640c" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>CreateWindow</name></member>
+      <member refid="structGooeyBackend_1a12afb375d37eeb3ca5e63c03441aff94" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>DestroyWindow</name></member>
+      <member refid="structGooeyBackend_1aba1d0cfac03b3349f2f1da474ae53446" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>DrawLine</name></member>
+      <member refid="structGooeyBackend_1ab9d29252b8bb53232278cf3923b699c5" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>DrawRectangle</name></member>
+      <member refid="structGooeyBackend_1a169986bf8c3ee87dd8aa310233babe43" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>DrawText</name></member>
+      <member refid="structGooeyBackend_1a122c845bbe92e8ab0af5cdccba11e97b" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>FillArc</name></member>
+      <member refid="structGooeyBackend_1af9b3bb9109d88bae7906f3b72da8fe43" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>FillRectangle</name></member>
+      <member refid="structGooeyBackend_1af04c84b02ae91b3e7fe01339c4c393a8" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>GetHeight</name></member>
+      <member refid="structGooeyBackend_1a571af75e48fda919db25b56e34fce839" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>GetKeyFromCode</name></member>
+      <member refid="structGooeyBackend_1aa15823780a56d2118284e164045697de" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>GetTextWidth</name></member>
+      <member refid="structGooeyBackend_1a4263f712f1b0b4ec4a1713c300559cb3" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>GetWidth</name></member>
+      <member refid="structGooeyBackend_1ab9deaffbae6c768c854ea571d744679a" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>HandleEvents</name></member>
+      <member refid="structGooeyBackend_1a219bfc1df0e971a5f2b8fb1d205157f8" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>Init</name></member>
+      <member refid="structGooeyBackend_1a79b7a576d4880f138393a76276971ad1" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>Render</name></member>
+      <member refid="structGooeyBackend_1a2727a7bd80e882644d062c08f3d8a5fc" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>SetForeground</name></member>
+      <member refid="structGooeyBackend_1ad2d8e81cec63d791024dec3bf0129af2" prot="public" virt="non-virtual"><scope>GooeyBackend</scope><name>UpdateBackground</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
