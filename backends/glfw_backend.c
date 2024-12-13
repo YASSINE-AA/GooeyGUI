@@ -309,6 +309,11 @@ static void refresh_callback(GLFWwindow *window)
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
 int glfw_init_ft()
 {
 
@@ -440,6 +445,14 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+void set_projection(int width, int height)
+{
+    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
+    glUseProgram(ctx.text_program);
+    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
+    glBindVertexArray(ctx.text_vao);
+}
+
 GooeyWindow glfw_create_window(const char *title, int width, int height)
 {
 
@@ -459,6 +472,8 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSetMouseButtonCallback(ctx.window, click_callback);
     glfwSetCursorPosCallback(ctx.window, cursor_callback);
     glfwSetWindowRefreshCallback(ctx.window, refresh_callback);
+    glfwSetFramebufferSizeCallback(ctx.window, framebuffer_size_callback);
+
     GooeyWindow window;
 
     window.width = width;
@@ -475,10 +490,8 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
-    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
-    glUseProgram(ctx.text_program);
-    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
-    glBindVertexArray(ctx.text_vao);
+    set_projection(width, height);
+
     return window;
 }
 
@@ -541,6 +554,8 @@ void glfw_render()
     int width, height;
     glfwGetFramebufferSize(ctx.window, &width, &height);
     glViewport(0, 0, width, height);
+    printf("%d %d\n", width, height);
+    set_projection(width, height);
     glfwSwapBuffers(ctx.window);
 }
 

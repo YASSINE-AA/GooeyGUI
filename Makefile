@@ -32,7 +32,7 @@ $(BUILD_DIR)/%.o: $(C_SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/gui: $(OBJS_gui)
-	$(CC) $(OBJS_gui) -o $@ -lwayland-client -lz `pkg-config --cflags --libs freetype2 glfw3`  -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm -lcjson -g 
+	$(CC) $(OBJS_gui) -o $@  -lz `pkg-config --cflags --libs freetype2 glfw3`  -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm -lcjson -g 
 
 docs:
 	doxygen DoxyFile

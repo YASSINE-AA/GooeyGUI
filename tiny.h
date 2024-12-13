@@ -13,11 +13,6 @@ extern GooeyBackend *active_backend;
 extern GooeyBackend x11_backend;
 
 /**
- * @brief The Wayland backend for Gooey.
- */
-extern GooeyBackend wayland_backend;
-
-/**
  * @brief The GLFW backend for Gooey.
  */
 extern GooeyBackend glfw_backend;
