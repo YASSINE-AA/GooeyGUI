@@ -329,9 +329,10 @@ int glfw_init_ft()
     }
 
     FT_Face face;
-    if (FT_New_Face(ft, "./font.ttf", 0, &face))
+    // TODO: avoid hardcoding this font path.
+    if (FT_New_Face(ft, "backends/utils/fonts/roboto.ttf", 0, &face))
     {
-        fprintf(stderr, "Failed to load font: %s\n", "./font.ttf");
+        fprintf(stderr, "Failed to load font: %s\n", "Roboto");
         FT_Done_FreeType(ft);
         return -1;
     }

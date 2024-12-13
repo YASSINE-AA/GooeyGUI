@@ -192,7 +192,7 @@ void GooeyWindow_Redraw(GooeyWindow *win)
                                           checkbox->core.width - 10, checkbox->core.height - 10, active_theme->primary);
         }
     }
-
+    GooeyLabel_Draw(win);
     GooeyRadioButtonGroup_Draw(win);
 
     for (int i = 0; i < win->widgets.slider_count; ++i)
@@ -547,6 +547,29 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
         }
 
         x_offset += text_width + 20;
+    }
+}
+
+GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y)
+{
+    GooeyLabel *label = &win->widgets.labels[win->widgets.label_count++];
+    label->core.x = x;
+    label->core.y = y;
+    strcpy(label->text, text);
+    return label;
+}
+
+void GooeyLabel_setText(GooeyLabel *label, const char *text)
+{
+    if (label)
+        strcpy(label->text, text);
+}
+
+void GooeyLabel_Draw(GooeyWindow *win)
+{
+    for (int i = 0; i < win->widgets.label_count; ++i)
+    {
+        active_backend->DrawText(win->widgets.labels[i].core.x, win->widgets.labels[i].core.y, win->widgets.labels[i].text, active_theme->neutral);
     }
 }
 

@@ -1,25 +1,10 @@
 var searchData=
 [
-  ['callback_0',['callback',['../structGooeyTextbox.html#ae09e5b205a415dce70421100ad51b646',1,'GooeyTextbox::callback'],['../structGooeyButton.html#a0e27f3a292709b05fa84777eec88ba89',1,'GooeyButton::callback'],['../structGooeyDropdown.html#a27d3506eb80a49b239b8fabdaecff9c1',1,'GooeyDropdown::callback'],['../structGooeySlider.html#a45dee2204d01bb14071da4181e816544',1,'GooeySlider::callback'],['../structGooeyRadioButton.html#ac36b19bcc4666684414c41c3151d078b',1,'GooeyRadioButton::callback'],['../structGooeyCheckbox.html#ab19b6669a1eb1068beb609d1d1c20257',1,'GooeyCheckbox::callback']]],
-  ['callbacks_1',['callbacks',['../structGooeyMenuChild.html#a121888223b2a4ae1dfea1359fe407511',1,'GooeyMenuChild']]],
-  ['characters_2',['characters',['../structGooeyBackendContext.html#aad47e13028a3a87e4d881d7e64d277b9',1,'GooeyBackendContext']]],
-  ['checkbox_5fcount_3',['checkbox_count',['../structGooeyWindowExt.html#aae2d853916a1e595917b12fbd5b44eba',1,'GooeyWindowExt']]],
-  ['checkboxes_4',['checkboxes',['../structGooeyWindowExt.html#a064b69d8ab6f88bcc77ccedf44abe775',1,'GooeyWindowExt']]],
-  ['checked_5',['checked',['../structGooeyCheckbox.html#a90c062fba0fb2f6baa0e968c68466c90',1,'GooeyCheckbox']]],
-  ['children_6',['children',['../structGooeyMenu.html#abf6afd32004184785028142b999eb96a',1,'GooeyMenu']]],
-  ['children_5fcount_7',['children_count',['../structGooeyMenu.html#a44a2493c9fc1a730d13337fdb190adb0',1,'GooeyMenu']]],
-  ['cleanup_8',['Cleanup',['../structGooeyBackend.html#ad7ef98a1a89c3f8b018869825db16820',1,'GooeyBackend']]],
-  ['clear_9',['Clear',['../structGooeyBackend.html#a9f3e4497916358795450b0dce5276b2f',1,'GooeyBackend']]],
-  ['click_10',['click',['../structGooeyEvent.html#ab3aebcfe21b830cc55056f5681fdba4b',1,'GooeyEvent']]],
-  ['clicked_11',['clicked',['../structGooeyButton.html#a893db698cca14855343356c20f750b49',1,'GooeyButton']]],
-  ['close_12',['close',['../structxdg__toplevel__listener.html#ad43ce681ea9785dd3f88f794037d1560',1,'xdg_toplevel_listener']]],
-  ['col_13',['col',['../structVertex.html#a5b638095649d7861df43787ec9c02a69',1,'Vertex']]],
-  ['cols_14',['cols',['../structGooeyLayout.html#af9019079240391653b98b5316b3ddcd6',1,'GooeyLayout']]],
-  ['compositor_15',['compositor',['../structGooeyBackendContext.html#a39f623a542778bcbbb87d04a6b439ffd',1,'GooeyBackendContext']]],
-  ['configure_16',['configure',['../structxdg__surface__listener.html#a1c4263d4ac5abb74a2fa8aa9bdd093b0',1,'xdg_surface_listener::configure'],['../structxdg__toplevel__listener.html#a8884ee61ecc055f927c54a5f068edaed',1,'xdg_toplevel_listener::configure'],['../structxdg__popup__listener.html#a36e98cf6e6e4137ee2896a43f1c10730',1,'xdg_popup_listener::configure']]],
-  ['configure_5fbounds_17',['configure_bounds',['../structxdg__toplevel__listener.html#a74d28321edf15393ea63a47ea5d3e5ec',1,'xdg_toplevel_listener']]],
-  ['core_18',['core',['../structGooeyTextbox.html#ae978f204876d6c1db617a01e1ebfb4fc',1,'GooeyTextbox::core'],['../structGooeyDropdown.html#ad0cf1325ab207afc167f5b8db1b416e3',1,'GooeyDropdown::core'],['../structGooeySlider.html#a83a928b73dcec2dc67dc3620bae7b2d6',1,'GooeySlider::core'],['../structGooeyRadioButton.html#a6cf92e2ae23969fec2c5a07e04e1788f',1,'GooeyRadioButton::core'],['../structGooeyCheckbox.html#a468043f1f1d06850ee436b7f086edc9e',1,'GooeyCheckbox::core'],['../structGooeyLabel.html#a5e71e4c69476d512ea628d38b2db9c36',1,'GooeyLabel::core'],['../structGooeyButton.html#a8f2ddd410569abb78b6428a28afbd3f2',1,'GooeyButton::core']]],
-  ['createwindow_19',['CreateWindow',['../structGooeyBackend.html#a2fba8d6f5c15fb8e63e845173220640c',1,'GooeyBackend']]],
-  ['current_5fevent_20',['current_event',['../structGooeyBackendContext.html#a76a21c109ff3cda8d04c7a45b536dd2b',1,'GooeyBackendContext']]],
-  ['cursor_5fpos_21',['cursor_pos',['../structGooeyTextbox.html#a02983881afbb1e34dd50cefb43a3eeed',1,'GooeyTextbox']]]
+  ['characters_0',['characters',['../structGooeyBackendContext.html#aad47e13028a3a87e4d881d7e64d277b9',1,'GooeyBackendContext']]],
+  ['cleanup_1',['Cleanup',['../structGooeyBackend.html#ad7ef98a1a89c3f8b018869825db16820',1,'GooeyBackend']]],
+  ['clear_2',['Clear',['../structGooeyBackend.html#a9f3e4497916358795450b0dce5276b2f',1,'GooeyBackend']]],
+  ['col_3',['col',['../structVertex.html#a5b638095649d7861df43787ec9c02a69',1,'Vertex']]],
+  ['compositor_4',['compositor',['../structGooeyBackendContext.html#a39f623a542778bcbbb87d04a6b439ffd',1,'GooeyBackendContext']]],
+  ['createwindow_5',['CreateWindow',['../structGooeyBackend.html#a2fba8d6f5c15fb8e63e845173220640c',1,'GooeyBackend']]],
+  ['current_5fevent_6',['current_event',['../structGooeyBackendContext.html#a76a21c109ff3cda8d04c7a45b536dd2b',1,'GooeyBackendContext']]]
 ];

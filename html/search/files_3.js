@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['opengl_5fbasics_2emd_0',['opengl_basics.md',['../opengl__basics_8md.html',1,'']]]
+  ['tiny_2ec_0',['tiny.c',['../tiny_8c.html',1,'']]],
+  ['tiny_2eh_1',['tiny.h',['../tiny_8h.html',1,'']]]
 ];

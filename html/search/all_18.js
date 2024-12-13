@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['padding_0',['padding',['../structGooeyLayout.html#aaf993adecb2bec5858760288254728dc',1,'GooeyLayout']]],
-  ['pfnglxgetprocaddressproc_5fprivate_1',['PFNGLXGETPROCADDRESSPROC_PRIVATE',['../glad_8c.html#a695ce03c719dd631a99a879f054402d5',1,'glad.c']]],
-  ['ping_2',['ping',['../structxdg__wm__base__listener.html#a4c735d844e84443304b37d917ec847d0',1,'xdg_wm_base_listener']]],
-  ['placeholder_3',['placeholder',['../structGooeyTextbox.html#a5c89e74fd8fea7b54ff0dfddf644e4b6',1,'GooeyTextbox']]],
-  ['popup_5fdone_4',['popup_done',['../structxdg__popup__listener.html#af62aceff9bcec24ac9e5243107db53a2',1,'xdg_popup_listener']]],
-  ['pos_5',['pos',['../structVertex.html#abb5a5cf5005ab937369bba05fb2f29a2',1,'Vertex']]],
-  ['prerequisites_6',['Prerequisites',['../index.html#autotoc_md3',1,'']]],
-  ['program_7',['program',['../md_opengl__basics.html#autotoc_md24',1,'5. Link Shaders into a Shader Program'],['../md_opengl__basics.html',1,'OpenGL Triangle Program']]],
-  ['projection_8',['projection',['../structGooeyBackendContext.html#a40179db1930430a25d08df469714af77',1,'GooeyBackendContext']]],
-  ['protocol_9',['The xdg_shell protocol',['../page_xdg_shell.html',1,'']]]
+  ['sdl_0',['SDL',['../gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1',1,'gooey_backend.h']]],
+  ['selected_5fcolor_1',['selected_color',['../structGooeyBackendContext.html#ad890be48675d35a27f5f7587eaa3b2a9',1,'GooeyBackendContext']]],
+  ['setforeground_2',['SetForeground',['../structGooeyBackend.html#a2727a7bd80e882644d062c08f3d8a5fc',1,'GooeyBackend']]],
+  ['setup_5fshaders_3',['setup_shaders',['../glfw__backend_8c.html#a76c6084335d944db2b604aaa048cbfb0',1,'glfw_backend.c']]],
+  ['shader_4',['shader',['../md_opengl__basics.html#autotoc_md22',1,'Fragment Shader'],['../md_opengl__basics.html#autotoc_md21',1,'Vertex Shader']]],
+  ['shader_20program_5',['5. Link Shaders into a Shader Program',['../md_opengl__basics.html#autotoc_md24',1,'']]],
+  ['shaders_6',['4. Create and Compile Shaders',['../md_opengl__basics.html#autotoc_md20',1,'']]],
+  ['shaders_20into_20a_20shader_20program_7',['5. Link Shaders into a Shader Program',['../md_opengl__basics.html#autotoc_md24',1,'']]],
+  ['shape_5fprogram_8',['shape_program',['../structGooeyBackendContext.html#a67ce9eb0babbd1fa9736dc20c488195b',1,'GooeyBackendContext']]],
+  ['shape_5fvao_9',['shape_vao',['../structGooeyBackendContext.html#a056b1bcff76cc69918617d136806b684',1,'GooeyBackendContext']]],
+  ['shape_5fvbo_10',['shape_vbo',['../structGooeyBackendContext.html#a4e0ddeb9ffb13d6f10f0d744a79f224c',1,'GooeyBackendContext']]],
+  ['shm_11',['shm',['../structGooeyBackendContext.html#a7ac8830f9154378e2c80fba20085adcd',1,'GooeyBackendContext']]],
+  ['started_12',['Getting Started',['../index.html#autotoc_md2',1,'']]],
+  ['surface_13',['surface',['../structGooeyBackendContext.html#ac15505df452b702bb246ec14a1afbc52',1,'GooeyBackendContext']]]
 ];

@@ -27,7 +27,7 @@ void \mbox{\hyperlink{x11__backend_8c_a3870521186be35a8dc14b92bcdf7591f}{x11\+\_
 \item 
 void \mbox{\hyperlink{x11__backend_8c_a7dbbf4aea16b8e05e24a17e1851820a8}{x11\+\_\+clear}} ()
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__backend_8c_a7c94089d8784e2932f27599500976555}{x11\+\_\+get\+\_\+key\+\_\+from\+\_\+code}} (\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}gooey\+\_\+event)
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__backend_8c_a7c94089d8784e2932f27599500976555}{x11\+\_\+get\+\_\+key\+\_\+from\+\_\+code}} (Gooey\+Event \texorpdfstring{$\ast$}{*}gooey\+\_\+event)
 \item 
 void \mbox{\hyperlink{x11__backend_8c_ae33a70881f77b94e03a73b5adbe770df}{x11\+\_\+set\+\_\+foreground}} (unsigned long color)
 \item 
@@ -43,11 +43,11 @@ int \mbox{\hyperlink{x11__backend_8c_a7251d81850877efbe3d9296531cbc09b}{x11\+\_\
 \item 
 void \mbox{\hyperlink{x11__backend_8c_a02c07e0820fcc0e328b824e8ed089c78}{x11\+\_\+draw\+\_\+line}} (int x1, int y1, int x2, int y2, unsigned long color)
 \item 
-int \mbox{\hyperlink{x11__backend_8c_a8d5bfbbcc58913721eba68cde5d061e6}{x11\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
+float \mbox{\hyperlink{x11__backend_8c_a99b679fad7eafeb84c56bb2d56b8a6ba}{x11\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
 \item 
 void \mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\+\_\+fill\+\_\+arc}} (int x, int y, int width, int height, int angle1, int angle2)
 \item 
-\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}{x11\+\_\+handle\+\_\+events}} ()
+Gooey\+Event \mbox{\hyperlink{x11__backend_8c_a2edba62cc8ab4b6ab2ca56a99fe7f2da}{x11\+\_\+handle\+\_\+events}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -115,13 +115,13 @@ void \mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\+\_
 \index{x11\_backend.c@{x11\_backend.c}!x11\_get\_key\_from\_code@{x11\_get\_key\_from\_code}}
 \index{x11\_get\_key\_from\_code@{x11\_get\_key\_from\_code}!x11\_backend.c@{x11\_backend.c}}
 \doxysubsubsection{\texorpdfstring{x11\_get\_key\_from\_code()}{x11\_get\_key\_from\_code()}}
-{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} x11\+\_\+get\+\_\+key\+\_\+from\+\_\+code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}}]{gooey\+\_\+event }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} x11\+\_\+get\+\_\+key\+\_\+from\+\_\+code (\begin{DoxyParamCaption}\item[{Gooey\+Event \texorpdfstring{$\ast$}{*}}]{gooey\+\_\+event }\end{DoxyParamCaption})}
 
-\Hypertarget{x11__backend_8c_a8d5bfbbcc58913721eba68cde5d061e6}\label{x11__backend_8c_a8d5bfbbcc58913721eba68cde5d061e6} 
+\Hypertarget{x11__backend_8c_a99b679fad7eafeb84c56bb2d56b8a6ba}\label{x11__backend_8c_a99b679fad7eafeb84c56bb2d56b8a6ba} 
 \index{x11\_backend.c@{x11\_backend.c}!x11\_get\_text\_width@{x11\_get\_text\_width}}
 \index{x11\_get\_text\_width@{x11\_get\_text\_width}!x11\_backend.c@{x11\_backend.c}}
 \doxysubsubsection{\texorpdfstring{x11\_get\_text\_width()}{x11\_get\_text\_width()}}
-{\footnotesize\ttfamily int x11\+\_\+get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{length }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float x11\+\_\+get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{length }\end{DoxyParamCaption})}
 
 \Hypertarget{x11__backend_8c_a193eb72cbc5f965f23285c692be83ee4}\label{x11__backend_8c_a193eb72cbc5f965f23285c692be83ee4} 
 \index{x11\_backend.c@{x11\_backend.c}!x11\_get\_window\_height@{x11\_get\_window\_height}}
@@ -139,7 +139,7 @@ void \mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\+\_
 \index{x11\_backend.c@{x11\_backend.c}!x11\_handle\_events@{x11\_handle\_events}}
 \index{x11\_handle\_events@{x11\_handle\_events}!x11\_backend.c@{x11\_backend.c}}
 \doxysubsubsection{\texorpdfstring{x11\_handle\_events()}{x11\_handle\_events()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} x11\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Gooey\+Event x11\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \Hypertarget{x11__backend_8c_aca801d079a8ba5a5e6aa711a0818dbb3}\label{x11__backend_8c_aca801d079a8ba5a5e6aa711a0818dbb3} 
 \index{x11\_backend.c@{x11\_backend.c}!x11\_init@{x11\_init}}
@@ -187,7 +187,7 @@ void \mbox{\hyperlink{x11__backend_8c_aeffa31d66afe054ef78f81167a2bcfde}{x11\+\_
 \DoxyCodeLine{\ \ \ \ .GetHeight\ =\ \mbox{\hyperlink{x11__backend_8c_a193eb72cbc5f965f23285c692be83ee4}{x11\_get\_window\_height}},}
 \DoxyCodeLine{\ \ \ \ .GetWidth\ =\ \mbox{\hyperlink{x11__backend_8c_a7251d81850877efbe3d9296531cbc09b}{x11\_get\_window\_width}},}
 \DoxyCodeLine{\ \ \ \ .DrawLine\ =\ \mbox{\hyperlink{x11__backend_8c_a02c07e0820fcc0e328b824e8ed089c78}{x11\_draw\_line}},}
-\DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{x11__backend_8c_a8d5bfbbcc58913721eba68cde5d061e6}{x11\_get\_text\_width}}}
+\DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{x11__backend_8c_a99b679fad7eafeb84c56bb2d56b8a6ba}{x11\_get\_text\_width}}}
 \DoxyCodeLine{\ \ \ \ }
 \DoxyCodeLine{\ \ \ \ \}}
 

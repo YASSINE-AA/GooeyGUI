@@ -33,7 +33,7 @@ void \mbox{\hyperlink{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b}{glfw\+
 \item 
 \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5}{glfw\+\_\+create\+\_\+window}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
 \item 
-\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \mbox{\hyperlink{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}{glfw\+\_\+handle\+\_\+events}} ()
+Gooey\+Event \mbox{\hyperlink{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}{glfw\+\_\+handle\+\_\+events}} ()
 \item 
 void \mbox{\hyperlink{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf}{glfw\+\_\+destroy\+\_\+window}} ()
 \item 
@@ -43,9 +43,9 @@ void \mbox{\hyperlink{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}{glfw\+
 \item 
 void \mbox{\hyperlink{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}{glfw\+\_\+render}} ()
 \item 
-int \mbox{\hyperlink{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}{glfw\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
+float \mbox{\hyperlink{glfw__backend_8c_adcd4a2eb541c5b3ce4d9ecdc8a110297}{glfw\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}{glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code}} (\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}gooey\+\_\+event)
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}{glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code}} (Gooey\+Event \texorpdfstring{$\ast$}{*}gooey\+\_\+event)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -125,19 +125,19 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e
 \index{glfw\_backend.c@{glfw\_backend.c}!glfw\_get\_key\_from\_code@{glfw\_get\_key\_from\_code}}
 \index{glfw\_get\_key\_from\_code@{glfw\_get\_key\_from\_code}!glfw\_backend.c@{glfw\_backend.c}}
 \doxysubsubsection{\texorpdfstring{glfw\_get\_key\_from\_code()}{glfw\_get\_key\_from\_code()}}
-{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}}]{gooey\+\_\+event }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code (\begin{DoxyParamCaption}\item[{Gooey\+Event \texorpdfstring{$\ast$}{*}}]{gooey\+\_\+event }\end{DoxyParamCaption})}
 
-\Hypertarget{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}\label{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78} 
+\Hypertarget{glfw__backend_8c_adcd4a2eb541c5b3ce4d9ecdc8a110297}\label{glfw__backend_8c_adcd4a2eb541c5b3ce4d9ecdc8a110297} 
 \index{glfw\_backend.c@{glfw\_backend.c}!glfw\_get\_text\_width@{glfw\_get\_text\_width}}
 \index{glfw\_get\_text\_width@{glfw\_get\_text\_width}!glfw\_backend.c@{glfw\_backend.c}}
 \doxysubsubsection{\texorpdfstring{glfw\_get\_text\_width()}{glfw\_get\_text\_width()}}
-{\footnotesize\ttfamily int glfw\+\_\+get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{length }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float glfw\+\_\+get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{length }\end{DoxyParamCaption})}
 
 \Hypertarget{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}\label{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4} 
 \index{glfw\_backend.c@{glfw\_backend.c}!glfw\_handle\_events@{glfw\_handle\_events}}
 \index{glfw\_handle\_events@{glfw\_handle\_events}!glfw\_backend.c@{glfw\_backend.c}}
 \doxysubsubsection{\texorpdfstring{glfw\_handle\_events()}{glfw\_handle\_events()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} glfw\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Gooey\+Event glfw\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \Hypertarget{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4}\label{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4} 
 \index{glfw\_backend.c@{glfw\_backend.c}!glfw\_init@{glfw\_init}}
@@ -192,7 +192,7 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e
 \DoxyCodeLine{\ \ \ \ .DrawRectangle\ =\ \mbox{\hyperlink{glfw__backend_8c_adf01ca716791ba40436d453882cffccc}{glfw\_draw\_rectangle}},}
 \DoxyCodeLine{\ \ \ \ .DrawLine\ =\ \mbox{\hyperlink{glfw__backend_8c_a843d0bf0f2185575bd3f7244b377bfac}{glfw\_draw\_line}},}
 \DoxyCodeLine{\ \ \ \ .SetForeground\ =\ \mbox{\hyperlink{glfw__backend_8c_a8f2b676e2393ee8424d43e1cf3ac59c2}{glfw\_set\_foreground}},}
-\DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}{glfw\_get\_text\_width}},}
+\DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{glfw__backend_8c_adcd4a2eb541c5b3ce4d9ecdc8a110297}{glfw\_get\_text\_width}},}
 \DoxyCodeLine{\ \ \ \ .DrawText\ =\ \mbox{\hyperlink{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b}{glfw\_draw\_text}},}
 \DoxyCodeLine{\ \ \ \ .GetKeyFromCode\ =\ \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}{glfw\_get\_key\_from\_code}},}
 \DoxyCodeLine{\ \ \ \ .Clear\ =\ \mbox{\hyperlink{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321}{glfw\_clear}}\}}

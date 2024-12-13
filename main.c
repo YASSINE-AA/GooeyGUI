@@ -46,7 +46,7 @@ int main()
 
     GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
 
-    // GooeyLabel_Add(&win, "This is a label", 200, 60);
+    GooeyLabel_Add(&win, "This is a label", 200, 60);
 
     GooeyCheckbox_Add(&win, 50, 120, "Enable Option 1", onCheckboxToggle);
     GooeyCheckbox_Add(&win, 50, 160, "Enable Option 2", onCheckboxToggle);

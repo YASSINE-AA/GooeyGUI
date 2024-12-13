@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tiny_2ec_0',['tiny.c',['../tiny_8c.html',1,'']]],
-  ['tiny_2eh_1',['tiny.h',['../tiny_8h.html',1,'']]]
+  ['wayland_5fbackend_2ec_0',['wayland_backend.c',['../wayland__backend_8c.html',1,'']]]
 ];

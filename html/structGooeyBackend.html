@@ -105,9 +105,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ab9d29252b8bb53232278cf3923b699c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122c845bbe92e8ab0af5cdccba11e97b" id="r_a122c845bbe92e8ab0af5cdccba11e97b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#a122c845bbe92e8ab0af5cdccba11e97b">FillArc</a> )(int x, int y, int width, int height, int angle1, int angle2)</td></tr>
 <tr class="separator:a122c845bbe92e8ab0af5cdccba11e97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a571af75e48fda919db25b56e34fce839" id="r_a571af75e48fda919db25b56e34fce839"><td class="memItemLeft" align="right" valign="top">char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#a571af75e48fda919db25b56e34fce839">GetKeyFromCode</a> )(<a class="el" href="structGooeyEvent.html">GooeyEvent</a> *gooey_event)</td></tr>
+<tr class="memitem:a571af75e48fda919db25b56e34fce839" id="r_a571af75e48fda919db25b56e34fce839"><td class="memItemLeft" align="right" valign="top">char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#a571af75e48fda919db25b56e34fce839">GetKeyFromCode</a> )(GooeyEvent *gooey_event)</td></tr>
 <tr class="separator:a571af75e48fda919db25b56e34fce839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9deaffbae6c768c854ea571d744679a" id="r_ab9deaffbae6c768c854ea571d744679a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyEvent.html">GooeyEvent</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#ab9deaffbae6c768c854ea571d744679a">HandleEvents</a> )()</td></tr>
+<tr class="memitem:ab9deaffbae6c768c854ea571d744679a" id="r_ab9deaffbae6c768c854ea571d744679a"><td class="memItemLeft" align="right" valign="top">GooeyEvent(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#ab9deaffbae6c768c854ea571d744679a">HandleEvents</a> )()</td></tr>
 <tr class="separator:ab9deaffbae6c768c854ea571d744679a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af04c84b02ae91b3e7fe01339c4c393a8" id="r_af04c84b02ae91b3e7fe01339c4c393a8"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#af04c84b02ae91b3e7fe01339c4c393a8">GetHeight</a> )(<a class="el" href="structGooeyWindow.html">GooeyWindow</a> *window)</td></tr>
 <tr class="separator:af04c84b02ae91b3e7fe01339c4c393a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +115,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4263f712f1b0b4ec4a1713c300559cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba1d0cfac03b3349f2f1da474ae53446" id="r_aba1d0cfac03b3349f2f1da474ae53446"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#aba1d0cfac03b3349f2f1da474ae53446">DrawLine</a> )(int x1, int y1, int x2, int y2, unsigned long color)</td></tr>
 <tr class="separator:aba1d0cfac03b3349f2f1da474ae53446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66caef9283adadd4fafefaf7519a207f" id="r_a66caef9283adadd4fafefaf7519a207f"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#a66caef9283adadd4fafefaf7519a207f">GetTextWidth</a> )(const char *text, int length)</td></tr>
-<tr class="separator:a66caef9283adadd4fafefaf7519a207f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15823780a56d2118284e164045697de" id="r_aa15823780a56d2118284e164045697de"><td class="memItemLeft" align="right" valign="top">float(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGooeyBackend.html#aa15823780a56d2118284e164045697de">GetTextWidth</a> )(const char *text, int length)</td></tr>
+<tr class="separator:aa15823780a56d2118284e164045697de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="structGooeyBackend.html" title="The GooeyBackend structure contains function pointers for backend-specific operations.">GooeyBackend</a> structure contains function pointers for backend-specific operations. </p>
@@ -268,21 +268,21 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char *(* GooeyBackend::GetKeyFromCode) (<a class="el" href="structGooeyEvent.html">GooeyEvent</a> *gooey_event)</td>
+          <td class="memname">char *(* GooeyBackend::GetKeyFromCode) (GooeyEvent *gooey_event)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a66caef9283adadd4fafefaf7519a207f" name="a66caef9283adadd4fafefaf7519a207f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66caef9283adadd4fafefaf7519a207f">&#9670;&#160;</a></span>GetTextWidth</h2>
+<a id="aa15823780a56d2118284e164045697de" name="aa15823780a56d2118284e164045697de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15823780a56d2118284e164045697de">&#9670;&#160;</a></span>GetTextWidth</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* GooeyBackend::GetTextWidth) (const char *text, int length)</td>
+          <td class="memname">float(* GooeyBackend::GetTextWidth) (const char *text, int length)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -310,7 +310,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structGooeyEvent.html">GooeyEvent</a>(* GooeyBackend::HandleEvents) ()</td>
+          <td class="memname">GooeyEvent(* GooeyBackend::HandleEvents) ()</td>
         </tr>
       </table>
 </div><div class="memdoc">

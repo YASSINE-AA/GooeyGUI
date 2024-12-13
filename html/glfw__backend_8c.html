@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <tr class="separator:ab45d87c9e8cdf6ba864f73b29f49d09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a887a2affbc83b6470b54dd239941c4f5" id="r_a887a2affbc83b6470b54dd239941c4f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyWindow.html">GooeyWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#a887a2affbc83b6470b54dd239941c4f5">glfw_create_window</a> (const char *title, int width, int height)</td></tr>
 <tr class="separator:a887a2affbc83b6470b54dd239941c4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac99e1cd1e24cf673c7a817217a6fd4" id="r_acac99e1cd1e24cf673c7a817217a6fd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyEvent.html">GooeyEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#acac99e1cd1e24cf673c7a817217a6fd4">glfw_handle_events</a> ()</td></tr>
+<tr class="memitem:acac99e1cd1e24cf673c7a817217a6fd4" id="r_acac99e1cd1e24cf673c7a817217a6fd4"><td class="memItemLeft" align="right" valign="top">GooeyEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#acac99e1cd1e24cf673c7a817217a6fd4">glfw_handle_events</a> ()</td></tr>
 <tr class="separator:acac99e1cd1e24cf673c7a817217a6fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a974e784e9467bb65634a4a080694f3bf" id="r_a974e784e9467bb65634a4a080694f3bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#a974e784e9467bb65634a4a080694f3bf">glfw_destroy_window</a> ()</td></tr>
 <tr class="separator:a974e784e9467bb65634a4a080694f3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,9 +123,9 @@ Functions</h2></td></tr>
 <tr class="separator:a245407cf2a7362a9f23db837e1746297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa845e35bbb57b8d42bc9efdaed128a6c" id="r_aa845e35bbb57b8d42bc9efdaed128a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#aa845e35bbb57b8d42bc9efdaed128a6c">glfw_render</a> ()</td></tr>
 <tr class="separator:aa845e35bbb57b8d42bc9efdaed128a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd23b3fe1bca51ae89ea6345f7479a78" id="r_afd23b3fe1bca51ae89ea6345f7479a78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#afd23b3fe1bca51ae89ea6345f7479a78">glfw_get_text_width</a> (const char *text, int length)</td></tr>
-<tr class="separator:afd23b3fe1bca51ae89ea6345f7479a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa60b2474a238e701535d8269b117fb75" id="r_aa60b2474a238e701535d8269b117fb75"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#aa60b2474a238e701535d8269b117fb75">glfw_get_key_from_code</a> (<a class="el" href="structGooeyEvent.html">GooeyEvent</a> *gooey_event)</td></tr>
+<tr class="memitem:adcd4a2eb541c5b3ce4d9ecdc8a110297" id="r_adcd4a2eb541c5b3ce4d9ecdc8a110297"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#adcd4a2eb541c5b3ce4d9ecdc8a110297">glfw_get_text_width</a> (const char *text, int length)</td></tr>
+<tr class="separator:adcd4a2eb541c5b3ce4d9ecdc8a110297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60b2474a238e701535d8269b117fb75" id="r_aa60b2474a238e701535d8269b117fb75"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glfw__backend_8c.html#aa60b2474a238e701535d8269b117fb75">glfw_get_key_from_code</a> (GooeyEvent *gooey_event)</td></tr>
 <tr class="separator:aa60b2474a238e701535d8269b117fb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -494,7 +494,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">char * glfw_get_key_from_code </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGooeyEvent.html">GooeyEvent</a> *&#160;</td>
+          <td class="paramtype">GooeyEvent *&#160;</td>
           <td class="paramname"><em>gooey_event</em></td><td>)</td>
           <td></td>
         </tr>
@@ -503,14 +503,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="afd23b3fe1bca51ae89ea6345f7479a78" name="afd23b3fe1bca51ae89ea6345f7479a78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd23b3fe1bca51ae89ea6345f7479a78">&#9670;&#160;</a></span>glfw_get_text_width()</h2>
+<a id="adcd4a2eb541c5b3ce4d9ecdc8a110297" name="adcd4a2eb541c5b3ce4d9ecdc8a110297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd4a2eb541c5b3ce4d9ecdc8a110297">&#9670;&#160;</a></span>glfw_get_text_width()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int glfw_get_text_width </td>
+          <td class="memname">float glfw_get_text_width </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>text</em>, </td>
@@ -538,7 +538,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structGooeyEvent.html">GooeyEvent</a> glfw_handle_events </td>
+          <td class="memname">GooeyEvent glfw_handle_events </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -658,25 +658,25 @@ Variables</h2></td></tr>
 <div class="line">    .DrawRectangle = <a class="code hl_function" href="glfw__backend_8c.html#adf01ca716791ba40436d453882cffccc">glfw_draw_rectangle</a>,</div>
 <div class="line">    .DrawLine = <a class="code hl_function" href="glfw__backend_8c.html#a843d0bf0f2185575bd3f7244b377bfac">glfw_draw_line</a>,</div>
 <div class="line">    .SetForeground = <a class="code hl_function" href="glfw__backend_8c.html#a8f2b676e2393ee8424d43e1cf3ac59c2">glfw_set_foreground</a>,</div>
-<div class="line">    .GetTextWidth = <a class="code hl_function" href="glfw__backend_8c.html#afd23b3fe1bca51ae89ea6345f7479a78">glfw_get_text_width</a>,</div>
+<div class="line">    .GetTextWidth = <a class="code hl_function" href="glfw__backend_8c.html#adcd4a2eb541c5b3ce4d9ecdc8a110297">glfw_get_text_width</a>,</div>
 <div class="line">    .DrawText = <a class="code hl_function" href="glfw__backend_8c.html#ab45d87c9e8cdf6ba864f73b29f49d09b">glfw_draw_text</a>,</div>
 <div class="line">    .GetKeyFromCode = <a class="code hl_function" href="glfw__backend_8c.html#aa60b2474a238e701535d8269b117fb75">glfw_get_key_from_code</a>,</div>
 <div class="line">    .Clear = <a class="code hl_function" href="glfw__backend_8c.html#a81150c7a9d1f82a5f6ad30c5b6a31321">glfw_clear</a>}</div>
-<div class="ttc" id="aglfw__backend_8c_html_a245407cf2a7362a9f23db837e1746297"><div class="ttname"><a href="glfw__backend_8c.html#a245407cf2a7362a9f23db837e1746297">glfw_cleanup</a></div><div class="ttdeci">void glfw_cleanup()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:535</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a42c92e339d4e0101627b4e683b523947"><div class="ttname"><a href="glfw__backend_8c.html#a42c92e339d4e0101627b4e683b523947">glfw_fill_rectangle</a></div><div class="ttdeci">void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:114</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a81150c7a9d1f82a5f6ad30c5b6a31321"><div class="ttname"><a href="glfw__backend_8c.html#a81150c7a9d1f82a5f6ad30c5b6a31321">glfw_clear</a></div><div class="ttdeci">void glfw_clear()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:530</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a843d0bf0f2185575bd3f7244b377bfac"><div class="ttname"><a href="glfw__backend_8c.html#a843d0bf0f2185575bd3f7244b377bfac">glfw_draw_line</a></div><div class="ttdeci">void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:199</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a887a2affbc83b6470b54dd239941c4f5"><div class="ttname"><a href="glfw__backend_8c.html#a887a2affbc83b6470b54dd239941c4f5">glfw_create_window</a></div><div class="ttdeci">GooeyWindow glfw_create_window(const char *title, int width, int height)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:466</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a8f2b676e2393ee8424d43e1cf3ac59c2"><div class="ttname"><a href="glfw__backend_8c.html#a8f2b676e2393ee8424d43e1cf3ac59c2">glfw_set_foreground</a></div><div class="ttdeci">void glfw_set_foreground(long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:156</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_a974e784e9467bb65634a4a080694f3bf"><div class="ttname"><a href="glfw__backend_8c.html#a974e784e9467bb65634a4a080694f3bf">glfw_destroy_window</a></div><div class="ttdeci">void glfw_destroy_window()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:521</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_aa60b2474a238e701535d8269b117fb75"><div class="ttname"><a href="glfw__backend_8c.html#aa60b2474a238e701535d8269b117fb75">glfw_get_key_from_code</a></div><div class="ttdeci">char * glfw_get_key_from_code(GooeyEvent *gooey_event)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:569</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_aa845e35bbb57b8d42bc9efdaed128a6c"><div class="ttname"><a href="glfw__backend_8c.html#aa845e35bbb57b8d42bc9efdaed128a6c">glfw_render</a></div><div class="ttdeci">void glfw_render()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:545</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_ab45d87c9e8cdf6ba864f73b29f49d09b"><div class="ttname"><a href="glfw__backend_8c.html#ab45d87c9e8cdf6ba864f73b29f49d09b">glfw_draw_text</a></div><div class="ttdeci">void glfw_draw_text(int x, int y, const char *text, unsigned long color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:422</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_acac99e1cd1e24cf673c7a817217a6fd4"><div class="ttname"><a href="glfw__backend_8c.html#acac99e1cd1e24cf673c7a817217a6fd4">glfw_handle_events</a></div><div class="ttdeci">GooeyEvent glfw_handle_events()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:506</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_acec6ad9cc1163f0d9dd3992ba53f21f4"><div class="ttname"><a href="glfw__backend_8c.html#acec6ad9cc1163f0d9dd3992ba53f21f4">glfw_init</a></div><div class="ttdeci">int glfw_init()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:399</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_adf01ca716791ba40436d453882cffccc"><div class="ttname"><a href="glfw__backend_8c.html#adf01ca716791ba40436d453882cffccc">glfw_draw_rectangle</a></div><div class="ttdeci">void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:161</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_af186e17eb7eaff26244beec4cdc125d4"><div class="ttname"><a href="glfw__backend_8c.html#af186e17eb7eaff26244beec4cdc125d4">glfw_fill_arc</a></div><div class="ttdeci">void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:233</div></div>
-<div class="ttc" id="aglfw__backend_8c_html_afd23b3fe1bca51ae89ea6345f7479a78"><div class="ttname"><a href="glfw__backend_8c.html#afd23b3fe1bca51ae89ea6345f7479a78">glfw_get_text_width</a></div><div class="ttdeci">int glfw_get_text_width(const char *text, int length)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:559</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a245407cf2a7362a9f23db837e1746297"><div class="ttname"><a href="glfw__backend_8c.html#a245407cf2a7362a9f23db837e1746297">glfw_cleanup</a></div><div class="ttdeci">void glfw_cleanup()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:522</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a42c92e339d4e0101627b4e683b523947"><div class="ttname"><a href="glfw__backend_8c.html#a42c92e339d4e0101627b4e683b523947">glfw_fill_rectangle</a></div><div class="ttdeci">void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:113</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a81150c7a9d1f82a5f6ad30c5b6a31321"><div class="ttname"><a href="glfw__backend_8c.html#a81150c7a9d1f82a5f6ad30c5b6a31321">glfw_clear</a></div><div class="ttdeci">void glfw_clear()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:517</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a843d0bf0f2185575bd3f7244b377bfac"><div class="ttname"><a href="glfw__backend_8c.html#a843d0bf0f2185575bd3f7244b377bfac">glfw_draw_line</a></div><div class="ttdeci">void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:198</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a887a2affbc83b6470b54dd239941c4f5"><div class="ttname"><a href="glfw__backend_8c.html#a887a2affbc83b6470b54dd239941c4f5">glfw_create_window</a></div><div class="ttdeci">GooeyWindow glfw_create_window(const char *title, int width, int height)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:451</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a8f2b676e2393ee8424d43e1cf3ac59c2"><div class="ttname"><a href="glfw__backend_8c.html#a8f2b676e2393ee8424d43e1cf3ac59c2">glfw_set_foreground</a></div><div class="ttdeci">void glfw_set_foreground(long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:155</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_a974e784e9467bb65634a4a080694f3bf"><div class="ttname"><a href="glfw__backend_8c.html#a974e784e9467bb65634a4a080694f3bf">glfw_destroy_window</a></div><div class="ttdeci">void glfw_destroy_window()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:508</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_aa60b2474a238e701535d8269b117fb75"><div class="ttname"><a href="glfw__backend_8c.html#aa60b2474a238e701535d8269b117fb75">glfw_get_key_from_code</a></div><div class="ttdeci">char * glfw_get_key_from_code(GooeyEvent *gooey_event)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:557</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_aa845e35bbb57b8d42bc9efdaed128a6c"><div class="ttname"><a href="glfw__backend_8c.html#aa845e35bbb57b8d42bc9efdaed128a6c">glfw_render</a></div><div class="ttdeci">void glfw_render()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:532</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_ab45d87c9e8cdf6ba864f73b29f49d09b"><div class="ttname"><a href="glfw__backend_8c.html#ab45d87c9e8cdf6ba864f73b29f49d09b">glfw_draw_text</a></div><div class="ttdeci">void glfw_draw_text(int x, int y, const char *text, unsigned long color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:407</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_acac99e1cd1e24cf673c7a817217a6fd4"><div class="ttname"><a href="glfw__backend_8c.html#acac99e1cd1e24cf673c7a817217a6fd4">glfw_handle_events</a></div><div class="ttdeci">GooeyEvent glfw_handle_events()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:493</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_acec6ad9cc1163f0d9dd3992ba53f21f4"><div class="ttname"><a href="glfw__backend_8c.html#acec6ad9cc1163f0d9dd3992ba53f21f4">glfw_init</a></div><div class="ttdeci">int glfw_init()</div><div class="ttdef"><b>Definition</b> glfw_backend.c:384</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_adcd4a2eb541c5b3ce4d9ecdc8a110297"><div class="ttname"><a href="glfw__backend_8c.html#adcd4a2eb541c5b3ce4d9ecdc8a110297">glfw_get_text_width</a></div><div class="ttdeci">float glfw_get_text_width(const char *text, int length)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:546</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_adf01ca716791ba40436d453882cffccc"><div class="ttname"><a href="glfw__backend_8c.html#adf01ca716791ba40436d453882cffccc">glfw_draw_rectangle</a></div><div class="ttdeci">void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:160</div></div>
+<div class="ttc" id="aglfw__backend_8c_html_af186e17eb7eaff26244beec4cdc125d4"><div class="ttname"><a href="glfw__backend_8c.html#af186e17eb7eaff26244beec4cdc125d4">glfw_fill_arc</a></div><div class="ttdeci">void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2)</div><div class="ttdef"><b>Definition</b> glfw_backend.c:232</div></div>
 </div><!-- fragment -->
 </div>
 </div>

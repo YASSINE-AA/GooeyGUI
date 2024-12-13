@@ -9,50 +9,52 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string.h>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gooey__event_8h}{gooey\_event.h}}"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gooey__colors_8h}{gooey\_colors.h}}"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gooey__widgets_8h}{gooey\_widgets.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}utils/themes/theme\_parser.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}utils/gooey\_event.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}utils/gooey\_widgets.h"{}}}
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{GooeyBackends}}}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e}{X11}},}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2}{WIN32}},}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1}{SDL}},}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0}{GLFW}}}
-\DoxyCodeLine{00019\ \}\ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{GooeyBackends}};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}}
-\DoxyCodeLine{00022\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{structGooeyWindowExt}{GooeyWindowExt}}\ \mbox{\hyperlink{structGooeyWindow_ab38feef80909e5f01fb69949e203a84d}{widgets}};}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyWindow_a96bb6cf5ebecbd243fccda3bc9475ded}{width}};}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyWindow_aeab61f0fa7b24708921d61af89626f2a}{height}};}
-\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{structGooeyWindow}{GooeyWindow}};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGooeyBackend}{GooeyBackend}}}
-\DoxyCodeLine{00033\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_a219bfc1df0e971a5f2b8fb1d205157f8}{Init}})();}
-\DoxyCodeLine{00035\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_ad7ef98a1a89c3f8b018869825db16820}{Cleanup}})();}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ (*\mbox{\hyperlink{structGooeyBackend_a2fba8d6f5c15fb8e63e845173220640c}{CreateWindow}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
-\DoxyCodeLine{00037\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a12afb375d37eeb3ca5e63c03441aff94}{DestroyWindow}})(void);}
-\DoxyCodeLine{00038\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a9f3e4497916358795450b0dce5276b2f}{Clear}})();}
-\DoxyCodeLine{00039\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a79b7a576d4880f138393a76276971ad1}{Render}})();}
-\DoxyCodeLine{00040\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a2727a7bd80e882644d062c08f3d8a5fc}{SetForeground}})(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
-\DoxyCodeLine{00041\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a169986bf8c3ee87dd8aa310233babe43}{DrawText}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
-\DoxyCodeLine{00042\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_af9b3bb9109d88bae7906f3b72da8fe43}{FillRectangle}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
-\DoxyCodeLine{00043\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_ab9d29252b8bb53232278cf3923b699c5}{DrawRectangle}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
-\DoxyCodeLine{00044\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a122c845bbe92e8ab0af5cdccba11e97b}{FillArc}})\ (\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ angle1,\ \textcolor{keywordtype}{int}\ angle2);}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{char}\ *(*GetKeyFromCode)(\mbox{\hyperlink{structGooeyEvent}{GooeyEvent}}\ *gooey\_event);}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structGooeyEvent}{GooeyEvent}}\ (*\mbox{\hyperlink{structGooeyBackend_ab9deaffbae6c768c854ea571d744679a}{HandleEvents}})();}
-\DoxyCodeLine{00047\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_af04c84b02ae91b3e7fe01339c4c393a8}{GetHeight}})(\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ *window);}
-\DoxyCodeLine{00048\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_a4263f712f1b0b4ec4a1713c300559cb3}{GetWidth}})(\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ *window);}
-\DoxyCodeLine{00049\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_aba1d0cfac03b3349f2f1da474ae53446}{DrawLine}})(\textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{int}\ x2,\ \textcolor{keywordtype}{int}\ y2,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
-\DoxyCodeLine{00050\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_a66caef9283adadd4fafefaf7519a207f}{GetTextWidth}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ length);}
-\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{structGooeyBackend}{GooeyBackend}};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structGooeyBackend}{GooeyBackend}}\ \mbox{\hyperlink{gooey__backend_8h_aa9457e7b63831785a8eff9c42858de2c}{wayland\_backend}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ GooeyTheme\ *\mbox{\hyperlink{gooey__backend_8h_ab2fbd9843a01255ead2b2009a8a4c010}{active\_theme}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{GooeyBackends}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e}{X11}},}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2}{WIN32}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1}{SDL}},}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0}{GLFW}}}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{gooey__backend_8h_ab380ab6c11d2817d8655816c79e01111}{GooeyBackends}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ GooeyWindowExt\ \mbox{\hyperlink{structGooeyWindow_ab38feef80909e5f01fb69949e203a84d}{widgets}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyWindow_a96bb6cf5ebecbd243fccda3bc9475ded}{width}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGooeyWindow_aeab61f0fa7b24708921d61af89626f2a}{height}};}
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{structGooeyWindow}{GooeyWindow}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGooeyBackend}{GooeyBackend}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_a219bfc1df0e971a5f2b8fb1d205157f8}{Init}})();}
+\DoxyCodeLine{00037\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_ad7ef98a1a89c3f8b018869825db16820}{Cleanup}})();}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ (*\mbox{\hyperlink{structGooeyBackend_a2fba8d6f5c15fb8e63e845173220640c}{CreateWindow}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00039\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a12afb375d37eeb3ca5e63c03441aff94}{DestroyWindow}})(void);}
+\DoxyCodeLine{00040\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a9f3e4497916358795450b0dce5276b2f}{Clear}})();}
+\DoxyCodeLine{00041\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a79b7a576d4880f138393a76276971ad1}{Render}})();}
+\DoxyCodeLine{00042\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a2727a7bd80e882644d062c08f3d8a5fc}{SetForeground}})(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
+\DoxyCodeLine{00043\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a169986bf8c3ee87dd8aa310233babe43}{DrawText}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
+\DoxyCodeLine{00044\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_af9b3bb9109d88bae7906f3b72da8fe43}{FillRectangle}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
+\DoxyCodeLine{00045\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_ab9d29252b8bb53232278cf3923b699c5}{DrawRectangle}})(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
+\DoxyCodeLine{00046\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_a122c845bbe92e8ab0af5cdccba11e97b}{FillArc}})\ (\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ angle1,\ \textcolor{keywordtype}{int}\ angle2);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{char}\ *(*GetKeyFromCode)(GooeyEvent\ *gooey\_event);}
+\DoxyCodeLine{00048\ \ \ \ \ GooeyEvent\ (*\mbox{\hyperlink{structGooeyBackend_ab9deaffbae6c768c854ea571d744679a}{HandleEvents}})();}
+\DoxyCodeLine{00049\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_af04c84b02ae91b3e7fe01339c4c393a8}{GetHeight}})(\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ *window);}
+\DoxyCodeLine{00050\ \ \ \ \ int\ (*\mbox{\hyperlink{structGooeyBackend_a4263f712f1b0b4ec4a1713c300559cb3}{GetWidth}})(\mbox{\hyperlink{structGooeyWindow}{GooeyWindow}}\ *window);}
+\DoxyCodeLine{00051\ \ \ \ \ void\ (*\mbox{\hyperlink{structGooeyBackend_aba1d0cfac03b3349f2f1da474ae53446}{DrawLine}})(\textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{int}\ x2,\ \textcolor{keywordtype}{int}\ y2,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ color);}
+\DoxyCodeLine{00052\ \ \ \ \ float\ (*\mbox{\hyperlink{structGooeyBackend_aa15823780a56d2118284e164045697de}{GetTextWidth}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{structGooeyBackend}{GooeyBackend}};}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structGooeyBackend}{GooeyBackend}}\ \mbox{\hyperlink{gooey__backend_8h_aa9457e7b63831785a8eff9c42858de2c}{wayland\_backend}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

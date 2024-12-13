@@ -212,6 +212,10 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y);
  */
 void GooeyLabel_setText(GooeyLabel *label, const char *text);
 
+
+void GooeyLabel_Draw(GooeyWindow *win);
+
+
 /**
  * @brief Adds a checkbox to the window.
  *

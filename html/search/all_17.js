@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['object_20vao_0',['6. Create and Configure Vertex Array Object (VAO)',['../md_opengl__basics.html#autotoc_md26',1,'']]],
-  ['object_20vbo_1',['3. Generate and Bind Vertex Buffer Object (VBO)',['../md_opengl__basics.html#autotoc_md18',1,'']]],
-  ['onbuttonclick_2',['onButtonClick',['../main_8c.html#acbcea893ddddb55e558115beb8f9a1b1',1,'main.c']]],
-  ['oncheckboxtoggle_3',['onCheckboxToggle',['../main_8c.html#acf51b8c25de330d9bb67e1e1ac0d558e',1,'main.c']]],
-  ['ondropdownchange_4',['onDropdownChange',['../main_8c.html#a524171648a6054d194fa018d31472456',1,'main.c']]],
-  ['onradiobuttonselect_5',['onRadioButtonSelect',['../main_8c.html#a2c1f3f1f96bf8a61b213c596d5101631',1,'main.c']]],
-  ['onsliderchange_6',['onSliderChange',['../main_8c.html#a03ecd7b4685e1067388461ee93488181',1,'main.c']]],
-  ['ontextchange_7',['onTextChange',['../main_8c.html#a3f3a1b22965383b5ea1ef224b0a76f83',1,'main.c']]],
-  ['opengl_20and_20create_20a_20window_8',['1. Initialize OpenGL and Create a Window',['../md_opengl__basics.html#autotoc_md14',1,'']]],
-  ['opengl_20triangle_20program_9',['OpenGL Triangle Program',['../md_opengl__basics.html',1,'']]],
-  ['opengl_5fbasics_2emd_10',['opengl_basics.md',['../opengl__basics_8md.html',1,'']]],
-  ['options_11',['options',['../structGooeyDropdown.html#ad276a0f8b88e3d8be017150babb0e53d',1,'GooeyDropdown']]],
-  ['overview_12',['API Overview',['../index.html#autotoc_md6',1,'']]]
+  ['registry_5fhandler_0',['registry_handler',['../wayland__backend_8c.html#a0cf22d098225a7f803ec968f970be553',1,'wayland_backend.c']]],
+  ['registry_5flistener_1',['registry_listener',['../wayland__backend_8c.html#a8998c87c94cd7d185e8f0cdafab4b1c4',1,'wayland_backend.c']]],
+  ['registry_5fremove_5fhandler_2',['registry_remove_handler',['../wayland__backend_8c.html#a2daf88c7e56e529d16cfdf082ae9cde9',1,'wayland_backend.c']]],
+  ['render_3',['Render',['../structGooeyBackend.html#a79b7a576d4880f138393a76276971ad1',1,'GooeyBackend']]],
+  ['render_20loop_4',['7. Render Loop',['../md_opengl__basics.html#autotoc_md28',1,'']]],
+  ['resources_5',['8. Cleanup Resources',['../md_opengl__basics.html#autotoc_md30',1,'']]]
 ];
