@@ -27,7 +27,7 @@ void onTextChange(char *text) {
 }
 
 int main() {
-    Gooey_Init(X11);
+    Gooey_Init(GLFW);
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
 
     GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
@@ -48,6 +48,15 @@ int main() {
     GooeyDropdown_Add(&win, 50, 350, 150, 30, options, 3, onDropdownChange);
 
     GooeyTextBox_Add(&win, 50, 300, 200, 25, "test", onTextChange);
+
+    GooeyMenu *menu = GooeyMenu_Set(&win);
+    GooeyMenuChild *fileMenu = GooeyMenu_AddChild(&win, "File");
+    GooeyMenuChild_AddElement(fileMenu, "Open", NULL);
+    GooeyMenuChild_AddElement(fileMenu, "Save", NULL);
+
+    GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Edit");
+    GooeyMenuChild_AddElement(editMenu, "Copy", NULL);
+    GooeyMenuChild_AddElement(editMenu, "Paste", NULL);
 
     GooeyWindow_Run(&win);
 

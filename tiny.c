@@ -413,13 +413,12 @@ void GooeyMenu_Draw(GooeyWindow *win)
     if (win->widgets.menu)
     {
 
-        active_backend->FillRectangle(0, 0, active_backend->GetWidth(win), 20, COLOR_GRAY);
+        active_backend->FillRectangle(0, 0, win->width, 20, COLOR_GRAY);
 
         int x_offset = 10;
         for (int i = 0; i < win->widgets.menu->children_count; i++)
         {
             GooeyMenuChild *child = &win->widgets.menu->children[i];
-
             int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
             active_backend->DrawText(x_offset, 15,
                                      child->title, COLOR_BLACK);
@@ -488,7 +487,7 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
     {
         GooeyMenuChild *child = &win->widgets.menu->children[i];
         int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
-
+        printf("%d \n", text_width);
         if (y <= 20 && x >= x_offset && x <= x_offset + text_width)
         {
 

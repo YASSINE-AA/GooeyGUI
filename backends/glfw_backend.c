@@ -319,7 +319,8 @@ static void cursor_callback(GLFWwindow *window, double posX, double posY)
     ctx.current_event->data.click.y = posY;
 }
 
-static void refresh_callback(GLFWwindow *window) {
+static void refresh_callback(GLFWwindow *window)
+{
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 
@@ -472,9 +473,10 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSetMouseButtonCallback(ctx.window, click_callback);
     glfwSetCursorPosCallback(ctx.window, cursor_callback);
     glfwSetWindowRefreshCallback(ctx.window, refresh_callback);
+    GooeyWindow window;
 
-    GooeyWindow window = {.width = width, .height = height};
-
+    window.width = width;
+    window.height = height;
     glfwMakeContextCurrent(ctx.window);
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
@@ -545,7 +547,15 @@ void glfw_render()
     glfwSwapBuffers(ctx.window);
 }
 
-int glfw_get_text_width(const char *text, int length) { return 10; }
+int glfw_get_text_width(const char *text, int length)
+{
+    int total_width = 0;
+    for (int i = 0; i < length; ++i)
+    {
+        total_width += ctx.characters[text[i]].width * 0.25f;
+    }
+    return total_width;
+}
 
 char *glfw_get_key_from_code(GooeyEvent *gooey_event) { return "Return"; }
 
