@@ -1,38 +1,52 @@
+
+
 #include "tiny.h"
+
 #include <stdio.h>
 
 // Callback functions
-void onButtonClick() {
+void onButtonClick()
+{
     printf("Button clicked!\n");
 }
 
-void onCheckboxToggle(bool checked) {
+void onCheckboxToggle(bool checked)
+{
     printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
 }
 
-void onRadioButtonSelect(bool selected) {
+void onRadioButtonSelect(bool selected)
+{
     printf("Radio button selected: %s\n", selected ? "Yes" : "No");
 }
 
-void onSliderChange(long int value) {
+void onSliderChange(long int value)
+{
     printf("Slider value changed: %ld\n", value);
 }
 
-void onDropdownChange(int selectedIndex) {
+void onDropdownChange(int selectedIndex)
+{
     printf("Dropdown selected index: %d\n", selectedIndex);
 }
 
-void onTextChange(char *text) {
+void onTextChange(char *text)
+{
     printf("Text changed: %s\n", text);
 }
 
-int main() {
-    Gooey_Init(GLFW);
-    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
+int main()
+{
+
+    GooeyTheme theme = parser_load_theme_from_file("test1.json");
+
+    Gooey_Init(GLFW, &theme);
+
+    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700);
 
     GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
 
-   // GooeyLabel_Add(&win, "This is a label", 200, 60);
+    // GooeyLabel_Add(&win, "This is a label", 200, 60);
 
     GooeyCheckbox_Add(&win, 50, 120, "Enable Option 1", onCheckboxToggle);
     GooeyCheckbox_Add(&win, 50, 160, "Enable Option 2", onCheckboxToggle);
@@ -57,6 +71,15 @@ int main() {
     GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Edit");
     GooeyMenuChild_AddElement(editMenu, "Copy", NULL);
     GooeyMenuChild_AddElement(editMenu, "Paste", NULL);
+
+    GooeyRadioButtonGroup *rbg = GooeyRadioButtonGroup_Create(&win);
+    GooeyRadioButtonGroup_AddChild(rbg, 50, 440, "test", NULL);
+
+    GooeyRadioButtonGroup_AddChild(rbg, 50, 470, "test", NULL);
+
+    GooeyRadioButtonGroup_AddChild(rbg, 50, 500, "test", NULL);
+
+    GooeyRadioButtonGroup_AddChild(rbg, 50, 530, "test", NULL);
 
     GooeyWindow_Run(&win);
 

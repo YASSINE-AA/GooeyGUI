@@ -1,4 +1,3 @@
-
 #include "utils/glfw/glfw_utils.h"
 typedef struct
 {
@@ -232,49 +231,32 @@ void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color)
 
 void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2)
 {
+    const int segments = 10; // less complex
 
-    const int segments = 100;
+    
     float ndc_x_center, ndc_y_center;
-    int window_width, window_height;
     convert_coords_to_ndc(ctx.window, &ndc_x_center, &ndc_y_center, x_center, y_center);
 
-    get_window_size(ctx.window, &window_width, &window_height);
-
+    
     vec3 color_rgb;
     convert_hex_to_rgb(&color_rgb, ctx.selected_color);
 
-    if (angle1 > angle2)
-    {
-        float temp = angle1;
-        angle1 = angle2;
-        angle2 = temp;
-    }
+    
+    Vertex vertices[segments + 2];
 
-    angle1 = fmodf(angle1, 2.0f * M_PI);
-    angle2 = fmodf(angle2, 2.0f * M_PI);
-    if (angle2 < angle1)
-    {
-        angle2 += 2.0f * M_PI;
-    }
-
-    int arc_segments = (int)((angle2 - angle1) / (2.0f * M_PI) * segments);
-    if (arc_segments < 2)
-        arc_segments = 2;
-
-    Vertex vertices[arc_segments + 2];
-
+    
     vertices[0].pos[0] = ndc_x_center;
     vertices[0].pos[1] = ndc_y_center;
     vertices[0].col[0] = color_rgb[0];
     vertices[0].col[1] = color_rgb[1];
     vertices[0].col[2] = color_rgb[2];
 
-    for (int i = 0; i <= arc_segments; ++i)
+    
+    for (int i = 0; i <= segments; ++i)
     {
-        float t = (float)i / arc_segments;
-        float angle = angle1 + t * (angle2 - angle1);
-        float x = x_center + (width * cosf(angle));
-        float y = y_center + (height * sinf(angle));
+        float angle = (float)i / segments * 2.0f * M_PI; 
+        float x = x_center + (width * 0.5f * cosf(angle)); 
+        float y = y_center + (height * 0.5f * sinf(angle)); 
 
         float ndc_x, ndc_y;
         convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
@@ -285,14 +267,17 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
         vertices[i + 1].col[1] = color_rgb[1];
         vertices[i + 1].col[2] = color_rgb[2];
     }
-    glUseProgram(ctx.shape_program);
 
+    
+    glUseProgram(ctx.shape_program);
     glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
+    
     glBindVertexArray(ctx.shape_vao);
-    glDrawArrays(GL_TRIANGLE_FAN, 0, arc_segments + 2);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, segments + 2);
 }
+
 
 static void error_callback(int error, const char *description)
 {
@@ -492,7 +477,9 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfw_init_ft();
     glfwSwapInterval(1);
 
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    vec3 color;
+    convert_hex_to_rgb(&color,  active_theme->base);
+    glClearColor(color[0], color[1], color[2], 1.0f);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
@@ -556,9 +543,9 @@ void glfw_render()
     glfwSwapBuffers(ctx.window);
 }
 
-int glfw_get_text_width(const char *text, int length)
+float glfw_get_text_width(const char *text, int length)
 {
-    int total_width = 0;
+    float total_width = 0;
     for (int i = 0; i < length; ++i)
     {
         total_width += (ctx.characters[text[i]].width + ctx.characters[text[i]].bearingX) * 0.25f;

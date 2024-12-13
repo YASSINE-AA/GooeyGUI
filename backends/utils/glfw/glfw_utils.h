@@ -2,11 +2,11 @@
 #define GLFW_UTILS_H
 
 #include "../../gooey_backend.h"
-#include "../../glad/glad.h"
+#include "../glad/glad.h"
 #include <freetype2/ft2build.h>
 #include FT_FREETYPE_H
 #include <GLFW/glfw3.h>
-#include "../../linmath.h"
+#include "../linmath.h"
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -66,7 +66,7 @@ GooeyWindow x11_create_window(const char *title, int width, int height)
         10, 10, width, height, 1,
         BlackPixel(ctx.display, screen),
         WhitePixel(ctx.display, screen));
-
+        XSetWindowBackground(ctx.display, ctx.window, active_theme->base);
     XStoreName(ctx.display, ctx.window, title);
 
     ctx.gc = XCreateGC(ctx.display, ctx.window, 0, NULL);
@@ -191,7 +191,7 @@ void x11_draw_line(int x1, int y1, int x2, int y2, unsigned long color)
               y2);
 }
 
-int x11_get_text_width(const char *text, int length)
+float x11_get_text_width(const char *text, int length)
 {
     return XTextWidth(ctx.font, text, length);
 }

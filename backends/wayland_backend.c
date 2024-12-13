@@ -3,7 +3,7 @@
 #include "gooey_backend.h"
 
 #include <wayland-client.h>
-#include "xdg-shell-client-protocol.h"
+#include "utils/xdg-shell-client-protocol.h"
 #include <sys/mman.h>
 #include <sys/types.h>
 

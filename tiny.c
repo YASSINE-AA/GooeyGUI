@@ -1,27 +1,50 @@
 #include "tiny.h"
 #include <ctype.h>
 
-GooeyBackend *active_backend = NULL;
+// Default theme
+GooeyTheme default_theme;
 
-int Gooey_Init(GooeyBackends backend)
+GooeyTheme *active_theme = NULL;
+GooeyBackend *active_backend = NULL;
+GooeyBackends ACTIVE_BACKEND = -1;
+int Gooey_Init(GooeyBackends backend, GooeyTheme *theme)
 {
+    if (theme)
+    {
+        active_theme = theme;
+    }
+    else
+    {
+        unsigned long primaryColor = (unsigned long)strtol("0x2196F3", NULL, 0);
+        unsigned long baseColor = (unsigned long)strtol("0xFFFFFF", NULL, 0);
+        unsigned long neutralColor = (unsigned long)strtol("0x000000", NULL, 0);
+        unsigned long widgetBaseColor = (unsigned long)strtol("0xD3D3D3", NULL, 0);
+        default_theme = (GooeyTheme){.base = baseColor, .neutral = neutralColor, .primary = primaryColor, .widget_base = widgetBaseColor};
+
+        active_theme = &default_theme;
+    }
+
     switch (backend)
     {
     case X11:
         active_backend = &x11_backend;
         break;
-    
+
     case GLFW:
         active_backend = &glfw_backend;
+
         break;
     default:
         break;
     }
-
-    if (!active_backend->Init())
+    if (active_backend->Init() < 0)
     {
         return -1;
     }
+
+    ACTIVE_BACKEND = backend;
+
+    return 0;
 }
 
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
@@ -52,22 +75,22 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
             int button_center_y = button->core.y + RADIO_BUTTON_RADIUS;
 
             int label_width = active_backend->GetTextWidth(button->label, strlen(button->label));
-            int label_x = button->core.x + RADIO_BUTTON_RADIUS * 2 + 10;
-            int label_y = button->core.y + RADIO_BUTTON_RADIUS + 5;
-            active_backend->DrawText(label_x, label_y, button->label, COLOR_BLACK);
-            active_backend->SetForeground(COLOR_GRAY);
-            active_backend->FillArc(button->core.x, button->core.y, RADIO_BUTTON_RADIUS * 2, RADIO_BUTTON_RADIUS * 2, 0, 360 * 64);
 
+            int label_x = ACTIVE_BACKEND == X11 ? button->core.x + RADIO_BUTTON_RADIUS * 2 + 10 : button->core.x + RADIO_BUTTON_RADIUS * 2;
+            int label_y = ACTIVE_BACKEND == X11 ? button->core.y + RADIO_BUTTON_RADIUS + 5 : button->core.y + RADIO_BUTTON_RADIUS / 2;
+            active_backend->DrawText(label_x, label_y, button->label, active_theme->neutral);
+            active_backend->SetForeground(active_theme->neutral);
+            active_backend->FillArc(button->core.x, button->core.y, RADIO_BUTTON_RADIUS * 2, RADIO_BUTTON_RADIUS * 2, 0, 360 * 64);
             if (button->selected)
             {
-                active_backend->SetForeground(COLOR_BLUE);
-                active_backend->FillArc(button->core.x + 5, button->core.y + 5, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+                active_backend->SetForeground(active_theme->primary);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 5 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 5 : button->core.y, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
             }
             else
             {
-                active_backend->SetForeground(COLOR_WHITE);
+                active_backend->SetForeground(active_theme->base);
 
-                active_backend->FillArc(button->core.x + 5, button->core.y + 5, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 5 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 5 : button->core.y, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
             }
         }
     }
@@ -147,7 +170,7 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     {
         GooeyLabel *label = &win->widgets.labels[i];
         active_backend->DrawText(label->core.x,
-                                 label->core.y, label->text, COLOR_BLACK);
+                                 label->core.y, label->text, active_theme->neutral);
     }
     for (int i = 0; i < win->widgets.checkbox_count; ++i)
     {
@@ -156,17 +179,17 @@ void GooeyWindow_Redraw(GooeyWindow *win)
         int label_width = active_backend->GetTextWidth(checkbox->label, strlen(checkbox->label));
         int label_x = checkbox->core.x + CHECKBOX_SIZE + 10;
         int label_y = checkbox->core.y + (CHECKBOX_SIZE / 2) + 5;
-        active_backend->DrawText(label_x, label_y, checkbox->label, COLOR_BLACK);
+        active_backend->DrawText(label_x, label_y, checkbox->label, active_theme->neutral);
 
         active_backend->DrawRectangle(checkbox->core.x, checkbox->core.y,
-                                      checkbox->core.width, checkbox->core.height, COLOR_BLACK);
+                                      checkbox->core.width, checkbox->core.height, active_theme->neutral);
         active_backend->FillRectangle(checkbox->core.x + 1, checkbox->core.y + 1,
-                                      checkbox->core.width - 2, checkbox->core.height - 2, COLOR_WHITE);
+                                      checkbox->core.width - 2, checkbox->core.height - 2, active_theme->base);
 
         if (checkbox->checked)
         {
             active_backend->FillRectangle(checkbox->core.x + 5, checkbox->core.y + 5,
-                                          checkbox->core.width - 10, checkbox->core.height - 10, COLOR_BLUE);
+                                          checkbox->core.width - 10, checkbox->core.height - 10, active_theme->primary);
         }
     }
 
@@ -177,14 +200,14 @@ void GooeyWindow_Redraw(GooeyWindow *win)
         GooeySlider *slider = &win->widgets.sliders[i];
 
         active_backend->FillRectangle(slider->core.x,
-                                      slider->core.y, slider->core.width, slider->core.height, COLOR_GRAY);
+                                      slider->core.y, slider->core.width, slider->core.height, active_theme->widget_base);
 
         int thumb_x = slider->core.x + (slider->value - slider->min_value) *
                                            slider->core.width /
                                            (slider->max_value - slider->min_value);
 
         active_backend->FillRectangle(thumb_x - 5,
-                                      slider->core.y - 5, 10, slider->core.height + 10, COLOR_BLUE);
+                                      slider->core.y - 5, 10, slider->core.height + 10, active_theme->primary);
 
         if (slider->show_hints)
         {
@@ -201,15 +224,15 @@ void GooeyWindow_Redraw(GooeyWindow *win)
 
             active_backend->DrawText(
                 slider->core.x - min_value_width - 5, slider->core.y + 5,
-                min_value, COLOR_BLACK);
+                min_value, active_theme->neutral);
             active_backend->DrawText(
                 slider->core.x + slider->core.width + 5, slider->core.y + 5,
-                max_value, COLOR_BLACK);
+                max_value, active_theme->neutral);
             if (slider->value != 0)
                 active_backend->DrawText(thumb_x - 5,
-                                         slider->core.y + 25, value, COLOR_BLACK);
+                                         slider->core.y + 25, value, active_theme->neutral);
         }
-        active_backend->SetForeground(COLOR_BLACK);
+        active_backend->SetForeground(active_theme->neutral);
     }
 
     for (int i = 0; i < win->widgets.dropdown_count; ++i)
@@ -218,12 +241,12 @@ void GooeyWindow_Redraw(GooeyWindow *win)
 
         active_backend->FillRectangle(dropdown->core.x,
                                       dropdown->core.y, dropdown->core.width,
-                                      dropdown->core.height, COLOR_GRAY);
+                                      dropdown->core.height, active_theme->widget_base);
 
         active_backend->DrawText(dropdown->core.x + 5,
                                  dropdown->core.y + 20,
                                  dropdown->options[dropdown->selected_index],
-                                 COLOR_BLACK);
+                                 active_theme->neutral);
     }
     GooeyMenu_Draw(win);
 
@@ -235,11 +258,11 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button)
 {
 
     active_backend->FillRectangle(button->core.x,
-                                  button->core.y, button->core.width, button->core.height, button->clicked ? COLOR_BLUE : COLOR_GRAY);
+                                  button->core.y, button->core.width, button->core.height, button->clicked ? active_theme->primary : active_theme->widget_base);
 
     active_backend->DrawText(button->core.x + 5,
-                             button->core.y + 20, button->label, button->clicked ? COLOR_WHITE : COLOR_BLACK);
-    active_backend->SetForeground(COLOR_BLACK);
+                             button->core.y + 20, button->label, button->clicked ? active_theme->base : active_theme->neutral);
+    active_backend->SetForeground(active_theme->neutral);
 }
 
 GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
@@ -413,7 +436,7 @@ void GooeyMenu_Draw(GooeyWindow *win)
     if (win->widgets.menu)
     {
 
-        active_backend->FillRectangle(0, 0, win->width, 20, COLOR_GRAY);
+        active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
 
         int x_offset = 10;
         for (int i = 0; i < win->widgets.menu->children_count; i++)
@@ -421,7 +444,7 @@ void GooeyMenu_Draw(GooeyWindow *win)
             GooeyMenuChild *child = &win->widgets.menu->children[i];
             int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
             active_backend->DrawText(x_offset, 15,
-                                     child->title, COLOR_BLACK);
+                                     child->title, active_theme->neutral);
 
             if (child->is_open && child->menu_elements_count > 0)
             {
@@ -431,19 +454,19 @@ void GooeyMenu_Draw(GooeyWindow *win)
                 int submenu_height = 25 * child->menu_elements_count;
 
                 active_backend->FillRectangle(submenu_x, submenu_y,
-                                              submenu_width, submenu_height, COLOR_GRAY);
+                                              submenu_width, submenu_height, active_theme->widget_base);
 
                 for (int j = 0; j < child->menu_elements_count; j++)
                 {
                     int element_y = submenu_y + (j * 25);
                     active_backend->DrawText(submenu_x + 5,
-                                             element_y + 18, child->menu_elements[j], COLOR_BLACK);
+                                             element_y + 18, child->menu_elements[j], active_theme->neutral);
                     if (j < child->menu_elements_count - 1)
                     {
 
                         active_backend->DrawLine(submenu_x,
                                                  element_y + 25 - 1, submenu_x + submenu_width,
-                                                 element_y + 25 - 1, COLOR_BLACK);
+                                                 element_y + 25 - 1, active_theme->neutral);
                     }
                 }
             }
@@ -487,7 +510,6 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
     {
         GooeyMenuChild *child = &win->widgets.menu->children[i];
         int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
-        printf("%d \n", text_width);
         if (y <= 20 && x >= x_offset && x <= x_offset + text_width)
         {
 
@@ -570,11 +592,11 @@ void GooeyTextbox_Draw(GooeyWindow *win, int index)
 {
 
     active_backend->FillRectangle(win->widgets.textboxes[index].core.x, win->widgets.textboxes[index].core.y,
-                                  win->widgets.textboxes[index].core.width, win->widgets.textboxes[index].core.height, COLOR_WHITE);
+                                  win->widgets.textboxes[index].core.width, win->widgets.textboxes[index].core.height, active_theme->base);
 
     active_backend->DrawRectangle(win->widgets.textboxes[index].core.x, win->widgets.textboxes[index].core.y,
                                   win->widgets.textboxes[index].core.width, win->widgets.textboxes[index].core.height,
-                                  win->widgets.textboxes[index].focused ? COLOR_BLUE : COLOR_BLACK);
+                                  win->widgets.textboxes[index].focused ? active_theme->primary : active_theme->neutral);
 
     int text_x = win->widgets.textboxes[index].core.x + 5;
     int text_y = win->widgets.textboxes[index].core.y + (win->widgets.textboxes[index].core.height / 2) + 5;
@@ -593,19 +615,19 @@ void GooeyTextbox_Draw(GooeyWindow *win, int index)
     strncpy(display_text, win->widgets.textboxes[index].text + start_index, sizeof(display_text) - 1);
     display_text[sizeof(display_text) - 1] = '\0';
 
-    active_backend->DrawText(text_x, text_y, display_text, COLOR_BLACK);
+    active_backend->DrawText(text_x, text_y, display_text, active_theme->neutral);
 
     if (win->widgets.textboxes[index].focused)
     {
         int cursor_x = text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
         active_backend->DrawLine(cursor_x, win->widgets.textboxes[index].core.y + 5,
-                                 cursor_x, win->widgets.textboxes[index].core.y + win->widgets.textboxes[index].core.height - 5, COLOR_BLACK);
+                                 cursor_x, win->widgets.textboxes[index].core.y + win->widgets.textboxes[index].core.height - 5, active_theme->neutral);
     }
     else
     {
 
         if (win->widgets.textboxes[index].placeholder && strlen(win->widgets.textboxes[index].text) == 0)
-            active_backend->DrawText(text_x, text_y, win->widgets.textboxes[index].placeholder, COLOR_DARK_GRAY);
+            active_backend->DrawText(text_x, text_y, win->widgets.textboxes[index].placeholder, active_theme->widget_base);
     }
 }
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
@@ -613,7 +635,6 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
     printf("hey pressed \n");
 
     char *buf = active_backend->GetKeyFromCode(key_event);
-    printf("%s \n", buf);
     if (buf == NULL)
     {
         return;
@@ -916,7 +937,7 @@ void GooeyWindow_Run(GooeyWindow *win)
     while (running)
     {
         event = active_backend->HandleEvents();
-        
+
         switch (event.type)
         {
         case GOOEY_EVENT_EXPOSE:

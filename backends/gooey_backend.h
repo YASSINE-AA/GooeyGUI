@@ -5,10 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "gooey_event.h"
-#include "gooey_colors.h"
-#include "gooey_widgets.h"
+#include "utils/themes/theme_parser.h"
+#include "utils/gooey_event.h"
+#include "utils/gooey_widgets.h"
 
+
+extern GooeyTheme *active_theme;
 
 typedef enum GooeyBackends
 {
@@ -47,7 +49,7 @@ typedef struct GooeyBackend
     int (*GetHeight)(GooeyWindow *window);
     int (*GetWidth)(GooeyWindow *window);
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color);
-    int (*GetTextWidth)(const char *text, int length);
+    float (*GetTextWidth)(const char *text, int length);
 } GooeyBackend;
 
 extern GooeyBackend wayland_backend;

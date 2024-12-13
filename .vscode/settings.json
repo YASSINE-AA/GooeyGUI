@@ -3,6 +3,10 @@
         "stdlib.h": "c",
         "stdio.h": "c",
         "tiny.h": "c",
-        "glfw_utils.h": "c"
+        "glfw_utils.h": "c",
+        "gooey_backend.h": "c",
+        "config.h": "c",
+        "glfw3.h": "c",
+        "gooey_widgets.h": "c"
     }
 }

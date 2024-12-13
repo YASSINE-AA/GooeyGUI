@@ -27,8 +27,8 @@ void onTextChange(char *text) {
 }
 
 int main() {
-    Gooey_Init(X11);
-    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
+    Gooey_Init(GLFW);
+    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 800);
 
     GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
 
@@ -58,6 +58,15 @@ int main() {
     GooeyMenuChild_AddElement(editMenu, "Copy", NULL);
     GooeyMenuChild_AddElement(editMenu, "Paste", NULL);
 
+    GooeyRadioButtonGroup *rbg = GooeyRadioButtonGroup_Create(&win);
+    GooeyRadioButtonGroup_AddChild(rbg, 20, 200, "test", NULL);
+    
+    GooeyRadioButtonGroup_AddChild(rbg, 20, 220, "test", NULL);
+
+    GooeyRadioButtonGroup_AddChild(rbg, 20, 240, "test", NULL);
+
+    GooeyRadioButtonGroup_AddChild(rbg, 20, 260, "test", NULL);
+    
     GooeyWindow_Run(&win);
 
     GooeyWindow_Cleanup(&win);

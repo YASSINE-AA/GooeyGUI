@@ -1,14 +1,14 @@
 #ifndef TINY_H
 #define TINY_H
-
 #include "backends/gooey_backend.h"
+
 
 extern GooeyBackend *active_backend;
 extern GooeyBackend x11_backend;
 extern GooeyBackend wayland_backend;
 extern GooeyBackend glfw_backend;
 
-int Gooey_Init(GooeyBackends backend);
+int Gooey_Init(GooeyBackends backend, GooeyTheme *theme);
 
 /**
  * @brief Creates a new Gooey window.
