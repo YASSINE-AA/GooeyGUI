@@ -1,0 +1,171 @@
+\doxysection{backends/gooey\+\_\+widgets.h File Reference}
+\hypertarget{gooey__widgets_8h}{}\label{gooey__widgets_8h}\index{backends/gooey\_widgets.h@{backends/gooey\_widgets.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGooeyWidget}{Gooey\+Widget}}
+\item 
+struct \mbox{\hyperlink{structGooeyButton}{Gooey\+Button}}
+\item 
+struct \mbox{\hyperlink{structGooeyTextbox}{Gooey\+Textbox}}
+\item 
+struct \mbox{\hyperlink{structGooeyLabel}{Gooey\+Label}}
+\item 
+struct \mbox{\hyperlink{structGooeyCheckbox}{Gooey\+Checkbox}}
+\item 
+struct \mbox{\hyperlink{structGooeyRadioButton}{Gooey\+Radio\+Button}}
+\item 
+struct \mbox{\hyperlink{structGooeyRadioButtonGroup}{Gooey\+Radio\+Button\+Group}}
+\item 
+struct \mbox{\hyperlink{structGooeySlider}{Gooey\+Slider}}
+\item 
+struct \mbox{\hyperlink{structGooeyDropdown}{Gooey\+Dropdown}}
+\item 
+struct \mbox{\hyperlink{structGooeyMenuChild}{Gooey\+Menu\+Child}}
+\item 
+struct \mbox{\hyperlink{structGooeyMenu}{Gooey\+Menu}}
+\item 
+struct \mbox{\hyperlink{structGooeyLayout}{Gooey\+Layout}}
+\item 
+struct \mbox{\hyperlink{structGooeyWindowExt}{Gooey\+Window\+Ext}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_af55f83e86f270705ef7be6ab663bf5a6}{MAX\+\_\+\+WIDGETS}}~100
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_a0108dc85929fb4e5563ce5d187cc5b49}{CHECKBOX\+\_\+\+SIZE}}~20
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9}{RADIO\+\_\+\+BUTTON\+\_\+\+RADIUS}}~10
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_a391a0cbb1db22916ea80f4c336d87f33}{SLIDER\+\_\+\+WIDTH}}~100
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802}{SLIDER\+\_\+\+HEIGHT}}~5
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_ab716b9dc601e22c2a7ba326f9253cf95}{MAX\+\_\+\+MENU\+\_\+\+CHILDREN}}~10
+\item 
+\#define \mbox{\hyperlink{gooey__widgets_8h_a565f40c6b84b36d87f177dc5dcd20e1e}{MAX\+\_\+\+RADIO\+\_\+\+BUTTONS}}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64e}{WIDGET\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061}{WIDGET\+\_\+\+LABEL}}
+, \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7}{WIDGET\+\_\+\+SLIDER}}
+, \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc}{WIDGET\+\_\+\+RADIOBUTTON}}
+, \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632}{WIDGET\+\_\+\+CHECKBOX}}
+, \newline
+\mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c}{WIDGET\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c}{WIDGET\+\_\+\+TEXTBOX}}
+, \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975}{WIDGET\+\_\+\+DROPDOWN}}
+ \}
+\item 
+enum \mbox{\hyperlink{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}} \{ \mbox{\hyperlink{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38}{LAYOUT\+\_\+\+HORIZONTAL}}
+, \mbox{\hyperlink{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd}{LAYOUT\+\_\+\+VERTICAL}}
+, \mbox{\hyperlink{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3}{LAYOUT\+\_\+\+GRID}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gooey__widgets_8h_a0108dc85929fb4e5563ce5d187cc5b49}\label{gooey__widgets_8h_a0108dc85929fb4e5563ce5d187cc5b49} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!CHECKBOX\_SIZE@{CHECKBOX\_SIZE}}
+\index{CHECKBOX\_SIZE@{CHECKBOX\_SIZE}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{CHECKBOX\_SIZE}{CHECKBOX\_SIZE}}
+{\footnotesize\ttfamily \#define CHECKBOX\+\_\+\+SIZE~20}
+
+\Hypertarget{gooey__widgets_8h_ab716b9dc601e22c2a7ba326f9253cf95}\label{gooey__widgets_8h_ab716b9dc601e22c2a7ba326f9253cf95} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!MAX\_MENU\_CHILDREN@{MAX\_MENU\_CHILDREN}}
+\index{MAX\_MENU\_CHILDREN@{MAX\_MENU\_CHILDREN}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MENU\_CHILDREN}{MAX\_MENU\_CHILDREN}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MENU\+\_\+\+CHILDREN~10}
+
+\Hypertarget{gooey__widgets_8h_a565f40c6b84b36d87f177dc5dcd20e1e}\label{gooey__widgets_8h_a565f40c6b84b36d87f177dc5dcd20e1e} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!MAX\_RADIO\_BUTTONS@{MAX\_RADIO\_BUTTONS}}
+\index{MAX\_RADIO\_BUTTONS@{MAX\_RADIO\_BUTTONS}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_RADIO\_BUTTONS}{MAX\_RADIO\_BUTTONS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+RADIO\+\_\+\+BUTTONS~10}
+
+\Hypertarget{gooey__widgets_8h_af55f83e86f270705ef7be6ab663bf5a6}\label{gooey__widgets_8h_af55f83e86f270705ef7be6ab663bf5a6} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!MAX\_WIDGETS@{MAX\_WIDGETS}}
+\index{MAX\_WIDGETS@{MAX\_WIDGETS}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIDGETS}{MAX\_WIDGETS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIDGETS~100}
+
+\Hypertarget{gooey__widgets_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9}\label{gooey__widgets_8h_a61b14d0e3ddc2b89e0322c7132f3d3c9} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!RADIO\_BUTTON\_RADIUS@{RADIO\_BUTTON\_RADIUS}}
+\index{RADIO\_BUTTON\_RADIUS@{RADIO\_BUTTON\_RADIUS}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{RADIO\_BUTTON\_RADIUS}{RADIO\_BUTTON\_RADIUS}}
+{\footnotesize\ttfamily \#define RADIO\+\_\+\+BUTTON\+\_\+\+RADIUS~10}
+
+\Hypertarget{gooey__widgets_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802}\label{gooey__widgets_8h_ad2f6a49ee208e0e6e3e21ec6c0fad802} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!SLIDER\_HEIGHT@{SLIDER\_HEIGHT}}
+\index{SLIDER\_HEIGHT@{SLIDER\_HEIGHT}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_HEIGHT}{SLIDER\_HEIGHT}}
+{\footnotesize\ttfamily \#define SLIDER\+\_\+\+HEIGHT~5}
+
+\Hypertarget{gooey__widgets_8h_a391a0cbb1db22916ea80f4c336d87f33}\label{gooey__widgets_8h_a391a0cbb1db22916ea80f4c336d87f33} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!SLIDER\_WIDTH@{SLIDER\_WIDTH}}
+\index{SLIDER\_WIDTH@{SLIDER\_WIDTH}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_WIDTH}{SLIDER\_WIDTH}}
+{\footnotesize\ttfamily \#define SLIDER\+\_\+\+WIDTH~100}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cb}\label{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cb} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!GooeyLayoutType@{GooeyLayoutType}}
+\index{GooeyLayoutType@{GooeyLayoutType}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{GooeyLayoutType}{GooeyLayoutType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cb}{Gooey\+Layout\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_HORIZONTAL@{LAYOUT\_HORIZONTAL}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!LAYOUT\_HORIZONTAL@{LAYOUT\_HORIZONTAL}}}\Hypertarget{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38}\label{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba5bcf5e92c20de058de1a84793b639c38} 
+LAYOUT\+\_\+\+HORIZONTAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_VERTICAL@{LAYOUT\_VERTICAL}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!LAYOUT\_VERTICAL@{LAYOUT\_VERTICAL}}}\Hypertarget{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd}\label{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cba8e80399417807cf2e98f1bd3391583fd} 
+LAYOUT\+\_\+\+VERTICAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYOUT\_GRID@{LAYOUT\_GRID}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!LAYOUT\_GRID@{LAYOUT\_GRID}}}\Hypertarget{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3}\label{gooey__widgets_8h_a844da08e71ff38a8518ea30859c0d1cbac4b094ed4f8bf75f60ba2235771371c3} 
+LAYOUT\+\_\+\+GRID&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64e}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64e} 
+\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_TYPE@{WIDGET\_TYPE}}
+\index{WIDGET\_TYPE@{WIDGET\_TYPE}!gooey\_widgets.h@{gooey\_widgets.h}}
+\doxysubsubsection{\texorpdfstring{WIDGET\_TYPE}{WIDGET\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64e}{WIDGET\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_LABEL@{WIDGET\_LABEL}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_LABEL@{WIDGET\_LABEL}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea546d7ca530397014266faf6f554e3061} 
+WIDGET\+\_\+\+LABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_SLIDER@{WIDGET\_SLIDER}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_SLIDER@{WIDGET\_SLIDER}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa918816b50a9659a9557b3312648eec7} 
+WIDGET\+\_\+\+SLIDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_RADIOBUTTON@{WIDGET\_RADIOBUTTON}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_RADIOBUTTON@{WIDGET\_RADIOBUTTON}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea63c01afee3bf0c03f52e33645a4f5ccc} 
+WIDGET\+\_\+\+RADIOBUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_CHECKBOX@{WIDGET\_CHECKBOX}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_CHECKBOX@{WIDGET\_CHECKBOX}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64eaa73f0c01b6d28ead2ca5ac7aaf7e0632} 
+WIDGET\+\_\+\+CHECKBOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_BUTTON@{WIDGET\_BUTTON}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_BUTTON@{WIDGET\_BUTTON}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea614a80360877accb031652479303e41c} 
+WIDGET\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_TEXTBOX@{WIDGET\_TEXTBOX}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_TEXTBOX@{WIDGET\_TEXTBOX}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ea6cf4af6b32f0e6f89cbbe7ba184bf78c} 
+WIDGET\+\_\+\+TEXTBOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIDGET\_DROPDOWN@{WIDGET\_DROPDOWN}!gooey\_widgets.h@{gooey\_widgets.h}}\index{gooey\_widgets.h@{gooey\_widgets.h}!WIDGET\_DROPDOWN@{WIDGET\_DROPDOWN}}}\Hypertarget{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975}\label{gooey__widgets_8h_a21cdc8cbca3e26441fee13d4f623b64ead73903cce846c4ad63bc58d5e9c18975} 
+WIDGET\+\_\+\+DROPDOWN&\\
+\hline
+
+\end{DoxyEnumFields}

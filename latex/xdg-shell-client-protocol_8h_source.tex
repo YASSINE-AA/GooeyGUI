@@ -1,0 +1,719 @@
+\doxysection{xdg-\/shell-\/client-\/protocol.h}
+\hypertarget{xdg-shell-client-protocol_8h_source}{}\label{xdg-shell-client-protocol_8h_source}\index{backends/xdg-\/shell-\/client-\/protocol.h@{backends/xdg-\/shell-\/client-\/protocol.h}}
+\mbox{\hyperlink{xdg-shell-client-protocol_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Generated\ by\ wayland-\/scanner\ 1.22.0\ */}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ XDG\_SHELL\_CLIENT\_PROTOCOL\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ XDG\_SHELL\_CLIENT\_PROTOCOL\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}wayland-\/client.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }wl\_output;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }wl\_seat;}
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }wl\_surface;}
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }xdg\_popup;}
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }xdg\_positioner;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }xdg\_surface;}
+\DoxyCodeLine{00058\ \textcolor{keyword}{struct\ }xdg\_toplevel;}
+\DoxyCodeLine{00059\ \textcolor{keyword}{struct\ }xdg\_wm\_base;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifndef\ XDG\_WM\_BASE\_INTERFACE}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_INTERFACE}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }wl\_interface\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a334a66fc154a4d8cb3f6ab5660a097ba}{xdg\_wm\_base\_interface}};}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#ifndef\ XDG\_POSITIONER\_INTERFACE}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_INTERFACE}}
+\DoxyCodeLine{00137\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }wl\_interface\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a16a9be7454042fdc62e0418508a624d4}{xdg\_positioner\_interface}};}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifndef\ XDG\_SURFACE\_INTERFACE}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_INTERFACE}}
+\DoxyCodeLine{00248\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }wl\_interface\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5ac26be247039c7cdf4a5a26f613cfe6}{xdg\_surface\_interface}};}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#ifndef\ XDG\_TOPLEVEL\_INTERFACE}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_INTERFACE}}
+\DoxyCodeLine{00305\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }wl\_interface\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a41eaf1ac12f3ef225df8b9f2f6559326}{xdg\_toplevel\_interface}};}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#ifndef\ XDG\_POPUP\_INTERFACE}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_INTERFACE}}
+\DoxyCodeLine{00368\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }wl\_interface\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_aa60edf2c19b40f7ba7e31b4aa1bf8d19}{xdg\_popup\_interface}};}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#ifndef\ XDG\_WM\_BASE\_ERROR\_ENUM}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_ERROR\_ENUM}}
+\DoxyCodeLine{00373\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492e}{xdg\_wm\_base\_error}}\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead9770c2eeb08fb841b23e02438e127cd}{XDG\_WM\_BASE\_ERROR\_ROLE}}\ =\ 0,}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea4d87b0a2c52d8937d181280a670860f4}{XDG\_WM\_BASE\_ERROR\_DEFUNCT\_SURFACES}}\ =\ 1,}
+\DoxyCodeLine{00385\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead8da0dfaeedf4192aea5e01a5b4146b1}{XDG\_WM\_BASE\_ERROR\_NOT\_THE\_TOPMOST\_POPUP}}\ =\ 2,}
+\DoxyCodeLine{00389\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea1af9f8ff43f3b019aa1858d5212e4fc7}{XDG\_WM\_BASE\_ERROR\_INVALID\_POPUP\_PARENT}}\ =\ 3,}
+\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eac942cd9a06866d6c4dbc715457e8281e}{XDG\_WM\_BASE\_ERROR\_INVALID\_SURFACE\_STATE}}\ =\ 4,}
+\DoxyCodeLine{00397\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea11d0e9cbc4d8e1e561edf00ed4919a2d}{XDG\_WM\_BASE\_ERROR\_INVALID\_POSITIONER}}\ =\ 5,}
+\DoxyCodeLine{00401\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eaba6fe3d47e4d07ae99aea4f87964fc4e}{XDG\_WM\_BASE\_ERROR\_UNRESPONSIVE}}\ =\ 6,}
+\DoxyCodeLine{00402\ \};}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_WM\_BASE\_ERROR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00409\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structxdg__wm__base__listener}{xdg\_wm\_base\_listener}}\ \{}
+\DoxyCodeLine{00429\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__wm__base__listener_a4c735d844e84443304b37d917ec847d0}{ping}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_wm\_base\ *xdg\_wm\_base,}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ serial);}
+\DoxyCodeLine{00432\ \};}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00437\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00438\ xdg\_wm\_base\_add\_listener(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base,}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structxdg__wm__base__listener}{xdg\_wm\_base\_listener}}\ *listener,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{00440\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_add\_listener((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ (**)(\textcolor{keywordtype}{void}))\ listener,\ data);}
+\DoxyCodeLine{00443\ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_DESTROY\ 0}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_CREATE\_POSITIONER\ 1}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_GET\_XDG\_SURFACE\ 2}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_PONG\ 3}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_PING\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_DESTROY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_CREATE\_POSITIONER\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_GET\_XDG\_SURFACE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ XDG\_WM\_BASE\_PONG\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00473\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00474\ xdg\_wm\_base\_set\_user\_data(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{00475\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ wl\_proxy\_set\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,\ user\_data);}
+\DoxyCodeLine{00477\ \}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00480\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00481\ xdg\_wm\_base\_get\_user\_data(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base)}
+\DoxyCodeLine{00482\ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base);}
+\DoxyCodeLine{00484\ \}}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint32\_t}
+\DoxyCodeLine{00487\ xdg\_wm\_base\_get\_version(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base)}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base);}
+\DoxyCodeLine{00490\ \}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00501\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00502\ xdg\_wm\_base\_destroy(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base)}
+\DoxyCodeLine{00503\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_af89235c5d56be7a635db43c756e47263}{XDG\_WM\_BASE\_DESTROY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base),\ WL\_MARSHAL\_FLAG\_DESTROY);}
+\DoxyCodeLine{00506\ \}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00515\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{struct\ }xdg\_positioner\ *}
+\DoxyCodeLine{00516\ xdg\_wm\_base\_create\_positioner(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base)}
+\DoxyCodeLine{00517\ \{}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keyword}{struct\ }wl\_proxy\ *id;}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_aeccafa21e4f6f850f3c9ac55a5c7b956}{XDG\_WM\_BASE\_CREATE\_POSITIONER}},\ \&\mbox{\hyperlink{xdg-shell-client-protocol_8h_a16a9be7454042fdc62e0418508a624d4}{xdg\_positioner\_interface}},\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base),\ 0,\ NULL);}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{struct}\ xdg\_positioner\ *)\ id;}
+\DoxyCodeLine{00524\ \}}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00543\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{struct\ }xdg\_surface\ *}
+\DoxyCodeLine{00544\ xdg\_wm\_base\_get\_xdg\_surface(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base,\ \textcolor{keyword}{struct}\ wl\_surface\ *surface)}
+\DoxyCodeLine{00545\ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{keyword}{struct\ }wl\_proxy\ *id;}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a8a97d927b643954fc9f0dc330ce457}{XDG\_WM\_BASE\_GET\_XDG\_SURFACE}},\ \&\mbox{\hyperlink{xdg-shell-client-protocol_8h_a5ac26be247039c7cdf4a5a26f613cfe6}{xdg\_surface\_interface}},\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base),\ 0,\ NULL,\ surface);}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{struct}\ xdg\_surface\ *)\ id;}
+\DoxyCodeLine{00552\ \}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00561\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00562\ xdg\_wm\_base\_pong(\textcolor{keyword}{struct}\ xdg\_wm\_base\ *xdg\_wm\_base,\ uint32\_t\ serial)}
+\DoxyCodeLine{00563\ \{}
+\DoxyCodeLine{00564\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base,}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac64c3488d67222d6abc2b4a4d62004f8}{XDG\_WM\_BASE\_PONG}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_wm\_base),\ 0,\ serial);}
+\DoxyCodeLine{00566\ \}}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#ifndef\ XDG\_POSITIONER\_ERROR\_ENUM}}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_ERROR\_ENUM}}
+\DoxyCodeLine{00570\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11d}{xdg\_positioner\_error}}\ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11da2ffbc312f24d601b3904ba41373d43d2}{XDG\_POSITIONER\_ERROR\_INVALID\_INPUT}}\ =\ 0,}
+\DoxyCodeLine{00575\ \};}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_POSITIONER\_ERROR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#ifndef\ XDG\_POSITIONER\_ANCHOR\_ENUM}}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_ANCHOR\_ENUM}}
+\DoxyCodeLine{00580\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586}{xdg\_positioner\_anchor}}\ \{}
+\DoxyCodeLine{00581\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586adcd9434b06c37cd37edf2d39210da463}{XDG\_POSITIONER\_ANCHOR\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00582\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a731a3303bb0805a63bd4c14336d6920d}{XDG\_POSITIONER\_ANCHOR\_TOP}}\ =\ 1,}
+\DoxyCodeLine{00583\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a31c2f58e44cc99494f7f8de7dce02ad0}{XDG\_POSITIONER\_ANCHOR\_BOTTOM}}\ =\ 2,}
+\DoxyCodeLine{00584\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac52770f96517f2a429e4284e54922cf3}{XDG\_POSITIONER\_ANCHOR\_LEFT}}\ =\ 3,}
+\DoxyCodeLine{00585\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3aa13c68430237dc66fdd5de2d712047}{XDG\_POSITIONER\_ANCHOR\_RIGHT}}\ =\ 4,}
+\DoxyCodeLine{00586\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3549b7488d5d681ae4ea21b092e7a381}{XDG\_POSITIONER\_ANCHOR\_TOP\_LEFT}}\ =\ 5,}
+\DoxyCodeLine{00587\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac6fe9269fa0cbea407a8bd320f8d0713}{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_LEFT}}\ =\ 6,}
+\DoxyCodeLine{00588\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a240e43f453bf3c611e40cbb67600603f}{XDG\_POSITIONER\_ANCHOR\_TOP\_RIGHT}}\ =\ 7,}
+\DoxyCodeLine{00589\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ad988ee185bcf0529ed6e119937b8a059}{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_RIGHT}}\ =\ 8,}
+\DoxyCodeLine{00590\ \};}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_POSITIONER\_ANCHOR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#ifndef\ XDG\_POSITIONER\_GRAVITY\_ENUM}}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_GRAVITY\_ENUM}}
+\DoxyCodeLine{00595\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56ee}{xdg\_positioner\_gravity}}\ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea608fa7779159172ae3b7372328cb8061}{XDG\_POSITIONER\_GRAVITY\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00597\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea9dbd31729e2fb730fc5fce36f2a68130}{XDG\_POSITIONER\_GRAVITY\_TOP}}\ =\ 1,}
+\DoxyCodeLine{00598\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaa23c0783a7e455e2e7921ee53b2a3e11}{XDG\_POSITIONER\_GRAVITY\_BOTTOM}}\ =\ 2,}
+\DoxyCodeLine{00599\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea06018646b8e07ea63a4f8862ea80f4fe}{XDG\_POSITIONER\_GRAVITY\_LEFT}}\ =\ 3,}
+\DoxyCodeLine{00600\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea68d8ea7271c48de84b36ee8589bf2a34}{XDG\_POSITIONER\_GRAVITY\_RIGHT}}\ =\ 4,}
+\DoxyCodeLine{00601\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eead2b4ab66a6372c48fdf95b34747ac06c}{XDG\_POSITIONER\_GRAVITY\_TOP\_LEFT}}\ =\ 5,}
+\DoxyCodeLine{00602\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea6ddefa77ef447a6514b37892c06110f2}{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_LEFT}}\ =\ 6,}
+\DoxyCodeLine{00603\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaf6a0b5ab2136dfa8e94bb6f5754d4ef7}{XDG\_POSITIONER\_GRAVITY\_TOP\_RIGHT}}\ =\ 7,}
+\DoxyCodeLine{00604\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea141569e57066889372e89659908e941d}{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_RIGHT}}\ =\ 8,}
+\DoxyCodeLine{00605\ \};}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_POSITIONER\_GRAVITY\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#ifndef\ XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}}
+\DoxyCodeLine{00626\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__iface__xdg__positioner_ga2d4543f555d079de131eb49d7787c85f}{xdg\_positioner\_constraint\_adjustment}}\ \{}
+\DoxyCodeLine{00633\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa44f1660f28048349487c7cbace5d2d3e}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00650\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa3169ca4e42d1143b7f906af6b0378969}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_SLIDE\_X}}\ =\ 1,}
+\DoxyCodeLine{00667\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa066357a9a6de591a0a2696597d857e91}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_SLIDE\_Y}}\ =\ 2,}
+\DoxyCodeLine{00680\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa8e0c3271b0c560c5121ca99b6f8c65b7}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_FLIP\_X}}\ =\ 4,}
+\DoxyCodeLine{00698\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa4015c1eade9d716c59e1a8209a7fde6a}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_FLIP\_Y}}\ =\ 8,}
+\DoxyCodeLine{00705\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa3905454c90089d34fe80470a8dad7f36}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_RESIZE\_X}}\ =\ 16,}
+\DoxyCodeLine{00712\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85facb0dac66328d3e4a82437dd2978210db}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_RESIZE\_Y}}\ =\ 32,}
+\DoxyCodeLine{00713\ \};}
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_DESTROY\ 0}}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_SIZE\ 1}}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_ANCHOR\_RECT\ 2}}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_ANCHOR\ 3}}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_GRAVITY\ 4}}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT\ 5}}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_OFFSET\ 6}}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_REACTIVE\ 7}}
+\DoxyCodeLine{00724\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_PARENT\_SIZE\ 8}}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE\ 9}}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00727\ }
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_DESTROY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_SIZE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_ANCHOR\_RECT\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_ANCHOR\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00747\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_GRAVITY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_OFFSET\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_REACTIVE\_SINCE\_VERSION\ 3}}
+\DoxyCodeLine{00763\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_PARENT\_SIZE\_SINCE\_VERSION\ 3}}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\#define\ XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE\_SINCE\_VERSION\ 3}}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00770\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00771\ xdg\_positioner\_set\_user\_data(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{00772\ \{}
+\DoxyCodeLine{00773\ \ \ \ \ wl\_proxy\_set\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,\ user\_data);}
+\DoxyCodeLine{00774\ \}}
+\DoxyCodeLine{00775\ }
+\DoxyCodeLine{00777\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00778\ xdg\_positioner\_get\_user\_data(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner)}
+\DoxyCodeLine{00779\ \{}
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner);}
+\DoxyCodeLine{00781\ \}}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint32\_t}
+\DoxyCodeLine{00784\ xdg\_positioner\_get\_version(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner)}
+\DoxyCodeLine{00785\ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner);}
+\DoxyCodeLine{00787\ \}}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00794\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00795\ xdg\_positioner\_destroy(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner)}
+\DoxyCodeLine{00796\ \{}
+\DoxyCodeLine{00797\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a2a91094e03ac28f0e218e5f67b15bc9f}{XDG\_POSITIONER\_DESTROY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ WL\_MARSHAL\_FLAG\_DESTROY);}
+\DoxyCodeLine{00799\ \}}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00810\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00811\ xdg\_positioner\_set\_size(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ int32\_t\ width,\ int32\_t\ height)}
+\DoxyCodeLine{00812\ \{}
+\DoxyCodeLine{00813\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5bd9ed4b96f963e64e156a17ee670f35}{XDG\_POSITIONER\_SET\_SIZE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ width,\ height);}
+\DoxyCodeLine{00815\ \}}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00831\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00832\ xdg\_positioner\_set\_anchor\_rect(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ int32\_t\ x,\ int32\_t\ y,\ int32\_t\ width,\ int32\_t\ height)}
+\DoxyCodeLine{00833\ \{}
+\DoxyCodeLine{00834\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a8ca217de4d3761a8fc72d06502a08ef3}{XDG\_POSITIONER\_SET\_ANCHOR\_RECT}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ x,\ y,\ width,\ height);}
+\DoxyCodeLine{00836\ \}}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00848\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00849\ xdg\_positioner\_set\_anchor(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ uint32\_t\ anchor)}
+\DoxyCodeLine{00850\ \{}
+\DoxyCodeLine{00851\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a063cd2276fd59937a5b4e6d37dc119b6}{XDG\_POSITIONER\_SET\_ANCHOR}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ anchor);}
+\DoxyCodeLine{00853\ \}}
+\DoxyCodeLine{00854\ }
+\DoxyCodeLine{00866\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00867\ xdg\_positioner\_set\_gravity(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ uint32\_t\ gravity)}
+\DoxyCodeLine{00868\ \{}
+\DoxyCodeLine{00869\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a18ffc2a975d114be99b5f2940dc657dd}{XDG\_POSITIONER\_SET\_GRAVITY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ gravity);}
+\DoxyCodeLine{00871\ \}}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00890\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00891\ xdg\_positioner\_set\_constraint\_adjustment(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ uint32\_t\ constraint\_adjustment)}
+\DoxyCodeLine{00892\ \{}
+\DoxyCodeLine{00893\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a4bf1461ce34fdd46751760169072c69e}{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ constraint\_adjustment);}
+\DoxyCodeLine{00895\ \}}
+\DoxyCodeLine{00896\ }
+\DoxyCodeLine{00912\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00913\ xdg\_positioner\_set\_offset(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ int32\_t\ x,\ int32\_t\ y)}
+\DoxyCodeLine{00914\ \{}
+\DoxyCodeLine{00915\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac8f52c24c8086b002aa06ef5c7a237d1}{XDG\_POSITIONER\_SET\_OFFSET}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ x,\ y);}
+\DoxyCodeLine{00917\ \}}
+\DoxyCodeLine{00918\ }
+\DoxyCodeLine{00929\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00930\ xdg\_positioner\_set\_reactive(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner)}
+\DoxyCodeLine{00931\ \{}
+\DoxyCodeLine{00932\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9c25e98961a05401a7ba4eb734b9a0a9}{XDG\_POSITIONER\_SET\_REACTIVE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0);}
+\DoxyCodeLine{00934\ \}}
+\DoxyCodeLine{00935\ }
+\DoxyCodeLine{00947\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00948\ xdg\_positioner\_set\_parent\_size(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ int32\_t\ parent\_width,\ int32\_t\ parent\_height)}
+\DoxyCodeLine{00949\ \{}
+\DoxyCodeLine{00950\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_af8a435c7c2cb4a6e5239f315f5dd6d68}{XDG\_POSITIONER\_SET\_PARENT\_SIZE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ parent\_width,\ parent\_height);}
+\DoxyCodeLine{00952\ \}}
+\DoxyCodeLine{00953\ }
+\DoxyCodeLine{00962\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00963\ xdg\_positioner\_set\_parent\_configure(\textcolor{keyword}{struct}\ xdg\_positioner\ *xdg\_positioner,\ uint32\_t\ serial)}
+\DoxyCodeLine{00964\ \{}
+\DoxyCodeLine{00965\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner,}
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_aa85e7ddb259657e9c9762369e6f37478}{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_positioner),\ 0,\ serial);}
+\DoxyCodeLine{00967\ \}}
+\DoxyCodeLine{00968\ }
+\DoxyCodeLine{00969\ \textcolor{preprocessor}{\#ifndef\ XDG\_SURFACE\_ERROR\_ENUM}}
+\DoxyCodeLine{00970\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_ERROR\_ENUM}}
+\DoxyCodeLine{00971\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835}{xdg\_surface\_error}}\ \{}
+\DoxyCodeLine{00975\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a89b78421ba8b5ce3812e8115b9d4f1b4}{XDG\_SURFACE\_ERROR\_NOT\_CONSTRUCTED}}\ =\ 1,}
+\DoxyCodeLine{00979\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ab7ffcf4dc61f06f2954ec355a94cf915}{XDG\_SURFACE\_ERROR\_ALREADY\_CONSTRUCTED}}\ =\ 2,}
+\DoxyCodeLine{00983\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ad6354aa90ebf7e1c67d781634f64707d}{XDG\_SURFACE\_ERROR\_UNCONFIGURED\_BUFFER}}\ =\ 3,}
+\DoxyCodeLine{00987\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a7fee927d50a9d30c3f7c717aed716aad}{XDG\_SURFACE\_ERROR\_INVALID\_SERIAL}}\ =\ 4,}
+\DoxyCodeLine{00991\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aee3f2eaabb224e6d5cda9549084f41cb}{XDG\_SURFACE\_ERROR\_INVALID\_SIZE}}\ =\ 5,}
+\DoxyCodeLine{00995\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aaff44a1bf577d6f3b1a1905f36079ba3}{XDG\_SURFACE\_ERROR\_DEFUNCT\_ROLE\_OBJECT}}\ =\ 6,}
+\DoxyCodeLine{00996\ \};}
+\DoxyCodeLine{00997\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_SURFACE\_ERROR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00998\ }
+\DoxyCodeLine{01003\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structxdg__surface__listener}{xdg\_surface\_listener}}\ \{}
+\DoxyCodeLine{01028\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__surface__listener_a1c4263d4ac5abb74a2fa8aa9bdd093b0}{configure}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_surface\ *xdg\_surface,}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ serial);}
+\DoxyCodeLine{01031\ \};}
+\DoxyCodeLine{01032\ }
+\DoxyCodeLine{01036\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{01037\ xdg\_surface\_add\_listener(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface,}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structxdg__surface__listener}{xdg\_surface\_listener}}\ *listener,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{01039\ \{}
+\DoxyCodeLine{01040\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_add\_listener((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ (**)(\textcolor{keywordtype}{void}))\ listener,\ data);}
+\DoxyCodeLine{01042\ \}}
+\DoxyCodeLine{01043\ }
+\DoxyCodeLine{01044\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_DESTROY\ 0}}
+\DoxyCodeLine{01045\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_GET\_TOPLEVEL\ 1}}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_GET\_POPUP\ 2}}
+\DoxyCodeLine{01047\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\ 3}}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_ACK\_CONFIGURE\ 4}}
+\DoxyCodeLine{01049\ }
+\DoxyCodeLine{01053\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01054\ }
+\DoxyCodeLine{01058\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_DESTROY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01062\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01066\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01074\ \textcolor{preprocessor}{\#define\ XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01075\ }
+\DoxyCodeLine{01077\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01078\ xdg\_surface\_set\_user\_data(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{01079\ \{}
+\DoxyCodeLine{01080\ \ \ \ \ wl\_proxy\_set\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,\ user\_data);}
+\DoxyCodeLine{01081\ \}}
+\DoxyCodeLine{01082\ }
+\DoxyCodeLine{01084\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{01085\ xdg\_surface\_get\_user\_data(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface)}
+\DoxyCodeLine{01086\ \{}
+\DoxyCodeLine{01087\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface);}
+\DoxyCodeLine{01088\ \}}
+\DoxyCodeLine{01089\ }
+\DoxyCodeLine{01090\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint32\_t}
+\DoxyCodeLine{01091\ xdg\_surface\_get\_version(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface)}
+\DoxyCodeLine{01092\ \{}
+\DoxyCodeLine{01093\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface);}
+\DoxyCodeLine{01094\ \}}
+\DoxyCodeLine{01095\ }
+\DoxyCodeLine{01103\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01104\ xdg\_surface\_destroy(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface)}
+\DoxyCodeLine{01105\ \{}
+\DoxyCodeLine{01106\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_aea86cf0f4d26c03bee9ce8cad326dcdb}{XDG\_SURFACE\_DESTROY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface),\ WL\_MARSHAL\_FLAG\_DESTROY);}
+\DoxyCodeLine{01108\ \}}
+\DoxyCodeLine{01109\ }
+\DoxyCodeLine{01119\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{struct\ }xdg\_toplevel\ *}
+\DoxyCodeLine{01120\ xdg\_surface\_get\_toplevel(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface)}
+\DoxyCodeLine{01121\ \{}
+\DoxyCodeLine{01122\ \ \ \ \ \textcolor{keyword}{struct\ }wl\_proxy\ *id;}
+\DoxyCodeLine{01123\ }
+\DoxyCodeLine{01124\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a0a32e7931196bdc5705e64a8b1daa86d}{XDG\_SURFACE\_GET\_TOPLEVEL}},\ \&\mbox{\hyperlink{xdg-shell-client-protocol_8h_a41eaf1ac12f3ef225df8b9f2f6559326}{xdg\_toplevel\_interface}},\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface),\ 0,\ NULL);}
+\DoxyCodeLine{01126\ }
+\DoxyCodeLine{01127\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{struct}\ xdg\_toplevel\ *)\ id;}
+\DoxyCodeLine{01128\ \}}
+\DoxyCodeLine{01129\ }
+\DoxyCodeLine{01142\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{struct\ }xdg\_popup\ *}
+\DoxyCodeLine{01143\ xdg\_surface\_get\_popup(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface,\ \textcolor{keyword}{struct}\ xdg\_surface\ *parent,\ \textcolor{keyword}{struct}\ xdg\_positioner\ *positioner)}
+\DoxyCodeLine{01144\ \{}
+\DoxyCodeLine{01145\ \ \ \ \ \textcolor{keyword}{struct\ }wl\_proxy\ *id;}
+\DoxyCodeLine{01146\ }
+\DoxyCodeLine{01147\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ad42b241c5943bf64bea8a76231d123cb}{XDG\_SURFACE\_GET\_POPUP}},\ \&\mbox{\hyperlink{xdg-shell-client-protocol_8h_aa60edf2c19b40f7ba7e31b4aa1bf8d19}{xdg\_popup\_interface}},\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface),\ 0,\ NULL,\ parent,\ positioner);}
+\DoxyCodeLine{01149\ }
+\DoxyCodeLine{01150\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{struct}\ xdg\_popup\ *)\ id;}
+\DoxyCodeLine{01151\ \}}
+\DoxyCodeLine{01152\ }
+\DoxyCodeLine{01194\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01195\ xdg\_surface\_set\_window\_geometry(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface,\ int32\_t\ x,\ int32\_t\ y,\ int32\_t\ width,\ int32\_t\ height)}
+\DoxyCodeLine{01196\ \{}
+\DoxyCodeLine{01197\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a867997a706ce9b1f272aea72677a1266}{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface),\ 0,\ x,\ y,\ width,\ height);}
+\DoxyCodeLine{01199\ \}}
+\DoxyCodeLine{01200\ }
+\DoxyCodeLine{01237\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01238\ xdg\_surface\_ack\_configure(\textcolor{keyword}{struct}\ xdg\_surface\ *xdg\_surface,\ uint32\_t\ serial)}
+\DoxyCodeLine{01239\ \{}
+\DoxyCodeLine{01240\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface,}
+\DoxyCodeLine{01241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9d3dddd8ce2cde5e92315b22d02b170c}{XDG\_SURFACE\_ACK\_CONFIGURE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_surface),\ 0,\ serial);}
+\DoxyCodeLine{01242\ \}}
+\DoxyCodeLine{01243\ }
+\DoxyCodeLine{01244\ \textcolor{preprocessor}{\#ifndef\ XDG\_TOPLEVEL\_ERROR\_ENUM}}
+\DoxyCodeLine{01245\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_ERROR\_ENUM}}
+\DoxyCodeLine{01246\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92f}{xdg\_toplevel\_error}}\ \{}
+\DoxyCodeLine{01250\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fac382c3ee54b86fe9d824d0c02e861e7f}{XDG\_TOPLEVEL\_ERROR\_INVALID\_RESIZE\_EDGE}}\ =\ 0,}
+\DoxyCodeLine{01254\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa03e0719f3ef49f46d1d53eefce225e24}{XDG\_TOPLEVEL\_ERROR\_INVALID\_PARENT}}\ =\ 1,}
+\DoxyCodeLine{01258\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa4130d4117472144bbef442e82acdb773}{XDG\_TOPLEVEL\_ERROR\_INVALID\_SIZE}}\ =\ 2,}
+\DoxyCodeLine{01259\ \};}
+\DoxyCodeLine{01260\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_TOPLEVEL\_ERROR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01261\ }
+\DoxyCodeLine{01262\ \textcolor{preprocessor}{\#ifndef\ XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}}
+\DoxyCodeLine{01263\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}}
+\DoxyCodeLine{01271\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__iface__xdg__toplevel_ga9c5f29d74e9f5e730fe59ecdc397b116}{xdg\_toplevel\_resize\_edge}}\ \{}
+\DoxyCodeLine{01272\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a8fb8eaed90c84f6ee349cf20dad13dc8}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_NONE}}\ =\ 0,}
+\DoxyCodeLine{01273\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116ab6738334e5155a610ffae9ec11a6380b}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_TOP}}\ =\ 1,}
+\DoxyCodeLine{01274\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a35b4b365f99c5d76ed3dcd8a15977853}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_BOTTOM}}\ =\ 2,}
+\DoxyCodeLine{01275\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a905ab08631ed43116c424098dd28e473}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_LEFT}}\ =\ 4,}
+\DoxyCodeLine{01276\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a8bb02b53700283f3b179af4d8d33b735}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_TOP\_LEFT}}\ =\ 5,}
+\DoxyCodeLine{01277\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116aecd33d2460b15a03ccb7cf099d7c4d4c}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_BOTTOM\_LEFT}}\ =\ 6,}
+\DoxyCodeLine{01278\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a3acbd89082c2926e502f46d18e51d41e}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_RIGHT}}\ =\ 8,}
+\DoxyCodeLine{01279\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a3b6bba269420a558d29b26011feb3d02}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_TOP\_RIGHT}}\ =\ 9,}
+\DoxyCodeLine{01280\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a7d3e52d640292d71d6f6f5019af95854}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_BOTTOM\_RIGHT}}\ =\ 10,}
+\DoxyCodeLine{01281\ \};}
+\DoxyCodeLine{01282\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01283\ }
+\DoxyCodeLine{01284\ \textcolor{preprocessor}{\#ifndef\ XDG\_TOPLEVEL\_STATE\_ENUM}}
+\DoxyCodeLine{01285\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_ENUM}}
+\DoxyCodeLine{01297\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__iface__xdg__toplevel_gabaca79a813c489200722457958c54b43}{xdg\_toplevel\_state}}\ \{}
+\DoxyCodeLine{01309\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a35643da6bcb9f371b8d4e663787ff9df}{XDG\_TOPLEVEL\_STATE\_MAXIMIZED}}\ =\ 1,}
+\DoxyCodeLine{01320\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ae18b9b46242f684a7f80cc6edcb11198}{XDG\_TOPLEVEL\_STATE\_FULLSCREEN}}\ =\ 2,}
+\DoxyCodeLine{01330\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43af34733ea6181003cfff4c51011b3fae5}{XDG\_TOPLEVEL\_STATE\_RESIZING}}\ =\ 3,}
+\DoxyCodeLine{01339\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ada4cf2a15e69416ecdb506af0d34cd23}{XDG\_TOPLEVEL\_STATE\_ACTIVATED}}\ =\ 4,}
+\DoxyCodeLine{01350\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a4c4946d03abc061ab82fb74f7c13544e}{XDG\_TOPLEVEL\_STATE\_TILED\_LEFT}}\ =\ 5,}
+\DoxyCodeLine{01361\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a3c2df34cc493f00426a755ecda341358}{XDG\_TOPLEVEL\_STATE\_TILED\_RIGHT}}\ =\ 6,}
+\DoxyCodeLine{01372\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ac206f84cbaa6b2079e09b5d7fa4adafd}{XDG\_TOPLEVEL\_STATE\_TILED\_TOP}}\ =\ 7,}
+\DoxyCodeLine{01383\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ab647470484c8b655fafa57548b55795b}{XDG\_TOPLEVEL\_STATE\_TILED\_BOTTOM}}\ =\ 8,}
+\DoxyCodeLine{01392\ \ \ \ \ \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43aa871bb8aff75d079d5938db0b288173d}{XDG\_TOPLEVEL\_STATE\_SUSPENDED}}\ =\ 9,}
+\DoxyCodeLine{01393\ \};}
+\DoxyCodeLine{01397\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_TILED\_LEFT\_SINCE\_VERSION\ 2}}
+\DoxyCodeLine{01401\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_TILED\_RIGHT\_SINCE\_VERSION\ 2}}
+\DoxyCodeLine{01405\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_TILED\_TOP\_SINCE\_VERSION\ 2}}
+\DoxyCodeLine{01409\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_TILED\_BOTTOM\_SINCE\_VERSION\ 2}}
+\DoxyCodeLine{01413\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_STATE\_SUSPENDED\_SINCE\_VERSION\ 6}}
+\DoxyCodeLine{01414\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_TOPLEVEL\_STATE\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01415\ }
+\DoxyCodeLine{01416\ \textcolor{preprocessor}{\#ifndef\ XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}}
+\DoxyCodeLine{01417\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}}
+\DoxyCodeLine{01418\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cd}{xdg\_toplevel\_wm\_capabilities}}\ \{}
+\DoxyCodeLine{01422\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaf364734cba8ab66e37ac1a0083433a2c}{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_WINDOW\_MENU}}\ =\ 1,}
+\DoxyCodeLine{01426\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaa76f2c343ea66db2918f8fcec262c716}{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MAXIMIZE}}\ =\ 2,}
+\DoxyCodeLine{01430\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cda3109feef512e592df9ff2b9627966c4e}{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_FULLSCREEN}}\ =\ 3,}
+\DoxyCodeLine{01434\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdab735d819922a65717d80d56b62b9773e}{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MINIMIZE}}\ =\ 4,}
+\DoxyCodeLine{01435\ \};}
+\DoxyCodeLine{01436\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01437\ }
+\DoxyCodeLine{01442\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structxdg__toplevel__listener}{xdg\_toplevel\_listener}}\ \{}
+\DoxyCodeLine{01468\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__toplevel__listener_a8884ee61ecc055f927c54a5f068edaed}{configure}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{01469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_toplevel\ *xdg\_toplevel,}
+\DoxyCodeLine{01470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ width,}
+\DoxyCodeLine{01471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ height,}
+\DoxyCodeLine{01472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }wl\_array\ *states);}
+\DoxyCodeLine{01485\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__toplevel__listener_ad43ce681ea9785dd3f88f794037d1560}{close}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{01486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_toplevel\ *xdg\_toplevel);}
+\DoxyCodeLine{01508\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__toplevel__listener_a74d28321edf15393ea63a47ea5d3e5ec}{configure\_bounds}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{01509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_toplevel\ *xdg\_toplevel,}
+\DoxyCodeLine{01510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ width,}
+\DoxyCodeLine{01511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ height);}
+\DoxyCodeLine{01539\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__toplevel__listener_a0a5d85c3d4dad3c5ec5ffb2d45ad5183}{wm\_capabilities}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{01540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_toplevel\ *xdg\_toplevel,}
+\DoxyCodeLine{01541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }wl\_array\ *capabilities);}
+\DoxyCodeLine{01542\ \};}
+\DoxyCodeLine{01543\ }
+\DoxyCodeLine{01547\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{01548\ xdg\_toplevel\_add\_listener(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,}
+\DoxyCodeLine{01549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structxdg__toplevel__listener}{xdg\_toplevel\_listener}}\ *listener,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{01550\ \{}
+\DoxyCodeLine{01551\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_add\_listener((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ (**)(\textcolor{keywordtype}{void}))\ listener,\ data);}
+\DoxyCodeLine{01553\ \}}
+\DoxyCodeLine{01554\ }
+\DoxyCodeLine{01555\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_DESTROY\ 0}}
+\DoxyCodeLine{01556\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_PARENT\ 1}}
+\DoxyCodeLine{01557\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_TITLE\ 2}}
+\DoxyCodeLine{01558\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_APP\_ID\ 3}}
+\DoxyCodeLine{01559\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU\ 4}}
+\DoxyCodeLine{01560\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_MOVE\ 5}}
+\DoxyCodeLine{01561\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_RESIZE\ 6}}
+\DoxyCodeLine{01562\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MAX\_SIZE\ 7}}
+\DoxyCodeLine{01563\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MIN\_SIZE\ 8}}
+\DoxyCodeLine{01564\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MAXIMIZED\ 9}}
+\DoxyCodeLine{01565\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_UNSET\_MAXIMIZED\ 10}}
+\DoxyCodeLine{01566\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_FULLSCREEN\ 11}}
+\DoxyCodeLine{01567\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_UNSET\_FULLSCREEN\ 12}}
+\DoxyCodeLine{01568\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MINIMIZED\ 13}}
+\DoxyCodeLine{01569\ }
+\DoxyCodeLine{01573\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_CONFIGURE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01577\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_CLOSE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01581\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_CONFIGURE\_BOUNDS\_SINCE\_VERSION\ 4}}
+\DoxyCodeLine{01585\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_WM\_CAPABILITIES\_SINCE\_VERSION\ 5}}
+\DoxyCodeLine{01586\ }
+\DoxyCodeLine{01590\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_DESTROY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01594\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_PARENT\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01598\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_TITLE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01602\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_APP\_ID\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01606\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01610\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_MOVE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01614\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_RESIZE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01618\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MAX\_SIZE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01622\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MIN\_SIZE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01626\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MAXIMIZED\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01630\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_UNSET\_MAXIMIZED\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01634\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_FULLSCREEN\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01638\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_UNSET\_FULLSCREEN\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01642\ \textcolor{preprocessor}{\#define\ XDG\_TOPLEVEL\_SET\_MINIMIZED\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{01643\ }
+\DoxyCodeLine{01645\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01646\ xdg\_toplevel\_set\_user\_data(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{01647\ \{}
+\DoxyCodeLine{01648\ \ \ \ \ wl\_proxy\_set\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,\ user\_data);}
+\DoxyCodeLine{01649\ \}}
+\DoxyCodeLine{01650\ }
+\DoxyCodeLine{01652\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{01653\ xdg\_toplevel\_get\_user\_data(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{01654\ \{}
+\DoxyCodeLine{01655\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel);}
+\DoxyCodeLine{01656\ \}}
+\DoxyCodeLine{01657\ }
+\DoxyCodeLine{01658\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint32\_t}
+\DoxyCodeLine{01659\ xdg\_toplevel\_get\_version(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{01660\ \{}
+\DoxyCodeLine{01661\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel);}
+\DoxyCodeLine{01662\ \}}
+\DoxyCodeLine{01663\ }
+\DoxyCodeLine{01670\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01671\ xdg\_toplevel\_destroy(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{01672\ \{}
+\DoxyCodeLine{01673\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5fed65208a34eadc332fd1da4184dd1f}{XDG\_TOPLEVEL\_DESTROY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ WL\_MARSHAL\_FLAG\_DESTROY);}
+\DoxyCodeLine{01675\ \}}
+\DoxyCodeLine{01676\ }
+\DoxyCodeLine{01701\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01702\ xdg\_toplevel\_set\_parent(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{struct}\ xdg\_toplevel\ *parent)}
+\DoxyCodeLine{01703\ \{}
+\DoxyCodeLine{01704\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3166edd3986d5f77d223893ab61f7fd2}{XDG\_TOPLEVEL\_SET\_PARENT}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ parent);}
+\DoxyCodeLine{01706\ \}}
+\DoxyCodeLine{01707\ }
+\DoxyCodeLine{01719\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01720\ xdg\_toplevel\_set\_title(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *title)}
+\DoxyCodeLine{01721\ \{}
+\DoxyCodeLine{01722\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a608641e7b1dae66f167a0233fae64b51}{XDG\_TOPLEVEL\_SET\_TITLE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ title);}
+\DoxyCodeLine{01724\ \}}
+\DoxyCodeLine{01725\ }
+\DoxyCodeLine{01753\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01754\ xdg\_toplevel\_set\_app\_id(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *app\_id)}
+\DoxyCodeLine{01755\ \{}
+\DoxyCodeLine{01756\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a368b83186b38aa7a1d59ecc51541b4f6}{XDG\_TOPLEVEL\_SET\_APP\_ID}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ app\_id);}
+\DoxyCodeLine{01758\ \}}
+\DoxyCodeLine{01759\ }
+\DoxyCodeLine{01776\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01777\ xdg\_toplevel\_show\_window\_menu(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{struct}\ wl\_seat\ *seat,\ uint32\_t\ serial,\ int32\_t\ x,\ int32\_t\ y)}
+\DoxyCodeLine{01778\ \{}
+\DoxyCodeLine{01779\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_acbf6f7d6560778adbbc000c851ac845c}{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ seat,\ serial,\ x,\ y);}
+\DoxyCodeLine{01781\ \}}
+\DoxyCodeLine{01782\ }
+\DoxyCodeLine{01803\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01804\ xdg\_toplevel\_move(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{struct}\ wl\_seat\ *seat,\ uint32\_t\ serial)}
+\DoxyCodeLine{01805\ \{}
+\DoxyCodeLine{01806\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9a6ce6295dcade29bfb4a71308730178}{XDG\_TOPLEVEL\_MOVE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ seat,\ serial);}
+\DoxyCodeLine{01808\ \}}
+\DoxyCodeLine{01809\ }
+\DoxyCodeLine{01845\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01846\ xdg\_toplevel\_resize(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{struct}\ wl\_seat\ *seat,\ uint32\_t\ serial,\ uint32\_t\ edges)}
+\DoxyCodeLine{01847\ \{}
+\DoxyCodeLine{01848\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a02512b40e0f4d57f06bbf1f60620ba52}{XDG\_TOPLEVEL\_RESIZE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ seat,\ serial,\ edges);}
+\DoxyCodeLine{01850\ \}}
+\DoxyCodeLine{01851\ }
+\DoxyCodeLine{01889\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01890\ xdg\_toplevel\_set\_max\_size(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ int32\_t\ width,\ int32\_t\ height)}
+\DoxyCodeLine{01891\ \{}
+\DoxyCodeLine{01892\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01893\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a819b272958cef4f5e035b480e2034c0f}{XDG\_TOPLEVEL\_SET\_MAX\_SIZE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ width,\ height);}
+\DoxyCodeLine{01894\ \}}
+\DoxyCodeLine{01895\ }
+\DoxyCodeLine{01933\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01934\ xdg\_toplevel\_set\_min\_size(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ int32\_t\ width,\ int32\_t\ height)}
+\DoxyCodeLine{01935\ \{}
+\DoxyCodeLine{01936\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01937\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ad8f38e0fbe4d1f49b8740ede81eda602}{XDG\_TOPLEVEL\_SET\_MIN\_SIZE}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ width,\ height);}
+\DoxyCodeLine{01938\ \}}
+\DoxyCodeLine{01939\ }
+\DoxyCodeLine{01963\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01964\ xdg\_toplevel\_set\_maximized(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{01965\ \{}
+\DoxyCodeLine{01966\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01967\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a606aee255df6456a69ed691ed5dc977d}{XDG\_TOPLEVEL\_SET\_MAXIMIZED}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0);}
+\DoxyCodeLine{01968\ \}}
+\DoxyCodeLine{01969\ }
+\DoxyCodeLine{01995\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01996\ xdg\_toplevel\_unset\_maximized(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{01997\ \{}
+\DoxyCodeLine{01998\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{01999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a05261aa2b30737e2d6cd72cc01275a22}{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0);}
+\DoxyCodeLine{02000\ \}}
+\DoxyCodeLine{02001\ }
+\DoxyCodeLine{02029\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02030\ xdg\_toplevel\_set\_fullscreen(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel,\ \textcolor{keyword}{struct}\ wl\_output\ *output)}
+\DoxyCodeLine{02031\ \{}
+\DoxyCodeLine{02032\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{02033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac5764650bb79659b0477875fd00bb391}{XDG\_TOPLEVEL\_SET\_FULLSCREEN}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0,\ output);}
+\DoxyCodeLine{02034\ \}}
+\DoxyCodeLine{02035\ }
+\DoxyCodeLine{02057\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02058\ xdg\_toplevel\_unset\_fullscreen(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{02059\ \{}
+\DoxyCodeLine{02060\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{02061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a1d017713e135421360b90285d6a4d372}{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0);}
+\DoxyCodeLine{02062\ \}}
+\DoxyCodeLine{02063\ }
+\DoxyCodeLine{02076\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02077\ xdg\_toplevel\_set\_minimized(\textcolor{keyword}{struct}\ xdg\_toplevel\ *xdg\_toplevel)}
+\DoxyCodeLine{02078\ \{}
+\DoxyCodeLine{02079\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel,}
+\DoxyCodeLine{02080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a34b0f3668742dc34951279a656854339}{XDG\_TOPLEVEL\_SET\_MINIMIZED}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_toplevel),\ 0);}
+\DoxyCodeLine{02081\ \}}
+\DoxyCodeLine{02082\ }
+\DoxyCodeLine{02083\ \textcolor{preprocessor}{\#ifndef\ XDG\_POPUP\_ERROR\_ENUM}}
+\DoxyCodeLine{02084\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_ERROR\_ENUM}}
+\DoxyCodeLine{02085\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270}{xdg\_popup\_error}}\ \{}
+\DoxyCodeLine{02089\ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270a03886bf45b2f58fe6896ceea7da37d3e}{XDG\_POPUP\_ERROR\_INVALID\_GRAB}}\ =\ 0,}
+\DoxyCodeLine{02090\ \};}
+\DoxyCodeLine{02091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ XDG\_POPUP\_ERROR\_ENUM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{02092\ }
+\DoxyCodeLine{02097\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structxdg__popup__listener}{xdg\_popup\_listener}}\ \{}
+\DoxyCodeLine{02119\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__popup__listener_a36e98cf6e6e4137ee2896a43f1c10730}{configure}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{02120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_popup\ *xdg\_popup,}
+\DoxyCodeLine{02121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ x,}
+\DoxyCodeLine{02122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ y,}
+\DoxyCodeLine{02123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ width,}
+\DoxyCodeLine{02124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ height);}
+\DoxyCodeLine{02132\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__popup__listener_af62aceff9bcec24ac9e5243107db53a2}{popup\_done}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{02133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_popup\ *xdg\_popup);}
+\DoxyCodeLine{02157\ \ \ \ \ void\ (*\mbox{\hyperlink{structxdg__popup__listener_a6e3f7f24ea625d8d11b99f4de878163b}{repositioned}})(\textcolor{keywordtype}{void}\ *data,}
+\DoxyCodeLine{02158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }xdg\_popup\ *xdg\_popup,}
+\DoxyCodeLine{02159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ token);}
+\DoxyCodeLine{02160\ \};}
+\DoxyCodeLine{02161\ }
+\DoxyCodeLine{02165\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{02166\ xdg\_popup\_add\_listener(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup,}
+\DoxyCodeLine{02167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structxdg__popup__listener}{xdg\_popup\_listener}}\ *listener,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{02168\ \{}
+\DoxyCodeLine{02169\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_add\_listener((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup,}
+\DoxyCodeLine{02170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ (**)(\textcolor{keywordtype}{void}))\ listener,\ data);}
+\DoxyCodeLine{02171\ \}}
+\DoxyCodeLine{02172\ }
+\DoxyCodeLine{02173\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_DESTROY\ 0}}
+\DoxyCodeLine{02174\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_GRAB\ 1}}
+\DoxyCodeLine{02175\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_REPOSITION\ 2}}
+\DoxyCodeLine{02176\ }
+\DoxyCodeLine{02180\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_CONFIGURE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{02184\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_POPUP\_DONE\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{02188\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_REPOSITIONED\_SINCE\_VERSION\ 3}}
+\DoxyCodeLine{02189\ }
+\DoxyCodeLine{02193\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_DESTROY\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{02197\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_GRAB\_SINCE\_VERSION\ 1}}
+\DoxyCodeLine{02201\ \textcolor{preprocessor}{\#define\ XDG\_POPUP\_REPOSITION\_SINCE\_VERSION\ 3}}
+\DoxyCodeLine{02202\ }
+\DoxyCodeLine{02204\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02205\ xdg\_popup\_set\_user\_data(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{02206\ \{}
+\DoxyCodeLine{02207\ \ \ \ \ wl\_proxy\_set\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup,\ user\_data);}
+\DoxyCodeLine{02208\ \}}
+\DoxyCodeLine{02209\ }
+\DoxyCodeLine{02211\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{02212\ xdg\_popup\_get\_user\_data(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup)}
+\DoxyCodeLine{02213\ \{}
+\DoxyCodeLine{02214\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_user\_data((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup);}
+\DoxyCodeLine{02215\ \}}
+\DoxyCodeLine{02216\ }
+\DoxyCodeLine{02217\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint32\_t}
+\DoxyCodeLine{02218\ xdg\_popup\_get\_version(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup)}
+\DoxyCodeLine{02219\ \{}
+\DoxyCodeLine{02220\ \ \ \ \ \textcolor{keywordflow}{return}\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup);}
+\DoxyCodeLine{02221\ \}}
+\DoxyCodeLine{02222\ }
+\DoxyCodeLine{02232\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02233\ xdg\_popup\_destroy(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup)}
+\DoxyCodeLine{02234\ \{}
+\DoxyCodeLine{02235\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup,}
+\DoxyCodeLine{02236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a242c07e84c5bec49ce0e6baa02386f4c}{XDG\_POPUP\_DESTROY}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup),\ WL\_MARSHAL\_FLAG\_DESTROY);}
+\DoxyCodeLine{02237\ \}}
+\DoxyCodeLine{02238\ }
+\DoxyCodeLine{02280\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02281\ xdg\_popup\_grab(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup,\ \textcolor{keyword}{struct}\ wl\_seat\ *seat,\ uint32\_t\ serial)}
+\DoxyCodeLine{02282\ \{}
+\DoxyCodeLine{02283\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup,}
+\DoxyCodeLine{02284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a2ba141cfcc00999dbb62a6c67cb50de2}{XDG\_POPUP\_GRAB}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup),\ 0,\ seat,\ serial);}
+\DoxyCodeLine{02285\ \}}
+\DoxyCodeLine{02286\ }
+\DoxyCodeLine{02314\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{02315\ xdg\_popup\_reposition(\textcolor{keyword}{struct}\ xdg\_popup\ *xdg\_popup,\ \textcolor{keyword}{struct}\ xdg\_positioner\ *positioner,\ uint32\_t\ token)}
+\DoxyCodeLine{02316\ \{}
+\DoxyCodeLine{02317\ \ \ \ \ wl\_proxy\_marshal\_flags((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup,}
+\DoxyCodeLine{02318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9a40fafe987423de5084528175061c10}{XDG\_POPUP\_REPOSITION}},\ NULL,\ wl\_proxy\_get\_version((\textcolor{keyword}{struct}\ wl\_proxy\ *)\ xdg\_popup),\ 0,\ positioner,\ token);}
+\DoxyCodeLine{02319\ \}}
+\DoxyCodeLine{02320\ }
+\DoxyCodeLine{02321\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{02322\ \}}
+\DoxyCodeLine{02323\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02324\ }
+\DoxyCodeLine{02325\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

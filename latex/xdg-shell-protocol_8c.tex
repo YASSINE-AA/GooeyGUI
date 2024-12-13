@@ -1,0 +1,142 @@
+\doxysection{backends/xdg-\/shell-\/protocol.c File Reference}
+\hypertarget{xdg-shell-protocol_8c}{}\label{xdg-shell-protocol_8c}\index{backends/xdg-\/shell-\/protocol.c@{backends/xdg-\/shell-\/protocol.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}wayland-\/util.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-protocol_8c_a54d2d7742701f3f112afbcd8d4f9ccdb}{\+\_\+\+\_\+has\+\_\+attribute}}(x)~0  /\texorpdfstring{$\ast$}{*} Compatibility with non-\/clang compilers. \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_ae97e9c3c498cdd2419db058fa13f26a5}{wl\+\_\+output\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_abaec16e5d3db301ad4c2f3430c218239}{wl\+\_\+seat\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_ab5b94bcc25b21d2fdd945533016d0e33}{wl\+\_\+surface\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_aa60edf2c19b40f7ba7e31b4aa1bf8d19}{xdg\+\_\+popup\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_a16a9be7454042fdc62e0418508a624d4}{xdg\+\_\+positioner\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_a5ac26be247039c7cdf4a5a26f613cfe6}{xdg\+\_\+surface\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_a41eaf1ac12f3ef225df8b9f2f6559326}{xdg\+\_\+toplevel\+\_\+interface}}
+\item 
+\mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-protocol_8c_a23c96730741064951b7a6c714ebb9403}{xdg\+\_\+wm\+\_\+base\+\_\+interface}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{xdg-shell-protocol_8c_a54d2d7742701f3f112afbcd8d4f9ccdb}\label{xdg-shell-protocol_8c_a54d2d7742701f3f112afbcd8d4f9ccdb} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!\_\_has\_attribute@{\_\_has\_attribute}}
+\index{\_\_has\_attribute@{\_\_has\_attribute}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{\_\_has\_attribute}{\_\_has\_attribute}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+has\+\_\+attribute(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~0  /\texorpdfstring{$\ast$}{*} Compatibility with non-\/clang compilers. \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}\label{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!WL\_PRIVATE@{WL\_PRIVATE}}
+\index{WL\_PRIVATE@{WL\_PRIVATE}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{WL\_PRIVATE}{WL\_PRIVATE}}
+{\footnotesize\ttfamily \#define WL\+\_\+\+PRIVATE}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{xdg-shell-protocol_8c_ae97e9c3c498cdd2419db058fa13f26a5}\label{xdg-shell-protocol_8c_ae97e9c3c498cdd2419db058fa13f26a5} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!wl\_output\_interface@{wl\_output\_interface}}
+\index{wl\_output\_interface@{wl\_output\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{wl\_output\_interface}{wl\_output\_interface}}
+{\footnotesize\ttfamily const struct wl\+\_\+interface wl\+\_\+output\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{xdg-shell-protocol_8c_abaec16e5d3db301ad4c2f3430c218239}\label{xdg-shell-protocol_8c_abaec16e5d3db301ad4c2f3430c218239} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!wl\_seat\_interface@{wl\_seat\_interface}}
+\index{wl\_seat\_interface@{wl\_seat\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{wl\_seat\_interface}{wl\_seat\_interface}}
+{\footnotesize\ttfamily const struct wl\+\_\+interface wl\+\_\+seat\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{xdg-shell-protocol_8c_ab5b94bcc25b21d2fdd945533016d0e33}\label{xdg-shell-protocol_8c_ab5b94bcc25b21d2fdd945533016d0e33} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!wl\_surface\_interface@{wl\_surface\_interface}}
+\index{wl\_surface\_interface@{wl\_surface\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{wl\_surface\_interface}{wl\_surface\_interface}}
+{\footnotesize\ttfamily const struct wl\+\_\+interface wl\+\_\+surface\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{xdg-shell-protocol_8c_aa60edf2c19b40f7ba7e31b4aa1bf8d19}\label{xdg-shell-protocol_8c_aa60edf2c19b40f7ba7e31b4aa1bf8d19} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!xdg\_popup\_interface@{xdg\_popup\_interface}}
+\index{xdg\_popup\_interface@{xdg\_popup\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{xdg\_popup\_interface}{xdg\_popup\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+popup\+\_\+interface}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_popup"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 3,\ xdg\_popup\_requests,}
+\DoxyCodeLine{\ \ \ \ 3,\ xdg\_popup\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-protocol_8c_a16a9be7454042fdc62e0418508a624d4}\label{xdg-shell-protocol_8c_a16a9be7454042fdc62e0418508a624d4} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!xdg\_positioner\_interface@{xdg\_positioner\_interface}}
+\index{xdg\_positioner\_interface@{xdg\_positioner\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{xdg\_positioner\_interface}{xdg\_positioner\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+positioner\+\_\+interface}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_positioner"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 10,\ xdg\_positioner\_requests,}
+\DoxyCodeLine{\ \ \ \ 0,\ NULL,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-protocol_8c_a5ac26be247039c7cdf4a5a26f613cfe6}\label{xdg-shell-protocol_8c_a5ac26be247039c7cdf4a5a26f613cfe6} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!xdg\_surface\_interface@{xdg\_surface\_interface}}
+\index{xdg\_surface\_interface@{xdg\_surface\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{xdg\_surface\_interface}{xdg\_surface\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+surface\+\_\+interface}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_surface"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 5,\ xdg\_surface\_requests,}
+\DoxyCodeLine{\ \ \ \ 1,\ xdg\_surface\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-protocol_8c_a41eaf1ac12f3ef225df8b9f2f6559326}\label{xdg-shell-protocol_8c_a41eaf1ac12f3ef225df8b9f2f6559326} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!xdg\_toplevel\_interface@{xdg\_toplevel\_interface}}
+\index{xdg\_toplevel\_interface@{xdg\_toplevel\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{xdg\_toplevel\_interface}{xdg\_toplevel\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+toplevel\+\_\+interface}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_toplevel"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 14,\ xdg\_toplevel\_requests,}
+\DoxyCodeLine{\ \ \ \ 4,\ xdg\_toplevel\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-protocol_8c_a23c96730741064951b7a6c714ebb9403}\label{xdg-shell-protocol_8c_a23c96730741064951b7a6c714ebb9403} 
+\index{xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}!xdg\_wm\_base\_interface@{xdg\_wm\_base\_interface}}
+\index{xdg\_wm\_base\_interface@{xdg\_wm\_base\_interface}!xdg-\/shell-\/protocol.c@{xdg-\/shell-\/protocol.c}}
+\doxysubsubsection{\texorpdfstring{xdg\_wm\_base\_interface}{xdg\_wm\_base\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+wm\+\_\+base\+\_\+interface}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_wm\_base"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 4,\ xdg\_wm\_base\_requests,}
+\DoxyCodeLine{\ \ \ \ 1,\ xdg\_wm\_base\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

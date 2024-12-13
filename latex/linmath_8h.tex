@@ -1,0 +1,390 @@
+\doxysection{backends/linmath.h File Reference}
+\hypertarget{linmath_8h}{}\label{linmath_8h}\index{backends/linmath.h@{backends/linmath.h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}}~static inline
+\item 
+\#define \mbox{\hyperlink{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775}{LINMATH\+\_\+\+H\+\_\+\+DEFINE\+\_\+\+VEC}}(n)
+\item 
+\#define \mbox{\hyperlink{linmath_8h_a91d0dea76999b8527cface69c7f77931}{quat\+\_\+add}}~vec4\+\_\+add
+\item 
+\#define \mbox{\hyperlink{linmath_8h_afbabaaf89254c467e28e2a002308eee9}{quat\+\_\+sub}}~vec4\+\_\+sub
+\item 
+\#define \mbox{\hyperlink{linmath_8h_a21821adb8fabe3f18cc3c7bc0effdf69}{quat\+\_\+norm}}~vec4\+\_\+norm
+\item 
+\#define \mbox{\hyperlink{linmath_8h_acb9bf907ed11651d989d237f38b46294}{quat\+\_\+scale}}~vec4\+\_\+scale
+\item 
+\#define \mbox{\hyperlink{linmath_8h_a682fe39e56b46a240dab311f45700b4e}{quat\+\_\+mul\+\_\+inner}}~vec4\+\_\+mul\+\_\+inner
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef vec4 \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\mbox{[}4\mbox{]}
+\item 
+typedef float \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_afd95d1931b51103bc155e67756e1ef29}{vec3\+\_\+mul\+\_\+cross}} (vec3 r, vec3 const a, vec3 const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a43e6aab778685cdb8512d4003a39d02a}{vec3\+\_\+reflect}} (vec3 r, vec3 const v, vec3 const n)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_af3d3a5c4e2f91b1e42d0265b56047389}{vec4\+\_\+mul\+\_\+cross}} (vec4 r, vec4 const a, vec4 const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_accff7310b38c9e47fc632acbb3be0bc8}{vec4\+\_\+reflect}} (vec4 r, vec4 const v, vec4 const n)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aad0e22fd1665595210c79fb825273381}{mat4x4\+\_\+identity}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a61fdfe9ec0ea6783e549a9c98e86e75a}{mat4x4\+\_\+dup}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const N)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a2266fae5e790b073bd4323f8c421ba67}{mat4x4\+\_\+row}} (vec4 r, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, int i)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ae80dd6e807428d93214a4300f8ef8322}{mat4x4\+\_\+col}} (vec4 r, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, int i)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ade6936711c1f9f0150f6428c42612ffd}{mat4x4\+\_\+transpose}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const N)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ac37333aa8702d1458341ea784c5189be}{mat4x4\+\_\+add}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const a, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a96a717dba6fc7097c5f6483dd80be9ea}{mat4x4\+\_\+sub}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const a, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a06e3c8273a1d907a5431bc908302a199}{mat4x4\+\_\+scale}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const a, float k)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a380c2917f007e807949091b8ea6805c9}{mat4x4\+\_\+scale\+\_\+aniso}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const a, float x, float y, float z)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a62186c7d2461116c23967d35cf437e00}{mat4x4\+\_\+mul}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const a, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ab19343c1e9a327998b8ab4bcf3c773fd}{mat4x4\+\_\+mul\+\_\+vec4}} (vec4 r, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, vec4 const v)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ab15e9b6c0e6e2a093794634985f11d23}{mat4x4\+\_\+translate}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} T, float x, float y, float z)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aeee92b2bb754bab7d7cfecb086c39f98}{mat4x4\+\_\+translate\+\_\+in\+\_\+place}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, float x, float y, float z)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ab0d245df6150cca082a2f085741ba782}{mat4x4\+\_\+from\+\_\+vec3\+\_\+mul\+\_\+outer}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, vec3 const a, vec3 const b)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aa8f51485d3a02adbc1b19d8f57c70182}{mat4x4\+\_\+rotate}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} R, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, float x, float y, float z, float angle)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a397b6fb85e8187d914401b0aae456d4b}{mat4x4\+\_\+rotate\+\_\+X}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} Q, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, float angle)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a5a9007e3ee92515ab3ded697ab912db8}{mat4x4\+\_\+rotate\+\_\+Y}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} Q, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, float angle)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aac10514a034a5e6dc90ae5911141fb78}{mat4x4\+\_\+rotate\+\_\+Z}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} Q, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, float angle)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_ac141e4c0f18f60891cfafb472d6fb3b8}{mat4x4\+\_\+invert}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} T, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a56129a6ccb43590de0d29f92817d5449}{mat4x4\+\_\+orthonormalize}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} R, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a3f0fbe8a6757044636cc1446a3f72955}{mat4x4\+\_\+frustum}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, float l, float r, float b, float t, float n, float f)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a9d5fe21cb49e77776d3100a0d2e0ce31}{mat4x4\+\_\+ortho}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, float l, float r, float b, float t, float n, float f)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a94145cd87abb64ac311b7937f5b822b6}{mat4x4\+\_\+perspective}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} m, float y\+\_\+fov, float aspect, float n, float f)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a730f784f4cba86a5bacb673ed937acc7}{mat4x4\+\_\+look\+\_\+at}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} m, vec3 const eye, vec3 const center, vec3 const up)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a1c49cb959a3967c47c167dc7b65658af}{quat\+\_\+identity}} (\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} q)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a31b4a72cd5933b0bdc98b2832d6394ed}{quat\+\_\+mul}} (\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} r, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const p, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const q)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aa2cb011f5a077c66f91c23d0f530550f}{quat\+\_\+conj}} (\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} r, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const q)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_af0d00fd932d4541debf0180eef81c26e}{quat\+\_\+rotate}} (\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} r, float angle, vec3 const axis)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a7746b1768a8e1b07585e553dba435747}{quat\+\_\+mul\+\_\+vec3}} (vec3 r, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const q, vec3 const v)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_a407ec1d966239da2f07beeddd40aeba1}{mat4x4\+\_\+from\+\_\+quat}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} M, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const q)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aacd53a501358eeb31d375bc78730ddf7}{mat4x4o\+\_\+mul\+\_\+quat}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} R, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const q)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_afcdc8bb96badc95f15b352e182f135dc}{quat\+\_\+from\+\_\+mat4x4}} (\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} q, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M)
+\item 
+\mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void \mbox{\hyperlink{linmath_8h_aefcb0a03c5926d1c439fe88a0436237b}{mat4x4\+\_\+arcball}} (\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} R, \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const M, vec2 const \+\_\+a, vec2 const \+\_\+b, float s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775}\label{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775} 
+\index{linmath.h@{linmath.h}!LINMATH\_H\_DEFINE\_VEC@{LINMATH\_H\_DEFINE\_VEC}}
+\index{LINMATH\_H\_DEFINE\_VEC@{LINMATH\_H\_DEFINE\_VEC}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{LINMATH\_H\_DEFINE\_VEC}{LINMATH\_H\_DEFINE\_VEC}}
+{\footnotesize\ttfamily \#define LINMATH\+\_\+\+H\+\_\+\+DEFINE\+\_\+\+VEC(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}\label{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542} 
+\index{linmath.h@{linmath.h}!LINMATH\_H\_FUNC@{LINMATH\_H\_FUNC}}
+\index{LINMATH\_H\_FUNC@{LINMATH\_H\_FUNC}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{LINMATH\_H\_FUNC}{LINMATH\_H\_FUNC}}
+{\footnotesize\ttfamily \#define LINMATH\+\_\+\+H\+\_\+\+FUNC~static inline}
+
+\Hypertarget{linmath_8h_a91d0dea76999b8527cface69c7f77931}\label{linmath_8h_a91d0dea76999b8527cface69c7f77931} 
+\index{linmath.h@{linmath.h}!quat\_add@{quat\_add}}
+\index{quat\_add@{quat\_add}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_add}{quat\_add}}
+{\footnotesize\ttfamily \#define quat\+\_\+add~vec4\+\_\+add}
+
+\Hypertarget{linmath_8h_a682fe39e56b46a240dab311f45700b4e}\label{linmath_8h_a682fe39e56b46a240dab311f45700b4e} 
+\index{linmath.h@{linmath.h}!quat\_mul\_inner@{quat\_mul\_inner}}
+\index{quat\_mul\_inner@{quat\_mul\_inner}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_mul\_inner}{quat\_mul\_inner}}
+{\footnotesize\ttfamily \#define quat\+\_\+mul\+\_\+inner~vec4\+\_\+mul\+\_\+inner}
+
+\Hypertarget{linmath_8h_a21821adb8fabe3f18cc3c7bc0effdf69}\label{linmath_8h_a21821adb8fabe3f18cc3c7bc0effdf69} 
+\index{linmath.h@{linmath.h}!quat\_norm@{quat\_norm}}
+\index{quat\_norm@{quat\_norm}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_norm}{quat\_norm}}
+{\footnotesize\ttfamily \#define quat\+\_\+norm~vec4\+\_\+norm}
+
+\Hypertarget{linmath_8h_acb9bf907ed11651d989d237f38b46294}\label{linmath_8h_acb9bf907ed11651d989d237f38b46294} 
+\index{linmath.h@{linmath.h}!quat\_scale@{quat\_scale}}
+\index{quat\_scale@{quat\_scale}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_scale}{quat\_scale}}
+{\footnotesize\ttfamily \#define quat\+\_\+scale~vec4\+\_\+scale}
+
+\Hypertarget{linmath_8h_afbabaaf89254c467e28e2a002308eee9}\label{linmath_8h_afbabaaf89254c467e28e2a002308eee9} 
+\index{linmath.h@{linmath.h}!quat\_sub@{quat\_sub}}
+\index{quat\_sub@{quat\_sub}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_sub}{quat\_sub}}
+{\footnotesize\ttfamily \#define quat\+\_\+sub~vec4\+\_\+sub}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{linmath_8h_aea448460b62175f89ed5760877496434}\label{linmath_8h_aea448460b62175f89ed5760877496434} 
+\index{linmath.h@{linmath.h}!mat4x4@{mat4x4}}
+\index{mat4x4@{mat4x4}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4}{mat4x4}}
+{\footnotesize\ttfamily typedef vec4 mat4x4\mbox{[}4\mbox{]}}
+
+\Hypertarget{linmath_8h_ae0543f2eba665379de2ca111c187ce65}\label{linmath_8h_ae0543f2eba665379de2ca111c187ce65} 
+\index{linmath.h@{linmath.h}!quat@{quat}}
+\index{quat@{quat}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat}{quat}}
+{\footnotesize\ttfamily typedef float quat\mbox{[}4\mbox{]}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{linmath_8h_ac37333aa8702d1458341ea784c5189be}\label{linmath_8h_ac37333aa8702d1458341ea784c5189be} 
+\index{linmath.h@{linmath.h}!mat4x4\_add@{mat4x4\_add}}
+\index{mat4x4\_add@{mat4x4\_add}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_add()}{mat4x4\_add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{a,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aefcb0a03c5926d1c439fe88a0436237b}\label{linmath_8h_aefcb0a03c5926d1c439fe88a0436237b} 
+\index{linmath.h@{linmath.h}!mat4x4\_arcball@{mat4x4\_arcball}}
+\index{mat4x4\_arcball@{mat4x4\_arcball}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_arcball()}{mat4x4\_arcball()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+arcball (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{R,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{vec2 const}]{\+\_\+a,  }\item[{vec2 const}]{\+\_\+b,  }\item[{float}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ae80dd6e807428d93214a4300f8ef8322}\label{linmath_8h_ae80dd6e807428d93214a4300f8ef8322} 
+\index{linmath.h@{linmath.h}!mat4x4\_col@{mat4x4\_col}}
+\index{mat4x4\_col@{mat4x4\_col}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_col()}{mat4x4\_col()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+col (\begin{DoxyParamCaption}\item[{vec4}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a61fdfe9ec0ea6783e549a9c98e86e75a}\label{linmath_8h_a61fdfe9ec0ea6783e549a9c98e86e75a} 
+\index{linmath.h@{linmath.h}!mat4x4\_dup@{mat4x4\_dup}}
+\index{mat4x4\_dup@{mat4x4\_dup}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_dup()}{mat4x4\_dup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+dup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{N }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a407ec1d966239da2f07beeddd40aeba1}\label{linmath_8h_a407ec1d966239da2f07beeddd40aeba1} 
+\index{linmath.h@{linmath.h}!mat4x4\_from\_quat@{mat4x4\_from\_quat}}
+\index{mat4x4\_from\_quat@{mat4x4\_from\_quat}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_from\_quat()}{mat4x4\_from\_quat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+from\+\_\+quat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{q }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ab0d245df6150cca082a2f085741ba782}\label{linmath_8h_ab0d245df6150cca082a2f085741ba782} 
+\index{linmath.h@{linmath.h}!mat4x4\_from\_vec3\_mul\_outer@{mat4x4\_from\_vec3\_mul\_outer}}
+\index{mat4x4\_from\_vec3\_mul\_outer@{mat4x4\_from\_vec3\_mul\_outer}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_from\_vec3\_mul\_outer()}{mat4x4\_from\_vec3\_mul\_outer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+from\+\_\+vec3\+\_\+mul\+\_\+outer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{vec3 const}]{a,  }\item[{vec3 const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a3f0fbe8a6757044636cc1446a3f72955}\label{linmath_8h_a3f0fbe8a6757044636cc1446a3f72955} 
+\index{linmath.h@{linmath.h}!mat4x4\_frustum@{mat4x4\_frustum}}
+\index{mat4x4\_frustum@{mat4x4\_frustum}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_frustum()}{mat4x4\_frustum()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+frustum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{float}]{l,  }\item[{float}]{r,  }\item[{float}]{b,  }\item[{float}]{t,  }\item[{float}]{n,  }\item[{float}]{f }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aad0e22fd1665595210c79fb825273381}\label{linmath_8h_aad0e22fd1665595210c79fb825273381} 
+\index{linmath.h@{linmath.h}!mat4x4\_identity@{mat4x4\_identity}}
+\index{mat4x4\_identity@{mat4x4\_identity}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_identity()}{mat4x4\_identity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+identity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ac141e4c0f18f60891cfafb472d6fb3b8}\label{linmath_8h_ac141e4c0f18f60891cfafb472d6fb3b8} 
+\index{linmath.h@{linmath.h}!mat4x4\_invert@{mat4x4\_invert}}
+\index{mat4x4\_invert@{mat4x4\_invert}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_invert()}{mat4x4\_invert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+invert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{T,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a730f784f4cba86a5bacb673ed937acc7}\label{linmath_8h_a730f784f4cba86a5bacb673ed937acc7} 
+\index{linmath.h@{linmath.h}!mat4x4\_look\_at@{mat4x4\_look\_at}}
+\index{mat4x4\_look\_at@{mat4x4\_look\_at}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_look\_at()}{mat4x4\_look\_at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+look\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{m,  }\item[{vec3 const}]{eye,  }\item[{vec3 const}]{center,  }\item[{vec3 const}]{up }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a62186c7d2461116c23967d35cf437e00}\label{linmath_8h_a62186c7d2461116c23967d35cf437e00} 
+\index{linmath.h@{linmath.h}!mat4x4\_mul@{mat4x4\_mul}}
+\index{mat4x4\_mul@{mat4x4\_mul}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_mul()}{mat4x4\_mul()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{a,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ab19343c1e9a327998b8ab4bcf3c773fd}\label{linmath_8h_ab19343c1e9a327998b8ab4bcf3c773fd} 
+\index{linmath.h@{linmath.h}!mat4x4\_mul\_vec4@{mat4x4\_mul\_vec4}}
+\index{mat4x4\_mul\_vec4@{mat4x4\_mul\_vec4}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_mul\_vec4()}{mat4x4\_mul\_vec4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+mul\+\_\+vec4 (\begin{DoxyParamCaption}\item[{vec4}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{vec4 const}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a9d5fe21cb49e77776d3100a0d2e0ce31}\label{linmath_8h_a9d5fe21cb49e77776d3100a0d2e0ce31} 
+\index{linmath.h@{linmath.h}!mat4x4\_ortho@{mat4x4\_ortho}}
+\index{mat4x4\_ortho@{mat4x4\_ortho}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_ortho()}{mat4x4\_ortho()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+ortho (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{float}]{l,  }\item[{float}]{r,  }\item[{float}]{b,  }\item[{float}]{t,  }\item[{float}]{n,  }\item[{float}]{f }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a56129a6ccb43590de0d29f92817d5449}\label{linmath_8h_a56129a6ccb43590de0d29f92817d5449} 
+\index{linmath.h@{linmath.h}!mat4x4\_orthonormalize@{mat4x4\_orthonormalize}}
+\index{mat4x4\_orthonormalize@{mat4x4\_orthonormalize}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_orthonormalize()}{mat4x4\_orthonormalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+orthonormalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{R,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a94145cd87abb64ac311b7937f5b822b6}\label{linmath_8h_a94145cd87abb64ac311b7937f5b822b6} 
+\index{linmath.h@{linmath.h}!mat4x4\_perspective@{mat4x4\_perspective}}
+\index{mat4x4\_perspective@{mat4x4\_perspective}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_perspective()}{mat4x4\_perspective()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+perspective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{m,  }\item[{float}]{y\+\_\+fov,  }\item[{float}]{aspect,  }\item[{float}]{n,  }\item[{float}]{f }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aa8f51485d3a02adbc1b19d8f57c70182}\label{linmath_8h_aa8f51485d3a02adbc1b19d8f57c70182} 
+\index{linmath.h@{linmath.h}!mat4x4\_rotate@{mat4x4\_rotate}}
+\index{mat4x4\_rotate@{mat4x4\_rotate}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_rotate()}{mat4x4\_rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{R,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a397b6fb85e8187d914401b0aae456d4b}\label{linmath_8h_a397b6fb85e8187d914401b0aae456d4b} 
+\index{linmath.h@{linmath.h}!mat4x4\_rotate\_X@{mat4x4\_rotate\_X}}
+\index{mat4x4\_rotate\_X@{mat4x4\_rotate\_X}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_rotate\_X()}{mat4x4\_rotate\_X()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+rotate\+\_\+X (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{Q,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a5a9007e3ee92515ab3ded697ab912db8}\label{linmath_8h_a5a9007e3ee92515ab3ded697ab912db8} 
+\index{linmath.h@{linmath.h}!mat4x4\_rotate\_Y@{mat4x4\_rotate\_Y}}
+\index{mat4x4\_rotate\_Y@{mat4x4\_rotate\_Y}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_rotate\_Y()}{mat4x4\_rotate\_Y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+rotate\+\_\+Y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{Q,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aac10514a034a5e6dc90ae5911141fb78}\label{linmath_8h_aac10514a034a5e6dc90ae5911141fb78} 
+\index{linmath.h@{linmath.h}!mat4x4\_rotate\_Z@{mat4x4\_rotate\_Z}}
+\index{mat4x4\_rotate\_Z@{mat4x4\_rotate\_Z}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_rotate\_Z()}{mat4x4\_rotate\_Z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+rotate\+\_\+Z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{Q,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a2266fae5e790b073bd4323f8c421ba67}\label{linmath_8h_a2266fae5e790b073bd4323f8c421ba67} 
+\index{linmath.h@{linmath.h}!mat4x4\_row@{mat4x4\_row}}
+\index{mat4x4\_row@{mat4x4\_row}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_row()}{mat4x4\_row()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+row (\begin{DoxyParamCaption}\item[{vec4}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a06e3c8273a1d907a5431bc908302a199}\label{linmath_8h_a06e3c8273a1d907a5431bc908302a199} 
+\index{linmath.h@{linmath.h}!mat4x4\_scale@{mat4x4\_scale}}
+\index{mat4x4\_scale@{mat4x4\_scale}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_scale()}{mat4x4\_scale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{a,  }\item[{float}]{k }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a380c2917f007e807949091b8ea6805c9}\label{linmath_8h_a380c2917f007e807949091b8ea6805c9} 
+\index{linmath.h@{linmath.h}!mat4x4\_scale\_aniso@{mat4x4\_scale\_aniso}}
+\index{mat4x4\_scale\_aniso@{mat4x4\_scale\_aniso}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_scale\_aniso()}{mat4x4\_scale\_aniso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+scale\+\_\+aniso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{a,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a96a717dba6fc7097c5f6483dd80be9ea}\label{linmath_8h_a96a717dba6fc7097c5f6483dd80be9ea} 
+\index{linmath.h@{linmath.h}!mat4x4\_sub@{mat4x4\_sub}}
+\index{mat4x4\_sub@{mat4x4\_sub}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_sub()}{mat4x4\_sub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{a,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ab15e9b6c0e6e2a093794634985f11d23}\label{linmath_8h_ab15e9b6c0e6e2a093794634985f11d23} 
+\index{linmath.h@{linmath.h}!mat4x4\_translate@{mat4x4\_translate}}
+\index{mat4x4\_translate@{mat4x4\_translate}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_translate()}{mat4x4\_translate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{T,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aeee92b2bb754bab7d7cfecb086c39f98}\label{linmath_8h_aeee92b2bb754bab7d7cfecb086c39f98} 
+\index{linmath.h@{linmath.h}!mat4x4\_translate\_in\_place@{mat4x4\_translate\_in\_place}}
+\index{mat4x4\_translate\_in\_place@{mat4x4\_translate\_in\_place}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_translate\_in\_place()}{mat4x4\_translate\_in\_place()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+translate\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_ade6936711c1f9f0150f6428c42612ffd}\label{linmath_8h_ade6936711c1f9f0150f6428c42612ffd} 
+\index{linmath.h@{linmath.h}!mat4x4\_transpose@{mat4x4\_transpose}}
+\index{mat4x4\_transpose@{mat4x4\_transpose}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4\_transpose()}{mat4x4\_transpose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4\+\_\+transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{N }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aacd53a501358eeb31d375bc78730ddf7}\label{linmath_8h_aacd53a501358eeb31d375bc78730ddf7} 
+\index{linmath.h@{linmath.h}!mat4x4o\_mul\_quat@{mat4x4o\_mul\_quat}}
+\index{mat4x4o\_mul\_quat@{mat4x4o\_mul\_quat}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{mat4x4o\_mul\_quat()}{mat4x4o\_mul\_quat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void mat4x4o\+\_\+mul\+\_\+quat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}}]{R,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{q }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_aa2cb011f5a077c66f91c23d0f530550f}\label{linmath_8h_aa2cb011f5a077c66f91c23d0f530550f} 
+\index{linmath.h@{linmath.h}!quat\_conj@{quat\_conj}}
+\index{quat\_conj@{quat\_conj}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_conj()}{quat\_conj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+conj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{q }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_afcdc8bb96badc95f15b352e182f135dc}\label{linmath_8h_afcdc8bb96badc95f15b352e182f135dc} 
+\index{linmath.h@{linmath.h}!quat\_from\_mat4x4@{quat\_from\_mat4x4}}
+\index{quat\_from\_mat4x4@{quat\_from\_mat4x4}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_from\_mat4x4()}{quat\_from\_mat4x4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+from\+\_\+mat4x4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}}]{q,  }\item[{\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} const}]{M }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a1c49cb959a3967c47c167dc7b65658af}\label{linmath_8h_a1c49cb959a3967c47c167dc7b65658af} 
+\index{linmath.h@{linmath.h}!quat\_identity@{quat\_identity}}
+\index{quat\_identity@{quat\_identity}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_identity()}{quat\_identity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+identity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}}]{q }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a31b4a72cd5933b0bdc98b2832d6394ed}\label{linmath_8h_a31b4a72cd5933b0bdc98b2832d6394ed} 
+\index{linmath.h@{linmath.h}!quat\_mul@{quat\_mul}}
+\index{quat\_mul@{quat\_mul}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_mul()}{quat\_mul()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{p,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{q }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a7746b1768a8e1b07585e553dba435747}\label{linmath_8h_a7746b1768a8e1b07585e553dba435747} 
+\index{linmath.h@{linmath.h}!quat\_mul\_vec3@{quat\_mul\_vec3}}
+\index{quat\_mul\_vec3@{quat\_mul\_vec3}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_mul\_vec3()}{quat\_mul\_vec3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+mul\+\_\+vec3 (\begin{DoxyParamCaption}\item[{vec3}]{r,  }\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}} const}]{q,  }\item[{vec3 const}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_af0d00fd932d4541debf0180eef81c26e}\label{linmath_8h_af0d00fd932d4541debf0180eef81c26e} 
+\index{linmath.h@{linmath.h}!quat\_rotate@{quat\_rotate}}
+\index{quat\_rotate@{quat\_rotate}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{quat\_rotate()}{quat\_rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void quat\+\_\+rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}}]{r,  }\item[{float}]{angle,  }\item[{vec3 const}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_afd95d1931b51103bc155e67756e1ef29}\label{linmath_8h_afd95d1931b51103bc155e67756e1ef29} 
+\index{linmath.h@{linmath.h}!vec3\_mul\_cross@{vec3\_mul\_cross}}
+\index{vec3\_mul\_cross@{vec3\_mul\_cross}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{vec3\_mul\_cross()}{vec3\_mul\_cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void vec3\+\_\+mul\+\_\+cross (\begin{DoxyParamCaption}\item[{vec3}]{r,  }\item[{vec3 const}]{a,  }\item[{vec3 const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_a43e6aab778685cdb8512d4003a39d02a}\label{linmath_8h_a43e6aab778685cdb8512d4003a39d02a} 
+\index{linmath.h@{linmath.h}!vec3\_reflect@{vec3\_reflect}}
+\index{vec3\_reflect@{vec3\_reflect}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{vec3\_reflect()}{vec3\_reflect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void vec3\+\_\+reflect (\begin{DoxyParamCaption}\item[{vec3}]{r,  }\item[{vec3 const}]{v,  }\item[{vec3 const}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_af3d3a5c4e2f91b1e42d0265b56047389}\label{linmath_8h_af3d3a5c4e2f91b1e42d0265b56047389} 
+\index{linmath.h@{linmath.h}!vec4\_mul\_cross@{vec4\_mul\_cross}}
+\index{vec4\_mul\_cross@{vec4\_mul\_cross}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{vec4\_mul\_cross()}{vec4\_mul\_cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void vec4\+\_\+mul\+\_\+cross (\begin{DoxyParamCaption}\item[{vec4}]{r,  }\item[{vec4 const}]{a,  }\item[{vec4 const}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{linmath_8h_accff7310b38c9e47fc632acbb3be0bc8}\label{linmath_8h_accff7310b38c9e47fc632acbb3be0bc8} 
+\index{linmath.h@{linmath.h}!vec4\_reflect@{vec4\_reflect}}
+\index{vec4\_reflect@{vec4\_reflect}!linmath.h@{linmath.h}}
+\doxysubsubsection{\texorpdfstring{vec4\_reflect()}{vec4\_reflect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_a4ebda4dd54615e1cac0ff1fde2725542}{LINMATH\+\_\+\+H\+\_\+\+FUNC}} void vec4\+\_\+reflect (\begin{DoxyParamCaption}\item[{vec4}]{r,  }\item[{vec4 const}]{v,  }\item[{vec4 const}]{n }\end{DoxyParamCaption})}
+

@@ -1,0 +1,82 @@
+\doxysection{The xdg\+\_\+surface interface}
+\hypertarget{group__iface__xdg__surface}{}\label{group__iface__xdg__surface}\index{The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structxdg__surface__listener}{xdg\+\_\+surface\+\_\+listener}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga2acbd1b0ff328849e1361a7780359fc5}{XDG\+\_\+\+SURFACE\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga1c020ae2a40d1226b8d1abdb2a44d6d2}{XDG\+\_\+\+SURFACE\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_gafed63dcd957649c646efce2e1490ca15}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+TOPLEVEL\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga7c0a54d91515d011cc8eaa3d80bfc210}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+POPUP\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga812da97812a66b79d7aa6b7ce83f235d}{XDG\+\_\+\+SURFACE\+\_\+\+SET\+\_\+\+WINDOW\+\_\+\+GEOMETRY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_gaeb6df9edb1ab268d056a9f2cce72d46e}{XDG\+\_\+\+SURFACE\+\_\+\+ACK\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface that may be implemented by a wl\+\_\+surface, for implementations that provide a desktop-\/style user interface.
+
+It provides a base set of functionality required to construct user interface elements requiring management by the compositor, such as toplevel windows, menus, etc. The types of functionality are split into xdg\+\_\+surface roles.
+
+Creating an xdg\+\_\+surface does not set the role for a wl\+\_\+surface. In order to map an xdg\+\_\+surface, the client must create a role-\/specific object using, e.\+g., get\+\_\+toplevel, get\+\_\+popup. The wl\+\_\+surface for any given xdg\+\_\+surface can have at most one role, and may not be assigned any role not based on xdg\+\_\+surface.
+
+A role must be assigned before any other requests are made to the xdg\+\_\+surface object.
+
+The client must call wl\+\_\+surface.\+commit on the corresponding wl\+\_\+surface for the xdg\+\_\+surface state to take effect.
+
+Creating an xdg\+\_\+surface from a wl\+\_\+surface which has a buffer attached or committed is a client error, and any attempts by a client to attach or manipulate a buffer prior to the first xdg\+\_\+surface.\+configure call must also be treated as errors.
+
+After creating a role-\/specific object and setting it up (e.\+g. by sending the title, app ID, size constraints, parent, etc), the client must perform an initial commit without any buffer attached. The compositor will reply with initial wl\+\_\+surface state such as wl\+\_\+surface.\+preferred\+\_\+buffer\+\_\+scale followed by an xdg\+\_\+surface.\+configure event. The client must acknowledge it and is then allowed to attach a buffer to map the surface.
+
+Mapping an xdg\+\_\+surface-\/based role surface is defined as making it possible for the surface to be shown by the compositor. Note that a mapped surface is not guaranteed to be visible once it is mapped.
+
+For an xdg\+\_\+surface to be mapped by the compositor, the following conditions must be met\+: (1) the client has assigned an xdg\+\_\+surface-\/based role to the surface (2) the client has set and committed the xdg\+\_\+surface state and the role-\/dependent state to the surface (3) the client has committed a buffer to the surface
+
+A newly-\/unmapped surface is considered to have met condition (1) out of the 3 required conditions for mapping a surface if its role surface has not been destroyed, i.\+e. the client must perform the initial commit again before attaching a buffer. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__iface__xdg__surface_gaeb6df9edb1ab268d056a9f2cce72d46e}\label{group__iface__xdg__surface_gaeb6df9edb1ab268d056a9f2cce72d46e} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION@{XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION@{XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION}{XDG\_SURFACE\_ACK\_CONFIGURE\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+ACK\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION~1}
+
+\Hypertarget{group__iface__xdg__surface_ga2acbd1b0ff328849e1361a7780359fc5}\label{group__iface__xdg__surface_ga2acbd1b0ff328849e1361a7780359fc5} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION@{XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION@{XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION}{XDG\_SURFACE\_CONFIGURE\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION~1}
+
+\Hypertarget{group__iface__xdg__surface_ga1c020ae2a40d1226b8d1abdb2a44d6d2}\label{group__iface__xdg__surface_ga1c020ae2a40d1226b8d1abdb2a44d6d2} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_DESTROY\_SINCE\_VERSION@{XDG\_SURFACE\_DESTROY\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_DESTROY\_SINCE\_VERSION@{XDG\_SURFACE\_DESTROY\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_DESTROY\_SINCE\_VERSION}{XDG\_SURFACE\_DESTROY\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION~1}
+
+\Hypertarget{group__iface__xdg__surface_ga7c0a54d91515d011cc8eaa3d80bfc210}\label{group__iface__xdg__surface_ga7c0a54d91515d011cc8eaa3d80bfc210} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION@{XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION@{XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION}{XDG\_SURFACE\_GET\_POPUP\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+POPUP\+\_\+\+SINCE\+\_\+\+VERSION~1}
+
+\Hypertarget{group__iface__xdg__surface_gafed63dcd957649c646efce2e1490ca15}\label{group__iface__xdg__surface_gafed63dcd957649c646efce2e1490ca15} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION@{XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION@{XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION}{XDG\_SURFACE\_GET\_TOPLEVEL\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+TOPLEVEL\+\_\+\+SINCE\+\_\+\+VERSION~1}
+
+\Hypertarget{group__iface__xdg__surface_ga812da97812a66b79d7aa6b7ce83f235d}\label{group__iface__xdg__surface_ga812da97812a66b79d7aa6b7ce83f235d} 
+\index{The xdg\_surface interface@{The xdg\_surface interface}!XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION@{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION}}
+\index{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION@{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION}!The xdg\_surface interface@{The xdg\_surface interface}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION}{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY\_SINCE\_VERSION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+SET\+\_\+\+WINDOW\+\_\+\+GEOMETRY\+\_\+\+SINCE\+\_\+\+VERSION~1}
+

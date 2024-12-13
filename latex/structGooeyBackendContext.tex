@@ -1,0 +1,215 @@
+\doxysection{Gooey\+Backend\+Context Struct Reference}
+\hypertarget{structGooeyBackendContext}{}\label{structGooeyBackendContext}\index{GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a76a21c109ff3cda8d04c7a45b536dd2b}{current\+\_\+event}}
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a3c63abc83f45a7005d9b7184dbf737b5}{window}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_a4bd0df668ca931b24173943074340cdd}{text\+\_\+program}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_a67ce9eb0babbd1fa9736dc20c488195b}{shape\+\_\+program}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_af3fa500d9a6e3144316be4d9099fb8c5}{text\+\_\+vao}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_a5575ea2dfd6047cd7857801e9d2d972a}{text\+\_\+vbo}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_a056b1bcff76cc69918617d136806b684}{shape\+\_\+vao}}
+\item 
+GLuint \mbox{\hyperlink{structGooeyBackendContext_a4e0ddeb9ffb13d6f10f0d744a79f224c}{shape\+\_\+vbo}}
+\item 
+\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} \mbox{\hyperlink{structGooeyBackendContext_a40179db1930430a25d08df469714af77}{projection}}
+\item 
+Character \mbox{\hyperlink{structGooeyBackendContext_aad47e13028a3a87e4d881d7e64d277b9}{characters}} \mbox{[}128\mbox{]}
+\item 
+char \mbox{\hyperlink{structGooeyBackendContext_a6a4354f0af78f90616b1b1906a76dafd}{font\+\_\+path}} \mbox{[}256\mbox{]}
+\item 
+unsigned int \mbox{\hyperlink{structGooeyBackendContext_ad890be48675d35a27f5f7587eaa3b2a9}{selected\+\_\+color}}
+\item 
+struct wl\+\_\+surface \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_ac15505df452b702bb246ec14a1afbc52}{surface}}
+\item 
+struct wl\+\_\+shm \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a7ac8830f9154378e2c80fba20085adcd}{shm}}
+\item 
+struct wl\+\_\+buffer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a64ba9dfedfe2ca320f7ee1cc5028958d}{buffer}}
+\item 
+struct xdg\+\_\+wm\+\_\+base \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a92e249460a32b9734bf0ea2645f1726b}{wm\+\_\+base}}
+\item 
+struct xdg\+\_\+surface \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a078edfa1901ed19e1a69a2948e70ff4c}{xdg\+\_\+surface}}
+\item 
+struct xdg\+\_\+toplevel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a8e53352fa17d5b1132a9ac63ab3e196b}{xdg\+\_\+toplevel}}
+\item 
+struct wl\+\_\+display \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a916a3d2165876e985771e5a8b0e38c36}{display}}
+\item 
+struct wl\+\_\+compositor \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a39f623a542778bcbbb87d04a6b439ffd}{compositor}}
+\item 
+Display \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_a64ebd70ecbc32d67b8ded4031cba0a15}{display}}
+\item 
+Window \mbox{\hyperlink{structGooeyBackendContext_a9c9f4ffa530ab20720e3d7e1486fb8bc}{window}}
+\item 
+GC \mbox{\hyperlink{structGooeyBackendContext_a27ae80b859ad1333d72b7c2d310355f8}{gc}}
+\item 
+Atom \mbox{\hyperlink{structGooeyBackendContext_a765c27fa0d1302f6c3e7e444b208248b}{wm\+\_\+delete\+\_\+window}}
+\item 
+XFont\+Struct \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGooeyBackendContext_ae11e04fc4c8483059eb0196b8b242e54}{font}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structGooeyBackendContext_a64ba9dfedfe2ca320f7ee1cc5028958d}\label{structGooeyBackendContext_a64ba9dfedfe2ca320f7ee1cc5028958d} 
+\index{GooeyBackendContext@{GooeyBackendContext}!buffer@{buffer}}
+\index{buffer@{buffer}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily struct wl\+\_\+buffer\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::buffer}
+
+\Hypertarget{structGooeyBackendContext_aad47e13028a3a87e4d881d7e64d277b9}\label{structGooeyBackendContext_aad47e13028a3a87e4d881d7e64d277b9} 
+\index{GooeyBackendContext@{GooeyBackendContext}!characters@{characters}}
+\index{characters@{characters}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{characters}{characters}}
+{\footnotesize\ttfamily Character Gooey\+Backend\+Context\+::characters\mbox{[}128\mbox{]}}
+
+\Hypertarget{structGooeyBackendContext_a39f623a542778bcbbb87d04a6b439ffd}\label{structGooeyBackendContext_a39f623a542778bcbbb87d04a6b439ffd} 
+\index{GooeyBackendContext@{GooeyBackendContext}!compositor@{compositor}}
+\index{compositor@{compositor}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{compositor}{compositor}}
+{\footnotesize\ttfamily struct wl\+\_\+compositor\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::compositor}
+
+\Hypertarget{structGooeyBackendContext_a76a21c109ff3cda8d04c7a45b536dd2b}\label{structGooeyBackendContext_a76a21c109ff3cda8d04c7a45b536dd2b} 
+\index{GooeyBackendContext@{GooeyBackendContext}!current\_event@{current\_event}}
+\index{current\_event@{current\_event}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{current\_event}{current\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}}\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::current\+\_\+event}
+
+\Hypertarget{structGooeyBackendContext_a916a3d2165876e985771e5a8b0e38c36}\label{structGooeyBackendContext_a916a3d2165876e985771e5a8b0e38c36} 
+\index{GooeyBackendContext@{GooeyBackendContext}!display@{display}}
+\index{display@{display}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{display}{display}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily struct wl\+\_\+display\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::display}
+
+\Hypertarget{structGooeyBackendContext_a64ebd70ecbc32d67b8ded4031cba0a15}\label{structGooeyBackendContext_a64ebd70ecbc32d67b8ded4031cba0a15} 
+\index{GooeyBackendContext@{GooeyBackendContext}!display@{display}}
+\index{display@{display}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{display}{display}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Display\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::display}
+
+X11 display connection. \Hypertarget{structGooeyBackendContext_ae11e04fc4c8483059eb0196b8b242e54}\label{structGooeyBackendContext_ae11e04fc4c8483059eb0196b8b242e54} 
+\index{GooeyBackendContext@{GooeyBackendContext}!font@{font}}
+\index{font@{font}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily XFont\+Struct\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::font}
+
+X11 font structure for text rendering. \Hypertarget{structGooeyBackendContext_a6a4354f0af78f90616b1b1906a76dafd}\label{structGooeyBackendContext_a6a4354f0af78f90616b1b1906a76dafd} 
+\index{GooeyBackendContext@{GooeyBackendContext}!font\_path@{font\_path}}
+\index{font\_path@{font\_path}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{font\_path}{font\_path}}
+{\footnotesize\ttfamily char Gooey\+Backend\+Context\+::font\+\_\+path\mbox{[}256\mbox{]}}
+
+\Hypertarget{structGooeyBackendContext_a27ae80b859ad1333d72b7c2d310355f8}\label{structGooeyBackendContext_a27ae80b859ad1333d72b7c2d310355f8} 
+\index{GooeyBackendContext@{GooeyBackendContext}!gc@{gc}}
+\index{gc@{gc}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{gc}{gc}}
+{\footnotesize\ttfamily GC Gooey\+Backend\+Context\+::gc}
+
+Graphics context for rendering. \Hypertarget{structGooeyBackendContext_a40179db1930430a25d08df469714af77}\label{structGooeyBackendContext_a40179db1930430a25d08df469714af77} 
+\index{GooeyBackendContext@{GooeyBackendContext}!projection@{projection}}
+\index{projection@{projection}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{projection}{projection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}} Gooey\+Backend\+Context\+::projection}
+
+\Hypertarget{structGooeyBackendContext_ad890be48675d35a27f5f7587eaa3b2a9}\label{structGooeyBackendContext_ad890be48675d35a27f5f7587eaa3b2a9} 
+\index{GooeyBackendContext@{GooeyBackendContext}!selected\_color@{selected\_color}}
+\index{selected\_color@{selected\_color}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{selected\_color}{selected\_color}}
+{\footnotesize\ttfamily unsigned int Gooey\+Backend\+Context\+::selected\+\_\+color}
+
+\Hypertarget{structGooeyBackendContext_a67ce9eb0babbd1fa9736dc20c488195b}\label{structGooeyBackendContext_a67ce9eb0babbd1fa9736dc20c488195b} 
+\index{GooeyBackendContext@{GooeyBackendContext}!shape\_program@{shape\_program}}
+\index{shape\_program@{shape\_program}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{shape\_program}{shape\_program}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::shape\+\_\+program}
+
+\Hypertarget{structGooeyBackendContext_a056b1bcff76cc69918617d136806b684}\label{structGooeyBackendContext_a056b1bcff76cc69918617d136806b684} 
+\index{GooeyBackendContext@{GooeyBackendContext}!shape\_vao@{shape\_vao}}
+\index{shape\_vao@{shape\_vao}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{shape\_vao}{shape\_vao}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::shape\+\_\+vao}
+
+\Hypertarget{structGooeyBackendContext_a4e0ddeb9ffb13d6f10f0d744a79f224c}\label{structGooeyBackendContext_a4e0ddeb9ffb13d6f10f0d744a79f224c} 
+\index{GooeyBackendContext@{GooeyBackendContext}!shape\_vbo@{shape\_vbo}}
+\index{shape\_vbo@{shape\_vbo}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{shape\_vbo}{shape\_vbo}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::shape\+\_\+vbo}
+
+\Hypertarget{structGooeyBackendContext_a7ac8830f9154378e2c80fba20085adcd}\label{structGooeyBackendContext_a7ac8830f9154378e2c80fba20085adcd} 
+\index{GooeyBackendContext@{GooeyBackendContext}!shm@{shm}}
+\index{shm@{shm}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{shm}{shm}}
+{\footnotesize\ttfamily struct wl\+\_\+shm\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::shm}
+
+\Hypertarget{structGooeyBackendContext_ac15505df452b702bb246ec14a1afbc52}\label{structGooeyBackendContext_ac15505df452b702bb246ec14a1afbc52} 
+\index{GooeyBackendContext@{GooeyBackendContext}!surface@{surface}}
+\index{surface@{surface}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{surface}{surface}}
+{\footnotesize\ttfamily struct wl\+\_\+surface\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::surface}
+
+\Hypertarget{structGooeyBackendContext_a4bd0df668ca931b24173943074340cdd}\label{structGooeyBackendContext_a4bd0df668ca931b24173943074340cdd} 
+\index{GooeyBackendContext@{GooeyBackendContext}!text\_program@{text\_program}}
+\index{text\_program@{text\_program}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{text\_program}{text\_program}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::text\+\_\+program}
+
+\Hypertarget{structGooeyBackendContext_af3fa500d9a6e3144316be4d9099fb8c5}\label{structGooeyBackendContext_af3fa500d9a6e3144316be4d9099fb8c5} 
+\index{GooeyBackendContext@{GooeyBackendContext}!text\_vao@{text\_vao}}
+\index{text\_vao@{text\_vao}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{text\_vao}{text\_vao}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::text\+\_\+vao}
+
+\Hypertarget{structGooeyBackendContext_a5575ea2dfd6047cd7857801e9d2d972a}\label{structGooeyBackendContext_a5575ea2dfd6047cd7857801e9d2d972a} 
+\index{GooeyBackendContext@{GooeyBackendContext}!text\_vbo@{text\_vbo}}
+\index{text\_vbo@{text\_vbo}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{text\_vbo}{text\_vbo}}
+{\footnotesize\ttfamily GLuint Gooey\+Backend\+Context\+::text\+\_\+vbo}
+
+\Hypertarget{structGooeyBackendContext_a3c63abc83f45a7005d9b7184dbf737b5}\label{structGooeyBackendContext_a3c63abc83f45a7005d9b7184dbf737b5} 
+\index{GooeyBackendContext@{GooeyBackendContext}!window@{window}}
+\index{window@{window}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{window}{window}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily GLFWwindow\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::window}
+
+\Hypertarget{structGooeyBackendContext_a9c9f4ffa530ab20720e3d7e1486fb8bc}\label{structGooeyBackendContext_a9c9f4ffa530ab20720e3d7e1486fb8bc} 
+\index{GooeyBackendContext@{GooeyBackendContext}!window@{window}}
+\index{window@{window}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{window}{window}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Window Gooey\+Backend\+Context\+::window}
+
+X11 window identifier. \Hypertarget{structGooeyBackendContext_a92e249460a32b9734bf0ea2645f1726b}\label{structGooeyBackendContext_a92e249460a32b9734bf0ea2645f1726b} 
+\index{GooeyBackendContext@{GooeyBackendContext}!wm\_base@{wm\_base}}
+\index{wm\_base@{wm\_base}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{wm\_base}{wm\_base}}
+{\footnotesize\ttfamily struct xdg\+\_\+wm\+\_\+base\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::wm\+\_\+base}
+
+\Hypertarget{structGooeyBackendContext_a765c27fa0d1302f6c3e7e444b208248b}\label{structGooeyBackendContext_a765c27fa0d1302f6c3e7e444b208248b} 
+\index{GooeyBackendContext@{GooeyBackendContext}!wm\_delete\_window@{wm\_delete\_window}}
+\index{wm\_delete\_window@{wm\_delete\_window}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{wm\_delete\_window}{wm\_delete\_window}}
+{\footnotesize\ttfamily Atom Gooey\+Backend\+Context\+::wm\+\_\+delete\+\_\+window}
+
+Atom for handling window close events. \Hypertarget{structGooeyBackendContext_a078edfa1901ed19e1a69a2948e70ff4c}\label{structGooeyBackendContext_a078edfa1901ed19e1a69a2948e70ff4c} 
+\index{GooeyBackendContext@{GooeyBackendContext}!xdg\_surface@{xdg\_surface}}
+\index{xdg\_surface@{xdg\_surface}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{xdg\_surface}{xdg\_surface}}
+{\footnotesize\ttfamily struct xdg\+\_\+surface\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::xdg\+\_\+surface}
+
+\Hypertarget{structGooeyBackendContext_a8e53352fa17d5b1132a9ac63ab3e196b}\label{structGooeyBackendContext_a8e53352fa17d5b1132a9ac63ab3e196b} 
+\index{GooeyBackendContext@{GooeyBackendContext}!xdg\_toplevel@{xdg\_toplevel}}
+\index{xdg\_toplevel@{xdg\_toplevel}!GooeyBackendContext@{GooeyBackendContext}}
+\doxysubsubsection{\texorpdfstring{xdg\_toplevel}{xdg\_toplevel}}
+{\footnotesize\ttfamily struct xdg\+\_\+toplevel\texorpdfstring{$\ast$}{*} Gooey\+Backend\+Context\+::xdg\+\_\+toplevel}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backends/\mbox{\hyperlink{glfw__backend_8c}{glfw\+\_\+backend.\+c}}\item 
+backends/\mbox{\hyperlink{wayland__backend_8c}{wayland\+\_\+backend.\+c}}\item 
+backends/\mbox{\hyperlink{x11__backend_8c}{x11\+\_\+backend.\+c}}\end{DoxyCompactItemize}

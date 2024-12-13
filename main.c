@@ -27,10 +27,27 @@ void onTextChange(char *text) {
 }
 
 int main() {
-    Gooey_Init(GLFW);
+    Gooey_Init(X11);
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 400);
 
     GooeyButton_Add(&win, "Click Me", 50, 50, 80, 30, onButtonClick);
+
+   // GooeyLabel_Add(&win, "This is a label", 200, 60);
+
+    GooeyCheckbox_Add(&win, 50, 120, "Enable Option 1", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 160, "Enable Option 2", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 200, "Enable Option 3", onCheckboxToggle);
+
+    GooeyRadioButton_Add(&win, 200, 120, "Option A", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 160, "Option B", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 200, "Option C", onRadioButtonSelect);
+
+    GooeySlider_Add(&win, 50, 250, 200, 0, 100, true, onSliderChange);
+
+    const char *options[] = {"Option 1", "Option 2", "Option 3"};
+    GooeyDropdown_Add(&win, 50, 350, 150, 30, options, 3, onDropdownChange);
+
+    GooeyTextBox_Add(&win, 50, 300, 200, 25, "test", onTextChange);
 
     GooeyWindow_Run(&win);
 

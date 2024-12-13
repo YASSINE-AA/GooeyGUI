@@ -1,0 +1,200 @@
+\doxysection{backends/glfw\+\_\+backend.c File Reference}
+\hypertarget{glfw__backend_8c}{}\label{glfw__backend_8c}\index{backends/glfw\_backend.c@{backends/glfw\_backend.c}}
+{\ttfamily \#include "{}utils/glfw/glfw\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGooeyBackendContext}{Gooey\+Backend\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a4c7164db83d9424e788c03bc55a6c393}{check\+\_\+shader\+\_\+compile}} (GLuint shader)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a5c5e474c82d59d3570f8ba8a8854b5b5}{check\+\_\+shader\+\_\+link}} (GLuint program)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a76c6084335d944db2b604aaa048cbfb0}{setup\+\_\+shaders}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a42c92e339d4e0101627b4e683b523947}{glfw\+\_\+fill\+\_\+rectangle}} (int x, int y, int width, int height, long unsigned int color)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a8f2b676e2393ee8424d43e1cf3ac59c2}{glfw\+\_\+set\+\_\+foreground}} (long unsigned int color)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_adf01ca716791ba40436d453882cffccc}{glfw\+\_\+draw\+\_\+rectangle}} (int x, int y, int width, int height, long unsigned int color)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a843d0bf0f2185575bd3f7244b377bfac}{glfw\+\_\+draw\+\_\+line}} (int x1, int y1, int x2, int y2, long unsigned int color)
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_af186e17eb7eaff26244beec4cdc125d4}{glfw\+\_\+fill\+\_\+arc}} (int x\+\_\+center, int y\+\_\+center, int width, int height, int angle1, int angle2)
+\item 
+int \mbox{\hyperlink{glfw__backend_8c_a7d60de3025f9499eafde5380f83d92b0}{glfw\+\_\+init\+\_\+ft}} ()
+\item 
+int \mbox{\hyperlink{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4}{glfw\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b}{glfw\+\_\+draw\+\_\+text}} (int x, int y, const char \texorpdfstring{$\ast$}{*}text, unsigned long color)
+\item 
+\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5}{glfw\+\_\+create\+\_\+window}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
+\item 
+\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \mbox{\hyperlink{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}{glfw\+\_\+handle\+\_\+events}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf}{glfw\+\_\+destroy\+\_\+window}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321}{glfw\+\_\+clear}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}{glfw\+\_\+cleanup}} ()
+\item 
+void \mbox{\hyperlink{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}{glfw\+\_\+render}} ()
+\item 
+int \mbox{\hyperlink{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}{glfw\+\_\+get\+\_\+text\+\_\+width}} (const char \texorpdfstring{$\ast$}{*}text, int length)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}{glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code}} (\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}gooey\+\_\+event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGooeyBackend}{Gooey\+Backend}} \mbox{\hyperlink{glfw__backend_8c_a6aa6e441c89fcaaa30ca52639bf06def}{glfw\+\_\+backend}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{glfw__backend_8c_a4c7164db83d9424e788c03bc55a6c393}\label{glfw__backend_8c_a4c7164db83d9424e788c03bc55a6c393} 
+\index{glfw\_backend.c@{glfw\_backend.c}!check\_shader\_compile@{check\_shader\_compile}}
+\index{check\_shader\_compile@{check\_shader\_compile}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_shader\_compile()}{check\_shader\_compile()}}
+{\footnotesize\ttfamily void check\+\_\+shader\+\_\+compile (\begin{DoxyParamCaption}\item[{GLuint}]{shader }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a5c5e474c82d59d3570f8ba8a8854b5b5}\label{glfw__backend_8c_a5c5e474c82d59d3570f8ba8a8854b5b5} 
+\index{glfw\_backend.c@{glfw\_backend.c}!check\_shader\_link@{check\_shader\_link}}
+\index{check\_shader\_link@{check\_shader\_link}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_shader\_link()}{check\_shader\_link()}}
+{\footnotesize\ttfamily void check\+\_\+shader\+\_\+link (\begin{DoxyParamCaption}\item[{GLuint}]{program }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}\label{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_cleanup@{glfw\_cleanup}}
+\index{glfw\_cleanup@{glfw\_cleanup}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_cleanup()}{glfw\_cleanup()}}
+{\footnotesize\ttfamily void glfw\+\_\+cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321}\label{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_clear@{glfw\_clear}}
+\index{glfw\_clear@{glfw\_clear}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_clear()}{glfw\_clear()}}
+{\footnotesize\ttfamily void glfw\+\_\+clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5}\label{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_create\_window@{glfw\_create\_window}}
+\index{glfw\_create\_window@{glfw\_create\_window}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_create\_window()}{glfw\_create\_window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} glfw\+\_\+create\+\_\+window (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf}\label{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_destroy\_window@{glfw\_destroy\_window}}
+\index{glfw\_destroy\_window@{glfw\_destroy\_window}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_destroy\_window()}{glfw\_destroy\_window()}}
+{\footnotesize\ttfamily void glfw\+\_\+destroy\+\_\+window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a843d0bf0f2185575bd3f7244b377bfac}\label{glfw__backend_8c_a843d0bf0f2185575bd3f7244b377bfac} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_draw\_line@{glfw\_draw\_line}}
+\index{glfw\_draw\_line@{glfw\_draw\_line}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_draw\_line()}{glfw\_draw\_line()}}
+{\footnotesize\ttfamily void glfw\+\_\+draw\+\_\+line (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2,  }\item[{long unsigned int}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_adf01ca716791ba40436d453882cffccc}\label{glfw__backend_8c_adf01ca716791ba40436d453882cffccc} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_draw\_rectangle@{glfw\_draw\_rectangle}}
+\index{glfw\_draw\_rectangle@{glfw\_draw\_rectangle}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_draw\_rectangle()}{glfw\_draw\_rectangle()}}
+{\footnotesize\ttfamily void glfw\+\_\+draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{long unsigned int}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b}\label{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_draw\_text@{glfw\_draw\_text}}
+\index{glfw\_draw\_text@{glfw\_draw\_text}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_draw\_text()}{glfw\_draw\_text()}}
+{\footnotesize\ttfamily void glfw\+\_\+draw\+\_\+text (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{unsigned long}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_af186e17eb7eaff26244beec4cdc125d4}\label{glfw__backend_8c_af186e17eb7eaff26244beec4cdc125d4} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_fill\_arc@{glfw\_fill\_arc}}
+\index{glfw\_fill\_arc@{glfw\_fill\_arc}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_fill\_arc()}{glfw\_fill\_arc()}}
+{\footnotesize\ttfamily void glfw\+\_\+fill\+\_\+arc (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+center,  }\item[{int}]{y\+\_\+center,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{angle1,  }\item[{int}]{angle2 }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a42c92e339d4e0101627b4e683b523947}\label{glfw__backend_8c_a42c92e339d4e0101627b4e683b523947} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_fill\_rectangle@{glfw\_fill\_rectangle}}
+\index{glfw\_fill\_rectangle@{glfw\_fill\_rectangle}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_fill\_rectangle()}{glfw\_fill\_rectangle()}}
+{\footnotesize\ttfamily void glfw\+\_\+fill\+\_\+rectangle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{long unsigned int}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}\label{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_get\_key\_from\_code@{glfw\_get\_key\_from\_code}}
+\index{glfw\_get\_key\_from\_code@{glfw\_get\_key\_from\_code}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_get\_key\_from\_code()}{glfw\_get\_key\_from\_code()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} glfw\+\_\+get\+\_\+key\+\_\+from\+\_\+code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} \texorpdfstring{$\ast$}{*}}]{gooey\+\_\+event }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}\label{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_get\_text\_width@{glfw\_get\_text\_width}}
+\index{glfw\_get\_text\_width@{glfw\_get\_text\_width}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_get\_text\_width()}{glfw\_get\_text\_width()}}
+{\footnotesize\ttfamily int glfw\+\_\+get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}\label{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_handle\_events@{glfw\_handle\_events}}
+\index{glfw\_handle\_events@{glfw\_handle\_events}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_handle\_events()}{glfw\_handle\_events()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyEvent}{Gooey\+Event}} glfw\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4}\label{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_init@{glfw\_init}}
+\index{glfw\_init@{glfw\_init}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_init()}{glfw\_init()}}
+{\footnotesize\ttfamily int glfw\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a7d60de3025f9499eafde5380f83d92b0}\label{glfw__backend_8c_a7d60de3025f9499eafde5380f83d92b0} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_init\_ft@{glfw\_init\_ft}}
+\index{glfw\_init\_ft@{glfw\_init\_ft}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_init\_ft()}{glfw\_init\_ft()}}
+{\footnotesize\ttfamily int glfw\+\_\+init\+\_\+ft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}\label{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_render@{glfw\_render}}
+\index{glfw\_render@{glfw\_render}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_render()}{glfw\_render()}}
+{\footnotesize\ttfamily void glfw\+\_\+render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a8f2b676e2393ee8424d43e1cf3ac59c2}\label{glfw__backend_8c_a8f2b676e2393ee8424d43e1cf3ac59c2} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_set\_foreground@{glfw\_set\_foreground}}
+\index{glfw\_set\_foreground@{glfw\_set\_foreground}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_set\_foreground()}{glfw\_set\_foreground()}}
+{\footnotesize\ttfamily void glfw\+\_\+set\+\_\+foreground (\begin{DoxyParamCaption}\item[{long unsigned int}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__backend_8c_a76c6084335d944db2b604aaa048cbfb0}\label{glfw__backend_8c_a76c6084335d944db2b604aaa048cbfb0} 
+\index{glfw\_backend.c@{glfw\_backend.c}!setup\_shaders@{setup\_shaders}}
+\index{setup\_shaders@{setup\_shaders}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{setup\_shaders()}{setup\_shaders()}}
+{\footnotesize\ttfamily void setup\+\_\+shaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{glfw__backend_8c_a6aa6e441c89fcaaa30ca52639bf06def}\label{glfw__backend_8c_a6aa6e441c89fcaaa30ca52639bf06def} 
+\index{glfw\_backend.c@{glfw\_backend.c}!glfw\_backend@{glfw\_backend}}
+\index{glfw\_backend@{glfw\_backend}!glfw\_backend.c@{glfw\_backend.c}}
+\doxysubsubsection{\texorpdfstring{glfw\_backend}{glfw\_backend}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyBackend}{Gooey\+Backend}} glfw\+\_\+backend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .Init\ =\ \mbox{\hyperlink{glfw__backend_8c_acec6ad9cc1163f0d9dd3992ba53f21f4}{glfw\_init}},}
+\DoxyCodeLine{\ \ \ \ .CreateWindow\ =\ \mbox{\hyperlink{glfw__backend_8c_a887a2affbc83b6470b54dd239941c4f5}{glfw\_create\_window}},}
+\DoxyCodeLine{\ \ \ \ .DestroyWindow\ =\ \mbox{\hyperlink{glfw__backend_8c_a974e784e9467bb65634a4a080694f3bf}{glfw\_destroy\_window}},}
+\DoxyCodeLine{\ \ \ \ .Cleanup\ =\ \mbox{\hyperlink{glfw__backend_8c_a245407cf2a7362a9f23db837e1746297}{glfw\_cleanup}},}
+\DoxyCodeLine{\ \ \ \ .Render\ =\ \mbox{\hyperlink{glfw__backend_8c_aa845e35bbb57b8d42bc9efdaed128a6c}{glfw\_render}},}
+\DoxyCodeLine{\ \ \ \ .HandleEvents\ =\ \mbox{\hyperlink{glfw__backend_8c_acac99e1cd1e24cf673c7a817217a6fd4}{glfw\_handle\_events}},}
+\DoxyCodeLine{\ \ \ \ .FillArc\ =\ \mbox{\hyperlink{glfw__backend_8c_af186e17eb7eaff26244beec4cdc125d4}{glfw\_fill\_arc}},}
+\DoxyCodeLine{\ \ \ \ .FillRectangle\ =\ \mbox{\hyperlink{glfw__backend_8c_a42c92e339d4e0101627b4e683b523947}{glfw\_fill\_rectangle}},}
+\DoxyCodeLine{\ \ \ \ .DrawRectangle\ =\ \mbox{\hyperlink{glfw__backend_8c_adf01ca716791ba40436d453882cffccc}{glfw\_draw\_rectangle}},}
+\DoxyCodeLine{\ \ \ \ .DrawLine\ =\ \mbox{\hyperlink{glfw__backend_8c_a843d0bf0f2185575bd3f7244b377bfac}{glfw\_draw\_line}},}
+\DoxyCodeLine{\ \ \ \ .SetForeground\ =\ \mbox{\hyperlink{glfw__backend_8c_a8f2b676e2393ee8424d43e1cf3ac59c2}{glfw\_set\_foreground}},}
+\DoxyCodeLine{\ \ \ \ .GetTextWidth\ =\ \mbox{\hyperlink{glfw__backend_8c_afd23b3fe1bca51ae89ea6345f7479a78}{glfw\_get\_text\_width}},}
+\DoxyCodeLine{\ \ \ \ .DrawText\ =\ \mbox{\hyperlink{glfw__backend_8c_ab45d87c9e8cdf6ba864f73b29f49d09b}{glfw\_draw\_text}},}
+\DoxyCodeLine{\ \ \ \ .GetKeyFromCode\ =\ \mbox{\hyperlink{glfw__backend_8c_aa60b2474a238e701535d8269b117fb75}{glfw\_get\_key\_from\_code}},}
+\DoxyCodeLine{\ \ \ \ .Clear\ =\ \mbox{\hyperlink{glfw__backend_8c_a81150c7a9d1f82a5f6ad30c5b6a31321}{glfw\_clear}}\}}
+
+\end{DoxyCode}

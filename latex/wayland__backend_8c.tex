@@ -1,0 +1,156 @@
+\doxysection{backends/wayland\+\_\+backend.c File Reference}
+\hypertarget{wayland__backend_8c}{}\label{wayland__backend_8c}\index{backends/wayland\_backend.c@{backends/wayland\_backend.c}}
+{\ttfamily \#include "{}gooey\+\_\+backend.\+h"{}}\newline
+{\ttfamily \#include $<$wayland-\/client.\+h$>$}\newline
+{\ttfamily \#include "{}xdg-\/shell-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGooeyBackendContext}{Gooey\+Backend\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{wayland__backend_8c_a369266c24eacffb87046522897a570d5}{\+\_\+\+GNU\+\_\+\+SOURCE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{wayland__backend_8c_a5f92a1f18e72074a78ba1a12906d88b1}{create\+\_\+shm\+\_\+file}} (size\+\_\+t size)
+\item 
+struct wl\+\_\+buffer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wayland__backend_8c_ad738372d7644442ddc62cfd147a2065a}{create\+\_\+buffer}} (int width, int height, struct wl\+\_\+shm \texorpdfstring{$\ast$}{*}shm)
+\item 
+void \mbox{\hyperlink{wayland__backend_8c_a0cf22d098225a7f803ec968f970be553}{registry\+\_\+handler}} (void \texorpdfstring{$\ast$}{*}data, struct wl\+\_\+registry \texorpdfstring{$\ast$}{*}registry, uint32\+\_\+t id, const char \texorpdfstring{$\ast$}{*}interface, uint32\+\_\+t version)
+\item 
+void \mbox{\hyperlink{wayland__backend_8c_a2daf88c7e56e529d16cfdf082ae9cde9}{registry\+\_\+remove\+\_\+handler}} (void \texorpdfstring{$\ast$}{*}data, struct wl\+\_\+registry \texorpdfstring{$\ast$}{*}registry, uint32\+\_\+t id)
+\item 
+int \mbox{\hyperlink{wayland__backend_8c_a541b4610473f09d1a973398eff4ecc4c}{wayland\+\_\+init}} ()
+\item 
+\mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} \mbox{\hyperlink{wayland__backend_8c_a27e77c66ed21bde50e9ce38a3f2fb682}{wayland\+\_\+create\+\_\+window}} ()
+\item 
+void \mbox{\hyperlink{wayland__backend_8c_a47c1d1b4cbc74aefe578ab5c3f73b90f}{wayland\+\_\+run}} ()
+\item 
+void \mbox{\hyperlink{wayland__backend_8c_a35bc34561d808d997bf5457bc733466a}{wayland\+\_\+cleanup}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{wayland__backend_8c_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}} = 800
+\item 
+const int \mbox{\hyperlink{wayland__backend_8c_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}} = 600
+\item 
+const struct wl\+\_\+registry\+\_\+listener \mbox{\hyperlink{wayland__backend_8c_a8998c87c94cd7d185e8f0cdafab4b1c4}{registry\+\_\+listener}}
+\item 
+\mbox{\hyperlink{structGooeyBackend}{Gooey\+Backend}} \mbox{\hyperlink{wayland__backend_8c_aa9457e7b63831785a8eff9c42858de2c}{wayland\+\_\+backend}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{wayland__backend_8c_a369266c24eacffb87046522897a570d5}\label{wayland__backend_8c_a369266c24eacffb87046522897a570d5} 
+\index{wayland\_backend.c@{wayland\_backend.c}!\_GNU\_SOURCE@{\_GNU\_SOURCE}}
+\index{\_GNU\_SOURCE@{\_GNU\_SOURCE}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{\_GNU\_SOURCE}{\_GNU\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GNU\+\_\+\+SOURCE}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{wayland__backend_8c_ad738372d7644442ddc62cfd147a2065a}\label{wayland__backend_8c_ad738372d7644442ddc62cfd147a2065a} 
+\index{wayland\_backend.c@{wayland\_backend.c}!create\_buffer@{create\_buffer}}
+\index{create\_buffer@{create\_buffer}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{create\_buffer()}{create\_buffer()}}
+{\footnotesize\ttfamily struct wl\+\_\+buffer \texorpdfstring{$\ast$}{*} create\+\_\+buffer (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{struct wl\+\_\+shm \texorpdfstring{$\ast$}{*}}]{shm }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a5f92a1f18e72074a78ba1a12906d88b1}\label{wayland__backend_8c_a5f92a1f18e72074a78ba1a12906d88b1} 
+\index{wayland\_backend.c@{wayland\_backend.c}!create\_shm\_file@{create\_shm\_file}}
+\index{create\_shm\_file@{create\_shm\_file}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{create\_shm\_file()}{create\_shm\_file()}}
+{\footnotesize\ttfamily int create\+\_\+shm\+\_\+file (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a0cf22d098225a7f803ec968f970be553}\label{wayland__backend_8c_a0cf22d098225a7f803ec968f970be553} 
+\index{wayland\_backend.c@{wayland\_backend.c}!registry\_handler@{registry\_handler}}
+\index{registry\_handler@{registry\_handler}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{registry\_handler()}{registry\_handler()}}
+{\footnotesize\ttfamily void registry\+\_\+handler (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{struct wl\+\_\+registry \texorpdfstring{$\ast$}{*}}]{registry,  }\item[{uint32\+\_\+t}]{id,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{interface,  }\item[{uint32\+\_\+t}]{version }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a2daf88c7e56e529d16cfdf082ae9cde9}\label{wayland__backend_8c_a2daf88c7e56e529d16cfdf082ae9cde9} 
+\index{wayland\_backend.c@{wayland\_backend.c}!registry\_remove\_handler@{registry\_remove\_handler}}
+\index{registry\_remove\_handler@{registry\_remove\_handler}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{registry\_remove\_handler()}{registry\_remove\_handler()}}
+{\footnotesize\ttfamily void registry\+\_\+remove\+\_\+handler (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{struct wl\+\_\+registry \texorpdfstring{$\ast$}{*}}]{registry,  }\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a35bc34561d808d997bf5457bc733466a}\label{wayland__backend_8c_a35bc34561d808d997bf5457bc733466a} 
+\index{wayland\_backend.c@{wayland\_backend.c}!wayland\_cleanup@{wayland\_cleanup}}
+\index{wayland\_cleanup@{wayland\_cleanup}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{wayland\_cleanup()}{wayland\_cleanup()}}
+{\footnotesize\ttfamily void wayland\+\_\+cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a27e77c66ed21bde50e9ce38a3f2fb682}\label{wayland__backend_8c_a27e77c66ed21bde50e9ce38a3f2fb682} 
+\index{wayland\_backend.c@{wayland\_backend.c}!wayland\_create\_window@{wayland\_create\_window}}
+\index{wayland\_create\_window@{wayland\_create\_window}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{wayland\_create\_window()}{wayland\_create\_window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyWindow}{Gooey\+Window}} wayland\+\_\+create\+\_\+window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a541b4610473f09d1a973398eff4ecc4c}\label{wayland__backend_8c_a541b4610473f09d1a973398eff4ecc4c} 
+\index{wayland\_backend.c@{wayland\_backend.c}!wayland\_init@{wayland\_init}}
+\index{wayland\_init@{wayland\_init}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{wayland\_init()}{wayland\_init()}}
+{\footnotesize\ttfamily int wayland\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wayland__backend_8c_a47c1d1b4cbc74aefe578ab5c3f73b90f}\label{wayland__backend_8c_a47c1d1b4cbc74aefe578ab5c3f73b90f} 
+\index{wayland\_backend.c@{wayland\_backend.c}!wayland\_run@{wayland\_run}}
+\index{wayland\_run@{wayland\_run}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{wayland\_run()}{wayland\_run()}}
+{\footnotesize\ttfamily void wayland\+\_\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{wayland__backend_8c_af728b7647e0b8c49832983a31f9a2e9b}\label{wayland__backend_8c_af728b7647e0b8c49832983a31f9a2e9b} 
+\index{wayland\_backend.c@{wayland\_backend.c}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily const int HEIGHT = 600}
+
+\Hypertarget{wayland__backend_8c_a8998c87c94cd7d185e8f0cdafab4b1c4}\label{wayland__backend_8c_a8998c87c94cd7d185e8f0cdafab4b1c4} 
+\index{wayland\_backend.c@{wayland\_backend.c}!registry\_listener@{registry\_listener}}
+\index{registry\_listener@{registry\_listener}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{registry\_listener}{registry\_listener}}
+{\footnotesize\ttfamily const struct wl\+\_\+registry\+\_\+listener registry\+\_\+listener}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .global\ =\ \mbox{\hyperlink{wayland__backend_8c_a0cf22d098225a7f803ec968f970be553}{registry\_handler}},}
+\DoxyCodeLine{\ \ \ \ .global\_remove\ =\ \mbox{\hyperlink{wayland__backend_8c_a2daf88c7e56e529d16cfdf082ae9cde9}{registry\_remove\_handler}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{wayland__backend_8c_aa9457e7b63831785a8eff9c42858de2c}\label{wayland__backend_8c_aa9457e7b63831785a8eff9c42858de2c} 
+\index{wayland\_backend.c@{wayland\_backend.c}!wayland\_backend@{wayland\_backend}}
+\index{wayland\_backend@{wayland\_backend}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{wayland\_backend}{wayland\_backend}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGooeyBackend}{Gooey\+Backend}} wayland\+\_\+backend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .Init\ =\ \mbox{\hyperlink{wayland__backend_8c_a541b4610473f09d1a973398eff4ecc4c}{wayland\_init}},}
+\DoxyCodeLine{\ \ \ \ .CreateWindow\ =\ \mbox{\hyperlink{wayland__backend_8c_a27e77c66ed21bde50e9ce38a3f2fb682}{wayland\_create\_window}},}
+\DoxyCodeLine{\ \ \ \ .Cleanup\ =\ \mbox{\hyperlink{wayland__backend_8c_a35bc34561d808d997bf5457bc733466a}{wayland\_cleanup}},}
+\DoxyCodeLine{\ \ \ \ .Render\ =\ \mbox{\hyperlink{wayland__backend_8c_a47c1d1b4cbc74aefe578ab5c3f73b90f}{wayland\_run}}\}}
+
+\end{DoxyCode}
+\Hypertarget{wayland__backend_8c_a9649ab8139c4c2ea5c93625b30d92a05}\label{wayland__backend_8c_a9649ab8139c4c2ea5c93625b30d92a05} 
+\index{wayland\_backend.c@{wayland\_backend.c}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!wayland\_backend.c@{wayland\_backend.c}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily const int WIDTH = 800}
+

@@ -1,0 +1,955 @@
+\doxysection{backends/xdg-\/shell-\/client-\/protocol.h File Reference}
+\hypertarget{xdg-shell-client-protocol_8h}{}\label{xdg-shell-client-protocol_8h}\index{backends/xdg-\/shell-\/client-\/protocol.h@{backends/xdg-\/shell-\/client-\/protocol.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include "{}wayland-\/client.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structxdg__wm__base__listener}{xdg\+\_\+wm\+\_\+base\+\_\+listener}}
+\item 
+struct \mbox{\hyperlink{structxdg__surface__listener}{xdg\+\_\+surface\+\_\+listener}}
+\item 
+struct \mbox{\hyperlink{structxdg__toplevel__listener}{xdg\+\_\+toplevel\+\_\+listener}}
+\item 
+struct \mbox{\hyperlink{structxdg__popup__listener}{xdg\+\_\+popup\+\_\+listener}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a8d428006fb054672c86f0db7bd74abc0}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+INTERFACE}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac7d01db1f025bcfff067f345d8ece730}{XDG\+\_\+\+POSITIONER\+\_\+\+INTERFACE}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3861acb7e8b870ffe389f962de3eb383}{XDG\+\_\+\+SURFACE\+\_\+\+INTERFACE}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_af653a2428d99078086dcb15383d62cd5}{XDG\+\_\+\+TOPLEVEL\+\_\+\+INTERFACE}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_aa97cc103aa2752a159a7a7a6811515bb}{XDG\+\_\+\+POPUP\+\_\+\+INTERFACE}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9df120e3c48abdd2913b3a7dab965814}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_af89235c5d56be7a635db43c756e47263}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+DESTROY}}~0
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_aeccafa21e4f6f850f3c9ac55a5c7b956}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+CREATE\+\_\+\+POSITIONER}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a8a97d927b643954fc9f0dc330ce457}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+GET\+\_\+\+XDG\+\_\+\+SURFACE}}~2
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac64c3488d67222d6abc2b4a4d62004f8}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+PONG}}~3
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__wm__base_ga418896ccb516abf4361755b94a3a503f}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+PING\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__wm__base_ga6b425713c80443ceaf846d8c065ff133}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__wm__base_ga11828b3dde2f34364cfc0a1423230aad}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+CREATE\+\_\+\+POSITIONER\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__wm__base_ga123013ed24904a0e2e27fcf8e1ff7e68}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+GET\+\_\+\+XDG\+\_\+\+SURFACE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__wm__base_ga79767418b9f5d722e3418b9c193e4aa2}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+PONG\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a00a7afc630f2e011cfb6ad63c49c270d}{XDG\+\_\+\+POSITIONER\+\_\+\+ERROR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a54f8beb94be01231a80fa09137beb61a}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_afe56a2ad95eaa41b0077981e99bc21fd}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7c723287b147574d2e6ce2f6c34c46af}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a2a91094e03ac28f0e218e5f67b15bc9f}{XDG\+\_\+\+POSITIONER\+\_\+\+DESTROY}}~0
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5bd9ed4b96f963e64e156a17ee670f35}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+SIZE}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a8ca217de4d3761a8fc72d06502a08ef3}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR\+\_\+\+RECT}}~2
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a063cd2276fd59937a5b4e6d37dc119b6}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR}}~3
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a18ffc2a975d114be99b5f2940dc657dd}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+GRAVITY}}~4
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a4bf1461ce34fdd46751760169072c69e}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT}}~5
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac8f52c24c8086b002aa06ef5c7a237d1}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+OFFSET}}~6
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9c25e98961a05401a7ba4eb734b9a0a9}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+REACTIVE}}~7
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_af8a435c7c2cb4a6e5239f315f5dd6d68}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_aa85e7ddb259657e9c9762369e6f37478}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+CONFIGURE}}~9
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_ga3d18b7208aa266eec54f1a437dd42e33}{XDG\+\_\+\+POSITIONER\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_gab6e7b1104a2309ded8c722bac5038ed6}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+SIZE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_ga3ef0d821776d545ab84686b99945a3af}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR\+\_\+\+RECT\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_ga0bd68e1dbaf738c942d963f337a26509}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_gafe5bf03fc03e051d0a798f6fd8390593}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+GRAVITY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_gaf1a789c9b8987c2d620c788d677fa593}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_gaaa1a3683222a7fdb004f4f19eca50b84}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+OFFSET\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_gacb16ae69f785d4e1d120dab025023b4e}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+REACTIVE\+\_\+\+SINCE\+\_\+\+VERSION}}~3
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_ga8c6be97f1cf9fcb2cf800f50c0c66d8a}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+SIZE\+\_\+\+SINCE\+\_\+\+VERSION}}~3
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__positioner_ga093d5cdbfd183567f68e2a893191b417}{XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~3
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a6c52998c21d7a0b3c560db23e1a62424}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_aea86cf0f4d26c03bee9ce8cad326dcdb}{XDG\+\_\+\+SURFACE\+\_\+\+DESTROY}}~0
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a0a32e7931196bdc5705e64a8b1daa86d}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+TOPLEVEL}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ad42b241c5943bf64bea8a76231d123cb}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+POPUP}}~2
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a867997a706ce9b1f272aea72677a1266}{XDG\+\_\+\+SURFACE\+\_\+\+SET\+\_\+\+WINDOW\+\_\+\+GEOMETRY}}~3
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9d3dddd8ce2cde5e92315b22d02b170c}{XDG\+\_\+\+SURFACE\+\_\+\+ACK\+\_\+\+CONFIGURE}}~4
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga2acbd1b0ff328849e1361a7780359fc5}{XDG\+\_\+\+SURFACE\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga1c020ae2a40d1226b8d1abdb2a44d6d2}{XDG\+\_\+\+SURFACE\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_gafed63dcd957649c646efce2e1490ca15}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+TOPLEVEL\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga7c0a54d91515d011cc8eaa3d80bfc210}{XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+POPUP\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_ga812da97812a66b79d7aa6b7ce83f235d}{XDG\+\_\+\+SURFACE\+\_\+\+SET\+\_\+\+WINDOW\+\_\+\+GEOMETRY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__surface_gaeb6df9edb1ab268d056a9f2cce72d46e}{XDG\+\_\+\+SURFACE\+\_\+\+ACK\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a8ca9a2707cf566978d20d35c7414437d}{XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a78cbe854d2db7eea8af8b86e9279a681}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a626b584b4036383dd4aba4e7e502416f}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gac45a56bd702dfaae9773d8d8dbbb7e16}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+LEFT\+\_\+\+SINCE\+\_\+\+VERSION}}~2
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gafb8582ef882e8b1e7ba5eb20c9472c6e}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+RIGHT\+\_\+\+SINCE\+\_\+\+VERSION}}~2
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga7d4a39e45726f32392004941f4e47823}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+TOP\+\_\+\+SINCE\+\_\+\+VERSION}}~2
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga747e66b4d53dc7e42c6dde65b985efa7}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+BOTTOM\+\_\+\+SINCE\+\_\+\+VERSION}}~2
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gae92a3eee72fb31baaeb375a21ff78fd8}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+SUSPENDED\+\_\+\+SINCE\+\_\+\+VERSION}}~6
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a2d1e1cbb938eaf3d360ef9cf85cebfc7}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5fed65208a34eadc332fd1da4184dd1f}{XDG\+\_\+\+TOPLEVEL\+\_\+\+DESTROY}}~0
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3166edd3986d5f77d223893ab61f7fd2}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+PARENT}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a608641e7b1dae66f167a0233fae64b51}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+TITLE}}~2
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a368b83186b38aa7a1d59ecc51541b4f6}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+APP\+\_\+\+ID}}~3
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_acbf6f7d6560778adbbc000c851ac845c}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SHOW\+\_\+\+WINDOW\+\_\+\+MENU}}~4
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9a6ce6295dcade29bfb4a71308730178}{XDG\+\_\+\+TOPLEVEL\+\_\+\+MOVE}}~5
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a02512b40e0f4d57f06bbf1f60620ba52}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE}}~6
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a819b272958cef4f5e035b480e2034c0f}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAX\+\_\+\+SIZE}}~7
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ad8f38e0fbe4d1f49b8740ede81eda602}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MIN\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a606aee255df6456a69ed691ed5dc977d}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAXIMIZED}}~9
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a05261aa2b30737e2d6cd72cc01275a22}{XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+MAXIMIZED}}~10
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_ac5764650bb79659b0477875fd00bb391}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+FULLSCREEN}}~11
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a1d017713e135421360b90285d6a4d372}{XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+FULLSCREEN}}~12
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a34b0f3668742dc34951279a656854339}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MINIMIZED}}~13
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga13a100390d36f55f75ace392b46717e1}{XDG\+\_\+\+TOPLEVEL\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga6cef3a3371706ca308e8d020018b6356}{XDG\+\_\+\+TOPLEVEL\+\_\+\+CLOSE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga367d4b727ad7f194d329392ee82125ca}{XDG\+\_\+\+TOPLEVEL\+\_\+\+CONFIGURE\+\_\+\+BOUNDS\+\_\+\+SINCE\+\_\+\+VERSION}}~4
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga0621e971d79b95bae8575216782c1d10}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+SINCE\+\_\+\+VERSION}}~5
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga9c6b62328e8f4bcf4293bf38709ecfdd}{XDG\+\_\+\+TOPLEVEL\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga2b410ca3eac0cde15ae42b9efdb11952}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga3bb009c35907a7b34b43ba35568a12aa}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+TITLE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga0a36674ba5f26844efcfa87db6f5a635}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+APP\+\_\+\+ID\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gadf24f5e5762ec352ac1f281a35bdf384}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SHOW\+\_\+\+WINDOW\+\_\+\+MENU\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga59df868d37b3b53ce1f4b5116ea9133d}{XDG\+\_\+\+TOPLEVEL\+\_\+\+MOVE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga5604c1919c3ff1a70e70a4c994845ef7}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga4fd693c1cbda47ef752cd350f693ab1b}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAX\+\_\+\+SIZE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga41dd43acee348d6d58226cf0178442ad}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MIN\+\_\+\+SIZE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga4a40aa9b91a3117e1a60faf5cd7d9135}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAXIMIZED\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga20e9bacd149fa902a16349a00eb7c040}{XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+MAXIMIZED\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_ga2dc5aa3ce55c07560f477fbef65308c0}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+FULLSCREEN\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gae4fc79bedad698b1ef70c37c2592e86d}{XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+FULLSCREEN\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__toplevel_gad9671448c09f887f44ecc9954cf4672f}{XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MINIMIZED\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a26e350f041c31ab96c7c54880e4b65da}{XDG\+\_\+\+POPUP\+\_\+\+ERROR\+\_\+\+ENUM}}
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a242c07e84c5bec49ce0e6baa02386f4c}{XDG\+\_\+\+POPUP\+\_\+\+DESTROY}}~0
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a2ba141cfcc00999dbb62a6c67cb50de2}{XDG\+\_\+\+POPUP\+\_\+\+GRAB}}~1
+\item 
+\#define \mbox{\hyperlink{xdg-shell-client-protocol_8h_a9a40fafe987423de5084528175061c10}{XDG\+\_\+\+POPUP\+\_\+\+REPOSITION}}~2
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_ga151eed04f49621104c98c93464d442ae}{XDG\+\_\+\+POPUP\+\_\+\+CONFIGURE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_ga78a80519c46f9099cd029ca172705560}{XDG\+\_\+\+POPUP\+\_\+\+POPUP\+\_\+\+DONE\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_ga6cc7c8701bd4f58a8aced886013c543b}{XDG\+\_\+\+POPUP\+\_\+\+REPOSITIONED\+\_\+\+SINCE\+\_\+\+VERSION}}~3
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_ga13f61af07a0ecea6d3b433e6e8e06879}{XDG\+\_\+\+POPUP\+\_\+\+DESTROY\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_gaa676f7d60bed3ef08d1bad3b74a0ae11}{XDG\+\_\+\+POPUP\+\_\+\+GRAB\+\_\+\+SINCE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{group__iface__xdg__popup_ga3e6c85e3b3917e49583704925c1be3d4}{XDG\+\_\+\+POPUP\+\_\+\+REPOSITION\+\_\+\+SINCE\+\_\+\+VERSION}}~3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492e}{xdg\+\_\+wm\+\_\+base\+\_\+error}} \{ \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead9770c2eeb08fb841b23e02438e127cd}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+ROLE}} = 0
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea4d87b0a2c52d8937d181280a670860f4}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+DEFUNCT\+\_\+\+SURFACES}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead8da0dfaeedf4192aea5e01a5b4146b1}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+THE\+\_\+\+TOPMOST\+\_\+\+POPUP}} = 2
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea1af9f8ff43f3b019aa1858d5212e4fc7}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+POPUP\+\_\+\+PARENT}} = 3
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eac942cd9a06866d6c4dbc715457e8281e}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SURFACE\+\_\+\+STATE}} = 4
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea11d0e9cbc4d8e1e561edf00ed4919a2d}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+POSITIONER}} = 5
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eaba6fe3d47e4d07ae99aea4f87964fc4e}{XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+UNRESPONSIVE}} = 6
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11d}{xdg\+\_\+positioner\+\_\+error}} \{ \mbox{\hyperlink{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11da2ffbc312f24d601b3904ba41373d43d2}{XDG\+\_\+\+POSITIONER\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+INPUT}} = 0
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586}{xdg\+\_\+positioner\+\_\+anchor}} \{ \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586adcd9434b06c37cd37edf2d39210da463}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a731a3303bb0805a63bd4c14336d6920d}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a31c2f58e44cc99494f7f8de7dce02ad0}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM}} = 2
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac52770f96517f2a429e4284e54922cf3}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+LEFT}} = 3
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3aa13c68430237dc66fdd5de2d712047}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+RIGHT}} = 4
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3549b7488d5d681ae4ea21b092e7a381}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP\+\_\+\+LEFT}} = 5
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac6fe9269fa0cbea407a8bd320f8d0713}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM\+\_\+\+LEFT}} = 6
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a240e43f453bf3c611e40cbb67600603f}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP\+\_\+\+RIGHT}} = 7
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ad988ee185bcf0529ed6e119937b8a059}{XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM\+\_\+\+RIGHT}} = 8
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56ee}{xdg\+\_\+positioner\+\_\+gravity}} \{ \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea608fa7779159172ae3b7372328cb8061}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea9dbd31729e2fb730fc5fce36f2a68130}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaa23c0783a7e455e2e7921ee53b2a3e11}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM}} = 2
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea06018646b8e07ea63a4f8862ea80f4fe}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+LEFT}} = 3
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea68d8ea7271c48de84b36ee8589bf2a34}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+RIGHT}} = 4
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eead2b4ab66a6372c48fdf95b34747ac06c}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP\+\_\+\+LEFT}} = 5
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea6ddefa77ef447a6514b37892c06110f2}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM\+\_\+\+LEFT}} = 6
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaf6a0b5ab2136dfa8e94bb6f5754d4ef7}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP\+\_\+\+RIGHT}} = 7
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea141569e57066889372e89659908e941d}{XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM\+\_\+\+RIGHT}} = 8
+ \}
+\item 
+enum \mbox{\hyperlink{group__iface__xdg__positioner_ga2d4543f555d079de131eb49d7787c85f}{xdg\+\_\+positioner\+\_\+constraint\+\_\+adjustment}} \{ \newline
+\mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa44f1660f28048349487c7cbace5d2d3e}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa3169ca4e42d1143b7f906af6b0378969}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+SLIDE\+\_\+X}} = 1
+, \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa066357a9a6de591a0a2696597d857e91}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+SLIDE\+\_\+Y}} = 2
+, \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa8e0c3271b0c560c5121ca99b6f8c65b7}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+FLIP\+\_\+X}} = 4
+, \newline
+\mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa4015c1eade9d716c59e1a8209a7fde6a}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+FLIP\+\_\+Y}} = 8
+, \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85fa3905454c90089d34fe80470a8dad7f36}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+RESIZE\+\_\+X}} = 16
+, \mbox{\hyperlink{group__iface__xdg__positioner_gga2d4543f555d079de131eb49d7787c85facb0dac66328d3e4a82437dd2978210db}{XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+RESIZE\+\_\+Y}} = 32
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835}{xdg\+\_\+surface\+\_\+error}} \{ \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a89b78421ba8b5ce3812e8115b9d4f1b4}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+CONSTRUCTED}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ab7ffcf4dc61f06f2954ec355a94cf915}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+ALREADY\+\_\+\+CONSTRUCTED}} = 2
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ad6354aa90ebf7e1c67d781634f64707d}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+UNCONFIGURED\+\_\+\+BUFFER}} = 3
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a7fee927d50a9d30c3f7c717aed716aad}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SERIAL}} = 4
+, \newline
+\mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aee3f2eaabb224e6d5cda9549084f41cb}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SIZE}} = 5
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aaff44a1bf577d6f3b1a1905f36079ba3}{XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+DEFUNCT\+\_\+\+ROLE\+\_\+\+OBJECT}} = 6
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92f}{xdg\+\_\+toplevel\+\_\+error}} \{ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fac382c3ee54b86fe9d824d0c02e861e7f}{XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+RESIZE\+\_\+\+EDGE}} = 0
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa03e0719f3ef49f46d1d53eefce225e24}{XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+PARENT}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa4130d4117472144bbef442e82acdb773}{XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SIZE}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{group__iface__xdg__toplevel_ga9c5f29d74e9f5e730fe59ecdc397b116}{xdg\+\_\+toplevel\+\_\+resize\+\_\+edge}} \{ \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a8fb8eaed90c84f6ee349cf20dad13dc8}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116ab6738334e5155a610ffae9ec11a6380b}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+TOP}} = 1
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a35b4b365f99c5d76ed3dcd8a15977853}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+BOTTOM}} = 2
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a905ab08631ed43116c424098dd28e473}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+LEFT}} = 4
+, \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a8bb02b53700283f3b179af4d8d33b735}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+TOP\+\_\+\+LEFT}} = 5
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116aecd33d2460b15a03ccb7cf099d7c4d4c}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+BOTTOM\+\_\+\+LEFT}} = 6
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a3acbd89082c2926e502f46d18e51d41e}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+RIGHT}} = 8
+, \mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a3b6bba269420a558d29b26011feb3d02}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+TOP\+\_\+\+RIGHT}} = 9
+, \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_gga9c5f29d74e9f5e730fe59ecdc397b116a7d3e52d640292d71d6f6f5019af95854}{XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+BOTTOM\+\_\+\+RIGHT}} = 10
+ \}
+\item 
+enum \mbox{\hyperlink{group__iface__xdg__toplevel_gabaca79a813c489200722457958c54b43}{xdg\+\_\+toplevel\+\_\+state}} \{ \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a35643da6bcb9f371b8d4e663787ff9df}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+MAXIMIZED}} = 1
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ae18b9b46242f684a7f80cc6edcb11198}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+FULLSCREEN}} = 2
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43af34733ea6181003cfff4c51011b3fae5}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+RESIZING}} = 3
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ada4cf2a15e69416ecdb506af0d34cd23}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+ACTIVATED}} = 4
+, \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a4c4946d03abc061ab82fb74f7c13544e}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+LEFT}} = 5
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43a3c2df34cc493f00426a755ecda341358}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+RIGHT}} = 6
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ac206f84cbaa6b2079e09b5d7fa4adafd}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+TOP}} = 7
+, \mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43ab647470484c8b655fafa57548b55795b}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+TILED\+\_\+\+BOTTOM}} = 8
+, \newline
+\mbox{\hyperlink{group__iface__xdg__toplevel_ggabaca79a813c489200722457958c54b43aa871bb8aff75d079d5938db0b288173d}{XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+SUSPENDED}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cd}{xdg\+\_\+toplevel\+\_\+wm\+\_\+capabilities}} \{ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaf364734cba8ab66e37ac1a0083433a2c}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+WINDOW\+\_\+\+MENU}} = 1
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaa76f2c343ea66db2918f8fcec262c716}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+MAXIMIZE}} = 2
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cda3109feef512e592df9ff2b9627966c4e}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+FULLSCREEN}} = 3
+, \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdab735d819922a65717d80d56b62b9773e}{XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+MINIMIZE}} = 4
+ \}
+\item 
+enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270}{xdg\+\_\+popup\+\_\+error}} \{ \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270a03886bf45b2f58fe6896ceea7da37d3e}{XDG\+\_\+\+POPUP\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+GRAB}} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-client-protocol_8h_a334a66fc154a4d8cb3f6ab5660a097ba}{xdg\+\_\+wm\+\_\+base\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-client-protocol_8h_a16a9be7454042fdc62e0418508a624d4}{xdg\+\_\+positioner\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5ac26be247039c7cdf4a5a26f613cfe6}{xdg\+\_\+surface\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-client-protocol_8h_a41eaf1ac12f3ef225df8b9f2f6559326}{xdg\+\_\+toplevel\+\_\+interface}}
+\item 
+const struct wl\+\_\+interface \mbox{\hyperlink{xdg-shell-client-protocol_8h_aa60edf2c19b40f7ba7e31b4aa1bf8d19}{xdg\+\_\+popup\+\_\+interface}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{xdg-shell-client-protocol_8h_a242c07e84c5bec49ce0e6baa02386f4c}\label{xdg-shell-client-protocol_8h_a242c07e84c5bec49ce0e6baa02386f4c} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_DESTROY@{XDG\_POPUP\_DESTROY}}
+\index{XDG\_POPUP\_DESTROY@{XDG\_POPUP\_DESTROY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POPUP\_DESTROY}{XDG\_POPUP\_DESTROY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POPUP\+\_\+\+DESTROY~0}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a26e350f041c31ab96c7c54880e4b65da}\label{xdg-shell-client-protocol_8h_a26e350f041c31ab96c7c54880e4b65da} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_ERROR\_ENUM@{XDG\_POPUP\_ERROR\_ENUM}}
+\index{XDG\_POPUP\_ERROR\_ENUM@{XDG\_POPUP\_ERROR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POPUP\_ERROR\_ENUM}{XDG\_POPUP\_ERROR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POPUP\+\_\+\+ERROR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a2ba141cfcc00999dbb62a6c67cb50de2}\label{xdg-shell-client-protocol_8h_a2ba141cfcc00999dbb62a6c67cb50de2} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_GRAB@{XDG\_POPUP\_GRAB}}
+\index{XDG\_POPUP\_GRAB@{XDG\_POPUP\_GRAB}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POPUP\_GRAB}{XDG\_POPUP\_GRAB}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POPUP\+\_\+\+GRAB~1}
+
+\Hypertarget{xdg-shell-client-protocol_8h_aa97cc103aa2752a159a7a7a6811515bb}\label{xdg-shell-client-protocol_8h_aa97cc103aa2752a159a7a7a6811515bb} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_INTERFACE@{XDG\_POPUP\_INTERFACE}}
+\index{XDG\_POPUP\_INTERFACE@{XDG\_POPUP\_INTERFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POPUP\_INTERFACE}{XDG\_POPUP\_INTERFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POPUP\+\_\+\+INTERFACE}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a9a40fafe987423de5084528175061c10}\label{xdg-shell-client-protocol_8h_a9a40fafe987423de5084528175061c10} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_REPOSITION@{XDG\_POPUP\_REPOSITION}}
+\index{XDG\_POPUP\_REPOSITION@{XDG\_POPUP\_REPOSITION}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POPUP\_REPOSITION}{XDG\_POPUP\_REPOSITION}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POPUP\+\_\+\+REPOSITION~2}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a54f8beb94be01231a80fa09137beb61a}\label{xdg-shell-client-protocol_8h_a54f8beb94be01231a80fa09137beb61a} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_ENUM@{XDG\_POSITIONER\_ANCHOR\_ENUM}}
+\index{XDG\_POSITIONER\_ANCHOR\_ENUM@{XDG\_POSITIONER\_ANCHOR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_ANCHOR\_ENUM}{XDG\_POSITIONER\_ANCHOR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a7c723287b147574d2e6ce2f6c34c46af}\label{xdg-shell-client-protocol_8h_a7c723287b147574d2e6ce2f6c34c46af} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM@{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}}
+\index{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM@{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}{XDG\_POSITIONER\_CONSTRAINT\_ADJUSTMENT\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a2a91094e03ac28f0e218e5f67b15bc9f}\label{xdg-shell-client-protocol_8h_a2a91094e03ac28f0e218e5f67b15bc9f} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_DESTROY@{XDG\_POSITIONER\_DESTROY}}
+\index{XDG\_POSITIONER\_DESTROY@{XDG\_POSITIONER\_DESTROY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_DESTROY}{XDG\_POSITIONER\_DESTROY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+DESTROY~0}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a00a7afc630f2e011cfb6ad63c49c270d}\label{xdg-shell-client-protocol_8h_a00a7afc630f2e011cfb6ad63c49c270d} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ERROR\_ENUM@{XDG\_POSITIONER\_ERROR\_ENUM}}
+\index{XDG\_POSITIONER\_ERROR\_ENUM@{XDG\_POSITIONER\_ERROR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_ERROR\_ENUM}{XDG\_POSITIONER\_ERROR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+ERROR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_afe56a2ad95eaa41b0077981e99bc21fd}\label{xdg-shell-client-protocol_8h_afe56a2ad95eaa41b0077981e99bc21fd} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_ENUM@{XDG\_POSITIONER\_GRAVITY\_ENUM}}
+\index{XDG\_POSITIONER\_GRAVITY\_ENUM@{XDG\_POSITIONER\_GRAVITY\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_GRAVITY\_ENUM}{XDG\_POSITIONER\_GRAVITY\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ac7d01db1f025bcfff067f345d8ece730}\label{xdg-shell-client-protocol_8h_ac7d01db1f025bcfff067f345d8ece730} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_INTERFACE@{XDG\_POSITIONER\_INTERFACE}}
+\index{XDG\_POSITIONER\_INTERFACE@{XDG\_POSITIONER\_INTERFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_INTERFACE}{XDG\_POSITIONER\_INTERFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+INTERFACE}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a063cd2276fd59937a5b4e6d37dc119b6}\label{xdg-shell-client-protocol_8h_a063cd2276fd59937a5b4e6d37dc119b6} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_ANCHOR@{XDG\_POSITIONER\_SET\_ANCHOR}}
+\index{XDG\_POSITIONER\_SET\_ANCHOR@{XDG\_POSITIONER\_SET\_ANCHOR}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_ANCHOR}{XDG\_POSITIONER\_SET\_ANCHOR}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR~3}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a8ca217de4d3761a8fc72d06502a08ef3}\label{xdg-shell-client-protocol_8h_a8ca217de4d3761a8fc72d06502a08ef3} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_ANCHOR\_RECT@{XDG\_POSITIONER\_SET\_ANCHOR\_RECT}}
+\index{XDG\_POSITIONER\_SET\_ANCHOR\_RECT@{XDG\_POSITIONER\_SET\_ANCHOR\_RECT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_ANCHOR\_RECT}{XDG\_POSITIONER\_SET\_ANCHOR\_RECT}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+ANCHOR\+\_\+\+RECT~2}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a4bf1461ce34fdd46751760169072c69e}\label{xdg-shell-client-protocol_8h_a4bf1461ce34fdd46751760169072c69e} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT@{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT}}
+\index{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT@{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT}{XDG\_POSITIONER\_SET\_CONSTRAINT\_ADJUSTMENT}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+CONSTRAINT\+\_\+\+ADJUSTMENT~5}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a18ffc2a975d114be99b5f2940dc657dd}\label{xdg-shell-client-protocol_8h_a18ffc2a975d114be99b5f2940dc657dd} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_GRAVITY@{XDG\_POSITIONER\_SET\_GRAVITY}}
+\index{XDG\_POSITIONER\_SET\_GRAVITY@{XDG\_POSITIONER\_SET\_GRAVITY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_GRAVITY}{XDG\_POSITIONER\_SET\_GRAVITY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+GRAVITY~4}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ac8f52c24c8086b002aa06ef5c7a237d1}\label{xdg-shell-client-protocol_8h_ac8f52c24c8086b002aa06ef5c7a237d1} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_OFFSET@{XDG\_POSITIONER\_SET\_OFFSET}}
+\index{XDG\_POSITIONER\_SET\_OFFSET@{XDG\_POSITIONER\_SET\_OFFSET}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_OFFSET}{XDG\_POSITIONER\_SET\_OFFSET}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+OFFSET~6}
+
+\Hypertarget{xdg-shell-client-protocol_8h_aa85e7ddb259657e9c9762369e6f37478}\label{xdg-shell-client-protocol_8h_aa85e7ddb259657e9c9762369e6f37478} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE@{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE}}
+\index{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE@{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE}{XDG\_POSITIONER\_SET\_PARENT\_CONFIGURE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+CONFIGURE~9}
+
+\Hypertarget{xdg-shell-client-protocol_8h_af8a435c7c2cb4a6e5239f315f5dd6d68}\label{xdg-shell-client-protocol_8h_af8a435c7c2cb4a6e5239f315f5dd6d68} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_PARENT\_SIZE@{XDG\_POSITIONER\_SET\_PARENT\_SIZE}}
+\index{XDG\_POSITIONER\_SET\_PARENT\_SIZE@{XDG\_POSITIONER\_SET\_PARENT\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_PARENT\_SIZE}{XDG\_POSITIONER\_SET\_PARENT\_SIZE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+PARENT\+\_\+\+SIZE~8}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a9c25e98961a05401a7ba4eb734b9a0a9}\label{xdg-shell-client-protocol_8h_a9c25e98961a05401a7ba4eb734b9a0a9} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_REACTIVE@{XDG\_POSITIONER\_SET\_REACTIVE}}
+\index{XDG\_POSITIONER\_SET\_REACTIVE@{XDG\_POSITIONER\_SET\_REACTIVE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_REACTIVE}{XDG\_POSITIONER\_SET\_REACTIVE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+REACTIVE~7}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a5bd9ed4b96f963e64e156a17ee670f35}\label{xdg-shell-client-protocol_8h_a5bd9ed4b96f963e64e156a17ee670f35} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_SET\_SIZE@{XDG\_POSITIONER\_SET\_SIZE}}
+\index{XDG\_POSITIONER\_SET\_SIZE@{XDG\_POSITIONER\_SET\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_POSITIONER\_SET\_SIZE}{XDG\_POSITIONER\_SET\_SIZE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+POSITIONER\+\_\+\+SET\+\_\+\+SIZE~1}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a9d3dddd8ce2cde5e92315b22d02b170c}\label{xdg-shell-client-protocol_8h_a9d3dddd8ce2cde5e92315b22d02b170c} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ACK\_CONFIGURE@{XDG\_SURFACE\_ACK\_CONFIGURE}}
+\index{XDG\_SURFACE\_ACK\_CONFIGURE@{XDG\_SURFACE\_ACK\_CONFIGURE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_ACK\_CONFIGURE}{XDG\_SURFACE\_ACK\_CONFIGURE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+ACK\+\_\+\+CONFIGURE~4}
+
+\Hypertarget{xdg-shell-client-protocol_8h_aea86cf0f4d26c03bee9ce8cad326dcdb}\label{xdg-shell-client-protocol_8h_aea86cf0f4d26c03bee9ce8cad326dcdb} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_DESTROY@{XDG\_SURFACE\_DESTROY}}
+\index{XDG\_SURFACE\_DESTROY@{XDG\_SURFACE\_DESTROY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_DESTROY}{XDG\_SURFACE\_DESTROY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+DESTROY~0}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a6c52998c21d7a0b3c560db23e1a62424}\label{xdg-shell-client-protocol_8h_a6c52998c21d7a0b3c560db23e1a62424} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_ENUM@{XDG\_SURFACE\_ERROR\_ENUM}}
+\index{XDG\_SURFACE\_ERROR\_ENUM@{XDG\_SURFACE\_ERROR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_ERROR\_ENUM}{XDG\_SURFACE\_ERROR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ad42b241c5943bf64bea8a76231d123cb}\label{xdg-shell-client-protocol_8h_ad42b241c5943bf64bea8a76231d123cb} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_GET\_POPUP@{XDG\_SURFACE\_GET\_POPUP}}
+\index{XDG\_SURFACE\_GET\_POPUP@{XDG\_SURFACE\_GET\_POPUP}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_GET\_POPUP}{XDG\_SURFACE\_GET\_POPUP}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+POPUP~2}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a0a32e7931196bdc5705e64a8b1daa86d}\label{xdg-shell-client-protocol_8h_a0a32e7931196bdc5705e64a8b1daa86d} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_GET\_TOPLEVEL@{XDG\_SURFACE\_GET\_TOPLEVEL}}
+\index{XDG\_SURFACE\_GET\_TOPLEVEL@{XDG\_SURFACE\_GET\_TOPLEVEL}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_GET\_TOPLEVEL}{XDG\_SURFACE\_GET\_TOPLEVEL}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+GET\+\_\+\+TOPLEVEL~1}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a3861acb7e8b870ffe389f962de3eb383}\label{xdg-shell-client-protocol_8h_a3861acb7e8b870ffe389f962de3eb383} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_INTERFACE@{XDG\_SURFACE\_INTERFACE}}
+\index{XDG\_SURFACE\_INTERFACE@{XDG\_SURFACE\_INTERFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_INTERFACE}{XDG\_SURFACE\_INTERFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+INTERFACE}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a867997a706ce9b1f272aea72677a1266}\label{xdg-shell-client-protocol_8h_a867997a706ce9b1f272aea72677a1266} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY@{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY}}
+\index{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY@{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY}{XDG\_SURFACE\_SET\_WINDOW\_GEOMETRY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+SURFACE\+\_\+\+SET\+\_\+\+WINDOW\+\_\+\+GEOMETRY~3}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a5fed65208a34eadc332fd1da4184dd1f}\label{xdg-shell-client-protocol_8h_a5fed65208a34eadc332fd1da4184dd1f} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_DESTROY@{XDG\_TOPLEVEL\_DESTROY}}
+\index{XDG\_TOPLEVEL\_DESTROY@{XDG\_TOPLEVEL\_DESTROY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_DESTROY}{XDG\_TOPLEVEL\_DESTROY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+DESTROY~0}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a8ca9a2707cf566978d20d35c7414437d}\label{xdg-shell-client-protocol_8h_a8ca9a2707cf566978d20d35c7414437d} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_ERROR\_ENUM@{XDG\_TOPLEVEL\_ERROR\_ENUM}}
+\index{XDG\_TOPLEVEL\_ERROR\_ENUM@{XDG\_TOPLEVEL\_ERROR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_ERROR\_ENUM}{XDG\_TOPLEVEL\_ERROR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_af653a2428d99078086dcb15383d62cd5}\label{xdg-shell-client-protocol_8h_af653a2428d99078086dcb15383d62cd5} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_INTERFACE@{XDG\_TOPLEVEL\_INTERFACE}}
+\index{XDG\_TOPLEVEL\_INTERFACE@{XDG\_TOPLEVEL\_INTERFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_INTERFACE}{XDG\_TOPLEVEL\_INTERFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+INTERFACE}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a9a6ce6295dcade29bfb4a71308730178}\label{xdg-shell-client-protocol_8h_a9a6ce6295dcade29bfb4a71308730178} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_MOVE@{XDG\_TOPLEVEL\_MOVE}}
+\index{XDG\_TOPLEVEL\_MOVE@{XDG\_TOPLEVEL\_MOVE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_MOVE}{XDG\_TOPLEVEL\_MOVE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+MOVE~5}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a02512b40e0f4d57f06bbf1f60620ba52}\label{xdg-shell-client-protocol_8h_a02512b40e0f4d57f06bbf1f60620ba52} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_RESIZE@{XDG\_TOPLEVEL\_RESIZE}}
+\index{XDG\_TOPLEVEL\_RESIZE@{XDG\_TOPLEVEL\_RESIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_RESIZE}{XDG\_TOPLEVEL\_RESIZE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE~6}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a78cbe854d2db7eea8af8b86e9279a681}\label{xdg-shell-client-protocol_8h_a78cbe854d2db7eea8af8b86e9279a681} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM@{XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}}
+\index{XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM@{XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}{XDG\_TOPLEVEL\_RESIZE\_EDGE\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+RESIZE\+\_\+\+EDGE\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a368b83186b38aa7a1d59ecc51541b4f6}\label{xdg-shell-client-protocol_8h_a368b83186b38aa7a1d59ecc51541b4f6} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_APP\_ID@{XDG\_TOPLEVEL\_SET\_APP\_ID}}
+\index{XDG\_TOPLEVEL\_SET\_APP\_ID@{XDG\_TOPLEVEL\_SET\_APP\_ID}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_APP\_ID}{XDG\_TOPLEVEL\_SET\_APP\_ID}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+APP\+\_\+\+ID~3}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ac5764650bb79659b0477875fd00bb391}\label{xdg-shell-client-protocol_8h_ac5764650bb79659b0477875fd00bb391} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_FULLSCREEN@{XDG\_TOPLEVEL\_SET\_FULLSCREEN}}
+\index{XDG\_TOPLEVEL\_SET\_FULLSCREEN@{XDG\_TOPLEVEL\_SET\_FULLSCREEN}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_FULLSCREEN}{XDG\_TOPLEVEL\_SET\_FULLSCREEN}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+FULLSCREEN~11}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a819b272958cef4f5e035b480e2034c0f}\label{xdg-shell-client-protocol_8h_a819b272958cef4f5e035b480e2034c0f} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_MAX\_SIZE@{XDG\_TOPLEVEL\_SET\_MAX\_SIZE}}
+\index{XDG\_TOPLEVEL\_SET\_MAX\_SIZE@{XDG\_TOPLEVEL\_SET\_MAX\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_MAX\_SIZE}{XDG\_TOPLEVEL\_SET\_MAX\_SIZE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAX\+\_\+\+SIZE~7}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a606aee255df6456a69ed691ed5dc977d}\label{xdg-shell-client-protocol_8h_a606aee255df6456a69ed691ed5dc977d} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_MAXIMIZED@{XDG\_TOPLEVEL\_SET\_MAXIMIZED}}
+\index{XDG\_TOPLEVEL\_SET\_MAXIMIZED@{XDG\_TOPLEVEL\_SET\_MAXIMIZED}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_MAXIMIZED}{XDG\_TOPLEVEL\_SET\_MAXIMIZED}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MAXIMIZED~9}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ad8f38e0fbe4d1f49b8740ede81eda602}\label{xdg-shell-client-protocol_8h_ad8f38e0fbe4d1f49b8740ede81eda602} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_MIN\_SIZE@{XDG\_TOPLEVEL\_SET\_MIN\_SIZE}}
+\index{XDG\_TOPLEVEL\_SET\_MIN\_SIZE@{XDG\_TOPLEVEL\_SET\_MIN\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_MIN\_SIZE}{XDG\_TOPLEVEL\_SET\_MIN\_SIZE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MIN\+\_\+\+SIZE~8}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a34b0f3668742dc34951279a656854339}\label{xdg-shell-client-protocol_8h_a34b0f3668742dc34951279a656854339} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_MINIMIZED@{XDG\_TOPLEVEL\_SET\_MINIMIZED}}
+\index{XDG\_TOPLEVEL\_SET\_MINIMIZED@{XDG\_TOPLEVEL\_SET\_MINIMIZED}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_MINIMIZED}{XDG\_TOPLEVEL\_SET\_MINIMIZED}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+MINIMIZED~13}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a3166edd3986d5f77d223893ab61f7fd2}\label{xdg-shell-client-protocol_8h_a3166edd3986d5f77d223893ab61f7fd2} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_PARENT@{XDG\_TOPLEVEL\_SET\_PARENT}}
+\index{XDG\_TOPLEVEL\_SET\_PARENT@{XDG\_TOPLEVEL\_SET\_PARENT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_PARENT}{XDG\_TOPLEVEL\_SET\_PARENT}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+PARENT~1}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a608641e7b1dae66f167a0233fae64b51}\label{xdg-shell-client-protocol_8h_a608641e7b1dae66f167a0233fae64b51} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SET\_TITLE@{XDG\_TOPLEVEL\_SET\_TITLE}}
+\index{XDG\_TOPLEVEL\_SET\_TITLE@{XDG\_TOPLEVEL\_SET\_TITLE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SET\_TITLE}{XDG\_TOPLEVEL\_SET\_TITLE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SET\+\_\+\+TITLE~2}
+
+\Hypertarget{xdg-shell-client-protocol_8h_acbf6f7d6560778adbbc000c851ac845c}\label{xdg-shell-client-protocol_8h_acbf6f7d6560778adbbc000c851ac845c} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU@{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU}}
+\index{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU@{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU}{XDG\_TOPLEVEL\_SHOW\_WINDOW\_MENU}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+SHOW\+\_\+\+WINDOW\+\_\+\+MENU~4}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a626b584b4036383dd4aba4e7e502416f}\label{xdg-shell-client-protocol_8h_a626b584b4036383dd4aba4e7e502416f} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_STATE\_ENUM@{XDG\_TOPLEVEL\_STATE\_ENUM}}
+\index{XDG\_TOPLEVEL\_STATE\_ENUM@{XDG\_TOPLEVEL\_STATE\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_STATE\_ENUM}{XDG\_TOPLEVEL\_STATE\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+STATE\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a1d017713e135421360b90285d6a4d372}\label{xdg-shell-client-protocol_8h_a1d017713e135421360b90285d6a4d372} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_UNSET\_FULLSCREEN@{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN}}
+\index{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN@{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN}{XDG\_TOPLEVEL\_UNSET\_FULLSCREEN}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+FULLSCREEN~12}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a05261aa2b30737e2d6cd72cc01275a22}\label{xdg-shell-client-protocol_8h_a05261aa2b30737e2d6cd72cc01275a22} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_UNSET\_MAXIMIZED@{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED}}
+\index{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED@{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED}{XDG\_TOPLEVEL\_UNSET\_MAXIMIZED}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+UNSET\+\_\+\+MAXIMIZED~10}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a2d1e1cbb938eaf3d360ef9cf85cebfc7}\label{xdg-shell-client-protocol_8h_a2d1e1cbb938eaf3d360ef9cf85cebfc7} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}}
+\index{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_aeccafa21e4f6f850f3c9ac55a5c7b956}\label{xdg-shell-client-protocol_8h_aeccafa21e4f6f850f3c9ac55a5c7b956} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_CREATE\_POSITIONER@{XDG\_WM\_BASE\_CREATE\_POSITIONER}}
+\index{XDG\_WM\_BASE\_CREATE\_POSITIONER@{XDG\_WM\_BASE\_CREATE\_POSITIONER}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_CREATE\_POSITIONER}{XDG\_WM\_BASE\_CREATE\_POSITIONER}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+CREATE\+\_\+\+POSITIONER~1}
+
+\Hypertarget{xdg-shell-client-protocol_8h_af89235c5d56be7a635db43c756e47263}\label{xdg-shell-client-protocol_8h_af89235c5d56be7a635db43c756e47263} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_DESTROY@{XDG\_WM\_BASE\_DESTROY}}
+\index{XDG\_WM\_BASE\_DESTROY@{XDG\_WM\_BASE\_DESTROY}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_DESTROY}{XDG\_WM\_BASE\_DESTROY}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+DESTROY~0}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a9df120e3c48abdd2913b3a7dab965814}\label{xdg-shell-client-protocol_8h_a9df120e3c48abdd2913b3a7dab965814} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_ENUM@{XDG\_WM\_BASE\_ERROR\_ENUM}}
+\index{XDG\_WM\_BASE\_ERROR\_ENUM@{XDG\_WM\_BASE\_ERROR\_ENUM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_ERROR\_ENUM}{XDG\_WM\_BASE\_ERROR\_ENUM}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+ENUM}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a3a8a97d927b643954fc9f0dc330ce457}\label{xdg-shell-client-protocol_8h_a3a8a97d927b643954fc9f0dc330ce457} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_GET\_XDG\_SURFACE@{XDG\_WM\_BASE\_GET\_XDG\_SURFACE}}
+\index{XDG\_WM\_BASE\_GET\_XDG\_SURFACE@{XDG\_WM\_BASE\_GET\_XDG\_SURFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_GET\_XDG\_SURFACE}{XDG\_WM\_BASE\_GET\_XDG\_SURFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+GET\+\_\+\+XDG\+\_\+\+SURFACE~2}
+
+\Hypertarget{xdg-shell-client-protocol_8h_a8d428006fb054672c86f0db7bd74abc0}\label{xdg-shell-client-protocol_8h_a8d428006fb054672c86f0db7bd74abc0} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_INTERFACE@{XDG\_WM\_BASE\_INTERFACE}}
+\index{XDG\_WM\_BASE\_INTERFACE@{XDG\_WM\_BASE\_INTERFACE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_INTERFACE}{XDG\_WM\_BASE\_INTERFACE}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+INTERFACE}
+
+\Hypertarget{xdg-shell-client-protocol_8h_ac64c3488d67222d6abc2b4a4d62004f8}\label{xdg-shell-client-protocol_8h_ac64c3488d67222d6abc2b4a4d62004f8} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_PONG@{XDG\_WM\_BASE\_PONG}}
+\index{XDG\_WM\_BASE\_PONG@{XDG\_WM\_BASE\_PONG}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{XDG\_WM\_BASE\_PONG}{XDG\_WM\_BASE\_PONG}}
+{\footnotesize\ttfamily \#define XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+PONG~3}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270}\label{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_popup\_error@{xdg\_popup\_error}}
+\index{xdg\_popup\_error@{xdg\_popup\_error}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_popup\_error}{xdg\_popup\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270}{xdg\+\_\+popup\+\_\+error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POPUP\_ERROR\_INVALID\_GRAB@{XDG\_POPUP\_ERROR\_INVALID\_GRAB}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POPUP\_ERROR\_INVALID\_GRAB@{XDG\_POPUP\_ERROR\_INVALID\_GRAB}}}\Hypertarget{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270a03886bf45b2f58fe6896ceea7da37d3e}\label{xdg-shell-client-protocol_8h_a7853420a739b1bdeedfc0f4a80ff9270a03886bf45b2f58fe6896ceea7da37d3e} 
+XDG\+\_\+\+POPUP\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+GRAB&tried to grab after being mapped \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_positioner\_anchor@{xdg\_positioner\_anchor}}
+\index{xdg\_positioner\_anchor@{xdg\_positioner\_anchor}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_positioner\_anchor}{xdg\_positioner\_anchor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586}{xdg\+\_\+positioner\+\_\+anchor}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_NONE@{XDG\_POSITIONER\_ANCHOR\_NONE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_NONE@{XDG\_POSITIONER\_ANCHOR\_NONE}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586adcd9434b06c37cd37edf2d39210da463}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586adcd9434b06c37cd37edf2d39210da463} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_TOP@{XDG\_POSITIONER\_ANCHOR\_TOP}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_TOP@{XDG\_POSITIONER\_ANCHOR\_TOP}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a731a3303bb0805a63bd4c14336d6920d}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a731a3303bb0805a63bd4c14336d6920d} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_BOTTOM@{XDG\_POSITIONER\_ANCHOR\_BOTTOM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_BOTTOM@{XDG\_POSITIONER\_ANCHOR\_BOTTOM}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a31c2f58e44cc99494f7f8de7dce02ad0}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a31c2f58e44cc99494f7f8de7dce02ad0} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_LEFT@{XDG\_POSITIONER\_ANCHOR\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_LEFT@{XDG\_POSITIONER\_ANCHOR\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac52770f96517f2a429e4284e54922cf3}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac52770f96517f2a429e4284e54922cf3} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3aa13c68430237dc66fdd5de2d712047}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3aa13c68430237dc66fdd5de2d712047} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_TOP\_LEFT@{XDG\_POSITIONER\_ANCHOR\_TOP\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_TOP\_LEFT@{XDG\_POSITIONER\_ANCHOR\_TOP\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3549b7488d5d681ae4ea21b092e7a381}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a3549b7488d5d681ae4ea21b092e7a381} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_LEFT@{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_BOTTOM\_LEFT@{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac6fe9269fa0cbea407a8bd320f8d0713}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ac6fe9269fa0cbea407a8bd320f8d0713} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_TOP\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_TOP\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_TOP\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_TOP\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a240e43f453bf3c611e40cbb67600603f}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586a240e43f453bf3c611e40cbb67600603f} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+TOP\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ANCHOR\_BOTTOM\_RIGHT@{XDG\_POSITIONER\_ANCHOR\_BOTTOM\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ad988ee185bcf0529ed6e119937b8a059}\label{xdg-shell-client-protocol_8h_a3a2f72beaa6323b8ab970b3650800586ad988ee185bcf0529ed6e119937b8a059} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ANCHOR\+\_\+\+BOTTOM\+\_\+\+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11d}\label{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11d} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_positioner\_error@{xdg\_positioner\_error}}
+\index{xdg\_positioner\_error@{xdg\_positioner\_error}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_positioner\_error}{xdg\_positioner\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11d}{xdg\+\_\+positioner\+\_\+error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_ERROR\_INVALID\_INPUT@{XDG\_POSITIONER\_ERROR\_INVALID\_INPUT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_ERROR\_INVALID\_INPUT@{XDG\_POSITIONER\_ERROR\_INVALID\_INPUT}}}\Hypertarget{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11da2ffbc312f24d601b3904ba41373d43d2}\label{xdg-shell-client-protocol_8h_ab98a5488afc3a9dd82851ea61e48e11da2ffbc312f24d601b3904ba41373d43d2} 
+XDG\+\_\+\+POSITIONER\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+INPUT&invalid input provided \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56ee}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56ee} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_positioner\_gravity@{xdg\_positioner\_gravity}}
+\index{xdg\_positioner\_gravity@{xdg\_positioner\_gravity}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_positioner\_gravity}{xdg\_positioner\_gravity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56ee}{xdg\+\_\+positioner\+\_\+gravity}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_NONE@{XDG\_POSITIONER\_GRAVITY\_NONE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_NONE@{XDG\_POSITIONER\_GRAVITY\_NONE}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea608fa7779159172ae3b7372328cb8061}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea608fa7779159172ae3b7372328cb8061} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_TOP@{XDG\_POSITIONER\_GRAVITY\_TOP}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_TOP@{XDG\_POSITIONER\_GRAVITY\_TOP}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea9dbd31729e2fb730fc5fce36f2a68130}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea9dbd31729e2fb730fc5fce36f2a68130} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_BOTTOM@{XDG\_POSITIONER\_GRAVITY\_BOTTOM}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_BOTTOM@{XDG\_POSITIONER\_GRAVITY\_BOTTOM}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaa23c0783a7e455e2e7921ee53b2a3e11}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaa23c0783a7e455e2e7921ee53b2a3e11} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_LEFT@{XDG\_POSITIONER\_GRAVITY\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_LEFT@{XDG\_POSITIONER\_GRAVITY\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea06018646b8e07ea63a4f8862ea80f4fe}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea06018646b8e07ea63a4f8862ea80f4fe} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea68d8ea7271c48de84b36ee8589bf2a34}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea68d8ea7271c48de84b36ee8589bf2a34} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_TOP\_LEFT@{XDG\_POSITIONER\_GRAVITY\_TOP\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_TOP\_LEFT@{XDG\_POSITIONER\_GRAVITY\_TOP\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eead2b4ab66a6372c48fdf95b34747ac06c}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eead2b4ab66a6372c48fdf95b34747ac06c} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_LEFT@{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_LEFT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_BOTTOM\_LEFT@{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_LEFT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea6ddefa77ef447a6514b37892c06110f2}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea6ddefa77ef447a6514b37892c06110f2} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_TOP\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_TOP\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_TOP\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_TOP\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaf6a0b5ab2136dfa8e94bb6f5754d4ef7}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eeaf6a0b5ab2136dfa8e94bb6f5754d4ef7} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+TOP\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_RIGHT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_POSITIONER\_GRAVITY\_BOTTOM\_RIGHT@{XDG\_POSITIONER\_GRAVITY\_BOTTOM\_RIGHT}}}\Hypertarget{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea141569e57066889372e89659908e941d}\label{xdg-shell-client-protocol_8h_a952146830ec030b31ae2d3cab08d56eea141569e57066889372e89659908e941d} 
+XDG\+\_\+\+POSITIONER\+\_\+\+GRAVITY\+\_\+\+BOTTOM\+\_\+\+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_surface\_error@{xdg\_surface\_error}}
+\index{xdg\_surface\_error@{xdg\_surface\_error}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_surface\_error}{xdg\_surface\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835}{xdg\+\_\+surface\+\_\+error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_NOT\_CONSTRUCTED@{XDG\_SURFACE\_ERROR\_NOT\_CONSTRUCTED}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_NOT\_CONSTRUCTED@{XDG\_SURFACE\_ERROR\_NOT\_CONSTRUCTED}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a89b78421ba8b5ce3812e8115b9d4f1b4}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a89b78421ba8b5ce3812e8115b9d4f1b4} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+CONSTRUCTED&Surface was not fully constructed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_ALREADY\_CONSTRUCTED@{XDG\_SURFACE\_ERROR\_ALREADY\_CONSTRUCTED}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_ALREADY\_CONSTRUCTED@{XDG\_SURFACE\_ERROR\_ALREADY\_CONSTRUCTED}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ab7ffcf4dc61f06f2954ec355a94cf915}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ab7ffcf4dc61f06f2954ec355a94cf915} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+ALREADY\+\_\+\+CONSTRUCTED&Surface was already constructed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_UNCONFIGURED\_BUFFER@{XDG\_SURFACE\_ERROR\_UNCONFIGURED\_BUFFER}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_UNCONFIGURED\_BUFFER@{XDG\_SURFACE\_ERROR\_UNCONFIGURED\_BUFFER}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ad6354aa90ebf7e1c67d781634f64707d}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835ad6354aa90ebf7e1c67d781634f64707d} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+UNCONFIGURED\+\_\+\+BUFFER&Attaching a buffer to an unconfigured surface \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_INVALID\_SERIAL@{XDG\_SURFACE\_ERROR\_INVALID\_SERIAL}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_INVALID\_SERIAL@{XDG\_SURFACE\_ERROR\_INVALID\_SERIAL}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a7fee927d50a9d30c3f7c717aed716aad}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835a7fee927d50a9d30c3f7c717aed716aad} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SERIAL&Invalid serial number when acking a configure event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_INVALID\_SIZE@{XDG\_SURFACE\_ERROR\_INVALID\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_INVALID\_SIZE@{XDG\_SURFACE\_ERROR\_INVALID\_SIZE}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aee3f2eaabb224e6d5cda9549084f41cb}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aee3f2eaabb224e6d5cda9549084f41cb} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SIZE&Width or height was zero or negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_SURFACE\_ERROR\_DEFUNCT\_ROLE\_OBJECT@{XDG\_SURFACE\_ERROR\_DEFUNCT\_ROLE\_OBJECT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_SURFACE\_ERROR\_DEFUNCT\_ROLE\_OBJECT@{XDG\_SURFACE\_ERROR\_DEFUNCT\_ROLE\_OBJECT}}}\Hypertarget{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aaff44a1bf577d6f3b1a1905f36079ba3}\label{xdg-shell-client-protocol_8h_a09a08d90a8e84cf9484e2ebbfceec835aaff44a1bf577d6f3b1a1905f36079ba3} 
+XDG\+\_\+\+SURFACE\+\_\+\+ERROR\+\_\+\+DEFUNCT\+\_\+\+ROLE\+\_\+\+OBJECT&Surface was destroyed before its role object \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92f}\label{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92f} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_toplevel\_error@{xdg\_toplevel\_error}}
+\index{xdg\_toplevel\_error@{xdg\_toplevel\_error}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_toplevel\_error}{xdg\_toplevel\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92f}{xdg\+\_\+toplevel\+\_\+error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_ERROR\_INVALID\_RESIZE\_EDGE@{XDG\_TOPLEVEL\_ERROR\_INVALID\_RESIZE\_EDGE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_ERROR\_INVALID\_RESIZE\_EDGE@{XDG\_TOPLEVEL\_ERROR\_INVALID\_RESIZE\_EDGE}}}\Hypertarget{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fac382c3ee54b86fe9d824d0c02e861e7f}\label{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fac382c3ee54b86fe9d824d0c02e861e7f} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+RESIZE\+\_\+\+EDGE&provided value is not a valid variant of the resize\+\_\+edge enum \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_ERROR\_INVALID\_PARENT@{XDG\_TOPLEVEL\_ERROR\_INVALID\_PARENT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_ERROR\_INVALID\_PARENT@{XDG\_TOPLEVEL\_ERROR\_INVALID\_PARENT}}}\Hypertarget{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa03e0719f3ef49f46d1d53eefce225e24}\label{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa03e0719f3ef49f46d1d53eefce225e24} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+PARENT&invalid parent toplevel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_ERROR\_INVALID\_SIZE@{XDG\_TOPLEVEL\_ERROR\_INVALID\_SIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_ERROR\_INVALID\_SIZE@{XDG\_TOPLEVEL\_ERROR\_INVALID\_SIZE}}}\Hypertarget{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa4130d4117472144bbef442e82acdb773}\label{xdg-shell-client-protocol_8h_a91346a51c92042d8bcd709e1af28b92fa4130d4117472144bbef442e82acdb773} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SIZE&client provided an invalid min or max size \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cd}\label{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cd} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_toplevel\_wm\_capabilities@{xdg\_toplevel\_wm\_capabilities}}
+\index{xdg\_toplevel\_wm\_capabilities@{xdg\_toplevel\_wm\_capabilities}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_toplevel\_wm\_capabilities}{xdg\_toplevel\_wm\_capabilities}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cd}{xdg\+\_\+toplevel\+\_\+wm\+\_\+capabilities}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_WINDOW\_MENU@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_WINDOW\_MENU}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_WM\_CAPABILITIES\_WINDOW\_MENU@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_WINDOW\_MENU}}}\Hypertarget{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaf364734cba8ab66e37ac1a0083433a2c}\label{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaf364734cba8ab66e37ac1a0083433a2c} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+WINDOW\+\_\+\+MENU&show\+\_\+window\+\_\+menu is available \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MAXIMIZE@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MAXIMIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MAXIMIZE@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MAXIMIZE}}}\Hypertarget{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaa76f2c343ea66db2918f8fcec262c716}\label{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdaa76f2c343ea66db2918f8fcec262c716} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+MAXIMIZE&set\+\_\+maximized and unset\+\_\+maximized are available \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_FULLSCREEN@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_FULLSCREEN}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_WM\_CAPABILITIES\_FULLSCREEN@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_FULLSCREEN}}}\Hypertarget{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cda3109feef512e592df9ff2b9627966c4e}\label{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cda3109feef512e592df9ff2b9627966c4e} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+FULLSCREEN&set\+\_\+fullscreen and unset\+\_\+fullscreen are available \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MINIMIZE@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MINIMIZE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MINIMIZE@{XDG\_TOPLEVEL\_WM\_CAPABILITIES\_MINIMIZE}}}\Hypertarget{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdab735d819922a65717d80d56b62b9773e}\label{xdg-shell-client-protocol_8h_a47b1c00987659aec7c29991e1b48d6cdab735d819922a65717d80d56b62b9773e} 
+XDG\+\_\+\+TOPLEVEL\+\_\+\+WM\+\_\+\+CAPABILITIES\+\_\+\+MINIMIZE&set\+\_\+minimized is available \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492e}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492e} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_wm\_base\_error@{xdg\_wm\_base\_error}}
+\index{xdg\_wm\_base\_error@{xdg\_wm\_base\_error}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_wm\_base\_error}{xdg\_wm\_base\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492e}{xdg\+\_\+wm\+\_\+base\+\_\+error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_ROLE@{XDG\_WM\_BASE\_ERROR\_ROLE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_ROLE@{XDG\_WM\_BASE\_ERROR\_ROLE}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead9770c2eeb08fb841b23e02438e127cd}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead9770c2eeb08fb841b23e02438e127cd} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+ROLE&given wl\+\_\+surface has another role \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_DEFUNCT\_SURFACES@{XDG\_WM\_BASE\_ERROR\_DEFUNCT\_SURFACES}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_DEFUNCT\_SURFACES@{XDG\_WM\_BASE\_ERROR\_DEFUNCT\_SURFACES}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea4d87b0a2c52d8937d181280a670860f4}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea4d87b0a2c52d8937d181280a670860f4} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+DEFUNCT\+\_\+\+SURFACES&xdg\+\_\+wm\+\_\+base was destroyed before children \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_NOT\_THE\_TOPMOST\_POPUP@{XDG\_WM\_BASE\_ERROR\_NOT\_THE\_TOPMOST\_POPUP}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_NOT\_THE\_TOPMOST\_POPUP@{XDG\_WM\_BASE\_ERROR\_NOT\_THE\_TOPMOST\_POPUP}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead8da0dfaeedf4192aea5e01a5b4146b1}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ead8da0dfaeedf4192aea5e01a5b4146b1} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+THE\+\_\+\+TOPMOST\+\_\+\+POPUP&the client tried to map or destroy a non-\/topmost popup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_INVALID\_POPUP\_PARENT@{XDG\_WM\_BASE\_ERROR\_INVALID\_POPUP\_PARENT}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_INVALID\_POPUP\_PARENT@{XDG\_WM\_BASE\_ERROR\_INVALID\_POPUP\_PARENT}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea1af9f8ff43f3b019aa1858d5212e4fc7}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea1af9f8ff43f3b019aa1858d5212e4fc7} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+POPUP\+\_\+\+PARENT&the client specified an invalid popup parent surface \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_INVALID\_SURFACE\_STATE@{XDG\_WM\_BASE\_ERROR\_INVALID\_SURFACE\_STATE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_INVALID\_SURFACE\_STATE@{XDG\_WM\_BASE\_ERROR\_INVALID\_SURFACE\_STATE}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eac942cd9a06866d6c4dbc715457e8281e}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eac942cd9a06866d6c4dbc715457e8281e} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+SURFACE\+\_\+\+STATE&the client provided an invalid surface state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_INVALID\_POSITIONER@{XDG\_WM\_BASE\_ERROR\_INVALID\_POSITIONER}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_INVALID\_POSITIONER@{XDG\_WM\_BASE\_ERROR\_INVALID\_POSITIONER}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea11d0e9cbc4d8e1e561edf00ed4919a2d}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492ea11d0e9cbc4d8e1e561edf00ed4919a2d} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+POSITIONER&the client provided an invalid positioner \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDG\_WM\_BASE\_ERROR\_UNRESPONSIVE@{XDG\_WM\_BASE\_ERROR\_UNRESPONSIVE}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!XDG\_WM\_BASE\_ERROR\_UNRESPONSIVE@{XDG\_WM\_BASE\_ERROR\_UNRESPONSIVE}}}\Hypertarget{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eaba6fe3d47e4d07ae99aea4f87964fc4e}\label{xdg-shell-client-protocol_8h_a5a421ef58d9911aa10ce20ee47ff492eaba6fe3d47e4d07ae99aea4f87964fc4e} 
+XDG\+\_\+\+WM\+\_\+\+BASE\+\_\+\+ERROR\+\_\+\+UNRESPONSIVE&the client didn’t respond to a ping event in time \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{xdg-shell-client-protocol_8h_aa60edf2c19b40f7ba7e31b4aa1bf8d19}\label{xdg-shell-client-protocol_8h_aa60edf2c19b40f7ba7e31b4aa1bf8d19} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_popup\_interface@{xdg\_popup\_interface}}
+\index{xdg\_popup\_interface@{xdg\_popup\_interface}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_popup\_interface}{xdg\_popup\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+popup\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_popup"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 3,\ xdg\_popup\_requests,}
+\DoxyCodeLine{\ \ \ \ 3,\ xdg\_popup\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-client-protocol_8h_a16a9be7454042fdc62e0418508a624d4}\label{xdg-shell-client-protocol_8h_a16a9be7454042fdc62e0418508a624d4} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_positioner\_interface@{xdg\_positioner\_interface}}
+\index{xdg\_positioner\_interface@{xdg\_positioner\_interface}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_positioner\_interface}{xdg\_positioner\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+positioner\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_positioner"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 10,\ xdg\_positioner\_requests,}
+\DoxyCodeLine{\ \ \ \ 0,\ NULL,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-client-protocol_8h_a5ac26be247039c7cdf4a5a26f613cfe6}\label{xdg-shell-client-protocol_8h_a5ac26be247039c7cdf4a5a26f613cfe6} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_surface\_interface@{xdg\_surface\_interface}}
+\index{xdg\_surface\_interface@{xdg\_surface\_interface}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_surface\_interface}{xdg\_surface\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+surface\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_surface"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 5,\ xdg\_surface\_requests,}
+\DoxyCodeLine{\ \ \ \ 1,\ xdg\_surface\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-client-protocol_8h_a41eaf1ac12f3ef225df8b9f2f6559326}\label{xdg-shell-client-protocol_8h_a41eaf1ac12f3ef225df8b9f2f6559326} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_toplevel\_interface@{xdg\_toplevel\_interface}}
+\index{xdg\_toplevel\_interface@{xdg\_toplevel\_interface}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_toplevel\_interface}{xdg\_toplevel\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{xdg-shell-protocol_8c_acc932c37426d4b9d57ab3766973f81f6}{WL\+\_\+\+PRIVATE}} const struct wl\+\_\+interface xdg\+\_\+toplevel\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}xdg\_toplevel"{}},\ 6,}
+\DoxyCodeLine{\ \ \ \ 14,\ xdg\_toplevel\_requests,}
+\DoxyCodeLine{\ \ \ \ 4,\ xdg\_toplevel\_events,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{xdg-shell-client-protocol_8h_a334a66fc154a4d8cb3f6ab5660a097ba}\label{xdg-shell-client-protocol_8h_a334a66fc154a4d8cb3f6ab5660a097ba} 
+\index{xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}!xdg\_wm\_base\_interface@{xdg\_wm\_base\_interface}}
+\index{xdg\_wm\_base\_interface@{xdg\_wm\_base\_interface}!xdg-\/shell-\/client-\/protocol.h@{xdg-\/shell-\/client-\/protocol.h}}
+\doxysubsubsection{\texorpdfstring{xdg\_wm\_base\_interface}{xdg\_wm\_base\_interface}}
+{\footnotesize\ttfamily const struct wl\+\_\+interface xdg\+\_\+wm\+\_\+base\+\_\+interface\hspace{0.3cm}{\ttfamily [extern]}}
+

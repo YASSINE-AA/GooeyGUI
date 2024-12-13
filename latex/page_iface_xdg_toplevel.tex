@@ -1,0 +1,11 @@
+\doxysection{xdg\+\_\+toplevel}
+\hypertarget{page_iface_xdg_toplevel}{}\label{page_iface_xdg_toplevel}\index{xdg\_toplevel@{xdg\_toplevel}}
+\hypertarget{page_iface_xdg_toplevel_page_iface_xdg_toplevel_desc}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{page_iface_xdg_toplevel_page_iface_xdg_toplevel_desc}
+This interface defines an xdg\+\_\+surface role which allows a surface to, among other things, set window-\/like properties such as maximize, fullscreen, and minimize, set application-\/specific metadata like title and id, and well as trigger user interactive operations such as interactive resize and move.
+
+A xdg\+\_\+toplevel by default is responsible for providing the full intended visual representation of the toplevel, which depending on the window state, may mean things like a title bar, window controls and drop shadow.
+
+Unmapping an xdg\+\_\+toplevel means that the surface cannot be shown by the compositor until it is explicitly mapped again. All active operations (e.\+g., move, resize) are canceled and all attributes (e.\+g. title, state, stacking, ...) are discarded for an xdg\+\_\+toplevel surface when it is unmapped. The xdg\+\_\+toplevel returns to the state it had right after xdg\+\_\+surface.\+get\+\_\+toplevel. The client can re-\/map the toplevel by performing a commit without any buffer attached, waiting for a configure event and handling it as usual (see xdg\+\_\+surface description).
+
+Attaching a null buffer to a toplevel unmaps the surface. \hypertarget{page_iface_xdg_toplevel_page_iface_xdg_toplevel_api}{}\doxysubsection{\texorpdfstring{API}{API}}\label{page_iface_xdg_toplevel_page_iface_xdg_toplevel_api}
+See \doxylink{group__iface__xdg__toplevel}{The xdg\+\_\+toplevel interface}. 

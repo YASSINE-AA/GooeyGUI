@@ -1,0 +1,17 @@
+\doxysection{xdg\+\_\+popup}
+\hypertarget{page_iface_xdg_popup}{}\label{page_iface_xdg_popup}\index{xdg\_popup@{xdg\_popup}}
+\hypertarget{page_iface_xdg_popup_page_iface_xdg_popup_desc}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{page_iface_xdg_popup_page_iface_xdg_popup_desc}
+A popup surface is a short-\/lived, temporary surface. It can be used to implement for example menus, popovers, tooltips and other similar user interface concepts.
+
+A popup can be made to take an explicit grab. See xdg\+\_\+popup.\+grab for details.
+
+When the popup is dismissed, a popup\+\_\+done event will be sent out, and at the same time the surface will be unmapped. See the xdg\+\_\+popup.\+popup\+\_\+done event for details.
+
+Explicitly destroying the xdg\+\_\+popup object will also dismiss the popup and unmap the surface. Clients that want to dismiss the popup when another surface of their own is clicked should dismiss the popup using the destroy request.
+
+A newly created xdg\+\_\+popup will be stacked on top of all previously created xdg\+\_\+popup surfaces associated with the same xdg\+\_\+toplevel.
+
+The parent of an xdg\+\_\+popup must be mapped (see the xdg\+\_\+surface description) before the xdg\+\_\+popup itself.
+
+The client must call wl\+\_\+surface.\+commit on the corresponding wl\+\_\+surface for the xdg\+\_\+popup state to take effect. \hypertarget{page_iface_xdg_popup_page_iface_xdg_popup_api}{}\doxysubsection{\texorpdfstring{API}{API}}\label{page_iface_xdg_popup_page_iface_xdg_popup_api}
+See \doxylink{group__iface__xdg__popup}{The xdg\+\_\+popup interface}. 

@@ -310,7 +310,6 @@ static void click_callback(GLFWwindow *window, int button, int action, int mods)
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
         ctx.current_event->type = GOOEY_EVENT_CLICK;
-        printf("%d %d\n", ctx.current_event->data.click.x, ctx.current_event->data.click.y);
     }
 }
 
@@ -318,6 +317,10 @@ static void cursor_callback(GLFWwindow *window, double posX, double posY)
 {
     ctx.current_event->data.click.x = posX;
     ctx.current_event->data.click.y = posY;
+}
+
+static void refresh_callback(GLFWwindow *window) {
+    ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 
 int glfw_init_ft()
@@ -410,7 +413,7 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color)
 {
     vec3 color_rgb;
     float ndc_x, ndc_y;
-    float scale = 0.45f;
+    float scale = 0.25f;
     convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
     convert_hex_to_rgb(&color_rgb, color);
     glUseProgram(ctx.text_program);
@@ -468,6 +471,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSetKeyCallback(ctx.window, key_callback);
     glfwSetMouseButtonCallback(ctx.window, click_callback);
     glfwSetCursorPosCallback(ctx.window, cursor_callback);
+    glfwSetWindowRefreshCallback(ctx.window, refresh_callback);
 
     GooeyWindow window = {.width = width, .height = height};
 
@@ -481,7 +485,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
-    mat4x4_ortho(ctx.projection, 0.0f, 800.0f, 600.0f, 0.0f, -1.0f, 1.0f);
+    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
     glUseProgram(ctx.text_program);
     glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
     glBindVertexArray(ctx.text_vao);

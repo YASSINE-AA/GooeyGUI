@@ -1,0 +1,11 @@
+\doxysection{xdg\+\_\+positioner}
+\hypertarget{page_iface_xdg_positioner}{}\label{page_iface_xdg_positioner}\index{xdg\_positioner@{xdg\_positioner}}
+\hypertarget{page_iface_xdg_positioner_page_iface_xdg_positioner_desc}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{page_iface_xdg_positioner_page_iface_xdg_positioner_desc}
+The xdg\+\_\+positioner provides a collection of rules for the placement of a child surface relative to a parent surface. Rules can be defined to ensure the child surface remains within the visible area\textquotesingle{}s borders, and to specify how the child surface changes its position, such as sliding along an axis, or flipping around a rectangle. These positioner-\/created rules are constrained by the requirement that a child surface must intersect with or be at least partially adjacent to its parent surface.
+
+See the various requests for details about possible rules.
+
+At the time of the request, the compositor makes a copy of the rules specified by the xdg\+\_\+positioner. Thus, after the request is complete the xdg\+\_\+positioner object can be destroyed or reused; further changes to the object will have no effect on previous usages.
+
+For an xdg\+\_\+positioner object to be considered complete, it must have a non-\/zero size set by set\+\_\+size, and a non-\/zero anchor rectangle set by set\+\_\+anchor\+\_\+rect. Passing an incomplete xdg\+\_\+positioner object when positioning a surface raises an invalid\+\_\+positioner error. \hypertarget{page_iface_xdg_positioner_page_iface_xdg_positioner_api}{}\doxysubsection{\texorpdfstring{API}{API}}\label{page_iface_xdg_positioner_page_iface_xdg_positioner_api}
+See \doxylink{group__iface__xdg__positioner}{The xdg\+\_\+positioner interface}. 

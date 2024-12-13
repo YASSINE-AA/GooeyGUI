@@ -1,0 +1,219 @@
+\chapter{Open\+GL Triangle Program}
+\hypertarget{md_opengl__basics}{}\label{md_opengl__basics}\index{OpenGL Triangle Program@{OpenGL Triangle Program}}
+\label{md_opengl__basics_autotoc_md13}%
+\Hypertarget{md_opengl__basics_autotoc_md13}%
+ \hypertarget{md_opengl__basics_autotoc_md14}{}\doxysection{\texorpdfstring{1. Initialize Open\+GL and Create a Window}{1. Initialize OpenGL and Create a Window}}\label{md_opengl__basics_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Set up a windowing library (e.\+g., GLFW/\+GLUT)}}
+\item {\bfseries{Code snippet for window creation\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Initialize\ GLFW}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!glfwInit())\ \{}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLFW"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ window}}
+\DoxyCodeLine{GLFWwindow*\ window\ =\ glfwCreateWindow(800,\ 600,\ \textcolor{stringliteral}{"{}Triangle\ Program"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!window)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ GLFW\ window"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ glfwTerminate();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{glfwMakeContextCurrent(window);}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+{\bfseries{Debugging Tip\+:}} Check for errors after each GLFW call using\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!glfwInit())\ \{}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}GLFW\ Initialization\ Error!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md16}{}\doxysection{\texorpdfstring{2. Define Vertex Data}{2. Define Vertex Data}}\label{md_opengl__basics_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Vertices of the triangle are in {\bfseries{Normalized Device Coordinates (NDC)}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ vertices[]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ -\/0.5f,\ -\/0.5f,\ 0.0f,\ \textcolor{comment}{//\ Bottom-\/left}}
+\DoxyCodeLine{\ \ \ \ \ 0.5f,\ -\/0.5f,\ 0.0f,\ \textcolor{comment}{//\ Bottom-\/right}}
+\DoxyCodeLine{\ \ \ \ \ 0.0f,\ \ 0.5f,\ 0.0f\ \ \textcolor{comment}{//\ Top-\/center}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md18}{}\doxysection{\texorpdfstring{3. Generate and Bind Vertex Buffer Object (\+VBO)}{3. Generate and Bind Vertex Buffer Object (VBO)}}\label{md_opengl__basics_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Store vertex data in GPU memory.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ VBO;}
+\DoxyCodeLine{glGenBuffers(1,\ \&VBO);}
+\DoxyCodeLine{glBindBuffer(GL\_ARRAY\_BUFFER,\ VBO);}
+\DoxyCodeLine{glBufferData(GL\_ARRAY\_BUFFER,\ \textcolor{keyword}{sizeof}(vertices),\ vertices,\ GL\_STATIC\_DRAW);}
+
+\end{DoxyCode}
+
+
+{\bfseries{Notes\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily GL\+\_\+\+STATIC\+\_\+\+DRAW} is used because the data doesn’t change often.
+\item Use {\ttfamily gl\+Get\+Error()} after Open\+GL calls to detect errors.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md20}{}\doxysection{\texorpdfstring{4. Create and Compile Shaders}{4. Create and Compile Shaders}}\label{md_opengl__basics_autotoc_md20}
+\hypertarget{md_opengl__basics_autotoc_md21}{}\doxysubsection{\texorpdfstring{Vertex Shader}{Vertex Shader}}\label{md_opengl__basics_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ vertexShaderSource\ =\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 0)\ in\ vec3\ aPos;}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()\ \{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ gl\_Position\ =\ vec4(aPos,\ 1.0);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{\textcolor{stringliteral}{}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vertexShader\ =\ glCreateShader(GL\_VERTEX\_SHADER);}
+\DoxyCodeLine{glShaderSource(vertexShader,\ 1,\ \&vertexShaderSource,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{glCompileShader(vertexShader);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ for\ compilation\ errors}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ success;}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ infoLog[512];}
+\DoxyCodeLine{glGetShaderiv(vertexShader,\ GL\_COMPILE\_STATUS,\ \&success);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!success)\ \{}
+\DoxyCodeLine{\ \ \ \ glGetShaderInfoLog(vertexShader,\ 512,\ \textcolor{keyword}{nullptr},\ infoLog);}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}ERROR::SHADER::VERTEX::COMPILATION\_FAILED\(\backslash\)n"{}}\ <<\ infoLog\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_opengl__basics_autotoc_md22}{}\doxysubsection{\texorpdfstring{Fragment Shader}{Fragment Shader}}\label{md_opengl__basics_autotoc_md22}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fragmentShaderSource\ =\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec4\ FragColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()\ \{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ FragColor\ =\ vec4(1.0,\ 0.5,\ 0.2,\ 1.0);\ //\ Orange\ color}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{\textcolor{stringliteral}{}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ fragmentShader\ =\ glCreateShader(GL\_FRAGMENT\_SHADER);}
+\DoxyCodeLine{glShaderSource(fragmentShader,\ 1,\ \&fragmentShaderSource,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{glCompileShader(fragmentShader);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ for\ errors\ as\ above}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md24}{}\doxysection{\texorpdfstring{5. Link Shaders into a Shader Program}{5. Link Shaders into a Shader Program}}\label{md_opengl__basics_autotoc_md24}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderProgram\ =\ glCreateProgram();}
+\DoxyCodeLine{glAttachShader(shaderProgram,\ vertexShader);}
+\DoxyCodeLine{glAttachShader(shaderProgram,\ fragmentShader);}
+\DoxyCodeLine{glLinkProgram(shaderProgram);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ for\ linking\ errors}}
+\DoxyCodeLine{glGetProgramiv(shaderProgram,\ GL\_LINK\_STATUS,\ \&success);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!success)\ \{}
+\DoxyCodeLine{\ \ \ \ glGetProgramInfoLog(shaderProgram,\ 512,\ \textcolor{keyword}{nullptr},\ infoLog);}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}ERROR::SHADER::PROGRAM::LINKING\_FAILED\(\backslash\)n"{}}\ <<\ infoLog\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{glUseProgram(shaderProgram);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Delete\ shaders\ after\ linking}}
+\DoxyCodeLine{glDeleteShader(vertexShader);}
+\DoxyCodeLine{glDeleteShader(fragmentShader);}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md26}{}\doxysection{\texorpdfstring{6. Create and Configure Vertex Array Object (\+VAO)}{6. Create and Configure Vertex Array Object (VAO)}}\label{md_opengl__basics_autotoc_md26}
+
+\begin{DoxyItemize}
+\item VAOs store vertex attributes and buffer bindings.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ VAO;}
+\DoxyCodeLine{glGenVertexArrays(1,\ \&VAO);}
+\DoxyCodeLine{glBindVertexArray(VAO);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Bind\ the\ VBO\ to\ the\ VAO}}
+\DoxyCodeLine{glBindBuffer(GL\_ARRAY\_BUFFER,\ VBO);}
+\DoxyCodeLine{glVertexAttribPointer(0,\ 3,\ GL\_FLOAT,\ GL\_FALSE,\ 3\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ (\textcolor{keywordtype}{void}*)0);}
+\DoxyCodeLine{glEnableVertexAttribArray(0);}
+
+\end{DoxyCode}
+
+
+{\bfseries{Note\+:}} Ensure the VAO is bound before configuring vertex attributes.
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md28}{}\doxysection{\texorpdfstring{7. Render Loop}{7. Render Loop}}\label{md_opengl__basics_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (!glfwWindowShouldClose(window))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Clear\ screen}}
+\DoxyCodeLine{\ \ \ \ glClearColor(0.2f,\ 0.3f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{\ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Draw\ the\ triangle}}
+\DoxyCodeLine{\ \ \ \ glUseProgram(shaderProgram);}
+\DoxyCodeLine{\ \ \ \ glBindVertexArray(VAO);}
+\DoxyCodeLine{\ \ \ \ glDrawArrays(GL\_TRIANGLES,\ 0,\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Swap\ buffers\ and\ poll\ events}}
+\DoxyCodeLine{\ \ \ \ glfwSwapBuffers(window);}
+\DoxyCodeLine{\ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md30}{}\doxysection{\texorpdfstring{8. Cleanup Resources}{8. Cleanup Resources}}\label{md_opengl__basics_autotoc_md30}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{glDeleteVertexArrays(1,\ \&VAO);}
+\DoxyCodeLine{glDeleteBuffers(1,\ \&VBO);}
+\DoxyCodeLine{glDeleteProgram(shaderProgram);}
+\DoxyCodeLine{glfwTerminate();}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_opengl__basics_autotoc_md32}{}\doxysection{\texorpdfstring{9. Debugging Tools}{9. Debugging Tools}}\label{md_opengl__basics_autotoc_md32}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Open\+GL Error Checking\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{GLenum\ err;}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ ((err\ =\ glGetError())\ !=\ GL\_NO\_ERROR)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}OpenGL\ Error:\ "{}}\ <<\ err\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}
