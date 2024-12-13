@@ -271,6 +271,13 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
     glDrawArrays(GL_TRIANGLE_FAN, 0, segments + 2);
 }
 
+void set_projection(int width, int height)
+{
+    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
+    glUseProgram(ctx.text_program);
+    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
+    glBindVertexArray(ctx.text_vao);
+}
 static void error_callback(int error, const char *description)
 {
     fprintf(stderr, "Error: %s\n", description);
@@ -312,6 +319,7 @@ static void refresh_callback(GLFWwindow *window)
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
+    set_projection(width, height);
 }
 
 int glfw_init_ft()
@@ -445,13 +453,6 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void set_projection(int width, int height)
-{
-    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
-    glUseProgram(ctx.text_program);
-    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
-    glBindVertexArray(ctx.text_vao);
-}
 
 GooeyWindow glfw_create_window(const char *title, int width, int height)
 {
@@ -479,17 +480,19 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     window.width = width;
     window.height = height;
     glfwMakeContextCurrent(ctx.window);
+
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
     glfw_init_ft();
     glfwSwapInterval(1);
-
+    glViewport(0, 0, width, height);
     vec3 color;
     convert_hex_to_rgb(&color, active_theme->base);
     glClearColor(color[0], color[1], color[2], 1.0f);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
+
     set_projection(width, height);
 
     return window;
@@ -550,12 +553,6 @@ void glfw_render()
         fprintf(stderr, "Error: Render called without a valid window\n");
         return;
     }
-
-    int width, height;
-    glfwGetFramebufferSize(ctx.window, &width, &height);
-    glViewport(0, 0, width, height);
-    printf("%d %d\n", width, height);
-    set_projection(width, height);
     glfwSwapBuffers(ctx.window);
 }
 
