@@ -7,6 +7,9 @@ GooeyTheme default_theme;
 GooeyTheme *active_theme = NULL;
 GooeyBackend *active_backend = NULL;
 GooeyBackends ACTIVE_BACKEND = -1;
+
+int window_width, window_height;
+
 int Gooey_Init(GooeyBackends backend)
 {
 
@@ -44,6 +47,7 @@ int Gooey_Init(GooeyBackends backend)
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
 {
     GooeyWindow win = active_backend->CreateWindow(title, width, height);
+    active_backend->GetWinDim(&window_width, &window_height);
     win.widgets.button_count = 0;
     win.widgets.label_count = 0;
     win.widgets.checkbox_count = 0;
@@ -439,7 +443,7 @@ void GooeyMenu_Draw(GooeyWindow *win)
     if (win->widgets.menu)
     {
 
-        active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
+        active_backend->FillRectangle(0, 0, window_width, 20, active_theme->widget_base);
 
         int x_offset = 10;
         for (int i = 0; i < win->widgets.menu->children_count; i++)
@@ -967,8 +971,10 @@ void GooeyWindow_Run(GooeyWindow *win)
         switch (event.type)
         {
         case GOOEY_EVENT_EXPOSE:
+            active_backend->GetWinDim(&window_width, &window_height);
             GooeyWindow_Redraw(win);
             break;
+
         case GOOEY_EVENT_KEY_PRESS:
         {
             GooeyTextbox_HandleKeyPress(win, &event);

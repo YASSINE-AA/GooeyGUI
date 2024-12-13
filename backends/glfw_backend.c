@@ -320,6 +320,8 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
     set_projection(width, height);
+    ctx.current_event->type = GOOEY_EVENT_EXPOSE;
+    
 }
 
 int glfw_init_ft()
@@ -453,7 +455,6 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-
 GooeyWindow glfw_create_window(const char *title, int width, int height)
 {
 
@@ -476,9 +477,6 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSetFramebufferSizeCallback(ctx.window, framebuffer_size_callback);
 
     GooeyWindow window;
-
-    window.width = width;
-    window.height = height;
     glfwMakeContextCurrent(ctx.window);
 
     if (gladLoadGL() == 0)
@@ -571,9 +569,14 @@ char *glfw_get_key_from_code(GooeyEvent *gooey_event)
     return LookupString(gooey_event->data.key_press.keycode);
 }
 
+void glfw_window_dim(int *width, int *height) {
+    get_window_size(ctx.window, width, height);
+}
+
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
     .CreateWindow = glfw_create_window,
+    .GetWinDim = glfw_window_dim,
     .DestroyWindow = glfw_destroy_window,
     .UpdateBackground = glfw_update_background,
     .Cleanup = glfw_cleanup,

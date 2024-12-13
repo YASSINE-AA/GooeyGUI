@@ -20,8 +20,6 @@ typedef enum GooeyBackends
 typedef struct GooeyWindow
 {
     GooeyWindowExt widgets;
-    int width;
-    int height;
 } GooeyWindow;
 
 /**
@@ -44,11 +42,9 @@ typedef struct GooeyBackend
     void (*FillArc)(int x, int y, int width, int height, int angle1, int angle2);
     char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
     GooeyEvent (*HandleEvents)();
-    int (*GetHeight)(GooeyWindow *window);
-    int (*GetWidth)(GooeyWindow *window);
+    void (*GetWinDim)(int *width, int *height);
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color);
     float (*GetTextWidth)(const char *text, int length);
 } GooeyBackend;
-
 
 #endif
