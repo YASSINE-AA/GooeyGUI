@@ -3,12 +3,10 @@ C_BACKENDS := ./backends
 BUILD_DIR := ./build
 
 SRC_FILES := $(C_BACKENDS)/x11_backend.c \
-             $(C_BACKENDS)/wayland_backend.c \
              $(C_BACKENDS)/glfw_backend.c \
              $(C_BACKENDS)/utils/glad.c \
 			$(C_BACKENDS)/utils/themes/theme_parser.c \
              $(C_BACKENDS)/utils/glfw/glfw_utils.c \
-             $(C_BACKENDS)/utils/xdg-shell-protocol.c \
              $(C_SRC)/tiny.c \
              $(C_SRC)/main.c
 
@@ -38,7 +36,7 @@ $(BUILD_DIR)/gui: $(OBJS_gui)
 
 docs:
 	doxygen DoxyFile
-	
+
 clrobj:
 	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/utils/*.o
 

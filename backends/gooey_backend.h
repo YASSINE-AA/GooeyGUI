@@ -14,8 +14,6 @@ extern GooeyTheme *active_theme;
 typedef enum GooeyBackends
 {
     X11,
-    WIN32,
-    SDL,
     GLFW
 } GooeyBackends;
 
@@ -52,6 +50,5 @@ typedef struct GooeyBackend
     float (*GetTextWidth)(const char *text, int length);
 } GooeyBackend;
 
-extern GooeyBackend wayland_backend;
 
 #endif
