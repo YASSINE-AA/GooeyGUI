@@ -91,13 +91,13 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
             if (button->selected)
             {
                 active_backend->SetForeground(active_theme->primary);
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 5 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 5 : button->core.y, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y+2 : button->core.y, RADIO_BUTTON_RADIUS*1.5, RADIO_BUTTON_RADIUS*1.5, 0, 360 * 64);
             }
             else
             {
                 active_backend->SetForeground(active_theme->base);
 
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 5 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 5 : button->core.y, RADIO_BUTTON_RADIUS, RADIO_BUTTON_RADIUS, 0, 360 * 64);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS*1.5, RADIO_BUTTON_RADIUS*1.5, 0, 360 * 64);
             }
         }
     }
