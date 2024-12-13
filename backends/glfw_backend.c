@@ -233,30 +233,25 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
 {
     const int segments = 10; // less complex
 
-    
     float ndc_x_center, ndc_y_center;
     convert_coords_to_ndc(ctx.window, &ndc_x_center, &ndc_y_center, x_center, y_center);
 
-    
     vec3 color_rgb;
     convert_hex_to_rgb(&color_rgb, ctx.selected_color);
 
-    
     Vertex vertices[segments + 2];
 
-    
     vertices[0].pos[0] = ndc_x_center;
     vertices[0].pos[1] = ndc_y_center;
     vertices[0].col[0] = color_rgb[0];
     vertices[0].col[1] = color_rgb[1];
     vertices[0].col[2] = color_rgb[2];
 
-    
     for (int i = 0; i <= segments; ++i)
     {
-        float angle = (float)i / segments * 2.0f * M_PI; 
-        float x = x_center + (width * 0.5f * cosf(angle)); 
-        float y = y_center + (height * 0.5f * sinf(angle)); 
+        float angle = (float)i / segments * 2.0f * M_PI;
+        float x = x_center + (width * 0.5f * cosf(angle));
+        float y = y_center + (height * 0.5f * sinf(angle));
 
         float ndc_x, ndc_y;
         convert_coords_to_ndc(ctx.window, &ndc_x, &ndc_y, x, y);
@@ -268,16 +263,13 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
         vertices[i + 1].col[2] = color_rgb[2];
     }
 
-    
     glUseProgram(ctx.shape_program);
     glBindBuffer(GL_ARRAY_BUFFER, ctx.shape_vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-    
     glBindVertexArray(ctx.shape_vao);
     glDrawArrays(GL_TRIANGLE_FAN, 0, segments + 2);
 }
-
 
 static void error_callback(int error, const char *description)
 {
@@ -286,17 +278,16 @@ static void error_callback(int error, const char *description)
 
 static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    {
         ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
+    }
 
-
-    } 
-
-    if(action == GLFW_PRESS && (key >= 65 && key <= 90 || key == 259) ) {
+    if (action == GLFW_PRESS && (key >= 65 && key <= 90 || key == 259))
+    {
         ctx.current_event->type = GOOEY_EVENT_KEY_PRESS;
         ctx.current_event->data.key_press.keycode = key;
     }
-
 }
 
 static void click_callback(GLFWwindow *window, int button, int action, int mods)
@@ -329,7 +320,7 @@ int glfw_init_ft()
     }
 
     FT_Face face;
-    // TODO: avoid hardcoding this font path.
+    // TODO: avoid hardcoding this font path
     if (FT_New_Face(ft, "backends/utils/fonts/roboto.ttf", 0, &face))
     {
         fprintf(stderr, "Failed to load font: %s\n", "Roboto");
@@ -479,7 +470,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSwapInterval(1);
 
     vec3 color;
-    convert_hex_to_rgb(&color,  active_theme->base);
+    convert_hex_to_rgb(&color, active_theme->base);
     glClearColor(color[0], color[1], color[2], 1.0f);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -530,6 +521,15 @@ void glfw_cleanup()
 
     glfwTerminate();
 }
+
+void glfw_update_background()
+{
+    // TODO find a better way
+    vec3 color;
+    convert_hex_to_rgb(&color, active_theme->base);
+    glClearColor(color[0], color[1], color[2], 1.0f);
+}
+
 void glfw_render()
 {
     if (!ctx.window)
@@ -550,20 +550,20 @@ float glfw_get_text_width(const char *text, int length)
     for (int i = 0; i < length; ++i)
     {
         total_width += (ctx.characters[text[i]].width + ctx.characters[text[i]].bearingX) * 0.25f;
-        
     }
     return total_width;
 }
 
-char *glfw_get_key_from_code(GooeyEvent *gooey_event) {
-        return LookupString(gooey_event->data.key_press.keycode);
-
-    }
+char *glfw_get_key_from_code(GooeyEvent *gooey_event)
+{
+    return LookupString(gooey_event->data.key_press.keycode);
+}
 
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
     .CreateWindow = glfw_create_window,
     .DestroyWindow = glfw_destroy_window,
+    .UpdateBackground = glfw_update_background,
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,

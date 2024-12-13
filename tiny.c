@@ -7,22 +7,16 @@ GooeyTheme default_theme;
 GooeyTheme *active_theme = NULL;
 GooeyBackend *active_backend = NULL;
 GooeyBackends ACTIVE_BACKEND = -1;
-int Gooey_Init(GooeyBackends backend, GooeyTheme *theme)
+int Gooey_Init(GooeyBackends backend)
 {
-    if (theme)
-    {
-        active_theme = theme;
-    }
-    else
-    {
-        unsigned long primaryColor = (unsigned long)strtol("0x2196F3", NULL, 0);
-        unsigned long baseColor = (unsigned long)strtol("0xFFFFFF", NULL, 0);
-        unsigned long neutralColor = (unsigned long)strtol("0x000000", NULL, 0);
-        unsigned long widgetBaseColor = (unsigned long)strtol("0xD3D3D3", NULL, 0);
-        default_theme = (GooeyTheme){.base = baseColor, .neutral = neutralColor, .primary = primaryColor, .widget_base = widgetBaseColor};
 
-        active_theme = &default_theme;
-    }
+    unsigned long primaryColor = (unsigned long)strtol("0x2196F3", NULL, 0);
+    unsigned long baseColor = (unsigned long)strtol("0xFFFFFF", NULL, 0);
+    unsigned long neutralColor = (unsigned long)strtol("0x000000", NULL, 0);
+    unsigned long widgetBaseColor = (unsigned long)strtol("0xD3D3D3", NULL, 0);
+    default_theme = (GooeyTheme){.base = baseColor, .neutral = neutralColor, .primary = primaryColor, .widget_base = widgetBaseColor};
+
+    active_theme = &default_theme;
 
     switch (backend)
     {
@@ -61,6 +55,15 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
     win.widgets.layout_count = 0;
 
     return win;
+}
+
+void GooeyWindow_setTheme(const char *fontPath)
+{
+    if (active_backend)
+    {
+        *active_theme = parser_load_theme_from_file(fontPath);
+        active_backend->UpdateBackground();
+    }
 }
 
 void GooeyRadioButtonGroup_Draw(GooeyWindow *win)

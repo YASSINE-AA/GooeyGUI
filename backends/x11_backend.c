@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 typedef struct
 {
     Display *display;      /**< X11 display connection. */
@@ -51,6 +50,12 @@ void x11_cleanup()
 
     memset(&ctx, 0, sizeof(ctx));
 }
+
+void x11_update_background()
+{
+    XSetWindowBackground(ctx.display, ctx.window, active_theme->base);
+}
+
 GooeyWindow x11_create_window(const char *title, int width, int height)
 {
     GooeyWindow window;
@@ -66,7 +71,7 @@ GooeyWindow x11_create_window(const char *title, int width, int height)
         10, 10, width, height, 1,
         BlackPixel(ctx.display, screen),
         WhitePixel(ctx.display, screen));
-        XSetWindowBackground(ctx.display, ctx.window, active_theme->base);
+    XSetWindowBackground(ctx.display, ctx.window, active_theme->base);
     XStoreName(ctx.display, ctx.window, title);
 
     ctx.gc = XCreateGC(ctx.display, ctx.window, 0, NULL);
@@ -131,7 +136,9 @@ char *x11_get_key_from_code(GooeyEvent *gooey_event)
         else if (keysym == XK_Return)
         {
             return "Return";
-        } else if(keysym == XK_Tab) {
+        }
+        else if (keysym == XK_Tab)
+        {
             return "Tab";
         }
         else
@@ -198,7 +205,7 @@ float x11_get_text_width(const char *text, int length)
 
 void x11_fill_arc(int x, int y, int width, int height, int angle1, int angle2)
 {
-    XFillArc(ctx.display, ctx.window, ctx.gc,x, y, width, height, angle1, angle2);
+    XFillArc(ctx.display, ctx.window, ctx.gc, x, y, width, height, angle1, angle2);
 }
 
 GooeyEvent x11_handle_events()
@@ -224,7 +231,6 @@ GooeyEvent x11_handle_events()
             return gooey_event;
         }
 
-     
         if (event.type == KeyPress)
         {
             gooey_event.type = GOOEY_EVENT_KEY_PRESS;
@@ -254,6 +260,7 @@ GooeyBackend x11_backend = {
     .CreateWindow = x11_create_window,
     .HandleEvents = x11_handle_events,
     .DestroyWindow = x11_destroy_window,
+    .UpdateBackground = x11_update_background,
     .Init = x11_init,
     .Clear = x11_clear,
     .Cleanup = x11_cleanup,
@@ -263,10 +270,10 @@ GooeyBackend x11_backend = {
     .DrawText = x11_draw_text,
     .DrawRectangle = x11_draw_rectangle,
     .FillRectangle = x11_fill_rectangle,
-    .FillArc=x11_fill_arc,
+    .FillArc = x11_fill_arc,
     .GetHeight = x11_get_window_height,
     .GetWidth = x11_get_window_width,
     .DrawLine = x11_draw_line,
     .GetTextWidth = x11_get_text_width
-    
-    };
+
+};

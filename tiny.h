@@ -8,7 +8,8 @@ extern GooeyBackend x11_backend;
 extern GooeyBackend wayland_backend;
 extern GooeyBackend glfw_backend;
 
-int Gooey_Init(GooeyBackends backend, GooeyTheme *theme);
+int Gooey_Init(GooeyBackends backend);
+void GooeyWindow_setTheme(const char *fontPath);
 
 /**
  * @brief Creates a new Gooey window.

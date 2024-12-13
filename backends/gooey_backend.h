@@ -9,7 +9,6 @@
 #include "utils/gooey_event.h"
 #include "utils/gooey_widgets.h"
 
-
 extern GooeyTheme *active_theme;
 
 typedef enum GooeyBackends
@@ -37,13 +36,14 @@ typedef struct GooeyBackend
     void (*Cleanup)();
     GooeyWindow (*CreateWindow)(const char *title, int width, int height);
     void (*DestroyWindow)(void);
+    void (*UpdateBackground)(void);
     void (*Clear)();
     void (*Render)();
     void (*SetForeground)(unsigned long color);
     void (*DrawText)(int x, int y, const char *text, unsigned long color);
     void (*FillRectangle)(int x, int y, int width, int height, unsigned long color);
     void (*DrawRectangle)(int x, int y, int width, int height, unsigned long color);
-    void (*FillArc) (int x, int y, int width, int height, int angle1, int angle2);
+    void (*FillArc)(int x, int y, int width, int height, int angle1, int angle2);
     char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
     GooeyEvent (*HandleEvents)();
     int (*GetHeight)(GooeyWindow *window);
@@ -53,6 +53,5 @@ typedef struct GooeyBackend
 } GooeyBackend;
 
 extern GooeyBackend wayland_backend;
-
 
 #endif

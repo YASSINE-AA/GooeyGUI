@@ -34,13 +34,22 @@ void onTextChange(char *text)
 {
     printf("Text changed: %s\n", text);
 }
+GooeyTheme theme;
+void activateDarkTheme() {
+    GooeyWindow_setTheme("dark.json");
+}
+
+
+void activateLightTheme() {
+    GooeyWindow_setTheme("light.json");
+}
 
 int main()
 {
 
-    GooeyTheme theme = parser_load_theme_from_file("test1.json");
 
-    Gooey_Init(GLFW, &theme);
+
+    Gooey_Init(GLFW);
 
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700);
 
@@ -68,9 +77,9 @@ int main()
     GooeyMenuChild_AddElement(fileMenu, "Open", NULL);
     GooeyMenuChild_AddElement(fileMenu, "Save", NULL);
 
-    GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Edit");
-    GooeyMenuChild_AddElement(editMenu, "Copy", NULL);
-    GooeyMenuChild_AddElement(editMenu, "Paste", NULL);
+    GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Settings");
+    GooeyMenuChild_AddElement(editMenu, "Dark Theme", activateDarkTheme);
+    GooeyMenuChild_AddElement(editMenu, "Light Theme", activateLightTheme);
 
     GooeyRadioButtonGroup *rbg = GooeyRadioButtonGroup_Create(&win);
     GooeyRadioButtonGroup_AddChild(rbg, 50, 440, "test", NULL);
