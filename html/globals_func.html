@@ -74,12 +74,16 @@ $(function() {
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>check_shader_compile()&#160;:&#160;<a class="el" href="glfw__backend_8c.html#a4c7164db83d9424e788c03bc55a6c393">glfw_backend.c</a></li>
 <li>check_shader_link()&#160;:&#160;<a class="el" href="glfw__backend_8c.html#a5c5e474c82d59d3570f8ba8a8854b5b5">glfw_backend.c</a></li>
+<li>convert_coords_to_ndc()&#160;:&#160;<a class="el" href="glfw__utils_8c.html#a3b7a43b2bac2bc38f84265d53c96b45c">glfw_utils.c</a>, <a class="el" href="glfw__utils_8h.html#a3b7a43b2bac2bc38f84265d53c96b45c">glfw_utils.h</a></li>
+<li>convert_dimension_to_ndc()&#160;:&#160;<a class="el" href="glfw__utils_8c.html#aed0c0032266afcda853ab5f0f272ac53">glfw_utils.c</a>, <a class="el" href="glfw__utils_8h.html#aed0c0032266afcda853ab5f0f272ac53">glfw_utils.h</a></li>
+<li>convert_hex_to_rgb()&#160;:&#160;<a class="el" href="glfw__utils_8c.html#af7dff0b6a435ddada85fe5fcaaf6054c">glfw_utils.c</a>, <a class="el" href="glfw__utils_8h.html#af7dff0b6a435ddada85fe5fcaaf6054c">glfw_utils.h</a></li>
 <li>create_buffer()&#160;:&#160;<a class="el" href="wayland__backend_8c.html#ad738372d7644442ddc62cfd147a2065a">wayland_backend.c</a></li>
 <li>create_shm_file()&#160;:&#160;<a class="el" href="wayland__backend_8c.html#a5f92a1f18e72074a78ba1a12906d88b1">wayland_backend.c</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>get_window_size()&#160;:&#160;<a class="el" href="glfw__utils_8h.html#a2215651979d912367ec13a51e1c4202d">glfw_utils.h</a>, <a class="el" href="glfw__utils_8c.html#a2215651979d912367ec13a51e1c4202d">glfw_utils.c</a></li>
 <li>gladLoadGL()&#160;:&#160;<a class="el" href="glad_8c.html#a137453294a2756a898902ef399b3d437">glad.c</a></li>
 <li>gladLoadGLLoader()&#160;:&#160;<a class="el" href="glad_8c.html#af70e4674f75bd3bbfedf7979607c65ef">glad.c</a></li>
 <li>glfw_cleanup()&#160;:&#160;<a class="el" href="glfw__backend_8c.html#a245407cf2a7362a9f23db837e1746297">glfw_backend.c</a></li>
@@ -112,7 +116,7 @@ $(function() {
 <li>GooeyLayout_AddChild()&#160;:&#160;<a class="el" href="tiny_8c.html#a19fb3cdea95724dc67b48440c0239604">tiny.c</a>, <a class="el" href="tiny_8h.html#a19fb3cdea95724dc67b48440c0239604">tiny.h</a></li>
 <li>GooeyLayout_Build()&#160;:&#160;<a class="el" href="tiny_8c.html#aec826acf24f712fbde2031fe4fab0bb9">tiny.c</a>, <a class="el" href="tiny_8h.html#aec826acf24f712fbde2031fe4fab0bb9">tiny.h</a></li>
 <li>GooeyLayout_Create()&#160;:&#160;<a class="el" href="tiny_8c.html#ab5af4df4ef87544dea82a3aeaaa391ce">tiny.c</a>, <a class="el" href="tiny_8h.html#ab5af4df4ef87544dea82a3aeaaa391ce">tiny.h</a></li>
-<li>GooeyMenu_AddChild()&#160;:&#160;<a class="el" href="tiny_8c.html#a0b6434d579642d4e70bd5f29ea52c2ec">tiny.c</a>, <a class="el" href="tiny_8h.html#a0b6434d579642d4e70bd5f29ea52c2ec">tiny.h</a></li>
+<li>GooeyMenu_AddChild()&#160;:&#160;<a class="el" href="tiny_8h.html#a0b6434d579642d4e70bd5f29ea52c2ec">tiny.h</a>, <a class="el" href="tiny_8c.html#a0b6434d579642d4e70bd5f29ea52c2ec">tiny.c</a></li>
 <li>GooeyMenu_Draw()&#160;:&#160;<a class="el" href="tiny_8c.html#af687b31ad3bd659dd2804dbda0d017b8">tiny.c</a>, <a class="el" href="tiny_8h.html#af687b31ad3bd659dd2804dbda0d017b8">tiny.h</a></li>
 <li>GooeyMenu_HandleClick()&#160;:&#160;<a class="el" href="tiny_8c.html#ab9b7cccbb25edd99a7f4b3ef105c5572">tiny.c</a>, <a class="el" href="tiny_8h.html#ab9b7cccbb25edd99a7f4b3ef105c5572">tiny.h</a></li>
 <li>GooeyMenu_Set()&#160;:&#160;<a class="el" href="tiny_8c.html#abaa0a8fc4c8b4b4304e401ffaece7e65">tiny.c</a>, <a class="el" href="tiny_8h.html#abaa0a8fc4c8b4b4304e401ffaece7e65">tiny.h</a></li>
@@ -124,19 +128,24 @@ $(function() {
 <li>GooeyRadioButtonGroup_Draw()&#160;:&#160;<a class="el" href="tiny_8c.html#a6a66fac1dbaa35c3c28da9a382a6b4d3">tiny.c</a>, <a class="el" href="tiny_8h.html#a6a66fac1dbaa35c3c28da9a382a6b4d3">tiny.h</a></li>
 <li>GooeyRadioButtonGroup_HandleClick()&#160;:&#160;<a class="el" href="tiny_8c.html#ac191745c6fb64199f1a73582db1c2d82">tiny.c</a>, <a class="el" href="tiny_8h.html#ac191745c6fb64199f1a73582db1c2d82">tiny.h</a></li>
 <li>GooeySlider_Add()&#160;:&#160;<a class="el" href="tiny_8c.html#a6d20f57fb42f874e6a7a281bdfa1ed20">tiny.c</a>, <a class="el" href="tiny_8h.html#a6d20f57fb42f874e6a7a281bdfa1ed20">tiny.h</a></li>
-<li>GooeySlider_getValue()&#160;:&#160;<a class="el" href="tiny_8c.html#a0c2beea09ecd3d246b572414d42ca124">tiny.c</a>, <a class="el" href="tiny_8h.html#a0c2beea09ecd3d246b572414d42ca124">tiny.h</a></li>
+<li>GooeySlider_getValue()&#160;:&#160;<a class="el" href="tiny_8h.html#a0c2beea09ecd3d246b572414d42ca124">tiny.h</a>, <a class="el" href="tiny_8c.html#a0c2beea09ecd3d246b572414d42ca124">tiny.c</a></li>
 <li>GooeySlider_HandleDrag()&#160;:&#160;<a class="el" href="tiny_8c.html#a59390d9f8d7866f07676776c7cd86b43">tiny.c</a>, <a class="el" href="tiny_8h.html#a59390d9f8d7866f07676776c7cd86b43">tiny.h</a></li>
 <li>GooeySlider_setValue()&#160;:&#160;<a class="el" href="tiny_8c.html#ab1b0c02cedabf1251d3ad0ba4b586e69">tiny.c</a>, <a class="el" href="tiny_8h.html#ab1b0c02cedabf1251d3ad0ba4b586e69">tiny.h</a></li>
 <li>GooeyTextBox_Add()&#160;:&#160;<a class="el" href="tiny_8c.html#af41d9e7acc597ffab55e6338ced8a4de">tiny.c</a>, <a class="el" href="tiny_8h.html#af41d9e7acc597ffab55e6338ced8a4de">tiny.h</a></li>
 <li>GooeyTextbox_Draw()&#160;:&#160;<a class="el" href="tiny_8c.html#a24b5bc450dab5274924a91ec791b83f6">tiny.c</a>, <a class="el" href="tiny_8h.html#a24b5bc450dab5274924a91ec791b83f6">tiny.h</a></li>
 <li>GooeyTextbox_getText()&#160;:&#160;<a class="el" href="tiny_8c.html#af95a42f059ca3662763f449ae666930f">tiny.c</a>, <a class="el" href="tiny_8h.html#af95a42f059ca3662763f449ae666930f">tiny.h</a></li>
-<li>GooeyTextbox_HandleClick()&#160;:&#160;<a class="el" href="tiny_8c.html#a244c53f31079de3b2398120756b908a8">tiny.c</a>, <a class="el" href="tiny_8h.html#a244c53f31079de3b2398120756b908a8">tiny.h</a></li>
+<li>GooeyTextbox_HandleClick()&#160;:&#160;<a class="el" href="tiny_8h.html#a244c53f31079de3b2398120756b908a8">tiny.h</a>, <a class="el" href="tiny_8c.html#a244c53f31079de3b2398120756b908a8">tiny.c</a></li>
 <li>GooeyTextbox_HandleKeyPress()&#160;:&#160;<a class="el" href="tiny_8c.html#a8a2faf822780ea1deed2d97d64964f4e">tiny.c</a>, <a class="el" href="tiny_8h.html#a7f1629dfc093dca5edb8312e0b93d289">tiny.h</a></li>
 <li>GooeyTextbox_setText()&#160;:&#160;<a class="el" href="tiny_8c.html#aa4e81eec9ad34c94609c475f3a19eb34">tiny.c</a>, <a class="el" href="tiny_8h.html#aa4e81eec9ad34c94609c475f3a19eb34">tiny.h</a></li>
 <li>GooeyWindow_Cleanup()&#160;:&#160;<a class="el" href="tiny_8c.html#a83e8b293bf59a1b632f6fcfa7e29fbff">tiny.c</a>, <a class="el" href="tiny_8h.html#a83e8b293bf59a1b632f6fcfa7e29fbff">tiny.h</a></li>
 <li>GooeyWindow_Create()&#160;:&#160;<a class="el" href="tiny_8c.html#a5bb530110f0f6dcde2f3f3cd7c179efc">tiny.c</a>, <a class="el" href="tiny_8h.html#a5bb530110f0f6dcde2f3f3cd7c179efc">tiny.h</a></li>
 <li>GooeyWindow_Redraw()&#160;:&#160;<a class="el" href="tiny_8c.html#ae5030980075ccfceb3e805c5b6f5ff8a">tiny.c</a></li>
 <li>GooeyWindow_Run()&#160;:&#160;<a class="el" href="tiny_8c.html#a646a3a0f8d98b971ab6d8af4f822ac31">tiny.c</a>, <a class="el" href="tiny_8h.html#a646a3a0f8d98b971ab6d8af4f822ac31">tiny.h</a></li>
+</ul>
+
+
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>LookupString()&#160;:&#160;<a class="el" href="glfw__utils_8c.html#a726c6432bc5e87d62bbb566639dd90e5">glfw_utils.c</a>, <a class="el" href="glfw__utils_8h.html#a726c6432bc5e87d62bbb566639dd90e5">glfw_utils.h</a></li>
 </ul>
 
 

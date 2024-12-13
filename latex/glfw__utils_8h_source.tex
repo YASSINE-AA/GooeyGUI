@@ -1,0 +1,77 @@
+\doxysection{glfw\+\_\+utils.\+h}
+\hypertarget{glfw__utils_8h_source}{}\label{glfw__utils_8h_source}\index{backends/utils/glfw/glfw\_utils.h@{backends/utils/glfw/glfw\_utils.h}}
+\mbox{\hyperlink{glfw__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GLFW\_UTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GLFW\_UTILS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../../gooey\_backend.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../glad/glad.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <freetype2/ft2build.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ FT\_FREETYPE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../../linmath.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ GLuint\ \mbox{\hyperlink{structCharacter_aebef720b0cb5a308a06778a7b933e5c8}{textureID}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_aa945d94f4ee6ec02e5cf1fb753c94d8f}{width}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_a1f7e996c91a75a5e037bebcf0bf3ac06}{height}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_aa7908738dc72abfb880ee4c68b5560a5}{bearingX}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_aa8868963114c35c98c0679d5e0531645}{bearingY}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_ade68e61272c5cfcfd39680928516c4a7}{advance}};}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{structCharacter}{Character}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structVertex}{Vertex}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ vec2\ \mbox{\hyperlink{structVertex_abb5a5cf5005ab937369bba05fb2f29a2}{pos}};}
+\DoxyCodeLine{00025\ \ \ \ \ vec3\ \mbox{\hyperlink{structVertex_a5b638095649d7861df43787ec9c02a69}{col}};}
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{structVertex}{Vertex}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *rectangle\_vertex\_shader\ =}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{stringliteral}{"{}\#version\ 330\ core\(\backslash\)n"{}}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 0)\ in\ vec2\ pos;\(\backslash\)n"{}}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 1)\ in\ vec3\ col;\(\backslash\)n"{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{stringliteral}{"{}out\ vec3\ color;\(\backslash\)n"{}}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{stringliteral}{"{}void\ main()\ \{\(\backslash\)n"{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ gl\_Position\ =\ vec4(pos,\ 0.0,\ 1.0);\(\backslash\)n"{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ color\ =\ col;\(\backslash\)n"{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *rectangle\_fragment\_shader\ =}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{stringliteral}{"{}\#version\ 330\ core\(\backslash\)n"{}}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{stringliteral}{"{}in\ vec3\ color;\(\backslash\)n"{}}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{stringliteral}{"{}out\ vec4\ fragment;\(\backslash\)n"{}}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{stringliteral}{"{}void\ main()\ \{\(\backslash\)n"{}}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ fragment\ =\ vec4(color,\ 1.0);\(\backslash\)n"{}}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text\_vertex\_shader\_source\ =\ \textcolor{stringliteral}{"{}\#version\ 330\ core\(\backslash\)n"{}}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 0)\ in\ vec4\ vertex;\(\backslash\)n"{}}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}out\ vec2\ TexCoords;\(\backslash\)n"{}}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}uniform\ mat4\ projection;\(\backslash\)n"{}}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}void\ main()\ \{\(\backslash\)n"{}}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ gl\_Position\ =\ projection\ *\ vec4(vertex.xy,\ 0.0,\ 1.0);\(\backslash\)n"{}}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ TexCoords\ =\ vec2(vertex.z,\ 1.0-\/vertex.w);\(\backslash\)n"{}}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text\_fragment\_shader\_source\ =\ \textcolor{stringliteral}{"{}\#version\ 330\ core\(\backslash\)n"{}}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}in\ vec2\ TexCoords;\(\backslash\)n"{}}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}out\ vec4\ color;\(\backslash\)n"{}}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}uniform\ sampler2D\ text;\(\backslash\)n"{}}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}uniform\ vec3\ textColor;\(\backslash\)n"{}}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}void\ main()\ \{\(\backslash\)n"{}}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ float\ alpha\ =\ texture(text,\ TexCoords).r;\(\backslash\)n"{}}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ color\ =\ vec4(textColor,\ alpha);\(\backslash\)n"{}}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{glfw__utils_8h_a2215651979d912367ec13a51e1c4202d}{get\_window\_size}}(GLFWwindow\ *window,\ \textcolor{keywordtype}{int}\ *window\_width,\ \textcolor{keywordtype}{int}\ *window\_height);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{glfw__utils_8h_a3b7a43b2bac2bc38f84265d53c96b45c}{convert\_coords\_to\_ndc}}(GLFWwindow\ *window,\ \textcolor{keywordtype}{float}\ *ndc\_x,\ \textcolor{keywordtype}{float}\ *ndc\_y,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{glfw__utils_8h_aed0c0032266afcda853ab5f0f272ac53}{convert\_dimension\_to\_ndc}}(GLFWwindow\ *window,\ \textcolor{keywordtype}{float}\ *ndc\_w,\ \textcolor{keywordtype}{float}\ *ndc\_h,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{glfw__utils_8h_af7dff0b6a435ddada85fe5fcaaf6054c}{convert\_hex\_to\_rgb}}(vec3\ *rgb,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ color\_hex);}
+\DoxyCodeLine{00069\ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glfw__utils_8h_a726c6432bc5e87d62bbb566639dd90e5}{LookupString}}(\textcolor{keywordtype}{int}\ keycode)\ ;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GLFW\_UTILS\_H}}
+
+\end{DoxyCode}

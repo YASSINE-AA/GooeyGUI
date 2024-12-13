@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['quat_5fconj_0',['quat_conj',['../linmath_8h.html#aa2cb011f5a077c66f91c23d0f530550f',1,'linmath.h']]],
-  ['quat_5ffrom_5fmat4x4_1',['quat_from_mat4x4',['../linmath_8h.html#afcdc8bb96badc95f15b352e182f135dc',1,'linmath.h']]],
-  ['quat_5fidentity_2',['quat_identity',['../linmath_8h.html#a1c49cb959a3967c47c167dc7b65658af',1,'linmath.h']]],
-  ['quat_5fmul_3',['quat_mul',['../linmath_8h.html#a31b4a72cd5933b0bdc98b2832d6394ed',1,'linmath.h']]],
-  ['quat_5fmul_5fvec3_4',['quat_mul_vec3',['../linmath_8h.html#a7746b1768a8e1b07585e553dba435747',1,'linmath.h']]],
-  ['quat_5frotate_5',['quat_rotate',['../linmath_8h.html#af0d00fd932d4541debf0180eef81c26e',1,'linmath.h']]]
+  ['onbuttonclick_0',['onButtonClick',['../main_8c.html#acbcea893ddddb55e558115beb8f9a1b1',1,'main.c']]],
+  ['oncheckboxtoggle_1',['onCheckboxToggle',['../main_8c.html#acf51b8c25de330d9bb67e1e1ac0d558e',1,'main.c']]],
+  ['ondropdownchange_2',['onDropdownChange',['../main_8c.html#a524171648a6054d194fa018d31472456',1,'main.c']]],
+  ['onradiobuttonselect_3',['onRadioButtonSelect',['../main_8c.html#a2c1f3f1f96bf8a61b213c596d5101631',1,'main.c']]],
+  ['onsliderchange_4',['onSliderChange',['../main_8c.html#a03ecd7b4685e1067388461ee93488181',1,'main.c']]],
+  ['ontextchange_5',['onTextChange',['../main_8c.html#a3f3a1b22965383b5ea1ef224b0a76f83',1,'main.c']]]
 ];

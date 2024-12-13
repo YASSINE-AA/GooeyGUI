@@ -1,0 +1,49 @@
+\doxysection{backends/utils/glfw/glfw\+\_\+utils.c File Reference}
+\hypertarget{glfw__utils_8c}{}\label{glfw__utils_8c}\index{backends/utils/glfw/glfw\_utils.c@{backends/utils/glfw/glfw\_utils.c}}
+{\ttfamily \#include "{}glfw\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{glfw__utils_8c_a2215651979d912367ec13a51e1c4202d}{get\+\_\+window\+\_\+size}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}window\+\_\+width, int \texorpdfstring{$\ast$}{*}window\+\_\+height)
+\item 
+void \mbox{\hyperlink{glfw__utils_8c_a3b7a43b2bac2bc38f84265d53c96b45c}{convert\+\_\+coords\+\_\+to\+\_\+ndc}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, float \texorpdfstring{$\ast$}{*}ndc\+\_\+x, float \texorpdfstring{$\ast$}{*}ndc\+\_\+y, int x, int y)
+\item 
+void \mbox{\hyperlink{glfw__utils_8c_aed0c0032266afcda853ab5f0f272ac53}{convert\+\_\+dimension\+\_\+to\+\_\+ndc}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, float \texorpdfstring{$\ast$}{*}ndc\+\_\+w, float \texorpdfstring{$\ast$}{*}ndc\+\_\+h, int width, int height)
+\item 
+void \mbox{\hyperlink{glfw__utils_8c_af7dff0b6a435ddada85fe5fcaaf6054c}{convert\+\_\+hex\+\_\+to\+\_\+rgb}} (vec3 \texorpdfstring{$\ast$}{*}rgb, unsigned int color\+\_\+hex)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{glfw__utils_8c_a726c6432bc5e87d62bbb566639dd90e5}{Lookup\+String}} (int keycode)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{glfw__utils_8c_a3b7a43b2bac2bc38f84265d53c96b45c}\label{glfw__utils_8c_a3b7a43b2bac2bc38f84265d53c96b45c} 
+\index{glfw\_utils.c@{glfw\_utils.c}!convert\_coords\_to\_ndc@{convert\_coords\_to\_ndc}}
+\index{convert\_coords\_to\_ndc@{convert\_coords\_to\_ndc}!glfw\_utils.c@{glfw\_utils.c}}
+\doxysubsubsection{\texorpdfstring{convert\_coords\_to\_ndc()}{convert\_coords\_to\_ndc()}}
+{\footnotesize\ttfamily void convert\+\_\+coords\+\_\+to\+\_\+ndc (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{float \texorpdfstring{$\ast$}{*}}]{ndc\+\_\+x,  }\item[{float \texorpdfstring{$\ast$}{*}}]{ndc\+\_\+y,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__utils_8c_aed0c0032266afcda853ab5f0f272ac53}\label{glfw__utils_8c_aed0c0032266afcda853ab5f0f272ac53} 
+\index{glfw\_utils.c@{glfw\_utils.c}!convert\_dimension\_to\_ndc@{convert\_dimension\_to\_ndc}}
+\index{convert\_dimension\_to\_ndc@{convert\_dimension\_to\_ndc}!glfw\_utils.c@{glfw\_utils.c}}
+\doxysubsubsection{\texorpdfstring{convert\_dimension\_to\_ndc()}{convert\_dimension\_to\_ndc()}}
+{\footnotesize\ttfamily void convert\+\_\+dimension\+\_\+to\+\_\+ndc (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{float \texorpdfstring{$\ast$}{*}}]{ndc\+\_\+w,  }\item[{float \texorpdfstring{$\ast$}{*}}]{ndc\+\_\+h,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__utils_8c_af7dff0b6a435ddada85fe5fcaaf6054c}\label{glfw__utils_8c_af7dff0b6a435ddada85fe5fcaaf6054c} 
+\index{glfw\_utils.c@{glfw\_utils.c}!convert\_hex\_to\_rgb@{convert\_hex\_to\_rgb}}
+\index{convert\_hex\_to\_rgb@{convert\_hex\_to\_rgb}!glfw\_utils.c@{glfw\_utils.c}}
+\doxysubsubsection{\texorpdfstring{convert\_hex\_to\_rgb()}{convert\_hex\_to\_rgb()}}
+{\footnotesize\ttfamily void convert\+\_\+hex\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{vec3 \texorpdfstring{$\ast$}{*}}]{rgb,  }\item[{unsigned int}]{color\+\_\+hex }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__utils_8c_a2215651979d912367ec13a51e1c4202d}\label{glfw__utils_8c_a2215651979d912367ec13a51e1c4202d} 
+\index{glfw\_utils.c@{glfw\_utils.c}!get\_window\_size@{get\_window\_size}}
+\index{get\_window\_size@{get\_window\_size}!glfw\_utils.c@{glfw\_utils.c}}
+\doxysubsubsection{\texorpdfstring{get\_window\_size()}{get\_window\_size()}}
+{\footnotesize\ttfamily void get\+\_\+window\+\_\+size (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{window\+\_\+width,  }\item[{int \texorpdfstring{$\ast$}{*}}]{window\+\_\+height }\end{DoxyParamCaption})}
+
+\Hypertarget{glfw__utils_8c_a726c6432bc5e87d62bbb566639dd90e5}\label{glfw__utils_8c_a726c6432bc5e87d62bbb566639dd90e5} 
+\index{glfw\_utils.c@{glfw\_utils.c}!LookupString@{LookupString}}
+\index{LookupString@{LookupString}!glfw\_utils.c@{glfw\_utils.c}}
+\doxysubsubsection{\texorpdfstring{LookupString()}{LookupString()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} Lookup\+String (\begin{DoxyParamCaption}\item[{int}]{keycode }\end{DoxyParamCaption})}
+

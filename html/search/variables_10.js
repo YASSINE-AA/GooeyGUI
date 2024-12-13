@@ -6,6 +6,7 @@ var searchData=
   ['text_5fvbo_3',['text_vbo',['../structGooeyBackendContext.html#a5575ea2dfd6047cd7857801e9d2d972a',1,'GooeyBackendContext']]],
   ['textboxes_4',['textboxes',['../structGooeyWindowExt.html#aed9030a4f819a766329bcb0a8c92faa4',1,'GooeyWindowExt']]],
   ['textboxes_5fcount_5',['textboxes_count',['../structGooeyWindowExt.html#a4f952dfe080fd5242d58c8317f4f429e',1,'GooeyWindowExt']]],
-  ['title_6',['title',['../structGooeyMenuChild.html#a88220d2f902209f3fd8637d3816ae0d3',1,'GooeyMenuChild']]],
-  ['type_7',['type',['../structGooeyEvent.html#a5f7e6e4463604da8053a9ca150b84429',1,'GooeyEvent::type'],['../structGooeyWidget.html#a5eecc6516adc214dee417d1b0c79b5d2',1,'GooeyWidget::type']]]
+  ['textureid_6',['textureID',['../structCharacter.html#aebef720b0cb5a308a06778a7b933e5c8',1,'Character']]],
+  ['title_7',['title',['../structGooeyMenuChild.html#a88220d2f902209f3fd8637d3816ae0d3',1,'GooeyMenuChild']]],
+  ['type_8',['type',['../structGooeyEvent.html#a5f7e6e4463604da8053a9ca150b84429',1,'GooeyEvent::type'],['../structGooeyWidget.html#a5eecc6516adc214dee417d1b0c79b5d2',1,'GooeyWidget::type']]]
 ];

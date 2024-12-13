@@ -301,8 +301,17 @@ static void error_callback(int error, const char *description)
 
 static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
+
+
+    } 
+
+    if(action == GLFW_PRESS) {
+        ctx.current_event->type = GOOEY_EVENT_KEY_PRESS;
+        ctx.current_event->data.key_press.keycode = key;
+    }
+
 }
 
 static void click_callback(GLFWwindow *window, int button, int action, int mods)
@@ -557,7 +566,10 @@ int glfw_get_text_width(const char *text, int length)
     return total_width;
 }
 
-char *glfw_get_key_from_code(GooeyEvent *gooey_event) { return "Return"; }
+char *glfw_get_key_from_code(GooeyEvent *gooey_event) {
+        return LookupString(gooey_event->data.key_press.keycode);
+
+    }
 
 GooeyBackend glfw_backend = {
     .Init = glfw_init,

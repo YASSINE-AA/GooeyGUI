@@ -13,12 +13,13 @@ var searchData=
   ['click_10',['click',['../structGooeyEvent.html#ab3aebcfe21b830cc55056f5681fdba4b',1,'GooeyEvent']]],
   ['clicked_11',['clicked',['../structGooeyButton.html#a893db698cca14855343356c20f750b49',1,'GooeyButton']]],
   ['close_12',['close',['../structxdg__toplevel__listener.html#ad43ce681ea9785dd3f88f794037d1560',1,'xdg_toplevel_listener']]],
-  ['cols_13',['cols',['../structGooeyLayout.html#af9019079240391653b98b5316b3ddcd6',1,'GooeyLayout']]],
-  ['compositor_14',['compositor',['../structGooeyBackendContext.html#a39f623a542778bcbbb87d04a6b439ffd',1,'GooeyBackendContext']]],
-  ['configure_15',['configure',['../structxdg__surface__listener.html#a1c4263d4ac5abb74a2fa8aa9bdd093b0',1,'xdg_surface_listener::configure'],['../structxdg__toplevel__listener.html#a8884ee61ecc055f927c54a5f068edaed',1,'xdg_toplevel_listener::configure'],['../structxdg__popup__listener.html#a36e98cf6e6e4137ee2896a43f1c10730',1,'xdg_popup_listener::configure']]],
-  ['configure_5fbounds_16',['configure_bounds',['../structxdg__toplevel__listener.html#a74d28321edf15393ea63a47ea5d3e5ec',1,'xdg_toplevel_listener']]],
-  ['core_17',['core',['../structGooeyButton.html#a8f2ddd410569abb78b6428a28afbd3f2',1,'GooeyButton::core'],['../structGooeyTextbox.html#ae978f204876d6c1db617a01e1ebfb4fc',1,'GooeyTextbox::core'],['../structGooeyLabel.html#a5e71e4c69476d512ea628d38b2db9c36',1,'GooeyLabel::core'],['../structGooeyCheckbox.html#a468043f1f1d06850ee436b7f086edc9e',1,'GooeyCheckbox::core'],['../structGooeyRadioButton.html#a6cf92e2ae23969fec2c5a07e04e1788f',1,'GooeyRadioButton::core'],['../structGooeySlider.html#a83a928b73dcec2dc67dc3620bae7b2d6',1,'GooeySlider::core'],['../structGooeyDropdown.html#ad0cf1325ab207afc167f5b8db1b416e3',1,'GooeyDropdown::core']]],
-  ['createwindow_18',['CreateWindow',['../structGooeyBackend.html#a2fba8d6f5c15fb8e63e845173220640c',1,'GooeyBackend']]],
-  ['current_5fevent_19',['current_event',['../structGooeyBackendContext.html#a76a21c109ff3cda8d04c7a45b536dd2b',1,'GooeyBackendContext']]],
-  ['cursor_5fpos_20',['cursor_pos',['../structGooeyTextbox.html#a02983881afbb1e34dd50cefb43a3eeed',1,'GooeyTextbox']]]
+  ['col_13',['col',['../structVertex.html#a5b638095649d7861df43787ec9c02a69',1,'Vertex']]],
+  ['cols_14',['cols',['../structGooeyLayout.html#af9019079240391653b98b5316b3ddcd6',1,'GooeyLayout']]],
+  ['compositor_15',['compositor',['../structGooeyBackendContext.html#a39f623a542778bcbbb87d04a6b439ffd',1,'GooeyBackendContext']]],
+  ['configure_16',['configure',['../structxdg__surface__listener.html#a1c4263d4ac5abb74a2fa8aa9bdd093b0',1,'xdg_surface_listener::configure'],['../structxdg__toplevel__listener.html#a8884ee61ecc055f927c54a5f068edaed',1,'xdg_toplevel_listener::configure'],['../structxdg__popup__listener.html#a36e98cf6e6e4137ee2896a43f1c10730',1,'xdg_popup_listener::configure']]],
+  ['configure_5fbounds_17',['configure_bounds',['../structxdg__toplevel__listener.html#a74d28321edf15393ea63a47ea5d3e5ec',1,'xdg_toplevel_listener']]],
+  ['core_18',['core',['../structGooeyTextbox.html#ae978f204876d6c1db617a01e1ebfb4fc',1,'GooeyTextbox::core'],['../structGooeyDropdown.html#ad0cf1325ab207afc167f5b8db1b416e3',1,'GooeyDropdown::core'],['../structGooeySlider.html#a83a928b73dcec2dc67dc3620bae7b2d6',1,'GooeySlider::core'],['../structGooeyRadioButton.html#a6cf92e2ae23969fec2c5a07e04e1788f',1,'GooeyRadioButton::core'],['../structGooeyCheckbox.html#a468043f1f1d06850ee436b7f086edc9e',1,'GooeyCheckbox::core'],['../structGooeyLabel.html#a5e71e4c69476d512ea628d38b2db9c36',1,'GooeyLabel::core'],['../structGooeyButton.html#a8f2ddd410569abb78b6428a28afbd3f2',1,'GooeyButton::core']]],
+  ['createwindow_19',['CreateWindow',['../structGooeyBackend.html#a2fba8d6f5c15fb8e63e845173220640c',1,'GooeyBackend']]],
+  ['current_5fevent_20',['current_event',['../structGooeyBackendContext.html#a76a21c109ff3cda8d04c7a45b536dd2b',1,'GooeyBackendContext']]],
+  ['cursor_5fpos_21',['cursor_pos',['../structGooeyTextbox.html#a02983881afbb1e34dd50cefb43a3eeed',1,'GooeyTextbox']]]
 ];

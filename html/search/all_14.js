@@ -15,5 +15,6 @@ var searchData=
   ['linmath_2eh_12',['linmath.h',['../linmath_8h.html',1,'']]],
   ['linmath_5fh_5fdefine_5fvec_13',['LINMATH_H_DEFINE_VEC',['../linmath_8h.html#ad7ae6ff6612bd489d7f6a5b6a9fdc775',1,'linmath.h']]],
   ['linmath_5fh_5ffunc_14',['LINMATH_H_FUNC',['../linmath_8h.html#a4ebda4dd54615e1cac0ff1fde2725542',1,'linmath.h']]],
-  ['loop_15',['7. Render Loop',['../md_opengl__basics.html#autotoc_md28',1,'']]]
+  ['lookupstring_15',['lookupstring',['../glfw__utils_8c.html#a726c6432bc5e87d62bbb566639dd90e5',1,'LookupString(int keycode):&#160;glfw_utils.c'],['../glfw__utils_8h.html#a726c6432bc5e87d62bbb566639dd90e5',1,'LookupString(int keycode):&#160;glfw_utils.c']]],
+  ['loop_16',['7. Render Loop',['../md_opengl__basics.html#autotoc_md28',1,'']]]
 ];

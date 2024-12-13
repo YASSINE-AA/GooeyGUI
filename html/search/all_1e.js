@@ -7,8 +7,9 @@ var searchData=
   ['vec3_5freflect_4',['vec3_reflect',['../linmath_8h.html#a43e6aab778685cdb8512d4003a39d02a',1,'linmath.h']]],
   ['vec4_5fmul_5fcross_5',['vec4_mul_cross',['../linmath_8h.html#af3d3a5c4e2f91b1e42d0265b56047389',1,'linmath.h']]],
   ['vec4_5freflect_6',['vec4_reflect',['../linmath_8h.html#accff7310b38c9e47fc632acbb3be0bc8',1,'linmath.h']]],
-  ['vertex_20array_20object_20vao_7',['6. Create and Configure Vertex Array Object (VAO)',['../md_opengl__basics.html#autotoc_md26',1,'']]],
-  ['vertex_20buffer_20object_20vbo_8',['3. Generate and Bind Vertex Buffer Object (VBO)',['../md_opengl__basics.html#autotoc_md18',1,'']]],
-  ['vertex_20data_9',['2. Define Vertex Data',['../md_opengl__basics.html#autotoc_md16',1,'']]],
-  ['vertex_20shader_10',['Vertex Shader',['../md_opengl__basics.html#autotoc_md21',1,'']]]
+  ['vertex_7',['vertex',['../structVertex.html',1,'Vertex'],['../glfw__utils_8h.html#a2e1662af5233d0fe6a6f061445d2ff25',1,'Vertex:&#160;glfw_utils.h']]],
+  ['vertex_20array_20object_20vao_8',['6. Create and Configure Vertex Array Object (VAO)',['../md_opengl__basics.html#autotoc_md26',1,'']]],
+  ['vertex_20buffer_20object_20vbo_9',['3. Generate and Bind Vertex Buffer Object (VBO)',['../md_opengl__basics.html#autotoc_md18',1,'']]],
+  ['vertex_20data_10',['2. Define Vertex Data',['../md_opengl__basics.html#autotoc_md16',1,'']]],
+  ['vertex_20shader_11',['Vertex Shader',['../md_opengl__basics.html#autotoc_md21',1,'']]]
 ];

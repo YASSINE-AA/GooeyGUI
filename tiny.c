@@ -610,7 +610,10 @@ void GooeyTextbox_Draw(GooeyWindow *win, int index)
 }
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 {
+    printf("hey pressed \n");
+
     char *buf = active_backend->GetKeyFromCode(key_event);
+    printf("%s \n", buf);
     if (buf == NULL)
     {
         return;
