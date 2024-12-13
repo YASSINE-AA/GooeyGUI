@@ -307,7 +307,7 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 
     } 
 
-    if(action == GLFW_PRESS) {
+    if(action == GLFW_PRESS && (key >= 65 && key <= 90 || key == 259) ) {
         ctx.current_event->type = GOOEY_EVENT_KEY_PRESS;
         ctx.current_event->data.key_press.keycode = key;
     }
@@ -561,7 +561,8 @@ int glfw_get_text_width(const char *text, int length)
     int total_width = 0;
     for (int i = 0; i < length; ++i)
     {
-        total_width += ctx.characters[text[i]].width * 0.25f;
+        total_width += (ctx.characters[text[i]].width + ctx.characters[text[i]].bearingX) * 0.25f;
+        
     }
     return total_width;
 }
