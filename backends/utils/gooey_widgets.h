@@ -191,16 +191,16 @@ typedef struct
  */
 typedef struct
 {
-  GooeyButton buttons[MAX_WIDGETS];                       /**< List of buttons in the window */
-  GooeyLabel labels[MAX_WIDGETS];                         /**< List of labels in the window */
-  GooeyCheckbox checkboxes[MAX_WIDGETS];                  /**< List of checkboxes in the window */
-  GooeyRadioButton radio_buttons[MAX_WIDGETS];            /**< List of radio buttons in the window */
-  GooeySlider sliders[MAX_WIDGETS];                       /**< List of sliders in the window */
-  GooeyDropdown dropdowns[MAX_WIDGETS];                   /**< List of dropdown menus in the window */
-  GooeyRadioButtonGroup radio_button_groups[MAX_WIDGETS]; /**< List of radio button groups in the window */
-  GooeyTextbox textboxes[MAX_WIDGETS];                    /**< List of textboxes in the window */
-  GooeyLayout layouts[MAX_WIDGETS];                       /**< List of layouts in the window */
-  GooeyMenu *menu;                                        /**< Menu in the window */
+  GooeyButton *buttons;                       /**< List of buttons in the window */
+  GooeyLabel *labels;                         /**< List of labels in the window */
+  GooeyCheckbox *checkboxes;                  /**< List of checkboxes in the window */
+  GooeyRadioButton *radio_buttons;            /**< List of radio buttons in the window */
+  GooeySlider *sliders;                       /**< List of sliders in the window */
+  GooeyDropdown *dropdowns;                   /**< List of dropdown menus in the window */
+  GooeyRadioButtonGroup *radio_button_groups; /**< List of radio button groups in the window */
+  GooeyTextbox *textboxes;                    /**< List of textboxes in the window */
+  GooeyLayout *layouts;                       /**< List of layouts in the window */
+  GooeyMenu *menu;                            /**< Menu in the window */
 
   int button_count;             /**< Number of buttons in the window */
   int label_count;              /**< Number of labels in the window */
@@ -211,6 +211,6 @@ typedef struct
   int textboxes_count;          /**< Number of textboxes in the window */
   int layout_count;             /**< Number of layouts in the window */
   int radio_button_group_count; /**< Number of radio button groups in the window */
-} GooeyWindowExt;
+} GooeyWindow;
 
 #endif

@@ -17,11 +17,6 @@ typedef enum GooeyBackends
     GLFW /**< GLFW OpenGL Backend*/
 } GooeyBackends;
 
-typedef struct GooeyWindow
-{
-    GooeyWindowExt widgets;
-} GooeyWindow;
-
 /**
  * @brief The GooeyBackend structure contains function pointers
  *        for backend-specific operations.
