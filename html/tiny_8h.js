@@ -42,6 +42,5 @@ var tiny_8h =
     [ "GooeyWindow_setTheme", "tiny_8h.html#a211590977db456409afc3bd19e030cc0", null ],
     [ "active_backend", "tiny_8h.html#a25f4df1aab03927fc33995bb8d653e06", null ],
     [ "glfw_backend", "tiny_8h.html#a6aa6e441c89fcaaa30ca52639bf06def", null ],
-    [ "wayland_backend", "tiny_8h.html#aa9457e7b63831785a8eff9c42858de2c", null ],
     [ "x11_backend", "tiny_8h.html#ad5ebe4718bda2af040934ee1a11c1423", null ]
 ];

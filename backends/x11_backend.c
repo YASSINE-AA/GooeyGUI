@@ -220,7 +220,7 @@ GooeyEvent x11_handle_events()
 
         if (event.type == ButtonPress)
         {
-            gooey_event.type = GOOEY_EVENT_CLICK;
+            gooey_event.type = GOOEY_EVENT_CLICK_PRESS;
             gooey_event.data.click.x = event.xbutton.x;
             gooey_event.data.click.y = event.xbutton.y;
             return gooey_event;

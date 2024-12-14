@@ -91,13 +91,13 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
             if (button->selected)
             {
                 active_backend->SetForeground(active_theme->primary);
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y+2 : button->core.y, RADIO_BUTTON_RADIUS*1.5, RADIO_BUTTON_RADIUS*1.5, 0, 360 * 64);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64);
             }
             else
             {
                 active_backend->SetForeground(active_theme->base);
 
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS*1.5, RADIO_BUTTON_RADIUS*1.5, 0, 360 * 64);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64);
             }
         }
     }
@@ -434,6 +434,7 @@ GooeyMenu *GooeyMenu_Set(GooeyWindow *win)
 
     *menu = (GooeyMenu){.children_count = 0};
     win->widgets.menu = menu;
+    win->widgets.menu->is_busy = 0;
 
     return win->widgets.menu;
 }
@@ -521,15 +522,20 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
         {
 
             for (int k = 0; k < win->widgets.menu->children_count; k++)
+            {
                 win->widgets.menu->children[k].is_open = 0;
+            }
 
             child->is_open = !child->is_open;
+            win->widgets.menu->is_busy = !win->widgets.menu->is_busy;
+
             GooeyWindow_Redraw(win);
             return;
         }
 
         if (child->is_open)
         {
+
             int submenu_x = x_offset - 10;
             int submenu_y = 20;
             int submenu_width = 150;
@@ -545,7 +551,10 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
                         child->callbacks[j]();
 
                     for (int k = 0; k < win->widgets.menu->children_count; k++)
+                    {
                         win->widgets.menu->children[k].is_open = 0;
+                    }
+                    win->widgets.menu->is_busy = 0;
 
                     GooeyWindow_Redraw(win);
                     return;
@@ -870,20 +879,27 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
     slider->callback = callback;
     return slider;
 }
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y)
+bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event)
 {
+    int confort_margin = 20; // margin for optimal dragging (user can't always be precise.)
     for (int i = 0; i < win->widgets.slider_count; ++i)
     {
+
         GooeySlider *slider = &win->widgets.sliders[i];
-        if (y >= slider->core.y && y <= slider->core.y + slider->core.height &&
-            x >= slider->core.x && x <= slider->core.x + slider->core.width)
+
+        if (event.data.click.y >= slider->core.y - confort_margin && event.data.click.y <= slider->core.y + slider->core.height + confort_margin &&
+            event.data.click.x >= slider->core.x && event.data.click.x <= slider->core.x + slider->core.width && event.type == GOOEY_EVENT_CLICK_PRESS)
         {
+
             slider->value =
                 slider->min_value +
-                ((x - slider->core.x) * (slider->max_value - slider->min_value)) /
+                ((event.data.click.x - slider->core.x) * (slider->max_value - slider->min_value)) /
                     slider->core.width;
+            GooeyWindow_Redraw(win);
+
             if (slider->callback)
                 slider->callback(slider->value);
+
             return true;
         }
     }
@@ -967,9 +983,11 @@ void GooeyWindow_Run(GooeyWindow *win)
     while (running)
     {
         event = active_backend->HandleEvents();
+        GooeySlider_HandleDrag(win, event);
 
         switch (event.type)
         {
+
         case GOOEY_EVENT_EXPOSE:
             active_backend->GetWinDim(&window_width, &window_height);
             GooeyWindow_Redraw(win);
@@ -980,11 +998,12 @@ void GooeyWindow_Run(GooeyWindow *win)
             GooeyTextbox_HandleKeyPress(win, &event);
             break;
         }
-        case GOOEY_EVENT_CLICK:
+        case GOOEY_EVENT_CLICK_PRESS:
         {
             int x = event.data.click.x;
             int y = event.data.click.y;
             GooeyMenu_HandleClick(win, x, y);
+
             if (GooeyButton_HandleClick(win, x, y))
             {
                 GooeyWindow_Redraw(win);
@@ -1009,10 +1028,7 @@ void GooeyWindow_Run(GooeyWindow *win)
             {
                 GooeyWindow_Redraw(win);
             }
-            else if (GooeySlider_HandleDrag(win, x, y))
-            {
-                GooeyWindow_Redraw(win);
-            }
+
             break;
         }
 

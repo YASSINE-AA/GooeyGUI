@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wayland_5fbackend_2ec_0',['wayland_backend.c',['../wayland__backend_8c.html',1,'']]]
+  ['x11_5fbackend_2ec_0',['x11_backend.c',['../x11__backend_8c.html',1,'']]]
 ];

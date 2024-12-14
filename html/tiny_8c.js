@@ -44,5 +44,7 @@ var tiny_8c =
     [ "active_backend", "tiny_8c.html#a25f4df1aab03927fc33995bb8d653e06", null ],
     [ "ACTIVE_BACKEND", "tiny_8c.html#ac8561ba2a9c7224b7c0ca3173c488798", null ],
     [ "active_theme", "tiny_8c.html#ab2fbd9843a01255ead2b2009a8a4c010", null ],
-    [ "default_theme", "tiny_8c.html#a2298f5263384fd0746af795853316bc4", null ]
+    [ "default_theme", "tiny_8c.html#a2298f5263384fd0746af795853316bc4", null ],
+    [ "window_height", "tiny_8c.html#aca33f926b061680d857699a22f676418", null ],
+    [ "window_width", "tiny_8c.html#a0e2e740afd510cfe652a1836ffbad209", null ]
 ];

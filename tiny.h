@@ -324,12 +324,10 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
  * @brief Handles slider drag events.
  *
  * @param win The window containing the slider.
- * @param x The x-coordinate of the drag event.
- * @param y The y-coordinate of the drag event.
+ * @param event The current event.
  * @return True if the slider was dragged, false otherwise.
  */
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
-
+bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event);
 /**
  * @brief Gets the current value of the slider.
  *

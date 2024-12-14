@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_5fgnu_5fsource_0',['_GNU_SOURCE',['../wayland__backend_8c.html#a369266c24eacffb87046522897a570d5',1,'wayland_backend.c']]]
+  ['init_0',['Init',['../structGooeyBackend.html#a219bfc1df0e971a5f2b8fb1d205157f8',1,'GooeyBackend']]],
+  ['installation_1',['Installation',['../index.html#autotoc_md4',1,'']]],
+  ['is_5fopen_2',['is_open',['../structGooeyMenuChild.html#a8abb16aa54fa014b1c1dac1e916daffc',1,'GooeyMenuChild']]]
 ];

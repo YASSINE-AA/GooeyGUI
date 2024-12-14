@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['object_20vao_0',['6. Create and Configure Vertex Array Object (VAO)',['../md_opengl__basics.html#autotoc_md26',1,'']]],
-  ['object_20vbo_1',['3. Generate and Bind Vertex Buffer Object (VBO)',['../md_opengl__basics.html#autotoc_md18',1,'']]],
-  ['onbuttonclick_2',['onButtonClick',['../main_8c.html#acbcea893ddddb55e558115beb8f9a1b1',1,'main.c']]],
-  ['oncheckboxtoggle_3',['onCheckboxToggle',['../main_8c.html#acf51b8c25de330d9bb67e1e1ac0d558e',1,'main.c']]],
-  ['ondropdownchange_4',['onDropdownChange',['../main_8c.html#a524171648a6054d194fa018d31472456',1,'main.c']]],
-  ['onradiobuttonselect_5',['onRadioButtonSelect',['../main_8c.html#a2c1f3f1f96bf8a61b213c596d5101631',1,'main.c']]],
-  ['onsliderchange_6',['onSliderChange',['../main_8c.html#a03ecd7b4685e1067388461ee93488181',1,'main.c']]],
-  ['ontextchange_7',['onTextChange',['../main_8c.html#a3f3a1b22965383b5ea1ef224b0a76f83',1,'main.c']]],
-  ['opengl_20and_20create_20a_20window_8',['1. Initialize OpenGL and Create a Window',['../md_opengl__basics.html#autotoc_md14',1,'']]],
-  ['opengl_20triangle_20program_9',['OpenGL Triangle Program',['../md_opengl__basics.html',1,'']]],
-  ['opengl_5fbasics_2emd_10',['opengl_basics.md',['../opengl__basics_8md.html',1,'']]],
-  ['overview_11',['API Overview',['../index.html#autotoc_md6',1,'']]]
+  ['value_0',['value',['../structGooeySlider.html#a7f24c5a7bfffbd232736bc99d2fdd749',1,'GooeySlider']]],
+  ['vec3_5fmul_5fcross_1',['vec3_mul_cross',['../linmath_8h.html#afd95d1931b51103bc155e67756e1ef29',1,'linmath.h']]],
+  ['vec3_5freflect_2',['vec3_reflect',['../linmath_8h.html#a43e6aab778685cdb8512d4003a39d02a',1,'linmath.h']]],
+  ['vec4_5fmul_5fcross_3',['vec4_mul_cross',['../linmath_8h.html#af3d3a5c4e2f91b1e42d0265b56047389',1,'linmath.h']]],
+  ['vec4_5freflect_4',['vec4_reflect',['../linmath_8h.html#accff7310b38c9e47fc632acbb3be0bc8',1,'linmath.h']]],
+  ['vertex_5',['vertex',['../structVertex.html',1,'Vertex'],['../glfw__utils_8h.html#a2e1662af5233d0fe6a6f061445d2ff25',1,'Vertex:&#160;glfw_utils.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertex_0',['Vertex',['../glfw__utils_8h.html#a2e1662af5233d0fe6a6f061445d2ff25',1,'glfw_utils.h']]]
+  ['mat4x4_0',['mat4x4',['../linmath_8h.html#aea448460b62175f89ed5760877496434',1,'linmath.h']]]
 ];

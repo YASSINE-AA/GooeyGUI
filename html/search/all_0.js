@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['1_20initialize_20opengl_20and_20create_20a_20window_0',['1. Initialize OpenGL and Create a Window',['../md_opengl__basics.html#autotoc_md14',1,'']]]
+  ['_5fglad_5fis_5fsome_5fnew_5fversion_0',['_GLAD_IS_SOME_NEW_VERSION',['../glad_8c.html#ae528ddc840eec0ab9ddbec708f178516',1,'glad.c']]]
 ];

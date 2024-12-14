@@ -13,8 +13,8 @@ extern GooeyTheme *active_theme;
 
 typedef enum GooeyBackends
 {
-    X11,
-    GLFW
+    X11, /**< Linux X11 native api */
+    GLFW /**< GLFW OpenGL Backend*/
 } GooeyBackends;
 
 typedef struct GooeyWindow

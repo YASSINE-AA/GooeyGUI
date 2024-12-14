@@ -299,9 +299,9 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 
 static void click_callback(GLFWwindow *window, int button, int action, int mods)
 {
-    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+    if (button == GLFW_MOUSE_BUTTON_LEFT)
     {
-        ctx.current_event->type = GOOEY_EVENT_CLICK;
+        ctx.current_event->type = action == GLFW_PRESS ? GOOEY_EVENT_CLICK_PRESS : GOOEY_EVENT_CLICK_RELEASE;
     }
 }
 
@@ -321,7 +321,6 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
     glViewport(0, 0, width, height);
     set_projection(width, height);
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
-    
 }
 
 int glfw_init_ft()
@@ -504,8 +503,6 @@ GooeyEvent glfw_handle_events()
         return (GooeyEvent){.type = -1};
     }
 
-    ctx.current_event->type = -1;
-
     glfwPollEvents();
 
     return *(ctx.current_event);
@@ -569,7 +566,8 @@ char *glfw_get_key_from_code(GooeyEvent *gooey_event)
     return LookupString(gooey_event->data.key_press.keycode);
 }
 
-void glfw_window_dim(int *width, int *height) {
+void glfw_window_dim(int *width, int *height)
+{
     get_window_size(ctx.window, width, height);
 }
 
