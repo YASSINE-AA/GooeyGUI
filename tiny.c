@@ -890,7 +890,7 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event)
         if (event.data.click.y >= slider->core.y - confort_margin && event.data.click.y <= slider->core.y + slider->core.height + confort_margin &&
             event.data.click.x >= slider->core.x && event.data.click.x <= slider->core.x + slider->core.width && event.type == GOOEY_EVENT_CLICK_PRESS)
         {
-
+            active_backend->InhibitResetEvents(1);
             slider->value =
                 slider->min_value +
                 ((event.data.click.x - slider->core.x) * (slider->max_value - slider->min_value)) /
@@ -903,6 +903,8 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event)
             return true;
         }
     }
+    active_backend->InhibitResetEvents(0);
+
     return false;
 }
 
@@ -983,7 +985,6 @@ void GooeyWindow_Run(GooeyWindow *win)
     while (running)
     {
         event = active_backend->HandleEvents();
-        GooeySlider_HandleDrag(win, event);
 
         switch (event.type)
         {
@@ -1003,7 +1004,7 @@ void GooeyWindow_Run(GooeyWindow *win)
             int x = event.data.click.x;
             int y = event.data.click.y;
             GooeyMenu_HandleClick(win, x, y);
-
+            GooeySlider_HandleDrag(win, event);
             if (GooeyButton_HandleClick(win, x, y))
             {
                 GooeyWindow_Redraw(win);

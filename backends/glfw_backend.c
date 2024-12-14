@@ -12,6 +12,7 @@ typedef struct
     mat4x4 projection;
     Character characters[128];
     char font_path[256];
+    bool inhibit_reset; /**< useful for continuesly happening events like dragging a slider. */
     unsigned int selected_color;
 } GooeyBackendContext;
 ;
@@ -396,6 +397,7 @@ int glfw_init()
         return -1;
     }
 
+    ctx.inhibit_reset = 0;
     ctx.current_event->type = -1;
     ctx.selected_color = 0x000000;
 
@@ -408,6 +410,11 @@ int glfw_init()
     }
 
     return 0;
+}
+
+void glfw_reset_events(bool state)
+{
+    ctx.inhibit_reset = !state;
 }
 
 void glfw_draw_text(int x, int y, const char *text, unsigned long color)
@@ -502,6 +509,8 @@ GooeyEvent glfw_handle_events()
         fprintf(stderr, "Error: HandleEvents called without a valid window\n");
         return (GooeyEvent){.type = -1};
     }
+    if (ctx.inhibit_reset)
+        ctx.current_event->type = -1;
 
     glfwPollEvents();
 
@@ -580,6 +589,7 @@ GooeyBackend glfw_backend = {
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,
+    .InhibitResetEvents = glfw_reset_events,
     .FillArc = glfw_fill_arc,
     .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
