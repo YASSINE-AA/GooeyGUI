@@ -135,6 +135,7 @@ typedef struct
   int selected_index;  /**< Index of the selected item */
   const char **options; /**< List of options for the dropdown */
   int num_options;     /**< Number of options in the dropdown */
+  bool is_open;        /**< Boolean flag to check if the dropdown menu is opened or not*/
   void (*callback)(int selected_index); /**< Callback function when an option is selected */
 } GooeyDropdown;
 

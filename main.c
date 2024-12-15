@@ -49,7 +49,7 @@ int main()
 
 
 
-    Gooey_Init(GLFW);
+    Gooey_Init(X11);
 
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700);
 

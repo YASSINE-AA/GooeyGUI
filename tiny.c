@@ -238,19 +238,20 @@ void GooeyWindow_Redraw(GooeyWindow *win)
         active_backend->SetForeground(active_theme->neutral);
     }
 
-    for (int i = 0; i < win->widgets.dropdown_count; ++i)
-    {
-        GooeyDropdown *dropdown = &win->widgets.dropdowns[i];
+    // for (int i = 0; i < win->widgets.dropdown_count; ++i)
+    // {
+    //     GooeyDropdown *dropdown = &win->widgets.dropdowns[i];
 
-        active_backend->FillRectangle(dropdown->core.x,
-                                      dropdown->core.y, dropdown->core.width,
-                                      dropdown->core.height, active_theme->widget_base);
+    //     active_backend->FillRectangle(dropdown->core.x,
+    //                                   dropdown->core.y, dropdown->core.width,
+    //                                   dropdown->core.height, active_theme->widget_base);
 
-        active_backend->DrawText(dropdown->core.x + 5,
-                                 dropdown->core.y + 20,
-                                 dropdown->options[dropdown->selected_index],
-                                 active_theme->neutral);
-    }
+    //     active_backend->DrawText(dropdown->core.x + 5,
+    //                              dropdown->core.y + 20,
+    //                              dropdown->options[dropdown->selected_index],
+    //                              active_theme->neutral);
+    // }
+    GooeyDropdown_Draw(win);
     GooeyMenu_Draw(win);
 
     active_backend->Render();
@@ -432,51 +433,6 @@ GooeyMenu *GooeyMenu_Set(GooeyWindow *win)
     win->widgets.menu = menu;
 
     return win->widgets.menu;
-}
-
-void GooeyMenu_Draw(GooeyWindow *win)
-{
-    if (win->widgets.menu)
-    {
-
-        active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
-
-        int x_offset = 10;
-        for (int i = 0; i < win->widgets.menu->children_count; i++)
-        {
-            GooeyMenuChild *child = &win->widgets.menu->children[i];
-            int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
-            active_backend->DrawText(x_offset, 15,
-                                     child->title, active_theme->neutral);
-
-            if (child->is_open && child->menu_elements_count > 0)
-            {
-                int submenu_x = x_offset - 10;
-                int submenu_y = 20;
-                int submenu_width = 150;
-                int submenu_height = 25 * child->menu_elements_count;
-
-                active_backend->FillRectangle(submenu_x, submenu_y,
-                                              submenu_width, submenu_height, active_theme->widget_base);
-
-                for (int j = 0; j < child->menu_elements_count; j++)
-                {
-                    int element_y = submenu_y + (j * 25);
-                    active_backend->DrawText(submenu_x + 5,
-                                             element_y + 18, child->menu_elements[j], active_theme->neutral);
-                    if (j < child->menu_elements_count - 1)
-                    {
-
-                        active_backend->DrawLine(submenu_x,
-                                                 element_y + 25 - 1, submenu_x + submenu_width,
-                                                 element_y + 25 - 1, active_theme->neutral);
-                    }
-                }
-            }
-
-            x_offset += text_width + 20;
-        }
-    }
 }
 
 GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title)
@@ -923,26 +879,163 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
     dropdown->num_options = num_options;
     dropdown->selected_index = 0;
     dropdown->callback = callback;
+    dropdown->is_open = false ; 
     return dropdown;
+}
+void GooeyMenu_Draw(GooeyWindow *win)
+{
+    if (win->widgets.menu)
+    {
+
+        active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
+
+        int x_offset = 10;
+        for (int i = 0; i < win->widgets.menu->children_count; i++)
+        {
+            GooeyMenuChild *child = &win->widgets.menu->children[i];
+            int text_width = active_backend->GetTextWidth(child->title, strlen(child->title));
+            active_backend->DrawText(x_offset, 15,
+                                     child->title, active_theme->neutral);
+
+            if (child->is_open && child->menu_elements_count > 0)
+            {
+                int submenu_x = x_offset - 10;
+                int submenu_y = 20;
+                int submenu_width = 150;
+                int submenu_height = 25 * child->menu_elements_count;
+
+                active_backend->FillRectangle(submenu_x, submenu_y,
+                                              submenu_width, submenu_height, active_theme->widget_base);
+
+                for (int j = 0; j < child->menu_elements_count; j++)
+                {
+                    int element_y = submenu_y + (j * 25);
+                    active_backend->DrawText(submenu_x + 5,
+                                             element_y + 18, child->menu_elements[j], active_theme->neutral);
+                    if (j < child->menu_elements_count - 1)
+                    {
+
+                        active_backend->DrawLine(submenu_x,
+                                                 element_y + 25 - 1, submenu_x + submenu_width,
+                                                 element_y + 25 - 1, active_theme->neutral);
+                    }
+                }
+            }
+
+            x_offset += text_width + 20;
+        }
+ 
+    }
+}
+void GooeyDropdown_Draw(GooeyWindow *win)
+{
+
+    int x_offset = win->widgets.dropdowns[0].core.x;
+    for (int i = 0; i < win->widgets.dropdown_count; i++)
+    {
+        // GooeyMenuChild *child = win->widgets.menu->children[i];
+        GooeyDropdown *dropdown = &win->widgets.dropdowns[i];
+        // active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
+           active_backend->FillRectangle(dropdown->core.x,
+                                  dropdown->core.y, dropdown->core.width,
+                                  dropdown->core.height, active_theme->widget_base);
+        active_backend->DrawText(dropdown->core.x + 5,
+                             dropdown->core.y + 20,
+                             dropdown->options[dropdown->selected_index],
+                             active_theme->neutral);
+        int text_width = active_backend->GetTextWidth(dropdown->options[dropdown->selected_index], strlen(dropdown->options[dropdown->selected_index]));
+        active_backend->DrawText(x_offset, 15,
+                                 dropdown->options[dropdown->selected_index], active_theme->neutral);
+        if (dropdown->is_open && dropdown->num_options > 0)
+        {
+            int submenu_x = x_offset ;
+            int submenu_y = win->widgets.dropdowns[0].core.y + win->widgets.dropdowns[0].core.height;
+            int submenu_width = win->widgets.dropdowns[0].core.width;
+            int submenu_height = 25 * dropdown->num_options;
+            active_backend->FillRectangle(submenu_x, submenu_y,
+                                          submenu_width, submenu_height, active_theme->widget_base);
+            for (int j = 0; j < dropdown->num_options; j++)
+            {
+                int element_y = submenu_y + (j * 25);
+                active_backend->DrawText(submenu_x + 5,
+                                         element_y + 18, dropdown->options[j], active_theme->neutral);
+                if (j < dropdown->num_options - 1)
+                {
+                active_backend->DrawLine(submenu_x,
+                                             element_y + 25 - 1, submenu_x + submenu_width,
+                                             element_y + 25 - 1, active_theme->neutral);
+                }
+            }
+        }
+        x_offset += text_width + 20;
+    }
 }
 
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
 {
-    for (int i = 0; i < win->widgets.dropdown_count; ++i)
-    {
+    // for (int i = 0; i < win->widgets.dropdown_count; ++i)
+    // {
+    //     GooeyDropdown *dropdown = &win->widgets.dropdowns[i];
+    //     if (x >= dropdown->core.x && x <= dropdown->core.x + dropdown->core.width &&
+    //         y >= dropdown->core.y &&  y <= dropdown->core.y + dropdown->core.height)
+    //     {
+    //         dropdown->is_open = ! dropdown->is_open ; 
+    //         dropdown->selected_index = i ; // ; (dropdown->selected_index + 1) % dropdown->num_options;
+    //         if (dropdown->callback)
+    //             dropdown->callback(dropdown->selected_index);
+    //         return true;
+    //     }
+    // }
+    // return false;
+    bool _btn_st = false ; 
+    for (int i = 0; i < win->widgets.dropdown_count; i++)
+    {   
+    int x_offset = win->widgets.dropdowns[i].core.x;
         GooeyDropdown *dropdown = &win->widgets.dropdowns[i];
-        if (x >= dropdown->core.x && x <= dropdown->core.x + dropdown->core.width &&
-            y >= dropdown->core.y &&
-            y <= dropdown->core.y + dropdown->core.height)
+        int text_width =10 ;//  active_backend->GetTextWidth(dropdown->options[dropdown->selected_index], strlen(dropdown->options[dropdown->selected_index]));
+         if (x >= dropdown->core.x && x <= dropdown->core.x + dropdown->core.width && y >= dropdown->core.y &&  y <= dropdown->core.y + dropdown->core.height)
         {
-            dropdown->selected_index =
-                (dropdown->selected_index + 1) % dropdown->num_options;
-            if (dropdown->callback)
-                dropdown->callback(dropdown->selected_index);
-            return true;
+            
+            dropdown->is_open = 0;
+            printf("%d %d \n ", dropdown->selected_index, dropdown->num_options);
+            dropdown->is_open = !dropdown->is_open;
+            GooeyWindow_Redraw(win);
+            _btn_st =  true;
+            // return true ; 
         }
+// 
+        if (dropdown->is_open)
+        {
+            int submenu_x = x_offset ;
+            int submenu_y = win->widgets.dropdowns[i].core.y + win->widgets.dropdowns[i].core.height;
+            int submenu_width = win->widgets.dropdowns[i].core.width;
+            for (int j = 0; j < dropdown->num_options; j++)
+            {
+                int element_y = submenu_y + (j * 25);
+                if (x >= submenu_x && x <= submenu_x + submenu_width &&
+                    y >= element_y && y <= element_y + 25)
+                {
+                    printf("test %d \n",j);
+                    // GooeyDropdown* d = &win->widgets.dropdowns[j]; // ->callbacks[j]
+                    dropdown->selected_index = j  ; // (dropdown->selected_index + 1) %   dropdown->num_options;
+
+                    if (win->widgets.dropdowns[i].callback)
+                        win->widgets.dropdowns[i].callback(j);
+
+                    dropdown->is_open = 0;
+                    GooeyWindow_Redraw(win);
+                    // return true;
+                }
+            }
+        }
+
+        x_offset += text_width + 20;
     }
-    return false;
+    if ( _btn_st){ 
+        return true; 
+    }else { 
+        return false ;
+    }
 }
 void GooeyWindow_Cleanup(GooeyWindow *win)
 {

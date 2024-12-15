@@ -378,6 +378,12 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
  * @return True if the dropdown menu was clicked, false otherwise.
  */
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y);
+/**
+ * @brief Draws the drop down menu on the window.
+ *
+ * @param win The window to draw the drop down menu.
+ */
+void GooeyDropdown_Draw(GooeyWindow *win);
 
 /**
  * @brief Creates a radio button group widget.
