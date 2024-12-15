@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['9_20debugging_20tools_0',['9. Debugging Tools',['../md_opengl__basics.html#autotoc_md32',1,'']]]
+  ['handleevents_0',['HandleEvents',['../structGooeyBackend.html#ab9deaffbae6c768c854ea571d744679a',1,'GooeyBackend']]],
+  ['height_1',['height',['../structGooeyWidget.html#abbff214297c2c4c6fffcefca6005a50d',1,'GooeyWidget::height'],['../structGooeyLayout.html#ae8e721e5c186f0f8ed9e9fb2b2f65c30',1,'GooeyLayout::height'],['../structCharacter.html#a1f7e996c91a75a5e037bebcf0bf3ac06',1,'Character::height']]],
+  ['hover_2',['hover',['../structGooeyButton.html#a9ed41630eb0937bec82f4186466664c6',1,'GooeyButton']]]
 ];

@@ -3,6 +3,7 @@ var glfw__backend_8c =
     [ "GooeyBackendContext", "structGooeyBackendContext.html", "structGooeyBackendContext" ],
     [ "check_shader_compile", "glfw__backend_8c.html#a4c7164db83d9424e788c03bc55a6c393", null ],
     [ "check_shader_link", "glfw__backend_8c.html#a5c5e474c82d59d3570f8ba8a8854b5b5", null ],
+    [ "framebuffer_size_callback", "glfw__backend_8c.html#a5180f7bf2b71421af837035824a8c8ac", null ],
     [ "glfw_cleanup", "glfw__backend_8c.html#a245407cf2a7362a9f23db837e1746297", null ],
     [ "glfw_clear", "glfw__backend_8c.html#a81150c7a9d1f82a5f6ad30c5b6a31321", null ],
     [ "glfw_create_window", "glfw__backend_8c.html#a887a2affbc83b6470b54dd239941c4f5", null ],
@@ -20,6 +21,8 @@ var glfw__backend_8c =
     [ "glfw_render", "glfw__backend_8c.html#aa845e35bbb57b8d42bc9efdaed128a6c", null ],
     [ "glfw_set_foreground", "glfw__backend_8c.html#a8f2b676e2393ee8424d43e1cf3ac59c2", null ],
     [ "glfw_update_background", "glfw__backend_8c.html#a4accf774f962735ae9519a9e79e6496d", null ],
+    [ "glfw_window_dim", "glfw__backend_8c.html#a7022daf56f78ebf04aa974fb40dc25b5", null ],
+    [ "set_projection", "glfw__backend_8c.html#abae440a7220a240bd0af87fbb7f659c9", null ],
     [ "setup_shaders", "glfw__backend_8c.html#a76c6084335d944db2b604aaa048cbfb0", null ],
     [ "glfw_backend", "glfw__backend_8c.html#a6aa6e441c89fcaaa30ca52639bf06def", null ]
 ];

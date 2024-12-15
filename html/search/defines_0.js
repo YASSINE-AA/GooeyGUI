@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fgnu_5fsource_0',['_GNU_SOURCE',['../wayland__backend_8c.html#a369266c24eacffb87046522897a570d5',1,'wayland_backend.c']]]
+  ['_5fglad_5fis_5fsome_5fnew_5fversion_0',['_GLAD_IS_SOME_NEW_VERSION',['../glad_8c.html#ae528ddc840eec0ab9ddbec708f178516',1,'glad.c']]]
 ];

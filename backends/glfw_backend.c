@@ -3,6 +3,7 @@ typedef struct
 {
     GooeyEvent *current_event;
     GLFWwindow *window;
+    GLFWcursor *cursor;
     GLuint text_program;
     GLuint shape_program;
     GLuint text_vao;
@@ -12,6 +13,7 @@ typedef struct
     mat4x4 projection;
     Character characters[128];
     char font_path[256];
+    bool inhibit_reset; /**< useful for continuesly happening events like dragging a slider. */
     unsigned int selected_color;
 } GooeyBackendContext;
 ;
@@ -271,6 +273,13 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
     glDrawArrays(GL_TRIANGLE_FAN, 0, segments + 2);
 }
 
+void set_projection(int width, int height)
+{
+    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
+    glUseProgram(ctx.text_program);
+    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
+    glBindVertexArray(ctx.text_vao);
+}
 static void error_callback(int error, const char *description)
 {
     fprintf(stderr, "Error: %s\n", description);
@@ -292,9 +301,9 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 
 static void click_callback(GLFWwindow *window, int button, int action, int mods)
 {
-    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+    if (button == GLFW_MOUSE_BUTTON_LEFT)
     {
-        ctx.current_event->type = GOOEY_EVENT_CLICK;
+        ctx.current_event->type = action == GLFW_PRESS ? GOOEY_EVENT_CLICK_PRESS : GOOEY_EVENT_CLICK_RELEASE;
     }
 }
 
@@ -306,6 +315,13 @@ static void cursor_callback(GLFWwindow *window, double posX, double posY)
 
 static void refresh_callback(GLFWwindow *window)
 {
+    ctx.current_event->type = GOOEY_EVENT_EXPOSE;
+}
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+    set_projection(width, height);
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 
@@ -382,8 +398,11 @@ int glfw_init()
         return -1;
     }
 
+    ctx.inhibit_reset = 0;
     ctx.current_event->type = -1;
     ctx.selected_color = 0x000000;
+    ctx.current_event->data.click.x = -1;
+    ctx.current_event->data.click.y = -1;
 
     glfwSetErrorCallback(error_callback);
 
@@ -394,6 +413,11 @@ int glfw_init()
     }
 
     return 0;
+}
+
+void glfw_reset_events(bool state)
+{
+    ctx.inhibit_reset = !state;
 }
 
 void glfw_draw_text(int x, int y, const char *text, unsigned long color)
@@ -459,26 +483,25 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
     glfwSetMouseButtonCallback(ctx.window, click_callback);
     glfwSetCursorPosCallback(ctx.window, cursor_callback);
     glfwSetWindowRefreshCallback(ctx.window, refresh_callback);
-    GooeyWindow window;
+    glfwSetFramebufferSizeCallback(ctx.window, framebuffer_size_callback);
 
-    window.width = width;
-    window.height = height;
+    GooeyWindow window;
     glfwMakeContextCurrent(ctx.window);
+
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
     glfw_init_ft();
     glfwSwapInterval(1);
-
+    glViewport(0, 0, width, height);
     vec3 color;
     convert_hex_to_rgb(&color, active_theme->base);
     glClearColor(color[0], color[1], color[2], 1.0f);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setup_shaders();
-    mat4x4_ortho(ctx.projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
-    glUseProgram(ctx.text_program);
-    glUniformMatrix4fv(glGetUniformLocation(ctx.text_program, "projection"), 1, GL_FALSE, (const GLfloat *)ctx.projection);
-    glBindVertexArray(ctx.text_vao);
+
+    set_projection(width, height);
+
     return window;
 }
 
@@ -489,8 +512,8 @@ GooeyEvent glfw_handle_events()
         fprintf(stderr, "Error: HandleEvents called without a valid window\n");
         return (GooeyEvent){.type = -1};
     }
-
-    ctx.current_event->type = -1;
+    if (ctx.inhibit_reset)
+        ctx.current_event->type = -1;
 
     glfwPollEvents();
 
@@ -518,7 +541,8 @@ void glfw_cleanup()
         free(ctx.current_event);
         ctx.current_event = NULL;
     }
-
+    if (ctx.cursor)
+        glfwDestroyCursor(ctx.cursor);
     glfwTerminate();
 }
 
@@ -537,10 +561,6 @@ void glfw_render()
         fprintf(stderr, "Error: Render called without a valid window\n");
         return;
     }
-
-    int width, height;
-    glfwGetFramebufferSize(ctx.window, &width, &height);
-    glViewport(0, 0, width, height);
     glfwSwapBuffers(ctx.window);
 }
 
@@ -559,14 +579,76 @@ char *glfw_get_key_from_code(GooeyEvent *gooey_event)
     return LookupString(gooey_event->data.key_press.keycode);
 }
 
+void glfw_window_dim(int *width, int *height)
+{
+    get_window_size(ctx.window, width, height);
+}
+
+void glfw_set_cursor(GOOEY_CURSOR cursor)
+{
+    switch (cursor)
+    {
+
+    case GOOEY_CURSOR_ARROW:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_ARROW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_HAND:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_HAND_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_TEXT:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_IBEAM_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_CROSSHAIR:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_CROSSHAIR_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_RESIZE_TL_BR:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NWSE_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_RESIZE_TR_BL:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NESW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_H:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_EW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_V:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NS_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_ALL:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_ALL_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+        case GOOEY_CURSOR_NOT_ALLOWED:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_NOT_ALLOWED_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    default:
+        break;
+    }
+}
+
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
     .CreateWindow = glfw_create_window,
+    .GetWinDim = glfw_window_dim,
     .DestroyWindow = glfw_destroy_window,
     .UpdateBackground = glfw_update_background,
     .Cleanup = glfw_cleanup,
     .Render = glfw_render,
     .HandleEvents = glfw_handle_events,
+    .InhibitResetEvents = glfw_reset_events,
     .FillArc = glfw_fill_arc,
     .FillRectangle = glfw_fill_rectangle,
     .DrawRectangle = glfw_draw_rectangle,
@@ -575,4 +657,5 @@ GooeyBackend glfw_backend = {
     .GetTextWidth = glfw_get_text_width,
     .DrawText = glfw_draw_text,
     .GetKeyFromCode = glfw_get_key_from_code,
+    .SetCursor = glfw_set_cursor,
     .Clear = glfw_clear};

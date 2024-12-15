@@ -60,9 +60,6 @@ GooeyWindow x11_create_window(const char *title, int width, int height)
 {
     GooeyWindow window;
 
-    window.width = width;
-    window.height = height;
-
     int screen = DefaultScreen(ctx.display);
 
     ctx.window = XCreateSimpleWindow(
@@ -180,14 +177,12 @@ void x11_draw_rectangle(int x, int y, int width, int height, unsigned long color
                    width, height);
 }
 
-int x11_get_window_height(GooeyWindow *window)
+void x11_get_win_dim(int *width, int *height)
 {
-    return window->height;
-}
-
-int x11_get_window_width(GooeyWindow *window)
-{
-    return window->width;
+    XWindowAttributes attr;
+    XGetWindowAttributes(ctx.display, ctx.window, &attr);
+    *width = attr.width;
+    *height = attr.height;
 }
 
 void x11_draw_line(int x1, int y1, int x2, int y2, unsigned long color)
@@ -225,7 +220,7 @@ GooeyEvent x11_handle_events()
 
         if (event.type == ButtonPress)
         {
-            gooey_event.type = GOOEY_EVENT_CLICK;
+            gooey_event.type = GOOEY_EVENT_CLICK_PRESS;
             gooey_event.data.click.x = event.xbutton.x;
             gooey_event.data.click.y = event.xbutton.y;
             return gooey_event;
@@ -271,8 +266,7 @@ GooeyBackend x11_backend = {
     .DrawRectangle = x11_draw_rectangle,
     .FillRectangle = x11_fill_rectangle,
     .FillArc = x11_fill_arc,
-    .GetHeight = x11_get_window_height,
-    .GetWidth = x11_get_window_width,
+    .GetWinDim = x11_get_win_dim,
     .DrawLine = x11_draw_line,
     .GetTextWidth = x11_get_text_width
 

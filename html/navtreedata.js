@@ -25,32 +25,20 @@
 var NAVTREE =
 [
   [ "Gooey GUI Library", "index.html", [
-    [ "Features", "index.html#autotoc_md1", null ],
-    [ "Getting Started", "index.html#autotoc_md2", [
-      [ "Prerequisites", "index.html#autotoc_md3", null ],
-      [ "Installation", "index.html#autotoc_md4", null ],
-      [ "Example Usage", "index.html#autotoc_md5", null ]
-    ] ],
-    [ "API Overview", "index.html#autotoc_md6", [
-      [ "Window Management", "index.html#autotoc_md7", null ],
-      [ "Widgets", "index.html#autotoc_md8", null ],
-      [ "Layouts", "index.html#autotoc_md9", null ]
-    ] ],
-    [ "Contributing", "index.html#autotoc_md10", null ],
-    [ "License", "index.html#autotoc_md11", null ],
-    [ "OpenGL Triangle Program", "md_opengl__basics.html", [
-      [ "1. Initialize OpenGL and Create a Window", "md_opengl__basics.html#autotoc_md14", null ],
-      [ "2. Define Vertex Data", "md_opengl__basics.html#autotoc_md16", null ],
-      [ "3. Generate and Bind Vertex Buffer Object (VBO)", "md_opengl__basics.html#autotoc_md18", null ],
-      [ "4. Create and Compile Shaders", "md_opengl__basics.html#autotoc_md20", [
-        [ "Vertex Shader", "md_opengl__basics.html#autotoc_md21", null ],
-        [ "Fragment Shader", "md_opengl__basics.html#autotoc_md22", null ]
+    [ "Gooey GUI Library", "index.html#autotoc_md0", [
+      [ "Features", "index.html#autotoc_md1", null ],
+      [ "Getting Started", "index.html#autotoc_md2", [
+        [ "Prerequisites", "index.html#autotoc_md3", null ],
+        [ "Installation", "index.html#autotoc_md4", null ],
+        [ "Example Usage", "index.html#autotoc_md5", null ]
       ] ],
-      [ "5. Link Shaders into a Shader Program", "md_opengl__basics.html#autotoc_md24", null ],
-      [ "6. Create and Configure Vertex Array Object (VAO)", "md_opengl__basics.html#autotoc_md26", null ],
-      [ "7. Render Loop", "md_opengl__basics.html#autotoc_md28", null ],
-      [ "8. Cleanup Resources", "md_opengl__basics.html#autotoc_md30", null ],
-      [ "9. Debugging Tools", "md_opengl__basics.html#autotoc_md32", null ]
+      [ "API Overview", "index.html#autotoc_md6", [
+        [ "Window Management", "index.html#autotoc_md7", null ],
+        [ "Widgets", "index.html#autotoc_md8", null ],
+        [ "Layouts", "index.html#autotoc_md9", null ]
+      ] ],
+      [ "Contributing", "index.html#autotoc_md10", null ],
+      [ "License", "index.html#autotoc_md11", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -63,9 +51,9 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
+        [ "Variables", "globals_vars.html", "globals_vars" ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
@@ -78,7 +66,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"wayland__backend_8c.html"
+"glad_8c.html#a54173abaede6ead615d760bfb8331028",
+"glad_8c.html#aa0a8286bfe2b0d37eaa6f5479b014fb0",
+"glad_8c.html#af1e0ced8b0a7b71164bb8e147653b9d0",
+"structGooeyBackend.html#ad2d8e81cec63d791024dec3bf0129af2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

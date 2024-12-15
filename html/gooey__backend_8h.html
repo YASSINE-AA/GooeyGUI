@@ -104,8 +104,8 @@ $(document).ready(function(){initNavTree('gooey__backend_8h.html',''); initResiz
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;utils/themes/theme_parser.h&quot;</code><br />
-<code>#include &quot;utils/gooey_event.h&quot;</code><br />
-<code>#include &quot;utils/gooey_widgets.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="gooey__event_8h_source.html">utils/gooey_event.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gooey__widgets_8h_source.html">utils/gooey_widgets.h</a>&quot;</code><br />
 </div>
 <p><a href="gooey__backend_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -130,8 +130,6 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ab380ab6c11d2817d8655816c79e01111" id="r_ab380ab6c11d2817d8655816c79e01111"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111">GooeyBackends</a> { <a class="el" href="gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e">X11</a>
-, <a class="el" href="gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2">WIN32</a>
-, <a class="el" href="gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1">SDL</a>
 , <a class="el" href="gooey__backend_8h.html#ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0">GLFW</a>
  }</td></tr>
 <tr class="separator:ab380ab6c11d2817d8655816c79e01111"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +138,6 @@ Enumerations</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:ab2fbd9843a01255ead2b2009a8a4c010" id="r_ab2fbd9843a01255ead2b2009a8a4c010"><td class="memItemLeft" align="right" valign="top">GooeyTheme *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gooey__backend_8h.html#ab2fbd9843a01255ead2b2009a8a4c010">active_theme</a></td></tr>
 <tr class="separator:ab2fbd9843a01255ead2b2009a8a4c010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9457e7b63831785a8eff9c42858de2c" id="r_aa9457e7b63831785a8eff9c42858de2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGooeyBackend.html">GooeyBackend</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gooey__backend_8h.html#aa9457e7b63831785a8eff9c42858de2c">wayland_backend</a></td></tr>
-<tr class="memdesc:aa9457e7b63831785a8eff9c42858de2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Wayland backend for Gooey.  <br /></td></tr>
-<tr class="separator:aa9457e7b63831785a8eff9c42858de2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a1e2caf8226e4b525817b913e4a067223" name="a1e2caf8226e4b525817b913e4a067223"></a>
@@ -202,10 +197,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e" name="ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e"></a>X11&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2" name="ab380ab6c11d2817d8655816c79e01111a7f958ba3ab4f9fc467fd4b34578373c2"></a>WIN32&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1" name="ab380ab6c11d2817d8655816c79e01111ac20184b25d6c8aad0446cafa5e6610c1"></a>SDL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" name="ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0"></a>GLFW&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e" name="ab380ab6c11d2817d8655816c79e01111aa44a1c85d843374de16992d76ca5608e"></a>X11&#160;</td><td class="fielddoc"><p>Linux X11 native api </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0" name="ab380ab6c11d2817d8655816c79e01111a5a814b47f126f8a341fd9c7caae0f9a0"></a>GLFW&#160;</td><td class="fielddoc"><p>GLFW OpenGL Backend </p>
+</td></tr>
 </table>
 
 </div>
@@ -230,30 +225,6 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa9457e7b63831785a8eff9c42858de2c" name="aa9457e7b63831785a8eff9c42858de2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9457e7b63831785a8eff9c42858de2c">&#9670;&#160;</a></span>wayland_backend</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structGooeyBackend.html">GooeyBackend</a> wayland_backend</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The Wayland backend for Gooey. </p>
 
 </div>
 </div>

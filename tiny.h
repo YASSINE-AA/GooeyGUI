@@ -13,11 +13,6 @@ extern GooeyBackend *active_backend;
 extern GooeyBackend x11_backend;
 
 /**
- * @brief The Wayland backend for Gooey.
- */
-extern GooeyBackend wayland_backend;
-
-/**
  * @brief The GLFW backend for Gooey.
  */
 extern GooeyBackend glfw_backend;
@@ -182,7 +177,7 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button);
  * @return A new GooeyTextbox object.
  */
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
-                               int height, char* placeholder, void (*onTextChanged)(char *text));
+                               int height, char *placeholder, void (*onTextChanged)(char *text));
 
 /**
  * @brief Draws the textbox on the window.
@@ -329,12 +324,10 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
  * @brief Handles slider drag events.
  *
  * @param win The window containing the slider.
- * @param x The x-coordinate of the drag event.
- * @param y The y-coordinate of the drag event.
+ * @param event The current event.
  * @return True if the slider was dragged, false otherwise.
  */
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y);
-
+bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event);
 /**
  * @brief Gets the current value of the slider.
  *
@@ -403,7 +396,7 @@ GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win);
  * @param callback The callback to execute when the radio button is selected.
  * @return The GooeyRadioButton object.
  */
-GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
+GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyWindow *win, GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
 
 /**
  * @brief Draws the radio button group on the window.
@@ -421,6 +414,8 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win);
  * @return True if the radio button group was clicked, false otherwise.
  */
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y);
+
+void GooeyList_Draw(GooeyWindow *win);
 
 /**
  * @brief Cleans up the resources associated with the Gooey window.

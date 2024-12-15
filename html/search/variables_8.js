@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pos_0',['pos',['../structVertex.html#abb5a5cf5005ab937369bba05fb2f29a2',1,'Vertex']]],
-  ['projection_1',['projection',['../structGooeyBackendContext.html#a40179db1930430a25d08df469714af77',1,'GooeyBackendContext']]]
+  ['key_5fpress_0',['key_press',['../structGooeyEvent.html#a12cb25ab869f79e7389bc69af2f0b141',1,'GooeyEvent']]],
+  ['keycode_1',['keycode',['../structGooeyEvent.html#a259787c9b598c800b16326b7f8356cbb',1,'GooeyEvent']]]
 ];

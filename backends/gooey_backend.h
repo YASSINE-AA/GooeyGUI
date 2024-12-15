@@ -13,18 +13,9 @@ extern GooeyTheme *active_theme;
 
 typedef enum GooeyBackends
 {
-    X11,
-    WIN32,
-    SDL,
-    GLFW
+    X11, /**< Linux X11 native api */
+    GLFW /**< GLFW OpenGL Backend*/
 } GooeyBackends;
-
-typedef struct GooeyWindow
-{
-    GooeyWindowExt widgets;
-    int width;
-    int height;
-} GooeyWindow;
 
 /**
  * @brief The GooeyBackend structure contains function pointers
@@ -46,12 +37,11 @@ typedef struct GooeyBackend
     void (*FillArc)(int x, int y, int width, int height, int angle1, int angle2);
     char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
     GooeyEvent (*HandleEvents)();
-    int (*GetHeight)(GooeyWindow *window);
-    int (*GetWidth)(GooeyWindow *window);
+    void (*InhibitResetEvents)(bool state);
+    void (*GetWinDim)(int *width, int *height);
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color);
     float (*GetTextWidth)(const char *text, int length);
+    void (*SetCursor)(GOOEY_CURSOR cursor);
 } GooeyBackend;
-
-extern GooeyBackend wayland_backend;
 
 #endif

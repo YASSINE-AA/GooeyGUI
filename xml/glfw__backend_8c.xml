@@ -956,7 +956,7 @@
 <codeline lineno="294"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(button<sp/>==<sp/>GLFW_MOUSE_BUTTON_LEFT<sp/>&amp;&amp;<sp/>action<sp/>==<sp/>GLFW_PRESS)</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a76a21c109ff3cda8d04c7a45b536dd2b" kindref="member">current_event</ref>-&gt;type<sp/>=<sp/>GOOEY_EVENT_CLICK;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx.<ref refid="structGooeyBackendContext_1a76a21c109ff3cda8d04c7a45b536dd2b" kindref="member">current_event</ref>-&gt;type<sp/>=<sp/>GOOEY_EVENT_CLICK_PRESS;</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="299"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight></codeline>

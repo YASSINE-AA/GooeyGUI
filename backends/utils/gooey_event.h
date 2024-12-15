@@ -1,29 +1,37 @@
 #ifndef GOOEY_EVENT_H
 #define GOOEY_EVENT_H
 
-typedef enum {
-    GOOEY_EVENT_CLICK,
-    GOOEY_EVENT_KEY_PRESS,
+typedef enum
+{
+    GOOEY_EVENT_CLICK_PRESS,
+    GOOEY_EVENT_CLICK_RELEASE,
     GOOEY_EVENT_MOUSE_MOVE,
+    GOOEY_EVENT_KEY_PRESS,
     GOOEY_EVENT_WINDOW_CLOSE,
-    GOOEY_EVENT_EXPOSE
+    GOOEY_EVENT_EXPOSE,
+    GOOEY_EVENT_RESIZE
 } GooeyEventType;
 
-typedef struct {
+typedef struct
+{
     GooeyEventType type;
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             int x, y;
-        } click; 
+        } click;
 
-        struct {
+        struct
+        {
             unsigned int state;
-            int keycode; 
-        } key_press; 
+            int keycode;
+        } key_press;
 
-        struct {
+        struct
+        {
             int x, y;
-        } mouse_move; 
+        } mouse_move;
 
     } data;
 } GooeyEvent;

@@ -22,18 +22,32 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
-/** 
+typedef enum
+{
+  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
+  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
+  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
+  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
+  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
+  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
+} GOOEY_CURSOR;
+
+/**
  * @brief Enumeration for widget types in the Gooey framework.
  */
 typedef enum
 {
-  WIDGET_LABEL,        /**< Label widget */
-  WIDGET_SLIDER,       /**< Slider widget */
-  WIDGET_RADIOBUTTON,  /**< Radio button widget */
-  WIDGET_CHECKBOX,     /**< Checkbox widget */
-  WIDGET_BUTTON,       /**< Button widget */
-  WIDGET_TEXTBOX,      /**< Textbox widget */
-  WIDGET_DROPDOWN      /**< Dropdown widget */
+  WIDGET_LABEL,       /**< Label widget */
+  WIDGET_SLIDER,      /**< Slider widget */
+  WIDGET_RADIOBUTTON, /**< Radio button widget */
+  WIDGET_CHECKBOX,    /**< Checkbox widget */
+  WIDGET_BUTTON,      /**< Button widget */
+  WIDGET_TEXTBOX,     /**< Textbox widget */
+  WIDGET_DROPDOWN     /**< Dropdown widget */
 } WIDGET_TYPE;
 
 /**
@@ -41,9 +55,9 @@ typedef enum
  */
 typedef struct
 {
-  WIDGET_TYPE type;   /**< Type of the widget */
-  int x, y;           /**< Position of the widget (top-left corner) */
-  int width, height;  /**< Dimensions of the widget */
+  WIDGET_TYPE type;  /**< Type of the widget */
+  int x, y;          /**< Position of the widget (top-left corner) */
+  int width, height; /**< Dimensions of the widget */
 } GooeyWidget;
 
 /**
@@ -51,11 +65,11 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core;    /**< Core widget properties */
-  char label[256];     /**< Text label of the button */
-  void (*callback)();  /**< Callback function for button click */
-  bool clicked;        /**< State of the button (clicked or not) */
-  bool hover;          /**< State of the button (hovered or not) */
+  GooeyWidget core;   /**< Core widget properties */
+  char label[256];    /**< Text label of the button */
+  void (*callback)(); /**< Callback function for button click */
+  bool clicked;       /**< State of the button (clicked or not) */
+  bool hover;         /**< State of the button (hovered or not) */
 } GooeyButton;
 
 /**
@@ -63,12 +77,12 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core;     /**< Core widget properties */
-  char text[256];       /**< Text in the textbox */
-  char placeholder[256]; /**< Placeholder text for the textbox */
-  bool focused;         /**< Whether the textbox is focused */
-  int cursor_pos;       /**< Position of the cursor in the text */
-  int scroll_offset;    /**< Scroll offset of the textbox */
+  GooeyWidget core;             /**< Core widget properties */
+  char text[256];               /**< Text in the textbox */
+  char placeholder[256];        /**< Placeholder text for the textbox */
+  bool focused;                 /**< Whether the textbox is focused */
+  int cursor_pos;               /**< Position of the cursor in the text */
+  int scroll_offset;            /**< Scroll offset of the textbox */
   void (*callback)(char *text); /**< Callback when text changes */
 } GooeyTextbox;
 
@@ -77,8 +91,8 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core;  /**< Core widget properties */
-  char text[256];    /**< Text displayed on the label */
+  GooeyWidget core; /**< Core widget properties */
+  char text[256];   /**< Text displayed on the label */
 } GooeyLabel;
 
 /**
@@ -86,21 +100,32 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core;    /**< Core widget properties */
-  bool checked;        /**< Whether the checkbox is checked or not */
-  char label[256];     /**< Label for the checkbox */
+  GooeyWidget core;               /**< Core widget properties */
+  bool checked;                   /**< Whether the checkbox is checked or not */
+  char label[256];                /**< Label for the checkbox */
   void (*callback)(bool checked); /**< Callback function when the checkbox is clicked */
 } GooeyCheckbox;
+
+
+/**
+ * @brief A structure representing a scrollable widget.
+ */
+typedef struct
+{
+  GooeyWidget core; /**< Core widget properties */
+  void **children;
+  int children_count;
+} GooeyScrollable;
 
 /**
  * @brief A structure representing a radio button widget.
  */
 typedef struct
 {
-  GooeyWidget core;    /**< Core widget properties */
-  bool selected;       /**< Whether the radio button is selected or not */
-  char label[256];     /**< Label for the radio button */
-  int radius;          /**< Radius of the radio button */
+  GooeyWidget core;                /**< Core widget properties */
+  bool selected;                   /**< Whether the radio button is selected or not */
+  char label[256];                 /**< Label for the radio button */
+  int radius;                      /**< Radius of the radio button */
   void (*callback)(bool selected); /**< Callback function when the radio button is selected */
 } GooeyRadioButton;
 
@@ -110,7 +135,7 @@ typedef struct
 typedef struct
 {
   GooeyRadioButton buttons[MAX_RADIO_BUTTONS]; /**< List of radio buttons in the group */
-  int button_count;                             /**< Number of radio buttons in the group */
+  int button_count;                            /**< Number of radio buttons in the group */
 } GooeyRadioButtonGroup;
 
 /**
@@ -118,11 +143,11 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core;     /**< Core widget properties */
-  long value;           /**< Current value of the slider */
-  long min_value;       /**< Minimum value of the slider */
-  long max_value;       /**< Maximum value of the slider */
-  bool show_hints;      /**< Whether to show hints for the slider */
+  GooeyWidget core;             /**< Core widget properties */
+  long value;                   /**< Current value of the slider */
+  long min_value;               /**< Minimum value of the slider */
+  long max_value;               /**< Maximum value of the slider */
+  bool show_hints;              /**< Whether to show hints for the slider */
   void (*callback)(long value); /**< Callback function when the slider value changes */
 } GooeySlider;
 
@@ -144,11 +169,11 @@ typedef struct
  */
 typedef struct
 {
-  char *title;                           /**< Title of the menu item */
+  char *title;                            /**< Title of the menu item */
   char *menu_elements[MAX_MENU_CHILDREN]; /**< List of child menu elements */
   void (*callbacks[MAX_MENU_CHILDREN])(); /**< List of callback functions for child menu elements */
-  int menu_elements_count;               /**< Number of child menu elements */
-  bool is_open;                          /**< Whether the menu is open or not */
+  int menu_elements_count;                /**< Number of child menu elements */
+  bool is_open;                           /**< Whether the menu is open or not */
 } GooeyMenuChild;
 
 /**
@@ -157,7 +182,8 @@ typedef struct
 typedef struct
 {
   GooeyMenuChild children[MAX_MENU_CHILDREN]; /**< List of menu items */
-  int children_count;                        /**< Number of menu items */
+  int children_count;                         /**< Number of menu items */
+  bool is_busy;
 } GooeyMenu;
 
 /**
@@ -176,14 +202,14 @@ typedef enum
 typedef struct
 {
   GooeyLayoutType layout_type; /**< Type of the layout (horizontal, vertical, or grid) */
-  int x, y;                   /**< Position of the layout */
-  int width, height;          /**< Dimensions of the layout */
-  int padding;                /**< Padding around the layout */
-  int margin;                 /**< Margin around the layout */
-  int rows;                   /**< Number of rows in the layout (for grid layouts) */
-  int cols;                   /**< Number of columns in the layout (for grid layouts) */
-  void *widgets[MAX_WIDGETS]; /**< List of widgets in the layout */
-  int widget_count;           /**< Number of widgets in the layout */
+  int x, y;                    /**< Position of the layout */
+  int width, height;           /**< Dimensions of the layout */
+  int padding;                 /**< Padding around the layout */
+  int margin;                  /**< Margin around the layout */
+  int rows;                    /**< Number of rows in the layout (for grid layouts) */
+  int cols;                    /**< Number of columns in the layout (for grid layouts) */
+  void *widgets[MAX_WIDGETS];  /**< List of widgets in the layout */
+  int widget_count;            /**< Number of widgets in the layout */
 } GooeyLayout;
 
 /**
@@ -191,26 +217,31 @@ typedef struct
  */
 typedef struct
 {
-  GooeyButton buttons[MAX_WIDGETS]; /**< List of buttons in the window */
-  GooeyLabel labels[MAX_WIDGETS];   /**< List of labels in the window */
-  GooeyCheckbox checkboxes[MAX_WIDGETS]; /**< List of checkboxes in the window */
-  GooeyRadioButton radio_buttons[MAX_WIDGETS]; /**< List of radio buttons in the window */
-  GooeySlider sliders[MAX_WIDGETS]; /**< List of sliders in the window */
-  GooeyDropdown dropdowns[MAX_WIDGETS]; /**< List of dropdown menus in the window */
-  GooeyRadioButtonGroup radio_button_groups[MAX_WIDGETS]; /**< List of radio button groups in the window */
-  GooeyTextbox textboxes[MAX_WIDGETS]; /**< List of textboxes in the window */
-  GooeyLayout layouts[MAX_WIDGETS];   /**< List of layouts in the window */
-  GooeyMenu *menu;                    /**< Menu in the window */
+  GooeyButton *buttons;                       /**< List of buttons in the window */
+  GooeyLabel *labels;                         /**< List of labels in the window */
+  GooeyCheckbox *checkboxes;                  /**< List of checkboxes in the window */
+  GooeyRadioButton *radio_buttons;            /**< List of radio buttons in the window */
+  GooeySlider *sliders;                       /**< List of sliders in the window */
+  GooeyDropdown *dropdowns;                   /**< List of dropdown menus in the window */
+  GooeyRadioButtonGroup *radio_button_groups; /**< List of radio button groups in the window */
+  GooeyTextbox *textboxes;                    /**< List of textboxes in the window */
+  GooeyLayout *layouts;                       /**< List of layouts in the window */
+  GooeyMenu *menu;                            /**< Menu in the window */
+  GooeyScrollable *scrollables;                           /**< List of list widgets in the window. */
+  GooeyWidget **widgets;                       /**< List containing unified definition of every widget. */
 
-  int button_count;                   /**< Number of buttons in the window */
-  int label_count;                    /**< Number of labels in the window */
-  int checkbox_count;                 /**< Number of checkboxes in the window */
-  int radio_button_count;             /**< Number of radio buttons in the window */
-  int slider_count;                   /**< Number of sliders in the window */
-  int dropdown_count;                 /**< Number of dropdown menus in the window */
-  int textboxes_count;                /**< Number of textboxes in the window */
-  int layout_count;                   /**< Number of layouts in the window */
-  int radio_button_group_count;       /**< Number of radio button groups in the window */
-} GooeyWindowExt;
+  int list_count;
+  int button_count;             /**< Number of buttons in the window */
+  int label_count;              /**< Number of labels in the window */
+  int checkbox_count;           /**< Number of checkboxes in the window */
+  int radio_button_count;       /**< Number of radio buttons in the window */
+  int slider_count;             /**< Number of sliders in the window */
+  int dropdown_count;           /**< Number of dropdown menus in the window */
+  int textboxes_count;          /**< Number of textboxes in the window */
+  int layout_count;             /**< Number of layouts in the window */
+  int radio_button_group_count; /**< Number of radio button groups in the window */
+  int widget_count;              /**< Total number of registered widgets in the window. */
+  int scrollable_count;
+} GooeyWindow;
 
 #endif
