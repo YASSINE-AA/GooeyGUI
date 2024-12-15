@@ -22,6 +22,20 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
+typedef enum
+{
+  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
+  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
+  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
+  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
+  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
+  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
+} GOOEY_CURSOR;
+
 /**
  * @brief Enumeration for widget types in the Gooey framework.
  */
@@ -91,6 +105,17 @@ typedef struct
   char label[256];                /**< Label for the checkbox */
   void (*callback)(bool checked); /**< Callback function when the checkbox is clicked */
 } GooeyCheckbox;
+
+
+/**
+ * @brief A structure representing a scrollable widget.
+ */
+typedef struct
+{
+  GooeyWidget core; /**< Core widget properties */
+  void **children;
+  int children_count;
+} GooeyScrollable;
 
 /**
  * @brief A structure representing a radio button widget.
@@ -201,7 +226,10 @@ typedef struct
   GooeyTextbox *textboxes;                    /**< List of textboxes in the window */
   GooeyLayout *layouts;                       /**< List of layouts in the window */
   GooeyMenu *menu;                            /**< Menu in the window */
+  GooeyScrollable *scrollables;                           /**< List of list widgets in the window. */
+  GooeyWidget **widgets;                       /**< List containing unified definition of every widget. */
 
+  int list_count;
   int button_count;             /**< Number of buttons in the window */
   int label_count;              /**< Number of labels in the window */
   int checkbox_count;           /**< Number of checkboxes in the window */
@@ -211,6 +239,8 @@ typedef struct
   int textboxes_count;          /**< Number of textboxes in the window */
   int layout_count;             /**< Number of layouts in the window */
   int radio_button_group_count; /**< Number of radio button groups in the window */
+  int widget_count;              /**< Total number of registered widgets in the window. */
+  int scrollable_count;
 } GooeyWindow;
 
 #endif

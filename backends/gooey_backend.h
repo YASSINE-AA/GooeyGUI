@@ -41,7 +41,7 @@ typedef struct GooeyBackend
     void (*GetWinDim)(int *width, int *height);
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color);
     float (*GetTextWidth)(const char *text, int length);
-
+    void (*SetCursor)(GOOEY_CURSOR cursor);
 } GooeyBackend;
 
 #endif

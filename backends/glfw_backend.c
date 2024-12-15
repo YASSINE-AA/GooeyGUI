@@ -3,6 +3,7 @@ typedef struct
 {
     GooeyEvent *current_event;
     GLFWwindow *window;
+    GLFWcursor *cursor;
     GLuint text_program;
     GLuint shape_program;
     GLuint text_vao;
@@ -400,6 +401,8 @@ int glfw_init()
     ctx.inhibit_reset = 0;
     ctx.current_event->type = -1;
     ctx.selected_color = 0x000000;
+    ctx.current_event->data.click.x = -1;
+    ctx.current_event->data.click.y = -1;
 
     glfwSetErrorCallback(error_callback);
 
@@ -538,7 +541,8 @@ void glfw_cleanup()
         free(ctx.current_event);
         ctx.current_event = NULL;
     }
-
+    if (ctx.cursor)
+        glfwDestroyCursor(ctx.cursor);
     glfwTerminate();
 }
 
@@ -580,6 +584,61 @@ void glfw_window_dim(int *width, int *height)
     get_window_size(ctx.window, width, height);
 }
 
+void glfw_set_cursor(GOOEY_CURSOR cursor)
+{
+    switch (cursor)
+    {
+
+    case GOOEY_CURSOR_ARROW:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_ARROW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_HAND:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_HAND_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_TEXT:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_IBEAM_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_CROSSHAIR:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_CROSSHAIR_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_RESIZE_TL_BR:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NWSE_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    case GOOEY_CURSOR_RESIZE_TR_BL:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NESW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_H:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_EW_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_V:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NS_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+    case GOOEY_CURSOR_RESIZE_ALL:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_ALL_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+
+        case GOOEY_CURSOR_NOT_ALLOWED:
+        ctx.cursor = glfwCreateStandardCursor(GLFW_NOT_ALLOWED_CURSOR);
+        glfwSetCursor(ctx.window, ctx.cursor);
+        break;
+    default:
+        break;
+    }
+}
+
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
     .CreateWindow = glfw_create_window,
@@ -598,4 +657,5 @@ GooeyBackend glfw_backend = {
     .GetTextWidth = glfw_get_text_width,
     .DrawText = glfw_draw_text,
     .GetKeyFromCode = glfw_get_key_from_code,
+    .SetCursor = glfw_set_cursor,
     .Clear = glfw_clear};

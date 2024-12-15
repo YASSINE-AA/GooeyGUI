@@ -177,7 +177,7 @@ void GooeyButton_Draw(GooeyWindow *win, GooeyButton *button);
  * @return A new GooeyTextbox object.
  */
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
-                               int height, char* placeholder, void (*onTextChanged)(char *text));
+                               int height, char *placeholder, void (*onTextChanged)(char *text));
 
 /**
  * @brief Draws the textbox on the window.
@@ -390,7 +390,7 @@ GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win);
  * @param callback The callback to execute when the radio button is selected.
  * @return The GooeyRadioButton object.
  */
-GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
+GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyWindow *win, GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool));
 
 /**
  * @brief Draws the radio button group on the window.
@@ -408,6 +408,8 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win);
  * @return True if the radio button group was clicked, false otherwise.
  */
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y);
+
+void GooeyList_Draw(GooeyWindow *win);
 
 /**
  * @brief Cleans up the resources associated with the Gooey window.

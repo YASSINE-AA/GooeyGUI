@@ -8,6 +8,8 @@ GooeyBackend *active_backend = NULL;
 GooeyBackends ACTIVE_BACKEND = -1;
 
 int window_width, window_height;
+GOOEY_CURSOR currently_set_cursor = GOOEY_CURSOR_ARROW;
+int called = 0;
 
 int Gooey_Init(GooeyBackends backend)
 {
@@ -58,7 +60,10 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
     win.dropdowns = malloc(sizeof(GooeyDropdown) * MAX_WIDGETS);
     win.textboxes = malloc(sizeof(GooeyTextbox) * MAX_WIDGETS);
     win.layouts = malloc(sizeof(GooeyLayout) * MAX_WIDGETS);
+    win.scrollables = malloc(sizeof(GooeyScrollable) * MAX_WIDGETS);
+
     win.menu = malloc(sizeof(GooeyMenu));
+    win.widgets = malloc(sizeof(GooeyWidget) * MAX_WIDGETS);
 
     win.button_count = 0;
     win.label_count = 0;
@@ -69,8 +74,45 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height)
     win.dropdown_count = 0;
     win.textboxes_count = 0;
     win.layout_count = 0;
+    win.list_count = 0;
+    win.widget_count = 0;
 
     return win;
+}
+void GooeyWindow_RegisterWidget(GooeyWindow *win, GooeyWidget *widget)
+{
+    if (win && win->widgets)
+        win->widgets[win->widget_count++] = widget;
+}
+
+bool GooeyWindow_HandleCursorChange(GooeyWindow *win, GOOEY_CURSOR *cursor, int x, int y)
+{
+    for (int i = 0; i < win->widget_count; ++i)
+    {
+        if (x >= win->widgets[i]->x && x <= win->widgets[i]->x + win->widgets[i]->width &&
+            y >= win->widgets[i]->y && y <= win->widgets[i]->y + win->widgets[i]->height)
+        {
+
+            switch (win->widgets[i]->type)
+            {
+            case WIDGET_TEXTBOX:
+                *cursor = GOOEY_CURSOR_TEXT;
+                break;
+
+            case WIDGET_LABEL:
+                *cursor = GOOEY_CURSOR_ARROW;
+                break;
+            default:
+                // hand cursor for general widgets like buttons checkboxes etc...
+                *cursor = GOOEY_CURSOR_HAND;
+                break;
+            }
+
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void GooeyWindow_setTheme(const char *fontPath)
@@ -126,7 +168,7 @@ GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win)
     return group;
 }
 
-GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool))
+GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyWindow *win, GooeyRadioButtonGroup *group, int x, int y, const char *label, void (*callback)(bool))
 {
     if (group->button_count >= MAX_RADIO_BUTTONS)
     {
@@ -136,9 +178,18 @@ GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyRadioButtonGroup *group, i
     GooeyRadioButton *button = &group->buttons[group->button_count++];
     button->core.x = x;
     button->core.y = y;
+
+    button->core.type = WIDGET_RADIOBUTTON;
     button->selected = false;
     strncpy(button->label, label, sizeof(button->label) - 1);
+
+    /*
+     button->core.width = active_backend->GetTextWidth(label, strlen(label)) + 40;
+    button->core.height = 50;
     button->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&button->core);
+    */
+
     return button;
 }
 
@@ -288,7 +339,7 @@ GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
                              int width, int height, void (*callback)())
 {
     GooeyButton *button = &win->buttons[win->button_count++];
-    button->core.type = WIDGET_BUTTON,
+    button->core.type = WIDGET_BUTTON;
     button->core.x = x;
     button->core.y = y;
     button->core.width = width;
@@ -298,6 +349,7 @@ GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
     button->hover = false;
     button->clicked = false;
     printf("we good \n");
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&button->core);
     return button;
 }
 bool GooeyButton_HandleClick(GooeyWindow *win, int x, int y)
@@ -576,6 +628,8 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, int x, int y)
     label->core.x = x;
     label->core.y = y;
     strcpy(label->text, text);
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&label->core);
+
     return label;
 }
 
@@ -606,6 +660,8 @@ GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
     win->textboxes[win->textboxes_count].scroll_offset = 0;
     win->textboxes[win->textboxes_count].text[0] = '\0';
     strcpy(win->textboxes[win->textboxes_count].placeholder, placeholder);
+
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&win->textboxes[win->textboxes_count].core);
 
     win->textboxes_count++;
     return &win->textboxes[win->textboxes_count - 1];
@@ -783,6 +839,8 @@ GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
     }
     checkbox->checked = false;
     checkbox->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&checkbox->core);
+
     return checkbox;
 }
 
@@ -824,6 +882,8 @@ GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
     radio_button->radius = RADIO_BUTTON_RADIUS;
     radio_button->selected = false;
     radio_button->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&radio_button->core);
+
     return radio_button;
 }
 
@@ -853,6 +913,29 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
     return state;
 }
 
+GooeyScrollable *GooeyScrollable_Add(GooeyWindow *win, int x, int y, int width, int height)
+{
+    GooeyScrollable *scrollable = &win->scrollables[win->scrollable_count++];
+    scrollable->core.x = x;
+    scrollable->core.y = y;
+    scrollable->core.width = width;
+    scrollable->core.height = height;
+    scrollable->children = malloc(sizeof(GooeyScrollable) * MAX_WIDGETS);
+    scrollable->children_count = 0;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&scrollable->core);
+
+    return scrollable;
+}
+
+void GooeyScrollable_AddChild(GooeyScrollable *scrollable, void *widget)
+{
+    scrollable->children[scrollable->children_count++] = widget;
+}
+
+void GooeyScrollable_Draw(GooeyWindow *win)
+{
+}
+
 GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
                              long min_value, long max_value, bool show_hints,
                              void (*callback)(long value))
@@ -880,6 +963,8 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
     slider->value = min_value;
     slider->show_hints = show_hints;
     slider->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&slider->core);
+
     return slider;
 }
 bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent event)
@@ -948,6 +1033,8 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
     dropdown->num_options = num_options;
     dropdown->selected_index = 0;
     dropdown->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&dropdown->core);
+
     return dropdown;
 }
 
@@ -1022,6 +1109,12 @@ void GooeyWindow_Cleanup(GooeyWindow *win)
         win->layouts = NULL;
     }
 
+    if (win->scrollables)
+    {
+        free(win->scrollables);
+        win->scrollables = NULL;
+    }
+    printf("called %d\n", called);
     active_backend->DestroyWindow();
     active_backend->Cleanup();
 }
@@ -1031,10 +1124,31 @@ void GooeyWindow_Run(GooeyWindow *win)
 
     GooeyEvent event;
     bool running = true;
-
     while (running)
     {
         event = active_backend->HandleEvents();
+        int x = event.data.click.x;
+        int y = event.data.click.y;
+        GOOEY_CURSOR cursor;
+
+        if (!GooeyWindow_HandleCursorChange(win, &cursor, x, y))
+        {
+
+            if (currently_set_cursor != GOOEY_CURSOR_ARROW)
+            {
+                active_backend->SetCursor(GOOEY_CURSOR_ARROW);
+                currently_set_cursor = GOOEY_CURSOR_ARROW;
+            }
+        }
+        else
+        {
+
+            if (currently_set_cursor != cursor)
+            {
+                active_backend->SetCursor(cursor);
+                currently_set_cursor = cursor;
+            }
+        }
 
         switch (event.type)
         {
@@ -1051,8 +1165,7 @@ void GooeyWindow_Run(GooeyWindow *win)
         }
         case GOOEY_EVENT_CLICK_PRESS:
         {
-            int x = event.data.click.x;
-            int y = event.data.click.y;
+
             GooeyMenu_HandleClick(win, x, y);
             GooeySlider_HandleDrag(win, event);
             if (GooeyButton_HandleClick(win, x, y))
