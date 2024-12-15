@@ -48,6 +48,8 @@ void activateLightTheme()
 int main()
 {
 
+
+
     Gooey_Init(GLFW);
 
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700);

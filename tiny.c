@@ -1042,10 +1042,9 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
 
 void GooeyDropdown_Draw(GooeyWindow *win)
 {
-
-    int x_offset = win->dropdowns[0].core.x;
     for (int i = 0; i < win->dropdown_count; i++)
     {
+        int x_offset = win->dropdowns[i].core.x;
         // GooeyMenuChild *child = win->widgets.menu->children[i];
         GooeyDropdown *dropdown = &win->dropdowns[i];
         // active_backend->FillRectangle(0, 0, win->width, 20, active_theme->widget_base);
@@ -1062,8 +1061,8 @@ void GooeyDropdown_Draw(GooeyWindow *win)
         if (dropdown->is_open && dropdown->num_options > 0)
         {
             int submenu_x = x_offset ;
-            int submenu_y = win->dropdowns[0].core.y + win->dropdowns[0].core.height;
-            int submenu_width = win->dropdowns[0].core.width;
+            int submenu_y = win->dropdowns[i].core.y + win->dropdowns[i].core.height;
+            int submenu_width = win->dropdowns[i].core.width;
             int submenu_height = 25 * dropdown->num_options;
             active_backend->FillRectangle(submenu_x, submenu_y,
                                           submenu_width, submenu_height, active_theme->widget_base);
