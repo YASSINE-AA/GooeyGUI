@@ -17,7 +17,6 @@
 
 #include "widgets/gooey_textbox.h"
 
-
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, char *placeholder, void (*onTextChanged)(char *text))
 {
@@ -59,48 +58,54 @@ void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text)
     }
     strcpy(textbox->text, text);
 }
-void GooeyTextbox_Draw(GooeyWindow *win, int index)
+
+void GooeyTextbox_Draw(GooeyWindow *win)
 {
 
-    active_backend->FillRectangle(win->textboxes[index].core.x, win->textboxes[index].core.y,
-                                  win->textboxes[index].core.width, win->textboxes[index].core.height, active_theme->base, win->creation_id);
-
-    active_backend->DrawRectangle(win->textboxes[index].core.x, win->textboxes[index].core.y,
-                                  win->textboxes[index].core.width, win->textboxes[index].core.height,
-                                  win->textboxes[index].focused ? active_theme->primary : active_theme->neutral, win->creation_id);
-
-    int text_x = win->textboxes[index].core.x + 5;
-    int text_y = win->textboxes[index].core.y + (win->textboxes[index].core.height / 2) + 5;
-
-    int max_text_width = win->textboxes[index].core.width - 10;
-    size_t len = strlen(win->textboxes[index].text);
-    size_t start_index = win->textboxes[index].scroll_offset;
-
-    while (start_index < len &&
-           active_backend->GetTextWidth(win->textboxes[index].text + start_index, len - start_index) > max_text_width)
+    for (int index = 0; index < win->textboxes_count; ++index)
     {
-        start_index++;
-    }
+        active_backend->FillRectangle(win->textboxes[index].core.x, win->textboxes[index].core.y,
+                                      win->textboxes[index].core.width, win->textboxes[index].core.height, active_theme->base, win->creation_id);
 
-    char display_text[256];
-    strncpy(display_text, win->textboxes[index].text + start_index, sizeof(display_text) - 1);
-    display_text[sizeof(display_text) - 1] = '\0';
+        active_backend->DrawRectangle(win->textboxes[index].core.x, win->textboxes[index].core.y,
+                                      win->textboxes[index].core.width, win->textboxes[index].core.height,
+                                      win->textboxes[index].focused ? active_theme->primary : active_theme->neutral, win->creation_id);
 
-    active_backend->DrawText(text_x, text_y, display_text, active_theme->neutral, 0.25f, win->creation_id);
+        int text_x = win->textboxes[index].core.x + 5;
+        int text_y = win->textboxes[index].core.y + (win->textboxes[index].core.height / 2) + 5;
 
-    if (win->textboxes[index].focused)
-    {
-        int cursor_x = text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
-        active_backend->DrawLine(cursor_x, win->textboxes[index].core.y + 5,
-                                 cursor_x, win->textboxes[index].core.y + win->textboxes[index].core.height - 5, active_theme->neutral, win->creation_id);
-    }
-    else
-    {
+        int max_text_width = win->textboxes[index].core.width - 10;
+        size_t len = strlen(win->textboxes[index].text);
+        size_t start_index = win->textboxes[index].scroll_offset;
 
-        if (win->textboxes[index].placeholder && strlen(win->textboxes[index].text) == 0)
-            active_backend->DrawText(text_x, text_y, win->textboxes[index].placeholder, active_theme->neutral, 0.25f, win->creation_id);
+        while (start_index < len &&
+               active_backend->GetTextWidth(win->textboxes[index].text + start_index, len - start_index) > max_text_width)
+        {
+            start_index++;
+        }
+
+        char display_text[256];
+        strncpy(display_text, win->textboxes[index].text + start_index, sizeof(display_text) - 1);
+        display_text[sizeof(display_text) - 1] = '\0';
+
+        active_backend->DrawText(text_x, text_y, display_text, active_theme->neutral, 0.25f, win->creation_id);
+
+        if (win->textboxes[index].focused)
+        {
+            int cursor_x = text_x + active_backend->GetTextWidth(display_text, strlen(display_text));
+            active_backend->DrawLine(cursor_x, win->textboxes[index].core.y + 5,
+                                     cursor_x, win->textboxes[index].core.y + win->textboxes[index].core.height - 5, active_theme->neutral, win->creation_id);
+        }
+        else
+        {
+
+            if (win->textboxes[index].placeholder && strlen(win->textboxes[index].text) == 0)
+                active_backend->DrawText(text_x, text_y, win->textboxes[index].placeholder, active_theme->neutral, 0.25f, win->creation_id);
+        }
     }
 }
+
+
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 {
     printf("hey pressed \n");
@@ -170,6 +175,8 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         free(buf);
     }
 }
+
+
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
 

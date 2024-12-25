@@ -19,14 +19,6 @@
 #include <ctype.h>
 
 GooeyTheme default_theme;
-
-GooeyTheme *active_theme = NULL;
-GooeyBackend *active_backend = NULL;
-GooeyBackends ACTIVE_BACKEND = -1;
-
-
-
-int window_width = 400, window_height = 700;
 GOOEY_CURSOR currently_set_cursor = GOOEY_CURSOR_ARROW;
 int called = 0;
 

@@ -15,7 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/signals/gooey_signals.h"
+#include "signals/gooey_signals.h"
 #include <stdlib.h>
 
 

@@ -1,58 +1,127 @@
-#include "build/gooey.h"
+
+
+#include "gooey.h"
+
 #include <stdio.h>
 
-int red = 0, green = 0, blue = 0;
-GooeyCanvas *canvas;
+bool state = 0;
 GooeyWindow childWindow;
+GooeyWindow msgBox, msgBox2;
+GooeySignal signal;
+GooeyCanvas *canvas;
 
-void updateColor()
+void messageBoxCallback(int option)
 {
-    LOG_CRITICAL("r=%d g=%d b=%d", red, green, blue);
-    char color[9];
-    snprintf(color, sizeof(color), "0x%02X%02X%02X", red, green, blue);
-    GooeyCanvas_DrawRectangle(canvas, 0, 0, 200, 200, color, true);
-    GooeyWindow_Redraw(&childWindow);
+    LOG_INFO("%d", option);
 }
 
-void onRedChange(long value)
+void messageBox2Callback(int option)
 {
-    red = value;
-    updateColor();
+    LOG_INFO("2 %d", option);
 }
-void onGreenChange(long value)
+
+
+
+void signal_callback(void *context, void *data)
 {
-    green = value;
-    updateColor();
+    LOG_INFO("Recieved signal %s %s", (char *)context, (char *)data);
 }
-void onBlueChange(long value)
+
+void signal_callback2(void *context, void *data)
 {
-    blue = value;
-    updateColor();
+    LOG_INFO("Recieved signal %s %s", (char *)context, (char *)data);
+}
+
+void onButtonClick()
+{
+   LOG_INFO("Button clicked!");
+}
+
+void onCheckboxToggle(bool checked)
+{
+    printf("Checkbox toggled: %s\n", checked ? "Checked" : "Unchecked");
+}
+
+void onRadioButtonSelect(bool selected)
+{
+    printf("Radio button selected: %s\n", selected ? "Yes" : "No");
+}
+
+void onSliderChange(long int value)
+{
+    printf("Slider value changed: %ld\n", value);
+}
+
+void onDropdownChange(int selectedIndex)
+{
+    printf("Dropdown selected index: %d\n", selectedIndex);
+}
+
+void onTextChange(char *text)
+{
+    printf("Text changed: %s\n", text);
+}
+GooeyTheme theme;
+void activateDarkTheme()
+{
+}
+
+void activateLightTheme()
+{
 }
 
 int main()
 {
+    set_logging_enabled(true);
+    set_minimum_log_level(DEBUG_LEVEL_INFO);
+
     Gooey_Init(GLFW);
 
-    GooeyWindow win = GooeyWindow_Create("RGB Mixer", 420, 130, true);
-    GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 10, 30, 380, 380);
+    GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700, 1);
 
-    GooeySlider *redSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onRedChange);
-    GooeyLayout_AddChild(layout, redSlider);
+    msgBox = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_FAIL, messageBoxCallback);
+    msgBox2 = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_SUCCES, messageBox2Callback);
 
-    GooeySlider *greenSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onGreenChange);
-    GooeyLayout_AddChild(layout, greenSlider);
+    GooeyButton_Add(&win, "Click here", 50, 50, 80, 30, onButtonClick);
+    GooeyCheckbox_Add(&win, 50, 120, "Enable Option 1", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 160, "Enable Option 2", onCheckboxToggle);
+    GooeyCheckbox_Add(&win, 50, 200, "Enable Option 3", onCheckboxToggle);
 
-    GooeySlider *blueSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onBlueChange);
-    GooeyLayout_AddChild(layout, blueSlider);
+    GooeyRadioButton_Add(&win, 200, 120, "Option A", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 160, "Option B", onRadioButtonSelect);
+    GooeyRadioButton_Add(&win, 200, 200, "Option C", onRadioButtonSelect);
 
-    GooeyLayout_Build(layout);
+    GooeySlider_Add(&win, 50, 250, 200, 0, 100, true, onSliderChange);
 
-    childWindow = GooeyWindow_CreateChild("Color Preview", 220, 220, true);
-    canvas = GooeyCanvas_Add(&childWindow, 10, 10, 200, 200);
+    const char *options[] = {"Option 1", "Option 2", "Option 3"};
+    GooeyDropdown_Add(&win, 50, 350, 150, 30, options, 3, onDropdownChange);
 
-    GooeyWindow_Run(2, &win, &childWindow);
-    GooeyWindow_Cleanup(2, &win, &childWindow);
+    GooeyTextBox_Add(&win, 50, 300, 200, 25, "test", onTextChange);
+
+    GooeyMenu *menu = GooeyMenu_Set(&win);
+    GooeyMenuChild *fileMenu = GooeyMenu_AddChild(&win, "File");
+    GooeyMenuChild_AddElement(fileMenu, "Open", NULL);
+    GooeyMenuChild_AddElement(fileMenu, "Save", NULL);
+
+    GooeyMenuChild *editMenu = GooeyMenu_AddChild(&win, "Settings");
+    GooeyMenuChild_AddElement(editMenu, "Dark Theme", activateDarkTheme);
+    GooeyMenuChild_AddElement(editMenu, "Light Theme", activateLightTheme);
+    GooeyRadioButtonGroup *rbg = GooeyRadioButtonGroup_Create(&win);
+    GooeyRadioButtonGroup_AddChild(&win, rbg, 50, 440, NULL, NULL);
+
+    GooeyRadioButtonGroup_AddChild(&win, rbg, 50, 470, NULL, NULL);
+
+    GooeyRadioButtonGroup_AddChild(&win, rbg, 50, 500, NULL, NULL);
+
+    GooeyRadioButtonGroup_AddChild(&win, rbg, 50, 530, NULL, NULL);
+
+    LOG_PERFORMANCE(NULL);
+    GooeyWindow_Run(1, &win);
+    LOG_PERFORMANCE("GooeyWindow_Run");
+
+    save_log_file("logs.txt");
+
+    GooeyWindow_Cleanup(1, &win);
 
     return 0;
 }

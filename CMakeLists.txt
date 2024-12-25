@@ -2,12 +2,14 @@ cmake_minimum_required(VERSION 3.10)
 
 project(GooeyGUI VERSION 1.0 LANGUAGES C)
 
+# Set the output directory for libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+# Source files
 set(SOURCES
     src/backends/glfw_backend.c
     src/core/gooey.c
-    src/core/gooey_window.c
+    src/core/gooey_common.c
     src/utils/logger/gooey_logger.c
     src/utils/theme/gooey_theme.c
     src/utils/glad/glad.c
@@ -24,17 +26,18 @@ set(SOURCES
     src/widgets/gooey_radiobutton.c
     src/widgets/gooey_slider.c
     src/widgets/gooey_textbox.c
-
+    src/signals/gooey_signals.c
 )
 
+# Header files
 set(HEADERS
-    internal/core/gooey_window.h
+    internal/core/gooey_common.h
+    internal/core/gooey_backend_internal.h
     internal/utils/glfw/glfw_utils.h
     internal/utils/glad/glad.h
     internal/utils/linmath/linmath.h
     internal/utils/logger/gooey_logger_internal.h
     internal/utils/theme/gooey_theme_internal.h
-    internal/gooey_backend_internal.h
     internal/gooey_event_internal.h
     internal/gooey_widgets_internal.h
     include/gooey.h
@@ -50,18 +53,19 @@ set(HEADERS
     include/widgets/gooey_radiobutton.h
     include/widgets/gooey_slider.h
     include/widgets/gooey_textbox.h
+    include/signals/gooey_signals.h
+
 )
 
+# Add subdirectories for third-party libraries
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/cjson)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/freetype)
 
+# Create the shared library for the project
 add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
 
-link_directories(${PROJECT_SOURCE_DIR}/third_party/cjson)
-link_directories(${PROJECT_SOURCE_DIR}/third_party/glfw)
-link_directories(${PROJECT_SOURCE_DIR}/third_party/freetype)
-
+# Link the libraries to the project
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     cjson
@@ -69,21 +73,28 @@ target_link_libraries(${PROJECT_NAME}
     freetype
 )
 
+# Set the include directories for the project
 target_include_directories(${PROJECT_NAME}
     PUBLIC
     ${PROJECT_SOURCE_DIR}/include
     PRIVATE
     ${PROJECT_SOURCE_DIR}/internal
-    ${third_party/freetype}/include
-    ${third_party/glfw}/include
-    ${third_party/cjson}/include
+    ${PROJECT_SOURCE_DIR}/third_party/freetype/include
+    ${PROJECT_SOURCE_DIR}/third_party/glfw/include
+    ${PROJECT_SOURCE_DIR}/third_party/cjson/include
 )
 
+# Ensure FreeType is built with Position Independent Code (PIC)
+set_target_properties(freetype PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
+# Set version properties for the shared library
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
 )
 
+# Install headers to the include directory
 install(FILES ${HEADERS} DESTINATION include)
 
+# Enable testing for the project
 enable_testing()

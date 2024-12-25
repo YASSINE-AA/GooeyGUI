@@ -18,6 +18,9 @@
 #ifndef GOOEY_WIDGETS_INTERNAL_H
 #define GOOEY_WIDGETS_INTERNAL_H
 
+#include <stdbool.h>
+#include <stddef.h>
+
 /** Maximum number of widgets that can be added to a window. */
 #define MAX_WIDGETS 100
 
@@ -39,19 +42,6 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
-typedef enum
-{
-  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
-  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
-  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
-  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
-  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
-  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
-} GOOEY_CURSOR;
 
 /**
  * @brief Enumeration for widget types in the Gooey framework.
@@ -69,27 +59,6 @@ typedef enum
   WIDGET_LAYOUT
 } WIDGET_TYPE;
 
-typedef enum
-{
-  MSGBOX_SUCCES,
-  MSGBOX_INFO,
-  MSGBOX_FAIL
-} MSGBOX_TYPE;
-
-typedef enum
-{
-  WINDOW_REGULAR,
-  WINDOW_MSGBOX
-
-} WINDOW_TYPE;
-
-typedef enum
-{
-  CANVA_DRAW_RECT,
-  CANVA_DRAW_LINE,
-  CANVA_DRAW_ARC,
-  CANVA_DRAW_SET_FG
-} CANVA_DRAW_OP;
 
 /**
  * @brief A base structure for all Gooey widgets containing their position and size.
@@ -100,6 +69,27 @@ typedef struct
   int x, y;          /**< Position of the widget (top-left corner) */
   int width, height; /**< Dimensions of the widget */
 } GooeyWidget;
+
+typedef enum
+{
+  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
+  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
+  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
+  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
+  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
+  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
+} GOOEY_CURSOR;
+
+typedef enum
+{
+  MSGBOX_SUCCES,
+  MSGBOX_INFO,
+  MSGBOX_FAIL
+} MSGBOX_TYPE;
 
 /**
  * @brief A structure representing a button widget.
@@ -113,6 +103,15 @@ typedef struct
   bool hover;         /**< State of the button (hovered or not) */
   bool is_highlighted;
 } GooeyButton;
+
+typedef enum
+{
+  CANVA_DRAW_RECT,
+  CANVA_DRAW_LINE,
+  CANVA_DRAW_ARC,
+  CANVA_DRAW_SET_FG
+} CANVA_DRAW_OP;
+
 
 /**
  * @brief A structure representing a textbox widget.
@@ -155,7 +154,7 @@ typedef struct
  */
 typedef struct
 {
-  char title[256]; 
+  char title[256];
   char description[256];
 } GooeyListItem;
 
@@ -164,10 +163,10 @@ typedef struct
  */
 typedef struct
 {
-  GooeyWidget core; /**< Core widget properties */
+  GooeyWidget core;     /**< Core widget properties */
   GooeyListItem *items; /**< Items in a list widget */
-  int scroll_offset; /**< Mouse scroll offset */
-  size_t item_count; /**< List widget item count */
+  int scroll_offset;    /**< Mouse scroll offset */
+  size_t item_count;    /**< List widget item count */
 } GooeyList;
 
 /**
@@ -314,45 +313,5 @@ typedef struct
 {
   unsigned long color;
 } CanvasSetFGArgs;
-
-/**
- * @brief A structure representing a window containing various widgets.
- */
-typedef struct
-{
-
-  int creation_id; /**< Unique window ID. */
-  bool visibility;
-  WINDOW_TYPE type;
-
-  GooeyButton *buttons;                       /**< List of buttons in the window */
-  GooeyLabel *labels;                         /**< List of labels in the window */
-  GooeyCheckbox *checkboxes;                  /**< List of checkboxes in the window */
-  GooeyRadioButton *radio_buttons;            /**< List of radio buttons in the window */
-  GooeySlider *sliders;                       /**< List of sliders in the window */
-  GooeyDropdown *dropdowns;                   /**< List of dropdown menus in the window */
-  GooeyRadioButtonGroup *radio_button_groups; /**< List of radio button groups in the window */
-  GooeyTextbox *textboxes;                    /**< List of textboxes in the window */
-  GooeyLayout *layouts;                       /**< List of layouts in the window */
-  GooeyMenu *menu;                            /**< Menu in the window */
-  GooeyList *lists;                           /**< List of list widgets in the window. */
-  GooeyCanvas *canvas;                        /**< List of canvas widgets in the window. */
-  GooeyWidget **widgets;                      /**< List containing unified definition of every widget. */
-
-  int list_count;
-  int scrollable_count;         /**< Number of scrollables in the window */
-  int button_count;             /**< Number of buttons in the window */
-  int label_count;              /**< Number of labels in the window */
-  int checkbox_count;           /**< Number of checkboxes in the window */
-  int radio_button_count;       /**< Number of radio buttons in the window */
-  int slider_count;             /**< Number of sliders in the window */
-  int dropdown_count;           /**< Number of dropdown menus in the window */
-  int textboxes_count;          /**< Number of textboxes in the window */
-  int layout_count;             /**< Number of layouts in the window */
-  int radio_button_group_count; /**< Number of radio button groups in the window */
-  int canvas_count;             /**< Number of all canvas widgets in the window */
-  int widget_count;             /**< Total number of registered widgets in the window. */
-
-} GooeyWindow;
 
 #endif

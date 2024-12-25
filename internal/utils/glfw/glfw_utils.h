@@ -17,7 +17,7 @@
 #ifndef GLFW_UTILS_H
 #define GLFW_UTILS_H
 
-#include "gooey_backend_internal.h"
+#include "core/gooey_backend_internal.h"
 #include "utils/glad/glad.h"
 #include <freetype2/ft2build.h>
 #include FT_FREETYPE_H

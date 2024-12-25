@@ -15,7 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_dropdown.h"
+#include "widgets/gooey_dropdown.h"
 
 
 GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
@@ -39,9 +39,9 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
     dropdown->is_open = false;
     return dropdown;
 }
-void GooeyDropdown_Draw(GooeyWindow *win)
-{
-    for (int i = 0; i < win->dropdown_count; i++)
+
+void GooeyDropdown_Draw(GooeyWindow *win) {
+       for (int i = 0; i < win->dropdown_count; i++)
     {
         int x_offset = win->dropdowns[i].core.x;
 
@@ -81,6 +81,7 @@ void GooeyDropdown_Draw(GooeyWindow *win)
         x_offset += text_width + 20;
     }
 }
+
 
 bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
 {

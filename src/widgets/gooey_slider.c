@@ -16,7 +16,7 @@
  */
 
 
-#include "include/widgets/gooey_slider.h"
+#include "widgets/gooey_slider.h"
 
 
 
@@ -51,6 +51,72 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
 
     return slider;
 }
+
+
+long GooeySlider_getValue(GooeySlider *slider)
+{
+    if (!slider)
+    {
+        LOG_ERROR("Widget<Slider> cannot be NULL. \n");
+        return -1;
+    }
+
+    return slider->value;
+}
+
+void GooeySlider_setValue(GooeySlider *slider, long value)
+{
+    if (!slider)
+    {
+        LOG_ERROR("Widget<Slider> cannot be NULL. \n");
+        return;
+    }
+
+    slider->value = value;
+}
+
+void GooeySlider_Draw(GooeyWindow *win) {
+    for (int i = 0; i < win->slider_count; ++i)
+    {
+        GooeySlider *slider = &win->sliders[i];
+
+        active_backend->FillRectangle(slider->core.x,
+                                      slider->core.y, slider->core.width, slider->core.height, active_theme->widget_base, win->creation_id);
+
+        int thumb_x = slider->core.x + (slider->value - slider->min_value) *
+                                           slider->core.width /
+                                           (slider->max_value - slider->min_value);
+
+        active_backend->FillRectangle(thumb_x - 5,
+                                      slider->core.y - 5, 10, slider->core.height + 10, active_theme->primary, win->creation_id);
+
+        if (slider->show_hints)
+        {
+
+            char min_value[20];
+            char max_value[20];
+            char value[20];
+            sprintf(min_value, "%ld", slider->min_value);
+            sprintf(max_value, "%ld", slider->max_value);
+            sprintf(value, "%ld", slider->value);
+            int min_value_width = active_backend->GetTextWidth(min_value, strlen(min_value));
+            int max_value_width = active_backend->GetTextWidth(max_value, strlen(max_value));
+            int value_width = active_backend->GetTextWidth(value, strlen(value));
+
+            active_backend->DrawText(
+                slider->core.x - min_value_width - 5, slider->core.y + 5,
+                min_value, active_theme->neutral, 0.25f, win->creation_id);
+            active_backend->DrawText(
+                slider->core.x + slider->core.width + 5, slider->core.y + 5,
+                max_value, active_theme->neutral, 0.25f, win->creation_id);
+            if (slider->value != 0)
+                active_backend->DrawText(thumb_x - 5,
+                                         slider->core.y + 25, value, active_theme->neutral, 0.25f, win->creation_id);
+        }
+        active_backend->SetForeground(active_theme->neutral);
+    } 
+}
+
 
 bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type)
 {
@@ -119,26 +185,4 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type)
 
     active_backend->InhibitResetEvents(0);
     return false;
-}
-
-long GooeySlider_getValue(GooeySlider *slider)
-{
-    if (!slider)
-    {
-        LOG_ERROR("Widget<Slider> cannot be NULL. \n");
-        return -1;
-    }
-
-    return slider->value;
-}
-
-void GooeySlider_setValue(GooeySlider *slider, long value)
-{
-    if (!slider)
-    {
-        LOG_ERROR("Widget<Slider> cannot be NULL. \n");
-        return;
-    }
-
-    slider->value = value;
 }

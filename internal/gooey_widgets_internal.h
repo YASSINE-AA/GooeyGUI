@@ -42,19 +42,6 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
-typedef enum
-{
-  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
-  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
-  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
-  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
-  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
-  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
-  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
-} GOOEY_CURSOR;
 
 /**
  * @brief Enumeration for widget types in the Gooey framework.
@@ -71,6 +58,31 @@ typedef enum
   WIDGET_CANVAS,      /**< Canvas widget */
   WIDGET_LAYOUT
 } WIDGET_TYPE;
+
+
+/**
+ * @brief A base structure for all Gooey widgets containing their position and size.
+ */
+typedef struct
+{
+  WIDGET_TYPE type;  /**< Type of the widget */
+  int x, y;          /**< Position of the widget (top-left corner) */
+  int width, height; /**< Dimensions of the widget */
+} GooeyWidget;
+
+typedef enum
+{
+  GOOEY_CURSOR_ARROW,        /**< The regular arrow cursor shape. */
+  GOOEY_CURSOR_TEXT,         /**< The text input I-beam cursor shape. */
+  GOOEY_CURSOR_CROSSHAIR,    /**< The crosshair cursor shape. */
+  GOOEY_CURSOR_HAND,         /**< The pointing hand cursor shape. */
+  GOOEY_CURSOR_RESIZE_H,     /**< The horizontal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_V,     /**<The vertical resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TL_BR, /**< The top-left to bottom-right diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_TR_BL, /**< The top-right to bottom-left diagonal resize/move arrow shape. */
+  GOOEY_CURSOR_RESIZE_ALL,   /**< The omni-directional resize/move cursor shape. */
+  GOOEY_CURSOR_NOT_ALLOWED   /**< The operation-not-allowed shape. */
+} GOOEY_CURSOR;
 
 typedef enum
 {
@@ -100,15 +112,6 @@ typedef enum
   CANVA_DRAW_SET_FG
 } CANVA_DRAW_OP;
 
-/**
- * @brief A base structure for all Gooey widgets containing their position and size.
- */
-typedef struct
-{
-  WIDGET_TYPE type;  /**< Type of the widget */
-  int x, y;          /**< Position of the widget (top-left corner) */
-  int width, height; /**< Dimensions of the widget */
-} GooeyWidget;
 
 /**
  * @brief A structure representing a textbox widget.

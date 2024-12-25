@@ -15,8 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_menu.h"
-
+#include "widgets/gooey_menu.h"
 
 GooeyMenu *GooeyMenu_Set(GooeyWindow *win)
 {
@@ -28,12 +27,39 @@ GooeyMenu *GooeyMenu_Set(GooeyWindow *win)
     return win->menu;
 }
 
+GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title)
+{
+    if (!win->menu || win->menu->children_count >= MAX_MENU_CHILDREN)
+    {
+        LOG_ERROR("Unable to add child: Menu is full or not initialized.\n");
+        return NULL;
+    }
+
+    GooeyMenuChild *child = &win->menu->children[win->menu->children_count++];
+    child->title = strdup(title);
+    child->menu_elements_count = 0;
+    child->is_open = false;
+    LOG_INFO("Child added to menu with title=\"%s\"", title);
+
+    return child;
+}
+
+void GooeyMenuChild_AddElement(GooeyMenuChild *child, char *title,
+                               void (*callback)())
+{
+    child->menu_elements[child->menu_elements_count] = title;
+    child->callbacks[child->menu_elements_count] = callback;
+    child->menu_elements_count++;
+    LOG_INFO("Element added to menu child with title=\"%s\"", title);
+}
+
 void GooeyMenu_Draw(GooeyWindow *win)
 {
-    int window_width, window_height;
 
     if (win->menu)
     {
+        int window_width, window_height;
+
         active_backend->GetWinDim(&window_width, &window_height, win->creation_id);
         active_backend->FillRectangle(0, 0, window_width, 20, active_theme->widget_base, win->creation_id);
 
@@ -73,32 +99,6 @@ void GooeyMenu_Draw(GooeyWindow *win)
             x_offset += text_width + 20;
         }
     }
-}
-
-GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title)
-{
-    if (!win->menu || win->menu->children_count >= MAX_MENU_CHILDREN)
-    {
-        LOG_ERROR("Unable to add child: Menu is full or not initialized.\n");
-        return NULL;
-    }
-
-    GooeyMenuChild *child = &win->menu->children[win->menu->children_count++];
-    child->title = strdup(title);
-    child->menu_elements_count = 0;
-    child->is_open = false;
-    LOG_INFO("Child added to menu with title=\"%s\"", title);
-
-    return child;
-}
-
-void GooeyMenuChild_AddElement(GooeyMenuChild *child, char *title,
-                               void (*callback)())
-{
-    child->menu_elements[child->menu_elements_count] = title;
-    child->callbacks[child->menu_elements_count] = callback;
-    child->menu_elements_count++;
-    LOG_INFO("Element added to menu child with title=\"%s\"", title);
 }
 
 void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)

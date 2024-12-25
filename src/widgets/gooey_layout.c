@@ -15,7 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_layout.h"
+#include "widgets/gooey_layout.h"
 
 GooeyLayout *GooeyLayout_Create(GooeyWindow *win, GooeyLayoutType layout_type,
                                 int x, int y, int width, int height)

@@ -15,8 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_list.h"
-
+#include "widgets/gooey_list.h"
 
 GooeyList *GooeyList_Add(GooeyWindow *win, int x, int y, int width, int height)
 {
@@ -41,26 +40,9 @@ void GooeyList_AddItem(GooeyList *list, const char *title, const char *descripti
     list->items[list->item_count++] = item;
 }
 
-bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
-{
-    for (int i = 0; i < window->list_count; ++i)
-    {
-        GooeyList *list = &window->lists[i];
-
-        int mouse_x = scroll_event->mouse_move.x;
-        int mouse_y = scroll_event->mouse_move.y;
-        if (mouse_x >= list->core.x && mouse_x <= list->core.x + list->core.width && mouse_y >= list->core.y && mouse_y <= list->core.y + list->core.height)
-        {
-            int scroll_offset_amount = scroll_event->mouse_scroll.y * 8;
-            list->scroll_offset += scroll_offset_amount;
-            return true;
-        }
-    }
-    return false;
-}
-
 void GooeyList_Draw(GooeyWindow *win)
 {
+
     const int item_spacing = 40;
     const int title_description_spacing = 15;
 
@@ -162,3 +144,21 @@ void GooeyList_Draw(GooeyWindow *win)
     }
 }
 
+
+bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
+{
+    for (int i = 0; i < window->list_count; ++i)
+    {
+        GooeyList *list = &window->lists[i];
+
+        int mouse_x = scroll_event->mouse_move.x;
+        int mouse_y = scroll_event->mouse_move.y;
+        if (mouse_x >= list->core.x && mouse_x <= list->core.x + list->core.width && mouse_y >= list->core.y && mouse_y <= list->core.y + list->core.height)
+        {
+            int scroll_offset_amount = scroll_event->mouse_scroll.y * 8;
+            list->scroll_offset += scroll_offset_amount;
+            return true;
+        }
+    }
+    return false;
+}

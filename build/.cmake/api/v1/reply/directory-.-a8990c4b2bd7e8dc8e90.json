@@ -1,0 +1,65 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"internal/core/gooey_common.h",
+				"internal/core/gooey_backend_internal.h",
+				"internal/utils/glfw/glfw_utils.h",
+				"internal/utils/glad/glad.h",
+				"internal/utils/linmath/linmath.h",
+				"internal/utils/logger/gooey_logger_internal.h",
+				"internal/utils/theme/gooey_theme_internal.h",
+				"internal/gooey_event_internal.h",
+				"internal/gooey_widgets_internal.h",
+				"include/gooey.h",
+				"include/widgets/gooey_button.h",
+				"include/widgets/gooey_canvas.h",
+				"include/widgets/gooey_checkbox.h",
+				"include/widgets/gooey_dropdown.h",
+				"include/widgets/gooey_label.h",
+				"include/widgets/gooey_layout.h",
+				"include/widgets/gooey_list.h",
+				"include/widgets/gooey_menu.h",
+				"include/widgets/gooey_messagebox.h",
+				"include/widgets/gooey_radiobutton.h",
+				"include/widgets/gooey_slider.h",
+				"include/widgets/gooey_textbox.h",
+				"include/signals/gooey_signals.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

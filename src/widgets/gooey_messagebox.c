@@ -16,7 +16,11 @@
  */
 
 
-#include "include/widgets/gooey_messagebox.h"
+#include "widgets/gooey_messagebox.h"
+#include "widgets/gooey_layout.h"
+#include "widgets/gooey_label.h"
+#include "widgets/gooey_button.h"
+
 
 void (*MessageBoxCallback[100])(int option);
 GooeyWindow *CurrentMessageBox = NULL;
@@ -81,4 +85,12 @@ GooeyWindow GooeyMessageBox_Create(const char *title, const char *message, MSGBO
 
     GooeyLayout_Build(layout);
     return window;
+}
+
+
+
+void GooeyMessageBox_Show(GooeyWindow *msgBoxWindow)
+{
+    CurrentMessageBox = msgBoxWindow;
+    GooeyWindow_MakeVisible(msgBoxWindow, 1);
 }

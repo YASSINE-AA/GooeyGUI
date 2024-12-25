@@ -15,41 +15,8 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_radiobutton.h"
+#include "widgets/gooey_radiobutton.h"
 
-
-void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
-{
-    for (int i = 0; i < win->radio_button_group_count; ++i)
-    {
-        GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
-        for (int j = 0; j < group->button_count; ++j)
-        {
-            GooeyRadioButton *button = &group->buttons[j];
-            int button_center_x = button->core.x + RADIO_BUTTON_RADIUS;
-            int button_center_y = button->core.y + RADIO_BUTTON_RADIUS;
-
-            int label_width = active_backend->GetTextWidth(button->label, strlen(button->label));
-
-            int label_x = ACTIVE_BACKEND == X11 ? button->core.x + RADIO_BUTTON_RADIUS * 2 + 10 : button->core.x + RADIO_BUTTON_RADIUS * 2;
-            int label_y = ACTIVE_BACKEND == X11 ? button->core.y + RADIO_BUTTON_RADIUS + 5 : button->core.y + RADIO_BUTTON_RADIUS / 2;
-            active_backend->DrawText(label_x, label_y, button->label, active_theme->neutral, 0.25f, win->creation_id);
-            active_backend->SetForeground(active_theme->neutral);
-            active_backend->FillArc(button->core.x, button->core.y, RADIO_BUTTON_RADIUS * 2, RADIO_BUTTON_RADIUS * 2, 0, 360 * 64, win->creation_id);
-            if (button->selected)
-            {
-                active_backend->SetForeground(active_theme->primary);
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64, win->creation_id);
-            }
-            else
-            {
-                active_backend->SetForeground(active_theme->base);
-
-                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64, win->creation_id);
-            }
-        }
-    }
-}
 GooeyRadioButtonGroup *GooeyRadioButtonGroup_Create(GooeyWindow *win)
 {
     if (win->radio_button_group_count >= MAX_WIDGETS)
@@ -87,6 +54,64 @@ GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyWindow *win, GooeyRadioBut
     return button;
 }
 
+GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
+                                       char *label,
+                                       void (*callback)(bool selected))
+{
+    GooeyRadioButton *radio_button =
+        &win->radio_buttons[win->radio_button_count++];
+
+    radio_button->core.type = WIDGET_RADIOBUTTON;
+    radio_button->core.x = x;
+    radio_button->core.y = y;
+    if (label)
+        strcpy(radio_button->label, label);
+    else
+    {
+        sprintf(radio_button->label, "Radio button %d", win->radio_button_count);
+    }
+
+    radio_button->radius = RADIO_BUTTON_RADIUS;
+    radio_button->selected = false;
+    radio_button->callback = callback;
+    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&radio_button->core);
+
+    return radio_button;
+}
+
+void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
+{
+    for (int i = 0; i < win->radio_button_group_count; ++i)
+    {
+        GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
+        for (int j = 0; j < group->button_count; ++j)
+        {
+            GooeyRadioButton *button = &group->buttons[j];
+            int button_center_x = button->core.x + RADIO_BUTTON_RADIUS;
+            int button_center_y = button->core.y + RADIO_BUTTON_RADIUS;
+
+            int label_width = active_backend->GetTextWidth(button->label, strlen(button->label));
+
+            int label_x = ACTIVE_BACKEND == X11 ? button->core.x + RADIO_BUTTON_RADIUS * 2 + 10 : button->core.x + RADIO_BUTTON_RADIUS * 2;
+            int label_y = ACTIVE_BACKEND == X11 ? button->core.y + RADIO_BUTTON_RADIUS + 5 : button->core.y + RADIO_BUTTON_RADIUS / 2;
+            active_backend->DrawText(label_x, label_y, button->label, active_theme->neutral, 0.25f, win->creation_id);
+            active_backend->SetForeground(active_theme->neutral);
+            active_backend->FillArc(button->core.x, button->core.y, RADIO_BUTTON_RADIUS * 2, RADIO_BUTTON_RADIUS * 2, 0, 360 * 64, win->creation_id);
+            if (button->selected)
+            {
+                active_backend->SetForeground(active_theme->primary);
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64, win->creation_id);
+            }
+            else
+            {
+                active_backend->SetForeground(active_theme->base);
+
+                active_backend->FillArc(ACTIVE_BACKEND == X11 ? button->core.x + 2 : button->core.x, ACTIVE_BACKEND == X11 ? button->core.y + 2 : button->core.y, RADIO_BUTTON_RADIUS * 1.5, RADIO_BUTTON_RADIUS * 1.5, 0, 360 * 64, win->creation_id);
+            }
+        }
+    }
+}
+
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y)
 {
     for (int i = 0; i < win->radio_button_group_count; ++i)
@@ -118,31 +143,6 @@ bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y)
     return false;
 }
 
-GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
-                                       char *label,
-                                       void (*callback)(bool selected))
-{
-    GooeyRadioButton *radio_button =
-        &win->radio_buttons[win->radio_button_count++];
-
-    radio_button->core.type = WIDGET_RADIOBUTTON;
-    radio_button->core.x = x;
-    radio_button->core.y = y;
-    if (label)
-        strcpy(radio_button->label, label);
-    else
-    {
-        sprintf(radio_button->label, "Radio button %d", win->radio_button_count);
-    }
-
-    radio_button->radius = RADIO_BUTTON_RADIUS;
-    radio_button->selected = false;
-    radio_button->callback = callback;
-    GooeyWindow_RegisterWidget(win, (GooeyWidget *)&radio_button->core);
-
-    return radio_button;
-}
-
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
 {
     int state = false;
@@ -168,4 +168,3 @@ bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
     }
     return state;
 }
-

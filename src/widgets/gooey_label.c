@@ -15,7 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/widgets/gooey_label.h"
+#include "widgets/gooey_label.h"
 
 GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, float font_size, int x, int y)
 {

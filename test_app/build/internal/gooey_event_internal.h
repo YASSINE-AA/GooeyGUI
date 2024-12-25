@@ -55,20 +55,6 @@ typedef struct
 
 } GooeyEvent;
 
-/* ============ Signaling system ==============*/
 
-typedef void (*GooeySignal_CallbackFunction)(void *context, void *data);
-
-typedef struct GooeySignal_Slot
-{
-    GooeySignal_CallbackFunction callback;
-    void *context;
-    struct GooeySignal_Slot *next;
-} GooeySignal_Slot;
-
-typedef struct
-{
-    GooeySignal_Slot *slots;
-} GooeySignal;
 
 #endif
