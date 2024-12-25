@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="docs/doc_images/gooey.png" width=128>
+  <img src="./gooey.png" width=128>
 </p>
 
 # Gooey GUI Library
