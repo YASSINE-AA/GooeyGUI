@@ -17,7 +17,7 @@
 
 #ifndef TINY_H
 #define TINY_H
-#include "../internal/gooey_backend_internal.h"
+#include "../gooey_backend_internal.h"
 
 /**
  * @brief The currently active Gooey backend.

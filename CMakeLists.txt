@@ -7,14 +7,28 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(SOURCES
     src/backends/glfw_backend.c
     src/core/gooey.c
+    src/core/gooey_window.c
     src/utils/logger/gooey_logger.c
     src/utils/theme/gooey_theme.c
     src/utils/glad/glad.c
     src/utils/glfw/glfw_utils.c
+    src/widgets/gooey_button.c
+    src/widgets/gooey_canvas.c
+    src/widgets/gooey_checkbox.c
+    src/widgets/gooey_dropdown.c
+    src/widgets/gooey_label.c
+    src/widgets/gooey_layout.c
+    src/widgets/gooey_list.c
+    src/widgets/gooey_menu.c
+    src/widgets/gooey_messagebox.c
+    src/widgets/gooey_radiobutton.c
+    src/widgets/gooey_slider.c
+    src/widgets/gooey_textbox.c
+
 )
 
 set(HEADERS
-    include/gooey.h
+    internal/core/gooey_window.h
     internal/utils/glfw/glfw_utils.h
     internal/utils/glad/glad.h
     internal/utils/linmath/linmath.h
@@ -23,6 +37,19 @@ set(HEADERS
     internal/gooey_backend_internal.h
     internal/gooey_event_internal.h
     internal/gooey_widgets_internal.h
+    include/gooey.h
+    include/widgets/gooey_button.h
+    include/widgets/gooey_canvas.h
+    include/widgets/gooey_checkbox.h
+    include/widgets/gooey_dropdown.h
+    include/widgets/gooey_label.h
+    include/widgets/gooey_layout.h
+    include/widgets/gooey_list.h
+    include/widgets/gooey_menu.h
+    include/widgets/gooey_messagebox.h
+    include/widgets/gooey_radiobutton.h
+    include/widgets/gooey_slider.h
+    include/widgets/gooey_textbox.h
 )
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)

@@ -1,7 +1,7 @@
 CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c \
  /usr/include/stdc-predef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/theme/gooey_theme_internal.h \
  /usr/local/include/cjson/cJSON.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

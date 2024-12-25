@@ -2,7 +2,7 @@ CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c \
  /usr/include/stdc-predef.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/gooey.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_backend_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_backend_internal.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -64,9 +64,9 @@ CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/theme/gooey_theme_internal.h \
  /usr/local/include/cjson/cJSON.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_event_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_widgets_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/logger/gooey_logger_internal.h \
  /usr/include/ctype.h

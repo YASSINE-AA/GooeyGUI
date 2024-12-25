@@ -79,34 +79,34 @@ third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrors.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmoderr.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrdef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdebug.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/psaux.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftobjs.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdebug.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/psaux.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftobjs.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftrender.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmodapi.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftglyph.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftsizes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftlcdfil.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftparams.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftmemory.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftgloadr.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdrv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/autohint.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftserv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftcalc.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmemory.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftgloadr.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdrv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/autohint.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftserv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftcalc.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftincrem.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/t1types.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/t1types.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmm.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/pshints.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/pshints.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/t1tables.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/fthash.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svpscmap.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/tttypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fthash.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svpscmap.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/tttypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/tttables.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftcolor.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/cfftypes.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/cffotypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/cfftypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/cffotypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/afmparse.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psconv.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psauxerr.h \
@@ -116,7 +116,7 @@ third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/t1decode.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/t1cmap.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psft.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/pstypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psglue.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/pserror.h \
@@ -131,7 +131,7 @@ third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/t1decode.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftoutln.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/cffdecode.c \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svcfftl.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svcfftl.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psarrst.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psblues.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psblues.h \
@@ -141,8 +141,8 @@ third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psfont.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psintrp.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psft.c \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svmm.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftmmtypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svmm.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmmtypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/pshints.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psintrp.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psstack.h \

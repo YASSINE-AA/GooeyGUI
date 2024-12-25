@@ -48,15 +48,14 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//Choose the type of build, options are: None Debug Release RelWithDebInfo
-// MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+//No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:STRING=Debug
 
-//Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=ON
+//No help, variable specified on the command line.
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++
 
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -99,8 +98,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
+//No help, variable specified on the command line.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles/pkgRedirects
@@ -159,8 +158,8 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
 
-//Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/gmake
+//Program used to build from build.ninja files.
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/ninja
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -419,7 +418,7 @@ GooeyGUI_LIB_DEPENDS:STATIC=general;cjson;general;glfw;general;freetype;
 GooeyGUI_SOURCE_DIR:STATIC=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
 
 //Path to a file.
-HarfBuzz_INCLUDE_DIR:PATH=/usr/include/harfbuzz
+HarfBuzz_INCLUDE_DIR:PATH=/usr/harfbuzz
 
 //Path to a library.
 HarfBuzz_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
@@ -878,7 +877,7 @@ freetype_BINARY_DIR:STATIC=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
 freetype_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
-freetype_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libharfbuzz.so;general;/usr/lib/x86_64-linux-gnu/libbrotlidec.so;
+freetype_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libbrotlidec.so;
 
 //Value Computed by CMake
 freetype_SOURCE_DIR:STATIC=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype
@@ -930,8 +929,6 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=28
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
-//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
-CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 //Path to cpack program executable.
@@ -968,12 +965,10 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
-CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=Ninja
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
@@ -1112,7 +1107,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_BrotliDec:INTERNAL=[/usr/include][/usr/lib/x86_64-l
 //Details about finding Doxygen
 FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen ][v1.9.8()]
 //Details about finding HarfBuzz
-FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/x86_64-linux-gnu/libharfbuzz.so][ON][v8.3.0(2.0.0)]
+FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/harfbuzz][/usr/lib/x86_64-linux-gnu/libharfbuzz.so][ON][v8.3.0(2.0.0)]
 //Details about finding PNG
 FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.6.43()]
 //Details about finding PkgConfig
@@ -1255,12 +1250,12 @@ PC_BZIP2_bzip2_INCLUDEDIR:INTERNAL=
 PC_BZIP2_bzip2_LIBDIR:INTERNAL=
 PC_BZIP2_bzip2_PREFIX:INTERNAL=
 PC_BZIP2_bzip2_VERSION:INTERNAL=
-PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/local/include/freetype2;-I/usr/include;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/harfbuzz;-I/usr/local/freetype2;-I/usr/include;-I/usr/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_CFLAGS_OTHER:INTERNAL=
 PC_HARFBUZZ_FOUND:INTERNAL=1
 PC_HARFBUZZ_INCLUDEDIR:INTERNAL=/usr/include
-PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/local/include/freetype2;/usr/include;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/harfbuzz;/usr/local/freetype2;/usr/include;/usr/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz
 PC_HARFBUZZ_LDFLAGS_OTHER:INTERNAL=
 PC_HARFBUZZ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
@@ -1272,10 +1267,10 @@ PC_HARFBUZZ_LIBS_OTHER:INTERNAL=
 PC_HARFBUZZ_LIBS_PATHS:INTERNAL=
 PC_HARFBUZZ_MODULE_NAME:INTERNAL=harfbuzz
 PC_HARFBUZZ_PREFIX:INTERNAL=/usr
-PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/local/include/freetype2;-I/usr/include;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/harfbuzz;-I/usr/local/freetype2;-I/usr/include;-I/usr/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_STATIC_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/local/include/freetype2;/usr/include;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/harfbuzz;/usr/local/freetype2;/usr/include;/usr/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz;-pthread;-lm;-L/usr/local/lib;-lfreetype;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lglib-2.0;-lm;-pthread;-L/usr/lib/x86_64-linux-gnu;-lpcre2-8;-lgraphite2
 PC_HARFBUZZ_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread
 PC_HARFBUZZ_STATIC_LIBDIR:INTERNAL=

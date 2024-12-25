@@ -1,0 +1,662 @@
+[
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/core/gooey_window.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_window.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_window.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/core/gooey_window.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DGooeyGUI_EXPORTS -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -g -fPIC -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c",
+  "output": "CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/context.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/context.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/context.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/init.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/init.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/init.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/input.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/input.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/input.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/input.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/monitor.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/platform.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/platform.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/vulkan.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/vulkan.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/window.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/window.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/window.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/egl_context.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/egl_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/osmesa_context.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/osmesa_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_init.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_monitor.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_window.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_joystick.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/null_joystick.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_module.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_module.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_time.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_time.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_thread.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_thread.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_init.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_monitor.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_window.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/x11_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/xkb_unicode.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/xkb_unicode.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/glx_context.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/glx_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_init.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_monitor.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_window.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/wl_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/linux_joystick.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/linux_joystick.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src -g -std=c99 -fPIC -Wall -o third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_poll.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src/posix_poll.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/cJSON.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/cJSON.c",
+  "output": "third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c",
+  "output": "third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -Wno-error -fvisibility=default -Wno-switch-enum -o third_party/cjson/tests/CMakeFiles/unity.dir/unity/src/unity.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity.c",
+  "output": "third_party/cjson/tests/CMakeFiles/unity.dir/unity/src/unity.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_examples.dir/parse_examples.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_examples.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_examples.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_examples.dir/parse_examples.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_number.dir/parse_number.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_number.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_number.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_number.dir/parse_number.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_hex4.dir/parse_hex4.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_hex4.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_hex4.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_hex4.dir/parse_hex4.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_string.dir/parse_string.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_string.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_string.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_string.dir/parse_string.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_array.dir/parse_array.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_array.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_array.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_array.dir/parse_array.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_object.dir/parse_object.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_object.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_object.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_object.dir/parse_object.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/print_string.dir/print_string.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_string.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_string.c",
+  "output": "third_party/cjson/tests/CMakeFiles/print_string.dir/print_string.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/print_number.dir/print_number.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_number.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_number.c",
+  "output": "third_party/cjson/tests/CMakeFiles/print_number.dir/print_number.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c",
+  "output": "third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/print_object.dir/print_object.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_object.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_object.c",
+  "output": "third_party/cjson/tests/CMakeFiles/print_object.dir/print_object.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/print_value.dir/print_value.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_value.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_value.c",
+  "output": "third_party/cjson/tests/CMakeFiles/print_value.dir/print_value.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/misc_tests.dir/misc_tests.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/misc_tests.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/misc_tests.c",
+  "output": "third_party/cjson/tests/CMakeFiles/misc_tests.dir/misc_tests.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/parse_with_opts.dir/parse_with_opts.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_with_opts.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_with_opts.c",
+  "output": "third_party/cjson/tests/CMakeFiles/parse_with_opts.dir/parse_with_opts.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/compare_tests.dir/compare_tests.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/compare_tests.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/compare_tests.c",
+  "output": "third_party/cjson/tests/CMakeFiles/compare_tests.dir/compare_tests.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/cjson_add.dir/cjson_add.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/cjson_add.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/cjson_add.c",
+  "output": "third_party/cjson/tests/CMakeFiles/cjson_add.dir/cjson_add.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/readme_examples.dir/readme_examples.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/readme_examples.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/readme_examples.c",
+  "output": "third_party/cjson/tests/CMakeFiles/readme_examples.dir/readme_examples.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/tests/CMakeFiles/minify_tests.dir/minify_tests.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/minify_tests.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/minify_tests.c",
+  "output": "third_party/cjson/tests/CMakeFiles/minify_tests.dir/minify_tests.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c",
+  "output": "third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DCJSON_API_VISIBILITY -DCJSON_EXPORT_SYMBOLS -DENABLE_LOCALES  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum -fvisibility=hidden -g -o third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c",
+  "output": "third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/autofit/autofit.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/autofit/autofit.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/autofit/autofit.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/autofit/autofit.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbase.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbase.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbase.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbase.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbbox.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbbox.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbbox.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbdf.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbdf.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbdf.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbdf.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbitmap.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbitmap.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftbitmap.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftbitmap.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftcid.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftcid.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftcid.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftcid.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftfstype.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftfstype.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftfstype.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftfstype.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftgasp.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftgasp.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftgasp.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftgasp.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftglyph.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftglyph.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftglyph.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftglyph.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftgxval.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftgxval.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftgxval.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftgxval.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftinit.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftinit.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftinit.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftinit.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftmm.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftmm.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftmm.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftmm.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftotval.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftotval.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftotval.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftotval.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftpatent.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftpatent.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftpatent.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftpatent.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftpfr.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftpfr.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftpfr.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftpfr.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftstroke.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftstroke.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftstroke.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftstroke.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftsynth.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftsynth.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftsynth.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftsynth.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/fttype1.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/fttype1.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/fttype1.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/fttype1.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftwinfnt.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftwinfnt.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftwinfnt.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftwinfnt.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/bdf/bdf.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/bdf/bdf.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/bdf/bdf.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/bdf/bdf.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/bzip2/ftbzip2.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/bzip2/ftbzip2.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/bzip2/ftbzip2.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/bzip2/ftbzip2.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/cache/ftcache.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cache/ftcache.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cache/ftcache.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/cache/ftcache.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/cff/cff.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cff/cff.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cff/cff.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/cff/cff.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/cid/type1cid.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cid/type1cid.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/cid/type1cid.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/cid/type1cid.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/gzip/ftgzip.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/gzip/ftgzip.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/gzip/ftgzip.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/gzip/ftgzip.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/lzw/ftlzw.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/lzw/ftlzw.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/lzw/ftlzw.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/lzw/ftlzw.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcf.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcf.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/pfr/pfr.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pfr/pfr.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pfr/pfr.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/pfr/pfr.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psaux.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psaux/psaux.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/pshinter/pshinter.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pshinter/pshinter.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pshinter/pshinter.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/pshinter/pshinter.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/psnames/psnames.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psnames/psnames.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/psnames/psnames.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/psnames/psnames.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/raster/raster.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/raster/raster.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/raster/raster.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/raster/raster.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/sdf/sdf.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sdf/sdf.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sdf/sdf.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/sdf/sdf.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfnt.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfnt.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/smooth/smooth.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/smooth/smooth.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/smooth/smooth.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/smooth/smooth.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/svg/svg.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/svg/svg.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/svg/svg.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/svg/svg.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/truetype/truetype.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/truetype/truetype.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/truetype/truetype.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/truetype/truetype.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/type1/type1.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/type1/type1.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/type1/type1.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/type1/type1.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/type42/type42.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/type42/type42.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/type42/type42.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/type42/type42.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/winfonts/winfnt.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/winfonts/winfnt.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/winfonts/winfnt.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/winfonts/winfnt.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/builds/unix/ftsystem.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/builds/unix/ftsystem.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o"
+},
+{
+  "directory": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build",
+  "command": "/usr/bin/gcc -DFT2_BUILD_LIBRARY -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config  -fPIC -g -fvisibility=hidden -o third_party/freetype/CMakeFiles/freetype.dir/src/base/ftdebug.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftdebug.c",
+  "file": "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/base/ftdebug.c",
+  "output": "third_party/freetype/CMakeFiles/freetype.dir/src/base/ftdebug.c.o"
+}
+]

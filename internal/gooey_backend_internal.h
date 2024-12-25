@@ -23,10 +23,10 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdarg.h>
+
+#include "core/gooey_window.h"
 #include "utils/theme/gooey_theme_internal.h"
 #include "gooey_event_internal.h"
-#include "gooey_widgets_internal.h"
-#include "utils/logger/gooey_logger_internal.h"
 
 extern GooeyTheme *active_theme;
 
@@ -35,6 +35,21 @@ typedef enum GooeyBackends
     X11, /**< Linux X11 native api */
     GLFW /**< GLFW OpenGL Backend*/
 } GooeyBackends;
+
+/**
+ * @brief The currently active Gooey backend.
+ */
+extern GooeyBackend *active_backend;
+
+/**
+ * @brief The X11 backend for Gooey.
+ */
+extern GooeyBackend x11_backend;
+
+/**
+ * @brief The GLFW backend for Gooey.
+ */
+extern GooeyBackend glfw_backend;
 
 /**
  * @brief The GooeyBackend structure contains function pointers
@@ -63,7 +78,7 @@ typedef struct GooeyBackend
     void (*DrawRectangle)(int x, int y, int width, int height, unsigned long color, int window_id);
     void (*FillArc)(int x, int y, int width, int height, int angle1, int angle2, int window_id);
     char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
-    GooeyEvent* (*HandleEvents)(void);
+    GooeyEvent *(*HandleEvents)(void);
     void (*InhibitResetEvents)(bool state);
     void (*GetWinDim)(int *width, int *height, int window_id);
     void (*DrawLine)(int x1, int y1, int x2, int y2, unsigned long color, int window_id);

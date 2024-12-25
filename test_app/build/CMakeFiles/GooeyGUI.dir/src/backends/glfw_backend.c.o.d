@@ -1,8 +1,8 @@
 CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c \
  /usr/include/stdc-predef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glfw/glfw_utils.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_backend_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glfw/glfw_utils.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_backend_internal.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -64,13 +64,13 @@ CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/theme/gooey_theme_internal.h \
  /usr/local/include/cjson/cJSON.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/glad.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/../KHR/khrplatform.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_event_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_widgets_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/logger/gooey_logger_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glad/glad.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glad/../KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -102,7 +102,7 @@ CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmoderr.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrdef.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/linmath/linmath.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/linmath/linmath.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \

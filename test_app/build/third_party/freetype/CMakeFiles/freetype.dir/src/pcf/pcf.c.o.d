@@ -2,7 +2,7 @@ third_party/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcf.c \
  /usr/include/stdc-predef.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcfdrivr.c \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdebug.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdebug.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/ft2build.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/config/ftheader.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config/ftconfig.h \
@@ -80,21 +80,21 @@ third_party/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrors.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmoderr.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrdef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftstream.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftobjs.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftstream.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftobjs.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftrender.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmodapi.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftglyph.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftsizes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftlcdfil.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftparams.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftmemory.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftgloadr.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdrv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/autohint.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftserv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftcalc.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmemory.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftgloadr.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdrv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/autohint.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftserv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftcalc.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftincrem.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftgzip.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftlzw.h \
@@ -106,10 +106,10 @@ third_party/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcfread.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcferror.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcfutil.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svbdf.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svfntfmt.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svprop.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svbdf.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svfntfmt.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svprop.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdriver.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcfread.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/pcf/pcfutil.c

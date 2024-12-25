@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -44,7 +44,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/gooey.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/core/gooey_window.h"
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glfw/glfw_utils.h"
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/glad.h"
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/linmath/linmath.h"
@@ -53,6 +53,19 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_backend_internal.h"
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h"
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/gooey.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_button.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_canvas.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_checkbox.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_dropdown.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_label.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_layout.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_list.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_menu.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_messagebox.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_radiobutton.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_slider.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_textbox.h"
     )
 endif()
 

@@ -13,7 +13,7 @@ SRC_FILES := $(C_BACKENDS)/glfw_backend.c \
 OBJS_gui := $(SRC_FILES:$(C_SRC)/%.c=$(BUILD_DIR)/%.o)
 
 CC := gcc
-CFLAGS ?= -I$(C_BACKENDS)  -I/usr/local/include/freetype2
+CFLAGS ?= -I$(C_BACKENDS)  -I/usr/local/freetype2
 
 all: $(BUILD_DIR)/gui
 

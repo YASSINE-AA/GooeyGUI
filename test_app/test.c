@@ -1,4 +1,4 @@
-#include "build/include/gooey.h"
+#include "build/gooey.h"
 #include <stdio.h>
 
 int red = 0, green = 0, blue = 0;

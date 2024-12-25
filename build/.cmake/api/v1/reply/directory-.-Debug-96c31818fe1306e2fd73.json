@@ -1,0 +1,64 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"core/gooey_window.h",
+				"utils/glfw/glfw_utils.h",
+				"utils/glad/glad.h",
+				"utils/linmath/linmath.h",
+				"utils/logger/gooey_logger_internal.h",
+				"utils/theme/gooey_theme_internal.h",
+				"gooey_backend_internal.h",
+				"gooey_event_internal.h",
+				"gooey_widgets_internal.h",
+				"gooey.h",
+				"widgets/gooey_button.h",
+				"widgets/gooey_canvas.h",
+				"widgets/gooey_checkbox.h",
+				"widgets/gooey_dropdown.h",
+				"widgets/gooey_label.h",
+				"widgets/gooey_layout.h",
+				"widgets/gooey_list.h",
+				"widgets/gooey_menu.h",
+				"widgets/gooey_messagebox.h",
+				"widgets/gooey_radiobutton.h",
+				"widgets/gooey_slider.h",
+				"widgets/gooey_textbox.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

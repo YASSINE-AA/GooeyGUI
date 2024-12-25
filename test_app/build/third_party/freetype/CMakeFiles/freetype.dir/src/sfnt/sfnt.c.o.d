@@ -2,7 +2,7 @@ third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfnt.c \
  /usr/include/stdc-predef.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/pngshim.c \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdebug.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdebug.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/ft2build.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/config/ftheader.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config/ftconfig.h \
@@ -80,21 +80,21 @@ third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrors.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmoderr.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/fterrdef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftstream.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftobjs.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftstream.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftobjs.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftrender.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmodapi.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftglyph.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftsizes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftlcdfil.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftparams.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftmemory.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftgloadr.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftdrv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/autohint.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftserv.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftcalc.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmemory.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftgloadr.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftdrv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/autohint.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftserv.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftcalc.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftincrem.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/tttags.h \
  /usr/include/png.h /usr/include/pnglibconf.h /usr/include/pngconf.h \
@@ -103,14 +103,14 @@ third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/pngshim.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttload.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/tttypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/tttypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/tttables.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftcolor.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmm.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sferrors.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfdriver.c \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/sfnt.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/wofftypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/sfnt.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/wofftypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ttnameid.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfdriver.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfobjs.h \
@@ -121,29 +121,29 @@ third_party/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o: \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttpost.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttbdf.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftbdf.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svbdf.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svbdf.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttcmap.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftvalid.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svttcmap.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftvalid.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svttcmap.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttcmapc.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttkern.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/ttmtx.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svgldict.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svpostnm.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svsfnt.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svmm.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/ftmmtypes.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svgldict.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svpostnm.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svsfnt.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svmm.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftmmtypes.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfobjs.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfwoff.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfwoff2.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svpscmap.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svpscmap.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftsnames.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/services/svmetric.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/services/svmetric.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfwoff.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/ftgzip.h \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/sfwoff2.c \
  /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/src/sfnt/woff2tags.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/internal/compiler-macros.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include/freetype/compiler-macros.h \
  /usr/include/brotli/decode.h /usr/include/brotli/port.h \
  /usr/include/brotli/shared_dictionary.h /usr/include/brotli/types.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \

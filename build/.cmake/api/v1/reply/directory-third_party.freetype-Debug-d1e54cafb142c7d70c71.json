@@ -1,0 +1,141 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"third_party/freetype/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 566,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 574,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 628,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 639,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 652,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "headers",
+			"destination" : "freetype2",
+			"paths" : 
+			[
+				{
+					"from" : "third_party/freetype/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "headers",
+			"destination" : "freetype2/freetype/config",
+			"paths" : 
+			[
+				"build/third_party/freetype/freetype/config/ftconfig.h",
+				"build/third_party/freetype/freetype/config/ftoption.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "pkgconfig",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"build/third_party/freetype/freetype2.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"third_party/freetype/libfreetyped.a"
+			],
+			"targetId" : "freetype::@03733a03d6e178a5f833",
+			"targetIndex" : 7,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "headers",
+			"destination" : "lib/cmake/freetype",
+			"exportName" : "freetype-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "freetype::@03733a03d6e178a5f833",
+					"index" : 7
+				},
+				{
+					"id" : "freetype-interface::@03733a03d6e178a5f833",
+					"index" : 0
+				}
+			],
+			"paths" : 
+			[
+				"third_party/freetype/CMakeFiles/Export/778b4f54a68e80ec034bf381f364ca2c/freetype-config.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "headers",
+			"destination" : "lib/cmake/freetype",
+			"paths" : 
+			[
+				"build/third_party/freetype/freetype-config-version.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "third_party/freetype",
+		"source" : "third_party/freetype"
+	}
+}

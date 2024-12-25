@@ -30,12 +30,6 @@
 
 extern GooeyTheme *active_theme;
 
-typedef enum GooeyBackends
-{
-    X11, /**< Linux X11 native api */
-    GLFW /**< GLFW OpenGL Backend*/
-} GooeyBackends;
-
 /**
  * @brief The GooeyBackend structure contains function pointers
  *        for backend-specific operations.

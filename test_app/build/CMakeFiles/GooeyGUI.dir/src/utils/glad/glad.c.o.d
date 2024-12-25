@@ -52,8 +52,8 @@ CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/glad.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/../KHR/khrplatform.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glad/glad.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glad/../KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \

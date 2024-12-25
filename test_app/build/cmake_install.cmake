@@ -45,14 +45,14 @@ endif()
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
     "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/gooey.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glfw/glfw_utils.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/glad.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/linmath/linmath.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_backend_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glfw/glfw_utils.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/glad/glad.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/linmath/linmath.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/logger/gooey_logger_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/utils/theme/gooey_theme_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_backend_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_event_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/gooey_widgets_internal.h"
     )
 endif()
 

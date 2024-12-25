@@ -419,7 +419,7 @@ GooeyGUI_LIB_DEPENDS:STATIC=general;cjson;general;glfw;general;freetype;
 GooeyGUI_SOURCE_DIR:STATIC=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
 
 //Path to a file.
-HarfBuzz_INCLUDE_DIR:PATH=/usr/include/harfbuzz
+HarfBuzz_INCLUDE_DIR:PATH=/usr/harfbuzz
 
 //Path to a library.
 HarfBuzz_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
@@ -1112,7 +1112,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_BrotliDec:INTERNAL=[/usr/include][/usr/lib/x86_64-l
 //Details about finding Doxygen
 FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen ][v1.9.8()]
 //Details about finding HarfBuzz
-FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/x86_64-linux-gnu/libharfbuzz.so][ON][v8.3.0(2.0.0)]
+FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/harfbuzz][/usr/lib/x86_64-linux-gnu/libharfbuzz.so][ON][v8.3.0(2.0.0)]
 //Details about finding PNG
 FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.6.43()]
 //Details about finding PkgConfig
@@ -1255,12 +1255,12 @@ PC_BZIP2_bzip2_INCLUDEDIR:INTERNAL=
 PC_BZIP2_bzip2_LIBDIR:INTERNAL=
 PC_BZIP2_bzip2_PREFIX:INTERNAL=
 PC_BZIP2_bzip2_VERSION:INTERNAL=
-PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/local/include/freetype2;-I/usr/include;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/harfbuzz;-I/usr/local/freetype2;-I/usr/include;-I/usr/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_CFLAGS_OTHER:INTERNAL=
 PC_HARFBUZZ_FOUND:INTERNAL=1
 PC_HARFBUZZ_INCLUDEDIR:INTERNAL=/usr/include
-PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/local/include/freetype2;/usr/include;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/harfbuzz;/usr/local/freetype2;/usr/include;/usr/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz
 PC_HARFBUZZ_LDFLAGS_OTHER:INTERNAL=
 PC_HARFBUZZ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
@@ -1272,10 +1272,10 @@ PC_HARFBUZZ_LIBS_OTHER:INTERNAL=
 PC_HARFBUZZ_LIBS_PATHS:INTERNAL=
 PC_HARFBUZZ_MODULE_NAME:INTERNAL=harfbuzz
 PC_HARFBUZZ_PREFIX:INTERNAL=/usr
-PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/local/include/freetype2;-I/usr/include;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/harfbuzz;-I/usr/local/freetype2;-I/usr/include;-I/usr/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_STATIC_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/local/include/freetype2;/usr/include;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/harfbuzz;/usr/local/freetype2;/usr/include;/usr/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
 PC_HARFBUZZ_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz;-pthread;-lm;-L/usr/local/lib;-lfreetype;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lglib-2.0;-lm;-pthread;-L/usr/lib/x86_64-linux-gnu;-lpcre2-8;-lgraphite2
 PC_HARFBUZZ_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread
 PC_HARFBUZZ_STATIC_LIBDIR:INTERNAL=

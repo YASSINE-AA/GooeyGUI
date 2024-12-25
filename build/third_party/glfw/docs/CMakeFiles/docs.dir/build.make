@@ -67,8 +67,8 @@ include third_party/glfw/docs/CMakeFiles/docs.dir/compiler_depend.make
 include third_party/glfw/docs/CMakeFiles/docs.dir/progress.make
 
 third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/Doxyfile
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3.h
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3native.h
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/GLFW/glfw3.h
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/GLFW/glfw3native.h
 third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/main.md
 third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/news.md
 third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/quick.md
