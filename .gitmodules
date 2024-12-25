@@ -1,9 +1,6 @@
 [submodule "third_party/glfw"]
 	path = third_party/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "third_party/glad"]
-	path = third_party/glad
-	url = https://github.com/Dav1dde/glad.git
 [submodule "third_party/cjson"]
 	path = third_party/cjson
 	url = https://github.com/DaveGamble/cJSON.git

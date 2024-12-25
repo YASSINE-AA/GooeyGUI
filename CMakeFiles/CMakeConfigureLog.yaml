@@ -1,0 +1,1455 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 6.9.12-060912-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_760a2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_760a2.dir/build.make CMakeFiles/cmTC_760a2.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh'
+        Building C object CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_760a2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccfSxD5q.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/'
+         as -v --64 -o CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o /tmp/ccfSxD5q.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_760a2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_760a2.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -o cmTC_760a2 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_760a2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_760a2.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5YFlfU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_760a2 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_760a2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_760a2.'
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_760a2/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_760a2.dir/build.make CMakeFiles/cmTC_760a2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-PAM2lh']
+        ignore line: [Building C object CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_760a2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccfSxD5q.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o /tmp/ccfSxD5q.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_760a2]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_760a2.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -o cmTC_760a2 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_760a2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_760a2.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5YFlfU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_760a2 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc5YFlfU.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_760a2] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_760a2.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "third_party/glfw/CMakeLists.txt:52 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_96b3d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_96b3d.dir/build.make CMakeFiles/cmTC_96b3d.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e'
+        Building C object CMakeFiles/cmTC_96b3d.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_96b3d.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e/src.c
+        Linking C executable cmTC_96b3d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96b3d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_96b3d.dir/src.c.o -o cmTC_96b3d 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3JYL4e'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "third_party/glfw/src/CMakeLists.txt:70 (check_function_exists)"
+    checks:
+      - "Looking for memfd_create"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "HAVE_MEMFD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_04b33/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_04b33.dir/build.make CMakeFiles/cmTC_04b33.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2'
+        Building C object CMakeFiles/cmTC_04b33.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=memfd_create -o CMakeFiles/cmTC_04b33.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2/CheckFunctionExists.c
+        Linking C executable cmTC_04b33
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04b33.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=memfd_create CMakeFiles/cmTC_04b33.dir/CheckFunctionExists.c.o -o cmTC_04b33 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GzRJW2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_549c7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_549c7.dir/build.make CMakeFiles/cmTC_549c7.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U'
+        Building C object CMakeFiles/cmTC_549c7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_549c7.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U/CheckFunctionExists.c
+        Linking C executable cmTC_549c7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_549c7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_549c7.dir/CheckFunctionExists.c.o -o cmTC_549c7  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-FBhr8U'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_67f36/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_67f36.dir/build.make CMakeFiles/cmTC_67f36.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s'
+        Building C object CMakeFiles/cmTC_67f36.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_67f36.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s/CheckFunctionExists.c
+        Linking C executable cmTC_67f36
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67f36.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_67f36.dir/CheckFunctionExists.c.o -o cmTC_67f36 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jhIO2s'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c4dc6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c4dc6.dir/build.make CMakeFiles/cmTC_c4dc6.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn'
+        Building C object CMakeFiles/cmTC_c4dc6.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_c4dc6.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn/CheckFunctionExists.c
+        Linking C executable cmTC_c4dc6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4dc6.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_c4dc6.dir/CheckFunctionExists.c.o -o cmTC_c4dc6 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-jComqn'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b4ca8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b4ca8.dir/build.make CMakeFiles/cmTC_b4ca8.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY'
+        Building C object CMakeFiles/cmTC_b4ca8.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_b4ca8.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY/CheckFunctionExists.c
+        Linking C executable cmTC_b4ca8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4ca8.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_b4ca8.dir/CheckFunctionExists.c.o -o cmTC_b4ca8 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-WaDOWY'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_70ee1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_70ee1.dir/build.make CMakeFiles/cmTC_70ee1.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ'
+        Building C object CMakeFiles/cmTC_70ee1.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_70ee1.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ/CheckFunctionExists.c
+        Linking C executable cmTC_70ee1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70ee1.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_70ee1.dir/CheckFunctionExists.c.o -o cmTC_70ee1 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kgp3NZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "third_party/glfw/src/CMakeLists.txt:176 (find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9be6f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9be6f.dir/build.make CMakeFiles/cmTC_9be6f.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy'
+        Building C object CMakeFiles/cmTC_9be6f.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_9be6f.dir/CheckFunctionExists.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy/CheckFunctionExists.c
+        Linking C executable cmTC_9be6f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9be6f.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_9be6f.dir/CheckFunctionExists.c.o -o cmTC_9be6f  -lICE 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9nrKiy'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_stdc89"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_stdc89"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2e29d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2e29d.dir/build.make CMakeFiles/cmTC_2e29d.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR'
+        Building C object CMakeFiles/cmTC_2e29d.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_stdc89  -std=c89 -o CMakeFiles/cmTC_2e29d.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR/src.c
+        Linking C executable cmTC_2e29d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e29d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_2e29d.dir/src.c.o -o cmTC_2e29d 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-AFPOwR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_pedantic"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_pedantic"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c6e76/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c6e76.dir/build.make CMakeFiles/cmTC_c6e76.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd'
+        Building C object CMakeFiles/cmTC_c6e76.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_pedantic  -std=c89    -pedantic -o CMakeFiles/cmTC_c6e76.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd/src.c
+        Linking C executable cmTC_c6e76
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6e76.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89  CMakeFiles/cmTC_c6e76.dir/src.c.o -o cmTC_c6e76 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-C4oHSd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wall"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wall"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cab18/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cab18.dir/build.make CMakeFiles/cmTC_cab18.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS'
+        Building C object CMakeFiles/cmTC_cab18.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wall  -std=c89 -pedantic    -Wall -o CMakeFiles/cmTC_cab18.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS/src.c
+        Linking C executable cmTC_cab18
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cab18.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic  CMakeFiles/cmTC_cab18.dir/src.c.o -o cmTC_cab18 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JTeSyS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wextra"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wextra"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_473c7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_473c7.dir/build.make CMakeFiles/cmTC_473c7.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8'
+        Building C object CMakeFiles/cmTC_473c7.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wextra  -std=c89 -pedantic -Wall    -Wextra -o CMakeFiles/cmTC_473c7.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8/src.c
+        Linking C executable cmTC_473c7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_473c7.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall  CMakeFiles/cmTC_473c7.dir/src.c.o -o cmTC_473c7 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9sOsN8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Werror"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Werror"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c4d32/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c4d32.dir/build.make CMakeFiles/cmTC_c4d32.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM'
+        Building C object CMakeFiles/cmTC_c4d32.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Werror  -std=c89 -pedantic -Wall -Wextra    -Werror -o CMakeFiles/cmTC_c4d32.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM/src.c
+        Linking C executable cmTC_c4d32
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4d32.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra  CMakeFiles/cmTC_c4d32.dir/src.c.o -o cmTC_c4d32 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-9y5OdM'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wstrictprototypes"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wstrictprototypes"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ea901/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ea901.dir/build.make CMakeFiles/cmTC_ea901.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd'
+        Building C object CMakeFiles/cmTC_ea901.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wstrictprototypes  -std=c89 -pedantic -Wall -Wextra -Werror    -Wstrict-prototypes -o CMakeFiles/cmTC_ea901.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd/src.c
+        Linking C executable cmTC_ea901
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea901.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror  CMakeFiles/cmTC_ea901.dir/src.c.o -o cmTC_ea901 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-kCxUSd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wwritestrings"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wwritestrings"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2d535/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2d535.dir/build.make CMakeFiles/cmTC_2d535.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde'
+        Building C object CMakeFiles/cmTC_2d535.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wwritestrings  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes    -Wwrite-strings -o CMakeFiles/cmTC_2d535.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde/src.c
+        Linking C executable cmTC_2d535
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d535.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes  CMakeFiles/cmTC_2d535.dir/src.c.o -o cmTC_2d535 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-78hjde'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wshadow"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wshadow"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_65792/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_65792.dir/build.make CMakeFiles/cmTC_65792.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5'
+        Building C object CMakeFiles/cmTC_65792.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wshadow  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings    -Wshadow -o CMakeFiles/cmTC_65792.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5/src.c
+        Linking C executable cmTC_65792
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65792.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings  CMakeFiles/cmTC_65792.dir/src.c.o -o cmTC_65792 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-IHdST5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Winitself"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Winitself"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1fbdb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1fbdb.dir/build.make CMakeFiles/cmTC_1fbdb.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq'
+        Building C object CMakeFiles/cmTC_1fbdb.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Winitself  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow    -Winit-self -o CMakeFiles/cmTC_1fbdb.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq/src.c
+        Linking C executable cmTC_1fbdb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fbdb.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow  CMakeFiles/cmTC_1fbdb.dir/src.c.o -o cmTC_1fbdb 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-qhdCBq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wcastalign"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wcastalign"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ca28/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6ca28.dir/build.make CMakeFiles/cmTC_6ca28.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p'
+        Building C object CMakeFiles/cmTC_6ca28.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wcastalign  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self    -Wcast-align -o CMakeFiles/cmTC_6ca28.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p/src.c
+        Linking C executable cmTC_6ca28
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ca28.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self  CMakeFiles/cmTC_6ca28.dir/src.c.o -o cmTC_6ca28 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-694m0p'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wformat2"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wformat2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9080c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9080c.dir/build.make CMakeFiles/cmTC_9080c.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham'
+        Building C object CMakeFiles/cmTC_9080c.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wformat2  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align    -Wformat=2 -o CMakeFiles/cmTC_9080c.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham/src.c
+        Linking C executable cmTC_9080c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9080c.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align  CMakeFiles/cmTC_9080c.dir/src.c.o -o cmTC_9080c 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-GHuham'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wmissingprototypes"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wmissingprototypes"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_34702/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_34702.dir/build.make CMakeFiles/cmTC_34702.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16'
+        Building C object CMakeFiles/cmTC_34702.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wmissingprototypes  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2    -Wmissing-prototypes -o CMakeFiles/cmTC_34702.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16/src.c
+        Linking C executable cmTC_34702
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34702.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2  CMakeFiles/cmTC_34702.dir/src.c.o -o cmTC_34702 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2o3O16'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wstrictoverflow2"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wstrictoverflow2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_55b8b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_55b8b.dir/build.make CMakeFiles/cmTC_55b8b.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2'
+        Building C object CMakeFiles/cmTC_55b8b.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wstrictoverflow2  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes    -Wstrict-overflow=2 -o CMakeFiles/cmTC_55b8b.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2/src.c
+        Linking C executable cmTC_55b8b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55b8b.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes  CMakeFiles/cmTC_55b8b.dir/src.c.o -o cmTC_55b8b 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-sqxVd2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wcastqual"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wcastqual"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e4087/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e4087.dir/build.make CMakeFiles/cmTC_e4087.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG'
+        Building C object CMakeFiles/cmTC_e4087.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wcastqual  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2    -Wcast-qual -o CMakeFiles/cmTC_e4087.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG/src.c
+        Linking C executable cmTC_e4087
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4087.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2  CMakeFiles/cmTC_e4087.dir/src.c.o -o cmTC_e4087 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-eQfCAG'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wundef"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wundef"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_80cba/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_80cba.dir/build.make CMakeFiles/cmTC_80cba.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP'
+        Building C object CMakeFiles/cmTC_80cba.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wundef  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual    -Wundef -o CMakeFiles/cmTC_80cba.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP/src.c
+        Linking C executable cmTC_80cba
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80cba.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual  CMakeFiles/cmTC_80cba.dir/src.c.o -o cmTC_80cba 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-cC7ARP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wswitchdefault"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wswitchdefault"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a126e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a126e.dir/build.make CMakeFiles/cmTC_a126e.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW'
+        Building C object CMakeFiles/cmTC_a126e.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wswitchdefault  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef    -Wswitch-default -o CMakeFiles/cmTC_a126e.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW/src.c
+        Linking C executable cmTC_a126e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a126e.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef  CMakeFiles/cmTC_a126e.dir/src.c.o -o cmTC_a126e 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-n5SpIW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wconversion"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wconversion"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c70d4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c70d4.dir/build.make CMakeFiles/cmTC_c70d4.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8'
+        Building C object CMakeFiles/cmTC_c70d4.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wconversion  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default    -Wconversion -o CMakeFiles/cmTC_c70d4.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8/src.c
+        Linking C executable cmTC_c70d4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c70d4.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default  CMakeFiles/cmTC_c70d4.dir/src.c.o -o cmTC_c70d4 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-VkEuG8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wccompat"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wccompat"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5ef5a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5ef5a.dir/build.make CMakeFiles/cmTC_5ef5a.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk'
+        Building C object CMakeFiles/cmTC_5ef5a.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wccompat  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion    -Wc++-compat -o CMakeFiles/cmTC_5ef5a.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk/src.c
+        Linking C executable cmTC_5ef5a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ef5a.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion  CMakeFiles/cmTC_5ef5a.dir/src.c.o -o cmTC_5ef5a 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DdwErk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_fstackprotectorstrong"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_fstackprotectorstrong"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_102f7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_102f7.dir/build.make CMakeFiles/cmTC_102f7.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69'
+        Building C object CMakeFiles/cmTC_102f7.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_fstackprotectorstrong  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat    -fstack-protector-strong -o CMakeFiles/cmTC_102f7.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69/src.c
+        Linking C executable cmTC_102f7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_102f7.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat  CMakeFiles/cmTC_102f7.dir/src.c.o -o cmTC_102f7 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1nXX69'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wcomma"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wcomma"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0678d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0678d.dir/build.make CMakeFiles/cmTC_0678d.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv'
+        Building C object CMakeFiles/cmTC_0678d.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wcomma  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong    -Wcomma -o CMakeFiles/cmTC_0678d.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv/src.c
+        cc: error: unrecognized command-line option '-Wcomma'; did you mean '-Wcomment'?
+        gmake[1]: *** [CMakeFiles/cmTC_0678d.dir/build.make:78: CMakeFiles/cmTC_0678d.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1eoJrv'
+        gmake: *** [Makefile:127: cmTC_0678d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wdoublepromotion"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wdoublepromotion"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7cae8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7cae8.dir/build.make CMakeFiles/cmTC_7cae8.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN'
+        Building C object CMakeFiles/cmTC_7cae8.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wdoublepromotion  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong    -Wdouble-promotion -o CMakeFiles/cmTC_7cae8.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN/src.c
+        Linking C executable cmTC_7cae8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7cae8.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong  CMakeFiles/cmTC_7cae8.dir/src.c.o -o cmTC_7cae8 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-upoPxN'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wparentheses"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wparentheses"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_deda9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_deda9.dir/build.make CMakeFiles/cmTC_deda9.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw'
+        Building C object CMakeFiles/cmTC_deda9.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wparentheses  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion    -Wparentheses -o CMakeFiles/cmTC_deda9.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw/src.c
+        Linking C executable cmTC_deda9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_deda9.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion  CMakeFiles/cmTC_deda9.dir/src.c.o -o cmTC_deda9 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-1V2lbw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wformatoverflow"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wformatoverflow"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e1cee/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e1cee.dir/build.make CMakeFiles/cmTC_e1cee.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0'
+        Building C object CMakeFiles/cmTC_e1cee.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wformatoverflow  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses    -Wformat-overflow -o CMakeFiles/cmTC_e1cee.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0/src.c
+        Linking C executable cmTC_e1cee
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1cee.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses  CMakeFiles/cmTC_e1cee.dir/src.c.o -o cmTC_e1cee 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-DR1Qn0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wunusedmacros"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wunusedmacros"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8a9d0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8a9d0.dir/build.make CMakeFiles/cmTC_8a9d0.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth'
+        Building C object CMakeFiles/cmTC_8a9d0.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wunusedmacros  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow    -Wunused-macros -o CMakeFiles/cmTC_8a9d0.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth/src.c
+        Linking C executable cmTC_8a9d0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a9d0.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow  CMakeFiles/cmTC_8a9d0.dir/src.c.o -o cmTC_8a9d0 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-JobBth'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wmissingvariabledeclarations"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wmissingvariabledeclarations"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0ab56/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0ab56.dir/build.make CMakeFiles/cmTC_0ab56.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h'
+        Building C object CMakeFiles/cmTC_0ab56.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wmissingvariabledeclarations  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros    -Wmissing-variable-declarations -o CMakeFiles/cmTC_0ab56.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h/src.c
+        cc: error: unrecognized command-line option '-Wmissing-variable-declarations'; did you mean '-Wmissing-declarations'?
+        gmake[1]: *** [CMakeFiles/cmTC_0ab56.dir/build.make:78: CMakeFiles/cmTC_0ab56.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-NUpj4h'
+        gmake: *** [Makefile:127: cmTC_0ab56/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wusedbutmarkedunused"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wusedbutmarkedunused"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bae4d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bae4d.dir/build.make CMakeFiles/cmTC_bae4d.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L'
+        Building C object CMakeFiles/cmTC_bae4d.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wusedbutmarkedunused  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros    -Wused-but-marked-unused -o CMakeFiles/cmTC_bae4d.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L/src.c
+        cc: error: unrecognized command-line option '-Wused-but-marked-unused'
+        gmake[1]: *** [CMakeFiles/cmTC_bae4d.dir/build.make:78: CMakeFiles/cmTC_bae4d.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-3fnl2L'
+        gmake: *** [Makefile:127: cmTC_bae4d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_Wswitchenum"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_Wswitchenum"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f1bc1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f1bc1.dir/build.make CMakeFiles/cmTC_f1bc1.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w'
+        Building C object CMakeFiles/cmTC_f1bc1.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_Wswitchenum  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros    -Wswitch-enum -o CMakeFiles/cmTC_f1bc1.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w/src.c
+        Linking C executable cmTC_f1bc1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1bc1.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros  CMakeFiles/cmTC_f1bc1.dir/src.c.o -o cmTC_f1bc1 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-zepJ5w'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "third_party/cjson/CMakeLists.txt:102 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test FLAG_SUPPORTED_fvisibilityhidden"
+    directories:
+      source: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj"
+      binary: "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "FLAG_SUPPORTED_fvisibilityhidden"
+      cached: true
+      stdout: |
+        Change Dir: '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7cfb5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7cfb5.dir/build.make CMakeFiles/cmTC_7cfb5.dir/build
+        gmake[1]: Entering directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj'
+        Building C object CMakeFiles/cmTC_7cfb5.dir/src.c.o
+        /usr/bin/cc -DFLAG_SUPPORTED_fvisibilityhidden  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum    -fvisibility=hidden -o CMakeFiles/cmTC_7cfb5.dir/src.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj/src.c
+        Linking C executable cmTC_7cfb5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7cfb5.dir/link.txt --verbose=1
+        /usr/bin/cc  -std=c89 -pedantic -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wshadow -Winit-self -Wcast-align -Wformat=2 -Wmissing-prototypes -Wstrict-overflow=2 -Wcast-qual -Wundef -Wswitch-default -Wconversion -Wc++-compat -fstack-protector-strong -Wdouble-promotion -Wparentheses -Wformat-overflow -Wunused-macros -Wswitch-enum  CMakeFiles/cmTC_7cfb5.dir/src.c.o -o cmTC_7cfb5 
+        gmake[1]: Leaving directory '/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/CMakeFiles/CMakeScratch/TryCompile-2Ic7Qj'
+        
+      exitCode: 0
+...
