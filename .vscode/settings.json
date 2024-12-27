@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "gooey_messagebox.h": "c",
-        "gooey_widgets_internal.h": "c",
-        "gooey_common.h
-.h": "c",
-        "gooey_event_internal.h": "c"
-    }
-}
