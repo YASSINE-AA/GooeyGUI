@@ -1,58 +1,48 @@
 #include "build/include/gooey.h"
 #include <stdio.h>
+#include <string.h>
+GooeyWindow win;
+GooeyLayout *layout;
+GooeyTextbox *inputBox;
+GooeyList *list;
+int taskCount = 0;
 
-int red = 0, green = 0, blue = 0;
-GooeyCanvas *canvas;
-GooeyWindow childWindow;
-
-void updateColor()
+void onAddTask(void)
 {
-    LOG_CRITICAL("r=%d g=%d b=%d", red, green, blue);
-    char color[9];
-    snprintf(color, sizeof(color), "0x%02X%02X%02X", red, green, blue);
-    GooeyCanvas_DrawRectangle(canvas, 0, 0, 200, 200, color, true);
-    GooeyWindow_Redraw(&childWindow);
-}
-
-void onRedChange(long value)
-{
-    red = value;
-    updateColor();
-}
-void onGreenChange(long value)
-{
-    green = value;
-    updateColor();
-}
-void onBlueChange(long value)
-{
-    blue = value;
-    updateColor();
+    if (taskCount < 128)
+    {
+        char title[20];
+        sprintf(title, "Task %d", taskCount + 1);
+        GooeyList_AddItem(list, title, GooeyTextbox_GetText(inputBox), NULL);
+        taskCount++;
+    }
 }
 
 int main()
 {
     Gooey_Init(GLFW);
 
-    GooeyWindow win = GooeyWindow_Create("RGB Mixer", 420, 130, true);
-    GooeyLayout *layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 10, 30, 380, 380);
+    win = GooeyWindow_Create("To-Do List", 400, 300, true);
+    GooeyWindow_MakeResizable(&win, 0);
+    layout = GooeyLayout_Create(&win, LAYOUT_VERTICAL, 10, 20, 380, 280);
+    GooeyLayout *input_layout = GooeyLayout_Create(&win, LAYOUT_HORIZONTAL, 0, 0, 0, 0);
 
-    GooeySlider *redSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onRedChange);
-    GooeyLayout_AddChild(layout, redSlider);
+    inputBox = GooeyTextBox_Add(&win, 0, 0, 300, 30, "Add task", NULL);
+    GooeyButton *addButton = GooeyButton_Add(&win, "Add Task", 0, 0, 20, 30, onAddTask);
+    list = GooeyList_Add(&win, 0, 0, 380, 250);
 
-    GooeySlider *greenSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onGreenChange);
-    GooeyLayout_AddChild(layout, greenSlider);
+    GooeyLayout_AddChild(input_layout, inputBox);
 
-    GooeySlider *blueSlider = GooeySlider_Add(&win, 0, 0, 200, 0, 255, true, onBlueChange);
-    GooeyLayout_AddChild(layout, blueSlider);
+    GooeyLayout_AddChild(input_layout, addButton);
+
+    GooeyLayout_AddChild(layout, input_layout);
+
+    GooeyLayout_AddChild(layout, list);
 
     GooeyLayout_Build(layout);
 
-    childWindow = GooeyWindow_CreateChild("Color Preview", 220, 220, true);
-    canvas = GooeyCanvas_Add(&childWindow, 10, 10, 200, 200);
-
-    GooeyWindow_Run(2, &win, &childWindow);
-    GooeyWindow_Cleanup(2, &win, &childWindow);
+    GooeyWindow_Run(1, &win);
+    GooeyWindow_Cleanup(1, &win);
 
     return 0;
 }

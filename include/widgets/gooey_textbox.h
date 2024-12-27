@@ -50,7 +50,7 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *event);
  * @param textbox The textbox to retrieve text from.
  * @return The current text of the textbox.
  */
-const char *GooeyTextbox_getText(GooeyTextbox *textbox);
+const char *GooeyTextbox_GetText(GooeyTextbox *textbox);
 
 /**
  * @brief Sets the text of the textbox.

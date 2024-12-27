@@ -39,7 +39,7 @@ GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
     return &win->textboxes[win->textboxes_count - 1];
 }
 
-const char *GooeyTextbox_getText(GooeyTextbox *textbox)
+const char *GooeyTextbox_GetText(GooeyTextbox *textbox)
 {
     if (!textbox)
     {
