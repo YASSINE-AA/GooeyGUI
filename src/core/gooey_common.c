@@ -68,7 +68,7 @@ bool GooeyWindow_HandleCursorChange(GooeyWindow *win, GOOEY_CURSOR *cursor, int 
     return false;
 }
 
-void GooeyWindow_setTheme(const char *fontPath)
+void GooeyWindow_SetTheme(const char *fontPath)
 {
 
     if (active_backend)
@@ -238,7 +238,7 @@ GooeyWindow GooeyWindow_CreateChild(const char *title, int width, int height, bo
         LOG_CRITICAL("Failed to allocate memory for GooeyWindow.");
         return (GooeyWindow){0}; // TODO: Need to handle this in all window-dependant functions.
     }
-    
+
     win.menu = NULL;
     win.visibility = visibility;
     win.canvas_count = 0;
