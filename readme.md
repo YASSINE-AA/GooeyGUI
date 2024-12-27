@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YASSINE-AA/GooeyDocs/6909ee12d6265d54671ad0eb570584db5e1f2455/gooey.png" width=128>
+  <img src="gooey.png" width=128>
 </p>
 
 # Gooey GUI Library
