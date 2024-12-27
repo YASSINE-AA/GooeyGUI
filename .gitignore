@@ -1,8 +1,8 @@
-build/
-.vscode/
-test_app/
+build
+.vscode
+test_app
 CMakeCache.txt
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
-CMakeFiles/
+CMakeFiles
 *.cmake
