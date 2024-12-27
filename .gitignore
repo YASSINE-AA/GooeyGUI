@@ -6,3 +6,4 @@ CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
 CMakeFiles
 *.cmake
+third_party
