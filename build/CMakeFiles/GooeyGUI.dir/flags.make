@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DGooeyGUI_EXPORTS
 
-C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include
+C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/internal -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/freetype/include
 
-C_FLAGS = -fPIC
+C_FLAGS =  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -g3 -fsanitize=address,undefined -fPIC -fPIC
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing
+# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
-# Build directory: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+# Source directory: /home/yassine-ahmed-ali/Documents/GooeyGUI
+# Build directory: /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

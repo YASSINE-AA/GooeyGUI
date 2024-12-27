@@ -20,6 +20,7 @@
 GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
                                  void (*callback)(bool checked))
 {
+    win->checkboxes[win->checkbox_count] = (GooeyCheckbox) {0};
     GooeyCheckbox *checkbox = &win->checkboxes[win->checkbox_count++];
     checkbox->core.type = WIDGET_CHECKBOX, checkbox->core.x = x;
     checkbox->core.y = y;

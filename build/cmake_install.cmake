@@ -1,4 +1,4 @@
-# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,37 +44,37 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/core/gooey_common.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/core/gooey_backend_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glfw/glfw_utils.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/glad/glad.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/linmath/linmath.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/gooey.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_button.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_canvas.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_checkbox.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_dropdown.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_label.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_layout.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_list.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_menu.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_messagebox.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_radiobutton.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_slider.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_textbox.h"
-    "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/signals/gooey_signals.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/core/gooey_common.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/core/gooey_backend_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/glfw/glfw_utils.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/glad/glad.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/linmath/linmath.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/logger/gooey_logger_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/theme/gooey_theme_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/gooey_event_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/internal/gooey_widgets_internal.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/gooey.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_button.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_canvas.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_checkbox.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_dropdown.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_label.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_layout.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_list.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_menu.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_messagebox.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_radiobutton.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_slider.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_textbox.h"
+    "/home/yassine-ahmed-ali/Documents/GooeyGUI/include/signals/gooey_signals.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/cmake_install.cmake")
-  include("/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/cmake_install.cmake")
-  include("/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/cmake_install.cmake")
+  include("/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/cmake_install.cmake")
+  include("/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/cmake_install.cmake")
+  include("/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/freetype/cmake_install.cmake")
 
 endif()
 
@@ -86,5 +86,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

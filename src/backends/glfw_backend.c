@@ -465,7 +465,7 @@ int glfw_init()
     ctx.text_vaos = (GLuint *)malloc(sizeof(GLuint) * 100);
     ctx.shape_vaos = (GLuint *)malloc(sizeof(GLuint) * 100);
     ctx.user_ptrs = (userPtr *)malloc(sizeof(userPtr) * 100);
-    ctx.text_programs = (GLuint *)malloc(sizeof(GLuint *) * 100);
+    ctx.text_programs = (GLuint *)malloc(sizeof(GLuint) * 100);
     ctx.current_event->type = -1;
     ctx.current_event->attached_window = -1;
     ctx.current_event->click.x = -1;
@@ -606,7 +606,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
 
     ctx.window = glfwCreateWindow(width, height, title, NULL, NULL);
     glfwSetWindowSizeLimits(ctx.window, width, height, GLFW_DONT_CARE, GLFW_DONT_CARE);
-    GooeyWindow window;
+    GooeyWindow window = (GooeyWindow) {0};
 
     window.creation_id = ctx.window_count;
 
@@ -633,6 +633,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
 
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
+        
     glfw_init_ft();
 
     glfw_setup_shared();
@@ -722,7 +723,7 @@ void glfw_hide_current_child(void)
     }
 }
 
-void glfw_destroy_window()
+void glfw_destroy_windows()
 {
     if (ctx.window)
     {
@@ -910,12 +911,18 @@ void glfw_set_cursor(GOOEY_CURSOR cursor)
     }
 }
 
+void glfw_destroy_window_from_id(int window_id)
+{
+    glfwDestroyWindow(ctx.child_windows[window_id]);
+}
+
 GooeyBackend glfw_backend = {
     .Init = glfw_init,
     .CreateWindow = glfw_create_window,
     .SpawnWindow = glfw_spawn_window,
     .GetWinDim = glfw_window_dim,
-    .DestroyWindow = glfw_destroy_window,
+    .DestroyWindows = glfw_destroy_windows,
+    .DestroyWindowFromId = glfw_destroy_window_from_id,
     .MakeWindowResizable = glfw_set_window_resizable,
     .GetCurrentClickedWindow = glfw_get_current_clicked_window,
     .HideCurrentChild = glfw_hide_current_child,

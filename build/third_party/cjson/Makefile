@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CPackSourceConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson//CMakeFiles/progress.marks
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson//CMakeFiles/progress.marks
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/clean
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,22 +178,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third_party/cjson/CMakeFiles/cjson.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/cjson.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/cjson.dir/rule
 .PHONY : third_party/cjson/CMakeFiles/cjson.dir/rule
 
 # Convenience name for target.
@@ -202,12 +202,12 @@ cjson: third_party/cjson/CMakeFiles/cjson.dir/rule
 
 # fast build rule for target.
 cjson/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/build
 .PHONY : cjson/fast
 
 # Convenience name for target.
 third_party/cjson/CMakeFiles/cJSON_test.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/cJSON_test.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/cJSON_test.dir/rule
 .PHONY : third_party/cjson/CMakeFiles/cJSON_test.dir/rule
 
 # Convenience name for target.
@@ -216,12 +216,12 @@ cJSON_test: third_party/cjson/CMakeFiles/cJSON_test.dir/rule
 
 # fast build rule for target.
 cJSON_test/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/build
 .PHONY : cJSON_test/fast
 
 # Convenience name for target.
 third_party/cjson/CMakeFiles/check.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/check.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/cjson/CMakeFiles/check.dir/rule
 .PHONY : third_party/cjson/CMakeFiles/check.dir/rule
 
 # Convenience name for target.
@@ -230,7 +230,7 @@ check: third_party/cjson/CMakeFiles/check.dir/rule
 
 # fast build rule for target.
 check/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/check.dir/build.make third_party/cjson/CMakeFiles/check.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/check.dir/build.make third_party/cjson/CMakeFiles/check.dir/build
 .PHONY : check/fast
 
 cJSON.o: cJSON.c.o
@@ -238,7 +238,7 @@ cJSON.o: cJSON.c.o
 
 # target to build an object file
 cJSON.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.o
 .PHONY : cJSON.c.o
 
 cJSON.i: cJSON.c.i
@@ -246,7 +246,7 @@ cJSON.i: cJSON.c.i
 
 # target to preprocess a source file
 cJSON.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.i
 .PHONY : cJSON.c.i
 
 cJSON.s: cJSON.c.s
@@ -254,7 +254,7 @@ cJSON.s: cJSON.c.s
 
 # target to generate assembly for a file
 cJSON.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cjson.dir/build.make third_party/cjson/CMakeFiles/cjson.dir/cJSON.c.s
 .PHONY : cJSON.c.s
 
 test.o: test.c.o
@@ -262,7 +262,7 @@ test.o: test.c.o
 
 # target to build an object file
 test.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o
 .PHONY : test.c.o
 
 test.i: test.c.i
@@ -270,7 +270,7 @@ test.i: test.c.i
 
 # target to preprocess a source file
 test.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.i
 .PHONY : test.c.i
 
 test.s: test.c.s
@@ -278,7 +278,7 @@ test.s: test.c.s
 
 # target to generate assembly for a file
 test.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/cjson/CMakeFiles/cJSON_test.dir/build.make third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.s
 .PHONY : test.c.s
 
 # Help Target
@@ -316,6 +316,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

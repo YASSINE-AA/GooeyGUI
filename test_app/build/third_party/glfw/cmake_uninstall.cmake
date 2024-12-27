@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/install_manifest.txt" files)
+file(READ "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

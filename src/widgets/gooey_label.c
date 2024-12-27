@@ -19,6 +19,7 @@
 
 GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, float font_size, int x, int y)
 {
+    win->labels[win->label_count] = (GooeyLabel) {0};
     GooeyLabel *label = &win->labels[win->label_count++];
     label->core.type = WIDGET_LABEL;
     label->core.x = x;
@@ -32,10 +33,11 @@ GooeyLabel *GooeyLabel_Add(GooeyWindow *win, const char *text, float font_size, 
     return label;
 }
 
-void *GooeyLabel_SetColor(GooeyLabel *label, const char *color)
+void GooeyLabel_SetColor(GooeyLabel *label, const char *color)
 {
     unsigned long color_long = (unsigned long)strtol(color, NULL, 0);
     label->color = color_long;
+
 }
 
 void GooeyLabel_SetText(GooeyLabel *label, const char *text)
@@ -49,6 +51,6 @@ void GooeyLabel_Draw(GooeyWindow *win)
     for (int i = 0; i < win->label_count; ++i)
     {
 
-        active_backend->DrawText(win->labels[i].core.x, win->labels[i].core.y, win->labels[i].text, win->labels[i].color != -1 ? win->labels[i].color : active_theme->neutral, win->labels[i].font_size, win->creation_id);
+        active_backend->DrawText(win->labels[i].core.x, win->labels[i].core.y, win->labels[i].text, win->labels[i].color != (unsigned long) -1 ? win->labels[i].color : active_theme->neutral, win->labels[i].font_size, win->creation_id);
     }
 }

@@ -20,6 +20,7 @@
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, char *placeholder, void (*onTextChanged)(char *text))
 {
+    win->textboxes[win->textboxes_count] = (GooeyTextbox) {0};
     win->textboxes[win->textboxes_count].core.type = WIDGET_TEXTBOX;
     win->textboxes[win->textboxes_count].core.x = x;
     win->textboxes[win->textboxes_count].core.y = y;
@@ -99,7 +100,7 @@ void GooeyTextbox_Draw(GooeyWindow *win)
         else
         {
 
-            if (win->textboxes[index].placeholder && strlen(win->textboxes[index].text) == 0)
+            if (strcmp(win->textboxes[index].placeholder, "") !=0 && strlen(win->textboxes[index].text) == 0)
                 active_backend->DrawText(text_x, text_y, win->textboxes[index].placeholder, active_theme->neutral, 0.25f, win->creation_id);
         }
     }

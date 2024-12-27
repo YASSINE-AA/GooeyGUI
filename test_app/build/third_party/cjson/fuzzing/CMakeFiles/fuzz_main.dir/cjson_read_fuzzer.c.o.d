@@ -1,5 +1,5 @@
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/cjson_read_fuzzer.c \
  /usr/include/stdc-predef.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -21,4 +21,4 @@ third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/string.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/../cJSON.h
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/../cJSON.h

@@ -1,9 +1,9 @@
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_list.c \
  /usr/include/stdc-predef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_list.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/core/gooey_backend_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/core/gooey_common.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_list.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/core/gooey_backend_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/core/gooey_common.h \
  /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -29,9 +29,9 @@ CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h /usr/include/ctype.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_widgets_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/gooey_widgets_internal.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/theme/gooey_theme_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/theme/gooey_theme_internal.h \
  /usr/local/include/cjson/cJSON.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
@@ -66,17 +66,17 @@ CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/gooey_event_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_button.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_canvas.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_checkbox.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_dropdown.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_label.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_layout.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_menu.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_messagebox.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_radiobutton.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_slider.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/widgets/gooey_textbox.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/signals/gooey_signals.h
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/gooey_event_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/logger/gooey_logger_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_button.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_canvas.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_checkbox.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_dropdown.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_label.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_layout.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_menu.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_messagebox.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_radiobutton.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_slider.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/widgets/gooey_textbox.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/signals/gooey_signals.h

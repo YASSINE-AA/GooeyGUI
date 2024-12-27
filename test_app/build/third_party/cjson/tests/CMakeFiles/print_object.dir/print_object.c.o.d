@@ -1,10 +1,10 @@
 third_party/cjson/tests/CMakeFiles/print_object.dir/print_object.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_object.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_object.c \
  /usr/include/stdc-predef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/examples/unity_config.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity_internals.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/../examples/unity_config.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/examples/unity_config.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/unity.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/unity_internals.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/../examples/unity_config.h \
  /usr/include/setjmp.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -47,12 +47,12 @@ third_party/cjson/tests/CMakeFiles/print_object.dir/print_object.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/common.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/../cJSON.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/common.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/../cJSON.c \
  /usr/include/string.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/ctype.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/../cJSON.h
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/../cJSON.h

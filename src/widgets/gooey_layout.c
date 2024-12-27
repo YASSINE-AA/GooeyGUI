@@ -26,6 +26,7 @@ GooeyLayout *GooeyLayout_Create(GooeyWindow *win, GooeyLayoutType layout_type,
                 "Window not initialized or unable to add more layouts (full).\n");
         return NULL;
     }
+    win->layouts[win->layout_count] = (GooeyLayout) {0}; 
     GooeyLayout *layout = &win->layouts[win->layout_count++];
 
     layout->core.type = WIDGET_LAYOUT;

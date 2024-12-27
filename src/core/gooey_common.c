@@ -78,29 +78,137 @@ void GooeyWindow_setTheme(const char *fontPath)
     }
 }
 
+bool GooeyWindow_AllocateResources(GooeyWindow *win)
+{
+    if (!(win->buttons = malloc(sizeof(GooeyButton) * MAX_WIDGETS)) ||
+        !(win->labels = malloc(sizeof(GooeyLabel) * MAX_WIDGETS)) ||
+        !(win->checkboxes = malloc(sizeof(GooeyCheckbox) * MAX_WIDGETS)) ||
+        !(win->radio_buttons = malloc(sizeof(GooeyRadioButton) * MAX_WIDGETS)) ||
+        !(win->radio_button_groups = malloc(sizeof(GooeyRadioButtonGroup) * MAX_WIDGETS)) ||
+        !(win->sliders = malloc(sizeof(GooeySlider) * MAX_WIDGETS)) ||
+        !(win->dropdowns = malloc(sizeof(GooeyDropdown) * MAX_WIDGETS)) ||
+        !(win->textboxes = malloc(sizeof(GooeyTextbox) * MAX_WIDGETS)) ||
+        !(win->layouts = malloc(sizeof(GooeyLayout) * MAX_WIDGETS)) ||
+        !(win->lists = malloc(sizeof(GooeyList) * MAX_WIDGETS)) ||
+        !(win->canvas = malloc(sizeof(GooeyCanvas) * MAX_WIDGETS)) ||
+        !(win->widgets = malloc(sizeof(GooeyWidget *) * MAX_WIDGETS)))
+    {
+        return false;
+    }
+
+    return true;
+}
+
+void GooeyWindow_FreeResources(GooeyWindow *win)
+{
+    for (int i = 0; i < win->canvas_count; ++i)
+    {
+        if (!win->canvas[i].elements)
+            continue;
+
+        for (int j = 0; j < win->canvas[i].element_count; ++j)
+        {
+            CanvaElement *element = &win->canvas[i].elements[j];
+            if (element->args)
+            {
+                free(element->args);
+                element->args = NULL;
+            }
+        }
+
+        free(win->canvas[i].elements);
+        win->canvas[i].elements = NULL;
+    }
+
+    if (win->canvas)
+    {
+        free(win->canvas);
+        win->canvas = NULL;
+        win->canvas_count = 0;
+    }
+
+    if (win->buttons)
+    {
+        free(win->buttons);
+        win->buttons = NULL;
+    }
+    if (win->labels)
+    {
+        free(win->labels);
+        win->labels = NULL;
+    }
+    if (win->checkboxes)
+    {
+        free(win->checkboxes);
+        win->checkboxes = NULL;
+    }
+    if (win->radio_buttons)
+    {
+        free(win->radio_buttons);
+        win->radio_buttons = NULL;
+    }
+    if (win->radio_button_groups)
+    {
+        free(win->radio_button_groups);
+        win->radio_button_groups = NULL;
+    }
+    if (win->menu)
+    {
+        free(win->menu);
+        win->menu = NULL;
+    }
+    if (win->sliders)
+    {
+        free(win->sliders);
+        win->sliders = NULL;
+    }
+    if (win->dropdowns)
+    {
+        free(win->dropdowns);
+        win->dropdowns = NULL;
+    }
+    if (win->textboxes)
+    {
+        free(win->textboxes);
+        win->textboxes = NULL;
+    }
+    if (win->layouts)
+    {
+        free(win->layouts);
+        win->layouts = NULL;
+    }
+
+    if (win->lists)
+    {
+        for (int i = 0; i < win->list_count; ++i)
+        {
+            if (win->lists[i].items)
+            {
+                free(win->lists[i].items);
+                win->lists[i].items = NULL;
+            }
+        }
+        free(win->lists);
+        win->lists = NULL;
+    }
+    if (win->widgets)
+    {
+        free(win->widgets);
+        win->widgets = NULL;
+    }
+}
+
 GooeyWindow GooeyWindow_Create(const char *title, int width, int height, bool visibilty)
 {
-    int window_width, window_height;
-
     GooeyWindow win = active_backend->CreateWindow(title, width, height);
-    active_backend->GetWinDim(&window_width, &window_height, win.creation_id);
-
     win.type = WINDOW_REGULAR;
-    win.buttons = malloc(sizeof(GooeyButton) * MAX_WIDGETS);
-    win.labels = malloc(sizeof(GooeyLabel) * MAX_WIDGETS);
-    win.checkboxes = malloc(sizeof(GooeyCheckbox) * MAX_WIDGETS);
-    win.radio_buttons = malloc(sizeof(GooeyRadioButton) * MAX_WIDGETS);
-    win.radio_button_groups = malloc(sizeof(GooeyRadioButtonGroup) * MAX_WIDGETS);
-
-    win.sliders = malloc(sizeof(GooeySlider) * MAX_WIDGETS);
-    win.dropdowns = malloc(sizeof(GooeyDropdown) * MAX_WIDGETS);
-    win.textboxes = malloc(sizeof(GooeyTextbox) * MAX_WIDGETS);
-    win.layouts = malloc(sizeof(GooeyLayout) * MAX_WIDGETS);
-    win.lists = malloc(sizeof(GooeyList) * MAX_WIDGETS);
-    win.canvas = malloc(sizeof(GooeyCanvas) * MAX_WIDGETS);
+    if (!GooeyWindow_AllocateResources(&win))
+    {
+        GooeyWindow_Cleanup(1, &win);
+        LOG_CRITICAL("Failed to allocate memory for GooeyWindow.");
+        exit(EXIT_FAILURE);
+    }
     win.menu = NULL;
-    win.widgets = malloc(sizeof(GooeyWidget *) * MAX_WIDGETS);
-
     win.visibility = visibilty;
     win.canvas_count = 0;
     win.button_count = 0;
@@ -123,21 +231,15 @@ GooeyWindow GooeyWindow_CreateChild(const char *title, int width, int height, bo
     GooeyWindow win = active_backend->SpawnWindow(title, width, height, visibility);
 
     win.type = WINDOW_REGULAR;
-    win.buttons = malloc(sizeof(GooeyButton) * MAX_WIDGETS);
-    win.labels = malloc(sizeof(GooeyLabel) * MAX_WIDGETS);
-    win.checkboxes = malloc(sizeof(GooeyCheckbox) * MAX_WIDGETS);
-    win.radio_buttons = malloc(sizeof(GooeyRadioButton) * MAX_WIDGETS);
-    win.radio_button_groups = malloc(sizeof(GooeyRadioButtonGroup) * MAX_WIDGETS);
-
-    win.sliders = malloc(sizeof(GooeySlider) * MAX_WIDGETS);
-    win.dropdowns = malloc(sizeof(GooeyDropdown) * MAX_WIDGETS);
-    win.textboxes = malloc(sizeof(GooeyTextbox) * MAX_WIDGETS);
-    win.layouts = malloc(sizeof(GooeyLayout) * MAX_WIDGETS);
-    win.lists = malloc(sizeof(GooeyList) * MAX_WIDGETS);
-    win.canvas = malloc(sizeof(GooeyCanvas) * MAX_WIDGETS);
-
+    if (!GooeyWindow_AllocateResources(&win))
+    {
+        GooeyWindow_FreeResources(&win);
+        active_backend->DestroyWindowFromId(win.creation_id);
+        LOG_CRITICAL("Failed to allocate memory for GooeyWindow.");
+        return (GooeyWindow){0}; // TODO: Need to handle this in all window-dependant functions.
+    }
+    
     win.menu = NULL;
-    win.widgets = malloc(sizeof(GooeyWidget *) * MAX_WIDGETS);
     win.visibility = visibility;
     win.canvas_count = 0;
     win.button_count = 0;
@@ -156,9 +258,7 @@ GooeyWindow GooeyWindow_CreateChild(const char *title, int width, int height, bo
 }
 
 void GooeyWindow_Redraw(GooeyWindow *win)
-
 {
-
     active_backend->Clear(win->creation_id);
     GooeyList_Draw(win);
     GooeyLabel_Draw(win);
@@ -193,103 +293,13 @@ void GooeyWindow_Cleanup(int num_windows, GooeyWindow *first_win, ...)
     for (int i = 0; i < num_windows; ++i)
     {
         win = windows[i];
-        for (int i = 0; i < win->canvas_count; ++i)
-        {
-            if (!win->canvas[i].elements)
-                continue;
-
-            for (int j = 0; j < win->canvas[i].element_count; ++j)
-            {
-                CanvaElement *element = &win->canvas[i].elements[j];
-                if (element->args)
-                {
-                    free(element->args);
-                    element->args = NULL;
-                }
-            }
-
-            free(win->canvas[i].elements);
-            win->canvas[i].elements = NULL;
-        }
-
-        if (win->canvas)
-        {
-            free(win->canvas);
-            win->canvas = NULL;
-            win->canvas_count = 0;
-        }
-
-        if (win->buttons)
-        {
-            free(win->buttons);
-            win->buttons = NULL;
-        }
-        if (win->labels)
-        {
-            free(win->labels);
-            win->labels = NULL;
-        }
-        if (win->checkboxes)
-        {
-            free(win->checkboxes);
-            win->checkboxes = NULL;
-        }
-        if (win->radio_buttons)
-        {
-            free(win->radio_buttons);
-            win->radio_buttons = NULL;
-        }
-        if (win->radio_button_groups)
-        {
-            free(win->radio_button_groups);
-            win->radio_button_groups = NULL;
-        }
-        if (win->menu)
-        {
-            free(win->menu);
-            win->menu = NULL;
-        }
-        if (win->sliders)
-        {
-            free(win->sliders);
-            win->sliders = NULL;
-        }
-        if (win->dropdowns)
-        {
-            free(win->dropdowns);
-            win->dropdowns = NULL;
-        }
-        if (win->textboxes)
-        {
-            free(win->textboxes);
-            win->textboxes = NULL;
-        }
-        if (win->layouts)
-        {
-            free(win->layouts);
-            win->layouts = NULL;
-        }
-
-        if (win->lists)
-        {
-            for (int i = 0; i < win->list_count; ++i)
-            {
-                if (win->lists[i].items)
-                {
-                    free(win->lists[i].items);
-                    win->lists[i].items = NULL;
-                }
-            }
-            free(win->lists);
-            win->lists = NULL;
-        }
+        GooeyWindow_FreeResources(win);
     }
-    LOG_INFO("Cleanup.");
-    active_backend->DestroyWindow();
+    active_backend->DestroyWindows();
     active_backend->Cleanup();
+
+    LOG_INFO("Cleanup.");
 }
-
-
 
 void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
 {

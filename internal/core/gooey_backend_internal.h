@@ -18,11 +18,11 @@ typedef struct GooeyBackend
     void (*Cleanup)();
     GooeyWindow (*CreateWindow)(const char *title, int width, int height);
     GooeyWindow (*SpawnWindow)(const char *title, int width, int height, bool visibility);
-
     void (*MakeWindowVisible)(int window_id, bool visibility);
     void (*MakeWindowResizable)(bool value, int window_id);
     int (*GetCurrentClickedWindow)(void);
-    void (*DestroyWindow)(void);
+    void (*DestroyWindows)(void);
+    void (*DestroyWindowFromId)(int window_id);
     void (*HideCurrentChild)(void);
     void (*SetContext)(GooeyWindow *win);
     void (*UpdateBackground)(void);
@@ -43,8 +43,6 @@ typedef struct GooeyBackend
     void (*SetCursor)(GOOEY_CURSOR cursor);
 } GooeyBackend;
 
-
-
 /**
  * @brief The currently active Gooey backend.
  */
@@ -61,6 +59,5 @@ extern GooeyBackend x11_backend;
 extern GooeyBackend glfw_backend;
 
 extern GooeyBackends ACTIVE_BACKEND;
-
 
 #endif

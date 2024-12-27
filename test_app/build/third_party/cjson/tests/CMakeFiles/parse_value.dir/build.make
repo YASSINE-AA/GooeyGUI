@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Include any dependencies generated for this target.
 include third_party/cjson/tests/CMakeFiles/parse_value.dir/depend.make
@@ -70,18 +70,18 @@ include third_party/cjson/tests/CMakeFiles/parse_value.dir/progress.make
 include third_party/cjson/tests/CMakeFiles/parse_value.dir/flags.make
 
 third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o: third_party/cjson/tests/CMakeFiles/parse_value.dir/flags.make
-third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c
+third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/parse_value.c
 third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o: third_party/cjson/tests/CMakeFiles/parse_value.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o -MF CMakeFiles/parse_value.dir/parse_value.c.o.d -o CMakeFiles/parse_value.dir/parse_value.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.o -MF CMakeFiles/parse_value.dir/parse_value.c.o.d -o CMakeFiles/parse_value.dir/parse_value.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/parse_value.c
 
 third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/parse_value.dir/parse_value.c.i"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c > CMakeFiles/parse_value.dir/parse_value.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/parse_value.c > CMakeFiles/parse_value.dir/parse_value.c.i
 
 third_party/cjson/tests/CMakeFiles/parse_value.dir/parse_value.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/parse_value.dir/parse_value.c.s"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/parse_value.c -o CMakeFiles/parse_value.dir/parse_value.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/parse_value.c -o CMakeFiles/parse_value.dir/parse_value.c.s
 
 # Object files for target parse_value
 parse_value_OBJECTS = \
@@ -95,18 +95,18 @@ third_party/cjson/tests/parse_value: third_party/cjson/tests/CMakeFiles/parse_va
 third_party/cjson/tests/parse_value: third_party/cjson/libcjson.a
 third_party/cjson/tests/parse_value: third_party/cjson/tests/libunity.a
 third_party/cjson/tests/parse_value: third_party/cjson/tests/CMakeFiles/parse_value.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable parse_value"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/parse_value.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable parse_value"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/parse_value.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/cjson/tests/CMakeFiles/parse_value.dir/build: third_party/cjson/tests/parse_value
 .PHONY : third_party/cjson/tests/CMakeFiles/parse_value.dir/build
 
 third_party/cjson/tests/CMakeFiles/parse_value.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && $(CMAKE_COMMAND) -P CMakeFiles/parse_value.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && $(CMAKE_COMMAND) -P CMakeFiles/parse_value.dir/cmake_clean.cmake
 .PHONY : third_party/cjson/tests/CMakeFiles/parse_value.dir/clean
 
 third_party/cjson/tests/CMakeFiles/parse_value.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests/CMakeFiles/parse_value.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests/CMakeFiles/parse_value.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/cjson/tests/CMakeFiles/parse_value.dir/depend
 

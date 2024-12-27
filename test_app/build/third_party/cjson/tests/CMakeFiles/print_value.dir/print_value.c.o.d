@@ -1,5 +1,5 @@
 third_party/cjson/tests/CMakeFiles/print_value.dir/print_value.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_value.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_value.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -24,10 +24,10 @@ third_party/cjson/tests/CMakeFiles/print_value.dir/print_value.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/examples/unity_config.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/unity_internals.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/unity/src/../examples/unity_config.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/examples/unity_config.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/unity.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/unity_internals.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/unity/src/../examples/unity_config.h \
  /usr/include/setjmp.h /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
@@ -46,10 +46,10 @@ third_party/cjson/tests/CMakeFiles/print_value.dir/print_value.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/common.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/../cJSON.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/common.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/../cJSON.c \
  /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/../cJSON.h
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/../cJSON.h

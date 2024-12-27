@@ -23,6 +23,7 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
                                  int num_options,
                                  void (*callback)(int selected_index))
 {
+    win->dropdowns[win->dropdown_count] = (GooeyDropdown) {0};
     GooeyDropdown *dropdown = &win->dropdowns[win->dropdown_count++];
     dropdown->core.type = WIDGET_DROPDOWN;
     dropdown->core.x = x;

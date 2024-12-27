@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11
 
-C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src
+C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/src -I/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/src
 
 C_FLAGS = -std=c99 -fPIC -Wall
 

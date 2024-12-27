@@ -31,6 +31,7 @@ void GooeyButton_setText(GooeyButton *button, const char *text)
 GooeyButton *GooeyButton_Add(GooeyWindow *win, const char *label, int x, int y,
                              int width, int height, void (*callback)())
 {
+    win->buttons[win->button_count] = (GooeyButton) {0};
     GooeyButton *button = &win->buttons[win->button_count++];
     button->core.type = WIDGET_BUTTON;
     button->core.x = x;

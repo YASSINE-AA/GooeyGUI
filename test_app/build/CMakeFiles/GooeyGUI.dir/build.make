@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GooeyGUI.dir/depend.make
@@ -70,284 +70,284 @@ include CMakeFiles/GooeyGUI.dir/progress.make
 include CMakeFiles/GooeyGUI.dir/flags.make
 
 CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c
+CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/backends/glfw_backend.c
 CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o -MF CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o.d -o CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o -MF CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o.d -o CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/backends/glfw_backend.c
 
 CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c > CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/backends/glfw_backend.c > CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.i
 
 CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/backends/glfw_backend.c -o CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/backends/glfw_backend.c -o CMakeFiles/GooeyGUI.dir/src/backends/glfw_backend.c.s
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c
+CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey.c
 CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o -MF CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o.d -o CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o -MF CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o.d -o CMakeFiles/GooeyGUI.dir/src/core/gooey.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey.c
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/core/gooey.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c > CMakeFiles/GooeyGUI.dir/src/core/gooey.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey.c > CMakeFiles/GooeyGUI.dir/src/core/gooey.c.i
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/core/gooey.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey.c -o CMakeFiles/GooeyGUI.dir/src/core/gooey.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey.c -o CMakeFiles/GooeyGUI.dir/src/core/gooey.c.s
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_common.c
+CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey_common.c
 CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o -MF CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o.d -o CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o -MF CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o.d -o CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey_common.c
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_common.c > CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey_common.c > CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.i
 
 CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/core/gooey_common.c -o CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/core/gooey_common.c -o CMakeFiles/GooeyGUI.dir/src/core/gooey_common.c.s
 
 CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c
+CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/logger/gooey_logger.c
 CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/logger/gooey_logger.c
 
 CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c > CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/logger/gooey_logger.c > CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.i
 
 CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/logger/gooey_logger.c -o CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/logger/gooey_logger.c -o CMakeFiles/GooeyGUI.dir/src/utils/logger/gooey_logger.c.s
 
 CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c
+CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/theme/gooey_theme.c
 CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/theme/gooey_theme.c
 
 CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c > CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/theme/gooey_theme.c > CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.i
 
 CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/theme/gooey_theme.c -o CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/theme/gooey_theme.c -o CMakeFiles/GooeyGUI.dir/src/utils/theme/gooey_theme.c.s
 
 CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c
+CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glad/glad.c
 CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glad/glad.c
 
 CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c > CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glad/glad.c > CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.i
 
 CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glad/glad.c -o CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glad/glad.c -o CMakeFiles/GooeyGUI.dir/src/utils/glad/glad.c.s
 
 CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c
+CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glfw/glfw_utils.c
 CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o -MF CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o.d -o CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glfw/glfw_utils.c
 
 CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c > CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glfw/glfw_utils.c > CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.i
 
 CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/utils/glfw/glfw_utils.c -o CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/utils/glfw/glfw_utils.c -o CMakeFiles/GooeyGUI.dir/src/utils/glfw/glfw_utils.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_button.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_button.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_button.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_button.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_button.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_button.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_canvas.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_canvas.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_canvas.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_canvas.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_canvas.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_canvas.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_checkbox.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_checkbox.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_checkbox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_checkbox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_checkbox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_checkbox.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_dropdown.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_dropdown.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_dropdown.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_dropdown.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_dropdown.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_dropdown.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_label.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_label.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_label.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_label.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_label.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_label.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_layout.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_layout.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_layout.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_layout.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_layout.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_layout.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_list.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_list.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_list.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_list.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_list.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_list.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_menu.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_menu.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_menu.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_menu.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_menu.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_menu.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_messagebox.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_messagebox.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_messagebox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_messagebox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_messagebox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_messagebox.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_radiobutton.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_radiobutton.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_radiobutton.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_radiobutton.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_radiobutton.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_radiobutton.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_slider.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_slider.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_slider.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_slider.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_slider.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_slider.c.s
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c
+CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_textbox.c
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o -MF CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o.d -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_textbox.c
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_textbox.c > CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.i
 
 CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/widgets/gooey_textbox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/widgets/gooey_textbox.c -o CMakeFiles/GooeyGUI.dir/src/widgets/gooey_textbox.c.s
 
 CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o: CMakeFiles/GooeyGUI.dir/flags.make
-CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/signals/gooey_signals.c
+CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/src/signals/gooey_signals.c
 CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o: CMakeFiles/GooeyGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o -MF CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o.d -o CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/signals/gooey_signals.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o -MF CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o.d -o CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/src/signals/gooey_signals.c
 
 CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/signals/gooey_signals.c > CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/src/signals/gooey_signals.c > CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.i
 
 CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/signals/gooey_signals.c -o CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/src/signals/gooey_signals.c -o CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.s
 
 # Object files for target GooeyGUI
 GooeyGUI_OBJECTS = \
@@ -410,7 +410,7 @@ lib/libGooeyGUI.so.1.0: /usr/lib/x86_64-linux-gnu/libpng.so
 lib/libGooeyGUI.so.1.0: /usr/lib/x86_64-linux-gnu/libharfbuzz.so
 lib/libGooeyGUI.so.1.0: /usr/lib/x86_64-linux-gnu/libbrotlidec.so
 lib/libGooeyGUI.so.1.0: CMakeFiles/GooeyGUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C shared library lib/libGooeyGUI.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C shared library lib/libGooeyGUI.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GooeyGUI.dir/link.txt --verbose=$(VERBOSE)
 	$(CMAKE_COMMAND) -E cmake_symlink_library lib/libGooeyGUI.so.1.0 lib/libGooeyGUI.so.1 lib/libGooeyGUI.so
 
@@ -429,6 +429,6 @@ CMakeFiles/GooeyGUI.dir/clean:
 .PHONY : CMakeFiles/GooeyGUI.dir/clean
 
 CMakeFiles/GooeyGUI.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles/GooeyGUI.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles/GooeyGUI.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/GooeyGUI.dir/depend
 

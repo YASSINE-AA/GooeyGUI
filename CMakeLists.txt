@@ -2,10 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(GooeyGUI VERSION 1.0 LANGUAGES C)
 
-# Set the output directory for libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Source files
 set(SOURCES
     src/backends/glfw_backend.c
     src/core/gooey.c
@@ -29,7 +27,6 @@ set(SOURCES
     src/signals/gooey_signals.c
 )
 
-# Header files
 set(HEADERS
     internal/core/gooey_common.h
     internal/core/gooey_backend_internal.h
@@ -57,15 +54,14 @@ set(HEADERS
 
 )
 
-# Add subdirectories for third-party libraries
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -g3 -fsanitize=address,undefined -fPIC")
+
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/cjson)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/freetype)
 
-# Create the shared library for the project
 add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
 
-# Link the libraries to the project
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     cjson
@@ -73,7 +69,6 @@ target_link_libraries(${PROJECT_NAME}
     freetype
 )
 
-# Set the include directories for the project
 target_include_directories(${PROJECT_NAME}
     PUBLIC
     ${PROJECT_SOURCE_DIR}/include
@@ -84,17 +79,13 @@ target_include_directories(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}/third_party/cjson/include
 )
 
-# Ensure FreeType is built with Position Independent Code (PIC)
 set_target_properties(freetype PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
-# Set version properties for the shared library
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
 )
 
-# Install headers to the include directory
 install(FILES ${HEADERS} DESTINATION include)
 
-# Enable testing for the project
 enable_testing()

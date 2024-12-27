@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CPackSourceConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw//CMakeFiles/progress.marks
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw//CMakeFiles/progress.marks
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/clean
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,22 +178,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third_party/glfw/CMakeFiles/uninstall.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/CMakeFiles/uninstall.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/CMakeFiles/uninstall.dir/rule
 .PHONY : third_party/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -202,7 +202,7 @@ uninstall: third_party/glfw/CMakeFiles/uninstall.dir/rule
 
 # fast build rule for target.
 uninstall/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/CMakeFiles/uninstall.dir/build.make third_party/glfw/CMakeFiles/uninstall.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/CMakeFiles/uninstall.dir/build.make third_party/glfw/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 # Help Target
@@ -232,6 +232,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

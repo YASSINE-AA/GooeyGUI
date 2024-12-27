@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Utility rule file for check.
 
@@ -67,7 +67,7 @@ include third_party/cjson/CMakeFiles/check.dir/compiler_depend.make
 include third_party/cjson/CMakeFiles/check.dir/progress.make
 
 third_party/cjson/CMakeFiles/check: third_party/cjson/cJSON_test
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && /usr/bin/ctest --output-on-failure
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && /usr/bin/ctest --output-on-failure
 
 check: third_party/cjson/CMakeFiles/check
 check: third_party/cjson/CMakeFiles/check.dir/build.make
@@ -78,10 +78,10 @@ third_party/cjson/CMakeFiles/check.dir/build: check
 .PHONY : third_party/cjson/CMakeFiles/check.dir/build
 
 third_party/cjson/CMakeFiles/check.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
 .PHONY : third_party/cjson/CMakeFiles/check.dir/clean
 
 third_party/cjson/CMakeFiles/check.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/CMakeFiles/check.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/CMakeFiles/check.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/cjson/CMakeFiles/check.dir/depend
 

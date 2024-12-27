@@ -15,8 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "gooey_common.h
-.h"
+#include "gooey_common.h"
 
 #include <X11/X.h>
 #include <X11/Xlib.h>

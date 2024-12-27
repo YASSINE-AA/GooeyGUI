@@ -19,6 +19,7 @@
 
 GooeyList *GooeyList_Add(GooeyWindow *win, int x, int y, int width, int height)
 {
+    win->lists[win->list_count] = (GooeyList) {0};
     GooeyList *list = &win->lists[win->list_count++];
     list->core.x = x;
     list->core.y = y;
@@ -102,7 +103,7 @@ void GooeyList_Draw(GooeyWindow *win)
             active_theme->primary,
             win->creation_id);
 
-        for (int j = 0; j < list->item_count; ++j)
+        for (size_t j = 0; j < list->item_count; ++j)
         {
             GooeyListItem item = list->items[j];
             int title_y = current_y_offset + active_backend->GetTextHeight(item.title, strlen(item.title));

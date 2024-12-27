@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Include any dependencies generated for this target.
 include third_party/cjson/tests/CMakeFiles/print_array.dir/depend.make
@@ -70,18 +70,18 @@ include third_party/cjson/tests/CMakeFiles/print_array.dir/progress.make
 include third_party/cjson/tests/CMakeFiles/print_array.dir/flags.make
 
 third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o: third_party/cjson/tests/CMakeFiles/print_array.dir/flags.make
-third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c
+third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_array.c
 third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o: third_party/cjson/tests/CMakeFiles/print_array.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o -MF CMakeFiles/print_array.dir/print_array.c.o.d -o CMakeFiles/print_array.dir/print_array.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.o -MF CMakeFiles/print_array.dir/print_array.c.o.d -o CMakeFiles/print_array.dir/print_array.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_array.c
 
 third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/print_array.dir/print_array.c.i"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c > CMakeFiles/print_array.dir/print_array.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_array.c > CMakeFiles/print_array.dir/print_array.c.i
 
 third_party/cjson/tests/CMakeFiles/print_array.dir/print_array.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/print_array.dir/print_array.c.s"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests/print_array.c -o CMakeFiles/print_array.dir/print_array.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests/print_array.c -o CMakeFiles/print_array.dir/print_array.c.s
 
 # Object files for target print_array
 print_array_OBJECTS = \
@@ -95,18 +95,18 @@ third_party/cjson/tests/print_array: third_party/cjson/tests/CMakeFiles/print_ar
 third_party/cjson/tests/print_array: third_party/cjson/libcjson.a
 third_party/cjson/tests/print_array: third_party/cjson/tests/libunity.a
 third_party/cjson/tests/print_array: third_party/cjson/tests/CMakeFiles/print_array.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable print_array"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/print_array.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable print_array"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/print_array.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/cjson/tests/CMakeFiles/print_array.dir/build: third_party/cjson/tests/print_array
 .PHONY : third_party/cjson/tests/CMakeFiles/print_array.dir/build
 
 third_party/cjson/tests/CMakeFiles/print_array.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests && $(CMAKE_COMMAND) -P CMakeFiles/print_array.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests && $(CMAKE_COMMAND) -P CMakeFiles/print_array.dir/cmake_clean.cmake
 .PHONY : third_party/cjson/tests/CMakeFiles/print_array.dir/clean
 
 third_party/cjson/tests/CMakeFiles/print_array.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/tests/CMakeFiles/print_array.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/tests/CMakeFiles/print_array.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/cjson/tests/CMakeFiles/print_array.dir/depend
 

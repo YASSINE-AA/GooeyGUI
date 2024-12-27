@@ -1,8 +1,8 @@
 CMakeFiles/GooeyGUI.dir/src/signals/gooey_signals.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/src/signals/gooey_signals.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/src/signals/gooey_signals.c \
  /usr/include/stdc-predef.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/include/signals/gooey_signals.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/internal/utils/logger/gooey_logger_internal.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/include/signals/gooey_signals.h \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/internal/utils/logger/gooey_logger_internal.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

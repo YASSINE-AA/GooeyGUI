@@ -18,7 +18,6 @@
 #include "signals/gooey_signals.h"
 #include <stdlib.h>
 
-
 GooeySignal GooeySignal_Create(void)
 {
     GooeySignal signal;
@@ -54,8 +53,8 @@ void GooeySignal_UnLinkAll(GooeySignal *signal)
     GooeySignal_Slot *slot = signal->slots;
     while (slot != NULL)
     {
-        free(slot);
         slot = slot->next;
     }
+    free(slot);
     signal->slots = NULL;
 }

@@ -15,10 +15,7 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-
 #include "widgets/gooey_slider.h"
-
-
 
 GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
                              long min_value, long max_value, bool show_hints,
@@ -36,6 +33,7 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
         return NULL;
     }
 
+    win->sliders[win->slider_count] = (GooeySlider){0};
     GooeySlider *slider = &win->sliders[win->slider_count++];
     slider->core.type = WIDGET_SLIDER;
     slider->core.x = x;
@@ -51,7 +49,6 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
 
     return slider;
 }
-
 
 long GooeySlider_getValue(GooeySlider *slider)
 {
@@ -75,7 +72,8 @@ void GooeySlider_setValue(GooeySlider *slider, long value)
     slider->value = value;
 }
 
-void GooeySlider_Draw(GooeyWindow *win) {
+void GooeySlider_Draw(GooeyWindow *win)
+{
     for (int i = 0; i < win->slider_count; ++i)
     {
         GooeySlider *slider = &win->sliders[i];
@@ -114,9 +112,8 @@ void GooeySlider_Draw(GooeyWindow *win) {
                                          slider->core.y + 25, value, active_theme->neutral, 0.25f, win->creation_id);
         }
         active_backend->SetForeground(active_theme->neutral);
-    } 
+    }
 }
-
 
 bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type)
 {

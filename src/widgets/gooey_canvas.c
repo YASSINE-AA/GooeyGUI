@@ -20,6 +20,7 @@
 GooeyCanvas *GooeyCanvas_Add(GooeyWindow *win, int x, int y, int width,
                              int height)
 {
+    win->canvas[win->canvas_count] = (GooeyCanvas) {0};
     GooeyCanvas *canvas = &win->canvas[win->canvas_count++];
     canvas->core.type = WIDGET_CANVAS;
     canvas->core.x = x;

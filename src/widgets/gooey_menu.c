@@ -35,8 +35,9 @@ GooeyMenuChild *GooeyMenu_AddChild(GooeyWindow *win, char *title)
         return NULL;
     }
 
+    win->menu->children[win->menu->children_count] = (GooeyMenuChild) {0};
     GooeyMenuChild *child = &win->menu->children[win->menu->children_count++];
-    child->title = strdup(title);
+    strcpy(child->title, title);
     child->menu_elements_count = 0;
     child->is_open = false;
     LOG_INFO("Child added to menu with title=\"%s\"", title);

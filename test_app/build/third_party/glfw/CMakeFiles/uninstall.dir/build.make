@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include third_party/glfw/CMakeFiles/uninstall.dir/compiler_depend.make
 include third_party/glfw/CMakeFiles/uninstall.dir/progress.make
 
 third_party/glfw/CMakeFiles/uninstall:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw && /usr/bin/cmake -P /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/cmake_uninstall.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw && /usr/bin/cmake -P /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/cmake_uninstall.cmake
 
 uninstall: third_party/glfw/CMakeFiles/uninstall
 uninstall: third_party/glfw/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ third_party/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : third_party/glfw/CMakeFiles/uninstall.dir/build
 
 third_party/glfw/CMakeFiles/uninstall.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : third_party/glfw/CMakeFiles/uninstall.dir/clean
 
 third_party/glfw/CMakeFiles/uninstall.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/glfw/CMakeFiles/uninstall.dir/depend
 

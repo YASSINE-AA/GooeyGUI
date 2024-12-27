@@ -1,5 +1,5 @@
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/fuzz_main.c \
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

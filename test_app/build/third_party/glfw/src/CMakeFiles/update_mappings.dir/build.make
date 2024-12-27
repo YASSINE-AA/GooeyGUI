@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include third_party/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include third_party/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 third_party/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src && /usr/bin/cmake -P /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/src && /usr/bin/cmake -P /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: third_party/glfw/src/CMakeFiles/update_mappings
 update_mappings: third_party/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ third_party/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/build
 
 third_party/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 third_party/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/src /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/src /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/src /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/depend
 

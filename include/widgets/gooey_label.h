@@ -37,9 +37,8 @@ void GooeyLabel_Draw(GooeyWindow *win);
  *
  * @param label A pointer to the label whose color is to be set.
  * @param color A string representing the color (e.g., "red", "#FF0000").
- * @return A pointer to the modified label.
  */
-void *GooeyLabel_SetColor(GooeyLabel *label, const char *color);
+void GooeyLabel_SetColor(GooeyLabel *label, const char *color);
 
 
 #endif

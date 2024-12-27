@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CPackSourceConfig.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/src//CMakeFiles/progress.marks
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/src//CMakeFiles/progress.marks
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/clean
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,22 +178,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/preinstall
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third_party/glfw/src/CMakeFiles/glfw.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/CMakeFiles/glfw.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/CMakeFiles/glfw.dir/rule
 .PHONY : third_party/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -202,12 +202,12 @@ glfw: third_party/glfw/src/CMakeFiles/glfw.dir/rule
 
 # fast build rule for target.
 glfw/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
 # Convenience name for target.
 third_party/glfw/src/CMakeFiles/update_mappings.dir/rule:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/CMakeFiles/update_mappings.dir/rule
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glfw/src/CMakeFiles/update_mappings.dir/rule
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/rule
 
 # Convenience name for target.
@@ -216,7 +216,7 @@ update_mappings: third_party/glfw/src/CMakeFiles/update_mappings.dir/rule
 
 # fast build rule for target.
 update_mappings/fast:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/update_mappings.dir/build.make third_party/glfw/src/CMakeFiles/update_mappings.dir/build
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/update_mappings.dir/build.make third_party/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
 
 context.o: context.c.o
@@ -224,7 +224,7 @@ context.o: context.c.o
 
 # target to build an object file
 context.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.o
 .PHONY : context.c.o
 
 context.i: context.c.i
@@ -232,7 +232,7 @@ context.i: context.c.i
 
 # target to preprocess a source file
 context.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.i
 .PHONY : context.c.i
 
 context.s: context.c.s
@@ -240,7 +240,7 @@ context.s: context.c.s
 
 # target to generate assembly for a file
 context.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/context.c.s
 .PHONY : context.c.s
 
 egl_context.o: egl_context.c.o
@@ -248,7 +248,7 @@ egl_context.o: egl_context.c.o
 
 # target to build an object file
 egl_context.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o
 .PHONY : egl_context.c.o
 
 egl_context.i: egl_context.c.i
@@ -256,7 +256,7 @@ egl_context.i: egl_context.c.i
 
 # target to preprocess a source file
 egl_context.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.i
 .PHONY : egl_context.c.i
 
 egl_context.s: egl_context.c.s
@@ -264,7 +264,7 @@ egl_context.s: egl_context.c.s
 
 # target to generate assembly for a file
 egl_context.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.s
 .PHONY : egl_context.c.s
 
 glx_context.o: glx_context.c.o
@@ -272,7 +272,7 @@ glx_context.o: glx_context.c.o
 
 # target to build an object file
 glx_context.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o
 .PHONY : glx_context.c.o
 
 glx_context.i: glx_context.c.i
@@ -280,7 +280,7 @@ glx_context.i: glx_context.c.i
 
 # target to preprocess a source file
 glx_context.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.i
 .PHONY : glx_context.c.i
 
 glx_context.s: glx_context.c.s
@@ -288,7 +288,7 @@ glx_context.s: glx_context.c.s
 
 # target to generate assembly for a file
 glx_context.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.s
 .PHONY : glx_context.c.s
 
 init.o: init.c.o
@@ -296,7 +296,7 @@ init.o: init.c.o
 
 # target to build an object file
 init.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.o
 .PHONY : init.c.o
 
 init.i: init.c.i
@@ -304,7 +304,7 @@ init.i: init.c.i
 
 # target to preprocess a source file
 init.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.i
 .PHONY : init.c.i
 
 init.s: init.c.s
@@ -312,7 +312,7 @@ init.s: init.c.s
 
 # target to generate assembly for a file
 init.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/init.c.s
 .PHONY : init.c.s
 
 input.o: input.c.o
@@ -320,7 +320,7 @@ input.o: input.c.o
 
 # target to build an object file
 input.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.o
 .PHONY : input.c.o
 
 input.i: input.c.i
@@ -328,7 +328,7 @@ input.i: input.c.i
 
 # target to preprocess a source file
 input.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.i
 .PHONY : input.c.i
 
 input.s: input.c.s
@@ -336,7 +336,7 @@ input.s: input.c.s
 
 # target to generate assembly for a file
 input.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/input.c.s
 .PHONY : input.c.s
 
 linux_joystick.o: linux_joystick.c.o
@@ -344,7 +344,7 @@ linux_joystick.o: linux_joystick.c.o
 
 # target to build an object file
 linux_joystick.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o
 .PHONY : linux_joystick.c.o
 
 linux_joystick.i: linux_joystick.c.i
@@ -352,7 +352,7 @@ linux_joystick.i: linux_joystick.c.i
 
 # target to preprocess a source file
 linux_joystick.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.i
 .PHONY : linux_joystick.c.i
 
 linux_joystick.s: linux_joystick.c.s
@@ -360,7 +360,7 @@ linux_joystick.s: linux_joystick.c.s
 
 # target to generate assembly for a file
 linux_joystick.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.s
 .PHONY : linux_joystick.c.s
 
 monitor.o: monitor.c.o
@@ -368,7 +368,7 @@ monitor.o: monitor.c.o
 
 # target to build an object file
 monitor.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o
 .PHONY : monitor.c.o
 
 monitor.i: monitor.c.i
@@ -376,7 +376,7 @@ monitor.i: monitor.c.i
 
 # target to preprocess a source file
 monitor.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.i
 .PHONY : monitor.c.i
 
 monitor.s: monitor.c.s
@@ -384,7 +384,7 @@ monitor.s: monitor.c.s
 
 # target to generate assembly for a file
 monitor.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.s
 .PHONY : monitor.c.s
 
 null_init.o: null_init.c.o
@@ -392,7 +392,7 @@ null_init.o: null_init.c.o
 
 # target to build an object file
 null_init.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o
 .PHONY : null_init.c.o
 
 null_init.i: null_init.c.i
@@ -400,7 +400,7 @@ null_init.i: null_init.c.i
 
 # target to preprocess a source file
 null_init.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.i
 .PHONY : null_init.c.i
 
 null_init.s: null_init.c.s
@@ -408,7 +408,7 @@ null_init.s: null_init.c.s
 
 # target to generate assembly for a file
 null_init.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.s
 .PHONY : null_init.c.s
 
 null_joystick.o: null_joystick.c.o
@@ -416,7 +416,7 @@ null_joystick.o: null_joystick.c.o
 
 # target to build an object file
 null_joystick.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o
 .PHONY : null_joystick.c.o
 
 null_joystick.i: null_joystick.c.i
@@ -424,7 +424,7 @@ null_joystick.i: null_joystick.c.i
 
 # target to preprocess a source file
 null_joystick.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.i
 .PHONY : null_joystick.c.i
 
 null_joystick.s: null_joystick.c.s
@@ -432,7 +432,7 @@ null_joystick.s: null_joystick.c.s
 
 # target to generate assembly for a file
 null_joystick.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.s
 .PHONY : null_joystick.c.s
 
 null_monitor.o: null_monitor.c.o
@@ -440,7 +440,7 @@ null_monitor.o: null_monitor.c.o
 
 # target to build an object file
 null_monitor.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o
 .PHONY : null_monitor.c.o
 
 null_monitor.i: null_monitor.c.i
@@ -448,7 +448,7 @@ null_monitor.i: null_monitor.c.i
 
 # target to preprocess a source file
 null_monitor.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.i
 .PHONY : null_monitor.c.i
 
 null_monitor.s: null_monitor.c.s
@@ -456,7 +456,7 @@ null_monitor.s: null_monitor.c.s
 
 # target to generate assembly for a file
 null_monitor.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.s
 .PHONY : null_monitor.c.s
 
 null_window.o: null_window.c.o
@@ -464,7 +464,7 @@ null_window.o: null_window.c.o
 
 # target to build an object file
 null_window.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o
 .PHONY : null_window.c.o
 
 null_window.i: null_window.c.i
@@ -472,7 +472,7 @@ null_window.i: null_window.c.i
 
 # target to preprocess a source file
 null_window.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.i
 .PHONY : null_window.c.i
 
 null_window.s: null_window.c.s
@@ -480,7 +480,7 @@ null_window.s: null_window.c.s
 
 # target to generate assembly for a file
 null_window.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.s
 .PHONY : null_window.c.s
 
 osmesa_context.o: osmesa_context.c.o
@@ -488,7 +488,7 @@ osmesa_context.o: osmesa_context.c.o
 
 # target to build an object file
 osmesa_context.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
 .PHONY : osmesa_context.c.o
 
 osmesa_context.i: osmesa_context.c.i
@@ -496,7 +496,7 @@ osmesa_context.i: osmesa_context.c.i
 
 # target to preprocess a source file
 osmesa_context.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.i
 .PHONY : osmesa_context.c.i
 
 osmesa_context.s: osmesa_context.c.s
@@ -504,7 +504,7 @@ osmesa_context.s: osmesa_context.c.s
 
 # target to generate assembly for a file
 osmesa_context.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.s
 .PHONY : osmesa_context.c.s
 
 platform.o: platform.c.o
@@ -512,7 +512,7 @@ platform.o: platform.c.o
 
 # target to build an object file
 platform.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.o
 .PHONY : platform.c.o
 
 platform.i: platform.c.i
@@ -520,7 +520,7 @@ platform.i: platform.c.i
 
 # target to preprocess a source file
 platform.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.i
 .PHONY : platform.c.i
 
 platform.s: platform.c.s
@@ -528,7 +528,7 @@ platform.s: platform.c.s
 
 # target to generate assembly for a file
 platform.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.s
 .PHONY : platform.c.s
 
 posix_module.o: posix_module.c.o
@@ -536,7 +536,7 @@ posix_module.o: posix_module.c.o
 
 # target to build an object file
 posix_module.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o
 .PHONY : posix_module.c.o
 
 posix_module.i: posix_module.c.i
@@ -544,7 +544,7 @@ posix_module.i: posix_module.c.i
 
 # target to preprocess a source file
 posix_module.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.i
 .PHONY : posix_module.c.i
 
 posix_module.s: posix_module.c.s
@@ -552,7 +552,7 @@ posix_module.s: posix_module.c.s
 
 # target to generate assembly for a file
 posix_module.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.s
 .PHONY : posix_module.c.s
 
 posix_poll.o: posix_poll.c.o
@@ -560,7 +560,7 @@ posix_poll.o: posix_poll.c.o
 
 # target to build an object file
 posix_poll.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o
 .PHONY : posix_poll.c.o
 
 posix_poll.i: posix_poll.c.i
@@ -568,7 +568,7 @@ posix_poll.i: posix_poll.c.i
 
 # target to preprocess a source file
 posix_poll.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.i
 .PHONY : posix_poll.c.i
 
 posix_poll.s: posix_poll.c.s
@@ -576,7 +576,7 @@ posix_poll.s: posix_poll.c.s
 
 # target to generate assembly for a file
 posix_poll.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.s
 .PHONY : posix_poll.c.s
 
 posix_thread.o: posix_thread.c.o
@@ -584,7 +584,7 @@ posix_thread.o: posix_thread.c.o
 
 # target to build an object file
 posix_thread.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o
 .PHONY : posix_thread.c.o
 
 posix_thread.i: posix_thread.c.i
@@ -592,7 +592,7 @@ posix_thread.i: posix_thread.c.i
 
 # target to preprocess a source file
 posix_thread.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.i
 .PHONY : posix_thread.c.i
 
 posix_thread.s: posix_thread.c.s
@@ -600,7 +600,7 @@ posix_thread.s: posix_thread.c.s
 
 # target to generate assembly for a file
 posix_thread.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.s
 .PHONY : posix_thread.c.s
 
 posix_time.o: posix_time.c.o
@@ -608,7 +608,7 @@ posix_time.o: posix_time.c.o
 
 # target to build an object file
 posix_time.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o
 .PHONY : posix_time.c.o
 
 posix_time.i: posix_time.c.i
@@ -616,7 +616,7 @@ posix_time.i: posix_time.c.i
 
 # target to preprocess a source file
 posix_time.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.i
 .PHONY : posix_time.c.i
 
 posix_time.s: posix_time.c.s
@@ -624,7 +624,7 @@ posix_time.s: posix_time.c.s
 
 # target to generate assembly for a file
 posix_time.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.s
 .PHONY : posix_time.c.s
 
 vulkan.o: vulkan.c.o
@@ -632,7 +632,7 @@ vulkan.o: vulkan.c.o
 
 # target to build an object file
 vulkan.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
 .PHONY : vulkan.c.o
 
 vulkan.i: vulkan.c.i
@@ -640,7 +640,7 @@ vulkan.i: vulkan.c.i
 
 # target to preprocess a source file
 vulkan.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.i
 .PHONY : vulkan.c.i
 
 vulkan.s: vulkan.c.s
@@ -648,7 +648,7 @@ vulkan.s: vulkan.c.s
 
 # target to generate assembly for a file
 vulkan.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.s
 .PHONY : vulkan.c.s
 
 window.o: window.c.o
@@ -656,7 +656,7 @@ window.o: window.c.o
 
 # target to build an object file
 window.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.o
 .PHONY : window.c.o
 
 window.i: window.c.i
@@ -664,7 +664,7 @@ window.i: window.c.i
 
 # target to preprocess a source file
 window.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.i
 .PHONY : window.c.i
 
 window.s: window.c.s
@@ -672,7 +672,7 @@ window.s: window.c.s
 
 # target to generate assembly for a file
 window.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/window.c.s
 .PHONY : window.c.s
 
 wl_init.o: wl_init.c.o
@@ -680,7 +680,7 @@ wl_init.o: wl_init.c.o
 
 # target to build an object file
 wl_init.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o
 .PHONY : wl_init.c.o
 
 wl_init.i: wl_init.c.i
@@ -688,7 +688,7 @@ wl_init.i: wl_init.c.i
 
 # target to preprocess a source file
 wl_init.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.i
 .PHONY : wl_init.c.i
 
 wl_init.s: wl_init.c.s
@@ -696,7 +696,7 @@ wl_init.s: wl_init.c.s
 
 # target to generate assembly for a file
 wl_init.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_init.c.s
 .PHONY : wl_init.c.s
 
 wl_monitor.o: wl_monitor.c.o
@@ -704,7 +704,7 @@ wl_monitor.o: wl_monitor.c.o
 
 # target to build an object file
 wl_monitor.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o
 .PHONY : wl_monitor.c.o
 
 wl_monitor.i: wl_monitor.c.i
@@ -712,7 +712,7 @@ wl_monitor.i: wl_monitor.c.i
 
 # target to preprocess a source file
 wl_monitor.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.i
 .PHONY : wl_monitor.c.i
 
 wl_monitor.s: wl_monitor.c.s
@@ -720,7 +720,7 @@ wl_monitor.s: wl_monitor.c.s
 
 # target to generate assembly for a file
 wl_monitor.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.s
 .PHONY : wl_monitor.c.s
 
 wl_window.o: wl_window.c.o
@@ -728,7 +728,7 @@ wl_window.o: wl_window.c.o
 
 # target to build an object file
 wl_window.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o
 .PHONY : wl_window.c.o
 
 wl_window.i: wl_window.c.i
@@ -736,7 +736,7 @@ wl_window.i: wl_window.c.i
 
 # target to preprocess a source file
 wl_window.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.i
 .PHONY : wl_window.c.i
 
 wl_window.s: wl_window.c.s
@@ -744,7 +744,7 @@ wl_window.s: wl_window.c.s
 
 # target to generate assembly for a file
 wl_window.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/wl_window.c.s
 .PHONY : wl_window.c.s
 
 x11_init.o: x11_init.c.o
@@ -752,7 +752,7 @@ x11_init.o: x11_init.c.o
 
 # target to build an object file
 x11_init.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o
 .PHONY : x11_init.c.o
 
 x11_init.i: x11_init.c.i
@@ -760,7 +760,7 @@ x11_init.i: x11_init.c.i
 
 # target to preprocess a source file
 x11_init.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.i
 .PHONY : x11_init.c.i
 
 x11_init.s: x11_init.c.s
@@ -768,7 +768,7 @@ x11_init.s: x11_init.c.s
 
 # target to generate assembly for a file
 x11_init.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.s
 .PHONY : x11_init.c.s
 
 x11_monitor.o: x11_monitor.c.o
@@ -776,7 +776,7 @@ x11_monitor.o: x11_monitor.c.o
 
 # target to build an object file
 x11_monitor.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o
 .PHONY : x11_monitor.c.o
 
 x11_monitor.i: x11_monitor.c.i
@@ -784,7 +784,7 @@ x11_monitor.i: x11_monitor.c.i
 
 # target to preprocess a source file
 x11_monitor.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.i
 .PHONY : x11_monitor.c.i
 
 x11_monitor.s: x11_monitor.c.s
@@ -792,7 +792,7 @@ x11_monitor.s: x11_monitor.c.s
 
 # target to generate assembly for a file
 x11_monitor.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.s
 .PHONY : x11_monitor.c.s
 
 x11_window.o: x11_window.c.o
@@ -800,7 +800,7 @@ x11_window.o: x11_window.c.o
 
 # target to build an object file
 x11_window.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o
 .PHONY : x11_window.c.o
 
 x11_window.i: x11_window.c.i
@@ -808,7 +808,7 @@ x11_window.i: x11_window.c.i
 
 # target to preprocess a source file
 x11_window.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.i
 .PHONY : x11_window.c.i
 
 x11_window.s: x11_window.c.s
@@ -816,7 +816,7 @@ x11_window.s: x11_window.c.s
 
 # target to generate assembly for a file
 x11_window.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.s
 .PHONY : x11_window.c.s
 
 xkb_unicode.o: xkb_unicode.c.o
@@ -824,7 +824,7 @@ xkb_unicode.o: xkb_unicode.c.o
 
 # target to build an object file
 xkb_unicode.c.o:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
 .PHONY : xkb_unicode.c.o
 
 xkb_unicode.i: xkb_unicode.c.i
@@ -832,7 +832,7 @@ xkb_unicode.i: xkb_unicode.c.i
 
 # target to preprocess a source file
 xkb_unicode.c.i:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.i
 .PHONY : xkb_unicode.c.i
 
 xkb_unicode.s: xkb_unicode.c.s
@@ -840,7 +840,7 @@ xkb_unicode.s: xkb_unicode.c.s
 
 # target to generate assembly for a file
 xkb_unicode.c.s:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(MAKE) $(MAKESILENT) -f third_party/glfw/src/CMakeFiles/glfw.dir/build.make third_party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.s
 .PHONY : xkb_unicode.c.s
 
 # Help Target
@@ -949,6 +949,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

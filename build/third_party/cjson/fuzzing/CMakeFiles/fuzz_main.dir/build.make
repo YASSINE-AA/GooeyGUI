@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Include any dependencies generated for this target.
 include third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/depend.make
@@ -70,32 +70,32 @@ include third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/progress.make
 include third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/flags.make
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/flags.make
-third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c
+third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/fuzz_main.c
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o -MF CMakeFiles/fuzz_main.dir/fuzz_main.c.o.d -o CMakeFiles/fuzz_main.dir/fuzz_main.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.o -MF CMakeFiles/fuzz_main.dir/fuzz_main.c.o.d -o CMakeFiles/fuzz_main.dir/fuzz_main.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/fuzz_main.c
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fuzz_main.dir/fuzz_main.c.i"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c > CMakeFiles/fuzz_main.dir/fuzz_main.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/fuzz_main.c > CMakeFiles/fuzz_main.dir/fuzz_main.c.i
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fuzz_main.dir/fuzz_main.c.s"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/fuzz_main.c -o CMakeFiles/fuzz_main.dir/fuzz_main.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/fuzz_main.c -o CMakeFiles/fuzz_main.dir/fuzz_main.c.s
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/flags.make
-third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c
+third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/cjson_read_fuzzer.c
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o -MF CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o.d -o CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o -MF CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o.d -o CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/cjson_read_fuzzer.c
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.i"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c > CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/cjson_read_fuzzer.c > CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.i
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.s"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing/cjson_read_fuzzer.c -o CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing/cjson_read_fuzzer.c -o CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.s
 
 # Object files for target fuzz_main
 fuzz_main_OBJECTS = \
@@ -110,18 +110,18 @@ third_party/cjson/fuzzing/fuzz_main: third_party/cjson/fuzzing/CMakeFiles/fuzz_m
 third_party/cjson/fuzzing/fuzz_main: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/build.make
 third_party/cjson/fuzzing/fuzz_main: third_party/cjson/libcjson.a
 third_party/cjson/fuzzing/fuzz_main: third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable fuzz_main"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fuzz_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable fuzz_main"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fuzz_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/build: third_party/cjson/fuzzing/fuzz_main
 .PHONY : third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/build
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing && $(CMAKE_COMMAND) -P CMakeFiles/fuzz_main.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing && $(CMAKE_COMMAND) -P CMakeFiles/fuzz_main.dir/cmake_clean.cmake
 .PHONY : third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/clean
 
 third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/fuzzing /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/fuzzing /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/cjson/fuzzing/CMakeFiles/fuzz_main.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Include any dependencies generated for this target.
 include third_party/cjson/CMakeFiles/cJSON_test.dir/depend.make
@@ -70,18 +70,18 @@ include third_party/cjson/CMakeFiles/cJSON_test.dir/progress.make
 include third_party/cjson/CMakeFiles/cJSON_test.dir/flags.make
 
 third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: third_party/cjson/CMakeFiles/cJSON_test.dir/flags.make
-third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c
+third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/test.c
 third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: third_party/cjson/CMakeFiles/cJSON_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o -MF CMakeFiles/cJSON_test.dir/test.c.o.d -o CMakeFiles/cJSON_test.dir/test.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o -MF CMakeFiles/cJSON_test.dir/test.c.o.d -o CMakeFiles/cJSON_test.dir/test.c.o -c /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/test.c
 
 third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cJSON_test.dir/test.c.i"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c > CMakeFiles/cJSON_test.dir/test.c.i
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/test.c > CMakeFiles/cJSON_test.dir/test.c.i
 
 third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cJSON_test.dir/test.c.s"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c -o CMakeFiles/cJSON_test.dir/test.c.s
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/test.c -o CMakeFiles/cJSON_test.dir/test.c.s
 
 # Object files for target cJSON_test
 cJSON_test_OBJECTS = \
@@ -94,18 +94,18 @@ third_party/cjson/cJSON_test: third_party/cjson/CMakeFiles/cJSON_test.dir/test.c
 third_party/cjson/cJSON_test: third_party/cjson/CMakeFiles/cJSON_test.dir/build.make
 third_party/cjson/cJSON_test: third_party/cjson/libcjson.a
 third_party/cjson/cJSON_test: third_party/cjson/CMakeFiles/cJSON_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cJSON_test"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cJSON_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cJSON_test"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cJSON_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/cjson/CMakeFiles/cJSON_test.dir/build: third_party/cjson/cJSON_test
 .PHONY : third_party/cjson/CMakeFiles/cJSON_test.dir/build
 
 third_party/cjson/CMakeFiles/cJSON_test.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson && $(CMAKE_COMMAND) -P CMakeFiles/cJSON_test.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson && $(CMAKE_COMMAND) -P CMakeFiles/cJSON_test.dir/cmake_clean.cmake
 .PHONY : third_party/cjson/CMakeFiles/cJSON_test.dir/clean
 
 third_party/cjson/CMakeFiles/cJSON_test.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/cjson/CMakeFiles/cJSON_test.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/cjson/CMakeFiles/cJSON_test.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/cjson/CMakeFiles/cJSON_test.dir/depend
 

@@ -38,6 +38,7 @@ GooeyRadioButton *GooeyRadioButtonGroup_AddChild(GooeyWindow *win, GooeyRadioBut
         LOG_ERROR("Cannot add more radio buttons to the group. Maximum limit reached.\n");
         return NULL;
     }
+    group->buttons[group->button_count] = (GooeyRadioButton) {0};
     GooeyRadioButton *button = &group->buttons[group->button_count++];
     button->core.x = x;
     button->core.y = y;

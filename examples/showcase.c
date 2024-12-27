@@ -64,12 +64,12 @@ void onTextChange(char *text)
 GooeyTheme theme;
 void activateDarkTheme()
 {
-    GooeyWindow_setTheme("dark.json");
+    GooeyWindow_SetTheme("dark.json");
 }
 
 void activateLightTheme()
 {
-    GooeyWindow_setTheme("light.json");
+    GooeyWindow_SetTheme("light.json");
 }
 
 int main()

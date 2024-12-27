@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DFT2_BUILD_LIBRARY
 
-C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/freetype/include/freetype/config -I/usr/include/harfbuzz
+C_INCLUDES = -I/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/freetype/include -I/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/freetype/include/freetype/config -I/usr/include/harfbuzz
 
-C_FLAGS = -fPIC -fvisibility=hidden
+C_FLAGS =  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -g3 -fsanitize=address,undefined -fPIC -fPIC -fvisibility=hidden
 

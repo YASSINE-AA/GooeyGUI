@@ -1,5 +1,5 @@
 third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/test.c \
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/test.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -24,4 +24,4 @@ third_party/cjson/CMakeFiles/cJSON_test.dir/test.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
- /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/cjson/cJSON.h
+ /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/cjson/cJSON.h

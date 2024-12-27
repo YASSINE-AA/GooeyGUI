@@ -1,4 +1,4 @@
-# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs
+# Install script for directory: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,6 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/GLFW" TYPE DIRECTORY FILES "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs/html")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/GLFW" TYPE DIRECTORY FILES "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs/html")
 endif()
 

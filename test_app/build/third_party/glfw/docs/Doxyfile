@@ -68,7 +68,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs"
+OUTPUT_DIRECTORY       = "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs"
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -816,7 +816,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/DoxygenLayout.xml"
+LAYOUT_FILE            = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/DoxygenLayout.xml"
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -932,7 +932,7 @@ WARN_LINE_FORMAT       = "at line $line of file $file"
 # specified the warning and error messages are written to standard output
 # (stdout).
 
-WARN_LOGFILE           = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs/warnings.txt"
+WARN_LOGFILE           = "/home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs/warnings.txt"
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
@@ -945,22 +945,22 @@ WARN_LOGFILE           = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  =  \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3.h" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3native.h" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/main.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/news.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/quick.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/moving.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/compile.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/build.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/intro.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/context.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/monitor.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/window.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/input.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/vulkan.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/compat.md" \
-"/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/internal.md"
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include/GLFW/glfw3.h" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include/GLFW/glfw3native.h" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/main.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/news.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/quick.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/moving.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/compile.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/build.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/intro.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/context.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/monitor.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/window.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/input.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/vulkan.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/compat.md" \
+"/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/internal.md"
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1045,7 +1045,7 @@ EXCLUDE_SYMBOLS        = APIENTRY GLFWAPI
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/examples"
+EXAMPLE_PATH           = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/examples"
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -1285,7 +1285,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/header.html"
+HTML_HEADER            = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/header.html"
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1295,7 +1295,7 @@ HTML_HEADER            = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/
 # that doxygen normally uses.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FOOTER            = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/footer.html"
+HTML_FOOTER            = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/footer.html"
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading style
 # sheet that is used by each HTML page. It can be used to fine-tune the look of
@@ -1325,7 +1325,7 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/extra.css"
+HTML_EXTRA_STYLESHEET  = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/extra.css"
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1335,7 +1335,7 @@ HTML_EXTRA_STYLESHEET  = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = "/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/spaces.svg"
+HTML_EXTRA_FILES       = "/home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/spaces.svg"
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.

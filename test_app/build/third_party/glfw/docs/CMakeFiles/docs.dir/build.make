@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored
+CMAKE_SOURCE_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build
+CMAKE_BINARY_DIR = /home/yassine-ahmed-ali/Documents/GooeyGUI/build
 
 # Utility rule file for docs.
 
@@ -66,30 +66,30 @@ include third_party/glfw/docs/CMakeFiles/docs.dir/compiler_depend.make
 # Include the progress variables for this target.
 include third_party/glfw/docs/CMakeFiles/docs.dir/progress.make
 
-third_party/glfw/docs/html/index.html: third_party/glfw/docs/Doxyfile
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3.h
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/include/GLFW/glfw3native.h
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/main.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/news.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/quick.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/moving.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/compile.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/build.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/intro.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/context.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/monitor.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/window.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/input.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/vulkan.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/compat.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/internal.md
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/DoxygenLayout.xml
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/header.html
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/footer.html
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/extra.css
-third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs/spaces.svg
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating HTML documentation"
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs && /usr/bin/doxygen
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/Doxyfile
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include/GLFW/glfw3.h
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/include/GLFW/glfw3native.h
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/main.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/news.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/quick.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/moving.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/compile.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/build.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/intro.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/context.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/monitor.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/window.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/input.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/vulkan.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/compat.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/internal.md
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/DoxygenLayout.xml
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/header.html
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/footer.html
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/extra.css
+third_party/glfw/docs/html/index.html: /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs/spaces.svg
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/yassine-ahmed-ali/Documents/GooeyGUI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating HTML documentation"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs && /usr/bin/doxygen
 
 docs: third_party/glfw/docs/html/index.html
 docs: third_party/glfw/docs/CMakeFiles/docs.dir/build.make
@@ -100,10 +100,10 @@ third_party/glfw/docs/CMakeFiles/docs.dir/build: docs
 .PHONY : third_party/glfw/docs/CMakeFiles/docs.dir/build
 
 third_party/glfw/docs/CMakeFiles/docs.dir/clean:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs && $(CMAKE_COMMAND) -P CMakeFiles/docs.dir/cmake_clean.cmake
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs && $(CMAKE_COMMAND) -P CMakeFiles/docs.dir/cmake_clean.cmake
 .PHONY : third_party/glfw/docs/CMakeFiles/docs.dir/clean
 
 third_party/glfw/docs/CMakeFiles/docs.dir/depend:
-	cd /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/third_party/glfw/docs /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs /home/yassine-ahmed-ali/Documents/GooeyGUI_refactored/build/third_party/glfw/docs/CMakeFiles/docs.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yassine-ahmed-ali/Documents/GooeyGUI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yassine-ahmed-ali/Documents/GooeyGUI /home/yassine-ahmed-ali/Documents/GooeyGUI/third_party/glfw/docs /home/yassine-ahmed-ali/Documents/GooeyGUI/build /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs /home/yassine-ahmed-ali/Documents/GooeyGUI/build/third_party/glfw/docs/CMakeFiles/docs.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/glfw/docs/CMakeFiles/docs.dir/depend
 

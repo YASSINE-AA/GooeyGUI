@@ -221,7 +221,7 @@ typedef struct
  */
 typedef struct
 {
-  char *title;                            /**< Title of the menu item */
+  char title[128];                            /**< Title of the menu item */
   char *menu_elements[MAX_MENU_CHILDREN]; /**< List of child menu elements */
   void (*callbacks[MAX_MENU_CHILDREN])(); /**< List of callback functions for child menu elements */
   int menu_elements_count;                /**< Number of child menu elements */
