@@ -24,13 +24,13 @@ int called = 0;
 
 int Gooey_Init(GooeyBackends backend)
 {
-    unsigned long primaryColor = (unsigned long)strtol("0x2196F3", NULL, 0);
-    unsigned long baseColor = (unsigned long)strtol("0xFFFFFF", NULL, 0);
-    unsigned long neutralColor = (unsigned long)strtol("0x000000", NULL, 0);
-    unsigned long widgetBaseColor = (unsigned long)strtol("0xD3D3D3", NULL, 0);
-    unsigned long dangerColor = (unsigned long)strtol("0xE91E63", NULL, 0);
-    unsigned long infoColor = (unsigned long)strtol("0x2196F3", NULL, 0);
-    unsigned long successColor = (unsigned long)strtol("0x00A152", NULL, 0);
+    unsigned long primaryColor = 0x2196F3;
+    unsigned long baseColor = 0xFFFFFF;
+    unsigned long neutralColor = 0x000000;
+    unsigned long widgetBaseColor = 0xD3D3D3;
+    unsigned long dangerColor = 0xE91E63;
+    unsigned long infoColor = 0x2196F3;
+    unsigned long successColor = 0x00A152;
 
     default_theme = (GooeyTheme){.base = baseColor, .neutral = neutralColor, .primary = primaryColor, .widget_base = widgetBaseColor, .danger = dangerColor, .info = infoColor, .success = successColor};
 

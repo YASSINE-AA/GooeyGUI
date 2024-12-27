@@ -35,10 +35,9 @@ GooeyCanvas *GooeyCanvas_Add(GooeyWindow *win, int x, int y, int width,
     return canvas;
 }
 
-void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int height, const char *color_hex, bool is_filled)
+void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int height, unsigned long color_hex, bool is_filled)
 {
 
-    unsigned long color = (unsigned long)strtol(color_hex, NULL, 0);
 
     int x_win = x + canvas->core.x;
     int y_win = y + canvas->core.y;
@@ -46,7 +45,7 @@ void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int
     if (x_win >= canvas->core.x && x_win <= canvas->core.x + canvas->core.width && y_win >= canvas->core.y && y_win <= canvas->core.y + canvas->core.height)
     {
         CanvasDrawRectangleArgs *args = malloc(sizeof(CanvasDrawRectangleArgs));
-        *args = (CanvasDrawRectangleArgs){.color = color, .height = height, .width = width, .x = x_win, .y = y_win, .is_filled = is_filled};
+        *args = (CanvasDrawRectangleArgs){.color = color_hex, .height = height, .width = width, .x = x_win, .y = y_win, .is_filled = is_filled};
         canvas->elements[canvas->element_count++] = (CanvaElement){.operation = CANVA_DRAW_RECT, .args = args};
         LOG_INFO("Drew %s rectangle with dimensions x=%d, y=%d, w=%d, h=%d in canvas<x=%d, y=%d, w=%d, h=%d>.", is_filled ? "filled" : "hollow", x, y, width, height, canvas->core.x, canvas->core.y, canvas->core.width, canvas->core.height);
     }
@@ -56,10 +55,9 @@ void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int
     }
 }
 
-void GooeyCanvas_DrawLine(GooeyCanvas *canvas, int x1, int y1, int x2, int y2, const char *color_hex)
+void GooeyCanvas_DrawLine(GooeyCanvas *canvas, int x1, int y1, int x2, int y2, unsigned long color_hex)
 {
 
-    unsigned long color = (unsigned long)strtol(color_hex, NULL, 0);
 
     int x1_win = x1 + canvas->core.x;
     int y1_win = y1 + canvas->core.y;
@@ -70,7 +68,7 @@ void GooeyCanvas_DrawLine(GooeyCanvas *canvas, int x1, int y1, int x2, int y2, c
     if (x1_win >= canvas->core.x && x1_win <= canvas->core.x + canvas->core.width && y1_win >= canvas->core.y && y1_win <= canvas->core.y + canvas->core.height && x2_win >= canvas->core.x && x2_win <= canvas->core.x + canvas->core.width && y2_win >= canvas->core.y && y2_win <= canvas->core.y + canvas->core.height)
     {
         CanvasDrawLineArgs *args = malloc(sizeof(CanvasDrawLineArgs));
-        *args = (CanvasDrawLineArgs){.color = color, .x1 = x1_win, .x2 = x2_win, .y1 = y1_win, .y2 = y2_win};
+        *args = (CanvasDrawLineArgs){.color = color_hex, .x1 = x1_win, .x2 = x2_win, .y1 = y1_win, .y2 = y2_win};
         canvas->elements[canvas->element_count++] = (CanvaElement){.operation = CANVA_DRAW_LINE, .args = args};
         LOG_INFO("Drew line with dimensions x1=%d, y1=%d, x2=%d, y2=%d", x1, y1, x2, y2);
     }
@@ -99,13 +97,12 @@ void GooeyCanvas_DrawArc(GooeyCanvas *canvas, int x_center, int y_center, int wi
     }
 }
 
-void GooeyCanvas_SetForeground(GooeyCanvas *canvas, const char *color_hex)
+void GooeyCanvas_SetForeground(GooeyCanvas *canvas, unsigned long color_hex)
 {
-    unsigned long color = (unsigned long)strtol(color_hex, NULL, 0);
     CanvasSetFGArgs *args = malloc(sizeof(CanvasSetFGArgs));
-    *args = (CanvasSetFGArgs){.color = color};
+    *args = (CanvasSetFGArgs){.color = color_hex};
     canvas->elements[canvas->element_count++] = (CanvaElement){.operation = CANVA_DRAW_SET_FG, .args = args};
-    LOG_INFO("Set foreground with color %lX.", color);
+    LOG_INFO("Set foreground with color %lX.", color_hex);
 }
 
 

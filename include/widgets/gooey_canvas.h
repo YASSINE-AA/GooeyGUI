@@ -29,7 +29,7 @@ GooeyCanvas *GooeyCanvas_Add(GooeyWindow *win, int x, int y, int width,
  * @param color_hex The color of the rectangle in hexadecimal.
  * @param is_filled If true, the rectangle is filled with a solid color. If false it is hollow.
  */
-void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int height, const char *color_hex, bool is_filled);
+void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int height, unsigned long color_hex, bool is_filled);
 
 /**
  * @brief Draws a line onto the user-defined canvas.
@@ -41,7 +41,7 @@ void GooeyCanvas_DrawRectangle(GooeyCanvas *canvas, int x, int y, int width, int
  * @param y2 The y-coordinate of the last point of the line.
  * @param color_hex The color of the line in hexadecimal.
  */
-void GooeyCanvas_DrawLine(GooeyCanvas *canvas, int x1, int y1, int x2, int y2, const char *color_hex);
+void GooeyCanvas_DrawLine(GooeyCanvas *canvas, int x1, int y1, int x2, int y2, unsigned long color_hex);
 
 /**
  * @brief Draws an arc onto the user-defined canvas.
@@ -62,7 +62,7 @@ void GooeyCanvas_DrawArc(GooeyCanvas *canvas, int x_center, int y_center, int wi
  * @param canvas The user-defined canvas.
  * @param color_hex The foreground color in hexadecimal.
  */
-void GooeyCanvas_SetForeground(GooeyCanvas *canvas, const char *color_hex);
+void GooeyCanvas_SetForeground(GooeyCanvas *canvas, unsigned long color_hex);
 
 void GooeyCanvas_Draw(GooeyWindow* window);
 
