@@ -7,6 +7,7 @@
 [submodule "third_party/cjson"]
 	path = third_party/cjson
 	url = https://github.com/DaveGamble/cJSON.git
+	post-checkout = ./scripts/apply-cjson-submodule-patch.sh
 [submodule "website"]
 	path = website
 	url = git@github.com:YASSINE-AA/GooeyWebsite.git
