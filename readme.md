@@ -7,6 +7,10 @@
 
 Gooey is a lightweight and feature-rich GUI (Graphical User Interface) library originally designed for X11 environments but now cross-platform. It provides a range of customizable widgets and layouts for creating responsive and modern desktop applications. The library is optimized for simplicity and offers a flexible API for developers.
 
+<p align="center">
+  <img src="showcase_glfw_white.png" width=128>
+</p>
+
 ## Features
 
 - **Wide Range of Widgets**:
@@ -35,7 +39,24 @@ Gooey is a lightweight and feature-rich GUI (Graphical User Interface) library o
   - Simple signaling system
 
 ## Getting Started
-
+1. Clone repo 
+```bash 
+git clone https://github.com/YASSINE-AA/GooeyGUI.git
+```
+2. Update submodules: 
+```bash 
+git submodule update --init --force --remote
+```
+3. Apply patches: 
+```bash
+./scripts/apply-cjson-submodule-patch.sh 
+```
+4. Init Cmake 
+```bash
+cmake -S . -B build
+cd build 
+make 
+```
 ### Prerequisites
 
 Ensure your development environment includes:
