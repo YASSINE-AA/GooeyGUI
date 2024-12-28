@@ -1,17 +1,22 @@
 #!/bin/bash
 echo "------------------"
-echo "RUNNING THE CJON PATSH SCRIPT"
+echo "RUNNING THE cJSON PATCH SCRIPT"
 echo "------------------"
 
 CURR_PATH="${PWD}"
 
-ROOT_DIR="$(dirname ${CURR_PATH})"
+ROOT_DIR="${CURR_PATH}"
 CJSON_SUBMODULE_PATH="${ROOT_DIR}/third_party/cjson"
-PATSH_FILE="${CURR_PATH}/cjson_submodule.patch" 
+PATCH_FILE="${CURR_PATH}/scripts/cjson_submodule.diff" 
 # echo "${ROOT_DIR}"
-# echo "${PATSH_PATH}"
+echo "${PATCH_FILE}"
 # echo "${CJSON_SUBMODULE_FILE}"
 
-pushd "${CJSON_SUBMODULE_PATH}"
-git apply "${PATSH_FILE}"
-popd
+pushd "${CJSON_SUBMODULE_PATH}" > /dev/null 2>&1
+
+if git apply --check "${PATCH_FILE}" > /dev/null 2>&1; then
+    git apply "${PATCH_FILE}" && echo "Patch applied to cJSON"
+else
+    echo "Patch already applied to cJSON"
+fi
+popd > /dev/null 2>&1
