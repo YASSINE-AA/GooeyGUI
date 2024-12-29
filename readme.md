@@ -8,7 +8,7 @@
 Gooey is a lightweight and feature-rich GUI (Graphical User Interface) library originally designed for X11 environments but now cross-platform. It provides a range of customizable widgets and layouts for creating responsive and modern desktop applications. The library is optimized for simplicity and offers a flexible API for developers.
 
 <p align="center">
-  <img src="showcase_glfw_white.png" width=128>
+  <img src="showcase_glfw_white.png" width=300>
 </p>
 
 ## Features
