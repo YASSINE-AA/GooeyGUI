@@ -337,7 +337,7 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
         ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
     }
 
-    if (action == GLFW_PRESS && (key >= 65 && key <= 90 || key == 259))
+    if (action == GLFW_PRESS && ((key >= 65 && key <= 90) || key == 259))
     {
         ctx.current_event->type = GOOEY_EVENT_KEY_PRESS;
         ctx.current_event->key_press.keycode = key;

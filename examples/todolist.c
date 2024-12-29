@@ -1,4 +1,4 @@
-#include "build/include/gooey.h"
+#include "include/gooey.h"
 #include <stdio.h>
 #include <string.h>
 GooeyWindow win;
@@ -9,13 +9,10 @@ int taskCount = 0;
 
 void onAddTask(void)
 {
-    if (taskCount < 128)
-    {
-        char title[20];
-        sprintf(title, "Task %d", taskCount + 1);
-        GooeyList_AddItem(list, title, GooeyTextbox_GetText(inputBox), NULL);
-        taskCount++;
-    }
+    char title[20];
+    sprintf(title, "Task %d", taskCount + 1);
+    GooeyList_AddItem(list, title, GooeyTextbox_GetText(inputBox), NULL);
+    taskCount++;
 }
 
 int main()

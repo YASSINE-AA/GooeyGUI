@@ -42,7 +42,6 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
-
 /**
  * @brief Enumeration for widget types in the Gooey framework.
  */
@@ -58,7 +57,6 @@ typedef enum
   WIDGET_CANVAS,      /**< Canvas widget */
   WIDGET_LAYOUT
 } WIDGET_TYPE;
-
 
 /**
  * @brief A base structure for all Gooey widgets containing their position and size.
@@ -111,7 +109,6 @@ typedef enum
   CANVA_DRAW_ARC,
   CANVA_DRAW_SET_FG
 } CANVA_DRAW_OP;
-
 
 /**
  * @brief A structure representing a textbox widget.
@@ -166,7 +163,12 @@ typedef struct
   GooeyWidget core;     /**< Core widget properties */
   GooeyListItem *items; /**< Items in a list widget */
   int scroll_offset;    /**< Mouse scroll offset */
+  int thumb_y;          /**< Thumb's y-coordinate */
+  int thumb_height;     /**< Thumb's height */
+  int thumb_width;      /**< Thumb's width */
+  int item_spacing;     /**< Item spacing */
   size_t item_count;    /**< List widget item count */
+
 } GooeyList;
 
 /**
@@ -221,7 +223,7 @@ typedef struct
  */
 typedef struct
 {
-  char title[128];                            /**< Title of the menu item */
+  char title[128];                        /**< Title of the menu item */
   char *menu_elements[MAX_MENU_CHILDREN]; /**< List of child menu elements */
   void (*callbacks[MAX_MENU_CHILDREN])(); /**< List of callback functions for child menu elements */
   int menu_elements_count;                /**< Number of child menu elements */

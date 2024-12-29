@@ -19,15 +19,21 @@
 
 GooeyList *GooeyList_Add(GooeyWindow *win, int x, int y, int width, int height)
 {
-    win->lists[win->list_count] = (GooeyList){0};
+
     GooeyList *list = &win->lists[win->list_count++];
+    *list = (GooeyList){0};
     list->core.x = x;
     list->core.y = y;
     list->core.width = width;
     list->core.height = height;
-    list->items = malloc(sizeof(GooeyListItem) * 100);
+    list->items = (GooeyListItem *)malloc(sizeof(GooeyListItem) * 1024);
     list->item_count = 0;
     list->scroll_offset = 1;
+    list->thumb_y = list->core.y;
+    list->thumb_height = -1;
+    // TODO: Make these customizable
+    list->thumb_width = 10;
+    list->item_spacing = 40;
     GooeyWindow_RegisterWidget(win, (GooeyWidget *)&list->core);
 
     return list;
@@ -44,7 +50,6 @@ void GooeyList_AddItem(GooeyList *list, const char *title, const char *descripti
 void GooeyList_Draw(GooeyWindow *win)
 {
 
-    const int item_spacing = 40;
     const int title_description_spacing = 15;
 
     for (int i = 0; i < win->list_count; ++i)
@@ -83,7 +88,7 @@ void GooeyList_Draw(GooeyWindow *win)
             active_theme->neutral,
             win->creation_id);
 
-        int total_content_height = list->item_count * item_spacing;
+        int total_content_height = list->item_count * list->item_spacing;
         if (total_content_height > 0)
         {
             int visible_height = list->core.height;
@@ -96,12 +101,13 @@ void GooeyList_Draw(GooeyWindow *win)
             if (list->scroll_offset > 0)
                 list->scroll_offset = 0;
             int current_y_offset = list->core.y + list->scroll_offset + 10;
-
+            list->thumb_height = total_content_height <= visible_height ? list->core.height : (int)visible_height * ((float)visible_height / (total_content_height));
+            list->thumb_y = list->core.y - (int)(float)((list->scroll_offset) * visible_height) / (total_content_height);
             active_backend->FillRectangle(
                 list->core.x + list->core.width,
-                list->core.y - (int)(float)((list->scroll_offset) * visible_height) / (total_content_height),
-                10,
-                total_content_height <= visible_height ? list->core.height : (int)visible_height * ((float)visible_height / (total_content_height)),
+                list->thumb_y,
+                list->thumb_width,
+                list->thumb_height,
                 active_theme->primary,
                 win->creation_id);
 
@@ -129,7 +135,7 @@ void GooeyList_Draw(GooeyWindow *win)
                         0.25f,
                         win->creation_id);
 
-                int line_seperator_y = current_y_offset + item_spacing - 10;
+                int line_seperator_y = current_y_offset + list->item_spacing - 10;
 
                 if (j < list->item_count - 1)
                 {
@@ -142,7 +148,7 @@ void GooeyList_Draw(GooeyWindow *win)
                             active_theme->neutral,
                             win->creation_id);
                 }
-                current_y_offset += item_spacing;
+                current_y_offset += list->item_spacing;
             }
         }
     }
@@ -150,18 +156,64 @@ void GooeyList_Draw(GooeyWindow *win)
 
 bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 {
+    static int mouse_prev = -1;
+    static size_t test = 0;
+
+    if (mouse_prev == -1)
+        mouse_prev = scroll_event->mouse_move.y;
+
+    static bool is_dragging = false;
+
     for (int i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
 
         int mouse_x = scroll_event->mouse_move.x;
         int mouse_y = scroll_event->mouse_move.y;
-        if (mouse_x >= list->core.x && mouse_x <= list->core.x + list->core.width && mouse_y >= list->core.y && mouse_y <= list->core.y + list->core.height)
+
+        int thumb_width = list->thumb_width;
+        int thumb_height = list->thumb_height;
+        int thumb_x = list->core.x + list->core.width;
+        int thumb_y = list->thumb_y;
+        const int scroll_speed_multiplier = 2;
+        int total_content_height = list->item_count * list->item_spacing;
+        int visible_height = list->core.height;
+
+        if (mouse_x >= thumb_x && mouse_x <= thumb_x + thumb_width && mouse_y >= thumb_y && mouse_y <= thumb_y + thumb_height && scroll_event->type == GOOEY_EVENT_CLICK_PRESS)
         {
-            int scroll_offset_amount = scroll_event->mouse_scroll.y * 8;
+            // Inhibit other events for drag.
+            is_dragging = true;
+        }
+        else if (mouse_x >= list->core.x && mouse_x <= list->core.x + list->core.width && mouse_y >= list->core.y && mouse_y <= list->core.y + list->core.height && scroll_event->type == GOOEY_EVENT_MOUSE_SCROLL)
+        {
+            int scroll_offset_amount = scroll_event->mouse_scroll.y * (total_content_height / visible_height) * scroll_speed_multiplier;
             list->scroll_offset += scroll_offset_amount;
             return true;
         }
+
+        if (is_dragging)
+        {
+            active_backend->InhibitResetEvents(1);
+
+            if (scroll_event->type != GOOEY_EVENT_CLICK_RELEASE)
+            {
+
+                if (mouse_prev - mouse_y > 0)
+                    list->scroll_offset -= (mouse_y - mouse_prev) * (total_content_height / visible_height);
+                else
+                    list->scroll_offset -= (mouse_y - mouse_prev) * (total_content_height / visible_height);
+
+                mouse_prev = mouse_y;
+                return true;
+            }
+            else
+            {
+                is_dragging = false;
+                active_backend->InhibitResetEvents(0);
+            }
+        }
     }
+    active_backend->InhibitResetEvents(0);
+
     return false;
 }

@@ -353,7 +353,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                         GooeyCheckbox_HandleClick(win, x, y) ||
                         GooeyRadioButton_HandleClick(win, x, y) ||
                         GooeyDropdown_HandleClick(win, x, y) ||
-                        GooeyTextbox_HandleClick(win, x, y))
+                        GooeyTextbox_HandleClick(win, x, y) || GooeyList_HandleScroll(win, event))
                     {
                         GooeyWindow_Redraw(win);
                     }
@@ -364,7 +364,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                 if (win->creation_id == event->attached_window)
                 {
 
-                    if (GooeySlider_HandleDrag(win, x, y, event->type))
+                    if (GooeySlider_HandleDrag(win, x, y, event->type) || GooeyList_HandleScroll(win, event))
                     {
                         GooeyWindow_Redraw(win);
                     }

@@ -7,9 +7,8 @@ GooeyWindow childWindow;
 
 void updateColor()
 {
-    LOG_CRITICAL("r=%d g=%d b=%d", red, green, blue);
-    char color[9];
-    snprintf(color, sizeof(color), "0x%02X%02X%02X", red, green, blue);
+    LOG_INFO("r=%d g=%d b=%d", red, green, blue);
+    unsigned long color = (red << 16) | (green  << 8) | blue;
     GooeyCanvas_DrawRectangle(canvas, 0, 0, 200, 200, color, true);
     GooeyWindow_Redraw(&childWindow);
 }
