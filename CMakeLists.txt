@@ -86,6 +86,24 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     SOVERSION 1
 )
 
+set (EXAMPLE_BASIC 
+    examples/showcase.c
+)
+# add option to build examples 
+option(BUILD_EXAMPLES "Build examples programs" ON)
+if (BUILD_EXAMPLES)
+  add_executable(example_basic ${EXAMPLE_BASIC})
+  target_link_libraries(example_basic PRIVATE ${PROJECT_NAME})
+  target_include_directories(example_basic
+    PUBLIC
+    ${PROJECT_SOURCE_DIR}/include
+    PRIVATE
+    ${PROJECT_SOURCE_DIR}/internal
+  )
+  set_property(TARGET example_basic PROPERTY FOLDER "Examples")
+endif()
+install(FILES ${HEADERS} DESTINATION include)
+
 install(FILES ${HEADERS} DESTINATION include)
 
 enable_testing()

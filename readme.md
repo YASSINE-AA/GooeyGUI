@@ -55,7 +55,12 @@ git submodule update --init --force --remote
 ```bash
 cmake -S . -B build
 cd build 
-make 
+make all
+```
+5. Run example 
+```bash
+cp examples/roboto.ttf build/
+./example_basic
 ```
 ### Prerequisites
 
