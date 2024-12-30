@@ -233,7 +233,6 @@ bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 
         if (is_dragging)
         {
-            LOG_ERROR("%d", mouse_y - mouse_prev);
             active_backend->InhibitResetEvents(1);
             if (scroll_event->type != GOOEY_EVENT_CLICK_RELEASE)
             {
