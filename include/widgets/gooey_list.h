@@ -12,8 +12,9 @@
  * @param y The y-coordinate of the list widget.
  * @param width The width of the list widget.
  * @param height The height of the list widget.
+ * @param callback The callback attached to the said item.
  */
-GooeyList *GooeyList_Add(GooeyWindow *window, int x, int y, int width, int height);
+GooeyList *GooeyList_Add(GooeyWindow *window, int x, int y, int width, int height, void (*callback)(int index));
 
 /**
  * @brief Adds a list widget to the window specified.
@@ -21,18 +22,28 @@ GooeyList *GooeyList_Add(GooeyWindow *window, int x, int y, int width, int heigh
  * @param list The List widget you're adding the item to.
  * @param title The title of the list widget item.
  * @param description The description of the list widget item.
- * @param callback The callback attached to the said item.
  */
-void GooeyList_AddItem(GooeyList *list, const char *title, const char *description, void (*callback)(void));
+void GooeyList_AddItem(GooeyList *list, const char *title, const char *description);
 
 /**
  * @brief Handles scroll events.
  *
  * @param window The window containing the list.
  * @param event The scroll event.
- * @return if mouse scroll event then returns true, otherwise returns false. 
+ * @return if mouse scroll event then returns true, otherwise returns false.
  */
 bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *event);
+
+/**
+ * Handles thumb dragging for a GooeyList.
+ * @param window Pointer to the GooeyWindow.
+ * @param scroll_event Pointer to the GooeyEvent.
+ * @return True if the event was handled, false otherwise.
+ */
+bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event);
+
+
+bool GooeyList_HandleClick(GooeyWindow *window, int mouse_x, int mouse_y);
 
 /**
  * @brief Draws All attached list widgets onto window.
@@ -40,7 +51,5 @@ bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *event);
  * @param window The window which you're adding the list widget to.
  */
 void GooeyList_Draw(GooeyWindow *window);
-
-
 
 #endif

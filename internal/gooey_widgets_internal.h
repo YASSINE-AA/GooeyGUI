@@ -168,7 +168,7 @@ typedef struct
   int thumb_width;      /**< Thumb's width */
   int item_spacing;     /**< Item spacing */
   size_t item_count;    /**< List widget item count */
-
+  void (*callback)(int index);
 } GooeyList;
 
 /**
