@@ -94,13 +94,15 @@ void GooeyList_Draw(GooeyWindow *win)
         list->thumb_height = (total_content_height <= visible_height)
                                  ? list->core.height
                                  : (int)((float)visible_height * visible_height / total_content_height);
+        if (total_content_height > 0)
+        {
+            list->thumb_y = list->core.y - (int)((float)list->scroll_offset * visible_height / total_content_height);
 
-        list->thumb_y = list->core.y - (int)((float)list->scroll_offset * visible_height / total_content_height);
-
-        active_backend->FillRectangle(
-            list->core.x + list->core.width, list->thumb_y,
-            list->thumb_width, list->thumb_height,
-            active_theme->primary, win->creation_id);
+            active_backend->FillRectangle(
+                list->core.x + list->core.width, list->thumb_y,
+                list->thumb_width, list->thumb_height,
+                active_theme->primary, win->creation_id);
+        }
 
         for (size_t j = 0; j < list->item_count; ++j)
         {
@@ -208,11 +210,6 @@ bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
     static int mouse_prev = -1;
     static bool is_dragging = false;
 
-    if (mouse_prev == -1)
-    {
-        mouse_prev = scroll_event->mouse_move.y;
-    }
-
     for (int i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
@@ -236,11 +233,12 @@ bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 
         if (is_dragging)
         {
+            LOG_ERROR("%d", mouse_y - mouse_prev);
             active_backend->InhibitResetEvents(1);
-
             if (scroll_event->type != GOOEY_EVENT_CLICK_RELEASE)
             {
-                list->scroll_offset -= (mouse_y - mouse_prev) * (total_content_height / visible_height);
+                if (mouse_prev != -1)
+                    list->scroll_offset -= (mouse_y - mouse_prev) * (total_content_height / visible_height);
                 mouse_prev = mouse_y;
                 return true;
             }
@@ -248,6 +246,7 @@ bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
             {
                 is_dragging = false;
                 active_backend->InhibitResetEvents(0);
+                mouse_prev = -1;
             }
         }
     }
