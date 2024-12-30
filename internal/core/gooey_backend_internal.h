@@ -33,7 +33,7 @@ typedef struct GooeyBackend
     void (*FillRectangle)(int x, int y, int width, int height, unsigned long color, int window_id);
     void (*DrawRectangle)(int x, int y, int width, int height, unsigned long color, int window_id);
     void (*FillArc)(int x, int y, int width, int height, int angle1, int angle2, int window_id);
-    char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
+    const char *(*GetKeyFromCode)(GooeyEvent *gooey_event);
     GooeyEvent *(*HandleEvents)(void);
     void (*InhibitResetEvents)(bool state);
     void (*GetWinDim)(int *width, int *height, int window_id);

@@ -82,6 +82,6 @@ void get_window_size(GLFWwindow *window, int *window_width, int *window_height);
 void convert_coords_to_ndc(GLFWwindow *window, float *ndc_x, float *ndc_y, int x, int y);
 void convert_dimension_to_ndc(GLFWwindow *window, float *ndc_w, float *ndc_h, int width, int height);
 void convert_hex_to_rgb(vec3 *rgb, unsigned int color_hex);
- char* LookupString(int keycode) ;
+const char* LookupString(int keycode);
 
 #endif //GLFW_UTILS_H

@@ -115,18 +115,22 @@ void GooeySlider_Draw(GooeyWindow *win)
     }
 }
 
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type)
+bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent *event)
 {
     static GooeySlider *active_slider = NULL;
     int comfort_margin = 20;
+    int mouse_x = event->click.x;
+    int mouse_y = event->click.y;
+    GooeyEventType type = event->type;
 
     for (int i = 0; i < win->slider_count; ++i)
     {
         GooeySlider *slider = &win->sliders[i];
 
         bool within_bounds =
-            (y >= slider->core.y - comfort_margin && y <= slider->core.y + slider->core.height + comfort_margin) &&
-            (x >= slider->core.x && x <= slider->core.x + slider->core.width);
+            (mouse_y >= slider->core.y - comfort_margin && mouse_y <= slider->core.y + slider->core.height + comfort_margin) &&
+            (mouse_x >= slider->core.x && mouse_x <= slider->core.x + slider->core.width);
+
 
         if (type == GOOEY_EVENT_CLICK_PRESS && within_bounds)
         {
@@ -135,38 +139,18 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type)
 
             slider->value =
                 slider->min_value +
-                ((x - slider->core.x) * (slider->max_value - slider->min_value)) /
+                ((mouse_x - slider->core.x) * (slider->max_value - slider->min_value)) /
                     slider->core.width;
 
             if (slider->value < slider->min_value)
                 slider->value = slider->min_value;
             if (slider->value > slider->max_value)
                 slider->value = slider->max_value;
-
-            return true;
-        }
-        else if (type == GOOEY_EVENT_MOUSE_MOVE && slider == active_slider)
-        {
-            slider->value =
-                slider->min_value +
-                ((x - slider->core.x) * (slider->max_value - slider->min_value)) /
-                    slider->core.width;
-
-            if (slider->value < slider->min_value)
-                slider->value = slider->min_value;
-            if (slider->value > slider->max_value)
-                slider->value = slider->max_value;
-
-            if (slider->callback)
-            {
-                slider->callback(slider->value);
-            }
 
             return true;
         }
     }
 
-    // Handle release outside of slider bounds
     if (type == GOOEY_EVENT_CLICK_RELEASE && active_slider)
     {
         active_backend->InhibitResetEvents(0);

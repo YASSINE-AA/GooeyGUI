@@ -339,7 +339,16 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
 
             case GOOEY_EVENT_KEY_PRESS:
                 if (win->creation_id == event->attached_window)
+                {
                     GooeyTextbox_HandleKeyPress(win, event);
+                    if (GooeyList_HandleScroll(win, event) || GooeySlider_HandleDrag(win, event))
+                    {
+                        GooeyWindow_Redraw(win);
+                    }
+                    
+
+                }
+
                 break;
 
             case GOOEY_EVENT_CLICK_PRESS:
@@ -347,8 +356,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                 {
 
                     GooeyMenu_HandleClick(win, x, y);
-                    if (
-                        GooeySlider_HandleDrag(win, x, y, event->type) || GooeyButton_HandleClick(win, x, y) ||
+                    if ( GooeySlider_HandleDrag(win, event) || GooeyButton_HandleClick(win, x, y) ||
                         GooeyRadioButtonGroup_HandleClick(win, x, y) ||
                         GooeyCheckbox_HandleClick(win, x, y) ||
                         GooeyRadioButton_HandleClick(win, x, y) ||
@@ -364,7 +372,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                 if (win->creation_id == event->attached_window)
                 {
 
-                    if (GooeySlider_HandleDrag(win, x, y, event->type) || GooeyList_HandleThumbScroll(win, event))
+                    if (GooeySlider_HandleDrag(win, event) || GooeyList_HandleThumbScroll(win, event))
                     {
                         GooeyWindow_Redraw(win);
                     }
@@ -383,7 +391,6 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                 break;
 
             case GOOEY_EVENT_WINDOW_CLOSE:
-
                 running = false;
                 break;
 

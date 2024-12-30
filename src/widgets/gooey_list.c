@@ -168,6 +168,16 @@ bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 
                 return true;
             }
+            else if (scroll_event->type == GOOEY_EVENT_KEY_PRESS)
+            {
+                const char *key = active_backend->GetKeyFromCode(scroll_event);
+                LOG_ERROR("%s", key);
+
+                if (strcmp(key, "Up") == 0)
+                    list->scroll_offset += (total_content_height / visible_height) * scroll_speed_multiplier;
+                else if (strcmp(key, "Down") == 0)
+                    list->scroll_offset -= (total_content_height / visible_height) * scroll_speed_multiplier;
+            }
         }
     }
     return false;

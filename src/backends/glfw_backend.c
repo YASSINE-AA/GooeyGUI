@@ -331,16 +331,12 @@ static void error_callback(int error, const char *description)
 static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
     userPtr *data = glfwGetWindowUserPointer(window);
-    ctx.current_event->attached_window = data->id;
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-    {
-        ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
-    }
 
-    if (action == GLFW_PRESS && ((key >= 65 && key <= 90) || key == 259))
+    if (action == GLFW_PRESS)
     {
-        ctx.current_event->type = GOOEY_EVENT_KEY_PRESS;
+        ctx.current_event->type = key == GLFW_KEY_ESCAPE ? GOOEY_EVENT_WINDOW_CLOSE : GOOEY_EVENT_KEY_PRESS;
         ctx.current_event->key_press.keycode = key;
+        ctx.current_event->attached_window = data->id;
     }
 }
 
@@ -606,7 +602,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
 
     ctx.window = glfwCreateWindow(width, height, title, NULL, NULL);
     glfwSetWindowSizeLimits(ctx.window, width, height, GLFW_DONT_CARE, GLFW_DONT_CARE);
-    GooeyWindow window = (GooeyWindow) {0};
+    GooeyWindow window = (GooeyWindow){0};
 
     window.creation_id = ctx.window_count;
 
@@ -633,7 +629,7 @@ GooeyWindow glfw_create_window(const char *title, int width, int height)
 
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
-        
+
     glfw_init_ft();
 
     glfw_setup_shared();
@@ -851,7 +847,7 @@ float glfw_get_text_height(const char *text, int length)
     return max_height;
 }
 
-char *glfw_get_key_from_code(GooeyEvent *gooey_event)
+const char *glfw_get_key_from_code(GooeyEvent *gooey_event)
 {
     return LookupString(gooey_event->key_press.keycode);
 }

@@ -28,7 +28,7 @@ GooeySlider *GooeySlider_Add(GooeyWindow *win, int x, int y, int width,
  * @param event The current event.
  * @return True if the slider was dragged, false otherwise.
  */
-bool GooeySlider_HandleDrag(GooeyWindow *win, int x, int y, GooeyEventType type);
+bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent *event);
 /**
  * @brief Gets the current value of the slider.
  *
@@ -46,6 +46,5 @@ long GooeySlider_GetValue(GooeySlider *slider);
 void GooeySlider_SetValue(GooeySlider *slider, long value);
 
 void GooeySlider_Draw(GooeyWindow *window);
-
 
 #endif

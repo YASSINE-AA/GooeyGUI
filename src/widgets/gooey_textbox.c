@@ -111,7 +111,7 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 {
     printf("hey pressed \n");
 
-    char *buf = active_backend->GetKeyFromCode(key_event);
+    const char *buf = active_backend->GetKeyFromCode(key_event);
     if (buf == NULL)
     {
         return;
@@ -171,10 +171,7 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
     }
     GooeyWindow_Redraw(win);
 
-    if (!(strcmp(buf, "Backspace") == 0 || strcmp(buf, "Return") == 0 || strcmp(buf, "Tab") == 0))
-    {
-        free(buf);
-    }
+
 }
 
 
