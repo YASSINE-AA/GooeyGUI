@@ -190,19 +190,32 @@ bool GooeyList_HandleClick(GooeyWindow *window, int mouse_x, int mouse_y)
     for (int i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
+
         if (mouse_x >= list->core.x && mouse_x <= list->core.x + list->core.width &&
             mouse_y >= list->core.y && mouse_y <= list->core.y + list->core.height)
         {
-            int scroll_offset = abs(list->scroll_offset);
-            int current_list_scroll_position = scroll_offset + list->core.y;
-            int mouse_y_in_list = mouse_y - list->core.y;
-            int selected_index = (int)-1 + (float)(current_list_scroll_position + mouse_y_in_list) / DEFAULT_ITEM_SPACING;
+            int scroll_offset = list->scroll_offset;
+            int mouse_y_relative = mouse_y - list->core.y;
+            int adjusted_y = mouse_y_relative + scroll_offset;
 
-            if (list->callback)
-                list->callback(selected_index);
-            return true;
+            if (DEFAULT_ITEM_SPACING <= 0)
+                return false;
+
+            int selected_index = adjusted_y / DEFAULT_ITEM_SPACING;
+
+            if (selected_index >= 0 && selected_index < list->item_count)
+            {
+                if (list->callback)
+                {
+                    list->callback(selected_index);
+                }
+
+                return true;
+            }
         }
     }
+
+    return false;
 }
 
 bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
