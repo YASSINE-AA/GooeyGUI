@@ -51,6 +51,12 @@ void GooeyList_AddItem(GooeyList *list, const char *title, const char *descripti
     list->items[list->item_count++] = item;
 }
 
+void GooeyList_ClearItems(GooeyList *list)
+{
+    memset(list->items, 0, sizeof(*list->items));
+    list->item_count = 0;
+}
+
 void GooeyList_Draw(GooeyWindow *win)
 {
     const int title_description_spacing = 15;

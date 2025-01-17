@@ -26,6 +26,13 @@ GooeyList *GooeyList_Add(GooeyWindow *window, int x, int y, int width, int heigh
 void GooeyList_AddItem(GooeyList *list, const char *title, const char *description);
 
 /**
+ * @brief Clears all items from a list widget.
+ *
+ * @param list The List widget from which you're clearing all items.
+ */
+void GooeyList_ClearItems(GooeyList *list);
+
+/**
  * @brief Handles scroll events.
  *
  * @param window The window containing the list.
@@ -41,7 +48,6 @@ bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *event);
  * @return True if the event was handled, false otherwise.
  */
 bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event);
-
 
 bool GooeyList_HandleClick(GooeyWindow *window, int mouse_x, int mouse_y);
 
