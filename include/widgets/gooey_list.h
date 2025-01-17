@@ -33,6 +33,15 @@ void GooeyList_AddItem(GooeyList *list, const char *title, const char *descripti
 void GooeyList_ClearItems(GooeyList *list);
 
 /**
+ * @brief Shows or hides separator in a list widget
+ *
+ * @param list The List widget.
+ * @param state show (true) / hide (false)
+ */
+void GooeyList_ShowSeparator(GooeyList *list, bool state);
+
+
+/**
  * @brief Handles scroll events.
  *
  * @param window The window containing the list.

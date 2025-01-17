@@ -38,6 +38,7 @@ GooeyList *GooeyList_Add(GooeyWindow *win, int x, int y, int width, int height, 
     list->thumb_width = DEFAULT_THUMB_WIDTH;
     list->item_spacing = DEFAULT_ITEM_SPACING;
     list->callback = callback;
+    list->show_separator = true;
 
     GooeyWindow_RegisterWidget(win, (GooeyWidget *)&list->core);
     return list;
@@ -138,16 +139,22 @@ void GooeyList_Draw(GooeyWindow *win)
                 line_separator_y < list->core.y + list->core.height - 10 &&
                 line_separator_y > list->core.y + 5)
             {
-                active_backend->DrawLine(
-                    list->core.x, line_separator_y,
-                    list->core.x + list->core.width,
-                    line_separator_y, active_theme->neutral,
-                    win->creation_id);
+                if (list->show_separator)
+                    active_backend->DrawLine(
+                        list->core.x, line_separator_y,
+                        list->core.x + list->core.width,
+                        line_separator_y, active_theme->neutral,
+                        win->creation_id);
             }
 
             current_y_offset += list->item_spacing;
         }
     }
+}
+
+void GooeyList_ShowSeparator(GooeyList *list, bool state)
+{
+    list->show_separator = state;
 }
 
 bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
