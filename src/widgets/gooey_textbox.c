@@ -16,11 +16,12 @@
  */
 
 #include "widgets/gooey_textbox.h"
+#include <math.h>
 
 GooeyTextbox *GooeyTextBox_Add(GooeyWindow *win, int x, int y, int width,
                                int height, char *placeholder, void (*onTextChanged)(char *text))
 {
-    win->textboxes[win->textboxes_count] = (GooeyTextbox) {0};
+    win->textboxes[win->textboxes_count] = (GooeyTextbox){0};
     win->textboxes[win->textboxes_count].core.type = WIDGET_TEXTBOX;
     win->textboxes[win->textboxes_count].core.x = x;
     win->textboxes[win->textboxes_count].core.y = y;
@@ -100,16 +101,18 @@ void GooeyTextbox_Draw(GooeyWindow *win)
         else
         {
 
-            if (strcmp(win->textboxes[index].placeholder, "") !=0 && strlen(win->textboxes[index].text) == 0)
+            if (strcmp(win->textboxes[index].placeholder, "") != 0 && strlen(win->textboxes[index].text) == 0)
                 active_backend->DrawText(text_x, text_y, win->textboxes[index].placeholder, active_theme->neutral, 0.25f, win->creation_id);
         }
     }
 }
 
-
 void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 {
-    printf("hey pressed \n");
+
+    static bool is_capslock_on = false;
+    static int ascii_offset = 'a' - 'A';
+    printf("Key pressed\n");
 
     const char *buf = active_backend->GetKeyFromCode(key_event);
     if (buf == NULL)
@@ -126,7 +129,6 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
 
         if (strcmp(buf, "Backspace") == 0)
         {
-
             if (len > 0)
             {
                 win->textboxes[i].text[len - 1] = '\0';
@@ -144,16 +146,28 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         }
         else if (strcmp(buf, "Return") == 0)
         {
-
             win->textboxes[i].focused = false;
+        }
+        else if (strcmp(buf, "CapsLock") == 0)
+        {
+            is_capslock_on = !is_capslock_on;
+        }
+        else if (strcmp(buf, "Space") == 0)
+        {
+            strcat(win->textboxes[i].text, " ");
         }
         else if (strcmp(buf, "Tab") == 0)
         {
         }
         else if (isprint(buf[0]) && len < sizeof(win->textboxes[i].text) - 1)
         {
-
-            strncat(win->textboxes[i].text, buf, 1);
+            char ch = buf[0];
+            if (is_capslock_on && ch >= 'a' && ch <= 'z')
+            {
+                ch -= ascii_offset;
+            }
+            win->textboxes[i].text[len] = ch;
+            win->textboxes[i].text[len + 1] = '\0';
 
             if (win->textboxes[i].callback)
             {
@@ -169,24 +183,22 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
             }
         }
     }
+
     GooeyWindow_Redraw(win);
-
-
 }
-
 
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
-
     for (int i = 0; i < win->textboxes_count; i++)
     {
         GooeyTextbox *textbox = &win->textboxes[i];
-        if (x >= win->textboxes[i].core.x &&
-            x <= win->textboxes[i].core.x + win->textboxes[i].core.width &&
-            y >= win->textboxes[i].core.y &&
-            y <= win->textboxes[i].core.y + win->textboxes[i].core.height)
+        if (x >= textbox->core.x &&
+            x <= textbox->core.x + textbox->core.width &&
+            y >= textbox->core.y &&
+            y <= textbox->core.y + textbox->core.height)
         {
-            win->textboxes[i].focused = true;
+            // Focus the clicked textbox and unfocus others
+            textbox->focused = true;
             for (int j = 0; j < win->textboxes_count; j++)
             {
                 if (j != i)

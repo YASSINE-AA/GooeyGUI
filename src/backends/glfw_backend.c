@@ -332,9 +332,13 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 {
     userPtr *data = glfwGetWindowUserPointer(window);
 
-    if (action == GLFW_PRESS)
+    if (action == GLFW_PRESS || action == GLFW_RELEASE)
     {
-        ctx.current_event->type = key == GLFW_KEY_ESCAPE ? GOOEY_EVENT_WINDOW_CLOSE : GOOEY_EVENT_KEY_PRESS;
+        
+        if(key == GLFW_KEY_ESCAPE) ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
+        else {
+            ctx.current_event->type = action == GLFW_PRESS ? GOOEY_EVENT_KEY_PRESS : GOOEY_EVENT_KEY_RELEASE;
+        }
         ctx.current_event->key_press.keycode = key;
         ctx.current_event->attached_window = data->id;
     }
@@ -824,10 +828,11 @@ void glfw_render(int window_id)
 
 float glfw_get_text_width(const char *text, int length)
 {
-    float total_width = 0;
+    float total_width = 0.0f;
     for (int i = 0; i < length; ++i)
     {
-        total_width += (ctx.characters[text[i]].width + ctx.characters[text[i]].bearingX) * 0.25f;
+            total_width += (ctx.characters[text[i]].advance / 64.0f) * 0.25f;
+       
     }
     return total_width;
 }

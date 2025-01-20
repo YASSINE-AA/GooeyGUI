@@ -121,6 +121,7 @@ typedef struct
   bool focused;                 /**< Whether the textbox is focused */
   int cursor_pos;               /**< Position of the cursor in the text */
   int scroll_offset;            /**< Scroll offset of the textbox */
+  int cursor_position;          /**< Cursor position */
   void (*callback)(char *text); /**< Callback when text changes */
 } GooeyTextbox;
 
@@ -168,7 +169,7 @@ typedef struct
   int thumb_width;      /**< Thumb's width */
   int item_spacing;     /**< Item spacing */
   size_t item_count;    /**< List widget item count */
-  bool show_separator; /**< Show or hide separator */
+  bool show_separator;  /**< Show or hide separator */
   void (*callback)(int index);
 } GooeyList;
 
