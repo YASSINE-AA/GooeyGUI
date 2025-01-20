@@ -57,11 +57,16 @@ cmake -S . -B build
 cd build 
 make all
 ```
-5. Run example 
+5. To install target in you local machine 
+```bash 
+sudo make install
+```
+6. Run example 
 ```bash
 cp examples/roboto.ttf build/
 ./example_basic
 ```
+
 ### Prerequisites
 
 Ensure your development environment includes:
@@ -78,12 +83,13 @@ To integrate Gooey into your project:
 3. Link libraries.
 
 ### Example Usage
+- create a example.c file then copy the following code. 
 
 ```c
-
-
-    #include "gooey.h"
+    #include <Gooey/gooey.h>
     #include <stdio.h>
+    #include <unistd.h>
+    #include <stdlib.h>
     
     bool state = 0;
     GooeyWindow msgBox;
@@ -116,13 +122,21 @@ To integrate Gooey into your project:
     
         GooeyWindow_Run(2, &win, &msgBox);
     
-        GooeyWindow_Cleanup(&win);
+        GooeyWindow_Cleanup(2, &win, &msgBox);
     
         return 0;
     }
+ 
     
 ```
-
+- to compile and run follow these steps  
+```bash 
+gcc example.c -o example -I/usr/local/include/Gooey -L/usr/local/lib/ -lGooeyGUI -Wno-deprecated-declarations
+```
+> Note ignore the compilation warning, will be fiwed in the upcoming days 
+```bash 
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libasan.so.6 ./example
+``` 
 ## Documentation
 
 - You can find the full API documentation <a href="https://yassine-aa.github.io/GooeyWebsite/docs/index.html">here</a>. 
