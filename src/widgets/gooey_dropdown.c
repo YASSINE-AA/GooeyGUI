@@ -111,8 +111,6 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
                 if (x >= submenu_x && x <= submenu_x + submenu_width &&
                     y >= element_y && y <= element_y + 25)
                 {
-                    printf("test %d \n", j);
-
                     dropdown->selected_index = j;
 
                     if (win->dropdowns[i].callback)

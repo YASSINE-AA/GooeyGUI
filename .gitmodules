@@ -14,3 +14,6 @@
 	path = website
 	url = https://github.com/YASSINE-AA/GooeyWebsite.git
   	branch = main 
+[submodule "third_party/GLPS"]
+	path = third_party/GLPS
+	url = https://github.com/YASSINE-AA/GLPS.git

@@ -7,13 +7,14 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Source files
 set(SOURCES
-    src/backends/glfw_backend.c
     src/core/gooey.c
     src/core/gooey_common.c
     src/utils/logger/gooey_logger.c
     src/utils/theme/gooey_theme.c
     src/utils/glad/glad.c
-    src/utils/glfw/glfw_utils.c
+    src/utils/backends/backend_utils.c
+    src/backends/glfw_backend.c
+    src/backends/glps_backend.c
     src/widgets/gooey_button.c
     src/widgets/gooey_canvas.c
     src/widgets/gooey_checkbox.c
@@ -33,7 +34,7 @@ set(SOURCES
 set(HEADERS
     internal/core/gooey_common.h
     internal/core/gooey_backend_internal.h
-    internal/utils/glfw/glfw_utils.h
+    internal/utils/backends/backend_utils.h
     internal/utils/glad/glad.h
     internal/utils/linmath/linmath.h
     internal/utils/logger/gooey_logger_internal.h
@@ -72,6 +73,7 @@ target_link_libraries(${PROJECT_NAME}
     cjson
     glfw
     freetype
+    GLPS
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -82,6 +84,7 @@ target_include_directories(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}/internal
     ${PROJECT_SOURCE_DIR}/third_party/freetype/include
     ${PROJECT_SOURCE_DIR}/third_party/glfw/include
+    ${PROJECT_SOURCE_DIR}/third_party/GLPS/include
     ${PROJECT_SOURCE_DIR}/third_party/cjson/include
 )
 

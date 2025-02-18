@@ -15,7 +15,36 @@
  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "utils/glfw/glfw_utils.h"
+#include "utils/backends/backend_utils.h"
+
+
+
+
+void check_shader_compile(GLuint shader)
+{
+    GLint success;
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        char infoLog[512];
+        glGetShaderInfoLog(shader, 512, NULL, infoLog);
+        LOG_ERROR("ERROR: Shader compilation failed\n%s\n", infoLog);
+        exit(EXIT_FAILURE);
+    }
+}
+
+void check_shader_link(GLuint program)
+{
+    GLint success;
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
+    if (!success)
+    {
+        char infoLog[512];
+        glGetProgramInfoLog(program, 512, NULL, infoLog);
+        LOG_ERROR("ERROR: Program linking failed\n%s\n", infoLog);
+        exit(EXIT_FAILURE);
+    }
+}
 
 void get_window_size(GLFWwindow *window, int *window_width, int *window_height)
 {

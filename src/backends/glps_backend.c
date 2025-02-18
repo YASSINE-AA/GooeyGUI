@@ -16,26 +16,19 @@
  */
 #include "utils/backends/backend_utils.h"
 
-typedef struct userPtr
-{
-    int id;
-} userPtr;
-
 typedef struct
 {
     GooeyEvent *current_event;
-    GLFWwindow *window;
-    GLFWwindow **child_windows;
-    GLFWcursor *cursor;
+    //  glpscursor *cursor;
     GLuint *text_programs;
     GLuint shape_program;
     GLuint text_vbo;
     GLuint shape_vbo;
-    userPtr *user_ptrs;
     GLuint *text_vaos;
     GLuint *shape_vaos;
     mat4x4 projection;
     GLuint text_fragment_shader;
+    glps_WindowManager* wm;
     GLuint text_vertex_shader;
     Character characters[128];
     char font_path[256];
@@ -47,8 +40,7 @@ typedef struct
 
 static GooeyBackendContext ctx = {0};
 
-
-void glfw_setup_shared()
+void glps_setup_shared()
 {
 
     glGenBuffers(1, &ctx.text_vbo);
@@ -85,7 +77,7 @@ void glfw_setup_shared()
     glDeleteShader(shape_fragment_shader);
 }
 
-void setup_seperate_vao(int window_id)
+void glps_setup_seperate_vao(int window_id)
 {
 
     ctx.text_programs[window_id] = glCreateProgram();
@@ -121,17 +113,16 @@ void setup_seperate_vao(int window_id)
     ctx.shape_vaos[window_id] = shape_vao;
 }
 
-void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int color, int window_id)
+void glps_fill_rectangle(int x, int y, int width, int height, long unsigned int color, int window_id)
 {
 
-    GLFWwindow *target_window = (window_id == 0) ? ctx.window : ctx.child_windows[window_id - 1];
-    glfwMakeContextCurrent(target_window);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
     vec3 color_rgb;
 
-    convert_coords_to_ndc(target_window, &ndc_x, &ndc_y, x, y);
-    convert_dimension_to_ndc(target_window, &ndc_width, &ndc_height, width, height);
+    convert_coords_to_ndc(window_id, &ndc_x, &ndc_y, x, y);
+    convert_dimension_to_ndc(window_id, &ndc_width, &ndc_height, width, height);
     convert_hex_to_rgb(&color_rgb, color);
 
     Vertex vertices[6];
@@ -165,21 +156,20 @@ void glfw_fill_rectangle(int x, int y, int width, int height, long unsigned int 
     glBindVertexArray(ctx.shape_vaos[window_id]);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
-void glfw_set_foreground(long unsigned int color)
+void glps_set_foreground(long unsigned int color)
 {
     ctx.selected_color = color;
 }
 
-void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int color, int window_id)
+void glps_draw_rectangle(int x, int y, int width, int height, long unsigned int color, int window_id)
 {
-    GLFWwindow *target_window = (window_id == 0) ? ctx.window : ctx.child_windows[window_id - 1];
-    glfwMakeContextCurrent(target_window);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
     float ndc_x, ndc_y;
     float ndc_width, ndc_height;
     vec3 color_rgb;
 
-    convert_coords_to_ndc(target_window, &ndc_x, &ndc_y, x, y);
-    convert_dimension_to_ndc(target_window, &ndc_width, &ndc_height, width, height);
+    convert_coords_to_ndc(window_id, &ndc_x, &ndc_y, x, y);
+    convert_dimension_to_ndc(window_id, &ndc_width, &ndc_height, width, height);
     convert_hex_to_rgb(&color_rgb, color);
 
     Vertex vertices[4];
@@ -209,17 +199,16 @@ void glfw_draw_rectangle(int x, int y, int width, int height, long unsigned int 
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 }
 
-void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color, int window_id)
+void glps_draw_line(int x1, int y1, int x2, int y2, long unsigned int color, int window_id)
 {
 
-    GLFWwindow *target_window = (window_id == 0) ? ctx.window : ctx.child_windows[window_id - 1];
-    glfwMakeContextCurrent(target_window);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
     float ndc_x1, ndc_y1;
     float ndc_x2, ndc_y2;
     vec3 color_rgb;
 
-    convert_coords_to_ndc(target_window, &ndc_x1, &ndc_y1, x1, y1);
-    convert_coords_to_ndc(target_window, &ndc_x2, &ndc_y2, x2, y2);
+    convert_coords_to_ndc(window_id, &ndc_x1, &ndc_y1, x1, y1);
+    convert_coords_to_ndc(window_id, &ndc_x2, &ndc_y2, x2, y2);
 
     convert_hex_to_rgb(&color_rgb, color);
 
@@ -245,15 +234,14 @@ void glfw_draw_line(int x1, int y1, int x2, int y2, long unsigned int color, int
     glDrawArrays(GL_LINES, 0, 2);
 }
 
-void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2, int window_id)
+void glps_fill_arc(int x_center, int y_center, int width, int height, int angle1, int angle2, int window_id)
 {
 
-    GLFWwindow *target_window = (window_id == 0) ? ctx.window : ctx.child_windows[window_id - 1];
-    glfwMakeContextCurrent(target_window);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
     const int segments = 10;
 
     float ndc_x_center, ndc_y_center;
-    convert_coords_to_ndc(target_window, &ndc_x_center, &ndc_y_center, x_center, y_center);
+    convert_coords_to_ndc(window_id, &ndc_x_center, &ndc_y_center, x_center, y_center);
 
     vec3 color_rgb;
     convert_hex_to_rgb(&color_rgb, ctx.selected_color);
@@ -273,7 +261,7 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
         float y = y_center + (height * 0.5f * sinf(angle));
 
         float ndc_x, ndc_y;
-        convert_coords_to_ndc(window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1], &ndc_x, &ndc_y, x, y);
+        convert_coords_to_ndc(window_id, &ndc_x, &ndc_y, x, y);
 
         vertices[i + 1].pos[0] = ndc_x;
         vertices[i + 1].pos[1] = ndc_y;
@@ -290,7 +278,7 @@ void glfw_fill_arc(int x_center, int y_center, int width, int height, int angle1
     glDrawArrays(GL_TRIANGLE_FAN, 0, segments + 2);
 }
 
-void set_projection(GLFWwindow *window, int width, int height, int window_id)
+void glps_set_projection(int width, int height, int window_id)
 {
     mat4x4 projection;
     mat4x4_ortho(projection, 0.0f, width, height, 0.0f, -1.0f, 1.0f);
@@ -303,69 +291,54 @@ static void error_callback(int error, const char *description)
     LOG_ERROR("Error: %s\n", description);
 }
 
-static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
+static void keyboard_callback(size_t window_id, bool state, const char *value,
+                              void *data)
 {
-    userPtr *data = glfwGetWindowUserPointer(window);
 
-    if (action == GLFW_PRESS || action == GLFW_RELEASE)
-    {
-        
-        if(key == GLFW_KEY_ESCAPE) ctx.current_event->type = GOOEY_EVENT_WINDOW_CLOSE;
-        else {
-            ctx.current_event->type = action == GLFW_PRESS ? GOOEY_EVENT_KEY_PRESS : GOOEY_EVENT_KEY_RELEASE;
-        }
-        ctx.current_event->key_press.keycode = key;
-        ctx.current_event->attached_window = data->id;
-    }
+    ctx.current_event->type = state ? GOOEY_EVENT_KEY_PRESS : GOOEY_EVENT_KEY_RELEASE;
+    ctx.current_event->key_press.keycode = state;
+    ctx.current_event->attached_window = window_id;
 }
 
-static void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
+static void mouse_scroll_callback(size_t window_id, GLPS_SCROLL_AXES axe,
+                                  GLPS_SCROLL_SOURCE source, double value,
+                                  int discrete, bool is_stopped, void *data)
 {
-    userPtr *data = glfwGetWindowUserPointer(window);
-    ctx.current_event->attached_window = data->id;
+    ctx.current_event->attached_window = window_id;
     ctx.current_event->type = GOOEY_EVENT_MOUSE_SCROLL;
-    ctx.current_event->mouse_scroll.x = xoffset;
-    ctx.current_event->mouse_scroll.y = yoffset;
+    if (axe == GLPS_SCROLL_H_AXIS)
+        ctx.current_event->mouse_scroll.x = value;
+    else
+        ctx.current_event->mouse_scroll.y = value;
 }
 
-static void click_callback(GLFWwindow *window, int button, int action, int mods)
+void mouse_click_callback(size_t window_id, bool state, void *data)
 {
-    userPtr *data = glfwGetWindowUserPointer(window);
 
-    if (button == GLFW_MOUSE_BUTTON_LEFT)
-    {
-        ctx.current_event->type = action == GLFW_PRESS ? GOOEY_EVENT_CLICK_PRESS : GOOEY_EVENT_CLICK_RELEASE;
-        ctx.current_event->click.x = ctx.current_event->mouse_move.x;
-        ctx.current_event->click.y = ctx.current_event->mouse_move.y;
-        ctx.current_event->attached_window = data->id;
-    }
+    ctx.current_event->type = state ? GOOEY_EVENT_CLICK_PRESS : GOOEY_EVENT_CLICK_RELEASE;
+    ctx.current_event->click.x = ctx.current_event->mouse_move.x;
+    ctx.current_event->click.y = ctx.current_event->mouse_move.y;
+    ctx.current_event->attached_window = window_id;
 }
 
-static void cursor_callback(GLFWwindow *window, double posX, double posY)
+static void mouse_move_callback(size_t window_id, double posX, double posY)
 {
-    userPtr *data = glfwGetWindowUserPointer(window);
-    ctx.current_event->attached_window = data->id;
+    ctx.current_event->attached_window = window_id;
     ctx.current_event->mouse_move.x = posX;
     ctx.current_event->mouse_move.y = posY;
 }
 
-static void refresh_callback(GLFWwindow *window)
+void window_resize_callback(size_t window_id, int width, int height,
+                            void *data)
 {
-    ctx.current_event->type = GOOEY_EVENT_EXPOSE;
-}
-
-static void framebuffer_size_callback(GLFWwindow *window, int width, int height)
-{
-    userPtr *data = glfwGetWindowUserPointer(window);
-    glfwMakeContextCurrent(window);
-    set_projection(window, width, height, data->id);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
+    glps_set_projection(window_id, width, height);
     glViewport(0, 0, width, height);
-    ctx.current_event->attached_window = data->id;
-    LOG_CRITICAL("%d", data->id);
+    ctx.current_event->attached_window = window_id;
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 
-int glfw_init_ft()
+int glps_init_ft()
 {
 
     FT_Library ft;
@@ -429,60 +402,52 @@ int glfw_init_ft()
     return 0;
 }
 
-int glfw_init()
+int glps_init()
 {
 
     ctx.inhibit_reset = 0;
     ctx.selected_color = 0x000000;
     ctx.window_count = 0;
-    ctx.child_windows = (GLFWwindow **)malloc(sizeof(GLFWwindow *) * 100);
     ctx.current_event = (GooeyEvent *)malloc(sizeof(GooeyEvent));
     ctx.text_vaos = (GLuint *)malloc(sizeof(GLuint) * 100);
     ctx.shape_vaos = (GLuint *)malloc(sizeof(GLuint) * 100);
-    ctx.user_ptrs = (userPtr *)malloc(sizeof(userPtr) * 100);
     ctx.text_programs = (GLuint *)malloc(sizeof(GLuint) * 100);
     ctx.current_event->type = -1;
     ctx.current_event->attached_window = -1;
     ctx.current_event->click.x = -1;
     ctx.current_event->click.y = -1;
-    glfwSetErrorCallback(error_callback);
-    if (!glfwInit())
-    {
-        return -1;
-    }
-
+    //glpsSetErrorCallback(error_callback);
+   
     return 0;
 }
 
-void glfw_reset_events(bool state)
+void glps_reset_events(bool state)
 {
     ctx.inhibit_reset = !state;
 }
-void glfw_window_dim(int *width, int *height, int window_id)
+void glps_window_dim(int *width, int *height, int window_id)
 {
 
-    get_window_size(window_id == 0 ? ctx.window : window_id == 0 ? ctx.window
-                                                                 : ctx.child_windows[window_id - 1],
+    get_window_size(window_id,
                     width, height);
 }
 
-int glfw_get_current_clicked_window(void)
+int glps_get_current_clicked_window(void)
 {
     return ctx.current_event->attached_window;
 }
 
-void glfw_draw_text(int x, int y, const char *text, unsigned long color, float font_size, int window_id)
+void glps_draw_text(int x, int y, const char *text, unsigned long color, float font_size, int window_id)
 {
-    GLFWwindow *target_window = window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1];
-    glfwMakeContextCurrent(target_window);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
     vec3 color_rgb;
     float ndc_x, ndc_y;
     int window_width, window_height;
 
-    glfw_window_dim(&window_width, &window_height, window_id);
+    glps_window_dim(&window_width, &window_height, window_id);
     int initial_x = x;
 
-    convert_coords_to_ndc(target_window, &ndc_x, &ndc_y, x, y);
+    convert_coords_to_ndc(window_id, &ndc_x, &ndc_y, x, y);
     convert_hex_to_rgb(&color_rgb, color);
     glUseProgram(ctx.text_programs[window_id]);
     glUniform3f(glGetUniformLocation(ctx.text_programs[window_id], "textColor"), color_rgb[0], color_rgb[1], color_rgb[2]);
@@ -572,106 +537,97 @@ void glfw_draw_text(int x, int y, const char *text, unsigned long color, float f
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-GooeyWindow glfw_create_window(const char *title, int width, int height)
+GooeyWindow glps_create_window(const char *title, int width, int height)
+
 {
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    ctx.wm = glps_wm_init();
+    size_t window_id = glps_wm_window_create(ctx.wm, title, width, height);
+    //    glpsSetWindowSizeLimits(ctx.window, width, height, glps_DONT_CARE, glps_DONT_CARE);
 
-    ctx.window = glfwCreateWindow(width, height, title, NULL, NULL);
-    glfwSetWindowSizeLimits(ctx.window, width, height, GLFW_DONT_CARE, GLFW_DONT_CARE);
     GooeyWindow window = (GooeyWindow){0};
 
     window.creation_id = ctx.window_count;
 
-    if (!ctx.window)
-    {
-        glfwTerminate();
-        free(ctx.current_event);
-        exit(EXIT_FAILURE);
-    }
+    glps_wm_set_keyboard_callback(ctx.wm, keyboard_callback, (void *)ctx.wm);
+    glps_wm_set_mouse_move_callback(ctx.wm, mouse_move_callback, (void *)ctx.wm);
+    glps_wm_set_mouse_click_callback(ctx.wm, mouse_click_callback, (void *)ctx.wm);
+    // glps_wm_set_mouse_enter_callback(wm, mouse_enter_callback, (void *)wm);
+    // glps_wm_set_mouse_leave_callback(wm, mouse_leave_callback, (void *)wm);
+    // glps_wm_set_keyboard_leave_callback(wm, keyboard_leave_callback, (void *)wm);
+    //  glps_wm_set_keyboard_enter_callback(wm, keyboard_enter_callback, (void *)wm);
+    glps_wm_set_scroll_callback(ctx.wm, mouse_scroll_callback, (void *)ctx.wm);
+    glps_wm_window_set_resize_callback(ctx.wm, window_resize_callback,
+                                       (void *)ctx.wm);
+   // glps_wm_window_set_close_callback(wm, window_close_callback, (void *)wm);
+    //glps_wm_window_set_frame_update_callback(wm, window_frame_update_callback,
+      //                                       (void *)&sine_wave_data);
 
-    glfwSetKeyCallback(ctx.window, key_callback);
-    glfwSetMouseButtonCallback(ctx.window, click_callback);
-    glfwSetCursorPosCallback(ctx.window, cursor_callback);
-    glfwSetWindowRefreshCallback(ctx.window, refresh_callback);
-    glfwSetFramebufferSizeCallback(ctx.window, framebuffer_size_callback);
-    glfwSetScrollCallback(ctx.window, scroll_callback);
-    glfwMakeContextCurrent(ctx.window);
-
-    ctx.user_ptrs[window.creation_id] = (userPtr){.id = window.creation_id};
-
-    glfwSetWindowUserPointer(ctx.window, &ctx.user_ptrs[window.creation_id]);
-
-    glfwSwapInterval(1);
+    //glpsSwapInterval(1);
 
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
 
-    glfw_init_ft();
+    glps_init_ft();
 
-    glfw_setup_shared();
+    glps_setup_shared();
 
-    setup_seperate_vao(window.creation_id);
+    glps_setup_seperate_vao(window.creation_id);
 
-    set_projection(ctx.window, width, height, window.creation_id);
+    glps_set_projection(width, height, window.creation_id);
 
     return window;
 }
 
-void glfw_make_window_visible(int window_id, bool visibility)
+void glps_make_window_visible(int window_id, bool visibility)
 {
-    if (visibility)
-    {
-        glfwShowWindow(ctx.child_windows[window_id == 0 ? window_id : window_id - 1]);
-    }
-    else
-        glfwHideWindow(ctx.child_windows[window_id == 0 ? window_id : window_id - 1]);
+
 }
 
-void glfw_set_window_resizable(bool value, int window_id)
+void glps_set_window_resizable(bool value, int window_id)
 {
-    int FLAG = value ? GLFW_TRUE : GLFW_FALSE;
-    glfwSetWindowAttrib(window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1], GLFW_RESIZABLE, FLAG);
+    /*   int FLAG = value ? glps_TRUE : glps_FALSE;
+    glpsSetWindowAttrib(window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1], glps_RESIZABLE, FLAG);*/
+ 
 }
 
-GooeyWindow glfw_spawn_window(const char *title, int width, int height, bool visibility)
+GooeyWindow glps_spawn_window(const char *title, int width, int height, bool visibility)
 {
-    GooeyWindow window;
+    /*
+      GooeyWindow window;
 
-    int is_visible = visibility ? GLFW_TRUE : GLFW_FALSE;
+    //    glpsWindowHint(glps_VISIBLE, is_visible);
 
-    glfwWindowHint(GLFW_VISIBLE, is_visible);
+    glpswindow *glps_window = glpsCreateWindow(width, height, title, NULL, ctx.window);
+    //  glpsSetWindowSizeLimits(glps_window, width, height, glps_DONT_CARE, glps_DONT_CARE);
 
-    GLFWwindow *glfw_window = glfwCreateWindow(width, height, title, NULL, ctx.window);
-    glfwSetWindowSizeLimits(glfw_window, width, height, GLFW_DONT_CARE, GLFW_DONT_CARE);
-
-    ctx.child_windows[ctx.window_count] = glfw_window;
-    window.creation_id = ctx.window_count + 1;
-    ctx.window_count++;
-    glfwMakeContextCurrent(glfw_window);
+    // c/tx.child_windows[ctx.window_count] = glps_window;
+    // window.creation_id = ctx.window_count + 1;
+    // ctx.window_count++;
+    glpsMakeContextCurrent(window_id);
     glViewport(0, 0, width, height);
     setup_seperate_vao(window.creation_id);
 
-    set_projection(glfw_window, width, height, window.creation_id);
+    set_projection(width, height, window.creation_id);
 
-    glfwSetKeyCallback(glfw_window, key_callback);
-    glfwSetMouseButtonCallback(glfw_window, click_callback);
-    glfwSetCursorPosCallback(glfw_window, cursor_callback);
-    glfwSetWindowRefreshCallback(glfw_window, refresh_callback);
-    glfwSetScrollCallback(glfw_window, scroll_callback);
-    glfwSetFramebufferSizeCallback(glfw_window, framebuffer_size_callback);
+    glpsSetKeyCallback(glps_window, key_callback);
+    glpsSetMouseButtonCallback(glps_window, click_callback);
+    glpsSetCursorPosCallback(glps_window, cursor_callback);
+    glpsSetWindowRefreshCallback(glps_window,  refresh_callback);
+    glpsSetScrollCallback(glps_window, scroll_callback);
+    glpsSetFramebufferSizeCallback(glps_window, framebuffer_size_callback);
 
-    ctx.user_ptrs[window.creation_id] = (userPtr){.id = window.creation_id};
+    // ctx.user_ptrs[window.creation_id] = (userPtr){.id = window.creation_id};
 
-    glfwSetWindowUserPointer(glfw_window, &ctx.user_ptrs[window.creation_id]);
+    // glpsSetWindowUserPointer(glps_window, &ctx.user_ptrs[window.creation_id]);
 
-    glfwSwapInterval(1);
+    glpsSwapInterval(1);
     return window;
+    */
+  
 }
 
-GooeyEvent *glfw_handle_events()
+GooeyEvent *glps_handle_events()
 {
     if (!ctx.current_event)
     {
@@ -684,25 +640,26 @@ GooeyEvent *glfw_handle_events()
         ctx.current_event->type = -1;
     }
 
-    glfwPollEvents();
+    //glpsPollEvents();
 
     return ctx.current_event;
 }
 
-void glfw_hide_current_child(void)
+void glps_hide_current_child(void)
 {
 
     if (ctx.current_event->attached_window > 0)
     {
-        glfwHideWindow(ctx.child_windows[ctx.current_event->attached_window - 1]);
+        //glpsHideWindow(ctx.wm, window);
     }
 }
 
-void glfw_destroy_windows()
+void glps_destroy_windows()
 {
-    if (ctx.window)
+
+    /* if (ctx.window)
     {
-        glfwDestroyWindow(ctx.window);
+        glpsDestroyWindow(ctx.window);
         ctx.window = NULL;
     }
 
@@ -711,17 +668,17 @@ void glfw_destroy_windows()
 
         for (int i = 0; i < ctx.window_count; ++i)
         {
-            glfwDestroyWindow(ctx.child_windows[i]);
+            glpsDestroyWindow(ctx.child_windows[i]);
             ctx.child_windows[i] = NULL;
         }
         free(ctx.child_windows);
         ctx.child_windows = NULL;
-    }
+    }*/
 }
 
-void glfw_clear(int window_id)
+void glps_clear(int window_id)
 {
-    glfwMakeContextCurrent(window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1]);
+    glps_wm_set_window_ctx_curr(ctx.wm, window_id);
 
     glClear(GL_COLOR_BUFFER_BIT);
     vec3 color;
@@ -731,7 +688,7 @@ void glfw_clear(int window_id)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void glfw_cleanup()
+void glps_cleanup()
 {
     if (ctx.current_event)
     {
@@ -739,12 +696,12 @@ void glfw_cleanup()
         ctx.current_event = NULL;
     }
 
-    if (ctx.cursor)
-    {
-        glfwDestroyCursor(ctx.cursor);
-        ctx.cursor = NULL;
-    }
-
+    /*if (ctx.cursor)
+     {
+         glpsDestroyCursor(ctx.cursor);
+         ctx.cursor = NULL;
+     }
+ */
     if (ctx.text_vaos)
     {
         free(ctx.text_vaos);
@@ -757,11 +714,13 @@ void glfw_cleanup()
         ctx.shape_vaos = NULL;
     }
 
-    if (ctx.user_ptrs)
+    /*
+       if (ctx.user_ptrs)
     {
         free(ctx.user_ptrs);
         ctx.user_ptrs = NULL;
     }
+    */
 
     if (ctx.text_programs)
     {
@@ -772,15 +731,15 @@ void glfw_cleanup()
     glDeleteShader(ctx.text_vertex_shader);
     glDeleteShader(ctx.text_fragment_shader);
 
-    glfwTerminate();
+ //   glpsTerminate();
 }
 
-void glfw_update_background()
+void glps_update_background()
 {
 
     for (int i = 0; i < ctx.window_count; ++i)
     {
-        glfwMakeContextCurrent(i == 0 ? ctx.window : ctx.child_windows[i - 1]);
+        glps_wm_set_window_ctx_curr(ctx.wm, i);
 
         vec3 color;
         convert_hex_to_rgb(&color, active_theme->base);
@@ -788,31 +747,22 @@ void glfw_update_background()
     }
 }
 
-void glfw_render(int window_id)
+void glps_render(int window_id)
 {
-
-    GLFWwindow *context = window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1];
-    if (!context)
-    {
-        LOG_ERROR("Error: Render called without a valid window\n");
-        return;
-    }
-
-    glfwSwapBuffers(context);
+    glps_wm_swap_buffers(ctx.wm, window_id);
 }
 
-float glfw_get_text_width(const char *text, int length)
+float glps_get_text_width(const char *text, int length)
 {
     float total_width = 0.0f;
     for (int i = 0; i < length; ++i)
     {
-            total_width += (ctx.characters[text[i]].advance / 64.0f) * 0.25f;
-       
+        total_width += (ctx.characters[text[i]].advance / 64.0f) * 0.25f;
     }
     return total_width;
 }
 
-float glfw_get_text_height(const char *text, int length)
+float glps_get_text_height(const char *text, int length)
 {
     float max_height = 0;
 
@@ -827,95 +777,44 @@ float glfw_get_text_height(const char *text, int length)
     return max_height;
 }
 
-const char *glfw_get_key_from_code(GooeyEvent *gooey_event)
+const char *glps_get_key_from_code(GooeyEvent *gooey_event)
 {
     return LookupString(gooey_event->key_press.keycode);
 }
 
-void glfw_set_cursor(GOOEY_CURSOR cursor)
+void glps_set_cursor(GOOEY_CURSOR cursor)
 {
-    switch (cursor)
-    {
-
-    case GOOEY_CURSOR_ARROW:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_ARROW_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-
-    case GOOEY_CURSOR_HAND:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_HAND_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-    case GOOEY_CURSOR_TEXT:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_IBEAM_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-    case GOOEY_CURSOR_CROSSHAIR:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_CROSSHAIR_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-    case GOOEY_CURSOR_RESIZE_TL_BR:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NWSE_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-    case GOOEY_CURSOR_RESIZE_TR_BL:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NESW_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-
-    case GOOEY_CURSOR_RESIZE_H:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_EW_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-
-    case GOOEY_CURSOR_RESIZE_V:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_NS_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-
-    case GOOEY_CURSOR_RESIZE_ALL:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_RESIZE_ALL_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-
-    case GOOEY_CURSOR_NOT_ALLOWED:
-        ctx.cursor = glfwCreateStandardCursor(GLFW_NOT_ALLOWED_CURSOR);
-        glfwSetCursor(ctx.window, ctx.cursor);
-        break;
-    default:
-        break;
-    }
 }
 
-void glfw_destroy_window_from_id(int window_id)
+void glps_destroy_window_from_id(int window_id)
 {
-    glfwDestroyWindow(ctx.child_windows[window_id]);
+   // glpsDestroyWindow(ctx.child_windows[window_id]);
 }
 
-GooeyBackend glfw_backend = {
-    .Init = glfw_init,
-    .CreateWindow = glfw_create_window,
-    .SpawnWindow = glfw_spawn_window,
-    .GetWinDim = glfw_window_dim,
-    .DestroyWindows = glfw_destroy_windows,
-    .DestroyWindowFromId = glfw_destroy_window_from_id,
-    .MakeWindowResizable = glfw_set_window_resizable,
-    .GetCurrentClickedWindow = glfw_get_current_clicked_window,
-    .HideCurrentChild = glfw_hide_current_child,
-    .MakeWindowVisible = glfw_make_window_visible,
-    .UpdateBackground = glfw_update_background,
-    .Cleanup = glfw_cleanup,
-    .Render = glfw_render,
-    .HandleEvents = glfw_handle_events,
-    .InhibitResetEvents = glfw_reset_events,
-    .FillArc = glfw_fill_arc,
-    .FillRectangle = glfw_fill_rectangle,
-    .DrawRectangle = glfw_draw_rectangle,
-    .DrawLine = glfw_draw_line,
-    .SetForeground = glfw_set_foreground,
-    .GetTextWidth = glfw_get_text_width,
-    .GetTextHeight = glfw_get_text_height,
-    .DrawText = glfw_draw_text,
-    .GetKeyFromCode = glfw_get_key_from_code,
-    .SetCursor = glfw_set_cursor,
-    .Clear = glfw_clear};
+GooeyBackend glps_backend = {
+    .Init = glps_init,
+    .CreateWindow = glps_create_window,
+    .SpawnWindow = glps_spawn_window,
+    .GetWinDim = glps_window_dim,
+    .DestroyWindows = glps_destroy_windows,
+    .DestroyWindowFromId = glps_destroy_window_from_id,
+    .MakeWindowResizable = glps_set_window_resizable,
+    .GetCurrentClickedWindow = glps_get_current_clicked_window,
+    .HideCurrentChild = glps_hide_current_child,
+    .MakeWindowVisible = glps_make_window_visible,
+    .UpdateBackground = glps_update_background,
+    .Cleanup = glps_cleanup,
+    .Render = glps_render,
+    .HandleEvents = glps_handle_events,
+    .InhibitResetEvents = glps_reset_events,
+    .FillArc = glps_fill_arc,
+    .FillRectangle = glps_fill_rectangle,
+    .DrawRectangle = glps_draw_rectangle,
+    .DrawLine = glps_draw_line,
+    .SetForeground = glps_set_foreground,
+    .GetTextWidth = glps_get_text_width,
+    .GetTextHeight = glps_get_text_height,
+    .DrawText = glps_draw_text,
+    .GetKeyFromCode = glps_get_key_from_code,
+    .SetCursor = glps_set_cursor,
+    .Clear = glps_clear};

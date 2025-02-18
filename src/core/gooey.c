@@ -44,7 +44,11 @@ int Gooey_Init(GooeyBackends backend)
         active_backend = &glfw_backend;
 
         break;
-    default:
+
+    case GLPS:
+        LOG_INFO("using GLPS backend.");
+        active_backend = &glps_backend;
+        default:
         break;
     }
     if (active_backend->Init() < 0)

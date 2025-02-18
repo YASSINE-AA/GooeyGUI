@@ -77,12 +77,12 @@ int main()
     set_logging_enabled(true);
     set_minimum_log_level(DEBUG_LEVEL_INFO);
 
-    Gooey_Init(GLFW);
+    Gooey_Init(GLPS);
 
     GooeyWindow win = GooeyWindow_Create("Gooey Showcase", 400, 700, 1);
 
-    msgBox = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_FAIL, messageBoxCallback);
-    msgBox2 = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_SUCCES, messageBox2Callback);
+//    msgBox = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_FAIL, messageBoxCallback);
+  //  msgBox2 = GooeyMessageBox_Create("Exception thrown!", "This is a Simple MessageBox window, it is useful for displaying error messages, warnings and informational content!", MSGBOX_SUCCES, messageBox2Callback);
 
     signal = GooeySignal_Create();
     GooeySignal_Link(&signal, signal_callback, "hello");

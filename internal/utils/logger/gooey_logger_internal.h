@@ -22,8 +22,8 @@
  * and dumping memory contents for debugging purposes.
  */
 
-#ifndef GOOEY_LOGGER_INTERNAL_H
-#define GOOEY_LOGGER_INTERNAL_H
+#ifndef PICO_LOGGER_H
+#define PICO_LOGGER_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -183,8 +183,6 @@ void print_stack_trace(void);
  * @param size The size of the memory buffer in bytes.
  */
 void dump_memory(const char *label, const void *buffer, size_t size);
-
-#endif
 /**
  * @brief Saves the logged messages to a file.
  *
@@ -197,3 +195,4 @@ void dump_memory(const char *label, const void *buffer, size_t size);
  *             exists, its contents will be overwritten.
  */
 void save_log_file(const char *path);
+#endif

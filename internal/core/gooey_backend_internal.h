@@ -4,8 +4,9 @@
 
 typedef enum GooeyBackends
 {
-    X11, /**< Linux X11 native api */
-    GLFW /**< GLFW OpenGL Backend*/
+    X11,  /**< Linux X11 native api */
+    GLFW, /**< GLFW OpenGL Backend*/
+    GLPS
 } GooeyBackends;
 
 /**
@@ -57,6 +58,8 @@ extern GooeyBackend x11_backend;
  * @brief The GLFW backend for Gooey.
  */
 extern GooeyBackend glfw_backend;
+
+extern GooeyBackend glps_backend;
 
 extern GooeyBackends ACTIVE_BACKEND;
 
