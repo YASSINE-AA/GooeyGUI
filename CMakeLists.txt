@@ -61,35 +61,49 @@ set(HEADERS
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -g3 -fsanitize=address,undefined -fPIC")
 
 # Add third-party dependencies
-add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)
-add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/cjson)
-add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/freetype)
-
+#add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)
+#add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/cjson)
+#add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/freetype)
+#
 # Define the library
 add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
+#Addinlg libraries 
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE
-    cjson
-    glfw
-    freetype
-    GLPS
+include(ExternalProject)
+
+include(ExternalProject)(
+    CJSON
+    PREFIX ${CMAKE_BINARY_DIR}/third_party
+    GIT_REPOSITORY https://github.com/example/dependency.git
+    GIT_TAG master
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=/usr/local
 )
 
-target_include_directories(${PROJECT_NAME}
-    PUBLIC
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-    PRIVATE
-    ${PROJECT_SOURCE_DIR}/internal
-    ${PROJECT_SOURCE_DIR}/third_party/freetype/include
-    ${PROJECT_SOURCE_DIR}/third_party/glfw/include
-    ${PROJECT_SOURCE_DIR}/third_party/GLPS/include
-    ${PROJECT_SOURCE_DIR}/third_party/cjson/include
-)
+# Ensure your project depends on the external project
+add_dependencies(${PROJECT_NAME} CJSON)
 
-set_target_properties(freetype PROPERTIES POSITION_INDEPENDENT_CODE ON)
-
+#target_link_libraries(${PROJECT_NAME}
+#    PRIVATE
+#    cjson
+#    glfw
+#    freetype
+#    GLPS
+#)
+#
+#target_include_directories(${PROJECT_NAME}
+#    PUBLIC
+#    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+#    $<INSTALL_INTERFACE:include>
+#    PRIVATE
+#    ${PROJECT_SOURCE_DIR}/internal
+#    ${PROJECT_SOURCE_DIR}/third_party/freetype/include
+#    ${PROJECT_SOURCE_DIR}/third_party/glfw/include
+#    ${PROJECT_SOURCE_DIR}/third_party/GLPS/include
+#    ${PROJECT_SOURCE_DIR}/third_party/cjson/include
+#)
+#
+#set_target_properties(freetype PROPERTIES POSITION_INDEPENDENT_CODE ON)
+#
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
