@@ -361,7 +361,6 @@ static void framebuffer_size_callback(GLFWwindow *window, int width, int height)
     set_projection(window, width, height, data->id);
     glViewport(0, 0, width, height);
     ctx.current_event->attached_window = data->id;
-    LOG_CRITICAL("%d", data->id);
     ctx.current_event->type = GOOEY_EVENT_EXPOSE;
 }
 

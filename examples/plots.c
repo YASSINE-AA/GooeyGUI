@@ -10,8 +10,8 @@ int main()
     char plot_title[] = "a very very long plot title that should be shorter";
     data.title = plot_title;
     data.data_count = 5;
-    float x_data[5] = {2, 5, 3, 13, 14};
-    float y_data[5] = {2, 5, 8, 13, 14};
+    float x_data[5] = {-2, 2, 13, 14, 17.2};
+    float y_data[5] = {-4, 2, 8, 13, 14};
 
     data.x_step =2;
     data.y_step =2;
