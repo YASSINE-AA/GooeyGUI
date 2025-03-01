@@ -11,7 +11,6 @@
 #include "gooey_event_internal.h"
 #include "utils/logger/gooey_logger_internal.h"
 
-
 typedef enum
 {
     WINDOW_REGULAR,
@@ -41,21 +40,23 @@ typedef struct
     GooeyMenu *menu;                            /**< Menu in the window */
     GooeyList *lists;                           /**< List of list widgets in the window. */
     GooeyCanvas *canvas;                        /**< List of canvas widgets in the window. */
+    GooeyPlot *plots;                            /**< List of all plot widgets. */
     GooeyWidget **widgets;                      /**< List containing unified definition of every widget. */
 
-    int list_count;
-    int scrollable_count;         /**< Number of scrollables in the window */
-    int button_count;             /**< Number of buttons in the window */
-    int label_count;              /**< Number of labels in the window */
-    int checkbox_count;           /**< Number of checkboxes in the window */
-    int radio_button_count;       /**< Number of radio buttons in the window */
-    int slider_count;             /**< Number of sliders in the window */
-    int dropdown_count;           /**< Number of dropdown menus in the window */
-    int textboxes_count;          /**< Number of textboxes in the window */
-    int layout_count;             /**< Number of layouts in the window */
-    int radio_button_group_count; /**< Number of radio button groups in the window */
-    int canvas_count;             /**< Number of all canvas widgets in the window */
-    int widget_count;             /**< Total number of registered widgets in the window. */
+    size_t list_count;
+    size_t scrollable_count;         /**< Number of scrollables in the window */
+    size_t button_count;             /**< Number of buttons in the window */
+    size_t label_count;              /**< Number of labels in the window */
+    size_t checkbox_count;           /**< Number of checkboxes in the window */
+    size_t radio_button_count;       /**< Number of radio buttons in the window */
+    size_t slider_count;             /**< Number of sliders in the window */
+    size_t dropdown_count;           /**< Number of dropdown menus in the window */
+    size_t textboxes_count;          /**< Number of textboxes in the window */
+    size_t layout_count;             /**< Number of layouts in the window */
+    size_t radio_button_group_count; /**< Number of radio button groups in the window */
+    size_t canvas_count;             /**< Number of all canvas widgets in the window */
+    size_t plot_count;               /**< Number of all plot widgets. */
+    size_t widget_count;             /**< Total number of registered widgets in the window. */
 
 } GooeyWindow;
 
@@ -71,6 +72,7 @@ typedef struct
 #include "widgets/gooey_radiobutton.h"
 #include "widgets/gooey_slider.h"
 #include "widgets/gooey_textbox.h"
+#include "widgets/gooey_plot.h"
 #include "signals/gooey_signals.h"
 
 /**

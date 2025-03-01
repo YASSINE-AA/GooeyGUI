@@ -64,7 +64,7 @@ void GooeyTextbox_setText(GooeyTextbox *textbox, const char *text)
 void GooeyTextbox_Draw(GooeyWindow *win)
 {
 
-    for (int index = 0; index < win->textboxes_count; ++index)
+    for (size_t index = 0; index < win->textboxes_count; ++index)
     {
         active_backend->FillRectangle(win->textboxes[index].core.x, win->textboxes[index].core.y,
                                       win->textboxes[index].core.width, win->textboxes[index].core.height, active_theme->base, win->creation_id);
@@ -120,7 +120,7 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         return;
     }
 
-    for (int i = 0; i < win->textboxes_count; i++)
+    for (size_t i = 0; i < win->textboxes_count; i++)
     {
         if (!win->textboxes[i].focused)
             continue;
@@ -184,12 +184,12 @@ void GooeyTextbox_HandleKeyPress(GooeyWindow *win, GooeyEvent *key_event)
         }
     }
 
-    GooeyWindow_Redraw(win);
+    //GooeyWindow_Redraw(win);
 }
 
 bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
 {
-    for (int i = 0; i < win->textboxes_count; i++)
+    for (size_t i = 0; i < win->textboxes_count; i++)
     {
         GooeyTextbox *textbox = &win->textboxes[i];
         if (x >= textbox->core.x &&
@@ -199,7 +199,7 @@ bool GooeyTextbox_HandleClick(GooeyWindow *win, int x, int y)
         {
             // Focus the clicked textbox and unfocus others
             textbox->focused = true;
-            for (int j = 0; j < win->textboxes_count; j++)
+            for (size_t j = 0; j < win->textboxes_count; j++)
             {
                 if (j != i)
                     win->textboxes[j].focused = false;

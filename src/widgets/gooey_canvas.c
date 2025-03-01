@@ -108,7 +108,7 @@ void GooeyCanvas_SetForeground(GooeyCanvas *canvas, unsigned long color_hex)
 
 void GooeyCanvas_Draw(GooeyWindow* win) {
 
-    for (int i = 0; i < win->canvas_count; ++i)
+    for (size_t i = 0; i < win->canvas_count; ++i)
     {
         for (int j = 0; j < win->canvas[i].element_count; ++j)
         {

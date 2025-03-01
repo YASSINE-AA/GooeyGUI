@@ -28,7 +28,7 @@ typedef struct
     GLuint *shape_vaos;
     mat4x4 projection;
     GLuint text_fragment_shader;
-    glps_WindowManager* wm;
+    glps_WindowManager *wm;
     GLuint text_vertex_shader;
     Character characters[128];
     char font_path[256];
@@ -416,8 +416,8 @@ int glps_init()
     ctx.current_event->attached_window = -1;
     ctx.current_event->click.x = -1;
     ctx.current_event->click.y = -1;
-    //glpsSetErrorCallback(error_callback);
-   
+    // glpsSetErrorCallback(error_callback);
+
     return 0;
 }
 
@@ -559,11 +559,11 @@ GooeyWindow glps_create_window(const char *title, int width, int height)
     glps_wm_set_scroll_callback(ctx.wm, mouse_scroll_callback, (void *)ctx.wm);
     glps_wm_window_set_resize_callback(ctx.wm, window_resize_callback,
                                        (void *)ctx.wm);
-   // glps_wm_window_set_close_callback(wm, window_close_callback, (void *)wm);
-    //glps_wm_window_set_frame_update_callback(wm, window_frame_update_callback,
-      //                                       (void *)&sine_wave_data);
+    // glps_wm_window_set_close_callback(wm, window_close_callback, (void *)wm);
+    // glps_wm_window_set_frame_update_callback(wm, window_frame_update_callback,
+    //                                       (void *)&sine_wave_data);
 
-    //glpsSwapInterval(1);
+    // glpsSwapInterval(1);
 
     if (gladLoadGL() == 0)
         exit(EXIT_FAILURE);
@@ -576,19 +576,19 @@ GooeyWindow glps_create_window(const char *title, int width, int height)
 
     glps_set_projection(width, height, window.creation_id);
 
+
+    ctx.window_count++;
     return window;
 }
 
 void glps_make_window_visible(int window_id, bool visibility)
 {
-
 }
 
 void glps_set_window_resizable(bool value, int window_id)
 {
     /*   int FLAG = value ? glps_TRUE : glps_FALSE;
     glpsSetWindowAttrib(window_id == 0 ? ctx.window : ctx.child_windows[window_id - 1], glps_RESIZABLE, FLAG);*/
- 
 }
 
 GooeyWindow glps_spawn_window(const char *title, int width, int height, bool visibility)
@@ -624,7 +624,6 @@ GooeyWindow glps_spawn_window(const char *title, int width, int height, bool vis
     glpsSwapInterval(1);
     return window;
     */
-  
 }
 
 GooeyEvent *glps_handle_events()
@@ -640,8 +639,9 @@ GooeyEvent *glps_handle_events()
         ctx.current_event->type = -1;
     }
 
-    //glpsPollEvents();
-
+    // glpsPollEvents();
+    glps_wm_should_close(ctx.wm);
+    glps_wm_window_update(ctx.wm, 0);
     return ctx.current_event;
 }
 
@@ -650,7 +650,7 @@ void glps_hide_current_child(void)
 
     if (ctx.current_event->attached_window > 0)
     {
-        //glpsHideWindow(ctx.wm, window);
+        // glpsHideWindow(ctx.wm, window);
     }
 }
 
@@ -731,7 +731,7 @@ void glps_cleanup()
     glDeleteShader(ctx.text_vertex_shader);
     glDeleteShader(ctx.text_fragment_shader);
 
- //   glpsTerminate();
+    //   glpsTerminate();
 }
 
 void glps_update_background()
@@ -788,12 +788,22 @@ void glps_set_cursor(GOOEY_CURSOR cursor)
 
 void glps_destroy_window_from_id(int window_id)
 {
-   // glpsDestroyWindow(ctx.child_windows[window_id]);
+    // glpsDestroyWindow(ctx.child_windows[window_id]);
+}
+
+void glps_set_render_callback(void (*callback)(size_t window_id, void *data), GooeyWindow *win)
+{
+    glps_wm_window_set_frame_update_callback(ctx.wm, callback, win);
+    while(!glps_wm_should_close(ctx.wm))
+    {
+        glps_wm_window_update(ctx.wm, win->creation_id);
+    }
 }
 
 GooeyBackend glps_backend = {
     .Init = glps_init,
     .CreateWindow = glps_create_window,
+    .SetRenderCallback = glps_set_render_callback,
     .SpawnWindow = glps_spawn_window,
     .GetWinDim = glps_window_dim,
     .DestroyWindows = glps_destroy_windows,

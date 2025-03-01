@@ -48,7 +48,7 @@ void GooeyLabel_SetText(GooeyLabel *label, const char *text)
 
 void GooeyLabel_Draw(GooeyWindow *win)
 {
-    for (int i = 0; i < win->label_count; ++i)
+    for (size_t i = 0; i < win->label_count; ++i)
     {
 
         active_backend->DrawText(win->labels[i].core.x, win->labels[i].core.y, win->labels[i].text, win->labels[i].color != (unsigned long) -1 ? win->labels[i].color : active_theme->neutral, win->labels[i].font_size, win->creation_id);

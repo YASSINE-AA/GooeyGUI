@@ -77,6 +77,5 @@ void GooeyWindow_RegisterWidget(GooeyWindow *win, GooeyWidget *widget);
  */
 void GooeyWindow_MakeResizable(GooeyWindow *msgBoxWindow, bool is_resizable);
 
-void GooeyWindow_Redraw(GooeyWindow *win);
 
 #endif

@@ -62,7 +62,7 @@ void GooeyList_Draw(GooeyWindow *win)
 {
     const int title_description_spacing = 15;
 
-    for (int i = 0; i < win->list_count; ++i)
+    for (size_t i = 0; i < win->list_count; ++i)
     {
         GooeyList *list = &win->lists[i];
 
@@ -161,7 +161,7 @@ bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 {
     const int scroll_speed_multiplier = 2;
 
-    for (int i = 0; i < window->list_count; ++i)
+    for (size_t i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
 
@@ -200,7 +200,7 @@ bool GooeyList_HandleScroll(GooeyWindow *window, GooeyEvent *scroll_event)
 
 bool GooeyList_HandleClick(GooeyWindow *window, int mouse_x, int mouse_y)
 {
-    for (int i = 0; i < window->list_count; ++i)
+    for (size_t i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
 
@@ -236,7 +236,7 @@ bool GooeyList_HandleThumbScroll(GooeyWindow *window, GooeyEvent *scroll_event)
     static int mouse_prev = -1;
     static bool is_dragging = false;
 
-    for (int i = 0; i < window->list_count; ++i)
+    for (size_t i = 0; i < window->list_count; ++i)
     {
         GooeyList *list = &window->lists[i];
 

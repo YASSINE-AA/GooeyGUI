@@ -82,7 +82,7 @@ GooeyRadioButton *GooeyRadioButton_Add(GooeyWindow *win, int x, int y,
 
 void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
 {
-    for (int i = 0; i < win->radio_button_group_count; ++i)
+    for (size_t i = 0; i < win->radio_button_group_count; ++i)
     {
         GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
         for (int j = 0; j < group->button_count; ++j)
@@ -115,7 +115,7 @@ void GooeyRadioButtonGroup_Draw(GooeyWindow *win)
 
 bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y)
 {
-    for (int i = 0; i < win->radio_button_group_count; ++i)
+    for (size_t i = 0; i < win->radio_button_group_count; ++i)
     {
         GooeyRadioButtonGroup *group = &win->radio_button_groups[i];
         for (int j = 0; j < group->button_count; ++j)
@@ -147,7 +147,7 @@ bool GooeyRadioButtonGroup_HandleClick(GooeyWindow *win, int x, int y)
 bool GooeyRadioButton_HandleClick(GooeyWindow *win, int x, int y)
 {
     int state = false;
-    for (int i = 0; i < win->radio_button_count; ++i)
+    for (size_t i = 0; i < win->radio_button_count; ++i)
     {
         GooeyRadioButton *radio_button = &win->radio_buttons[i];
         int dx = x - radio_button->core.x;

@@ -42,6 +42,10 @@
 /** Maximum number of radio buttons in a group. */
 #define MAX_RADIO_BUTTONS 10
 
+/**< Maxiumum number of plots. */
+#define MAX_PLOT_COUNT 100
+
+
 /**
  * @brief Enumeration for widget types in the Gooey framework.
  */
@@ -55,7 +59,8 @@ typedef enum
   WIDGET_TEXTBOX,     /**< Textbox widget */
   WIDGET_DROPDOWN,    /**< Dropdown widget */
   WIDGET_CANVAS,      /**< Canvas widget */
-  WIDGET_LAYOUT
+  WIDGET_LAYOUT,
+  WIDGET_PLOT
 } WIDGET_TYPE;
 
 /**
@@ -317,5 +322,90 @@ typedef struct
 {
   unsigned long color;
 } CanvasSetFGArgs;
+
+/**
+ * @enum GOOEY_PLOT_TYPE
+ * @brief Enumeration of available plot types in Gooey.
+ */
+typedef enum
+{
+  GOOEY_PLOT_LINE,      /**< Line Plot */
+  GOOEY_PLOT_SCATTER,   /**< Scatter Plot */
+  GOOEY_PLOT_BAR,       /**< Bar Chart */
+  GOOEY_PLOT_HISTOGRAM, /**< Histogram */
+  GOOEY_PLOT_PIE,       /**< Pie Chart */
+
+  GOOEY_PLOT_BOX,     /**< Box Plot */
+  GOOEY_PLOT_VIOLIN,  /**< Violin Plot */
+  GOOEY_PLOT_DENSITY, /**< Density Plot (KDE) */
+  GOOEY_PLOT_ECDF,    /**< Empirical CDF */
+
+  GOOEY_PLOT_STACKED_BAR,  /**< Stacked Bar Chart */
+  GOOEY_PLOT_GROUPED_BAR,  /**< Grouped Bar Chart */
+  GOOEY_PLOT_AREA,         /**< Area Chart */
+  GOOEY_PLOT_STACKED_AREA, /**< Stacked Area Chart */
+  GOOEY_PLOT_BUBBLE,       /**< Bubble Chart */
+
+  GOOEY_PLOT_HEATMAP, /**< Heatmap */
+  GOOEY_PLOT_CONTOUR, /**< Contour Plot */
+
+  GOOEY_PLOT_3D_SCATTER,   /**< 3D Scatter Plot */
+  GOOEY_PLOT_3D_SURFACE,   /**< 3D Surface Plot */
+  GOOEY_PLOT_3D_WIREFRAME, /**< 3D Wireframe Plot */
+
+  GOOEY_PLOT_NETWORK, /**< Graph/Network Plot */
+  GOOEY_PLOT_TREE,    /**< Tree Diagram */
+  GOOEY_PLOT_SANKEY,  /**< Sankey Diagram */
+
+  GOOEY_PLOT_TIME_SERIES, /**< Time-Series Plot */
+  GOOEY_PLOT_CANDLESTICK, /**< Candlestick Chart */
+  GOOEY_PLOT_OHLC,        /**< Open-High-Low-Close Chart */
+
+  GOOEY_PLOT_CORRELOGRAM, /**< Correlation Matrix */
+  GOOEY_PLOT_PAIRPLOT,    /**< Pairwise Scatter Plot */
+
+  GOOEY_PLOT_POLAR,     /**< Polar Plot */
+  GOOEY_PLOT_RADAR,     /**< Radar Chart (Spider Plot) */
+  GOOEY_PLOT_WATERFALL, /**< Waterfall Chart */
+  GOOEY_PLOT_FUNNEL,    /**< Funnel Chart */
+  GOOEY_PLOT_GANTT,     /**< Gantt Chart */
+
+  GOOEY_PLOT_COUNT /**< Total count of plot types */
+} GOOEY_PLOT_TYPE;
+
+/**
+ * @struct GooeyPlotData
+ * @brief Structure to hold plot data and metadata.
+ */
+typedef struct
+{
+  float *x_data; /**< Pointer to X-axis data */
+  float *y_data; /**< Pointer to Y-axis data */
+
+  size_t data_count; /**< Number of data points */
+
+  char *x_label; /**< Label for X-axis */
+  float x_step;
+  char *y_label; /**< Label for Y-axis */
+  float y_step;
+  char *title; /**< Plot title */
+
+  GOOEY_PLOT_TYPE plot_type; /**< Type of the plot */
+
+} GooeyPlotData;
+
+/**
+ * @struct GooeyPlot
+ * @brief Represents a plot widget in the Gooey GUI system.
+ *
+ * This structure encapsulates a plot widget, inheriting core widget properties
+ * from GooeyWidget and containing a pointer to GooeyPlotData, which holds
+ * the actual plotting data.
+ */
+typedef struct
+{
+  GooeyWidget core;    /**< Base widget properties for integration in the Gooey GUI system */
+  GooeyPlotData *data; /**< Pointer to the data structure containing plot-specific information */
+} GooeyPlot;
 
 #endif

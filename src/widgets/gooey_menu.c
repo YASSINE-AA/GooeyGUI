@@ -153,6 +153,14 @@ void GooeyMenu_HandleClick(GooeyWindow *win, int x, int y)
 
                     GooeyWindow_Redraw(win);
                     return;
+                } else {
+                    for (int k = 0; k < win->menu->children_count; k++)
+                    {
+                        win->menu->children[k].is_open = 0;
+                        win->menu->is_busy = 0;
+                    }
+                    GooeyWindow_Redraw(win);
+                    return;
                 }
             }
         }

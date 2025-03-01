@@ -42,7 +42,7 @@ GooeyDropdown *GooeyDropdown_Add(GooeyWindow *win, int x, int y, int width,
 }
 
 void GooeyDropdown_Draw(GooeyWindow *win) {
-       for (int i = 0; i < win->dropdown_count; i++)
+       for (size_t i = 0; i < win->dropdown_count; i++)
     {
         int x_offset = win->dropdowns[i].core.x;
 
@@ -88,7 +88,7 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
 {
 
     bool _btn_st = false;
-    for (int i = 0; i < win->dropdown_count; i++)
+    for (size_t i = 0; i < win->dropdown_count; i++)
     {
         int x_offset = win->dropdowns[i].core.x;
         GooeyDropdown *dropdown = &win->dropdowns[i];
@@ -96,9 +96,9 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
         if (x >= dropdown->core.x && x <= dropdown->core.x + dropdown->core.width && y >= dropdown->core.y && y <= dropdown->core.y + dropdown->core.height)
         {
             dropdown->is_open = !dropdown->is_open;
-            GooeyWindow_Redraw(win);
+        GooeyWindow_Redraw(win);
             _btn_st = true;
-        }
+        } 
 
         if (dropdown->is_open)
         {
@@ -117,8 +117,8 @@ bool GooeyDropdown_HandleClick(GooeyWindow *win, int x, int y)
                         win->dropdowns[i].callback(j);
 
                     dropdown->is_open = 0;
-                    GooeyWindow_Redraw(win);
-                }
+                    return true;
+                } 
             }
         }
 

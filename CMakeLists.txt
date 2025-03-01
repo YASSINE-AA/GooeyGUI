@@ -27,6 +27,7 @@ set(SOURCES
     src/widgets/gooey_radiobutton.c
     src/widgets/gooey_slider.c
     src/widgets/gooey_textbox.c
+    src/widgets/gooey_plot.c
     src/signals/gooey_signals.c
 )
 
@@ -54,6 +55,7 @@ set(HEADERS
     include/widgets/gooey_radiobutton.h
     include/widgets/gooey_slider.h
     include/widgets/gooey_textbox.h
+    include/widgets/gooey_plot.h
     include/signals/gooey_signals.h
 )
 
@@ -63,6 +65,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-variable -Wno-unus
 # Add third-party dependencies
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/glfw)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/cjson)
+add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/GLPS)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/freetype)
 
 # Define the library
@@ -71,9 +74,9 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     cjson
+    GLPS
     glfw
     freetype
-    GLPS
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -99,12 +102,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/Gooey)
 
 # Install internal headers under include/Gooey/internal
-# install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/ DESTINATION include/Gooey/)
-
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/ DESTINATION include/Gooey/)
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/core/ DESTINATION include/Gooey/core/)
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/utils/ DESTINATION include/Gooey/utils/)
-
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/ DESTINATION include/Gooey)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/core/ DESTINATION include/Gooey/core)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/internal/utils/ DESTINATION include/Gooey/utils)
 
 
 # Install the library

@@ -45,7 +45,7 @@ GooeyCheckbox *GooeyCheckbox_Add(GooeyWindow *win, int x, int y, char *label,
 void GooeyCheckbox_Draw(GooeyWindow *win)
 {
 
-    for (int i = 0; i < win->checkbox_count; ++i)
+    for (size_t i = 0; i < win->checkbox_count; ++i)
     {
         GooeyCheckbox *checkbox = &win->checkboxes[i];
 
@@ -69,7 +69,7 @@ void GooeyCheckbox_Draw(GooeyWindow *win)
 
 bool GooeyCheckbox_HandleClick(GooeyWindow *win, int x, int y)
 {
-    for (int i = 0; i < win->checkbox_count; ++i)
+    for (size_t i = 0; i < win->checkbox_count; ++i)
     {
         GooeyCheckbox *checkbox = &win->checkboxes[i];
         if (x >= checkbox->core.x && x <= checkbox->core.x + checkbox->core.width &&

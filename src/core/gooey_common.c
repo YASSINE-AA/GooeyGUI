@@ -31,7 +31,7 @@ void GooeyWindow_RegisterWidget(GooeyWindow *win, GooeyWidget *widget)
 void GooeyWindow_MakeVisible(GooeyWindow *win, bool visibility)
 {
     active_backend->MakeWindowVisible(win->creation_id, visibility);
-    GooeyWindow_Redraw(win);
+    // GooeyWindow_Redraw(win);
 }
 
 void GooeyWindow_MakeResizable(GooeyWindow *msgBoxWindow, bool is_resizable)
@@ -41,7 +41,7 @@ void GooeyWindow_MakeResizable(GooeyWindow *msgBoxWindow, bool is_resizable)
 
 bool GooeyWindow_HandleCursorChange(GooeyWindow *win, GOOEY_CURSOR *cursor, int x, int y)
 {
-    for (int i = 0; i < win->widget_count; ++i)
+    for (size_t i = 0; i < win->widget_count; ++i)
     {
         if (x >= win->widgets[i]->x && x <= win->widgets[i]->x + win->widgets[i]->width &&
             y >= win->widgets[i]->y && y <= win->widgets[i]->y + win->widgets[i]->height)
@@ -91,7 +91,8 @@ bool GooeyWindow_AllocateResources(GooeyWindow *win)
         !(win->layouts = malloc(sizeof(GooeyLayout) * MAX_WIDGETS)) ||
         !(win->lists = malloc(sizeof(GooeyList) * MAX_WIDGETS)) ||
         !(win->canvas = malloc(sizeof(GooeyCanvas) * MAX_WIDGETS)) ||
-        !(win->widgets = malloc(sizeof(GooeyWidget *) * MAX_WIDGETS)))
+        !(win->widgets = malloc(sizeof(GooeyWidget *) * MAX_WIDGETS)) ||
+        !(win->plots = malloc(sizeof(GooeyPlot) * MAX_PLOT_COUNT)))
     {
         return false;
     }
@@ -101,7 +102,7 @@ bool GooeyWindow_AllocateResources(GooeyWindow *win)
 
 void GooeyWindow_FreeResources(GooeyWindow *win)
 {
-    for (int i = 0; i < win->canvas_count; ++i)
+    for (size_t i = 0; i < win->canvas_count; ++i)
     {
         if (!win->canvas[i].elements)
             continue;
@@ -180,7 +181,7 @@ void GooeyWindow_FreeResources(GooeyWindow *win)
 
     if (win->lists)
     {
-        for (int i = 0; i < win->list_count; ++i)
+        for (size_t i = 0; i < win->list_count; ++i)
         {
             if (win->lists[i].items)
             {
@@ -213,6 +214,7 @@ GooeyWindow GooeyWindow_Create(const char *title, int width, int height, bool vi
     win.canvas_count = 0;
     win.button_count = 0;
     win.label_count = 0;
+    win.plot_count = 0;
     win.checkbox_count = 0;
     win.radio_button_count = 0;
     win.radio_button_group_count = 0;
@@ -269,7 +271,9 @@ void GooeyWindow_Redraw(GooeyWindow *win)
     GooeyRadioButtonGroup_Draw(win);
     GooeyDropdown_Draw(win);
     GooeySlider_Draw(win);
+    GooeyPlot_Draw(win);
     GooeyMenu_Draw(win);
+    
     active_backend->Render(win->creation_id);
     usleep(16667);
 }
@@ -303,6 +307,7 @@ void GooeyWindow_Cleanup(int num_windows, GooeyWindow *first_win, ...)
 
 void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
 {
+
     GooeyEvent *event;
     bool running = true;
 
@@ -310,12 +315,17 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
     GooeyWindow *windows[num_windows];
 
     va_start(args, first_win);
+
+//    active_backend->SetRenderCallback(GooeyWindow_Redraw, first_win);
+
     windows[0] = first_win;
+
     GooeyWindow *win = NULL;
 
     for (int i = 1; i < num_windows; ++i)
     {
         win = va_arg(args, GooeyWindow *);
+
         windows[i] = win;
     }
     va_end(args);
@@ -323,6 +333,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
 
     while (running)
     {
+
         event = active_backend->HandleEvents();
         for (int i = 0; i < num_windows; ++i)
         {
@@ -345,8 +356,6 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                     {
                         GooeyWindow_Redraw(win);
                     }
-                    
-
                 }
 
                 break;
@@ -356,7 +365,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                 {
 
                     GooeyMenu_HandleClick(win, x, y);
-                    if ( GooeySlider_HandleDrag(win, event) || GooeyButton_HandleClick(win, x, y) ||
+                    if (GooeySlider_HandleDrag(win, event) || GooeyButton_HandleClick(win, x, y) ||
                         GooeyRadioButtonGroup_HandleClick(win, x, y) ||
                         GooeyCheckbox_HandleClick(win, x, y) ||
                         GooeyRadioButton_HandleClick(win, x, y) ||
@@ -365,6 +374,7 @@ void GooeyWindow_Run(int num_windows, GooeyWindow *first_win, ...)
                     {
                         GooeyWindow_Redraw(win);
                     }
+
                 }
                 break;
 

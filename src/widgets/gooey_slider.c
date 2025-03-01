@@ -74,7 +74,7 @@ void GooeySlider_setValue(GooeySlider *slider, long value)
 
 void GooeySlider_Draw(GooeyWindow *win)
 {
-    for (int i = 0; i < win->slider_count; ++i)
+    for (size_t i = 0; i < win->slider_count; ++i)
     {
         GooeySlider *slider = &win->sliders[i];
 
@@ -136,7 +136,7 @@ bool GooeySlider_HandleDrag(GooeyWindow *win, GooeyEvent *event)
         return true;
     }
 
-    for (int i = 0; i < win->slider_count; ++i)
+    for (size_t i = 0; i < win->slider_count; ++i)
     {
         GooeySlider *slider = &win->sliders[i];
 
