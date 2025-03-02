@@ -192,6 +192,13 @@ void GooeyWindow_FreeResources(GooeyWindow *win)
         free(win->lists);
         win->lists = NULL;
     }
+
+    if(win->plots) 
+    {
+        free(win->plots);
+        win->plots = NULL;
+    }
+
     if (win->widgets)
     {
         free(win->widgets);
