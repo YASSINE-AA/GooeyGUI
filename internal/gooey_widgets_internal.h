@@ -390,6 +390,11 @@ typedef struct
   float y_step;
   char *title; /**< Plot title */
 
+  float max_x_value;
+  float min_x_value;
+  float max_y_value;
+  float min_y_value;
+  
   GOOEY_PLOT_TYPE plot_type; /**< Type of the plot */
 
 } GooeyPlotData;

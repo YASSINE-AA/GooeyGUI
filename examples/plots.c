@@ -58,7 +58,7 @@ int main()
     data.x_data = x_partial;
     data.y_data = y_partial;
 
-    GooeyPlot *plot = GooeyPlot_Add(&win, GOOEY_PLOT_LINE, &data, 20, 20, 600, 400);
+    GooeyPlot *plot = GooeyPlot_Add(&win, GOOEY_PLOT_BAR, &data, 20, 20, 600, 400);
 
     // pthread_t thread_id;
     // ThreadArgs args = {&data, plot};
